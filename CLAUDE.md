@@ -26,6 +26,7 @@ Hepatology/                         ← корень git-репозитория
 ├── automation/                     ← автономный режим: DAILY_RUN.md (процесс команды), run_daily.sh (локальный ручной прогон)
 ├── .github/workflows/daily.yml     ← ежедневный облачный запуск (GitHub Actions, облачный Mac)
 ├── tools/test.sh                   ← сборка и все тесты
+├── design/reference/               ← эталон стиля: слайды уроков автора, сравнение шрифтов
 ├── reports/                        ← отчёты: YYYY-MM-DD.md, weekly/, latest.txt, shots/
 ├── logs/                           ← логи прогонов (локально, не коммитятся)
 ├── .claude/settings.json           ← права для автономного прогона
@@ -53,8 +54,8 @@ Hepatology/                         ← корень git-репозитория
     │   │   ├── Calculators/        ← chip_screen: <calc_id>.json
     │   │   ├── ScoreCalcs/         ← score_calc: <calc_id>.json
     │   │   └── Registry/           ← реестры (появляются в день 3): guidelines, labs, plan, cases, synonyms
-    │   ├── Assets.xcassets/        ← иконка, цвета (brandAccent = #0F6E6E / тёмная тема #5CC8C2)
-    │   └── Resources/Fonts/        ← Space Grotesk (только заголовки)
+    │   ├── Assets.xcassets/        ← иконка и цветовые токены дизайн-системы (§12)
+    │   └── Resources/Fonts/        ← не нужен после перехода на Avenir Next (§12)
     └── HepReferenceTests/          ← юнит-тесты + ContentIntegrityTests (шлюз релиза)
 ```
 
@@ -330,7 +331,7 @@ ID неизменны: на них держатся все ссылки. Наз�
 
 {"t": "case", "case_ids": ["chol_0_3m_c1", "chol_0_3m_c2"]}
 ```
-`verdict`: `aligned` / `differs` / `material` (меняет тактику).
+`verdict`: `aligned` / `differs` / `material` (меняет тактику) / `gap` (руководства нет) — цвета по §12.2.
 
 ### 5.3. Алгоритм (`Content/Pathways/<id>.json`)
 `{"id": "...", "children": [PathwayNode]}`. Узлы (`"t"`):
@@ -513,3 +514,63 @@ ID неизменны: на них держатся все ссылки. Наз�
 - внеплановый прогон или пробный (`dry-run`): GitHub → Actions → *Daily autonomous run* → **Run workflow**;
 - пауза: Actions → *Daily autonomous run* → **⋯ → Disable workflow** (и Enable, чтобы возобновить);
 - локальный ручной прогон на Mac (по желанию): `automation/run_daily.sh --force` — сначала подтягивает свежий `main`.
+
+---
+
+## 12. Дизайн-система «Clinical Editorial»
+
+**Источник стиля — презентации-уроки автора** (`sources/reading-final/hepatology/*.pptx`, эталонные кадры — `design/reference/`). Приложение должно выглядеть как продолжение этих уроков: строгий клинический журнал, тёмно-синие заголовки капслоком, пастельные карточки с цветной верхней полосой, вердикты руководств цветными плашками. Этот раздел — единственный источник дизайн-решений; всё старое (бирюзовый акцент, Space Grotesk) заменяется.
+
+### 12.1. Шрифт
+- **Avenir Next** (системный в iOS, лицензия не нужна) — во всём приложении. Ближайший доступный аналог Abadi из уроков (решение и сравнение — DECISIONS, `design/reference/font-comparison.png`).
+- Abadi не встраивается: облачный шрифт Office, лицензия только для Office. Gill Sans отклонён: «1» неотличима от «I» — опасно для доз.
+- Роли (все через `relativeTo:` — Dynamic Type обязателен):
+
+| Роль | Начертание | Где |
+|---|---|---|
+| `hepTitle` | Avenir Next **Heavy**, КАПСЛОК, трекинг +0.5 | Заголовок карточки, заголовки экранов |
+| `hepKicker` | Avenir Next **Bold**, КАПСЛОК, мелкий, трекинг +1 | Надзаголовок (категория/раздел) |
+| `hepSubtitle` | Avenir Next *Italic* | Строка источников под заголовком, подписи |
+| `hepSectionHeading` | Avenir Next **Bold** | Заголовки блоков/карточек-секций |
+| `hepBody` | Avenir Next Regular | Основной текст |
+| `hepTakeaway` | Avenir Next ***Bold Italic*** | Итоговая строка блока («take-home»), как в уроках |
+| `hepCitation` | Avenir Next *Italic*, мелкий, серый | Источники внизу блока |
+| `hepMetric` | Avenir Next **Bold**, моноширинные цифры (`.monospacedDigit()`) | Числа, пороги, дозы, результаты калькуляторов |
+| `hepTag` | Avenir Next **Bold**, КАПСЛОК, мелкий | Бейджи, вердикты, pill |
+
+### 12.2. Цвета (точные значения из уроков; тёмная тема — подобранные пары)
+
+| Токен | Светлая | Тёмная | Назначение |
+|---|---|---|---|
+| `ink` | `#1A1A1A` | `#ECEEF1` | Основной текст |
+| `navy` (brandAccent) | `#1B355E` | `#9DB7DE` | Заголовки, акцент, навигация, шапки таблиц |
+| `blue` | `#2E5A88` | `#8FB0DA` | Надзаголовки, ссылки, вторичный акцент |
+| `maroon` | `#8C1C1C` | `#D88A8A` | Бейдж с римским номером раздела |
+| `muted` | `#555555` | `#A3A8AE` | Подзаголовки, подписи, источники |
+| `surface` | `#F2F2F2` | `#1E2227` | Зебра таблиц, нейтральные карточки, статы |
+| `background` | `#FFFFFF` | `#121417` | Фон экранов |
+| `crit` / `critTint` | `#B22222` / `#F6D2D2` | `#E06666` / `#3A1F21` | Красные флаги, «звонить сейчас», вердикт MATERIAL |
+| `urg` / `urgTint` | `#D97A0B` / `#FBEFBE` | `#F0A04B` / `#3A2F17` | Срочно сегодня, вердикт DIFFERS |
+| `ok` / `okTint` | `#1E7A33` / `#CDE7CF` | `#5CB874` / `#1C3323` | Плановое/безопасное, вердикт ALIGNED |
+| `info` / `infoTint` | `#1B355E` / `#DCE6F1` | `#9DB7DE` / `#1C2A3F` | Справка, определения, нейтральные карточки |
+| `gap` | `#8A939B` | `#8A939B` | Вердикт GAP, неактивное |
+
+Соответствие уровням срочности: `crit`→crit, `urg`→urg, `rt`→ok, `ref`→info. Вердикты `guideline_compare`: ALIGNED ok, DIFFERS urg, MATERIAL crit, GAP gap — **ровно как в уроках** (добавить значение `gap` в схему вердиктов).
+
+### 12.3. Компоненты
+- **Шапка карточки:** надзаголовок (бейдж `maroon` с римским номером или категорией + текст `blue` капслоком) → заголовок `hepTitle` `navy` → строка источников `hepSubtitle` `muted` → **двойная линейка** (2 pt `ink` + 0.5 pt `ink`, зазор 2 pt).
+- **Блок-секция:** скругление `Radius.medium`, заливка tint-цветом смысла блока, **верхняя полоса 4 pt** насыщенного цвета (red flags — crit, first contact — info/navy, don't miss — urg, нейтральное — navy), мягкая тень. Заголовок `hepSectionHeading` `ink`, пункты — квадратные маркеры `▪`.
+- **Нумерация разделов** анатомии карточки римскими цифрами, как разделы уроков: I Red flags · II Age · III Algorithm · IV First contact · V Don't miss · VI Why · VII Pearls · VIII Guidelines · IX Test yourself.
+- **Таблицы:** шапка `navy` с белым жирным текстом, строки — зебра `surface`/`background`, первая колонка жирная. Ячейка вердикта — сплошная заливка цветом вердикта, белый `hepTag` по центру.
+- **Стат-карточка** (пороги, ключевые числа): `surface`, верхняя полоса цветом смысла, большое число `hepMetric` `navy`, подпись `muted`.
+- **Итоговая строка** блока — `hepTakeaway`; **источники** — `hepCitation` под тонкой линией.
+- **Pathway:** ветки (`arm`) — tint + верхняя/левая метка цветом срочности по §12.2; исходы-pill — сплошные плашки семантических цветов с белым `hepTag`.
+- **Чипы и сегменты** (возраст, калькуляторы): выбранный — заливка `navy`, белый текст; невыбранный — `surface`, `ink`.
+- **Главный экран:** плитки-категории — белые карточки с верхней полосой `navy`, иконка `navy`, название `hepSectionHeading`; плитка Reference — `surface`.
+- **Иконка приложения и launch screen:** фон `navy`, «HEP» белым Avenir Next Heavy.
+
+### 12.4. Правила
+- Никаких цветов и шрифтов «по месту»: только токены из Assets и `DesignSystem.swift`. Новый токен — сначала сюда.
+- Контраст текста ≥ 4.5:1 в обеих темах; проверять снимками светлой и тёмной темы.
+- Сравнивать результат с `design/reference/`: если экран не похож на слайд урока по духу — он не готов.
+

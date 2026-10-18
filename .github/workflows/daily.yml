@@ -84,7 +84,7 @@ jobs:
           fi
           PROMPT+=$'\n\n---\n**Окружение:** облачный Mac GitHub Actions (одноразовый). Тесты — `tools/test.sh`, снимки — `tools/screenshot.sh`. Перед push всегда `git pull --rebase origin main`. Push в origin работает через токен Actions.'
           START=$(date +%s)
-          claude -p "$PROMPT" --dangerously-skip-permissions --output-format text 2>&1 | tee run.log
+          claude -p "$PROMPT" --model opus --dangerously-skip-permissions --output-format text 2>&1 | tee run.log
           STATUS=$?
           MIN=$(( ($(date +%s) - START) / 60 ))
           SUMMARY="$(tail -c 700 run.log | tr '\n' ' ')"
@@ -96,6 +96,10 @@ jobs:
             git fetch -q origin
             if [ ! -f "reports/$(date +%Y-%m-%d).md" ] && ! git show "origin/main:reports/$(date +%Y-%m-%d).md" >/dev/null 2>&1; then
               echo "::error title=No daily report::Run finished in ${MIN} min without reports/$(date +%Y-%m-%d).md — $SUMMARY"
+              exit 1
+            fi
+            if [ "$(date +%u)" = "7" ] && ! ls reports/weekly/*W$(date +%V).md >/dev/null 2>&1 && ! git ls-tree -r --name-only origin/main reports/weekly | grep -q "W$(date +%V).md"; then
+              echo "::error title=No weekly report::Sunday run finished without reports/weekly/*W$(date +%V).md"
               exit 1
             fi
           fi
