@@ -15,6 +15,14 @@ struct HepReferenceApp: App {
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(named: "appBackground")
+        // Tab labels in Avenir Next too (UIKit-drawn, outside SwiftUI fonts).
+        if let avenir = UIFont(name: Font.AvenirFace.demiBold.rawValue, size: 10) {
+            let font = UIFontMetrics(forTextStyle: .caption2).scaledFont(for: avenir)
+            for item in [appearance.stackedLayoutAppearance, appearance.inlineLayoutAppearance, appearance.compactInlineLayoutAppearance] {
+                item.normal.titleTextAttributes = [.font: font]
+                item.selected.titleTextAttributes = [.font: font]
+            }
+        }
         UITabBar.appearance().standardAppearance = appearance
         UITabBar.appearance().scrollEdgeAppearance = appearance
     }

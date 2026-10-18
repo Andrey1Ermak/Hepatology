@@ -20,7 +20,7 @@ struct SelectableChip: View {
             VStack(alignment: .center, spacing: 2) {
                 Text(CardMarkup.attributedString(label))
                     .font(.hepCaption)
-                    .foregroundStyle(.primary)
+                    .foregroundStyle(isOn ? Color.hepOnSolid : Color.hepInk)
                     .multilineTextAlignment(.center)
                     // Reserves full 2-line height even for a 1-line label —
                     // same reasoning as CardRowView's grid tiles — so a
@@ -33,23 +33,18 @@ struct SelectableChip: View {
                 if let detail {
                     Text(detail)
                         .font(.hepCaption)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(isOn ? Color.hepOnSolid : Color.hepMuted)
                 }
             }
             .frame(maxWidth: fillWidth ? .infinity : nil, alignment: .center)
             .padding(.horizontal, Spacing.m)
             .padding(.vertical, Spacing.s)
-            // `cardSurface` (not `tertiarySystemFill`) for the off state:
-            // now that `SectionCard` defaults to a tinted `blockTint`
-            // background, a neutral system-gray fill read muddy against it —
-            // a crisp white/dark surface reads as its own distinct layer instead.
-            // `Color("brandAccent")`, not the ambient `Color.accentColor` —
-            // a chip presented inside NumericCalcSheet's `.overlay` sits
-            // outside the `.tint()`-scoped TabView subtree, where the
-            // ambient accent color falls back to system blue instead of the
-            // app's purple; the explicit asset reference is correct everywhere.
-            .background(isOn ? Color("brandAccent").opacity(0.25) : Color("cardSurface"), in: RoundedRectangle(cornerRadius: Radius.medium))
-            .overlay(RoundedRectangle(cornerRadius: Radius.medium).stroke(isOn ? Color("brandAccent") : Color(.separator).opacity(0.4), lineWidth: 1))
+            // Lesson style (CLAUDE.md §12.3): selected = solid navy with
+            // light text, unselected = neutral surface with ink. Explicit
+            // `Color.hepNavy`, not the ambient accent — a chip inside
+            // NumericCalcSheet's overlay sits outside the TabView's `.tint()`.
+            .background(isOn ? Color.hepNavy : Color.hepSurface, in: RoundedRectangle(cornerRadius: Radius.medium))
+            .overlay(RoundedRectangle(cornerRadius: Radius.medium).stroke(isOn ? Color.hepNavy : Color.hepMuted.opacity(0.35), lineWidth: 1))
             .animation(.easeOut(duration: 0.15), value: isOn)
         }
         .buttonStyle(.plain)

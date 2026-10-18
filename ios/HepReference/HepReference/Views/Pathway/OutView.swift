@@ -44,14 +44,14 @@ struct OutView: View {
                     if index > 0 {
                         Text("/")
                             .font(.hepCaption)
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(Color.hepMuted)
                     }
                     Badge(text: pill.text, tier: pill.kind.tier, maxLines: nil, fillHeight: true)
                 }
             } else if let subtext {
                 Text(CardMarkup.attributedString(subtext))
                     .font(.hepCaption)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Color.hepMuted)
             }
             // After the pills, not before — this link is "go compute the
             // number that decides between them," so it reads left-to-right
@@ -66,10 +66,10 @@ struct OutView: View {
                         Image(systemName: "chevron.right")
                     }
                     .font(.hepTag)
-                    .foregroundStyle(.white)
+                    .foregroundStyle(Color.hepOnSolid)
                     .padding(.horizontal, Spacing.s)
                     .padding(.vertical, 3)
-                    .background(Color("brandAccent"), in: Capsule())
+                    .background(Color.hepNavy, in: Capsule())
                 }
                 .buttonStyle(.plain)
             }

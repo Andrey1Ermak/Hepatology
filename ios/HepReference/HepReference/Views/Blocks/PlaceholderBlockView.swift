@@ -13,12 +13,12 @@ struct PlaceholderBlockView: View {
         SectionCard {
             HStack(spacing: Spacing.s) {
                 Image(systemName: "exclamationmark.triangle")
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Color.hepMuted)
                 VStack(alignment: .leading, spacing: 2) {
                     Text(label).font(.hepBody.weight(.medium))
                     Text("\(kind) content unavailable")
                         .font(.hepCaption)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Color.hepMuted)
                 }
                 Spacer()
             }

@@ -11,7 +11,7 @@ struct KVBlockView: View {
                     HStack(alignment: .firstTextBaseline) {
                         Text(row.key)
                             .font(.hepBody)
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(Color.hepMuted)
                         Spacer(minLength: Spacing.m)
                         Text(CardMarkup.attributedString(row.value))
                             .font(.hepBody.monospacedDigit())

@@ -24,7 +24,7 @@ struct ListBlockView: View {
                 bullet(AttributedString(title), bold: true)
                 ForEach(Array(sub.enumerated()), id: \.offset) { _, line in
                     HStack(alignment: .firstTextBaseline, spacing: Spacing.s) {
-                        Text("–").foregroundStyle(.secondary)
+                        Text("–").foregroundStyle(Color.hepMuted)
                         Text(CardMarkup.attributedString(line)).font(.hepBody)
                     }
                     .padding(.leading, Spacing.l)
@@ -35,7 +35,7 @@ struct ListBlockView: View {
 
     private func bullet(_ text: AttributedString, bold: Bool = false) -> some View {
         HStack(alignment: .firstTextBaseline, spacing: Spacing.s) {
-            Text("•").foregroundStyle(.secondary)
+            Text("•").foregroundStyle(Color.hepMuted)
             Text(text).font(.hepBody).fontWeight(bold ? .semibold : .regular)
         }
     }

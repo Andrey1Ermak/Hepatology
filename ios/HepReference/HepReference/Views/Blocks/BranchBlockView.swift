@@ -11,7 +11,7 @@ struct BranchBlockView: View {
                     VStack(alignment: .leading, spacing: Spacing.xs) {
                         Text(CardMarkup.attributedString(opt.if))
                             .font(.hepRowLabel)
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(Color.hepMuted)
                         Text(CardMarkup.attributedString(opt.then))
                             .font(.hepBody)
                     }

@@ -15,7 +15,7 @@ struct CalculatorHeader: View {
         if let label {
             Text(label.uppercased())
                 .font(.hepSectionHeading)
-                .foregroundStyle(Color("brandAccent"))
+                .foregroundStyle(Color.hepNavy)
         }
     }
 }

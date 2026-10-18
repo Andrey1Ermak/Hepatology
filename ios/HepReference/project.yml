@@ -29,10 +29,6 @@ targets:
       - path: HepReference/Content
         buildPhase: resources
         type: folder
-      - path: HepReference/Resources/Fonts
-        buildPhase: resources
-        excludes:
-          - "OFL.txt"
     info:
       path: HepReference/Info.plist
       properties:
@@ -42,10 +38,6 @@ targets:
         CFBundleDisplayName: "HepReference"
         CFBundleShortVersionString: "$(MARKETING_VERSION)"
         CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
-        UIAppFonts:
-          - SpaceGrotesk-Regular.ttf
-          - SpaceGrotesk-Medium.ttf
-          - SpaceGrotesk-Bold.ttf
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.hepreference.app

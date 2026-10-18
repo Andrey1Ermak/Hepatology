@@ -47,7 +47,7 @@ struct NumericCalcRowView: View {
                     CalculatorHeader(label: label)
                     Spacer()
                     Image(systemName: "chevron.right")
-                        .foregroundStyle(Color("brandAccent"))
+                        .foregroundStyle(Color.hepNavy)
                         .padding(.top, 2)
                 }
             }
@@ -72,12 +72,12 @@ struct NumericCalcSheet: View {
         GeometryReader { geo in
             ZStack {
                 // Explicit .tint: this sheet is a sibling `.overlay` on top
-                // of ContentView's `.tint(Color("brandAccent"))`-scoped
+                // of ContentView's `.tint(Color.hepNavy)`-scoped
                 // TabView, not a true descendant of it, so anything reading
                 // the ambient `Color.accentColor`/bordered-button tint here
                 // (SelectableChip's selected state, CalculatorResetButton,
                 // the TextField cursor) would otherwise fall back to the
-                // system default blue instead of the app's purple.
+                // system default blue instead of the app's navy.
                 Color.black.opacity(0.4)
                     .ignoresSafeArea()
                     .onTapGesture { presenter.dismiss() }
@@ -86,14 +86,14 @@ struct NumericCalcSheet: View {
                     HStack(alignment: .top, spacing: Spacing.s) {
                         Text(title.uppercased())
                             .font(.hepSectionHeading)
-                            .foregroundStyle(Color("brandAccent"))
+                            .foregroundStyle(Color.hepNavy)
                         Spacer()
                         Button {
                             presenter.dismiss()
                         } label: {
                             Image(systemName: "xmark.circle.fill")
                                 .font(.title2)
-                                .foregroundStyle(Color("brandAccent"))
+                                .foregroundStyle(Color.hepNavy)
                         }
                         .buttonStyle(.plain)
                     }
@@ -106,7 +106,7 @@ struct NumericCalcSheet: View {
                 // Same fill + stroke + elevation as SectionCard's default —
                 // the same "basic block" surface every card block uses, not
                 // a bespoke one-off tone.
-                .background(Color("blockTint"), in: RoundedRectangle(cornerRadius: Radius.large))
+                .background(Color.hepSurface, in: RoundedRectangle(cornerRadius: Radius.large))
                 .overlay {
                     RoundedRectangle(cornerRadius: Radius.large)
                         .stroke(Color(.separator).opacity(0.5), lineWidth: 1)
@@ -115,7 +115,7 @@ struct NumericCalcSheet: View {
                 .padding(.horizontal, Spacing.xl)
             }
         }
-        .tint(Color("brandAccent"))
+        .tint(Color.hepNavy)
     }
 
     @ViewBuilder
@@ -131,7 +131,7 @@ struct NumericCalcSheet: View {
                 ChipBoardView(screen: screen, bare: true)
             } else {
                 Text("Calculator not available yet")
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Color.hepMuted)
             }
         }
     }

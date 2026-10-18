@@ -2,6 +2,9 @@
 # Launch the last built HepReference on the first available iPhone simulator
 # and save a screenshot. Run tools/test.sh (or any build) first.
 #   tools/screenshot.sh reports/shots/2026-10-19-home.png [seconds-to-wait]
+# Optional environment:
+#   HEP_APPEARANCE=dark|light   simulator appearance for the shot (reset to light afterwards)
+#   HEP_OPEN_CARD=<card_id>     open this card on launch (Debug builds only)
 set -euo pipefail
 OUT="${1:?usage: tools/screenshot.sh <output.png> [wait-seconds]}"
 WAIT="${2:-6}"
@@ -13,9 +16,15 @@ APP="$(find "$HOME/Library/Developer/Xcode/DerivedData" -maxdepth 6 -path "*HepR
 xcrun simctl boot "$SIM" 2>/dev/null || true
 xcrun simctl bootstatus "$SIM" -b >/dev/null
 xcrun simctl install "$SIM" "$APP"
+[ -n "${HEP_APPEARANCE:-}" ] && xcrun simctl ui "$SIM" appearance "$HEP_APPEARANCE"
 xcrun simctl terminate "$SIM" com.hepreference.app 2>/dev/null || true
-xcrun simctl launch "$SIM" com.hepreference.app >/dev/null
+if [ -n "${HEP_OPEN_CARD:-}" ]; then
+  xcrun simctl launch "$SIM" com.hepreference.app -hepOpenCard "$HEP_OPEN_CARD" >/dev/null
+else
+  xcrun simctl launch "$SIM" com.hepreference.app >/dev/null
+fi
 sleep "$WAIT"
 mkdir -p "$(dirname "$OUT")"
 xcrun simctl io "$SIM" screenshot "$OUT" >/dev/null
+[ -n "${HEP_APPEARANCE:-}" ] && xcrun simctl ui "$SIM" appearance light
 echo "Screenshot ($SIM): $OUT"

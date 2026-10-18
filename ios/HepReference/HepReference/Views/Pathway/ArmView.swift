@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// A colored decision arm (severity or disposition): a tinted SectionCard with a leading accent bar, a severity tag
-/// badge, an optional monospace "rx" action line, then nested content.
+/// badge, an optional "rx" action line, then nested content.
 ///
 /// When the arm's very first child is a bare disposition pill or pills (an
 /// `.out` with no condition/subtext of its own — the condition would just
@@ -40,7 +40,7 @@ struct ArmView: View {
                             if index > 0 {
                                 Text("/")
                                     .font(.hepCaption)
-                                    .foregroundStyle(.secondary)
+                                    .foregroundStyle(Color.hepMuted)
                             }
                             // `fillHeight: true` — matches the tag's height
                             // (however many lines it wraps to) instead of
@@ -54,8 +54,8 @@ struct ArmView: View {
                 }
                 if let rx {
                     Text(CardMarkup.attributedString(rx))
-                        .font(.hepMono)
-                        .foregroundStyle(.secondary)
+                        .font(.hepCaption)
+                        .foregroundStyle(Color.hepMuted)
                 }
                 BranchedChildrenView(children: remainingChildren)
             }

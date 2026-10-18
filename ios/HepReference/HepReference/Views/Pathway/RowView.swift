@@ -23,7 +23,7 @@ struct RowView: View {
         HStack(alignment: .top, spacing: Spacing.xs) {
             if bullet {
                 Circle()
-                    .fill(Color("brandAccent"))
+                    .fill(Color.hepNavy)
                     .frame(width: Spacing.xs, height: Spacing.xs)
                     .padding(.top, 5)
             }
@@ -38,7 +38,7 @@ struct RowView: View {
             // a depth-based step-down (tried briefly) made a single arm's
             // rows read as inconsistent sizes whenever it mixed top-level
             // and nested rows; indentation alone signals depth now.
-            .font(.caption2)
+            .font(.hepCaption)
             // Matches Badge's own `.fixedSize` — without it, a long row deep
             // inside a nest (tree-connector's Color.clear spacer eating into
             // the row's proposed width) can get an ambiguous height proposal
@@ -55,10 +55,10 @@ struct RowView: View {
                         Image(systemName: "chevron.right")
                     }
                     .font(.hepTag)
-                    .foregroundStyle(.white)
+                    .foregroundStyle(Color.hepOnSolid)
                     .padding(.horizontal, Spacing.s)
                     .padding(.vertical, 3)
-                    .background(Color("brandAccent"), in: Capsule())
+                    .background(Color.hepNavy, in: Capsule())
                 }
                 .buttonStyle(.plain)
             }

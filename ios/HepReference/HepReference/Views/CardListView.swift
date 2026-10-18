@@ -11,7 +11,7 @@ private struct SectionHeaderOffsetKey: PreferenceKey {
 
 struct CardListView: View {
     let library: CardLibrary
-    @State private var pinnedCategoryLabel: String
+    @State private var pinnedCategory: CardCategory?
     /// Accumulated last-known offset per section index. `LazyVStack`
     /// deallocates header views once they scroll far enough off-screen, so a
     /// section that already scrolled past can simply stop appearing in a
@@ -22,14 +22,23 @@ struct CardListView: View {
     /// section is known to have passed, it stays known, even if both it and
     /// everything after it have long scrolled out of the render buffer.
     @State private var knownSectionOffsets: [Int: CGFloat] = [:]
+    @State private var path: [String] = []
 
     init(library: CardLibrary) {
         self.library = library
-        _pinnedCategoryLabel = State(initialValue: library.groupedSections.first?.section ?? "")
+        _pinnedCategory = State(initialValue: library.groupedSections.first?.category)
+        #if DEBUG
+        // `-hepOpenCard <id>` opens a card on launch, so tools/screenshot.sh
+        // can capture a card screen without UI automation.
+        let args = ProcessInfo.processInfo.arguments
+        if let i = args.firstIndex(of: "-hepOpenCard"), args.indices.contains(i + 1) {
+            _path = State(initialValue: [args[i + 1]])
+        }
+        #endif
     }
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             // Hybrid design: the *real* category headers are ordinary,
             // visible content inside the LazyVStack — they scroll normally,
             // so on a tall screen you can see one category's tail and the
@@ -48,12 +57,12 @@ struct CardListView: View {
             // tracking below), and getting that text briefly wrong just means
             // a label transitions a beat late — never a visibility bug.
             ZStack(alignment: .top) {
-                Color("appBackground").ignoresSafeArea()
+                Color.hepBackground.ignoresSafeArea()
 
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: Spacing.s) {
                         ForEach(Array(library.groupedSections.enumerated()), id: \.element.section) { index, group in
-                            categoryHeaderContent(group.section)
+                            categoryHeaderContent(group.category)
                                 .background(
                                     GeometryReader { geo in
                                         Color.clear.preference(
@@ -83,11 +92,13 @@ struct CardListView: View {
                     let sections = library.groupedSections
                     let passedIndex = knownSectionOffsets.filter { $0.value <= 0 }.keys.max() ?? 0
                     if sections.indices.contains(passedIndex) {
-                        pinnedCategoryLabel = sections[passedIndex].section
+                        pinnedCategory = sections[passedIndex].category
                     }
                 }
 
-                categoryHeaderContent(pinnedCategoryLabel)
+                if let pinnedCategory {
+                    categoryHeaderContent(pinnedCategory)
+                }
             }
             // No nav title/bar here — Browse is the tab's root screen, there's
             // no back button to show, and "Browse" as a title only ate space;
@@ -102,26 +113,32 @@ struct CardListView: View {
         }
     }
 
-    /// The bottom rule deliberately isn't a plain `Divider()` — SwiftUI's
-    /// `Divider` uses `UIColor.separator`, which Apple documents as
-    /// translucent by design ("allows some underlying content to be
-    /// visible"). `UIColor.opaqueSeparator` is Apple's own fully-opaque
-    /// counterpart ("hides any underlying content").
-    private func categoryHeaderContent(_ title: String) -> some View {
+    /// A lesson-style section heading: maroon roman-numeral badge (the
+    /// category's Browse position) and the name in navy Heavy caps. The
+    /// bottom rule deliberately isn't a plain `Divider()` — that uses the
+    /// translucent `UIColor.separator`, and this header must stay opaque
+    /// above the cards scrolling under it.
+    private func categoryHeaderContent(_ category: CardCategory) -> some View {
         VStack(spacing: 0) {
-            Text(title)
-                .font(.hepDisplay(.title3, weight: .bold))
-                .tracking(0.6)
-                .textCase(.uppercase)
-                .foregroundStyle(Color("brandAccent"))
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal, Spacing.l)
-                .padding(.vertical, Spacing.s)
+            HStack(spacing: Spacing.s) {
+                if let number = RomanNumeral.string(category.number) {
+                    SectionNumberBadge(text: number)
+                }
+                Text(category.displayName)
+                    .hepTitleStyle()
+                    .lineLimit(2)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal, Spacing.l)
+            .padding(.vertical, Spacing.s)
+            .accessibilityElement(children: .combine)
+            .accessibilityAddTraits(.isHeader)
             Rectangle()
-                .fill(Color(uiColor: .opaqueSeparator))
+                .fill(Color.hepInk)
                 .frame(height: 1)
+                .padding(.horizontal, Spacing.l)
         }
-        .background(Color("appBackground"))
+        .background(Color.hepBackground)
     }
 
     /// A card row, styled as an elevated card (not a bare List row).

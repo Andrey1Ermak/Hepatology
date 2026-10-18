@@ -33,7 +33,7 @@ struct Badge: View {
     /// multi-line arm tag (see `ArmView`), so the two read as the same
     /// height instead of a short pill floating beside a tall tag.
     var fillHeight: Bool = false
-    /// Extra emphasis on top of `hepTag`'s own semibold weight — for a
+    /// Extra emphasis on top of `hepTag`'s own bold weight — for a
     /// `.neutral` cond badge that's really a sub-branch header inside an arm
     /// (e.g. "Age < 1 yr"/"Uncomplicated"), which otherwise reads
     /// at the same weight as every other plain outcome condition.
@@ -41,7 +41,7 @@ struct Badge: View {
 
     var body: some View {
         Text(uppercase ? text.uppercased() : text)
-            .font(bold ? .hepTag.weight(.bold) : .hepTag)
+            .font(bold ? .hepTagHeavy : .hepTag)
             .tracking(0.4)
             .lineLimit(maxLines)
             .multilineTextAlignment(.center)
@@ -62,21 +62,23 @@ struct Badge: View {
 
     private var background: Color {
         switch style {
-        case .solid: tier?.solid ?? Color(.tertiarySystemFill)
-        case .tint: tier?.tint ?? Color(.tertiarySystemFill)
-        // `cardSurface`, not `tertiarySystemFill`: a `.neutral` badge (group
-        // labels, outcome conditions) most often sits on `SectionCard`'s
-        // tinted `blockTint` background now, where a plain system-gray fill
-        // blended in rather than standing out as its own marker.
-        case .neutral: Color("cardSurface")
+        case .solid: tier?.solid ?? Color.hepGap
+        case .tint: tier?.tint ?? Color.hepSurface
+        // `hepCard`, not `hepSurface`: a `.neutral` badge (group labels,
+        // outcome conditions) most often sits on `SectionCard`'s `hepSurface`
+        // background, where the same gray would blend in instead of reading
+        // as its own marker.
+        case .neutral: Color.hepCard
         }
     }
 
     private var foreground: Color {
         switch style {
-        case .solid: .white
-        case .tint: tier?.solid ?? .secondary
-        case .neutral: .secondary
+        case .solid: tier?.onSolid ?? Color.hepOnBright
+        // Ink, not the tier's own solid color: amber and green text on their
+        // own pale tints fall below 4.5:1 (CLAUDE.md §12.4).
+        case .tint: Color.hepInk
+        case .neutral: Color.hepMuted
         }
     }
 }

@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0100DD047F46C871779F8ED4 /* HepDisplayFontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DCA91359075CE29D9D96AB /* HepDisplayFontTests.swift */; };
 		051C69491DBB9F170A225C96 /* CardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EB2A09B67E9237C43E011E /* CardHeaderView.swift */; };
 		06356B0C9BF4915358EAA8EA /* ScoreCalcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58F57D0EA93E1344E69EB1 /* ScoreCalcView.swift */; };
 		0A1D711E5025F66C75DC077F /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A3D2B12172C4D0A8253D10 /* CardListView.swift */; };
 		0E1B259F0200BF7DFF38F56A /* ChipScoreRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C6C76AF68F51F86C0FB35 /* ChipScoreRule.swift */; };
-		0E51BD330A01FEF070A188C0 /* SpaceGrotesk-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C57C0556476925F18EAEE2F /* SpaceGrotesk-Medium.ttf */; };
 		10944861781EC3128EA42EB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE8F19EBCF792A80DE2E29E /* ContentView.swift */; };
 		1455D8F80E997C9E8BFEADF7 /* VerdictRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6C593AD02E59E70DD140D /* VerdictRule.swift */; };
 		1577CE77F31C5DCDEA91484F /* Manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC37CEB0E5CA29B7ED090AB2 /* Manifest.swift */; };
@@ -35,13 +33,13 @@
 		4B13D2879C0EA62A0664B1AE /* ChecklistAnyRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9357B09215E0402FEB31BD /* ChecklistAnyRule.swift */; };
 		4F8B1F74CE0AA1C30607FDB7 /* BranchBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820E6783963139414EF2AD8E /* BranchBlockView.swift */; };
 		541AD44FCD39EF372B737C2C /* ScoreCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400044A20D7DCB283956C5A4 /* ScoreCalc.swift */; };
-		57AF5407BAF32BAEA5340C08 /* SpaceGrotesk-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 816BFB1A0856F1E9C0AA1790 /* SpaceGrotesk-Bold.ttf */; };
 		5D2EC96B40E6A2914998282A /* SectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82967B5A0BE18BF5E7EEA93C /* SectionCard.swift */; };
 		6603690DDDB85156EDF7A2BF /* CardLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F469CA2B0FF565BAE90688A /* CardLibrary.swift */; };
 		684D4762365031EFF3DA810F /* CollapsibleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4870B5B3A2090D439DBE0381 /* CollapsibleSection.swift */; };
 		685FC123D570E54E882A09E2 /* PathwayBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221C5867FC3C24FB9A75BF0E /* PathwayBlockView.swift */; };
 		6ABB034CC1FF9174C0DD1C55 /* NumericCalcSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29C8CF62141AA29BA9C923 /* NumericCalcSheet.swift */; };
 		724502285222E1AED7A4F390 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25019922C87743AC09841EB1 /* FlowLayout.swift */; };
+		72AC5EC75733BAA460D0E3CF /* DesignSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958A1510D85C828F2BA67DAD /* DesignSystemTests.swift */; };
 		750D9EBA1AA7B8F70DDA1D42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4D29FA599B03ECE29F0AFF /* Assets.xcassets */; };
 		77B0305FBD17A4FAB534B86A /* BranchedChildrenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E822D34F70C01854FDD8F263 /* BranchedChildrenView.swift */; };
 		81013A46A0A6159AA75D8296 /* CardLibraryGroupingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4588C975059DEF1AF99BAC /* CardLibraryGroupingTests.swift */; };
@@ -75,7 +73,7 @@
 		D6F80DE52CCBEEEB41290FC4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F4645FF4B9F3EFDCE86395 /* Card.swift */; };
 		D89F18F22CFA0B7E95CEF728 /* CalcFormRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88244BCD2FC3ED97C99B7D3 /* CalcFormRow.swift */; };
 		DBC4EE964A32DAB08A74F5F3 /* ContentIntegrityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C89DA0A219A939F8D36EDAA /* ContentIntegrityTests.swift */; };
-		DCBEAB5C93000EA28D1500B1 /* SpaceGrotesk-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 884CCF88F01F171B24014B75 /* SpaceGrotesk-Regular.ttf */; };
+		E1894326D03C791EE4231415 /* EditorialHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FE50AD71D546325C9F2021 /* EditorialHeader.swift */; };
 		E3048B8A5A79D2211CC3FBF9 /* AcuLevel+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F880D8133D078BAE1B77DE0 /* AcuLevel+Style.swift */; };
 		E9BFDE5B39FF03F247FF982E /* Card+GridTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE14A813BAADD69B9B07684 /* Card+GridTitle.swift */; };
 		EC880CA6746898B049E07E9B /* CardRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FE9624118A34C010B492C9 /* CardRowView.swift */; };
@@ -134,19 +132,17 @@
 		63FE9624118A34C010B492C9 /* CardRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRowView.swift; sourceTree = "<group>"; };
 		67EB2A09B67E9237C43E011E /* CardHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHeaderView.swift; sourceTree = "<group>"; };
 		69319EE20AB7131988F63E64 /* ColView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColView.swift; sourceTree = "<group>"; };
-		75DCA91359075CE29D9D96AB /* HepDisplayFontTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HepDisplayFontTests.swift; sourceTree = "<group>"; };
+		75FE50AD71D546325C9F2021 /* EditorialHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorialHeader.swift; sourceTree = "<group>"; };
 		7CFAF5CB9638C1CF262E6C85 /* DoseBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoseBlockView.swift; sourceTree = "<group>"; };
 		7E3F7BF9A3E68F759795A972 /* Elevation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elevation.swift; sourceTree = "<group>"; };
-		816BFB1A0856F1E9C0AA1790 /* SpaceGrotesk-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Bold.ttf"; sourceTree = "<group>"; };
 		820E6783963139414EF2AD8E /* BranchBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchBlockView.swift; sourceTree = "<group>"; };
 		82967B5A0BE18BF5E7EEA93C /* SectionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCard.swift; sourceTree = "<group>"; };
-		884CCF88F01F171B24014B75 /* SpaceGrotesk-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Regular.ttf"; sourceTree = "<group>"; };
 		8B6346A41417A486CF030A17 /* ChipBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipBoardView.swift; sourceTree = "<group>"; };
 		8B72754100DB71FAD9D0DF77 /* RuleEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleEngineTests.swift; sourceTree = "<group>"; };
-		8C57C0556476925F18EAEE2F /* SpaceGrotesk-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Medium.ttf"; sourceTree = "<group>"; };
 		8DEA84F05240E0512FDD1B5D /* OutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutView.swift; sourceTree = "<group>"; };
 		8F469CA2B0FF565BAE90688A /* CardLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLibrary.swift; sourceTree = "<group>"; };
 		92A5BAE9A5B9668A85B96FC7 /* TextBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBlockView.swift; sourceTree = "<group>"; };
+		958A1510D85C828F2BA67DAD /* DesignSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemTests.swift; sourceTree = "<group>"; };
 		A84CBC7A2E2688BA6EBE9081 /* BlockHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockHeading.swift; sourceTree = "<group>"; };
 		A9C8662A63F7E3034B627B4E /* ArmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmView.swift; sourceTree = "<group>"; };
 		AFE6C593AD02E59E70DD140D /* VerdictRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerdictRule.swift; sourceTree = "<group>"; };
@@ -192,7 +188,6 @@
 				5D307ABF134B421157E31420 /* App */,
 				BC1F2F30F7AB42FD6D5DFFBE /* Calculators */,
 				3BC3A358B72FAA2851ED792F /* DesignSystem */,
-				CFC1DAE64085D21E8D5A62E4 /* Fonts */,
 				8DF1CE6374688A11859A0A90 /* HepReference */,
 				62E963A8CFAFC1A4746F2391 /* HepReferenceTests */,
 				DF47E105AED736259AAFA10D /* Models */,
@@ -209,6 +204,7 @@
 				617645515C201EB540B5CF04 /* CalculatorResetButton.swift */,
 				4870B5B3A2090D439DBE0381 /* CollapsibleSection.swift */,
 				09039DD8496221F029F80A4A /* DesignSystem.swift */,
+				75FE50AD71D546325C9F2021 /* EditorialHeader.swift */,
 				7E3F7BF9A3E68F759795A972 /* Elevation.swift */,
 				25019922C87743AC09841EB1 /* FlowLayout.swift */,
 				82967B5A0BE18BF5E7EEA93C /* SectionCard.swift */,
@@ -283,7 +279,7 @@
 				3D4588C975059DEF1AF99BAC /* CardLibraryGroupingTests.swift */,
 				E9AC60AFBF1EA048AFB31EED /* CardMarkupTests.swift */,
 				1C89DA0A219A939F8D36EDAA /* ContentIntegrityTests.swift */,
-				75DCA91359075CE29D9D96AB /* HepDisplayFontTests.swift */,
+				958A1510D85C828F2BA67DAD /* DesignSystemTests.swift */,
 				CA9105D7E5281223F14D9D9C /* NumericCalcTests.swift */,
 				C8A56AF10D096F6BA21472C5 /* PathwayNodeDecodingTests.swift */,
 				8B72754100DB71FAD9D0DF77 /* RuleEngineTests.swift */,
@@ -315,17 +311,6 @@
 			);
 			name = Calculators;
 			path = HepReference/Calculators;
-			sourceTree = "<group>";
-		};
-		CFC1DAE64085D21E8D5A62E4 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				816BFB1A0856F1E9C0AA1790 /* SpaceGrotesk-Bold.ttf */,
-				8C57C0556476925F18EAEE2F /* SpaceGrotesk-Medium.ttf */,
-				884CCF88F01F171B24014B75 /* SpaceGrotesk-Regular.ttf */,
-			);
-			name = Fonts;
-			path = HepReference/Resources/Fonts;
 			sourceTree = "<group>";
 		};
 		DDF3BF88172A28970358CC08 /* Blocks */ = {
@@ -440,9 +425,6 @@
 				750D9EBA1AA7B8F70DDA1D42 /* Assets.xcassets in Resources */,
 				D6318AB5354F22FB9770AD8D /* Content in Resources */,
 				210B7BF089AE840F3C8E3D9D /* LaunchScreen.storyboard in Resources */,
-				57AF5407BAF32BAEA5340C08 /* SpaceGrotesk-Bold.ttf in Resources */,
-				0E51BD330A01FEF070A188C0 /* SpaceGrotesk-Medium.ttf in Resources */,
-				DCBEAB5C93000EA28D1500B1 /* SpaceGrotesk-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,7 +447,7 @@
 				81013A46A0A6159AA75D8296 /* CardLibraryGroupingTests.swift in Sources */,
 				FF262137A0175CFFEEEC2110 /* CardMarkupTests.swift in Sources */,
 				DBC4EE964A32DAB08A74F5F3 /* ContentIntegrityTests.swift in Sources */,
-				0100DD047F46C871779F8ED4 /* HepDisplayFontTests.swift in Sources */,
+				72AC5EC75733BAA460D0E3CF /* DesignSystemTests.swift in Sources */,
 				CE07342B94812AA3ED612ACD /* NumericCalcTests.swift in Sources */,
 				F5BF5306CA4EC995852A2F1D /* PathwayNodeDecodingTests.swift in Sources */,
 				AF2DF29901EE5FBF18BA5D4C /* RuleEngineTests.swift in Sources */,
@@ -510,6 +492,7 @@
 				84BBFD678B410B83F33A1987 /* DesignSystem.swift in Sources */,
 				44DC096A5301119352FC7C23 /* DispositionArrow.swift in Sources */,
 				9E681A53CF0D51D70356EF58 /* DoseBlockView.swift in Sources */,
+				E1894326D03C791EE4231415 /* EditorialHeader.swift in Sources */,
 				3EEB07FC2701DAFEA972C508 /* Elevation.swift in Sources */,
 				724502285222E1AED7A4F390 /* FlowLayout.swift in Sources */,
 				B170CCAE01DF516A94A1B479 /* GrpView.swift in Sources */,

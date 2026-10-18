@@ -30,6 +30,12 @@ enum CardCategory: String, Decodable, CaseIterable {
         }
     }
 
+    /// 1-based position in `browseOrder` — shown as the roman-numeral
+    /// badge in category and card kickers, like a lesson's section number.
+    var number: Int {
+        (Self.browseOrder.firstIndex(of: self) ?? 0) + 1
+    }
+
     /// Fixed Browse order: the most frequent consult questions first,
     /// reference material last.
     static let browseOrder: [CardCategory] = [

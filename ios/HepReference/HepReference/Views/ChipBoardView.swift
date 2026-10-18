@@ -49,7 +49,7 @@ struct ChipRowView: View {
                 HStack(spacing: Spacing.xs) {
                     Text(tag)
                         .font(.hepRowLabel)
-                        .foregroundStyle(.primary)
+                        .foregroundStyle(Color.hepInk)
                     if let linkCalcId = row.linkCalcId {
                         Button {
                             calculatorPresenter.present(calcId: linkCalcId, title: row.linkLabel ?? tag)
@@ -59,10 +59,10 @@ struct ChipRowView: View {
                                 Image(systemName: "chevron.right")
                             }
                             .font(.hepTag)
-                            .foregroundStyle(.white)
+                            .foregroundStyle(Color.hepOnSolid)
                             .padding(.horizontal, Spacing.s)
                             .padding(.vertical, 3)
-                            .background(Color("brandAccent"), in: Capsule())
+                            .background(Color.hepNavy, in: Capsule())
                         }
                         .buttonStyle(.plain)
                     }

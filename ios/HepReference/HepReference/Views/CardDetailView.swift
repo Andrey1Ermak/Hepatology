@@ -13,7 +13,7 @@ struct CardDetailView: View {
             }
             .padding(Spacing.l)
         }
-        .background(Color("appBackground").ignoresSafeArea())
+        .background(Color.hepBackground.ignoresSafeArea())
         // Replaces the system nav bar's plain-font title entirely: the
         // card's own styled `CardHeaderView` now sits in a `safeAreaInset`
         // instead of scrolling as the body's first block, so it reads as a
@@ -25,19 +25,27 @@ struct CardDetailView: View {
         .toolbar(.hidden, for: .navigationBar)
     }
 
+    /// Back button beside the title block, the lessons' double rule
+    /// spanning the full width underneath.
     private var fixedHeader: some View {
-        HStack(spacing: 0) {
-            backButton
-            CardHeaderView(card: card)
+        VStack(alignment: .leading, spacing: 0) {
+            HStack(alignment: .top, spacing: 0) {
+                backButton
+                CardHeaderView(card: card)
+                    .padding(.trailing, Spacing.l)
+            }
+            DoubleRule()
+                .padding(.horizontal, Spacing.l)
+                .padding(.bottom, Spacing.xs)
         }
-        .background(Color("appBackground"))
+        .background(Color.hepBackground)
     }
 
     private var backButton: some View {
         Button(action: { dismiss() }) {
             Image(systemName: "chevron.left")
                 .font(.system(size: 17, weight: .semibold))
-                .foregroundStyle(Color("brandAccent"))
+                .foregroundStyle(Color.hepNavy)
                 .frame(width: 44, height: 44)
         }
         .buttonStyle(.plain)

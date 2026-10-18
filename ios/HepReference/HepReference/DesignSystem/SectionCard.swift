@@ -3,12 +3,12 @@ import SwiftUI
 /// The shared "this is a distinct block" container — every standard block,
 /// pathway node, and calculator wraps its content in this, so a card detail screen reads as a sequence of clearly separated
 /// sections instead of one undifferentiated scroll. Defaults to a muted
-/// `blockTint` wash rather than a plain system surface, so every block reads
+/// `hepSurface` wash rather than a plain system surface, so every block reads
 /// as a distinct colored section instead of bare text on the page
 /// background — a tier-tinted `background` (crit/urg boxes, etc.) still
 /// overrides this the same as before.
 struct SectionCard<Content: View>: View {
-    var background: Color = Color("blockTint")
+    var background: Color = Color.hepSurface
     /// A colored leading bar (e.g. a pathway arm's severity tier) — omitted when nil.
     var accent: Color? = nil
     @ViewBuilder var content: () -> Content

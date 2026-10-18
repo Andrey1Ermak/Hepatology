@@ -1,1 +1,1 @@
-Day 1 done: ED legacy comments removed from the Swift sources; 52 tests green.
+Design pass 1 of 3 (lesson style): Avenir Next, lesson palette in light and dark, slide-style card header, navy icon; 57 tests green; weekly summary W42 ready.

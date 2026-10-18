@@ -9,7 +9,7 @@ import SwiftUI
 /// content like a red-flags section, confirmed on review.
 struct CollapsibleSection<Content: View>: View {
     let title: String
-    var background: Color = Color("blockTint")
+    var background: Color = Color.hepSurface
     @State private var isExpanded = false
     @ViewBuilder var content: () -> Content
 
@@ -40,11 +40,11 @@ struct CollapsibleSection<Content: View>: View {
             HStack {
                 Text(title.uppercased())
                     .font(.hepSectionHeading)
-                    .foregroundStyle(Color("brandAccent"))
+                    .foregroundStyle(Color.hepNavy)
                 Spacer()
                 Image(systemName: "chevron.right")
                     .font(.hepIconSmall)
-                    .foregroundStyle(Color("brandAccent"))
+                    .foregroundStyle(Color.hepNavy)
                     .rotationEffect(.degrees(isExpanded ? 90 : 0))
             }
             .contentShape(Rectangle())

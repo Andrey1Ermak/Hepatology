@@ -20,7 +20,7 @@ struct CardRowView: View {
     }
 
     var body: some View {
-        SectionCard(background: badgeTier?.tint ?? Color("cardSurface")) {
+        SectionCard(background: badgeTier?.tint ?? Color.hepCard) {
             HStack(spacing: Spacing.m) {
                 VStack(alignment: .leading, spacing: 2) {
                     // One fixed size for every card (not a per-card
@@ -37,7 +37,8 @@ struct CardRowView: View {
                     // the same height regardless of how many lines its own
                     // title actually needs.
                     Text(card.gridTitle)
-                        .font(.hepDisplay(.footnote, weight: .medium))
+                        .font(.hepSectionHeading)
+                        .foregroundStyle(Color.hepInk)
                         .lineLimit(2)
                         .multilineTextAlignment(.leading)
                         .frame(minHeight: 36, alignment: .topLeading)
@@ -46,8 +47,8 @@ struct CardRowView: View {
                     // it has one, keeping every tile in the two-column grid
                     // the same size, not just the same width.
                     Text(card.subtitle ?? " ")
-                        .font(.hepCaption)
-                        .foregroundStyle(card.subtitle == nil ? .clear : .secondary)
+                        .font(.hepSubtitle)
+                        .foregroundStyle(card.subtitle == nil ? .clear : Color.hepMuted)
                         .lineLimit(1)
                 }
                 Spacer(minLength: 0)
@@ -66,7 +67,7 @@ struct CardRowView: View {
     private func doneBadge(tier: Tier) -> some View {
         Image(systemName: "checkmark")
             .font(.system(size: 9, weight: .bold))
-            .foregroundStyle(.white)
+            .foregroundStyle(tier.onSolid)
             .frame(width: 16, height: 16)
             .background(tier.solid, in: Circle())
     }

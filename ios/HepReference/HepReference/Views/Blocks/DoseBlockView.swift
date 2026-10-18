@@ -24,7 +24,7 @@ struct DoseBlockView: View {
                                 if let n = item.n {
                                     Text(CardMarkup.attributedString(n))
                                         .font(.hepCaption)
-                                        .foregroundStyle(.secondary)
+                                        .foregroundStyle(Color.hepMuted)
                                 }
                             }
                         }

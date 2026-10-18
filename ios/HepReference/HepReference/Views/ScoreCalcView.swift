@@ -45,22 +45,22 @@ struct ScoreCalcView: View {
             VStack(alignment: .leading, spacing: Spacing.xs) {
                 if schema.showScore {
                     HStack(alignment: .firstTextBaseline, spacing: Spacing.xs) {
-                        Text(schema.id.uppercased()).font(.hepCaption).foregroundStyle(.secondary)
+                        Text(schema.id.uppercased()).font(.hepCaption).foregroundStyle(Color.hepMuted)
                         Text("\(total)").font(.hepMetric)
-                        Text("/\(schema.maxScore)").font(.hepCaption).foregroundStyle(.secondary)
+                        Text("/\(schema.maxScore)").font(.hepCaption).foregroundStyle(Color.hepMuted)
                     }
                 }
                 VerdictBanner(verdict: Verdict(band: band.band, text: band.label.verdictText(count: total)))
                 if !band.tier.isEmpty {
                     Text(band.tier)
                         .font(.hepCaption)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Color.hepMuted)
                 }
             }
         } else {
             Text("Select all \(scoredDimensions.count) factors — \(doneCount)/\(scoredDimensions.count)")
                 .font(.hepCaption)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Color.hepMuted)
         }
     }
 }
@@ -75,7 +75,7 @@ private struct ScoreDimensionRow: View {
         VStack(alignment: .leading, spacing: Spacing.xs) {
             Text(dimension.label)
                 .font(.hepRowLabel)
-                .foregroundStyle(.primary)
+                .foregroundStyle(Color.hepInk)
             // `fillWidth` + a grid (not `FlowLayout`) — matches the
             // symmetric option layout chip_screen calculators use, so a dimension's options read as evenly-sized
             // panels instead of ragged, left-hugging pills. 3 columns for a

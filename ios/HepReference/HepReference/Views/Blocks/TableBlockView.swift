@@ -17,7 +17,7 @@ struct TableBlockView: View {
     /// `SectionCard` instead of nesting a second, differently-tinted card
     /// inside the first — same reasoning as `PathwayNodeView`'s
     /// `unwrapSingleBox` for a `section` wrapping a single `box`.
-    var background: Color = Color("blockTint")
+    var background: Color = Color.hepSurface
 
     var body: some View {
         SectionCard(background: background) {
@@ -31,8 +31,8 @@ struct TableBlockView: View {
                     GridRow {
                         ForEach(Array(block.head.enumerated()), id: \.offset) { _, cell in
                             Text(cell)
-                                .font(.caption2.weight(.semibold))
-                                .foregroundStyle(.secondary)
+                                .font(.hepTag)
+                                .foregroundStyle(Color.hepMuted)
                                 .multilineTextAlignment(.center)
                                 .frame(maxWidth: .infinity)
                         }
@@ -49,7 +49,7 @@ struct TableBlockView: View {
                                 // a dense reference table reads better
                                 // smaller than regular body/row text.
                                 Text(CardMarkup.attributedString(cell))
-                                    .font(.caption2)
+                                    .font(.hepCaption)
                                     .multilineTextAlignment(.center)
                                     .frame(maxWidth: .infinity)
                             }

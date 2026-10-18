@@ -11,7 +11,7 @@ struct CalcFormRow<Field: View>: View {
         VStack(alignment: .leading, spacing: Spacing.xs) {
             Text(label)
                 .font(.hepCaption)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Color.hepMuted)
             field()
         }
     }

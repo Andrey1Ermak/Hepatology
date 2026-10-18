@@ -22,10 +22,10 @@ struct NACCalcView: View {
                         RowView(label: "Infusion rate", text: doseText(result.rateMgPerHour, unit: "mg/h", capped: result.rateCapped, sub: "15 mg/kg/h"))
                         Divider()
                         HStack(alignment: .firstTextBaseline, spacing: Spacing.xs) {
-                            Text("Total 21-h NAC").font(.hepCaption).foregroundStyle(.secondary)
+                            Text("Total 21-h NAC").font(.hepCaption).foregroundStyle(Color.hepMuted)
                             Spacer()
                             Text("\(result.totalMg)").font(.hepMetric)
-                            Text("mg").font(.hepCaption).foregroundStyle(.secondary)
+                            Text("mg").font(.hepCaption).foregroundStyle(Color.hepMuted)
                         }
                     }
                 }
@@ -40,7 +40,7 @@ struct NACCalcView: View {
         HStack(spacing: 4) {
             Text("Weight (kg)")
                 .font(.hepCaption)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Color.hepMuted)
             TextField("", text: $weightText)
                 .keyboardType(.decimalPad)
                 .font(.hepCaption)
@@ -49,7 +49,7 @@ struct NACCalcView: View {
         .frame(maxWidth: .infinity, minHeight: 32, alignment: .center)
         .padding(.horizontal, Spacing.m)
         .padding(.vertical, Spacing.s)
-        .background(Color("cardSurface"), in: RoundedRectangle(cornerRadius: Radius.medium))
+        .background(Color.hepCard, in: RoundedRectangle(cornerRadius: Radius.medium))
         .overlay(RoundedRectangle(cornerRadius: Radius.medium).stroke(Color(.separator).opacity(0.4), lineWidth: 1))
     }
 

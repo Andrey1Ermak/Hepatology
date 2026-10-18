@@ -23,12 +23,12 @@ struct PathwayNodeView: View {
     /// becomes the `CollapsibleSection`'s background directly, instead of
     /// nesting a second colored box inside the collapsible card. A section
     /// with any other shape (multiple children, no box) just gets the
-    /// default `blockTint` with its children rendered as-is.
+    /// default `hepSurface` with its children rendered as-is.
     private static func unwrapSingleBox(_ children: [PathwayNode]) -> (Color, [PathwayNode]) {
         guard children.count == 1, case .box(let style, let boxChildren) = children[0] else {
-            return (Color("blockTint"), children)
+            return (Color.hepSurface, children)
         }
-        return (style.tier?.tint ?? Color("blockTint"), boxChildren)
+        return (style.tier?.tint ?? Color.hepSurface, boxChildren)
     }
 
     var body: some View {
@@ -49,9 +49,9 @@ struct PathwayNodeView: View {
             // below — otherwise the table's own SectionCard nests a second,
             // neutrally-tinted card inside the box's colored one.
             if children.count == 1, case .table(let head, let rows) = children[0] {
-                TableBlockView(block: TableBlock(h: nil, head: head, rows: rows), background: style.tier?.tint ?? Color("blockTint"))
+                TableBlockView(block: TableBlock(h: nil, head: head, rows: rows), background: style.tier?.tint ?? Color.hepSurface)
             } else {
-                SectionCard(background: style.tier?.tint ?? Color("blockTint")) {
+                SectionCard(background: style.tier?.tint ?? Color.hepSurface) {
                     VStack(alignment: .leading, spacing: Spacing.xs) {
                         ForEach(Array(children.enumerated()), id: \.offset) { _, child in
                             PathwayNodeView(node: child)

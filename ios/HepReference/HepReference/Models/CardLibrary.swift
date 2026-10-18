@@ -45,7 +45,7 @@ final class CardLibrary {
     /// for 78 cards) and ordered by `CardCategory.browseOrder`. `.ref` cards
     /// form their own "Reference" section like any other category — there is
     /// no separate Quick Reference carve-out.
-    var groupedSections: [(section: String, cards: [Card])] {
+    var groupedSections: [(section: String, category: CardCategory, cards: [Card])] {
         Self.groupedSections(manifestEntries: manifestEntries, cardsByID: cardsByID)
     }
 
@@ -57,7 +57,7 @@ final class CardLibrary {
     /// entries without bundled JSON.
     static func groupedSections(
         manifestEntries: [ManifestEntry], cardsByID: [String: Card]
-    ) -> [(section: String, cards: [Card])] {
+    ) -> [(section: String, category: CardCategory, cards: [Card])] {
         var byCategory: [CardCategory: [Card]] = [:]
         for entry in manifestEntries {
             guard let card = cardsByID[entry.id] else { continue }
@@ -65,7 +65,7 @@ final class CardLibrary {
         }
         return CardCategory.browseOrder.compactMap { cat in
             guard let cards = byCategory[cat], !cards.isEmpty else { return nil }
-            return (section: cat.displayName, cards: cards)
+            return (section: cat.displayName, category: cat, cards: cards)
         }
     }
 

@@ -1,28 +1,26 @@
 import SwiftUI
 
-/// The page title, not a content block — deliberately not a `SectionCard`
-/// (no stroke, no shadow), so it doesn't read as just another card in the
-/// scroll. No background tint of its own — it sits inside
-/// `CardDetailView`'s fixed header, which already paints `appBackground`
-/// behind it, and the title itself matches Browse's category header style
-/// (see CardListView.categoryHeaderContent).
+/// The page title, styled as a lesson slide's title block (CLAUDE.md §12.3):
+/// kicker (maroon category number + category in blue caps) → title in navy
+/// Heavy caps → source line in italic → double rule. Deliberately not a
+/// `SectionCard` — it is the page heading, not another block in the scroll.
+/// Sits inside `CardDetailView`'s fixed header, which paints the background.
 struct CardHeaderView: View {
     let card: Card
 
     var body: some View {
         VStack(alignment: .leading, spacing: Spacing.xs) {
+            KickerLine(number: RomanNumeral.string(card.cat.number), text: card.cat.displayName)
             Text(card.title)
-                .font(.hepDisplay(.title3, weight: .bold))
-                .tracking(0.6)
-                .textCase(.uppercase)
-                .foregroundStyle(Color("brandAccent"))
+                .hepTitleStyle()
+                .accessibilityAddTraits(.isHeader)
             if let subtitle = card.subtitle {
                 Text(subtitle)
-                    .font(.hepCaption)
-                    .foregroundStyle(.secondary)
+                    .font(.hepSubtitle)
+                    .foregroundStyle(Color.hepMuted)
             }
         }
-        .padding(Spacing.m)
+        .padding(.vertical, Spacing.s)
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }

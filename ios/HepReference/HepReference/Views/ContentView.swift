@@ -19,7 +19,7 @@ struct ContentView: View {
         // system's translucent glass material rather than replacing it, so
         // it isn't enough on its own and was dropped here to avoid the two
         // fighting each other.
-        .tint(Color("brandAccent"))
+        .tint(Color.hepNavy)
         // iOS 26's tab bar auto-minimizes/goes more glass-like on scroll by
         // default (like Safari's toolbar) — that's the likely actual source
         // of the bleed-through, separate from its baseline translucency.
@@ -37,6 +37,10 @@ struct ContentView: View {
                     .transition(.scale(scale: 0.01, anchor: .center).combined(with: .opacity))
             }
         }
+        // Avenir Next body in ink for any text without an explicit role —
+        // applied last so the calculator overlay inherits it too.
+        .font(.hepBody)
+        .foregroundStyle(Color.hepInk)
     }
 }
 

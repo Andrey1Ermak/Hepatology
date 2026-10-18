@@ -38,7 +38,7 @@ struct SearchView: View {
                     }
                 }
             }
-            .background(Color("appBackground").ignoresSafeArea())
+            .background(Color.hepBackground.ignoresSafeArea())
             // No nav title/bar — the search field itself explains the screen
             // now, matching Browse's own "title only ate space" fix.
             .toolbar(.hidden, for: .navigationBar)
@@ -50,20 +50,16 @@ struct SearchView: View {
         }
     }
 
-    /// Matches a category header's own styling exactly (hepDisplay title3,
-    /// bold, uppercase, tracked, brandAccent) — no separate "Search by
-    /// title, code, or tag" line underneath; the field's own placeholder
-    /// already says that.
+    /// Matches a category header's own title style (`hepTitleStyle`) — no
+    /// separate "Search by title, code, or tag" line underneath; the
+    /// field's own placeholder already says that.
     private var emptyStateLabel: some View {
         VStack(spacing: Spacing.s) {
             Image(systemName: "magnifyingglass")
                 .font(.system(size: 32, weight: .semibold))
-                .foregroundStyle(Color("brandAccent"))
+                .foregroundStyle(Color.hepNavy)
             Text("Search Cards")
-                .font(.hepDisplay(.title3, weight: .bold))
-                .tracking(0.6)
-                .textCase(.uppercase)
-                .foregroundStyle(Color("brandAccent"))
+                .hepTitleStyle()
         }
     }
 
@@ -76,7 +72,7 @@ struct SearchView: View {
                 Image(systemName: "magnifyingglass")
                     .foregroundStyle(Tier.rt.solid)
                 TextField("Title, code, or tag", text: $query)
-                    .font(.hepDisplay(.footnote, weight: .medium))
+                    .font(.hepSectionHeading)
                     .textFieldStyle(.plain)
                     .autocorrectionDisabled()
                     .submitLabel(.search)

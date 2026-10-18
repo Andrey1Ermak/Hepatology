@@ -20,7 +20,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="safe-01"/>
-                        <color key="backgroundColor" name="brandAccent"/>
+                        <color key="backgroundColor" name="launchBackground"/>
                         <constraints>
                             <constraint firstItem="img-01" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="con-cx"/>
                             <constraint firstItem="img-01" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="con-cy"/>
@@ -36,8 +36,8 @@
     </scenes>
     <resources>
         <image name="LaunchMark" width="420" height="270"/>
-        <namedColor name="brandAccent">
-            <color red="0.058823529411764705" green="0.43137254901960786" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="launchBackground">
+            <color red="0.10588235294117647" green="0.20784313725490197" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

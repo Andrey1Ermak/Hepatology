@@ -41,66 +41,90 @@ enum GridLayout {
     ]
 }
 
-/// Named text roles. SF Pro (system default) for everything except tags/codes,
-/// which use SF Mono, plus one bundled accent font (`hepDisplay`) reserved for
-/// a short list of "hero" moments — a hybrid typography choice. `hepDisplay` must never be used for dosing numbers,
-/// calculator input/output values, or pathway node text — a safety constraint.
+/// Named text roles — CLAUDE.md §12.1. Avenir Next (built into iOS, no
+/// bundled font) in every role, the closest licensable match to the Abadi
+/// face of the author's lesson decks. Every role goes through
+/// `Font.custom(_:size:relativeTo:)`, so it scales with Dynamic Type exactly
+/// like the matching system text style. Caps and tracking are view-level, not
+/// font-level — see `hepTitleStyle()` / `hepKickerStyle()` below.
 extension Font {
-    /// Space Grotesk (SIL OFL, bundled in Resources/Fonts) — app name/launch
-    /// mark and a card's top-level title (`CardHeaderView`) only. Uses
-    /// `relativeTo:` so it still scales with Dynamic Type like every other
-    /// token here.
-    static func hepDisplay(_ style: Font.TextStyle = .title2, weight: Font.Weight = .bold) -> Font {
-        let postscriptName: String
-        switch weight {
-        case .bold, .heavy, .black: postscriptName = "SpaceGrotesk-Bold"
-        case .medium, .semibold: postscriptName = "SpaceGrotesk-Medium"
-        default: postscriptName = "SpaceGrotesk-Regular"
-        }
-        return .custom(postscriptName, size: style.hepDefaultPointSize, relativeTo: style)
+    /// Card and screen titles — Heavy, set in caps by `hepTitleStyle()`.
+    static let hepTitle: Font = avenir(.heavy, .title3)
+    /// Small caps line above a title (category / section). See `hepKickerStyle()`.
+    static let hepKicker: Font = avenir(.bold, .caption)
+    /// Source line under a title, captions under a figure.
+    static let hepSubtitle: Font = avenir(.italic, .footnote)
+    /// Heading of a block / section card.
+    static let hepSectionHeading: Font = avenir(.bold, .subheadline)
+    static let hepBody: Font = avenir(.regular, .body)
+    /// A block's one-line take-home, as in the lessons' closing line.
+    static let hepTakeaway: Font = avenir(.boldItalic, .subheadline)
+    /// Sources at the foot of a block (pair with `Color.hepMuted`).
+    static let hepCitation: Font = avenir(.italic, .caption2)
+    /// Numbers that are read under pressure: thresholds, doses, calculator
+    /// results. Bold with fixed-width digits so columns of values line up.
+    static let hepMetric: Font = avenir(.bold, .title2).monospacedDigit()
+    /// Badges, verdicts, pills — always uppercase, always ≤2 lines. See `Badge`.
+    static let hepTag: Font = avenir(.bold, .caption2)
+    /// `hepTag` one step heavier — a badge that heads a sub-branch.
+    static let hepTagHeavy: Font = avenir(.heavy, .caption2)
+    /// A chip row / score dimension's own label, above its options.
+    static let hepRowLabel: Font = avenir(.bold, .subheadline)
+    static let hepCaption: Font = avenir(.regular, .caption)
+    /// Small inline icon glyphs (e.g. an outcome row's "→" arrow).
+    static let hepIconSmall: Font = .caption2
+    /// Medium inline icon glyphs (e.g. a verdict banner's band icon).
+    static let hepIconMedium: Font = .subheadline.weight(.semibold)
+
+    /// The Avenir Next faces the roles above draw on. Raw values are
+    /// PostScript names — `DesignSystemTests` checks every one is installed.
+    enum AvenirFace: String, CaseIterable {
+        case regular = "AvenirNext-Regular"
+        case italic = "AvenirNext-Italic"
+        case demiBold = "AvenirNext-DemiBold"
+        case bold = "AvenirNext-Bold"
+        case boldItalic = "AvenirNext-BoldItalic"
+        case heavy = "AvenirNext-Heavy"
     }
 
-    /// Two sizes up from the original `.caption` and `.bold` (not
-    /// `.semibold`) — these are now a collapsible section's own tappable
-    /// header (see `CollapsibleSection`), not a passive label, so they carry
-    /// more visual weight than the rest of the app's monospace kickers.
-    static let hepSectionHeading: Font = .system(.subheadline, design: .monospaced).weight(.bold)
-    static let hepBody: Font = .body
-    /// Short badge/tag text (pathway arm tags, disposition pills, acuity
-    /// badges) — always uppercase, always ≤2 lines. See `Badge`.
-    static let hepTag: Font = .system(.caption2, design: .monospaced).weight(.semibold)
-    /// Longer monospace body text — e.g. a pathway arm's `rx` action line.
-    /// Distinct from `hepTag`: regular weight, one size up, not meant to be
-    /// uppercased or badge-wrapped, since it's a sentence to read, not a label
-    /// to scan.
-    static let hepMono: Font = .system(.caption, design: .monospaced)
-    /// A calculator's own name/title (`CalculatorHeader`) — same monospaced
-    /// design language as `hepSectionHeading`/`hepTag` (so it reads as the
-    /// same *kind* of text as a pathway or block section heading, fixing the
-    /// calculator-vs-pathway font mismatch), one size up from
-    /// `hepSectionHeading` so it doesn't collide with the "CALCULATOR" kicker
-    /// directly above it, and not uppercased since it's an authored name.
-    /// Bumped to `.body`/`.bold` alongside `hepSectionHeading` — most
-    /// calculators now show this inside a `CollapsibleSection` header too.
-    static let hepCalcTitle: Font = .system(.body, design: .monospaced).weight(.bold)
-    /// The one shared "big result number" style for every calculator's
-    /// headline answer (score total, dose total, probability %) — deliberately
-    /// SF Pro, not `hepDisplay`: this is a value a clinician reads under
-    /// pressure, not a branding moment.
-    static let hepMetric: Font = .title2.weight(.bold).monospacedDigit()
-    /// A chip row / score dimension's own label, above its options. Bumped
-    /// from `.caption` (paired with `.secondary`, it read as too washed-out
-    /// once a screen had several of these stacked back-to-back, e.g. cds's
-    /// 5 scoring dimensions) to `.subheadline`/`.bold`, paired with
-    /// `.primary` at both call sites (`ChipRowView`, `ScoreDimensionRow`).
-    static let hepRowLabel: Font = .subheadline.weight(.bold)
-    static let hepCaption: Font = .caption
-    /// Small inline icon glyphs (e.g. an outcome row's "→" arrow) that were
-    /// previously bare `.caption2` literals.
-    static let hepIconSmall: Font = .caption2
-    /// Medium inline icon glyphs (e.g. a verdict banner's band icon) that
-    /// were previously bare `.subheadline.weight(.semibold)` literals.
-    static let hepIconMedium: Font = .subheadline.weight(.semibold)
+    static func avenir(_ face: AvenirFace, _ style: Font.TextStyle) -> Font {
+        .custom(face.rawValue, size: style.hepDefaultPointSize, relativeTo: style)
+    }
+}
+
+extension View {
+    /// Title treatment from the lessons: Heavy, caps, +0.5 tracking, navy.
+    func hepTitleStyle() -> some View {
+        font(.hepTitle).tracking(0.5).textCase(.uppercase).foregroundStyle(Color.hepNavy)
+    }
+
+    /// Kicker treatment: small Bold caps, +1 tracking, secondary blue.
+    func hepKickerStyle() -> some View {
+        font(.hepKicker).tracking(1).textCase(.uppercase).foregroundStyle(Color.hepBlue)
+    }
+}
+
+/// Color tokens — CLAUDE.md §12.2. Each is an Assets.xcassets color set with
+/// a light and a dark value; views use these names, never a literal color.
+extension Color {
+    static let hepInk = Color("ink")
+    /// Brand navy — asset name kept as `brandAccent` because the project's
+    /// global accent color setting points at it.
+    static let hepNavy = Color("brandAccent")
+    static let hepBlue = Color("blue")
+    static let hepMaroon = Color("maroon")
+    static let hepMuted = Color("muted")
+    static let hepSurface = Color("surface")
+    static let hepBackground = Color("appBackground")
+    /// Raised card on the page background (Browse tiles, the search field).
+    static let hepCard = Color("card")
+    static let hepGap = Color("gap")
+    /// Text on a saturated fill (`Tier.solid`, navy, maroon): white in light
+    /// mode, near-black in dark mode, where the fills are light pastels.
+    static let hepOnSolid = Color("onSolid")
+    /// Text on the two light-mode fills too bright for white text at small
+    /// sizes (`urg` amber, `gap` gray — both ~3:1 with white).
+    static let hepOnBright = Color("onBright")
 }
 
 private extension Font.TextStyle {
@@ -126,21 +150,25 @@ private extension Font.TextStyle {
     }
 }
 
-/// The 4 semantic severity/disposition tiers used throughout the app —
-/// unifies what `AcuLevel`, `ArmKind`, and `PillKind` each mapped to colors
-/// separately. Backed by the Assets.xcassets color sets (light+dark),
-/// replacing runtime `.opacity()` math on system colors.
+/// The 4 semantic severity tiers used throughout the app — `AcuLevel`,
+/// `ArmKind`, `PillKind` and `BoxStyle` all map onto these. Mapping to the
+/// §12.2 tokens: crit→crit, urg→urg, rt→ok, ref→info.
 enum Tier {
     case crit, urg, rt, ref
 
-    /// Strong fill — white text on top (tags, pills, solid badges).
+    /// Strong fill (tags, pills, solid badges, top stripes) — text on it uses `onSolid`.
     var solid: Color {
         switch self {
-        case .crit: Color("critSolid")
-        case .urg: Color("urgSolid")
-        case .rt: Color("rtSolid")
-        case .ref: Color("refSolid")
+        case .crit: Color("crit")
+        case .urg: Color("urg")
+        case .rt: Color("ok")
+        case .ref: Color("info")
         }
+    }
+
+    /// Text color on `solid` that keeps ≥ 4.5:1 contrast in both themes.
+    var onSolid: Color {
+        self == .urg ? .hepOnBright : .hepOnSolid
     }
 
     /// Pale background tint — this tier's `solid` color as foreground on top.
@@ -148,8 +176,8 @@ enum Tier {
         switch self {
         case .crit: Color("critTint")
         case .urg: Color("urgTint")
-        case .rt: Color("rtTint")
-        case .ref: Color("refTint")
+        case .rt: Color("okTint")
+        case .ref: Color("infoTint")
         }
     }
 }

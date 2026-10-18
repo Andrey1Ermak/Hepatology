@@ -12,7 +12,7 @@ struct BlockHeading: View {
             Text(text.uppercased())
                 .font(.hepSectionHeading)
                 .tracking(0.6)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Color.hepMuted)
         }
     }
 }
