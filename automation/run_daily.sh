@@ -1,6 +1,6 @@
 #!/bin/bash
-# Daily autonomous run of HepReference. Started by launchd (see
-# automation/com.hepreference.daily.plist) or by hand:
+# Optional LOCAL run of the daily team process. The scheduled run happens in
+# the cloud (.github/workflows/daily.yml); use this only for extra runs on the Mac:
 #   automation/run_daily.sh            # normal run (skips if today's report exists)
 #   automation/run_daily.sh --force    # run even if today's report exists
 #   automation/run_daily.sh --dry-run  # reconnaissance + plan only, no changes
@@ -10,6 +10,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 export PATH="/usr/local/bin:/opt/homebrew/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:$HOME/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 cd "$ROOT"
 mkdir -p logs reports
+git pull -q --ff-only || true
 
 notify() {
   local msg="${1//\"/}"

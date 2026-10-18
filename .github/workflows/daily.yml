@@ -1,0 +1,65 @@
+name: Daily autonomous run
+
+# Runs every day on a GitHub-hosted Mac, independent of the author's computer.
+# 11:00 UTC = 07:00 New York (summer) / 06:00 (winter). GitHub may start
+# scheduled jobs a few minutes late.
+on:
+  schedule:
+    - cron: "0 11 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "normal or dry-run"
+        default: normal
+        type: choice
+        options: [normal, dry-run]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-run
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: macos-26
+    timeout-minutes: 240
+    env:
+      TZ: America/New_York
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Tooling
+        run: |
+          sudo xcode-select -s "$(ls -d /Applications/Xcode_26*.app | sort -V | tail -1)"
+          xcodebuild -version
+          brew install xcodegen poppler
+          python3 -m pip install --quiet python-pptx
+          npm install -g @anthropic-ai/claude-code
+          claude --version
+          git config user.name "HepReference Team"
+          git config user.email "hepreference-bot@users.noreply.github.com"
+
+      - name: Team run
+        run: |
+          PROMPT="$(cat automation/DAILY_RUN.md)"
+          if [ "${{ inputs.mode }}" = "dry-run" ]; then
+            PROMPT+=$'\n\n---\n**DRY RUN.** Выполни только фазы 1 и 2. Ничего не меняй: никаких правок файлов, коммитов, push и --done у синхронизации. В конце выведи план дня в формате фазы 2.'
+          fi
+          PROMPT+=$'\n\n---\n**Окружение:** облачный Mac GitHub Actions (одноразовый). Тесты — `tools/test.sh`. Симулятор берётся первый доступный iPhone. Push в origin работает через токен Actions.'
+          claude -p "$PROMPT" --dangerously-skip-permissions --output-format text | tee run.log
+
+      - name: Keep the run log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: run-log-${{ github.run_id }}
+          path: |
+            run.log
+            /tmp/hep-test.log
+          if-no-files-found: ignore
+          retention-days: 30

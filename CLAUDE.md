@@ -23,7 +23,9 @@ Hepatology/                         ← корень git-репозитория
 ├── CLAUDE.md                       ← этот файл: все правила
 ├── BACKLOG.md                      ← упорядоченные задачи (спецификации) + журнал прогресса
 ├── DECISIONS.md                    ← Feedback автора + журнал неочевидных решений команды
-├── automation/                     ← автономный режим: DAILY_RUN.md (процесс команды), run_daily.sh, launchd-задача
+├── automation/                     ← автономный режим: DAILY_RUN.md (процесс команды), run_daily.sh (локальный ручной прогон)
+├── .github/workflows/daily.yml     ← ежедневный облачный запуск (GitHub Actions, облачный Mac)
+├── tools/test.sh                   ← сборка и все тесты
 ├── reports/                        ← отчёты: YYYY-MM-DD.md, weekly/, latest.txt, shots/
 ├── logs/                           ← логи прогонов (локально, не коммитятся)
 ├── .claude/settings.json           ← права для автономного прогона
@@ -63,12 +65,9 @@ Hepatology/                         ← корень git-репозитория
 ## 2. Сборка и тесты
 
 ```bash
-cd ios/HepReference
-xcodegen generate                                   # после добавления/удаления файлов или правки project.yml
-xcodebuild -project HepReference.xcodeproj -scheme HepReference \
-  -destination 'platform=iOS Simulator,name=iPhone 17' test 2>&1 \
-  | grep -E "error:|failed|Executed|TEST (SUCCEEDED|FAILED)"
+tools/test.sh        # xcodegen generate + все тесты на первом доступном симуляторе iPhone
 ```
+Полный лог последнего прогона тестов — `/tmp/hep-test.log`.
 
 Запуск и снимок экрана для проверки:
 ```bash
@@ -498,11 +497,11 @@ ID неизменны: на них держатся все ссылки. Наз�
 
 ## 11. Автономный режим
 
-**Как устроено.** launchd-задача `com.hepreference.daily` каждый день в 07:00 (или при пробуждении Mac, если он спал) запускает `automation/run_daily.sh`. Скрипт берёт блокировку, не даёт Mac уснуть во время работы, запускает Claude Code без участия человека с промптом `automation/DAILY_RUN.md` (права — `.claude/settings.json`), ограничивает прогон тремя часами и показывает уведомление macOS с итогом дня. Если Mac был выключен, пропущенный день наверстается следующим прогоном (синхронизация обработает все накопившиеся уроки).
+**Как устроено.** GitHub Actions (`.github/workflows/daily.yml`) каждый день в 11:00 UTC (07:00 Нью-Йорк летом, 06:00 зимой) поднимает облачный Mac `macos-26` с Xcode 26, ставит инструменты, запускает Claude Code без участия человека с промптом `automation/DAILY_RUN.md` и отправляет результат в `main`. **От компьютера автора не зависит:** работает, даже когда Mac выключен. Авторизация — секрет репозитория `CLAUDE_CODE_OAUTH_TOKEN`. Лог каждого прогона хранится 30 дней в артефактах Actions; при сбое GitHub присылает письмо.
 
 **Процесс команды** (подробно — `automation/DAILY_RUN.md`): разведка → план дня по лестнице приоритетов → работа → независимое ревью субагентами (клинический рецензент, код-ревьюер) → тесты и снимки → коммит, push, отчёт. Объём пакета определяется ситуацией дня.
 
-**Автор не участвует.** Все решения команда принимает сама; неочевидные — в `DECISIONS.md`. Автор раз в неделю читает `reports/weekly/`, а замечания пишет в Feedback — следующий прогон исправит их патчем.
+**Автор не участвует.** Все решения команда принимает сама; неочевидные — в `DECISIONS.md`. Автор раз в неделю читает `reports/weekly/`, а замечания пишет в Feedback (прямо на GitHub или локально) — следующий прогон исправит их патчем.
 
 **Гарантии:**
 - main всегда зелёный: недоделанное уходит в ветку `wip/YYYY-MM-DD`;
@@ -512,9 +511,6 @@ ID неизменны: на них держатся все ссылки. Наз�
 - внешние действия — только `git push` в `origin`; App Store Connect и TestFlight — только автор.
 
 **Управление:**
-```bash
-automation/run_daily.sh --dry-run   # разведка и план без изменений
-automation/run_daily.sh --force     # внеплановый прогон
-launchctl unload ~/Library/LaunchAgents/com.hepreference.daily.plist   # пауза
-launchctl load   ~/Library/LaunchAgents/com.hepreference.daily.plist   # возобновить
-```
+- внеплановый прогон или пробный (`dry-run`): GitHub → Actions → *Daily autonomous run* → **Run workflow**;
+- пауза: Actions → *Daily autonomous run* → **⋯ → Disable workflow** (и Enable, чтобы возобновить);
+- локальный ручной прогон на Mac (по желанию): `automation/run_daily.sh --force` — сначала подтягивает свежий `main`.
