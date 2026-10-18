@@ -50,7 +50,7 @@ echo "Run started $(date) with $CLAUDE" >"$LOG"
 
 # Permissions come from .claude/settings.json (project allowlist approved by the author).
 # Hard stop after 3 hours so a stuck run never blocks the next day.
-ANTHROPIC_MODEL=claude-opus-5-5 CLAUDE_CODE_SUBAGENT_MODEL=claude-opus-5-5 caffeinate -i "$CLAUDE" -p "$PROMPT" --model claude-opus-5-5 --permission-mode auto >>"$LOG" 2>&1 &
+ANTHROPIC_MODEL=claude-opus-5 CLAUDE_CODE_SUBAGENT_MODEL=claude-opus-5 caffeinate -i "$CLAUDE" -p "$PROMPT" --model claude-opus-5 --permission-mode auto >>"$LOG" 2>&1 &
 PID=$!
 ( sleep 10800 && kill "$PID" 2>/dev/null && echo "Killed after 3 h" >>"$LOG" ) &
 WATCHDOG=$!
