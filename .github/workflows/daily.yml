@@ -28,9 +28,9 @@ jobs:
     env:
       TZ: America/New_York
       # Every model call in the run — main session and subagents — is Claude Opus 5.
-      HEP_MODEL: claude-opus-5
-      ANTHROPIC_MODEL: claude-opus-5
-      CLAUDE_CODE_SUBAGENT_MODEL: claude-opus-5
+      HEP_MODEL: claude-opus-5-5
+      ANTHROPIC_MODEL: claude-opus-5-5
+      CLAUDE_CODE_SUBAGENT_MODEL: claude-opus-5-5
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
     steps:
       - uses: actions/checkout@v7
