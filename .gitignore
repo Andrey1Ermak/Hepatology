@@ -12,3 +12,6 @@ sources/guidelines/*
 # Lesson repository (its own git repo) and text extracted from it — regenerable
 sources/reading-final/
 sources/extracted/
+
+# Autonomous run logs (local only)
+logs/
