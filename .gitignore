@@ -1,0 +1,10 @@
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+.DS_Store
+DerivedData/
+~$*
+
+# Guideline PDFs are copyrighted; keep them local only
+sources/guidelines/*
+!sources/guidelines/.gitkeep

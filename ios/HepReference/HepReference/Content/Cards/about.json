@@ -1,0 +1,17 @@
+{
+  "id": "about",
+  "title": "About HepReference",
+  "code": "Educational reference · v0.1",
+  "cat": "ref",
+  "acu": "ref",
+  "tags": ["about", "disclaimer", "help", "how to use"],
+  "blocks": [
+    {"t": "note", "k": "warn", "h": "Educational use only", "text": "HepReference is a study and orientation aid for pediatric hepatology fellows. It does not replace attending judgment, institutional protocols, or the primary guidelines it cites. It stores no patient data."},
+    {"t": "list", "h": "How to use", "items": [
+      "Start from the problem, not the diagnosis: pick the entry point that matches why you were called.",
+      "Choose the patient's age first — most hepatology workups branch by age.",
+      "Red flags sit at the top of every card: act on them before reading further.",
+      "Every card lists its sources and the date they were last checked."
+    ]}
+  ]
+}
