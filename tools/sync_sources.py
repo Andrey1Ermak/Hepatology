@@ -111,6 +111,8 @@ def main(argv):
         return
 
     if "--extract" in argv:
+        if not CLONE.exists():
+            pull()
         prefixes = argv[argv.index("--extract") + 1:]
         files = sorted(p for p in (CLONE / LESSONS).iterdir() if any(p.name.startswith(x) for x in prefixes))
         for f in files:
