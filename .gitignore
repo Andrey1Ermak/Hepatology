@@ -8,3 +8,7 @@ DerivedData/
 # Guideline PDFs are copyrighted; keep them local only
 sources/guidelines/*
 !sources/guidelines/.gitkeep
+
+# Lesson repository (its own git repo) and text extracted from it — regenerable
+sources/reading-final/
+sources/extracted/
