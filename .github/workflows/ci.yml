@@ -16,7 +16,7 @@ jobs:
     runs-on: macos-26
     timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Select Xcode 26
         run: |
@@ -45,7 +45,7 @@ jobs:
 
       - name: Keep the screenshot
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ci-shot-${{ github.run_id }}
           path: ci-shot.png
