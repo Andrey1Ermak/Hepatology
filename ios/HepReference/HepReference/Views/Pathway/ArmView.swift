@@ -1,7 +1,6 @@
 import SwiftUI
 
-/// A colored decision arm (severity or disposition), matching template.html's
-/// `.asarm` — a tinted SectionCard with a leading accent bar, a severity tag
+/// A colored decision arm (severity or disposition): a tinted SectionCard with a leading accent bar, a severity tag
 /// badge, an optional monospace "rx" action line, then nested content.
 ///
 /// When the arm's very first child is a bare disposition pill or pills (an
@@ -47,7 +46,7 @@ struct ArmView: View {
                             // (however many lines it wraps to) instead of
                             // staying pill-sized next to a taller tag.
                             // `maxLines: nil` — a folded-in pill (e.g. "Admit
-                            // PHM · Ampicillin + Cefepime + Acyclovir") must
+                            // · long drug list") must
                             // wrap, not truncate, same reasoning as the tag.
                             Badge(text: pill.text, tier: pill.kind.tier, maxLines: nil, fillHeight: true)
                         }

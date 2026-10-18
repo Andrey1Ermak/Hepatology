@@ -2,7 +2,7 @@ import SwiftUI
 
 /// Named spacing scale — every view should use these instead of inventing its
 /// own padding number (the audit found 6/8/9/10/11/12 all used ad hoc for
-/// visually-equivalent gaps). See notes/ios_redesign_plan.md §Phase R0.
+/// visually-equivalent gaps).
 enum Spacing {
     static let xs: CGFloat = 4
     static let s: CGFloat = 8
@@ -25,15 +25,15 @@ enum Radius {
 enum GridLayout {
     /// For a `ChipRow`'s `gridColumns: 1` — every chip full-width and
     /// stacked, matching the width of the calculator's own verdict banner
-    /// (e.g. kd's 5 long principal-feature items) instead of a flow that
+    /// (e.g. five long criterion items) instead of a flow that
     /// wraps ragged, content-sized chips.
     static let oneColumn = [GridItem(.flexible())]
     static let twoColumns = [
         GridItem(.flexible(), spacing: Spacing.s),
         GridItem(.flexible(), spacing: Spacing.s),
     ]
-    /// For a `ChipRow`'s `gridColumns: 3` (currently just fyi's high-risk
-    /// screen, 8 short items).
+    /// For a `ChipRow`'s `gridColumns: 3` (for a screen of
+    /// about eight short items).
     static let threeColumns = [
         GridItem(.flexible(), spacing: Spacing.s),
         GridItem(.flexible(), spacing: Spacing.s),
@@ -43,11 +43,8 @@ enum GridLayout {
 
 /// Named text roles. SF Pro (system default) for everything except tags/codes,
 /// which use SF Mono, plus one bundled accent font (`hepDisplay`) reserved for
-/// a short list of "hero" moments — the hybrid typography decision made in
-/// notes/ios_premium_pass_plan.md's Phase P1, superseding R0's original
-/// SF-only lock. `hepDisplay` must never be used for dosing numbers,
-/// calculator input/output values, or pathway node text — see that plan's
-/// cross-cutting safety constraint.
+/// a short list of "hero" moments — a hybrid typography choice. `hepDisplay` must never be used for dosing numbers,
+/// calculator input/output values, or pathway node text — a safety constraint.
 extension Font {
     /// Space Grotesk (SIL OFL, bundled in Resources/Fonts) — app name/launch
     /// mark and a card's top-level title (`CardHeaderView`) only. Uses

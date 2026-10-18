@@ -2,9 +2,8 @@ import SwiftUI
 
 /// An outcome row: an optional condition, then either 1+ disposition pills
 /// (colored, e.g. "DC"/"PICU" — two pills render "/"-separated, for a
-/// shared-decision either/or outcome) or a plain subtext note — matching
-/// template.html's `.asout`/`.ascond`/`.aspill` ("out") and its
-/// subtext-only sibling ("step"). `condition` is nil when the enclosing
+/// shared-decision either/or outcome) or a plain subtext note — with a
+/// subtext-only variant. `condition` is nil when the enclosing
 /// arm's own tag already states it — the arrow before the pills is dropped
 /// too in that case, since there's no "from" state left to point away from.
 /// The condition badge stretches to fill the row (pinning the pill(s) to
@@ -12,7 +11,7 @@ import SwiftUI
 /// of these reads as full-width, symmetric rows instead of everything
 /// clumped at the leading edge with empty space to the right. Each pill
 /// also matches the condition's height (`fillHeight`) — a long condition
-/// (e.g. "CSF WBC ≥ 19, or CSF not obtained") wrapping to 2 lines next to
+/// (e.g. "Conjugated bilirubin ≥ 1 mg/dL, or not measured") wrapping to 2 lines next to
 /// a 1-line pill otherwise reads as visually lopsided.
 struct OutView: View {
     let condition: String?
@@ -21,8 +20,8 @@ struct OutView: View {
     /// A reference `numeric_calc` tucked behind a "Calculate" link on this
     /// row — same mechanism and rendering as `ChipRowView`'s own
     /// `linkCalcId`/`linkLabel`, for a cond-only flush marker that's really
-    /// a pathway step pointing at a calculator (e.g. axflow's "AGE ≥ 5 YR →
-    /// RUN pARC") instead of that calculator living in its own
+    /// a pathway step pointing at a calculator (e.g. "AGE ≥ 1 YR →
+    /// RUN score") instead of that calculator living in its own
     /// always-visible top-level block.
     var linkCalcId: String? = nil
     var linkLabel: String? = nil

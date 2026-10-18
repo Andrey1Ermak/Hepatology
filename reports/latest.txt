@@ -1,0 +1,1 @@
+Day 1 done: ED legacy comments removed from the Swift sources; 52 tests green.

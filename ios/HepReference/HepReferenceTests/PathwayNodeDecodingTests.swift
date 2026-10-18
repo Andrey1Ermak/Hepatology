@@ -31,11 +31,11 @@ final class PathwayNodeDecodingTests: XCTestCase {
     }
 
     func testArm() throws {
-        guard case .arm(let kind, let tag, let rx, let children) = try decodeNode(#"{"t":"arm","kind":"sev","tag":"DKA","rx":"treat now","children":[]}"#) else {
+        guard case .arm(let kind, let tag, let rx, let children) = try decodeNode(#"{"t":"arm","kind":"sev","tag":"PALF","rx":"treat now","children":[]}"#) else {
             return XCTFail("expected arm")
         }
         XCTAssertEqual(kind, .sev)
-        XCTAssertEqual(tag, "DKA")
+        XCTAssertEqual(tag, "PALF")
         XCTAssertEqual(rx, "treat now")
         XCTAssertEqual(children.count, 0)
     }
@@ -67,11 +67,11 @@ final class PathwayNodeDecodingTests: XCTestCase {
     }
 
     func testOutWithMultiplePills() throws {
-        guard case .out(_, let pills, _, _, _, _) = try decodeNode(#"{"t":"out","cond":"CSF WBC < 19 - SDM","pills":[{"kind":"floor","text":"Admit PHM"},{"kind":"dc","text":"Home"}]}"#) else {
+        guard case .out(_, let pills, _, _, _, _) = try decodeNode(#"{"t":"out","cond":"Shared decision","pills":[{"kind":"floor","text":"Admit"},{"kind":"dc","text":"Home"}]}"#) else {
             return XCTFail("expected out")
         }
         XCTAssertEqual(pills.map(\.kind), [.floor, .dc])
-        XCTAssertEqual(pills.map(\.text), ["Admit PHM", "Home"])
+        XCTAssertEqual(pills.map(\.text), ["Admit", "Home"])
     }
 
     func testNest() throws {
@@ -105,11 +105,11 @@ final class PathwayNodeDecodingTests: XCTestCase {
     }
 
     func testRowWithLink() throws {
-        guard case .row(_, _, _, let linkCalcId, let linkLabel) = try decodeNode(#"{"t":"row","text":"Assess NAT risk","link_calc_id":"pibis","link_label":"PIBIS score"}"#) else {
+        guard case .row(_, _, _, let linkCalcId, let linkLabel) = try decodeNode(#"{"t":"row","text":"Classify injury pattern","link_calc_id":"c_rratio","link_label":"R-ratio"}"#) else {
             return XCTFail("expected row")
         }
-        XCTAssertEqual(linkCalcId, "pibis")
-        XCTAssertEqual(linkLabel, "PIBIS score")
+        XCTAssertEqual(linkCalcId, "c_rratio")
+        XCTAssertEqual(linkLabel, "R-ratio")
     }
 
     func testCol() throws {

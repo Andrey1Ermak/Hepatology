@@ -2,8 +2,7 @@ import Foundation
 
 /// Checks an ordered list of tiers; the first tier with any of its keys
 /// selected wins. Covers every "any item in group X → banner Y" calculator
-/// (snoop, brue, nexus, tlsind, conrf — single tier; fyi, hb, apap, dka, fn —
-/// 2-3 ordered tiers). `text` may use the `{n}`/`{s}` count template.
+/// (a single tier, or 2-3 ordered tiers). `text` may use the `{n}`/`{s}` count template.
 struct ChecklistAnyRule: VerdictRule, Decodable {
     struct Tier: Decodable {
         let band: VerdictBand

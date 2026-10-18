@@ -1,6 +1,6 @@
 import Foundation
 
-/// Verdict banner color, per notes/ios_plan.md §Phase 2: hi=red, mid=orange, lo=green/gray.
+/// Verdict banner color: hi=red, mid=orange, lo=green/gray.
 enum VerdictBand: String, Decodable {
     case hi, mid, lo
 }
@@ -20,7 +20,7 @@ protocol VerdictRule {
 
 extension String {
     /// Substitutes `{n}` with the count and `{s}` with an English plural suffix
-    /// (`""` for 1, `"s"` otherwise) — the verdict copy ported from template.html
+    /// (`""` for 1, `"s"` otherwise) — verdict copy
     /// consistently pluralizes this way (e.g. "3 red flags", "1 red flag").
     func verdictText(count: Int) -> String {
         replacingOccurrences(of: "{n}", with: String(count))

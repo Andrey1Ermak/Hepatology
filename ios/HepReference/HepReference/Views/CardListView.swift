@@ -124,8 +124,7 @@ struct CardListView: View {
         .background(Color("appBackground"))
     }
 
-    /// A card row, styled as an elevated card (not a bare List row) — see
-    /// notes/ios_redesign_plan.md §Phase R5.
+    /// A card row, styled as an elevated card (not a bare List row).
     private func cardLink(_ card: Card) -> some View {
         NavigationLink(value: card.id) {
             CardRowView(card: card)

@@ -1,8 +1,7 @@
 import SwiftUI
 
 /// Renders a card's full pathway tree — the top level is always a list of
-/// `.section`s (template.html's "sec"), flattened from the source app's
-/// left/right 2-column layout into one vertical scroll.
+/// `.section`s shown as one vertical scroll.
 struct PathwayBlockView: View {
     let pathway: Pathway
 

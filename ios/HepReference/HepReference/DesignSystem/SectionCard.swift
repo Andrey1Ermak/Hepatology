@@ -1,10 +1,8 @@
 import SwiftUI
 
 /// The shared "this is a distinct block" container — every standard block,
-/// pathway node, and calculator wraps its content in this from Phase R1
-/// onward, so a card detail screen reads as a sequence of clearly separated
-/// sections instead of one undifferentiated scroll (see
-/// notes/ios_redesign_plan.md §Phase R0, Diagnosis §5). Defaults to a muted
+/// pathway node, and calculator wraps its content in this, so a card detail screen reads as a sequence of clearly separated
+/// sections instead of one undifferentiated scroll. Defaults to a muted
 /// `blockTint` wash rather than a plain system surface, so every block reads
 /// as a distinct colored section instead of bare text on the page
 /// background — a tier-tinted `background` (crit/urg boxes, etc.) still

@@ -1,10 +1,8 @@
 import SwiftUI
 
-/// Soft, layered elevation — restores the depth cue `template.html`'s own
-/// `--shadow: 0 1px 2px rgba(20,26,34,.05), 0 6px 18px rgba(20,26,34,.06)`
-/// already validated on the web, which iOS never ported: every `SectionCard`
-/// conveyed "distinct surface" with only a 1px stroke (see
-/// notes/ios_premium_pass_plan.md Diagnosis #7). Applied as `SectionCard`'s
+/// Soft, layered elevation — gives every `SectionCard` a depth cue
+/// (`0 1px 2px rgba(20,26,34,.05), 0 6px 18px rgba(20,26,34,.06)`) instead of
+/// conveying "distinct surface" with only a 1px stroke. Applied as `SectionCard`'s
 /// default, so every card/badge/calculator surface in the app picks it up.
 ///
 /// Dark mode does **not** reuse the light-mode values with the color

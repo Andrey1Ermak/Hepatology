@@ -94,12 +94,12 @@ final class BlockDecodingTests: XCTestCase {
     }
 
     func testChipScreen() throws {
-        let json = #"{"t":"chip_screen","calc_id":"dka","label":"Cerebral edema screen"}"#
+        let json = #"{"t":"chip_screen","calc_id":"c_palf","label":"PALF screen"}"#
         guard case .chipScreen(let block) = try decodeBlock(json) else {
             return XCTFail("expected chip_screen")
         }
-        XCTAssertEqual(block.calcId, "dka")
-        XCTAssertEqual(block.label, "Cerebral edema screen")
+        XCTAssertEqual(block.calcId, "c_palf")
+        XCTAssertEqual(block.label, "PALF screen")
     }
 
     func testPathway() throws {

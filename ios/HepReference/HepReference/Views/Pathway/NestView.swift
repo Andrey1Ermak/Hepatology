@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Indented nested content, matching template.html's `.asnest` — the tree-
+/// Indented nested content. The tree-
 /// connector rendering itself lives in `BranchedChildrenView` (shared with
 /// `ArmView`, since an arm's own direct out→nest chain needs the exact same
 /// treatment), so a branch's sub-content connects into the same tree as its

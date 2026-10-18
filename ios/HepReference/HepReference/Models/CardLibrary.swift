@@ -4,7 +4,7 @@ import Observation
 /// Loads bundled manifest + card JSON at launch and exposes browse/search views
 /// over whatever cards have been extracted so far. Cards present in
 /// manifest.json but without a bundled Content/Cards/<id>.json (not yet
-/// migrated from the web app) are simply absent from every view below.
+/// written) are simply absent from every view below.
 @Observable
 final class CardLibrary {
     private(set) var cardsByID: [String: Card] = [:]

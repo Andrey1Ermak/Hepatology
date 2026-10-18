@@ -24,7 +24,7 @@ struct SelectableChip: View {
                     .multilineTextAlignment(.center)
                     // Reserves full 2-line height even for a 1-line label —
                     // same reasoning as CardRowView's grid tiles — so a
-                    // fillWidth grid of mixed-length chips (e.g. fyi's "< 37
+                    // fillWidth grid of mixed-length chips (e.g. "< 37
                     // wk" next to "Focal bacterial infx") reads as
                     // uniformly-sized panels, not staggered heights. Centered
                     // both axes so a short 1-line label sits in the middle of

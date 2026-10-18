@@ -1,7 +1,7 @@
 import SwiftUI
 
 // Same 4-tier semantic mapping as the rest of the app (see DesignSystem's
-// Tier, and template.html's asarm/aspill/asfacts CSS): mild≈rt, mod≈urg,
+// Tier): mild≈rt, mod≈urg,
 // sev≈crit, floor≈ref.
 extension ArmKind {
     var tier: Tier {

@@ -2,7 +2,7 @@ import XCTest
 import UIKit
 @testable import HepReference
 
-/// Guards the one concrete risk in notes/ios_premium_pass_plan.md's Phase P1:
+/// Guards the one concrete risk of the bundled accent font:
 /// the bundled Space Grotesk accent font must actually be registered (via
 /// Info.plist's UIAppFonts) and must scale with Dynamic Type the same way
 /// every other `hep*` token does — a static one-time Simulator check would

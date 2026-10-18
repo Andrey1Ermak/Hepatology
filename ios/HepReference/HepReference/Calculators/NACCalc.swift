@@ -14,7 +14,7 @@ struct NACResult {
 
 /// Standard 21-h IV NAC (Acetadote) three-bag regimen.
 enum NACCalc {
-    /// Acetadote 200 mg/mL (20%) — product concentration, not part of the CEG dosing table.
+    /// Acetadote 200 mg/mL (20%) — product concentration, not part of the dosing table.
     private static let concentrationMgPerML: Double = 200
 
     static func compute(weightKg: Double) -> NACResult? {

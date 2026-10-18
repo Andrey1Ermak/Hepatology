@@ -14,11 +14,9 @@ enum BadgeStyle {
 
 /// The one badge component for every colored tag/pill/acuity-marker in the
 /// app — replaces `AcuBadge`, `ArmView`'s tag `Text`, `OutView`'s condition
-/// and pill `Text`s, and the numeric calculators' ad hoc "max" `Capsule`s
-/// (migrated across Phases R2-R4, see notes/ios_redesign_plan.md). Unlike
-/// those, this always wraps to up to 2 lines instead of letting a long tag
-/// silently squeeze an HStack — the concrete fix for the condition/tag
-/// text-wrap bug identified in the plan's Diagnosis §4.
+/// and pill `Text`s, and the numeric calculators' ad hoc "max" `Capsule`s.
+/// Unlike those, this always wraps to up to 2 lines instead of letting a long tag
+/// silently squeeze an HStack — the fix for condition/tag text wrapping.
 struct Badge: View {
     let text: String
     var tier: Tier? = nil
@@ -37,7 +35,7 @@ struct Badge: View {
     var fillHeight: Bool = false
     /// Extra emphasis on top of `hepTag`'s own semibold weight — for a
     /// `.neutral` cond badge that's really a sub-branch header inside an arm
-    /// (e.g. axflow's "Age < 5 yr"/"Uncomplicated"), which otherwise reads
+    /// (e.g. "Age < 1 yr"/"Uncomplicated"), which otherwise reads
     /// at the same weight as every other plain outcome condition.
     var bold: Bool = false
 

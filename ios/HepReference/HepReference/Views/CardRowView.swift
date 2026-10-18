@@ -11,7 +11,7 @@ struct CardRowView: View {
 
     private var isDone: Bool { card.done == true }
     private var isReviewed: Bool { card.reviewed == true }
-    /// `reviewed` (on-device iOS review) outranks `done` (web-era content
+    /// `reviewed` (on-device iOS review) outranks `done` (content
     /// status) when a card happens to carry both — one badge, not two.
     private var badgeTier: Tier? {
         if isReviewed { return .urg }
@@ -59,14 +59,10 @@ struct CardRowView: View {
         }
     }
 
-    /// Matches `template.html`'s `.donebadge` — a small solid circle with a
-    /// white checkmark, shown for a card marked `done` ("Reworked to CEG
-    /// standard" in the web source) or `reviewed` (verified on-device in the
-    /// iOS app). Originally always `Tier.rt` (green) — the same token the
-    /// web app itself reuses for both the "routine" acuity tier and the
-    /// unrelated "done" marker (`--rt`/`--rt-bg`) — now tier-driven so
-    /// `reviewed` can render as its own distinct color (`Tier.urg`, amber)
-    /// instead of colliding with `done`'s green.
+    /// A small solid circle with a white checkmark, shown for a card marked
+    /// `done` or `reviewed` (verified on-device). Tier-driven so `reviewed`
+    /// can render as its own distinct color (`Tier.urg`, amber) instead of
+    /// colliding with `done`'s green.
     private func doneBadge(tier: Tier) -> some View {
         Image(systemName: "checkmark")
             .font(.system(size: 9, weight: .bold))

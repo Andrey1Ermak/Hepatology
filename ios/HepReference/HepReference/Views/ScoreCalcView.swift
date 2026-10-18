@@ -77,11 +77,10 @@ private struct ScoreDimensionRow: View {
                 .font(.hepRowLabel)
                 .foregroundStyle(.primary)
             // `fillWidth` + a grid (not `FlowLayout`) — matches the
-            // symmetric option layout hb/dka's chip_screen calculators
-            // already use, so a dimension's options read as evenly-sized
+            // symmetric option layout chip_screen calculators use, so a dimension's options read as evenly-sized
             // panels instead of ragged, left-hugging pills. 3 columns for a
-            // 3-option dimension (bds/gecds's dimensions are almost all
-            // exactly 3, cds mostly so) — 2 columns would otherwise wrap the
+            // 3-option dimension (most dimensions have
+            // exactly 3 options) — 2 columns would otherwise wrap the
             // 3rd option alone onto its own half-empty row.
             LazyVGrid(columns: options.count == 3 ? GridLayout.threeColumns : GridLayout.twoColumns, spacing: Spacing.s) {
                 ForEach(options, id: \.value) { option in

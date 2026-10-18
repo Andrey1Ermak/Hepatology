@@ -1,12 +1,11 @@
 import SwiftUI
 
-/// A labeled group header followed by its content, matching template.html's
-/// `.asre`/`.asrelbl`. The label reuses `Badge` (style: `.neutral`) — the
+/// A labeled group header followed by its content. The label reuses `Badge` (style: `.neutral`) — the
 /// same pill treatment as a pathway outcome's condition label (see
 /// `OutView`) — instead of bare caption text, so a labeled subgroup reads as
 /// a designed element rather than plain text.
 ///
-/// Previously had a dashed left guide line (`VLine`, added in Phase P4 to
+/// Previously had a dashed left guide line (`VLine`, to
 /// distinguish it from `NestView`'s dotted one); dropped after on-device
 /// review found both guides' start/end unclear rather than a legible
 /// signal. Indentation alone now carries the hierarchy, same as `NestView`.

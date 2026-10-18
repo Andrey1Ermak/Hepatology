@@ -16,8 +16,7 @@ struct Card: Identifiable, Decodable {
     let acu: AcuLevel
     let done: Bool?
     /// Visually reviewed/verified in the iOS app specifically — distinct
-    /// from `done` (content reworked to CEG standard, a web-app-era flag).
-    /// Drives its own badge color in `CardRowView` so on-device review
+    /// from `done` (content marked complete). Drives its own badge color in `CardRowView` so on-device review
     /// progress is trackable per card as it happens, separate from content status.
     let reviewed: Bool?
     let src: String?

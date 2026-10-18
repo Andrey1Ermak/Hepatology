@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// A single fact line: a labeled fact ("f" in template.html) or a plain
+/// A single fact line: a labeled fact or a plain
 /// line ("row") when `label` is nil — both get the same leading dot, so a
 /// run of plain rows reads as a bulleted list instead of unmarked paragraph
 /// text. `label` is no longer bolded — on-device review found bold weight
@@ -10,8 +10,8 @@ struct RowView: View {
     let label: String?
     let text: String
     var bullet: Bool = true
-    /// A trailing "Calculate" button on this same bulleted line (e.g. brue's
-    /// "Assess NAT risk" → PIBIS) — same mechanism as `OutView`'s own
+    /// A trailing "Calculate" button on this same bulleted line (e.g.
+    /// "Assess risk" → a score) — same mechanism as `OutView`'s own
     /// `linkCalcId`/`linkLabel`, for a plain fact row that needs a
     /// calculator link without being promoted into an `out`'s boxed
     /// condition badge.

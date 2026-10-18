@@ -1,10 +1,9 @@
 import Foundation
 
 /// Sums per-item points and matches the highest band whose `minScore` the
-/// total meets. Covers pibis (weighted: 1/1/1/2 pts) and kd (uniform 1 pt/item,
-/// both its thresholds happen to band "hi" — that's the real card_audit.md
-/// behavior, not a bug: incomplete-KD and complete-KD are both urgent, just
-/// with different guidance text).
+/// total meets. Covers both weighted items and uniform 1 pt/item
+/// scores; two bands may share the same `band` color with different guidance
+/// text.
 struct ChipScoreRule: VerdictRule, Decodable {
     struct Band: Decodable {
         let minScore: Int

@@ -1,19 +1,18 @@
 import Foundation
 
 /// Arm severity/disposition color, reusing the same 4-color semantics as
-/// AcuLevel: mild≈rt, mod≈urg, sev≈crit, floor≈ref (see template.html's
-/// `.asarm.*` CSS — floor is a 4th real kind beyond the plan's mild/mod/sev,
-/// used for plain "admit to floor" arms).
+/// AcuLevel: mild≈rt, mod≈urg, sev≈crit, floor≈ref (floor is a 4th kind beyond
+/// mild/mod/sev, used for plain "admit to floor" arms).
 enum ArmKind: String, Decodable {
     case mild, mod, sev, floor
 }
 
-/// Disposition pill color (`.aspill.*` in template.html).
+/// Disposition pill color.
 enum PillKind: String, Decodable {
     case dc, step, floor, picu
 }
 
-/// Background tint for a boxed group of facts (`.asfacts.*` in template.html).
+/// Background tint for a boxed group of facts.
 enum BoxStyle: String, Decodable {
     case plain, info, warn, crit
 }
@@ -23,9 +22,8 @@ struct Pill: Decodable {
     let text: String
 }
 
-/// One node in a card's clinical pathway tree — a direct port of
-/// template.html's `sec`/`arm`/`out`/`nest`/`grp`/`row`/`col`/`f` helper
-/// functions (see notes/ios_plan.md §Phase 3). Recursive: most cases carry
+/// One node in a card's clinical pathway tree — built from
+/// `section`/`arm`/`out`/`nest`/`group`/`row`/`col` nodes. Recursive: most cases carry
 /// `children: [PathwayNode]`.
 indirect enum PathwayNode: Decodable {
     /// A titled section ("sec" — e.g. "Workup", "Treatment", "Follow-up").
@@ -40,16 +38,16 @@ indirect enum PathwayNode: Decodable {
     /// An outcome row: an optional condition (omitted when the enclosing
     /// arm's own tag already states it, avoiding a redundant restatement),
     /// then either 1+ disposition pills (usually one; two side-by-side,
-    /// "/"-separated, for a shared-decision either/or outcome — e.g. febpath's
-    /// "CSF WBC < 19 - SDM" → Admit PHM / Home) or a plain subtext note
-    /// (template.html's "out"/"step" — never pills and subtext together).
+    /// "/"-separated, for a shared-decision either/or outcome — e.g.
+    /// "Shared decision" → Admit / Home) or a plain subtext note
+    /// (never pills and subtext together).
     /// A cond-only `out` (no pills, no subtext) also doubles as a flush
     /// section marker inside an arm — same shape `ChipRow` uses for its own
-    /// `linkCalcId`/`linkLabel` — so a marker like axflow's "AGE ≥ 5 YR →
-    /// RUN pARC" can carry a "Calculate" link to a reference `numeric_calc`
+    /// `linkCalcId`/`linkLabel` — so a marker like "AGE ≥ 1 YR →
+    /// RUN score" can carry a "Calculate" link to a reference `numeric_calc`
     /// instead of that calculator living in its own always-visible top-level
     /// block. `condBold` marks a cond that's really a sub-branch header
-    /// inside an arm (e.g. axflow's "Age < 5 yr"/"Uncomplicated") — one step
+    /// inside an arm (e.g. "Age < 1 yr"/"Uncomplicated") — one step
     /// down from the arm's own tag, one step up from a plain outcome cond.
     case out(condition: String?, pills: [Pill], subtext: String?, linkCalcId: String?, linkLabel: String?, condBold: Bool)
     /// Indented nested content ("nest").
@@ -59,13 +57,13 @@ indirect enum PathwayNode: Decodable {
     /// standalone fact (e.g. a one-row warning box) can read as an
     /// unexplained list of one rather than a callout. `linkCalcId`/`linkLabel`
     /// put a trailing "Calculate" button on the same bulleted line (e.g.
-    /// brue's "Assess NAT risk" → PIBIS) — for a plain bullet that needs a
+    /// "Assess risk" → a score) — for a plain bullet that needs a
     /// calculator link but shouldn't be promoted into an `out`'s boxed
     /// condition badge.
     case row(label: String?, text: String, bullet: Bool, linkCalcId: String?, linkLabel: String?)
     /// A column grouping ("col") — visual grouping, not a layout column.
     case col(children: [PathwayNode])
-    /// A reference table — reuses Phase 1's TableBlockView.
+    /// A reference table — reuses TableBlockView.
     case table(head: [String], rows: [[String]])
 
     private enum CodingKeys: String, CodingKey {
@@ -132,9 +130,8 @@ indirect enum PathwayNode: Decodable {
 }
 
 /// A card's full pathway tree, referenced by a `pathway` block via `path_id`,
-/// e.g. `Content/Pathways/iihpath.json`. The source app's left/right 2-column
-/// layout is flattened into one ordered list — iOS reads pathways as a single
-/// vertical scroll (see notes/ios_plan.md's "on iOS the natural flow is vertical").
+/// e.g. `Content/Pathways/chol_0_3m_neo.json`. Nodes form one ordered list — iOS
+/// reads pathways as a single vertical scroll.
 struct Pathway: Decodable {
     let id: String
     let children: [PathwayNode]

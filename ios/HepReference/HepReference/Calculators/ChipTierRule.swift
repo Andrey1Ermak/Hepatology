@@ -1,7 +1,7 @@
 import Foundation
 
-/// Highest-priority tier with any chip checked wins (croup's CDS 1→4 severity
-/// ladder). An optional override group — croup's "alternate diagnosis" flags —
+/// Highest-priority tier with any chip checked wins (a severity ladder,
+/// highest first). An optional override group — e.g. "alternate diagnosis" flags —
 /// takes priority over every tier when any of its items are checked.
 struct ChipTierRule: VerdictRule, Decodable {
     struct Tier: Decodable {

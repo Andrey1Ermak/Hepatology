@@ -6,15 +6,15 @@ struct ChipItem: Decodable {
 }
 
 /// A labeled, visually-grouped row of chips. `tag` is omitted for a
-/// calculator with only one implicit group (e.g. hb, whose own
+/// calculator with only one implicit group (whose own
 /// `CalculatorHeader` label already says what the chips are). `exclusive`
 /// marks a radio-style row where selecting one chip deselects the row's
 /// others; by default chips toggle independently. `gridColumns` (2 or 3) lays
 /// items out as a uniform grid instead of `FlowLayout`'s content-sized
 /// wrapping — only for rows whose items are short, roughly-equal-length
-/// phrases (hb's neurotoxicity checklist, fyi's high-risk screen). Most
+/// phrases (e.g. a red-flag checklist). Most
 /// rows must keep FlowLayout (nil): a fixed grid makes longer,
-/// sentence-style chips (e.g. croup's alternate-dx chips) wrap raggedly,
+/// sentence-style chips (e.g. alternate-diagnosis chips) wrap raggedly,
 /// which is why FlowLayout replaced grids app-wide in the first place (see
 /// FlowLayout's own doc comment).
 struct ChipRow: Decodable {
@@ -56,7 +56,7 @@ struct ChipRow: Decodable {
 
 /// A fully-loaded calculator: its display rows plus the rule that turns
 /// checked keys into a verdict. Referenced by a card's `chip_screen` block
-/// via `calc_id`, e.g. `Content/Calculators/snoop.json`.
+/// via `calc_id`, e.g. `Content/Calculators/c_palf.json`.
 struct ChipScreen: Decodable {
     let id: String
     let rows: [ChipRow]

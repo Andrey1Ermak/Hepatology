@@ -1,6 +1,6 @@
 import Foundation
 
-/// One of the 11 unified block types (7 standard + 4 custom) per notes/ios_plan.md.
+/// One of the 11 unified block types (7 standard + 4 custom).
 /// Discriminated by the `t` key; each case decodes its own flat payload from the
 /// same container (extra sibling keys, like `t` itself, are ignored by Codable).
 enum Block: Decodable {

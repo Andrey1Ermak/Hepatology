@@ -4,8 +4,8 @@ import SwiftUI
 /// new row when the current one runs out of width — like text wrapping.
 /// Replaces the `LazyVGrid(columns: [.adaptive(minimum:)])` chip grids,
 /// whose uniform-minimum-width cells made long clinical sentences (e.g.
-/// croup's alternate-diagnosis chips) wrap raggedly across an unpredictable
-/// number of lines (see notes/ios_redesign_plan.md §Phase R2, Diagnosis §4).
+/// alternate-diagnosis chips) wrap raggedly across an unpredictable
+/// number of lines.
 /// A subview wider than the available row width still gets its own row
 /// (measured against that width so it wraps internally, never overflows).
 struct FlowLayout: Layout {
