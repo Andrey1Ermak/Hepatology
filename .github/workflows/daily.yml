@@ -27,6 +27,10 @@ jobs:
     timeout-minutes: 240
     env:
       TZ: America/New_York
+      # Every model call in the run — main session and subagents — is Claude Opus 5.5.
+      HEP_MODEL: claude-opus-5-5
+      ANTHROPIC_MODEL: claude-opus-5-5
+      CLAUDE_CODE_SUBAGENT_MODEL: claude-opus-5-5
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
     steps:
       - uses: actions/checkout@v7
@@ -66,12 +70,12 @@ jobs:
             echo "::error title=Missing secret::CLAUDE_CODE_OAUTH_TOKEN is not set in repository secrets"
             exit 1
           fi
-          OUT="$(claude -p "Reply with exactly: OK" --model haiku 2>&1 || true)"
+          OUT="$(claude -p "Reply with exactly: OK" --model "$HEP_MODEL" 2>&1 || true)"
           if ! grep -q "OK" <<<"$OUT"; then
             echo "::error title=Claude auth failed::$(tail -3 <<<"$OUT" | tr '\n' ' ' | cut -c1-400)"
             exit 1
           fi
-          echo "::notice title=Claude access::OK"
+          echo "::notice title=Claude access::OK ($HEP_MODEL)"
 
       - name: Team run
         shell: bash
@@ -84,7 +88,7 @@ jobs:
           fi
           PROMPT+=$'\n\n---\n**Окружение:** облачный Mac GitHub Actions (одноразовый). Тесты — `tools/test.sh`, снимки — `tools/screenshot.sh`. Перед push всегда `git pull --rebase origin main`. Push в origin работает через токен Actions.'
           START=$(date +%s)
-          claude -p "$PROMPT" --model opus --dangerously-skip-permissions --output-format text 2>&1 | tee run.log
+          claude -p "$PROMPT" --model "$HEP_MODEL" --dangerously-skip-permissions --output-format text 2>&1 | tee run.log
           STATUS=$?
           MIN=$(( ($(date +%s) - START) / 60 ))
           SUMMARY="$(tail -c 700 run.log | tr '\n' ' ')"
