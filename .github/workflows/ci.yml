@@ -1,0 +1,41 @@
+name: CI
+
+# Builds and tests on a GitHub-hosted Mac on every push to main, and checks
+# that the tooling used by the daily run installs cleanly.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: macos-26
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode 26
+        run: |
+          XCODE="$(ls -d /Applications/Xcode_26*.app | sort -V | tail -1)"
+          echo "Using $XCODE"
+          sudo xcode-select -s "$XCODE"
+          xcodebuild -version
+
+      - name: Install xcodegen and poppler
+        env:
+          HOMEBREW_NO_AUTO_UPDATE: "1"
+          HOMEBREW_NO_INSTALL_CLEANUP: "1"
+        run: brew install xcodegen poppler
+
+      - name: Install python-pptx
+        run: python3 -m pip install --quiet --user --break-system-packages python-pptx && python3 -c "import pptx; print('python-pptx', pptx.__version__)"
+
+      - name: Lesson sync dry check
+        run: python3 tools/sync_sources.py --extract 01-01
+
+      - name: Build and test
+        run: tools/test.sh
