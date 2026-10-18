@@ -69,12 +69,9 @@ tools/test.sh        # xcodegen generate + все тесты на первом �
 ```
 Полный лог последнего прогона тестов — `/tmp/hep-test.log`.
 
-Запуск и снимок экрана для проверки:
+Снимок экрана (после сборки):
 ```bash
-xcrun simctl boot "iPhone 17" 2>/dev/null
-APP=$(find ~/Library/Developer/Xcode/DerivedData -path "*HepReference*/Build/Products/Debug-iphonesimulator/HepReference.app" -maxdepth 6 | head -1)
-xcrun simctl install "iPhone 17" "$APP" && xcrun simctl launch "iPhone 17" com.hepreference.app
-xcrun simctl io "iPhone 17" screenshot /tmp/hep.png      # затем посмотреть снимок
+tools/screenshot.sh reports/shots/YYYY-MM-DD-<что>.png    # запускает приложение на симуляторе и сохраняет снимок
 ```
 
 Окружение: Xcode 26.6, iOS deployment target 17.0, Swift 5, XcodeGen в `/usr/local/bin`.
@@ -497,7 +494,9 @@ ID неизменны: на них держатся все ссылки. Наз�
 
 ## 11. Автономный режим
 
-**Как устроено.** GitHub Actions (`.github/workflows/daily.yml`) каждый день в 11:00 UTC (07:00 Нью-Йорк летом, 06:00 зимой) поднимает облачный Mac `macos-26` с Xcode 26, ставит инструменты, запускает Claude Code без участия человека с промптом `automation/DAILY_RUN.md` и отправляет результат в `main`. **От компьютера автора не зависит:** работает, даже когда Mac выключен. Авторизация — секрет репозитория `CLAUDE_CODE_OAUTH_TOKEN`. Лог каждого прогона хранится 30 дней в артефактах Actions; при сбое GitHub присылает письмо.
+**Как устроено.** GitHub Actions (`.github/workflows/daily.yml`) каждый день в 11:00 UTC (07:00 Нью-Йорк летом, 06:00 зимой) поднимает облачный Mac `macos-26` с Xcode 26, ставит инструменты, запускает Claude Code без участия человека с промптом `automation/DAILY_RUN.md` и отправляет результат в `main`. **От компьютера автора не зависит:** работает, даже когда Mac выключен. Авторизация — секрет репозитория `CLAUDE_CODE_OAUTH_TOKEN`. Лог каждого прогона хранится 30 дней в артефактах Actions; при сбое GitHub присылает письмо. Перед работой прогон проверяет доступ к Claude; итог каждого прогона виден в аннотациях запуска (notice/error), а «пустой» прогон без отчёта дня считается ошибкой. Кроме того, CI (`.github/workflows/ci.yml`) на каждый push собирает приложение, гоняет тесты, проверяет синхронизацию уроков и делает контрольный снимок экрана.
+
+**Токен** `CLAUDE_CODE_OAUTH_TOKEN` (из `claude setup-token`) действует около года — обновить до **октября 2027**: новый токен → Settings → Secrets → Actions → заменить значение.
 
 **Процесс команды** (подробно — `automation/DAILY_RUN.md`): разведка → план дня по лестнице приоритетов → работа → независимое ревью субагентами (клинический рецензент, код-ревьюер) → тесты и снимки → коммит, push, отчёт. Объём пакета определяется ситуацией дня.
 

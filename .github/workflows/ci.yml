@@ -39,3 +39,15 @@ jobs:
 
       - name: Build and test
         run: tools/test.sh
+
+      - name: Screenshot smoke test
+        run: tools/screenshot.sh ci-shot.png 8
+
+      - name: Keep the screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-shot-${{ github.run_id }}
+          path: ci-shot.png
+          if-no-files-found: ignore
+          retention-days: 7

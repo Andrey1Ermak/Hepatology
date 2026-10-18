@@ -59,14 +59,47 @@ jobs:
           git config user.name "HepReference Team"
           git config user.email "hepreference-bot@users.noreply.github.com"
 
-      - name: Team run
+      - name: Check Claude access
+        shell: bash
         run: |
+          if [ -z "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
+            echo "::error title=Missing secret::CLAUDE_CODE_OAUTH_TOKEN is not set in repository secrets"
+            exit 1
+          fi
+          OUT="$(claude -p "Reply with exactly: OK" --model haiku 2>&1 || true)"
+          if ! grep -q "OK" <<<"$OUT"; then
+            echo "::error title=Claude auth failed::$(tail -3 <<<"$OUT" | tr '\n' ' ' | cut -c1-400)"
+            exit 1
+          fi
+          echo "::notice title=Claude access::OK"
+
+      - name: Team run
+        shell: bash
+        run: |
+          set +e -o pipefail
+          MODE="${{ inputs.mode || 'normal' }}"
           PROMPT="$(cat automation/DAILY_RUN.md)"
-          if [ "${{ inputs.mode }}" = "dry-run" ]; then
+          if [ "$MODE" = "dry-run" ]; then
             PROMPT+=$'\n\n---\n**DRY RUN.** Выполни только фазы 1 и 2. Ничего не меняй: никаких правок файлов, коммитов, push и --done у синхронизации. В конце выведи план дня в формате фазы 2.'
           fi
-          PROMPT+=$'\n\n---\n**Окружение:** облачный Mac GitHub Actions (одноразовый). Тесты — `tools/test.sh`. Симулятор берётся первый доступный iPhone. Push в origin работает через токен Actions.'
-          claude -p "$PROMPT" --dangerously-skip-permissions --output-format text | tee run.log
+          PROMPT+=$'\n\n---\n**Окружение:** облачный Mac GitHub Actions (одноразовый). Тесты — `tools/test.sh`, снимки — `tools/screenshot.sh`. Перед push всегда `git pull --rebase origin main`. Push в origin работает через токен Actions.'
+          START=$(date +%s)
+          claude -p "$PROMPT" --dangerously-skip-permissions --output-format text 2>&1 | tee run.log
+          STATUS=$?
+          MIN=$(( ($(date +%s) - START) / 60 ))
+          SUMMARY="$(tail -c 700 run.log | tr '\n' ' ')"
+          if [ $STATUS -ne 0 ]; then
+            echo "::error title=Team run failed (exit $STATUS, ${MIN} min)::$SUMMARY"
+            exit $STATUS
+          fi
+          if [ "$MODE" = "normal" ]; then
+            git fetch -q origin
+            if [ ! -f "reports/$(date +%Y-%m-%d).md" ] && ! git show "origin/main:reports/$(date +%Y-%m-%d).md" >/dev/null 2>&1; then
+              echo "::error title=No daily report::Run finished in ${MIN} min without reports/$(date +%Y-%m-%d).md — $SUMMARY"
+              exit 1
+            fi
+          fi
+          echo "::notice title=Team run ${MODE} (${MIN} min)::$SUMMARY"
 
       - name: Keep the run log
         if: always()
