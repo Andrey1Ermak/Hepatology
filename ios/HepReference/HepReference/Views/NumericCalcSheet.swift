@@ -78,7 +78,7 @@ struct NumericCalcSheet: View {
                 // (SelectableChip's selected state, CalculatorResetButton,
                 // the TextField cursor) would otherwise fall back to the
                 // system default blue instead of the app's navy.
-                Color.black.opacity(0.4)
+                Color.hepScrim
                     .ignoresSafeArea()
                     .onTapGesture { presenter.dismiss() }
 
@@ -103,14 +103,13 @@ struct NumericCalcSheet: View {
                 }
                 .padding(Spacing.l)
                 .frame(maxHeight: geo.size.height * 0.75)
-                // Same fill + stroke + elevation as SectionCard's default —
-                // the same "basic block" surface every card block uses, not
-                // a bespoke one-off tone.
-                .background(Color.hepSurface, in: RoundedRectangle(cornerRadius: Radius.large))
-                .overlay {
-                    RoundedRectangle(cornerRadius: Radius.large)
-                        .stroke(Color(.separator).opacity(0.5), lineWidth: 1)
+                // A raised card with SectionCard's navy top stripe — the
+                // same "basic block" surface every card block uses.
+                .background(Color.hepCard)
+                .overlay(alignment: .top) {
+                    Color.hepNavy.frame(height: SectionCard<EmptyView>.stripeHeight)
                 }
+                .clipShape(RoundedRectangle(cornerRadius: Radius.medium))
                 .hepElevated()
                 .padding(.horizontal, Spacing.xl)
             }

@@ -4,7 +4,7 @@ struct BranchBlockView: View {
     let block: BranchBlock
 
     var body: some View {
-        SectionCard {
+        SectionCard(stripe: Color.hepNavy) {
             VStack(alignment: .leading, spacing: Spacing.m) {
                 BlockHeading(text: block.h)
                 ForEach(Array(block.opts.enumerated()), id: \.offset) { _, opt in

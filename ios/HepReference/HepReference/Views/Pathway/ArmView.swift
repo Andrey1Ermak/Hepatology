@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// A colored decision arm (severity or disposition): a tinted SectionCard with a leading accent bar, a severity tag
+/// A colored decision arm (severity or disposition): a tinted SectionCard with a top stripe in its tier color, a severity tag
 /// badge, an optional "rx" action line, then nested content.
 ///
 /// When the arm's very first child is a bare disposition pill or pills (an
@@ -26,7 +26,7 @@ struct ArmView: View {
     }
 
     var body: some View {
-        SectionCard(background: kind.tier.tint, accent: kind.tier.solid) {
+        SectionCard(background: kind.tier.tint, stripe: kind.tier.solid) {
             VStack(alignment: .leading, spacing: Spacing.s) {
                 HStack(alignment: .center, spacing: Spacing.s) {
                     // `maxLines: nil` — a tag must never silently truncate
@@ -57,7 +57,9 @@ struct ArmView: View {
                         .font(.hepCaption)
                         .foregroundStyle(Color.hepMuted)
                 }
-                BranchedChildrenView(children: remainingChildren)
+                if !remainingChildren.isEmpty {
+                    BranchedChildrenView(children: remainingChildren)
+                }
             }
             .environment(\.pathwayAccent, kind.tier.solid)
         }

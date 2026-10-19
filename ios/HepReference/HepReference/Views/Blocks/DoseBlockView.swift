@@ -4,7 +4,7 @@ struct DoseBlockView: View {
     let block: DoseBlock
 
     var body: some View {
-        SectionCard {
+        SectionCard(stripe: Color.hepNavy) {
             VStack(alignment: .leading, spacing: Spacing.m) {
                 BlockHeading(text: block.h)
                 // A Grid (not a per-item VStack) so every drug name lines up

@@ -4,7 +4,7 @@ struct ListBlockView: View {
     let block: ListBlock
 
     var body: some View {
-        SectionCard {
+        SectionCard(stripe: Color.hepNavy) {
             VStack(alignment: .leading, spacing: Spacing.s) {
                 BlockHeading(text: block.h)
                 ForEach(Array(block.items.enumerated()), id: \.offset) { _, item in
@@ -34,9 +34,9 @@ struct ListBlockView: View {
     }
 
     private func bullet(_ text: AttributedString, bold: Bool = false) -> some View {
-        HStack(alignment: .firstTextBaseline, spacing: Spacing.s) {
-            Text("•").foregroundStyle(Color.hepMuted)
-            Text(text).font(.hepBody).fontWeight(bold ? .semibold : .regular)
+        HStack(alignment: .top, spacing: Spacing.s) {
+            SquareBullet()
+            Text(text).font(bold ? .hepBodyEmphasis : .hepBody)
         }
     }
 }

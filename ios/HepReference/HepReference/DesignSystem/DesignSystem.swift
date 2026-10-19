@@ -57,6 +57,8 @@ extension Font {
     /// Heading of a block / section card.
     static let hepSectionHeading: Font = avenir(.bold, .subheadline)
     static let hepBody: Font = avenir(.regular, .body)
+    /// `hepBody` one step heavier — a titled list item's own title.
+    static let hepBodyEmphasis: Font = avenir(.demiBold, .body)
     /// A block's one-line take-home, as in the lessons' closing line.
     static let hepTakeaway: Font = avenir(.boldItalic, .subheadline)
     /// Sources at the foot of a block (pair with `Color.hepMuted`).
@@ -71,6 +73,8 @@ extension Font {
     /// A chip row / score dimension's own label, above its options.
     static let hepRowLabel: Font = avenir(.bold, .subheadline)
     static let hepCaption: Font = avenir(.regular, .caption)
+    /// `hepCaption` in Bold — a table's first (row-label) column.
+    static let hepCaptionBold: Font = avenir(.bold, .caption)
     /// Small inline icon glyphs (e.g. an outcome row's "→" arrow).
     static let hepIconSmall: Font = .caption2
     /// Medium inline icon glyphs (e.g. a verdict banner's band icon).
@@ -125,6 +129,12 @@ extension Color {
     /// Text on the two light-mode fills too bright for white text at small
     /// sizes (`urg` amber, `gap` gray — both ~3:1 with white).
     static let hepOnBright = Color("onBright")
+    /// Hairlines: input outlines, pathway tree connectors outside an arm.
+    static let hepRule = Color("rule")
+    /// Dimming layer behind a modal calculator sheet (alpha is in the asset).
+    static let hepScrim = Color("scrim")
+    /// Base color of `hepElevated()` shadows; the layer opacities live there.
+    static let hepShadow = Color("shadow")
 }
 
 private extension Font.TextStyle {

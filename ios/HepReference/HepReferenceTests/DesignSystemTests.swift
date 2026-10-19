@@ -28,7 +28,7 @@ final class DesignSystemTests: XCTestCase {
     func testEveryColorTokenExists() {
         let names = ["ink", "brandAccent", "blue", "maroon", "muted", "surface", "appBackground", "card",
                      "crit", "critTint", "urg", "urgTint", "ok", "okTint", "info", "infoTint", "gap",
-                     "onSolid", "onBright", "launchBackground"]
+                     "onSolid", "onBright", "launchBackground", "rule", "scrim", "shadow"]
         for name in names {
             XCTAssertNotNil(UIColor(named: name, in: Bundle(for: CardLibrary.self), compatibleWith: nil), "missing color set \(name)")
         }
@@ -61,6 +61,34 @@ final class DesignSystemTests: XCTestCase {
                 let text = UIColor(tier.onSolid).resolvedColor(with: traits)
                 let fill = UIColor(tier.solid).resolvedColor(with: traits)
                 XCTAssertGreaterThanOrEqual(contrast(text, fill), 4.5, "\(tier)")
+            }
+        }
+    }
+
+    /// §12.4: no colors "on the spot" — views draw only `Color.hep*` /
+    /// `Tier` tokens. Scans the app's Swift sources (located via this file's
+    /// path, so it runs wherever the repo is checked out).
+    func testNoAdHocColorsInAppSources() throws {
+        let appDir = URL(fileURLWithPath: #filePath)
+            .deletingLastPathComponent().deletingLastPathComponent()
+            .appendingPathComponent("HepReference")
+        let forbidden = ["Color(.", "Color(red:", "Color(white:", "Color(hue:", "Color.black", "Color.white",
+                         "Color.gray", "Color.primary", "Color.secondary", ".black.opacity", ".white.opacity",
+                         "foregroundStyle(.secondary)", "foregroundStyle(.primary)", "Color(uiColor:",
+                         "Color.red", "Color.blue", "Color.green", "Color.orange", "Color.yellow",
+                         "foregroundStyle(.red)", "foregroundStyle(.blue)", "foregroundColor("]
+        let files = try XCTUnwrap(FileManager.default.enumerator(at: appDir, includingPropertiesForKeys: nil))
+            .compactMap { $0 as? URL }
+            .filter { $0.pathExtension == "swift" }
+        XCTAssertFalse(files.isEmpty, "no Swift sources found at \(appDir.path)")
+        for file in files {
+            // Code only: a comment may name a forbidden API to explain why it's avoided.
+            let source = try String(contentsOf: file, encoding: .utf8)
+                .split(separator: "\n")
+                .filter { !$0.trimmingCharacters(in: .whitespaces).hasPrefix("//") }
+                .joined(separator: "\n")
+            for pattern in forbidden where source.contains(pattern) {
+                XCTFail("\(file.lastPathComponent) uses \(pattern) — use a Color.hep* token (CLAUDE.md §12.4)")
             }
         }
     }

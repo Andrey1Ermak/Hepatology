@@ -4,6 +4,7 @@ import SwiftUI
 /// (`0 1px 2px rgba(20,26,34,.05), 0 6px 18px rgba(20,26,34,.06)`) instead of
 /// conveying "distinct surface" with only a 1px stroke. Applied as `SectionCard`'s
 /// default, so every card/badge/calculator surface in the app picks it up.
+/// Shadow color is the `hepShadow` token (navy-black in light, black in dark).
 ///
 /// Dark mode does **not** reuse the light-mode values with the color
 /// inverted — a low-opacity black shadow barely registers against a
@@ -17,12 +18,12 @@ struct HepElevated: ViewModifier {
     func body(content: Content) -> some View {
         if colorScheme == .dark {
             content
-                .shadow(color: .black.opacity(0.45), radius: 2, x: 0, y: 1)
-                .shadow(color: .black.opacity(0.35), radius: 10, x: 0, y: 4)
+                .shadow(color: Color.hepShadow.opacity(0.45), radius: 2, x: 0, y: 1)
+                .shadow(color: Color.hepShadow.opacity(0.35), radius: 10, x: 0, y: 4)
         } else {
             content
-                .shadow(color: Color(red: 20 / 255, green: 26 / 255, blue: 34 / 255).opacity(0.06), radius: 2, x: 0, y: 1)
-                .shadow(color: Color(red: 20 / 255, green: 26 / 255, blue: 34 / 255).opacity(0.08), radius: 10, x: 0, y: 4)
+                .shadow(color: Color.hepShadow.opacity(0.06), radius: 2, x: 0, y: 1)
+                .shadow(color: Color.hepShadow.opacity(0.08), radius: 10, x: 0, y: 4)
         }
     }
 }

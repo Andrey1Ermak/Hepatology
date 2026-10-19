@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// A single fact line: a labeled fact or a plain
-/// line ("row") when `label` is nil — both get the same leading dot, so a
+/// line ("row") when `label` is nil — both get the same leading square marker (▪), so a
 /// run of plain rows reads as a bulleted list instead of unmarked paragraph
 /// text. `label` is no longer bolded — on-device review found bold weight
 /// used too widely across pathway text to read as a meaningful emphasis
@@ -22,10 +22,7 @@ struct RowView: View {
     var body: some View {
         HStack(alignment: .top, spacing: Spacing.xs) {
             if bullet {
-                Circle()
-                    .fill(Color.hepNavy)
-                    .frame(width: Spacing.xs, height: Spacing.xs)
-                    .padding(.top, 5)
+                SquareBullet(color: Color.hepNavy, size: Spacing.xs, topInset: 5)
             }
             Group {
                 if let label {

@@ -44,7 +44,7 @@ struct SelectableChip: View {
             // `Color.hepNavy`, not the ambient accent — a chip inside
             // NumericCalcSheet's overlay sits outside the TabView's `.tint()`.
             .background(isOn ? Color.hepNavy : Color.hepSurface, in: RoundedRectangle(cornerRadius: Radius.medium))
-            .overlay(RoundedRectangle(cornerRadius: Radius.medium).stroke(isOn ? Color.hepNavy : Color.hepMuted.opacity(0.35), lineWidth: 1))
+            .overlay(RoundedRectangle(cornerRadius: Radius.medium).stroke(isOn ? Color.hepNavy : Color.hepRule, lineWidth: 1))
             .animation(.easeOut(duration: 0.15), value: isOn)
         }
         .buttonStyle(.plain)

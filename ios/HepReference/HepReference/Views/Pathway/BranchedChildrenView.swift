@@ -1,13 +1,13 @@
 import SwiftUI
 
 private struct PathwayAccentKey: EnvironmentKey {
-    static let defaultValue: Color = Color(.tertiaryLabel)
+    static let defaultValue: Color = Color.hepRule
 }
 
 extension EnvironmentValues {
     /// The enclosing arm's own tier color, threaded down so a nested
     /// branch's tree-connector lines pick up that arm's own accent instead
-    /// of a flat system gray — ties the connector visually to "this is
+    /// of a flat gray — ties the connector visually to "this is
     /// still inside the same severity-colored arm" rather than introducing
     /// an unrelated third color. Falls back to a neutral gray outside any
     /// arm (shouldn't normally happen — `out`/`nest` only appear inside one).

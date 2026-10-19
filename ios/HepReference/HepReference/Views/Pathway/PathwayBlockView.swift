@@ -23,19 +23,20 @@ struct PathwayNodeView: View {
     /// becomes the `CollapsibleSection`'s background directly, instead of
     /// nesting a second colored box inside the collapsible card. A section
     /// with any other shape (multiple children, no box) just gets the
-    /// default `hepSurface` with its children rendered as-is.
-    private static func unwrapSingleBox(_ children: [PathwayNode]) -> (Color, [PathwayNode]) {
+    /// default `hepSurface` and navy stripe, its children rendered as-is;
+    /// a single box hands over its tier tint and tier stripe.
+    private static func unwrapSingleBox(_ children: [PathwayNode]) -> (background: Color, stripe: Color, children: [PathwayNode]) {
         guard children.count == 1, case .box(let style, let boxChildren) = children[0] else {
-            return (Color.hepSurface, children)
+            return (Color.hepSurface, Color.hepNavy, children)
         }
-        return (style.tier?.tint ?? Color.hepSurface, boxChildren)
+        return (style.tier?.tint ?? Color.hepSurface, style.tier?.solid ?? Color.hepNavy, boxChildren)
     }
 
     var body: some View {
         switch node {
         case .section(let heading, let children):
-            let (background, innerChildren) = Self.unwrapSingleBox(children)
-            CollapsibleSection(title: heading, background: background) {
+            let (background, stripe, innerChildren) = Self.unwrapSingleBox(children)
+            CollapsibleSection(title: heading, background: background, stripe: stripe) {
                 VStack(alignment: .leading, spacing: Spacing.xs) {
                     ForEach(Array(innerChildren.enumerated()), id: \.offset) { _, child in
                         PathwayNodeView(node: child)
@@ -49,9 +50,11 @@ struct PathwayNodeView: View {
             // below — otherwise the table's own SectionCard nests a second,
             // neutrally-tinted card inside the box's colored one.
             if children.count == 1, case .table(let head, let rows) = children[0] {
-                TableBlockView(block: TableBlock(h: nil, head: head, rows: rows), background: style.tier?.tint ?? Color.hepSurface)
+                TableBlockView(block: TableBlock(h: nil, head: head, rows: rows), background: style.tier?.tint ?? Color.hepSurface, stripe: style.tier?.solid)
             } else {
-                SectionCard(background: style.tier?.tint ?? Color.hepSurface) {
+                // A tiered box keeps its stripe; a plain one is just a
+                // neutral panel inside its section, so no second stripe.
+                SectionCard(background: style.tier?.tint ?? Color.hepSurface, stripe: style.tier?.solid) {
                     VStack(alignment: .leading, spacing: Spacing.xs) {
                         ForEach(Array(children.enumerated()), id: \.offset) { _, child in
                             PathwayNodeView(node: child)
@@ -72,7 +75,7 @@ struct PathwayNodeView: View {
         case .col(let children):
             ColView(children: children)
         case .table(let head, let rows):
-            TableBlockView(block: TableBlock(h: nil, head: head, rows: rows))
+            TableBlockView(block: TableBlock(h: nil, head: head, rows: rows), stripe: nil)
         }
     }
 }

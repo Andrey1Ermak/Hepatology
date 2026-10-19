@@ -64,13 +64,13 @@ struct SearchView: View {
     }
 
     /// Styled and sized to read as one more tile in `CardRowView`'s own
-    /// family rather than a separate system control: same green `done` tint
-    /// (`Tier.rt`), same title font, same tile height (`contentHeight`).
+    /// family rather than a separate system control: same white card with
+    /// a navy stripe, same title font, same tile height (`contentHeight`).
     private var searchField: some View {
-        SectionCard(background: Tier.rt.tint) {
+        SectionCard(background: Color.hepCard, stripe: Color.hepNavy) {
             HStack(spacing: Spacing.s) {
                 Image(systemName: "magnifyingglass")
-                    .foregroundStyle(Tier.rt.solid)
+                    .foregroundStyle(Color.hepNavy)
                 TextField("Title, code, or tag", text: $query)
                     .font(.hepSectionHeading)
                     .textFieldStyle(.plain)
@@ -81,7 +81,7 @@ struct SearchView: View {
                         query = ""
                     } label: {
                         Image(systemName: "xmark.circle.fill")
-                            .foregroundStyle(Tier.rt.solid)
+                            .foregroundStyle(Color.hepMuted)
                     }
                     .buttonStyle(.plain)
                 }

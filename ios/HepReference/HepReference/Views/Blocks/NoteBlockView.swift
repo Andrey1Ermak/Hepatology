@@ -4,7 +4,7 @@ struct NoteBlockView: View {
     let block: NoteBlock
 
     var body: some View {
-        SectionCard(background: tier.tint, accent: tier.solid) {
+        SectionCard(background: tier.tint, stripe: tier.solid) {
             HStack(alignment: .top, spacing: Spacing.s) {
                 Image(systemName: icon)
                     .font(.hepIconMedium)

@@ -10,11 +10,14 @@ import SwiftUI
 struct CollapsibleSection<Content: View>: View {
     let title: String
     var background: Color = Color.hepSurface
+    /// Top stripe color — navy (a neutral block) unless the caller passes
+    /// the tier of what's inside.
+    var stripe: Color = Color.hepNavy
     @State private var isExpanded = false
     @ViewBuilder var content: () -> Content
 
     var body: some View {
-        SectionCard(background: background) {
+        SectionCard(background: background, stripe: stripe) {
             VStack(alignment: .leading, spacing: Spacing.s) {
                 header
                 if isExpanded {
@@ -38,9 +41,9 @@ struct CollapsibleSection<Content: View>: View {
             withAnimation(.easeInOut(duration: 0.2)) { isExpanded.toggle() }
         } label: {
             HStack {
-                Text(title.uppercased())
+                Text(title)
                     .font(.hepSectionHeading)
-                    .foregroundStyle(Color.hepNavy)
+                    .foregroundStyle(Color.hepInk)
                 Spacer()
                 Image(systemName: "chevron.right")
                     .font(.hepIconSmall)

@@ -50,7 +50,7 @@ struct NACCalcView: View {
         .padding(.horizontal, Spacing.m)
         .padding(.vertical, Spacing.s)
         .background(Color.hepCard, in: RoundedRectangle(cornerRadius: Radius.medium))
-        .overlay(RoundedRectangle(cornerRadius: Radius.medium).stroke(Color(.separator).opacity(0.4), lineWidth: 1))
+        .overlay(RoundedRectangle(cornerRadius: Radius.medium).stroke(Color.hepRule, lineWidth: 1))
     }
 
     private func doseText(_ mg: Int, ml: Double? = nil, unit: String = "mg", capped: Bool, sub: String? = nil) -> String {

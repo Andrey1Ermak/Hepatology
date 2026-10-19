@@ -1,35 +1,34 @@
 import SwiftUI
 
 /// The shared "this is a distinct block" container — every standard block,
-/// pathway node, and calculator wraps its content in this, so a card detail screen reads as a sequence of clearly separated
-/// sections instead of one undifferentiated scroll. Defaults to a muted
-/// `hepSurface` wash rather than a plain system surface, so every block reads
-/// as a distinct colored section instead of bare text on the page
-/// background — a tier-tinted `background` (crit/urg boxes, etc.) still
-/// overrides this the same as before.
+/// pathway node, and calculator wraps its content in this, so a card detail
+/// screen reads as a sequence of clearly separated sections. Styled as the
+/// lesson decks' cards (CLAUDE.md §12.3): a pale tint fill for the block's
+/// meaning, an optional 4 pt saturated stripe across the top, a soft shadow
+/// and no outline.
 struct SectionCard<Content: View>: View {
     var background: Color = Color.hepSurface
-    /// A colored leading bar (e.g. a pathway arm's severity tier) — omitted when nil.
-    var accent: Color? = nil
+    /// The saturated top stripe (a block's or a pathway arm's tier color,
+    /// navy for a neutral block) — omitted when nil, e.g. for a box nested
+    /// inside an already-striped arm, where a second stripe would be noise.
+    var stripe: Color? = nil
     @ViewBuilder var content: () -> Content
+
+    /// Height of the top stripe — §12.3.
+    static var stripeHeight: CGFloat { 4 }
 
     var body: some View {
         content()
             .padding(Spacing.m)
+            .padding(.top, stripe == nil ? 0 : Self.stripeHeight)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(background, in: RoundedRectangle(cornerRadius: Radius.large))
-            .overlay {
-                RoundedRectangle(cornerRadius: Radius.large)
-                    .stroke(Color(.separator).opacity(0.5), lineWidth: 1)
-            }
-            .overlay(alignment: .leading) {
-                if let accent {
-                    RoundedRectangle(cornerRadius: 1.5)
-                        .fill(accent)
-                        .frame(width: 3)
-                        .padding(.vertical, Spacing.s)
+            .background(background)
+            .overlay(alignment: .top) {
+                if let stripe {
+                    stripe.frame(height: Self.stripeHeight)
                 }
             }
+            .clipShape(RoundedRectangle(cornerRadius: Radius.medium))
             .hepElevated()
     }
 }
@@ -37,9 +36,10 @@ struct SectionCard<Content: View>: View {
 #Preview {
     VStack(spacing: 12) {
         SectionCard { Text("Plain section card") }
-        SectionCard(background: Tier.crit.tint, accent: Tier.crit.solid) {
-            Text("Accented, tinted section card")
+        SectionCard(background: Tier.crit.tint, stripe: Tier.crit.solid) {
+            Text("Red-flag block")
         }
+        SectionCard(stripe: Color.hepNavy) { Text("Neutral block") }
     }
     .padding()
 }

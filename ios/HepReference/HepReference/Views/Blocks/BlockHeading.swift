@@ -1,18 +1,18 @@
 import SwiftUI
 
-/// Shared optional heading (`h`) rendered above a block's content — a mono,
-/// uppercase "section kicker," the same font construction as a pathway
-/// `.section` node's heading (see PathwayNodeView) so both read as one
-/// visual family, just at block- vs. pathway-section granularity.
+/// Shared optional heading (`h`) rendered above a block's content — the
+/// lesson cards' heading (CLAUDE.md §12.3): `hepSectionHeading` in ink, as
+/// authored (no forced caps). `CollapsibleSection`'s title uses the same
+/// treatment so blocks and pathway sections read as one family.
 struct BlockHeading: View {
     let text: String?
 
     var body: some View {
         if let text {
-            Text(text.uppercased())
+            Text(text)
                 .font(.hepSectionHeading)
-                .tracking(0.6)
-                .foregroundStyle(Color.hepMuted)
+                .foregroundStyle(Color.hepInk)
+                .accessibilityAddTraits(.isHeader)
         }
     }
 }

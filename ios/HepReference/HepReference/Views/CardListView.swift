@@ -109,6 +109,11 @@ struct CardListView: View {
                 if let card = library.cardsByID[id] {
                     CardDetailView(card: card)
                 }
+                #if DEBUG
+                if id == DesignSampleView.id {
+                    DesignSampleView()
+                }
+                #endif
             }
         }
     }

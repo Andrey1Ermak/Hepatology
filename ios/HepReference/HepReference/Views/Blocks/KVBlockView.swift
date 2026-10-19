@@ -4,7 +4,7 @@ struct KVBlockView: View {
     let block: KVBlock
 
     var body: some View {
-        SectionCard {
+        SectionCard(stripe: Color.hepNavy) {
             VStack(alignment: .leading, spacing: Spacing.s) {
                 BlockHeading(text: block.h)
                 ForEach(Array(block.rows.enumerated()), id: \.offset) { _, row in

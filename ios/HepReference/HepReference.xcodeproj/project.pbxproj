@@ -30,6 +30,7 @@
 		45AB1C1422C85C455A20EFC9 /* BlockHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84CBC7A2E2688BA6EBE9081 /* BlockHeading.swift */; };
 		47F4CB586BBDFB19407C7E85 /* NACCalcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B306463A6CAE9C4A74717DEA /* NACCalcView.swift */; };
 		489B3D6EBA08F57CAC14E66E /* ChipTierRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E345C468C53C191F5B81F1 /* ChipTierRule.swift */; };
+		4A9B00D7EC3AA2E4C68043B3 /* SquareBullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E0073FF3C8AACE7497EE /* SquareBullet.swift */; };
 		4B13D2879C0EA62A0664B1AE /* ChecklistAnyRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9357B09215E0402FEB31BD /* ChecklistAnyRule.swift */; };
 		4F8B1F74CE0AA1C30607FDB7 /* BranchBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820E6783963139414EF2AD8E /* BranchBlockView.swift */; };
 		541AD44FCD39EF372B737C2C /* ScoreCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400044A20D7DCB283956C5A4 /* ScoreCalc.swift */; };
@@ -58,6 +59,7 @@
 		B170CCAE01DF516A94A1B479 /* GrpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1783E4C659E72C2ACD3B6173 /* GrpView.swift */; };
 		B1DAFBD4174622F07ACCBC87 /* KVBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541E28122B00FA3A4189AC31 /* KVBlockView.swift */; };
 		B4A665A84EFB63BD48F459CE /* NumericCalcRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0BE1C40A6FF228AC59E1AC /* NumericCalcRegistry.swift */; };
+		BC5CC28A95AE9EAF9B2E4130 /* DesignSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08469650D07B56E285FA6064 /* DesignSampleView.swift */; };
 		BE9CC65A3C286DD9E5505A62 /* NestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424942CF1B02578655D720DE /* NestView.swift */; };
 		BF28633F08FE57B4D466439A /* ChipScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2643586157AA1DE125EF176 /* ChipScreen.swift */; };
 		C07DFCDB7E1A3D1FCCCD9A84 /* ColView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69319EE20AB7131988F63E64 /* ColView.swift */; };
@@ -94,8 +96,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0375E0073FF3C8AACE7497EE /* SquareBullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareBullet.swift; sourceTree = "<group>"; };
 		03E345C468C53C191F5B81F1 /* ChipTierRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipTierRule.swift; sourceTree = "<group>"; };
 		055C6C76AF68F51F86C0FB35 /* ChipScoreRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipScoreRule.swift; sourceTree = "<group>"; };
+		08469650D07B56E285FA6064 /* DesignSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSampleView.swift; sourceTree = "<group>"; };
 		09039DD8496221F029F80A4A /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		0E0F17F4EF9CFE165F94CC07 /* Content */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Content; path = HepReference/Content; sourceTree = SOURCE_ROOT; };
 		167C9464C130DB92F2277AD4 /* ListBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBlockView.swift; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 				25019922C87743AC09841EB1 /* FlowLayout.swift */,
 				82967B5A0BE18BF5E7EEA93C /* SectionCard.swift */,
 				1BD2C61CBC4E9082D11186CD /* SelectableChip.swift */,
+				0375E0073FF3C8AACE7497EE /* SquareBullet.swift */,
 			);
 			name = DesignSystem;
 			path = HepReference/DesignSystem;
@@ -261,6 +266,7 @@
 				63FE9624118A34C010B492C9 /* CardRowView.swift */,
 				8B6346A41417A486CF030A17 /* ChipBoardView.swift */,
 				4EE8F19EBCF792A80DE2E29E /* ContentView.swift */,
+				08469650D07B56E285FA6064 /* DesignSampleView.swift */,
 				2C29C8CF62141AA29BA9C923 /* NumericCalcSheet.swift */,
 				2A58F57D0EA93E1344E69EB1 /* ScoreCalcView.swift */,
 				E56053F480C7E51B63D4D991 /* SearchView.swift */,
@@ -489,6 +495,7 @@
 				684D4762365031EFF3DA810F /* CollapsibleSection.swift in Sources */,
 				10944861781EC3128EA42EB2 /* ContentView.swift in Sources */,
 				2589A61B5A1940B35ACF27AC /* DecimalTextInput.swift in Sources */,
+				BC5CC28A95AE9EAF9B2E4130 /* DesignSampleView.swift in Sources */,
 				84BBFD678B410B83F33A1987 /* DesignSystem.swift in Sources */,
 				44DC096A5301119352FC7C23 /* DispositionArrow.swift in Sources */,
 				9E681A53CF0D51D70356EF58 /* DoseBlockView.swift in Sources */,
@@ -517,6 +524,7 @@
 				CE3C033AF210A09CAC7936C3 /* SearchView.swift in Sources */,
 				5D2EC96B40E6A2914998282A /* SectionCard.swift in Sources */,
 				A901A4E0379AD644D2FB2275 /* SelectableChip.swift in Sources */,
+				4A9B00D7EC3AA2E4C68043B3 /* SquareBullet.swift in Sources */,
 				9A1DD9BC2129AF09AEF19369 /* TableBlockView.swift in Sources */,
 				1695A41F95A8867E5E043F8B /* TextBlockView.swift in Sources */,
 				1455D8F80E997C9E8BFEADF7 /* VerdictRule.swift in Sources */,

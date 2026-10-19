@@ -13,14 +13,16 @@ struct CardRowView: View {
     private var isReviewed: Bool { card.reviewed == true }
     /// `reviewed` (on-device iOS review) outranks `done` (content
     /// status) when a card happens to carry both — one badge, not two.
-    private var badgeTier: Tier? {
+    private var doneTier: Tier? {
         if isReviewed { return .urg }
         if isDone { return .rt }
         return nil
     }
 
     var body: some View {
-        SectionCard(background: badgeTier?.tint ?? Color.hepCard) {
+        // §12.3: a white card with a navy top stripe; Reference tiles sit
+        // back on `surface`. Status shows only as the check badge.
+        SectionCard(background: card.cat == .ref ? Color.hepSurface : Color.hepCard, stripe: Color.hepNavy) {
             HStack(spacing: Spacing.m) {
                 VStack(alignment: .leading, spacing: 2) {
                     // One fixed size for every card (not a per-card
@@ -52,8 +54,8 @@ struct CardRowView: View {
                         .lineLimit(1)
                 }
                 Spacer(minLength: 0)
-                if let badgeTier {
-                    doneBadge(tier: badgeTier)
+                if let doneTier {
+                    doneBadge(tier: doneTier)
                 }
             }
             .frame(minHeight: Self.contentHeight)
