@@ -3,7 +3,7 @@ import XCTest
 
 final class CardLibraryGroupingTests: XCTestCase {
     private func card(_ id: String, cat: CardCategory) -> Card {
-        Card(id: id, title: id, code: "code", cat: cat, acu: .ref, done: nil, reviewed: nil, src: nil, tags: [], blocks: [])
+        Card(id: id, title: id, code: "code", cat: cat, acu: .ref)
     }
 
     /// Same-category entries are merged wherever they sit in the manifest,

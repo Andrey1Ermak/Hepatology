@@ -1,1 +1,1 @@
-Lesson 02-11 synced into card drafts; design pass 2 of 3 makes blocks, tables and pathways look like the lesson slides; 58 tests green.
+Lesson 02-12 (genetics) synced into drafts; Days 2–3 done: card metadata and status, registries with the full English year plan; 72 tests green.

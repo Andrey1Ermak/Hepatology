@@ -5,6 +5,8 @@
   "cat": "ref",
   "acu": "ref",
   "tags": ["about", "disclaimer", "help", "how to use"],
+  "entry": "reference",
+  "status": "draft",
   "blocks": [
     {"t": "note", "k": "warn", "h": "Educational use only", "text": "HepReference is a study and orientation aid for pediatric hepatology fellows. It does not replace attending judgment, institutional protocols, or the primary guidelines it cites. It stores no patient data."},
     {"t": "list", "h": "How to use", "items": [

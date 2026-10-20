@@ -9,14 +9,14 @@ struct CardRowView: View {
     /// as one more tile in the same family, not a separate control.
     static let contentHeight: CGFloat = 53
 
-    private var isDone: Bool { card.done == true }
-    private var isReviewed: Bool { card.reviewed == true }
-    /// `reviewed` (on-device iOS review) outranks `done` (content
-    /// status) when a card happens to carry both — one badge, not two.
-    private var doneTier: Tier? {
-        if isReviewed { return .urg }
-        if isDone { return .rt }
-        return nil
+    /// `reviewed` (checked on device) and `approved` (by the author) each get
+    /// their own badge color; a draft shows no badge.
+    private var statusTier: Tier? {
+        switch card.status {
+        case .reviewed: .rt
+        case .approved: .ref
+        case .draft, nil: nil
+        }
     }
 
     var body: some View {
@@ -54,23 +54,22 @@ struct CardRowView: View {
                         .lineLimit(1)
                 }
                 Spacer(minLength: 0)
-                if let doneTier {
-                    doneBadge(tier: doneTier)
+                if let statusTier {
+                    statusBadge(tier: statusTier)
                 }
             }
             .frame(minHeight: Self.contentHeight)
         }
     }
 
-    /// A small solid circle with a white checkmark, shown for a card marked
-    /// `done` or `reviewed` (verified on-device). Tier-driven so `reviewed`
-    /// can render as its own distinct color (`Tier.urg`, amber) instead of
-    /// colliding with `done`'s green.
-    private func doneBadge(tier: Tier) -> some View {
+    /// A small solid circle with a checkmark, shown for a `reviewed` or
+    /// `approved` card. Tier-driven so the two statuses read apart.
+    private func statusBadge(tier: Tier) -> some View {
         Image(systemName: "checkmark")
             .font(.system(size: 9, weight: .bold))
             .foregroundStyle(tier.onSolid)
             .frame(width: 16, height: 16)
             .background(tier.solid, in: Circle())
+            .accessibilityLabel(card.status == .approved ? "Approved" : "Reviewed")
     }
 }

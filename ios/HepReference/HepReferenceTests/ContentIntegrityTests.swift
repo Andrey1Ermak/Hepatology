@@ -62,6 +62,145 @@ final class ContentIntegrityTests: XCTestCase {
         }
     }
 
+    // MARK: Card metadata (§5.1)
+
+    /// Legacy `done`/`reviewed` booleans were replaced by `status`; a card
+    /// still carrying them would decode silently and lose its badge.
+    func testNoCardUsesLegacyStatusKeys() throws {
+        for url in jsonFiles("Cards") {
+            let object = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+            for key in ["done", "reviewed"] {
+                XCTAssertNil(object[key], "\(url.lastPathComponent): legacy key '\(key)' — use \"status\"")
+            }
+        }
+    }
+
+    func testCardMetadataIsWellFormed() throws {
+        let cards = try allCards()
+        let ids = Set(cards.map(\.id))
+        for card in cards {
+            if let related = card.related {
+                XCTAssertEqual(Set(related).count, related.count, "\(card.id): duplicate related id")
+            }
+            if let plan = card.plan {
+                XCTAssertEqual(Set(plan.map(\.block)).count, plan.count, "\(card.id): plan block listed twice")
+            }
+            for id in card.related ?? [] {
+                XCTAssertTrue(ids.contains(id), "\(card.id): related card '\(id)' missing")
+                XCTAssertNotEqual(id, card.id, "\(card.id): lists itself as related")
+            }
+            for ref in card.plan ?? [] {
+                XCTAssertTrue((1...26).contains(ref.block), "\(card.id): plan block \(ref.block) outside 1–26")
+                XCTAssertEqual(Set(ref.days).count, ref.days.count, "\(card.id): duplicate day in plan block \(ref.block)")
+                XCTAssertFalse(ref.days.isEmpty, "\(card.id): plan block \(ref.block) lists no days")
+                for day in ref.days {
+                    XCTAssertTrue((1...14).contains(day), "\(card.id): plan day \(day) outside 1–14")
+                }
+            }
+            if let ages = card.ages {
+                XCTAssertFalse(ages.isEmpty, "\(card.id): empty ages — omit the field instead")
+            }
+        }
+    }
+
+    // MARK: Registries (§5.5)
+
+    private func registry<T: Decodable>(_ name: String, as type: T.Type) throws -> T {
+        let url = try XCTUnwrap(
+            bundle.url(forResource: name, withExtension: "json", subdirectory: "Content/Registry"),
+            "Content/Registry/\(name).json missing"
+        )
+        return try decode(T.self, url)
+    }
+
+    func testEveryRegistryDecodes() throws {
+        _ = try registry("guidelines", as: [Guideline].self)
+        _ = try registry("labs", as: [LabTest].self)
+        _ = try registry("plan", as: [PlanBlock].self)
+        _ = try registry("cases", as: [ClinicalCase].self)
+        _ = try registry("synonyms", as: [String: [String]].self)
+    }
+
+    /// 26 blocks × 14 days, each block starting the day after the previous one ends.
+    func testPlanCoversTheYearWithoutGaps() throws {
+        let plan = try registry("plan", as: [PlanBlock].self)
+        XCTAssertEqual(plan.map(\.block), Array(1...26))
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = try XCTUnwrap(TimeZone(identifier: "UTC"))
+        let formatter = DateFormatter()
+        formatter.calendar = calendar
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(identifier: "UTC")
+        formatter.dateFormat = "yyyy-MM-dd"
+        var expectedStart: Date?
+        for block in plan {
+            XCTAssertEqual(block.days.map(\.day), Array(1...14), "block \(block.block): days must be 1–14")
+            XCTAssertFalse(block.title.isEmpty, "block \(block.block): empty title")
+            for day in block.days {
+                XCTAssertFalse(day.topic.isEmpty, "block \(block.block) day \(day.day): empty topic")
+            }
+            let start = try XCTUnwrap(formatter.date(from: block.start), "block \(block.block): bad start '\(block.start)'")
+            if let expectedStart {
+                XCTAssertEqual(start, expectedStart, "block \(block.block): starts \(block.start), expected the day after block \(block.block - 1)")
+            }
+            expectedStart = calendar.date(byAdding: .day, value: 14, to: start)
+        }
+    }
+
+    // TODO(day 5): once plan.json lists cards, also require that each listed
+    // card names that block/day in its own `plan`, and the reverse.
+    func testRegistryLinksResolve() throws {
+        let cardIDs = Set(try allCards().map(\.id))
+        let guidelines = try registry("guidelines", as: [Guideline].self)
+        let guidelineIDs = Set(guidelines.map(\.id))
+        XCTAssertEqual(guidelineIDs.count, guidelines.count, "duplicate id in guidelines.json")
+        for g in guidelines {
+            if let old = g.supersedes {
+                XCTAssertTrue(guidelineIDs.contains(old), "\(g.id): supersedes unknown '\(old)'")
+            }
+            XCTAssertNotNil(g.checked.range(of: #"^\d{4}-\d{2}$"#, options: .regularExpression), "\(g.id): checked must be YYYY-MM")
+        }
+
+        let labs = try registry("labs", as: [LabTest].self)
+        XCTAssertEqual(Set(labs.map(\.id)).count, labs.count, "duplicate id in labs.json")
+        for lab in labs {
+            for band in lab.bands {
+                XCTAssertTrue(guidelineIDs.contains(band.source), "\(lab.id): source '\(band.source)' not in guidelines.json")
+                XCTAssertTrue(band.low != nil || band.high != nil, "\(lab.id) \(band.age): band without a limit")
+                if let low = band.low, let high = band.high {
+                    XCTAssertLessThanOrEqual(low, high, "\(lab.id) \(band.age): low above high")
+                }
+            }
+        }
+
+        let cases = try registry("cases", as: [ClinicalCase].self)
+        XCTAssertEqual(Set(cases.map(\.id)).count, cases.count, "duplicate id in cases.json")
+        for c in cases {
+            XCTAssertTrue(cardIDs.contains(c.card), "\(c.id): card '\(c.card)' missing")
+        }
+
+        let plan = try registry("plan", as: [PlanBlock].self)
+        for block in plan {
+            for day in block.days {
+                for id in day.cards {
+                    XCTAssertTrue(cardIDs.contains(id), "plan \(block.block)-\(day.day): card '\(id)' missing")
+                }
+            }
+        }
+
+        for card in try allCards() {
+            for id in card.guidelines ?? [] {
+                XCTAssertTrue(guidelineIDs.contains(id), "\(card.id): guideline '\(id)' not in guidelines.json")
+            }
+            for ref in card.plan ?? [] {
+                let days = Set(plan.first { $0.block == ref.block }?.days.map(\.day) ?? [])
+                for day in ref.days {
+                    XCTAssertTrue(days.contains(day), "\(card.id): plan \(ref.block)-\(day) not in plan.json")
+                }
+            }
+        }
+    }
+
     // MARK: Links
 
     func testEveryBlockReferenceResolves() throws {
