@@ -362,6 +362,7 @@ ID неизменны: на них держатся все ссылки. Наз�
 [{"id": "alt", "name": "ALT", "unit": "U/L", "bands": [
   {"age": "child", "sex": "F", "high": 22, "source": "safety_2010"},
   {"age": "child", "sex": "M", "high": 26, "source": "safety_2010"}]}]
+// low/sex необязательны; age — значение ages или более узкая полоса; source — id из guidelines.json
 
 // plan.json  (из sources/reading-final/Hepatology_Year_Plan.docx)
 [{"block": 2, "title": "Neonatal cholestasis: approach", "start": "2026-10-12",
