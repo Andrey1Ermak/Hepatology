@@ -10,6 +10,7 @@
 		051C69491DBB9F170A225C96 /* CardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EB2A09B67E9237C43E011E /* CardHeaderView.swift */; };
 		06356B0C9BF4915358EAA8EA /* ScoreCalcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58F57D0EA93E1344E69EB1 /* ScoreCalcView.swift */; };
 		0A1D711E5025F66C75DC077F /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A3D2B12172C4D0A8253D10 /* CardListView.swift */; };
+		0C15D2B57D31167DE3EA455D /* LinkIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00FD4836240C067477D6285 /* LinkIndex.swift */; };
 		0E1B259F0200BF7DFF38F56A /* ChipScoreRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C6C76AF68F51F86C0FB35 /* ChipScoreRule.swift */; };
 		10139B5F5791571F097404D2 /* Registry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446D93E4CDB00514BB51E68A /* Registry.swift */; };
 		10944861781EC3128EA42EB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE8F19EBCF792A80DE2E29E /* ContentView.swift */; };
@@ -25,6 +26,7 @@
 		3C7E0C7B85F33D63E3EB9485 /* ChipCountRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F48F661E3A6FE32916D21 /* ChipCountRule.swift */; };
 		3D82234C2249C06E751793FB /* ChipBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6346A41417A486CF030A17 /* ChipBoardView.swift */; };
 		3EEB07FC2701DAFEA972C508 /* Elevation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3F7BF9A3E68F759795A972 /* Elevation.swift */; };
+		3F113353B9ECFDD8558FEDA7 /* CardLinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578ED5C458F616A288AA4F79 /* CardLinksView.swift */; };
 		401666ADBA3640CAF51BB9ED /* Content in Resources */ = {isa = PBXBuildFile; fileRef = 0E0F17F4EF9CFE165F94CC07 /* Content */; };
 		44B2D6F2973351E92ADA70EE /* PathwayNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B839D89C5C2C94AC64C6C5F /* PathwayNode.swift */; };
 		44DC096A5301119352FC7C23 /* DispositionArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A50DE35F8C19D0E50C7ADB /* DispositionArrow.swift */; };
@@ -43,6 +45,7 @@
 		724502285222E1AED7A4F390 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25019922C87743AC09841EB1 /* FlowLayout.swift */; };
 		72AC5EC75733BAA460D0E3CF /* DesignSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958A1510D85C828F2BA67DAD /* DesignSystemTests.swift */; };
 		750D9EBA1AA7B8F70DDA1D42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4D29FA599B03ECE29F0AFF /* Assets.xcassets */; };
+		77214AF6D3AD50165C548839 /* LinkIndexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEFC5F3140B06BD93DA1B34 /* LinkIndexTests.swift */; };
 		77B0305FBD17A4FAB534B86A /* BranchedChildrenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E822D34F70C01854FDD8F263 /* BranchedChildrenView.swift */; };
 		81013A46A0A6159AA75D8296 /* CardLibraryGroupingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4588C975059DEF1AF99BAC /* CardLibraryGroupingTests.swift */; };
 		84BBFD678B410B83F33A1987 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09039DD8496221F029F80A4A /* DesignSystem.swift */; };
@@ -52,6 +55,7 @@
 		9A1DD9BC2129AF09AEF19369 /* TableBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2D9C57695F03F5F7C2C4D7 /* TableBlockView.swift */; };
 		9CD7A2B5B5E8B1BD7184DF89 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28826C35DA71B801B2DBCC2 /* Block.swift */; };
 		9E681A53CF0D51D70356EF58 /* DoseBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFAF5CB9638C1CF262E6C85 /* DoseBlockView.swift */; };
+		A0B511A040D1E28B2325CA22 /* CardSourcesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69CD7E59496A94BEBB86CEA /* CardSourcesTests.swift */; };
 		A31547AAA9B30F64B78FA92A /* PlaceholderBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CB3F1B11B649D27028143A /* PlaceholderBlockView.swift */; };
 		A42C373D69313FD9A4C2CB62 /* ListBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167C9464C130DB92F2277AD4 /* ListBlockView.swift */; };
 		A5A2E2C7F5314CC7CA669559 /* Card+Subtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E216AFB165744FB593B8D /* Card+Subtitle.swift */; };
@@ -79,11 +83,13 @@
 		E14BDF26B4C39EFA7C676716 /* CardDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD336DA683265B657ACBC2B6 /* CardDecodingTests.swift */; };
 		E1894326D03C791EE4231415 /* EditorialHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FE50AD71D546325C9F2021 /* EditorialHeader.swift */; };
 		E3048B8A5A79D2211CC3FBF9 /* AcuLevel+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F880D8133D078BAE1B77DE0 /* AcuLevel+Style.swift */; };
+		E5DC12F89137DD876CEC1F73 /* Card+Sources.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FDE06247E9A673E1113D4 /* Card+Sources.swift */; };
 		E9BFDE5B39FF03F247FF982E /* Card+GridTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE14A813BAADD69B9B07684 /* Card+GridTitle.swift */; };
 		EC880CA6746898B049E07E9B /* CardRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FE9624118A34C010B492C9 /* CardRowView.swift */; };
 		EC98CB7C3F3ACC75D208EE9C /* ArmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8662A63F7E3034B627B4E /* ArmView.swift */; };
 		EF5A49124DC914A98D531283 /* PathwayStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BB30B1F0C5DF22521CF116 /* PathwayStyle.swift */; };
 		F5BF5306CA4EC995852A2F1D /* PathwayNodeDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A56AF10D096F6BA21472C5 /* PathwayNodeDecodingTests.swift */; };
+		F84D15681A9B0A0775E7113C /* CardLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25251AE39358EFDF15C23816 /* CardLinkButton.swift */; };
 		FA9E3EF1DCC635EE7907D42A /* RegistryDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7C394F13E0FCA443EBE2D9 /* RegistryDecodingTests.swift */; };
 		FF262137A0175CFFEEEC2110 /* CardMarkupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC60AFBF1EA048AFB31EED /* CardMarkupTests.swift */; };
 /* End PBXBuildFile section */
@@ -116,6 +122,7 @@
 		221C5867FC3C24FB9A75BF0E /* PathwayBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathwayBlockView.swift; sourceTree = "<group>"; };
 		25019922C87743AC09841EB1 /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
 		2522CBC0F7780A40B120FBFA /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
+		25251AE39358EFDF15C23816 /* CardLinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLinkButton.swift; sourceTree = "<group>"; };
 		2A58F57D0EA93E1344E69EB1 /* ScoreCalcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCalcView.swift; sourceTree = "<group>"; };
 		2B839D89C5C2C94AC64C6C5F /* PathwayNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathwayNode.swift; sourceTree = "<group>"; };
 		2C29C8CF62141AA29BA9C923 /* NumericCalcSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericCalcSheet.swift; sourceTree = "<group>"; };
@@ -135,12 +142,14 @@
 		4EE8F19EBCF792A80DE2E29E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		541E28122B00FA3A4189AC31 /* KVBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVBlockView.swift; sourceTree = "<group>"; };
 		563AC1B574416E0A89C3E80C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		578ED5C458F616A288AA4F79 /* CardLinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLinksView.swift; sourceTree = "<group>"; };
 		5B7C394F13E0FCA443EBE2D9 /* RegistryDecodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistryDecodingTests.swift; sourceTree = "<group>"; };
 		5F880D8133D078BAE1B77DE0 /* AcuLevel+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AcuLevel+Style.swift"; sourceTree = "<group>"; };
 		617645515C201EB540B5CF04 /* CalculatorResetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorResetButton.swift; sourceTree = "<group>"; };
 		63FE9624118A34C010B492C9 /* CardRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRowView.swift; sourceTree = "<group>"; };
 		67EB2A09B67E9237C43E011E /* CardHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHeaderView.swift; sourceTree = "<group>"; };
 		69319EE20AB7131988F63E64 /* ColView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColView.swift; sourceTree = "<group>"; };
+		6CEFC5F3140B06BD93DA1B34 /* LinkIndexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkIndexTests.swift; sourceTree = "<group>"; };
 		75FE50AD71D546325C9F2021 /* EditorialHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorialHeader.swift; sourceTree = "<group>"; };
 		7CFAF5CB9638C1CF262E6C85 /* DoseBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoseBlockView.swift; sourceTree = "<group>"; };
 		7E3F7BF9A3E68F759795A972 /* Elevation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elevation.swift; sourceTree = "<group>"; };
@@ -155,12 +164,14 @@
 		A84CBC7A2E2688BA6EBE9081 /* BlockHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockHeading.swift; sourceTree = "<group>"; };
 		A9C8662A63F7E3034B627B4E /* ArmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmView.swift; sourceTree = "<group>"; };
 		AFE6C593AD02E59E70DD140D /* VerdictRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerdictRule.swift; sourceTree = "<group>"; };
+		B00FD4836240C067477D6285 /* LinkIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkIndex.swift; sourceTree = "<group>"; };
 		B306463A6CAE9C4A74717DEA /* NACCalcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NACCalcView.swift; sourceTree = "<group>"; };
 		B32E216AFB165744FB593B8D /* Card+Subtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Subtitle.swift"; sourceTree = "<group>"; };
 		B38F1F809B116292D6856ABE /* HepReference.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = HepReference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB2960A6A7B580DB9277E10A /* NoteBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBlockView.swift; sourceTree = "<group>"; };
 		BB2D9C57695F03F5F7C2C4D7 /* TableBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableBlockView.swift; sourceTree = "<group>"; };
 		BD274D527BDF935B5CE1E02B /* CalculatorHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorHeader.swift; sourceTree = "<group>"; };
+		C69CD7E59496A94BEBB86CEA /* CardSourcesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSourcesTests.swift; sourceTree = "<group>"; };
 		C88244BCD2FC3ED97C99B7D3 /* CalcFormRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcFormRow.swift; sourceTree = "<group>"; };
 		C8A56AF10D096F6BA21472C5 /* PathwayNodeDecodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathwayNodeDecodingTests.swift; sourceTree = "<group>"; };
 		CA9105D7E5281223F14D9D9C /* NumericCalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericCalcTests.swift; sourceTree = "<group>"; };
@@ -169,6 +180,7 @@
 		D10BE75C1587BBCFE4E31351 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		D28826C35DA71B801B2DBCC2 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		D3A3D2B12172C4D0A8253D10 /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
+		D40FDE06247E9A673E1113D4 /* Card+Sources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Sources.swift"; sourceTree = "<group>"; };
 		DBD2FB3392D250B0D9967CFD /* DecimalTextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalTextInput.swift; sourceTree = "<group>"; };
 		DC82B16AFE627B057B2779DA /* BlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockView.swift; sourceTree = "<group>"; };
 		E2643586157AA1DE125EF176 /* ChipScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipScreen.swift; sourceTree = "<group>"; };
@@ -238,6 +250,7 @@
 			children = (
 				A9C8662A63F7E3034B627B4E /* ArmView.swift */,
 				E822D34F70C01854FDD8F263 /* BranchedChildrenView.swift */,
+				25251AE39358EFDF15C23816 /* CardLinkButton.swift */,
 				69319EE20AB7131988F63E64 /* ColView.swift */,
 				E7A50DE35F8C19D0E50C7ADB /* DispositionArrow.swift */,
 				1783E4C659E72C2ACD3B6173 /* GrpView.swift */,
@@ -267,6 +280,7 @@
 				BD274D527BDF935B5CE1E02B /* CalculatorHeader.swift */,
 				2522CBC0F7780A40B120FBFA /* CardDetailView.swift */,
 				67EB2A09B67E9237C43E011E /* CardHeaderView.swift */,
+				578ED5C458F616A288AA4F79 /* CardLinksView.swift */,
 				D3A3D2B12172C4D0A8253D10 /* CardListView.swift */,
 				FD00610F261A547E8DD2C9D3 /* CardMarkup.swift */,
 				63FE9624118A34C010B492C9 /* CardRowView.swift */,
@@ -291,8 +305,10 @@
 				CD336DA683265B657ACBC2B6 /* CardDecodingTests.swift */,
 				3D4588C975059DEF1AF99BAC /* CardLibraryGroupingTests.swift */,
 				E9AC60AFBF1EA048AFB31EED /* CardMarkupTests.swift */,
+				C69CD7E59496A94BEBB86CEA /* CardSourcesTests.swift */,
 				1C89DA0A219A939F8D36EDAA /* ContentIntegrityTests.swift */,
 				958A1510D85C828F2BA67DAD /* DesignSystemTests.swift */,
+				6CEFC5F3140B06BD93DA1B34 /* LinkIndexTests.swift */,
 				CA9105D7E5281223F14D9D9C /* NumericCalcTests.swift */,
 				C8A56AF10D096F6BA21472C5 /* PathwayNodeDecodingTests.swift */,
 				5B7C394F13E0FCA443EBE2D9 /* RegistryDecodingTests.swift */,
@@ -350,9 +366,11 @@
 				D28826C35DA71B801B2DBCC2 /* Block.swift */,
 				20F4645FF4B9F3EFDCE86395 /* Card.swift */,
 				2FE14A813BAADD69B9B07684 /* Card+GridTitle.swift */,
+				D40FDE06247E9A673E1113D4 /* Card+Sources.swift */,
 				B32E216AFB165744FB593B8D /* Card+Subtitle.swift */,
 				1CA7E6006308709CF40FA4C4 /* CardCategory.swift */,
 				8F469CA2B0FF565BAE90688A /* CardLibrary.swift */,
+				B00FD4836240C067477D6285 /* LinkIndex.swift */,
 				FC37CEB0E5CA29B7ED090AB2 /* Manifest.swift */,
 				2B839D89C5C2C94AC64C6C5F /* PathwayNode.swift */,
 				446D93E4CDB00514BB51E68A /* Registry.swift */,
@@ -462,8 +480,10 @@
 				E14BDF26B4C39EFA7C676716 /* CardDecodingTests.swift in Sources */,
 				81013A46A0A6159AA75D8296 /* CardLibraryGroupingTests.swift in Sources */,
 				FF262137A0175CFFEEEC2110 /* CardMarkupTests.swift in Sources */,
+				A0B511A040D1E28B2325CA22 /* CardSourcesTests.swift in Sources */,
 				DBC4EE964A32DAB08A74F5F3 /* ContentIntegrityTests.swift in Sources */,
 				72AC5EC75733BAA460D0E3CF /* DesignSystemTests.swift in Sources */,
+				77214AF6D3AD50165C548839 /* LinkIndexTests.swift in Sources */,
 				CE07342B94812AA3ED612ACD /* NumericCalcTests.swift in Sources */,
 				F5BF5306CA4EC995852A2F1D /* PathwayNodeDecodingTests.swift in Sources */,
 				FA9E3EF1DCC635EE7907D42A /* RegistryDecodingTests.swift in Sources */,
@@ -487,12 +507,15 @@
 				89306B37E719CB0C705FE7B2 /* CalculatorHeader.swift in Sources */,
 				CA10484B81C114346D71867D /* CalculatorResetButton.swift in Sources */,
 				E9BFDE5B39FF03F247FF982E /* Card+GridTitle.swift in Sources */,
+				E5DC12F89137DD876CEC1F73 /* Card+Sources.swift in Sources */,
 				A5A2E2C7F5314CC7CA669559 /* Card+Subtitle.swift in Sources */,
 				D6F80DE52CCBEEEB41290FC4 /* Card.swift in Sources */,
 				C5D6CEF950797DBF9E893018 /* CardCategory.swift in Sources */,
 				961BDA2C6F1C8DAA715CDEC1 /* CardDetailView.swift in Sources */,
 				051C69491DBB9F170A225C96 /* CardHeaderView.swift in Sources */,
 				6603690DDDB85156EDF7A2BF /* CardLibrary.swift in Sources */,
+				F84D15681A9B0A0775E7113C /* CardLinkButton.swift in Sources */,
+				3F113353B9ECFDD8558FEDA7 /* CardLinksView.swift in Sources */,
 				0A1D711E5025F66C75DC077F /* CardListView.swift in Sources */,
 				27BF59369C6AE7197B51286F /* CardMarkup.swift in Sources */,
 				EC880CA6746898B049E07E9B /* CardRowView.swift in Sources */,
@@ -516,6 +539,7 @@
 				B170CCAE01DF516A94A1B479 /* GrpView.swift in Sources */,
 				D4685C77BA11C2D3B9708E08 /* HepReferenceApp.swift in Sources */,
 				B1DAFBD4174622F07ACCBC87 /* KVBlockView.swift in Sources */,
+				0C15D2B57D31167DE3EA455D /* LinkIndex.swift in Sources */,
 				A42C373D69313FD9A4C2CB62 /* ListBlockView.swift in Sources */,
 				1577CE77F31C5DCDEA91484F /* Manifest.swift in Sources */,
 				2C4228336ADA60A58BDA9476 /* NACCalc.swift in Sources */,

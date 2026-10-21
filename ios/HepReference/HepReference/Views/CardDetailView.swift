@@ -10,6 +10,7 @@ struct CardDetailView: View {
                 ForEach(Array(card.blocks.enumerated()), id: \.offset) { _, block in
                     BlockView(block: block)
                 }
+                CardLinksView(card: card)
             }
             .padding(Spacing.l)
         }

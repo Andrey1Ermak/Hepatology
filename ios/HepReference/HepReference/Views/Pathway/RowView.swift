@@ -17,6 +17,8 @@ struct RowView: View {
     /// condition badge.
     var linkCalcId: String? = nil
     var linkLabel: String? = nil
+    /// Another card this fact hands off to — see `CardLinkButton`.
+    var linkCardId: String? = nil
     @EnvironmentObject private var calculatorPresenter: CalculatorPresenter
 
     var body: some View {
@@ -42,8 +44,10 @@ struct RowView: View {
             // and silently truncate with a trailing ellipsis instead of
             // wrapping to as many lines as the text actually needs.
             .fixedSize(horizontal: false, vertical: true)
-            if let linkCalcId {
+            if linkCalcId != nil || linkCardId != nil {
                 Spacer(minLength: Spacing.s)
+            }
+            if let linkCalcId {
                 Button {
                     calculatorPresenter.present(calcId: linkCalcId, title: linkLabel ?? text)
                 } label: {
@@ -58,6 +62,9 @@ struct RowView: View {
                     .background(Color.hepNavy, in: Capsule())
                 }
                 .buttonStyle(.plain)
+            }
+            if let linkCardId {
+                CardLinkButton(cardId: linkCardId)
             }
         }
     }

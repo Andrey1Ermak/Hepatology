@@ -17,7 +17,7 @@ struct ArmView: View {
     let children: [PathwayNode]
 
     private var inlinePills: [Pill] {
-        guard let first = children.first, case .out(nil, let pills, nil, nil, nil, _) = first, !pills.isEmpty else { return [] }
+        guard let first = children.first, case .out(nil, let pills, nil, nil, nil, _, nil) = first, !pills.isEmpty else { return [] }
         return pills
     }
 

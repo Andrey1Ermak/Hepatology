@@ -49,7 +49,11 @@ indirect enum PathwayNode: Decodable {
     /// block. `condBold` marks a cond that's really a sub-branch header
     /// inside an arm (e.g. "Age < 1 yr"/"Uncomplicated") — one step
     /// down from the arm's own tag, one step up from a plain outcome cond.
-    case out(condition: String?, pills: [Pill], subtext: String?, linkCalcId: String?, linkLabel: String?, condBold: Bool)
+    /// `linkCardId` adds a trailing button that opens another card — the
+    /// "no dead ends" rule (§3.2): an outcome can hand off to the card that
+    /// owns the next step. `linkLabel` titles the calculator when a node
+    /// carries both links; the card button always shows its target's title.
+    case out(condition: String?, pills: [Pill], subtext: String?, linkCalcId: String?, linkLabel: String?, condBold: Bool, linkCardId: String?)
     /// Indented nested content ("nest").
     case nest(children: [PathwayNode])
     /// A single fact line: optional bold label ("f") or plain text ("row").
@@ -59,8 +63,8 @@ indirect enum PathwayNode: Decodable {
     /// put a trailing "Calculate" button on the same bulleted line (e.g.
     /// "Assess risk" → a score) — for a plain bullet that needs a
     /// calculator link but shouldn't be promoted into an `out`'s boxed
-    /// condition badge.
-    case row(label: String?, text: String, bullet: Bool, linkCalcId: String?, linkLabel: String?)
+    /// condition badge. `linkCardId` works as on `out`.
+    case row(label: String?, text: String, bullet: Bool, linkCalcId: String?, linkLabel: String?, linkCardId: String?)
     /// A column grouping ("col") — visual grouping, not a layout column.
     case col(children: [PathwayNode])
     /// A reference table — reuses TableBlockView.
@@ -68,7 +72,7 @@ indirect enum PathwayNode: Decodable {
 
     private enum CodingKeys: String, CodingKey {
         case t, h, style, label, kind, tag, rx, cond, pill, pills, subtext, text, bullet, head, rows, children
-        case linkCalcId = "link_calc_id", linkLabel = "link_label", condBold = "cond_bold"
+        case linkCalcId = "link_calc_id", linkLabel = "link_label", condBold = "cond_bold", linkCardId = "link_card_id"
     }
 
     private enum Kind: String, Decodable {
@@ -109,7 +113,8 @@ indirect enum PathwayNode: Decodable {
                 subtext: try c.decodeIfPresent(String.self, forKey: .subtext),
                 linkCalcId: try c.decodeIfPresent(String.self, forKey: .linkCalcId),
                 linkLabel: try c.decodeIfPresent(String.self, forKey: .linkLabel),
-                condBold: try c.decodeIfPresent(Bool.self, forKey: .condBold) ?? false
+                condBold: try c.decodeIfPresent(Bool.self, forKey: .condBold) ?? false,
+                linkCardId: try c.decodeIfPresent(String.self, forKey: .linkCardId)
             )
         case .nest:
             self = .nest(children: try children())
@@ -119,7 +124,8 @@ indirect enum PathwayNode: Decodable {
                 text: try c.decode(String.self, forKey: .text),
                 bullet: try c.decodeIfPresent(Bool.self, forKey: .bullet) ?? true,
                 linkCalcId: try c.decodeIfPresent(String.self, forKey: .linkCalcId),
-                linkLabel: try c.decodeIfPresent(String.self, forKey: .linkLabel)
+                linkLabel: try c.decodeIfPresent(String.self, forKey: .linkLabel),
+                linkCardId: try c.decodeIfPresent(String.self, forKey: .linkCardId)
             )
         case .col:
             self = .col(children: try children())
@@ -143,4 +149,54 @@ struct Pathway: Decodable {
         else { return nil }
         return pathway
     }
+}
+
+extension PathwayNode {
+    /// This node's own children, for tree walks — empty for leaves.
+    var children: [PathwayNode] {
+        switch self {
+        case .section(_, let c), .box(_, let c), .group(_, let c), .arm(_, _, _, let c), .nest(let c), .col(let c):
+            return c
+        case .out, .row, .table:
+            return []
+        }
+    }
+
+    /// Every `link_calc_id` in this subtree, in reading order, labeled as the
+    /// step's own button titles it: `link_label`, else the cond/row text.
+    var calcRefs: [CalcRef] {
+        switch self {
+        case .out(let condition, _, _, let id, let label, _, _):
+            return id.map { [CalcRef(id: $0, label: label ?? condition)] } ?? []
+        case .row(_, let text, _, let id, let label, _):
+            return id.map { [CalcRef(id: $0, label: label ?? text)] } ?? []
+        default:
+            return children.flatMap(\.calcRefs)
+        }
+    }
+
+    /// Every `link_calc_id` in this subtree, in reading order.
+    var calcLinks: [String] { calcRefs.map(\.id) }
+
+    /// Every `link_card_id` in this subtree, in reading order.
+    var cardLinks: [String] {
+        switch self {
+        case .out(_, _, _, _, _, _, let id), .row(_, _, _, _, _, let id):
+            return id.map { [$0] } ?? []
+        default:
+            return children.flatMap(\.cardLinks)
+        }
+    }
+}
+
+/// A calculator a pathway step points at, with the label it was given there.
+struct CalcRef: Equatable {
+    let id: String
+    let label: String?
+}
+
+extension Pathway {
+    var calcRefs: [CalcRef] { children.flatMap(\.calcRefs) }
+    var calcLinks: [String] { calcRefs.map(\.id) }
+    var cardLinks: [String] { children.flatMap(\.cardLinks) }
 }

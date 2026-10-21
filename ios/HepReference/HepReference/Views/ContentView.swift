@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    let library = CardLibrary()
+    @State private var library = CardLibrary()
+    @State private var registry = Registry()
     @StateObject private var calculatorPresenter = CalculatorPresenter()
 
     var body: some View {
@@ -27,6 +28,10 @@ struct ContentView: View {
         // target is 17.0, so it needs an availability guard.
         .modifier(TabBarNeverMinimizesModifier())
         .environmentObject(calculatorPresenter)
+        // Card links (`CardLinkButton`, `CardLinksView`) read targets from
+        // the library; the header and Study links read the registries.
+        .environment(library)
+        .environment(registry)
         // Overlaid above the whole TabView (not a per-tab .sheet) so a
         // numeric_calc opened from either tab grows from screen-center over
         // everything, tab bar included. See CalculatorPresenter.

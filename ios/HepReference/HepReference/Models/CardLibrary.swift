@@ -9,10 +9,16 @@ import Observation
 final class CardLibrary {
     private(set) var cardsByID: [String: Card] = [:]
     private(set) var manifestEntries: [ManifestEntry] = []
+    /// Every card's outgoing and incoming links — see `LinkIndex`.
+    private(set) var links = LinkIndex(cards: [], pathway: { _ in nil })
 
     init(bundle: Bundle = .main) {
         manifestEntries = Self.loadManifest(bundle: bundle)
         cardsByID = Self.loadCards(ids: manifestEntries.map(\.id), bundle: bundle)
+        links = LinkIndex(
+            cards: availableEntries.compactMap { cardsByID[$0.id] },
+            pathway: { Pathway.load(pathId: $0, bundle: bundle) }
+        )
     }
 
     private static func loadManifest(bundle: Bundle) -> [ManifestEntry] {

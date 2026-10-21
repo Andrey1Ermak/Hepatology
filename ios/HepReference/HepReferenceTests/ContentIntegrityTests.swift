@@ -158,7 +158,7 @@ final class ContentIntegrityTests: XCTestCase {
             if let old = g.supersedes {
                 XCTAssertTrue(guidelineIDs.contains(old), "\(g.id): supersedes unknown '\(old)'")
             }
-            XCTAssertNotNil(g.checked.range(of: #"^\d{4}-\d{2}$"#, options: .regularExpression), "\(g.id): checked must be YYYY-MM")
+            XCTAssertNotNil(g.checked.range(of: #"^\d{4}-(0[1-9]|1[0-2])$"#, options: .regularExpression), "\(g.id): checked must be YYYY-MM")
         }
 
         let labs = try registry("labs", as: [LabTest].self)
@@ -223,25 +223,38 @@ final class ContentIntegrityTests: XCTestCase {
     }
 
     func testEveryPathwayCalculatorLinkResolves() throws {
-        func linkIDs(_ nodes: [PathwayNode]) -> [String] {
-            nodes.flatMap { node -> [String] in
-                switch node {
-                case .section(_, let c), .box(_, let c), .group(_, let c), .arm(_, _, _, let c), .nest(let c), .col(let c):
-                    return linkIDs(c)
-                case .out(_, _, _, let id, _, _), .row(_, _, _, let id, _):
-                    return id.map { [$0] } ?? []
-                case .table:
-                    return []
+        for url in jsonFiles("Pathways") {
+            let pathway = try decode(Pathway.self, url)
+            for id in pathway.calcLinks {
+                XCTAssertTrue(
+                    NumericCalcRegistry.ids.contains(id) || ChipScreen.load(calcId: id, bundle: bundle) != nil,
+                    "\(pathway.id): link_calc_id '\(id)' resolves to no calculator"
+                )
+            }
+        }
+    }
+
+    /// A `link_card_id` must open a bundled card listed in the manifest —
+    /// a link to a card that isn't written yet is added on the day the
+    /// target card ships (§4.5), never ahead of it. A pathway must not link
+    /// back to the card that shows it: that button would go nowhere new.
+    func testEveryPathwayCardLinkResolves() throws {
+        let cards = try allCards()
+        // Manifest ↔ Cards is already one-to-one (testManifestAndCardFilesMatchOneToOne).
+        let cardIDs = Set(cards.map(\.id))
+        var ownersByPathway: [String: Set<String>] = [:]
+        for card in cards {
+            for block in card.blocks {
+                if case .pathway(let b) = block {
+                    ownersByPathway[b.pathId, default: []].insert(card.id)
                 }
             }
         }
         for url in jsonFiles("Pathways") {
             let pathway = try decode(Pathway.self, url)
-            for id in linkIDs(pathway.children) {
-                XCTAssertTrue(
-                    NumericCalcRegistry.ids.contains(id) || ChipScreen.load(calcId: id, bundle: bundle) != nil,
-                    "\(pathway.id): link_calc_id '\(id)' resolves to no calculator"
-                )
+            for id in pathway.cardLinks {
+                XCTAssertTrue(cardIDs.contains(id), "\(pathway.id): link_card_id '\(id)' resolves to no bundled card")
+                XCTAssertFalse(ownersByPathway[pathway.id, default: []].contains(id), "\(pathway.id): link_card_id '\(id)' points back to its own card")
             }
         }
     }

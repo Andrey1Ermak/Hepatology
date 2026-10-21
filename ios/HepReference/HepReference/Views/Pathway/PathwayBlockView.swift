@@ -66,12 +66,12 @@ struct PathwayNodeView: View {
             GrpView(label: label, children: children)
         case .arm(let kind, let tag, let rx, let children):
             ArmView(kind: kind, tag: tag, rx: rx, children: children)
-        case .out(let condition, let pills, let subtext, let linkCalcId, let linkLabel, let condBold):
-            OutView(condition: condition, pills: pills, subtext: subtext, linkCalcId: linkCalcId, linkLabel: linkLabel, condBold: condBold)
+        case .out(let condition, let pills, let subtext, let linkCalcId, let linkLabel, let condBold, let linkCardId):
+            OutView(condition: condition, pills: pills, subtext: subtext, linkCalcId: linkCalcId, linkLabel: linkLabel, condBold: condBold, linkCardId: linkCardId)
         case .nest(let children):
             NestView(children: children)
-        case .row(let label, let text, let bullet, let linkCalcId, let linkLabel):
-            RowView(label: label, text: text, bullet: bullet, linkCalcId: linkCalcId, linkLabel: linkLabel)
+        case .row(let label, let text, let bullet, let linkCalcId, let linkLabel, let linkCardId):
+            RowView(label: label, text: text, bullet: bullet, linkCalcId: linkCalcId, linkLabel: linkLabel, linkCardId: linkCardId)
         case .col(let children):
             ColView(children: children)
         case .table(let head, let rows):

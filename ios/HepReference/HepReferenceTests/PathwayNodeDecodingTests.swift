@@ -48,7 +48,7 @@ final class PathwayNodeDecodingTests: XCTestCase {
     }
 
     func testOutWithPill() throws {
-        guard case .out(let condition, let pills, let subtext, _, _, _) = try decodeNode(#"{"t":"out","cond":"US negative","pill":{"kind":"dc","text":"Discharge"}}"#) else {
+        guard case .out(let condition, let pills, let subtext, _, _, _, _) = try decodeNode(#"{"t":"out","cond":"US negative","pill":{"kind":"dc","text":"Discharge"}}"#) else {
             return XCTFail("expected out")
         }
         XCTAssertEqual(condition, "US negative")
@@ -59,7 +59,7 @@ final class PathwayNodeDecodingTests: XCTestCase {
     }
 
     func testOutWithSubtext() throws {
-        guard case .out(_, let pills, let subtext, _, _, _) = try decodeNode(#"{"t":"out","cond":"Glucose","subtext":"POC now"}"#) else {
+        guard case .out(_, let pills, let subtext, _, _, _, _) = try decodeNode(#"{"t":"out","cond":"Glucose","subtext":"POC now"}"#) else {
             return XCTFail("expected out")
         }
         XCTAssertTrue(pills.isEmpty)
@@ -67,7 +67,7 @@ final class PathwayNodeDecodingTests: XCTestCase {
     }
 
     func testOutWithMultiplePills() throws {
-        guard case .out(_, let pills, _, _, _, _) = try decodeNode(#"{"t":"out","cond":"Shared decision","pills":[{"kind":"floor","text":"Admit"},{"kind":"dc","text":"Home"}]}"#) else {
+        guard case .out(_, let pills, _, _, _, _, _) = try decodeNode(#"{"t":"out","cond":"Shared decision","pills":[{"kind":"floor","text":"Admit"},{"kind":"dc","text":"Home"}]}"#) else {
             return XCTFail("expected out")
         }
         XCTAssertEqual(pills.map(\.kind), [.floor, .dc])
@@ -82,34 +82,78 @@ final class PathwayNodeDecodingTests: XCTestCase {
     }
 
     func testRowWithLabel() throws {
-        guard case .row(let label, let text, let bullet, _, _) = try decodeNode(#"{"t":"row","label":"OCT:","text":"optical coherence tomography"}"#) else {
+        guard case .row(let label, let text, let bullet, _, _, let linkCardId) = try decodeNode(#"{"t":"row","label":"OCT:","text":"optical coherence tomography"}"#) else {
             return XCTFail("expected row")
         }
         XCTAssertEqual(label, "OCT:")
         XCTAssertEqual(text, "optical coherence tomography")
         XCTAssertTrue(bullet)
+        XCTAssertNil(linkCardId)
     }
 
     func testRowWithoutLabel() throws {
-        guard case .row(let label, _, _, _, _) = try decodeNode(#"{"t":"row","text":"plain fact"}"#) else {
+        guard case .row(let label, _, _, _, _, _) = try decodeNode(#"{"t":"row","text":"plain fact"}"#) else {
             return XCTFail("expected row")
         }
         XCTAssertNil(label)
     }
 
     func testRowBulletOptOut() throws {
-        guard case .row(_, _, let bullet, _, _) = try decodeNode(#"{"t":"row","text":"a lone callout","bullet":false}"#) else {
+        guard case .row(_, _, let bullet, _, _, _) = try decodeNode(#"{"t":"row","text":"a lone callout","bullet":false}"#) else {
             return XCTFail("expected row")
         }
         XCTAssertFalse(bullet)
     }
 
     func testRowWithLink() throws {
-        guard case .row(_, _, _, let linkCalcId, let linkLabel) = try decodeNode(#"{"t":"row","text":"Classify injury pattern","link_calc_id":"c_rratio","link_label":"R-ratio"}"#) else {
+        guard case .row(_, _, _, let linkCalcId, let linkLabel, _) = try decodeNode(#"{"t":"row","text":"Classify injury pattern","link_calc_id":"c_rratio","link_label":"R-ratio"}"#) else {
             return XCTFail("expected row")
         }
         XCTAssertEqual(linkCalcId, "c_rratio")
         XCTAssertEqual(linkLabel, "R-ratio")
+    }
+
+    func testOutWithCardLink() throws {
+        guard case .out(let condition, let pills, _, let linkCalcId, _, _, let linkCardId) = try decodeNode(#"{"t":"out","cond":"INR ≥ 1.5 after vitamin K","pill":{"kind":"picu","text":"Call now"},"link_card_id":"inr_prolonged"}"#) else {
+            return XCTFail("expected out")
+        }
+        XCTAssertEqual(condition, "INR ≥ 1.5 after vitamin K")
+        XCTAssertEqual(pills.count, 1)
+        XCTAssertNil(linkCalcId)
+        XCTAssertEqual(linkCardId, "inr_prolonged")
+    }
+
+    func testOutWithoutCardLink() throws {
+        guard case .out(_, _, _, _, _, _, let linkCardId) = try decodeNode(#"{"t":"out","cond":"Glucose","subtext":"POC now"}"#) else {
+            return XCTFail("expected out")
+        }
+        XCTAssertNil(linkCardId)
+    }
+
+    func testRowWithCardAndCalcLinks() throws {
+        guard case .row(_, _, _, let linkCalcId, let linkLabel, let linkCardId) = try decodeNode(#"{"t":"row","text":"Check the Kasai window","link_calc_id":"c_kasai_clock","link_label":"Kasai clock","link_card_id":"chol_0_3m"}"#) else {
+            return XCTFail("expected row")
+        }
+        XCTAssertEqual(linkCalcId, "c_kasai_clock")
+        XCTAssertEqual(linkLabel, "Kasai clock")
+        XCTAssertEqual(linkCardId, "chol_0_3m")
+    }
+
+    func testLinkWalkFindsNestedLinksInReadingOrder() throws {
+        let pathway = try JSONDecoder().decode(Pathway.self, from: Data(#"""
+        {"id":"p","children":[
+          {"t":"section","h":"A","children":[
+            {"t":"arm","kind":"sev","tag":"High GGT","children":[
+              {"t":"out","cond":"INR > 1.5","pill":{"kind":"step","text":"Same day"},"link_card_id":"inr_prolonged"},
+              {"t":"nest","children":[{"t":"row","text":"Age","link_calc_id":"c_kasai_clock"}]}
+            ]},
+            {"t":"box","style":"info","children":[{"t":"col","children":[{"t":"row","text":"Older","link_card_id":"chol_3_12m"}]}]},
+            {"t":"table","head":["a"],"rows":[["b"]]}
+          ]}
+        ]}
+        """#.utf8))
+        XCTAssertEqual(pathway.cardLinks, ["inr_prolonged", "chol_3_12m"])
+        XCTAssertEqual(pathway.calcLinks, ["c_kasai_clock"])
     }
 
     func testCol() throws {

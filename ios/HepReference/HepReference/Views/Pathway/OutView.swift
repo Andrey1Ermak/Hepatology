@@ -28,13 +28,15 @@ struct OutView: View {
     /// Bolds the condition badge for a sub-branch header inside an arm — see
     /// `PathwayNode.out`'s own doc comment.
     var condBold: Bool = false
+    /// Another card this outcome hands off to — see `CardLinkButton`.
+    var linkCardId: String? = nil
     @EnvironmentObject private var calculatorPresenter: CalculatorPresenter
 
     var body: some View {
         HStack(alignment: .center, spacing: Spacing.xs) {
             if let condition {
                 Badge(text: condition, style: .neutral, uppercase: false, maxLines: nil, fillHeight: !pills.isEmpty, bold: condBold)
-                    .frame(maxWidth: (!pills.isEmpty || subtext != nil || linkCalcId != nil) ? .infinity : nil, alignment: .leading)
+                    .frame(maxWidth: (!pills.isEmpty || subtext != nil || linkCalcId != nil || linkCardId != nil) ? .infinity : nil, alignment: .leading)
             }
             if !pills.isEmpty {
                 if condition != nil {
@@ -72,6 +74,10 @@ struct OutView: View {
                     .background(Color.hepNavy, in: Capsule())
                 }
                 .buttonStyle(.plain)
+            }
+            // Last: leaving the card is the final step of reading a row.
+            if let linkCardId {
+                CardLinkButton(cardId: linkCardId)
             }
         }
     }
