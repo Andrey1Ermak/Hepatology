@@ -21,3 +21,12 @@ Card not built yet (trigger: lesson 05-14). Inbox is filled by daily lesson sync
 - **Pitfall (slide 17):** "two hits in ABCB11" without parental testing — both variants may sit on one allele → wrong diagnosis, wrong drug. Phase with parents; BSEP stain if biopsied.
 - One heterozygous ABCB4/ABCB11 variant is a modifier at most, never the explanation: 77.5% of a Taiwanese cohort carried ≥ 1 variant (Chen 2019); in another comparison single variants in cholestasis genes were found in ~25% of patients vs 26% of controls (TODO(verify) source).
 - Scenario (slide 19): 8-week-old, low GGT, itch, normal stools → atresia unlikely; ATP8B1/ABCB11/TJP2/USP53 panel, urine bile acids.
+
+### 02-13 · Supportive care in the cholestatic infant (synced 2026-10-21)
+- Urine bile acids by mass spectrometry **before** UDCA: synthesis defects (low GGT, low serum bile acids) are cured by cholic acid; UDCA blurs the profile (Fawaz 2017).
+- UDCA cannot replace a missing transporter (FIC1, BSEP) or correct a synthesis defect; EASL 2024 rates efficacy low → not first line in PFIC1/2.
+- IBAT inhibitors in PFIC (PEDFIC1 odevixibat PFIC1/2: positive itch 55% vs 30%, bile acid response 33% vs 0%, diarrhea 31% vs 10%; MARCH-PFIC maralixibat: BSEP cohort ItchRO −1.7 vs −0.6, diarrhea 57% vs 20%). Need residual secretion: severe BSEP deficiency with no functional protein is excluded from the maralixibat label. Bile acid responders are the patients in whom native-liver survival may improve. FDA labels (lesson, 2026): odevixibat PFIC ≥ 3 mo, maralixibat PFIC ≥ 12 mo — TODO(verify) at card build.
+- **Biliary diversion by genotype (EASL 2024):** not routinely in FIC1 (ATP8B1); consider in BSEP with a responsive genotype — itch response 54% overall, 66% with E297G or D482G, 36% other missense, 0/3 with two truncating variants.
+- Two truncating ABCB11 variants + refractory itch → IBAT inhibitor and diversion unlikely to work → plan transplant (lesson case, slide 21).
+- Diarrhea on IBAT inhibitors worsens fat malabsorption → recheck fat-soluble vitamins after starting.
+- Guideline compare candidates (slide 18): IBAT inhibitors in PFIC (FDA odevixibat ≥ 3 mo, maralixibat ≥ 12 mo vs EMA odevixibat ≥ 6 mo — DIFFERS; TODO(verify) current labels; the Alagille statement lives in chol_3_12m); biliary diversion (EASL genotype-guided vs no North American graded statement — GAP).
