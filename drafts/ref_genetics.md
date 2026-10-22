@@ -15,3 +15,9 @@ Card not built yet (trigger: lesson 01-14, see BACKLOG). Inbox is filled by dail
 - Reanalysis: EASL 2024 at least every 3 years; ACMG (Manickam 2021): laboratory policy, no interval.
 - Secondary findings: a genome may report adult-onset actionable genes (ACMG secondary-findings list v3.3, 2025, added CYP27A1) → agree with parents in advance what will be returned. TODO(verify) ACMG v3.3 before publishing.
 - Guidelines: NHS England National Genomic Test Directory R14 (rapid trio genome for acutely ill children) — candidate guidelines.json entry; AASLD silent.
+
+### 02-14 · Block 2 synthesis (synced 2026-10-22)
+- Rapid genome in parallel with the atresia workup; **never let it delay the cholangiogram**. A result may cancel a Kasai (Alagille with a patent duct), a pending result or VUS may not delay surgery. No guideline states this explicitly (gap, slide 17) → note as "Expert opinion (lesson 02-14)".
+- Yield 4% (PN cholestasis) to 71% (genetic phenotype); genome beat panel 49% vs 27% (GEMINI) — consistent with 02-12 Inbox.
+- Family referral: after GALD → obstetrics (antenatal IVIG); after familial idiopathic neonatal hepatitis → genetics ("the next pregnancy is also our patient").
+- Suspected ARC → genetics, not biopsy.

@@ -25,3 +25,8 @@ Card not built yet (trigger: lesson 05-14). Inbox is filled by daily lesson sync
 - Measure itch at each visit (caregiver scratch score or ItchRO(Obs)); sleep loss is the outcome families feel.
 - HPS: oximetry upright and supine routinely in chronic cholestasis; < 97% → investigate (changes transplant timing).
 - Case candidates (slide 21): Alagille, 14 months, scratching all night despite rifampin → IBAT inhibitor, watch diarrhea and vitamins; biliary atresia, 9 months, SpO2 95% supine → investigate for HPS.
+
+### 02-14 · Block 2 synthesis (synced 2026-10-22)
+- NICCD (pearl 12): high GGT, very high AFP and citrulline; lactose-free MCT formula; almost all recover by 12 months. Biallelic SLC25A13 → no surgery **only if it explains the phenotype**; persistent acholic stools → cholangiogram anyway (02-12).
+- Alagille + Kasai: transplant 47% vs 14%, death 32% vs 3% (Kaye 2010) — late-presenting infant with suspected atresia: echo, spine film, eye exam before the cholangiogram.
+- Weight z-score −2.1 vs −1.2 at 6 months after Kasai separated poor from good outcome (DeRusso 2007) — measure the arm, not only the weight.

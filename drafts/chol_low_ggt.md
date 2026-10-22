@@ -30,3 +30,8 @@ Card not built yet (trigger: lesson 05-14). Inbox is filled by daily lesson sync
 - Two truncating ABCB11 variants + refractory itch → IBAT inhibitor and diversion unlikely to work → plan transplant (lesson case, slide 21).
 - Diarrhea on IBAT inhibitors worsens fat malabsorption → recheck fat-soluble vitamins after starting.
 - Guideline compare candidates (slide 18): IBAT inhibitors in PFIC (FDA odevixibat ≥ 3 mo, maralixibat ≥ 12 mo vs EMA odevixibat ≥ 6 mo — DIFFERS; TODO(verify) current labels; the Alagille statement lives in chol_3_12m); biliary diversion (EASL genotype-guided vs no North American graded statement — GAP).
+
+### 02-14 · Block 2 synthesis (synced 2026-10-22)
+- **Endocrine mimic (case 3):** GGT is normal in about half of hypopituitary cholestatic infants → hypoglycemia + low-GGT cholestasis = cortisol + free T4 before (or alongside) the low-GGT genetic panel; normal TSH does not exclude central hypothyroidism. Hydrocortisone before levothyroxine. Belongs in Don't miss.
+- Split by clue (slide 3): low GGT with intense itch → transporter defect (PFIC/BSEP); low GGT with low serum bile acids and **no itch** → bile acid synthesis defect → urine bile acids by mass spectrometry **before** UDCA (pearl 11, self-test).
+- ARC: never biopsy (7/16 bled) — repeated from 02-11.
