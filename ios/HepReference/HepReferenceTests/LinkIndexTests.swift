@@ -83,6 +83,35 @@ final class LinkIndexTests: XCTestCase {
         XCTAssertEqual(index.links(for: "c").calcs, [CalcRef(id: "nac", label: "NAC")])
     }
 
+    func testPathIdsCoverPathwayBlocksAndEveryAgeBranchOnce() throws {
+        let c = try card("c", blocks: #"""
+        [{"t":"pathway","path_id":"p_main"},
+         {"t":"age_switch","options":[
+           {"age":"neo","label":"A","path_id":"p_neo"},
+           {"age":"infant","label":"B","path_id":"p_main"}]}]
+        """#)
+        XCTAssertEqual(c.pathIds, ["p_main", "p_neo"])
+    }
+
+    func testLinksInsideAgeBranchesCount() throws {
+        let neo = try pathway(#"{"id":"p_neo","children":[{"t":"row","text":"INR","link_card_id":"inr_prolonged","link_calc_id":"c_kasai_clock"}]}"#)
+        let infant = try pathway(#"{"id":"p_infant","children":[{"t":"row","text":"Norms","link_card_id":"ref_norms"}]}"#)
+        let cards = [
+            try card("a", blocks: #"""
+            [{"t":"age_switch","options":[
+              {"age":"neo","label":"A","path_id":"p_neo"},
+              {"age":"infant","label":"B","path_id":"p_infant"}]}]
+            """#),
+            try card("inr_prolonged", cat: .labs),
+            try card("ref_norms", cat: .ref),
+        ]
+        let index = LinkIndex(cards: cards, pathway: { ["p_neo": neo, "p_infant": infant][$0] })
+        XCTAssertEqual(index.links(for: "a").next, ["inr_prolonged"])
+        XCTAssertEqual(index.links(for: "a").refs, ["ref_norms"])
+        XCTAssertEqual(index.links(for: "a").calcs.map(\.id), ["c_kasai_clock"])
+        XCTAssertEqual(index.links(for: "ref_norms").linkedFrom, ["a"])
+    }
+
     func testBundledLibraryBuildsWithoutLosingCards() {
         let library = CardLibrary(bundle: Bundle(for: LinkIndexTests.self))
         XCTAssertFalse(library.cardsByID.isEmpty)

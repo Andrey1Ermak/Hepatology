@@ -1,10 +1,10 @@
 import SwiftUI
 
-/// Stand-in for a `chip_screen`/`pathway`/`score_calc`/`numeric_calc` block
-/// whose `calc_id`/`path_id` doesn't resolve to bundled content. Confirmed by
-/// `AllBundledCardsDecodeTests.testEveryCardCustomBlockResolves` to never
-/// actually trigger for any of the 78 shipped cards — a pure defensive
-/// fallback, not a "feature coming soon" message.
+/// Stand-in for a `chip_screen`/`pathway`/`score_calc`/`numeric_calc`/
+/// `age_switch` block whose `calc_id`/`path_id` doesn't resolve to bundled
+/// content. `ContentIntegrityTests.testEveryBlockReferenceResolves` keeps it
+/// from ever showing on a bundled card — a pure defensive fallback, not a
+/// "feature coming soon" message.
 struct PlaceholderBlockView: View {
     let kind: String
     let label: String

@@ -126,6 +126,41 @@ final class BlockDecodingTests: XCTestCase {
         XCTAssertEqual(block.calcId, "nac")
     }
 
+    func testAgeSwitch() throws {
+        let json = #"""
+        {"t":"age_switch","h":"Age","options":[
+          {"age":"neo","label":"0–28 d","path_id":"chol_0_3m_neo"},
+          {"age":"infant","label":"1–3 mo","path_id":"chol_0_3m_infant"}]}
+        """#
+        guard case .ageSwitch(let block) = try decodeBlock(json) else {
+            return XCTFail("expected age_switch")
+        }
+        XCTAssertEqual(block.h, "Age")
+        XCTAssertEqual(block.options.map(\.age), [.neo, .infant])
+        XCTAssertEqual(block.options.map(\.label), ["0–28 d", "1–3 mo"])
+        XCTAssertEqual(block.options.map(\.pathId), ["chol_0_3m_neo", "chol_0_3m_infant"])
+    }
+
+    func testAgeSwitchRejectsUnknownAge() {
+        let json = #"{"t":"age_switch","options":[{"age":"toddler","label":"1–3 y","path_id":"p"}]}"#
+        XCTAssertThrowsError(try decodeBlock(json))
+    }
+
+    func testAgeSwitchShowsFirstBranchUntilAnAgeIsChosen() throws {
+        let json = #"""
+        {"t":"age_switch","options":[
+          {"age":"neo","label":"A","path_id":"p_neo"},
+          {"age":"infant","label":"B","path_id":"p_infant"}]}
+        """#
+        guard case .ageSwitch(let block) = try decodeBlock(json) else {
+            return XCTFail("expected age_switch")
+        }
+        XCTAssertEqual(block.option(for: nil)?.pathId, "p_neo")
+        XCTAssertEqual(block.option(for: .infant)?.pathId, "p_infant")
+        // An age chosen elsewhere on the card with no branch here falls back to the first.
+        XCTAssertEqual(block.option(for: .teen)?.pathId, "p_neo")
+    }
+
     func testUnknownBlockTypeThrows() {
         XCTAssertThrowsError(try decodeBlock(#"{"t":"sep2col"}"#))
     }

@@ -215,6 +215,10 @@ final class ContentIntegrityTests: XCTestCase {
                     XCTAssertNotNil(ScoreCalcSchema.load(calcId: b.calcId, bundle: bundle), "\(card.id): score_calc '\(b.calcId)' missing")
                 case .numericCalc(let b):
                     XCTAssertTrue(NumericCalcRegistry.ids.contains(b.calcId), "\(card.id): numeric_calc '\(b.calcId)' not in NumericCalcRegistry")
+                case .ageSwitch(let b):
+                    for option in b.options {
+                        XCTAssertNotNil(Pathway.load(pathId: option.pathId, bundle: bundle), "\(card.id): age_switch '\(option.age.rawValue)' pathway '\(option.pathId)' missing")
+                    }
                 default:
                     break
                 }
@@ -244,10 +248,8 @@ final class ContentIntegrityTests: XCTestCase {
         let cardIDs = Set(cards.map(\.id))
         var ownersByPathway: [String: Set<String>] = [:]
         for card in cards {
-            for block in card.blocks {
-                if case .pathway(let b) = block {
-                    ownersByPathway[b.pathId, default: []].insert(card.id)
-                }
+            for id in card.pathIds {
+                ownersByPathway[id, default: []].insert(card.id)
             }
         }
         for url in jsonFiles("Pathways") {
@@ -255,6 +257,28 @@ final class ContentIntegrityTests: XCTestCase {
             for id in pathway.cardLinks {
                 XCTAssertTrue(cardIDs.contains(id), "\(pathway.id): link_card_id '\(id)' resolves to no bundled card")
                 XCTAssertFalse(ownersByPathway[pathway.id, default: []].contains(id), "\(pathway.id): link_card_id '\(id)' points back to its own card")
+            }
+        }
+    }
+
+    /// An age switch offers a real choice: at least two branches, one chip
+    /// per age, each age one the card says it covers, each branch its own
+    /// pathway.
+    func testEveryAgeSwitchIsAWellFormedChoice() throws {
+        for card in try allCards() {
+            for block in card.blocks {
+                guard case .ageSwitch(let b) = block else { continue }
+                let ages = b.options.map(\.age)
+                XCTAssertGreaterThanOrEqual(b.options.count, 2, "\(card.id): age_switch needs at least two options")
+                XCTAssertEqual(Set(ages).count, ages.count, "\(card.id): age_switch repeats an age")
+                XCTAssertEqual(Set(b.options.map(\.pathId)).count, b.options.count, "\(card.id): age_switch repeats a path_id")
+                for option in b.options {
+                    XCTAssertFalse(option.label.trimmingCharacters(in: .whitespaces).isEmpty, "\(card.id): age_switch '\(option.age.rawValue)' has no label")
+                }
+                XCTAssertNotNil(card.ages, "\(card.id): age_switch requires card ages")
+                for age in ages {
+                    XCTAssertTrue((card.ages ?? []).contains(age), "\(card.id): age_switch age '\(age.rawValue)' not in card ages")
+                }
             }
         }
     }

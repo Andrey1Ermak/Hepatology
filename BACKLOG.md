@@ -81,7 +81,7 @@
 День 5. Сделай LinkIndex: по всем карточкам и алгоритмам строит исходящие (next, calcs, refs) и обратные (linked from) связи. Внизу CardDetailView — автоматический раздел Links: Next steps · Reference · Calculators · Study (блок/день из plan) · Linked from. Шапка карточки: возрастные чипы (ages), строка источников (из guidelines.json: общество + год), «Checked MM/YYYY» (старейшая дата среди источников) и бейдж status. Снимок с симулятора на about. Тесты LinkIndex. Ритуал §9.
 ```
 
-- [ ] **День 6 — Блок age_switch**
+- [x] **День 6 — Блок age_switch**
 ```
 День 6. Блок age_switch по схеме §5.2: сегментированный выбор возраста вверху, под ним — алгоритм выбранной ветки (path_id). Выбор запоминается на время просмотра карточки. Стиль — SelectableChip. Тесты декодирования + в ContentIntegrityTests: каждый path_id внутри age_switch существует. Временный тестовый JSON в Cards не оставлять — проверяй на фикстуре в тестах и превью. Ритуал §9.
 Дополнение (код-ревью 2026-10-21): LinkIndex и тест testEveryPathwayCardLinkResolves должны учитывать path_id внутри age_switch — общий помощник Card.pathIds.
@@ -192,7 +192,7 @@
 День 25. Numeric c_vitamins: вес → стартовые дозы витаминов A, D, E, K при холестазе + что и когда контролировать. Урок 01-12; дозы сверь с NASPGHAN/ESPGHAN и педиатрическими нутрициологическими руководствами. Тесты. Ритуал §9.
 ```
 
-### Блок 2 — триггер: урок 02-14 (≈ 25.10.26)
+### Блок 2 — триггер: урок 02-14 (наступил 22.10.26)
 
 - [ ] **День 26 — Калькуляторы c_conj_bili и c_kasai_clock**
 ```
@@ -527,3 +527,5 @@
 - 2026-10-20 · Дни 02–03 · Card: ages, entry, guidelines, plan, related, status (done/reviewed удалены, бейдж по status); Content/Registry (guidelines, labs, plan, cases, synonyms) и загрузчик Registry; plan.json — 26 × 14 тем на английском, даты сверены с планом; новые проверки целостности (related, plan, реестры, ссылки на руководства); 72 теста зелёные · Registry подключить к ContentView в день 5; поле src в Card — убрать при чистке; проверка руководств — понедельник 26.10
 - 2026-10-21 · Синхронизация 02-13 · Тезисы урока «Поддерживающая терапия холестатического младенца» → Inbox chol_0_3m, chol_3_12m, chol_low_ggt, chol_preterm_pn; новые черновики c_vitamins, inr_prolonged, hps_poph; клиническое ревью: blocking нет, 16 non-blocking исправлены · —
 - 2026-10-21 · Дни 04–05 · link_card_id в out/row + кнопка CardLinkButton; тест целостности ссылок на карточки; LinkIndex (next/refs/calcs/linked from) и автоматический раздел Links; шапка: источники из guidelines.json, «Checked» по самому старому, чипы возраста, бейдж статуса; 91 тест зелёный · Pathway внутри age_switch учесть в LinkIndex — день 6
+- 2026-10-22 · Синхронизация 02-14 · Синтез блока 2 → Inbox chol_0_3m, chol_preterm_pn, chol_low_ggt, chol_3_12m, inr_prolonged, ref_genetics; новые черновики neo_jaundice, ref_metabolic, c_conj_bili, c_kasai_clock; клиническое ревью: 1 blocking и 9 non-blocking исправлены. Триггер блока 2 наступил · Карточки блока 2 — после дней 7–25 по порядку бэклога
+- 2026-10-22 · День 06 · Блок age_switch (AgeSwitchBlock, AgeSwitchBlockView на SelectableChip), выбор возраста в CardSession на время просмотра карточки, Card.pathIds для LinkIndex и шлюза, проверки целостности age_switch (path_id существует, ≥ 2 ветки, возраст из ages карточки), образец в DEBUG-галерее; 97 тестов зелёные · Кэш Pathway.load — при необходимости

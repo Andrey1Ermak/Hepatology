@@ -31,11 +31,34 @@ struct DesignSampleView: View {
     ]}
     """)
 
+    /// Two placeholder branches for the sample `age_switch`.
+    private static let ageSwitch: AgeSwitchBlock? = decode("""
+    {"t": "age_switch", "h": "Age", "options": [
+      {"age": "neo", "label": "Sample band A", "path_id": "design_age_a"},
+      {"age": "infant", "label": "Sample band B", "path_id": "design_age_b"}]}
+    """)
+
+    private static let agePathways: [String: Pathway] = ([
+        "design_age_a": decode("""
+        {"id": "design_age_a", "children": [{"t": "section", "h": "Band A algorithm", "children": [
+          {"t": "row", "text": "Sample step for band A"},
+          {"t": "out", "cond": "Condition met", "pill": {"kind": "floor", "text": "Admit"}}]}]}
+        """),
+        "design_age_b": decode("""
+        {"id": "design_age_b", "children": [{"t": "section", "h": "Band B algorithm", "children": [
+          {"t": "row", "text": "Sample step for band B"},
+          {"t": "out", "cond": "Condition met", "pill": {"kind": "dc", "text": "Outpatient follow-up"}}]}]}
+        """),
+    ] as [String: Pathway?]).compactMapValues { $0 }
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: Spacing.l) {
                 ForEach(Array(Self.blocks.enumerated()), id: \.offset) { index, block in
                     BlockView(block: block)
+                    if index == 0, let ageSwitch = Self.ageSwitch {
+                        AgeSwitchBlockView(block: ageSwitch, loadPathway: { Self.agePathways[$0] })
+                    }
                     if index == 2, let pathway = Self.pathway {
                         PathwayBlockView(pathway: pathway)
                     }

@@ -23,6 +23,7 @@
 		2C4228336ADA60A58BDA9476 /* NACCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D57E18E1CC1C86293720D7B /* NACCalc.swift */; };
 		306BDB307D8497F20F7BF31D /* OutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA84F05240E0512FDD1B5D /* OutView.swift */; };
 		314F1FA62489B523FE90FF47 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10BE75C1587BBCFE4E31351 /* Badge.swift */; };
+		34A5A37E3A1ACF2181EEA7FC /* Card+Pathways.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CCA92DE2CF348232BA1994 /* Card+Pathways.swift */; };
 		3C7E0C7B85F33D63E3EB9485 /* ChipCountRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F48F661E3A6FE32916D21 /* ChipCountRule.swift */; };
 		3D82234C2249C06E751793FB /* ChipBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6346A41417A486CF030A17 /* ChipBoardView.swift */; };
 		3EEB07FC2701DAFEA972C508 /* Elevation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3F7BF9A3E68F759795A972 /* Elevation.swift */; };
@@ -35,9 +36,11 @@
 		489B3D6EBA08F57CAC14E66E /* ChipTierRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E345C468C53C191F5B81F1 /* ChipTierRule.swift */; };
 		4A9B00D7EC3AA2E4C68043B3 /* SquareBullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E0073FF3C8AACE7497EE /* SquareBullet.swift */; };
 		4B13D2879C0EA62A0664B1AE /* ChecklistAnyRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9357B09215E0402FEB31BD /* ChecklistAnyRule.swift */; };
+		4BBD92C09F52B2D13FAC65A9 /* CardSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88237CD1A8F2C2E498602338 /* CardSession.swift */; };
 		4F8B1F74CE0AA1C30607FDB7 /* BranchBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820E6783963139414EF2AD8E /* BranchBlockView.swift */; };
 		541AD44FCD39EF372B737C2C /* ScoreCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400044A20D7DCB283956C5A4 /* ScoreCalc.swift */; };
 		5D2EC96B40E6A2914998282A /* SectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82967B5A0BE18BF5E7EEA93C /* SectionCard.swift */; };
+		64DD7EEF516894C7B2EB643E /* AgeSwitchBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366FB1B29728495354AA0DDF /* AgeSwitchBlockView.swift */; };
 		6603690DDDB85156EDF7A2BF /* CardLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F469CA2B0FF565BAE90688A /* CardLibrary.swift */; };
 		684D4762365031EFF3DA810F /* CollapsibleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4870B5B3A2090D439DBE0381 /* CollapsibleSection.swift */; };
 		685FC123D570E54E882A09E2 /* PathwayBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221C5867FC3C24FB9A75BF0E /* PathwayBlockView.swift */; };
@@ -128,6 +131,7 @@
 		2C29C8CF62141AA29BA9C923 /* NumericCalcSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericCalcSheet.swift; sourceTree = "<group>"; };
 		2FE14A813BAADD69B9B07684 /* Card+GridTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+GridTitle.swift"; sourceTree = "<group>"; };
 		320F48F661E3A6FE32916D21 /* ChipCountRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipCountRule.swift; sourceTree = "<group>"; };
+		366FB1B29728495354AA0DDF /* AgeSwitchBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeSwitchBlockView.swift; sourceTree = "<group>"; };
 		3D4588C975059DEF1AF99BAC /* CardLibraryGroupingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLibraryGroupingTests.swift; sourceTree = "<group>"; };
 		3D57E18E1CC1C86293720D7B /* NACCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NACCalc.swift; sourceTree = "<group>"; };
 		400044A20D7DCB283956C5A4 /* ScoreCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCalc.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 		7E3F7BF9A3E68F759795A972 /* Elevation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elevation.swift; sourceTree = "<group>"; };
 		820E6783963139414EF2AD8E /* BranchBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchBlockView.swift; sourceTree = "<group>"; };
 		82967B5A0BE18BF5E7EEA93C /* SectionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCard.swift; sourceTree = "<group>"; };
+		88237CD1A8F2C2E498602338 /* CardSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSession.swift; sourceTree = "<group>"; };
 		8B6346A41417A486CF030A17 /* ChipBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipBoardView.swift; sourceTree = "<group>"; };
 		8B72754100DB71FAD9D0DF77 /* RuleEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleEngineTests.swift; sourceTree = "<group>"; };
 		8DEA84F05240E0512FDD1B5D /* OutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutView.swift; sourceTree = "<group>"; };
@@ -168,6 +173,7 @@
 		B306463A6CAE9C4A74717DEA /* NACCalcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NACCalcView.swift; sourceTree = "<group>"; };
 		B32E216AFB165744FB593B8D /* Card+Subtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Subtitle.swift"; sourceTree = "<group>"; };
 		B38F1F809B116292D6856ABE /* HepReference.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = HepReference.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6CCA92DE2CF348232BA1994 /* Card+Pathways.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Pathways.swift"; sourceTree = "<group>"; };
 		BB2960A6A7B580DB9277E10A /* NoteBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBlockView.swift; sourceTree = "<group>"; };
 		BB2D9C57695F03F5F7C2C4D7 /* TableBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableBlockView.swift; sourceTree = "<group>"; };
 		BD274D527BDF935B5CE1E02B /* CalculatorHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorHeader.swift; sourceTree = "<group>"; };
@@ -346,6 +352,7 @@
 		DDF3BF88172A28970358CC08 /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
+				366FB1B29728495354AA0DDF /* AgeSwitchBlockView.swift */,
 				A84CBC7A2E2688BA6EBE9081 /* BlockHeading.swift */,
 				DC82B16AFE627B057B2779DA /* BlockView.swift */,
 				820E6783963139414EF2AD8E /* BranchBlockView.swift */,
@@ -366,10 +373,12 @@
 				D28826C35DA71B801B2DBCC2 /* Block.swift */,
 				20F4645FF4B9F3EFDCE86395 /* Card.swift */,
 				2FE14A813BAADD69B9B07684 /* Card+GridTitle.swift */,
+				B6CCA92DE2CF348232BA1994 /* Card+Pathways.swift */,
 				D40FDE06247E9A673E1113D4 /* Card+Sources.swift */,
 				B32E216AFB165744FB593B8D /* Card+Subtitle.swift */,
 				1CA7E6006308709CF40FA4C4 /* CardCategory.swift */,
 				8F469CA2B0FF565BAE90688A /* CardLibrary.swift */,
+				88237CD1A8F2C2E498602338 /* CardSession.swift */,
 				B00FD4836240C067477D6285 /* LinkIndex.swift */,
 				FC37CEB0E5CA29B7ED090AB2 /* Manifest.swift */,
 				2B839D89C5C2C94AC64C6C5F /* PathwayNode.swift */,
@@ -496,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3048B8A5A79D2211CC3FBF9 /* AcuLevel+Style.swift in Sources */,
+				64DD7EEF516894C7B2EB643E /* AgeSwitchBlockView.swift in Sources */,
 				EC98CB7C3F3ACC75D208EE9C /* ArmView.swift in Sources */,
 				314F1FA62489B523FE90FF47 /* Badge.swift in Sources */,
 				9CD7A2B5B5E8B1BD7184DF89 /* Block.swift in Sources */,
@@ -507,6 +517,7 @@
 				89306B37E719CB0C705FE7B2 /* CalculatorHeader.swift in Sources */,
 				CA10484B81C114346D71867D /* CalculatorResetButton.swift in Sources */,
 				E9BFDE5B39FF03F247FF982E /* Card+GridTitle.swift in Sources */,
+				34A5A37E3A1ACF2181EEA7FC /* Card+Pathways.swift in Sources */,
 				E5DC12F89137DD876CEC1F73 /* Card+Sources.swift in Sources */,
 				A5A2E2C7F5314CC7CA669559 /* Card+Subtitle.swift in Sources */,
 				D6F80DE52CCBEEEB41290FC4 /* Card.swift in Sources */,
@@ -519,6 +530,7 @@
 				0A1D711E5025F66C75DC077F /* CardListView.swift in Sources */,
 				27BF59369C6AE7197B51286F /* CardMarkup.swift in Sources */,
 				EC880CA6746898B049E07E9B /* CardRowView.swift in Sources */,
+				4BBD92C09F52B2D13FAC65A9 /* CardSession.swift in Sources */,
 				4B13D2879C0EA62A0664B1AE /* ChecklistAnyRule.swift in Sources */,
 				3D82234C2249C06E751793FB /* ChipBoardView.swift in Sources */,
 				3C7E0C7B85F33D63E3EB9485 /* ChipCountRule.swift in Sources */,

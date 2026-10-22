@@ -18,8 +18,9 @@ struct CardLinks: Equatable {
 }
 
 /// The whole library's link graph, built once from every card and the
-/// pathways they show. A card's outgoing links are its pathways'
-/// `link_card_id`s first, then `related`; each target appears once, the
+/// pathways they show (every `age_switch` branch included). A card's
+/// outgoing links are its pathways' `link_card_id`s first, then
+/// `related`; each target appears once, the
 /// card itself and ids with no bundled card never do (the integrity gate
 /// forbids those anyway, this just keeps a bad build from rendering them).
 struct LinkIndex {
@@ -29,10 +30,7 @@ struct LinkIndex {
     init(cards: [Card], pathway: (String) -> Pathway?) {
         let known = Dictionary(cards.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
         for card in cards {
-            let pathways = card.blocks.compactMap { block -> Pathway? in
-                if case .pathway(let b) = block { return pathway(b.pathId) }
-                return nil
-            }
+            let pathways = card.pathIds.compactMap(pathway)
             var links = CardLinks()
             for id in (pathways.flatMap(\.cardLinks) + (card.related ?? [])).uniqued()
             where id != card.id {

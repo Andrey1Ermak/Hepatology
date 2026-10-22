@@ -3,6 +3,8 @@ import SwiftUI
 struct CardDetailView: View {
     let card: Card
     @Environment(\.dismiss) private var dismiss
+    /// Per-card choices (age branch); a linked card pushed on top gets its own.
+    @State private var session = CardSession()
 
     var body: some View {
         ScrollView {
@@ -14,6 +16,7 @@ struct CardDetailView: View {
             }
             .padding(Spacing.l)
         }
+        .environment(session)
         .background(Color.hepBackground.ignoresSafeArea())
         // Replaces the system nav bar's plain-font title entirely: the
         // card's own styled `CardHeaderView` now sits in a `safeAreaInset`

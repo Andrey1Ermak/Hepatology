@@ -9,6 +9,8 @@ import SwiftUI
 /// Content/ScoreCalcs/<id>.json, and numeric_calc renders a tappable row
 /// (NumericCalcRowView) that opens a sheet for any calculator registered in
 /// `NumericCalcRegistry` — otherwise each falls back to a placeholder.
+/// age_switch renders its chips and the selected branch's pathway
+/// (AgeSwitchBlockView), with the same placeholder for a missing path_id.
 struct BlockView: View {
     let block: Block
 
@@ -45,6 +47,7 @@ struct BlockView: View {
             } else {
                 PlaceholderBlockView(kind: "Calculator", label: b.label ?? b.calcId)
             }
+        case .ageSwitch(let b): AgeSwitchBlockView(block: b)
         }
     }
 }

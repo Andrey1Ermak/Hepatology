@@ -1,6 +1,7 @@
 import Foundation
 
-/// One of the 11 unified block types (7 standard + 4 custom).
+/// One of the unified block types (7 standard + custom ones that point at
+/// calculators, pathways or registries).
 /// Discriminated by the `t` key; each case decodes its own flat payload from the
 /// same container (extra sibling keys, like `t` itself, are ignored by Codable).
 enum Block: Decodable {
@@ -15,6 +16,7 @@ enum Block: Decodable {
     case pathway(PathwayBlock)
     case scoreCalc(ScoreCalcBlock)
     case numericCalc(NumericCalcBlock)
+    case ageSwitch(AgeSwitchBlock)
 
     private enum CodingKeys: String, CodingKey {
         case type = "t"
@@ -26,6 +28,7 @@ enum Block: Decodable {
         case pathway
         case scoreCalc = "score_calc"
         case numericCalc = "numeric_calc"
+        case ageSwitch = "age_switch"
     }
 
     init(from decoder: Decoder) throws {
@@ -42,6 +45,7 @@ enum Block: Decodable {
         case .pathway: self = .pathway(try PathwayBlock(from: decoder))
         case .scoreCalc: self = .scoreCalc(try ScoreCalcBlock(from: decoder))
         case .numericCalc: self = .numericCalc(try NumericCalcBlock(from: decoder))
+        case .ageSwitch: self = .ageSwitch(try AgeSwitchBlock(from: decoder))
         }
     }
 }
@@ -177,5 +181,32 @@ struct NumericCalcBlock: Decodable {
     enum CodingKeys: String, CodingKey {
         case h, label
         case calcId = "calc_id"
+    }
+}
+
+/// One age branch of an `age_switch`: the chip label and the pathway shown
+/// while it is selected.
+struct AgeSwitchOption: Decodable {
+    let age: AgeBand
+    let label: String
+    let pathId: String
+
+    enum CodingKeys: String, CodingKey {
+        case age, label
+        case pathId = "path_id"
+    }
+}
+
+/// Age chips over a card's algorithm (CLAUDE.md §5.2): the selected
+/// option's pathway renders beneath them.
+struct AgeSwitchBlock: Decodable {
+    let h: String?
+    let options: [AgeSwitchOption]
+
+    /// The option for `age`, or the first one when nothing is chosen yet
+    /// (or the chosen age has no branch here). Nil only for an empty switch,
+    /// which the integrity gate forbids.
+    func option(for age: AgeBand?) -> AgeSwitchOption? {
+        options.first { $0.age == age } ?? options.first
     }
 }
