@@ -23,3 +23,6 @@ Card not built yet (trigger reached 2026-10-22: lesson 02-14; backlog day 30). I
 - Timing for preterm infants: NICE CG98 — prolonged jaundice > 21 days preterm; Fawaz 2017 has no separate preterm timing; AAP 2022 excludes < 35 weeks → guideline_compare row "Preterm infants" = GAP. No validated direct bilirubin cut-off below 35 weeks (gap, slide 17) → "Limited data".
 - Genetic yield lowest here (~4%, pearl 17), consistent with 02-12 Inbox.
 - Case candidate (slide 14): born 29 weeks, now 35 weeks corrected, 6 weeks PN after NEC resection, direct 4.4 and rising, GGT 310, feeds 30 mL/kg/day, pale stools on 2 days → fasting ultrasound now, switch lipid, advance feeds, daily card; persistent pallor or rising direct bilirubin → cholangiogram. Self-test answer (slide 18): "No: ultrasound, stool card, cholangiogram if persistent."
+
+### 03-01 · Biliary atresia: epidemiology and phenotypes (synced 2026-10-23)
+- **Prematurity raises atresia risk (slide 6, Cavallo 2022):** preterm < 32 wk aPR 3.85 (2.38–6.22); 32–37 wk aPR 1.64. Sweden: prematurity OR 2.9, small for gestational age OR 4.7 (Fischler 2002). Pearl: in a preterm PN-fed infant, PNAC is common, but atresia is *more* likely than in term infants — supports "still exclude atresia" (02-14).
