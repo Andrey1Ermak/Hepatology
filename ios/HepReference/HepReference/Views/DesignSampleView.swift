@@ -12,7 +12,7 @@ struct DesignSampleView: View {
     private static let blocks: [Block] = decode("""
     [
       {"t": "note", "k": "crit", "h": "Red flags", "text": "Sample red-flag line. Call the on-call team now."},
-      {"t": "list", "h": "First contact", "items": ["Sample order one", "Sample order two", {"t": "Grouped item", "sub": ["Sub-point A", "Sub-point B"]}]},
+      {"t": "list", "h": "Don't miss", "items": ["Sample order one", "Sample order two", {"t": "Grouped item", "sub": ["Sub-point A", "Sub-point B"]}]},
       {"t": "table", "h": "Sample table", "head": ["Finding", "Points to", "Next step"], "rows": [["Row one", "Option A", "Action A"], ["Row two", "Option B", "Action B"], ["Row three", "Option C", "Action C"]]},
       {"t": "note", "k": "info", "h": "Definition", "text": "Sample informational note."},
       {"t": "text", "h": "Why", "text": "Sample explanatory paragraph in the Learn layer."}
@@ -51,6 +51,13 @@ struct DesignSampleView: View {
         """),
     ] as [String: Pathway?]).compactMapValues { $0 }
 
+    /// Placeholder orders for the sample `workup`.
+    private static let workup: WorkupBlock? = decode("""
+    {"t": "workup", "h": "First contact", "groups": [
+      {"label": "Sample group one", "items": ["Sample order A", "Sample order B"]},
+      {"label": "Sample group two", "items": ["Sample order C"]}]}
+    """)
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: Spacing.l) {
@@ -59,7 +66,12 @@ struct DesignSampleView: View {
                     if index == 0, let ageSwitch = Self.ageSwitch {
                         AgeSwitchBlockView(block: ageSwitch, loadPathway: { Self.agePathways[$0] })
                     }
-                    if index == 2, let pathway = Self.pathway {
+                    // Gallery order, not card anatomy: the workup sits
+                    // high enough to show in the first screenshot.
+                    if index == 0, let workup = Self.workup {
+                        WorkupBlockView(block: workup)
+                    }
+                    if index == 0, let pathway = Self.pathway {
                         PathwayBlockView(pathway: pathway)
                     }
                 }

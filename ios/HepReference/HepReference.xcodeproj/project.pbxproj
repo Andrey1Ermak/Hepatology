@@ -40,6 +40,7 @@
 		4F8B1F74CE0AA1C30607FDB7 /* BranchBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820E6783963139414EF2AD8E /* BranchBlockView.swift */; };
 		541AD44FCD39EF372B737C2C /* ScoreCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400044A20D7DCB283956C5A4 /* ScoreCalc.swift */; };
 		5D2EC96B40E6A2914998282A /* SectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82967B5A0BE18BF5E7EEA93C /* SectionCard.swift */; };
+		620EBF2C8175AF73C7F22A16 /* WorkupBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF3FF8A81BE972157B26F03 /* WorkupBlockView.swift */; };
 		64DD7EEF516894C7B2EB643E /* AgeSwitchBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366FB1B29728495354AA0DDF /* AgeSwitchBlockView.swift */; };
 		6603690DDDB85156EDF7A2BF /* CardLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F469CA2B0FF565BAE90688A /* CardLibrary.swift */; };
 		684D4762365031EFF3DA810F /* CollapsibleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4870B5B3A2090D439DBE0381 /* CollapsibleSection.swift */; };
@@ -197,6 +198,7 @@
 		F72BA2AC978EC6371E2FCD4D /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		FC37CEB0E5CA29B7ED090AB2 /* Manifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manifest.swift; sourceTree = "<group>"; };
 		FD00610F261A547E8DD2C9D3 /* CardMarkup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMarkup.swift; sourceTree = "<group>"; };
+		FFF3FF8A81BE972157B26F03 /* WorkupBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkupBlockView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -363,6 +365,7 @@
 				43CB3F1B11B649D27028143A /* PlaceholderBlockView.swift */,
 				BB2D9C57695F03F5F7C2C4D7 /* TableBlockView.swift */,
 				92A5BAE9A5B9668A85B96FC7 /* TextBlockView.swift */,
+				FFF3FF8A81BE972157B26F03 /* WorkupBlockView.swift */,
 			);
 			path = Blocks;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				9A1DD9BC2129AF09AEF19369 /* TableBlockView.swift in Sources */,
 				1695A41F95A8867E5E043F8B /* TextBlockView.swift in Sources */,
 				1455D8F80E997C9E8BFEADF7 /* VerdictRule.swift in Sources */,
+				620EBF2C8175AF73C7F22A16 /* WorkupBlockView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

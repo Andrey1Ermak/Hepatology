@@ -87,7 +87,7 @@
 Дополнение (код-ревью 2026-10-21): LinkIndex и тест testEveryPathwayCardLinkResolves должны учитывать path_id внутри age_switch — общий помощник Card.pathIds.
 ```
 
-- [ ] **День 7 — Блок workup**
+- [x] **День 7 — Блок workup**
 ```
 День 7. Блок workup (§5.2): группы назначений с галочками и кнопкой «Copy» — копирует отмеченные (или все, если ничего не отмечено) пункты простым текстом с заголовками групп. Галочки сбрасываются при выходе с карточки (никаких данных о пациенте не храним). Тесты декодирования и формата копируемого текста. Ритуал §9.
 ```
@@ -529,3 +529,5 @@
 - 2026-10-21 · Дни 04–05 · link_card_id в out/row + кнопка CardLinkButton; тест целостности ссылок на карточки; LinkIndex (next/refs/calcs/linked from) и автоматический раздел Links; шапка: источники из guidelines.json, «Checked» по самому старому, чипы возраста, бейдж статуса; 91 тест зелёный · Pathway внутри age_switch учесть в LinkIndex — день 6
 - 2026-10-22 · Синхронизация 02-14 · Синтез блока 2 → Inbox chol_0_3m, chol_preterm_pn, chol_low_ggt, chol_3_12m, inr_prolonged, ref_genetics; новые черновики neo_jaundice, ref_metabolic, c_conj_bili, c_kasai_clock; клиническое ревью: 1 blocking и 9 non-blocking исправлены. Триггер блока 2 наступил · Карточки блока 2 — после дней 7–25 по порядку бэклога
 - 2026-10-22 · День 06 · Блок age_switch (AgeSwitchBlock, AgeSwitchBlockView на SelectableChip), выбор возраста в CardSession на время просмотра карточки, Card.pathIds для LinkIndex и шлюза, проверки целостности age_switch (path_id существует, ≥ 2 ветки, возраст из ages карточки), образец в DEBUG-галерее; 97 тестов зелёные · Кэш Pathway.load — при необходимости
+- 2026-10-23 · Синхронизация 03-01 · Тезисы урока «Атрезия: эпидемиология и фенотипы» → Inbox chol_0_3m, chol_3_12m, chol_preterm_pn; новые черновики duct_dilation, kasai_fever; клиническое ревью: 3 blocking и 8 non-blocking исправлены · plan.json блок 3 день 1 — cards заполнить при сборке карточек
+- 2026-10-23 · День 07 · Блок workup (WorkupBlock, WorkupBlockView): галочки в @State вью (сбрасываются при уходе с карточки), «Copy all» / «Copy N selected» простым текстом с заголовками групп, «Clear», индикатор «Copied»; шлюз testEveryWorkupIsWellFormed; образец в DEBUG-галерее; 104 теста зелёные · —

@@ -17,6 +17,7 @@ enum Block: Decodable {
     case scoreCalc(ScoreCalcBlock)
     case numericCalc(NumericCalcBlock)
     case ageSwitch(AgeSwitchBlock)
+    case workup(WorkupBlock)
 
     private enum CodingKeys: String, CodingKey {
         case type = "t"
@@ -29,6 +30,7 @@ enum Block: Decodable {
         case scoreCalc = "score_calc"
         case numericCalc = "numeric_calc"
         case ageSwitch = "age_switch"
+        case workup
     }
 
     init(from decoder: Decoder) throws {
@@ -46,6 +48,7 @@ enum Block: Decodable {
         case .scoreCalc: self = .scoreCalc(try ScoreCalcBlock(from: decoder))
         case .numericCalc: self = .numericCalc(try NumericCalcBlock(from: decoder))
         case .ageSwitch: self = .ageSwitch(try AgeSwitchBlock(from: decoder))
+        case .workup: self = .workup(try WorkupBlock(from: decoder))
         }
     }
 }
@@ -208,5 +211,39 @@ struct AgeSwitchBlock: Decodable {
     /// which the integrity gate forbids.
     func option(for age: AgeBand?) -> AgeSwitchOption? {
         options.first { $0.age == age } ?? options.first
+    }
+}
+
+/// One labeled group of first-contact orders, e.g. "Blood — today".
+struct WorkupGroup: Decodable {
+    let label: String
+    let items: [String]
+}
+
+/// Position of one order inside a `WorkupBlock`: group index, item index.
+struct WorkupItemID: Hashable {
+    let group: Int
+    let item: Int
+}
+
+/// The card's first-contact orders (CLAUDE.md §3.3 row 4, §5.2): groups of
+/// items the fellow can tick and copy as plain text.
+struct WorkupBlock: Decodable {
+    let h: String?
+    let groups: [WorkupGroup]
+
+    /// Plain text for the clipboard: each group label on its own line, its
+    /// items beneath as "- " lines, groups separated by a blank line. Copies
+    /// only the ticked items (groups with none ticked are left out), or every
+    /// item when nothing is ticked. Markup is stripped to readable text.
+    func copyText(checked: Set<WorkupItemID> = []) -> String {
+        groups.enumerated().compactMap { g, group -> String? in
+            let lines = group.items.enumerated()
+                .filter { i, _ in checked.isEmpty || checked.contains(WorkupItemID(group: g, item: i)) }
+                .map { _, item in "- " + CardMarkup.plainText(item) }
+            guard !lines.isEmpty else { return nil }
+            return ([group.label] + lines).joined(separator: "\n")
+        }
+        .joined(separator: "\n\n")
     }
 }

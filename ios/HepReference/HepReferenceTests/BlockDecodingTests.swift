@@ -161,6 +161,60 @@ final class BlockDecodingTests: XCTestCase {
         XCTAssertEqual(block.option(for: .teen)?.pathId, "p_neo")
     }
 
+    func testWorkup() throws {
+        let json = #"""
+        {"t":"workup","h":"First contact","groups":[
+          {"label":"Blood — today","items":["Fractionated bilirubin (total + conjugated)","GGT, ALT, AST, ALP","INR"]},
+          {"label":"Imaging","items":["Fasting abdominal ultrasound with Doppler"]}]}
+        """#
+        guard case .workup(let block) = try decodeBlock(json) else {
+            return XCTFail("expected workup")
+        }
+        XCTAssertEqual(block.h, "First contact")
+        XCTAssertEqual(block.groups.map(\.label), ["Blood — today", "Imaging"])
+        XCTAssertEqual(block.groups.map(\.items.count), [3, 1])
+    }
+
+    func testWorkupRequiresGroups() {
+        XCTAssertThrowsError(try decodeBlock(#"{"t":"workup","h":"First contact"}"#))
+    }
+
+    private func sampleWorkup() throws -> WorkupBlock {
+        let json = #"""
+        {"t":"workup","groups":[
+          {"label":"Blood","items":["Bilirubin","**INR**"]},
+          {"label":"Urine","items":["Culture","Reducing substances"]},
+          {"label":"Imaging","items":["Ultrasound"]}]}
+        """#
+        var workup: WorkupBlock?
+        if case .workup(let block) = try decodeBlock(json) { workup = block }
+        return try XCTUnwrap(workup, "expected workup")
+    }
+
+    func testWorkupCopiesEverythingWhenNothingIsTicked() throws {
+        let text = try sampleWorkup().copyText()
+        XCTAssertEqual(text, "Blood\n- Bilirubin\n- INR\n\nUrine\n- Culture\n- Reducing substances\n\nImaging\n- Ultrasound")
+    }
+
+    func testWorkupCopiesOnlyTickedItemsUnderTheirGroups() throws {
+        let checked: Set<WorkupItemID> = [WorkupItemID(group: 0, item: 1), WorkupItemID(group: 2, item: 0)]
+        // Urine has nothing ticked, so its label is left out too.
+        XCTAssertEqual(try sampleWorkup().copyText(checked: checked), "Blood\n- INR\n\nImaging\n- Ultrasound")
+    }
+
+    func testWorkupCopiesOneGroupWithoutBlankLines() throws {
+        let checked: Set<WorkupItemID> = [WorkupItemID(group: 1, item: 0), WorkupItemID(group: 1, item: 1)]
+        XCTAssertEqual(try sampleWorkup().copyText(checked: checked), "Urine\n- Culture\n- Reducing substances")
+    }
+
+    func testWorkupCopyStripsPhoneMarkup() throws {
+        let json = #"{"t":"workup","groups":[{"label":"Calls","items":["Poison center [m]1-800-222-1222[/m]"]}]}"#
+        guard case .workup(let block) = try decodeBlock(json) else {
+            return XCTFail("expected workup")
+        }
+        XCTAssertEqual(block.copyText(), "Calls\n- Poison center 1-800-222-1222")
+    }
+
     func testUnknownBlockTypeThrows() {
         XCTAssertThrowsError(try decodeBlock(#"{"t":"sep2col"}"#))
     }

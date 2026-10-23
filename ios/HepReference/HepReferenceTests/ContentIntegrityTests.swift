@@ -283,6 +283,24 @@ final class ContentIntegrityTests: XCTestCase {
         }
     }
 
+    /// A workup block is a list of orders to copy: every group is labeled
+    /// and holds at least one non-empty item.
+    func testEveryWorkupIsWellFormed() throws {
+        for card in try allCards() {
+            for block in card.blocks {
+                guard case .workup(let b) = block else { continue }
+                XCTAssertFalse(b.groups.isEmpty, "\(card.id): workup has no groups")
+                for group in b.groups {
+                    XCTAssertFalse(group.label.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, "\(card.id): workup group without a label")
+                    XCTAssertFalse(group.items.isEmpty, "\(card.id): workup group '\(group.label)' has no items")
+                    for item in group.items {
+                        XCTAssertFalse(item.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, "\(card.id): workup group '\(group.label)' has an empty item")
+                    }
+                }
+            }
+        }
+    }
+
     // MARK: Presentation
 
     func testEveryGridTitleFitsTheBrowseTile() throws {
