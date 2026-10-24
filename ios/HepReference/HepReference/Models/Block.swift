@@ -18,6 +18,7 @@ enum Block: Decodable {
     case numericCalc(NumericCalcBlock)
     case ageSwitch(AgeSwitchBlock)
     case workup(WorkupBlock)
+    case labNorms(LabNormsBlock)
 
     private enum CodingKeys: String, CodingKey {
         case type = "t"
@@ -31,6 +32,7 @@ enum Block: Decodable {
         case numericCalc = "numeric_calc"
         case ageSwitch = "age_switch"
         case workup
+        case labNorms = "lab_norms"
     }
 
     init(from decoder: Decoder) throws {
@@ -49,6 +51,7 @@ enum Block: Decodable {
         case .numericCalc: self = .numericCalc(try NumericCalcBlock(from: decoder))
         case .ageSwitch: self = .ageSwitch(try AgeSwitchBlock(from: decoder))
         case .workup: self = .workup(try WorkupBlock(from: decoder))
+        case .labNorms: self = .labNorms(try LabNormsBlock(from: decoder))
         }
     }
 }
@@ -245,5 +248,20 @@ struct WorkupBlock: Decodable {
             return ([group.label] + lines).joined(separator: "\n")
         }
         .joined(separator: "\n\n")
+    }
+}
+
+/// Reference limits for the listed analytes (CLAUDE.md §5.2). The numbers
+/// live only in `Registry/labs.json`; the block names which analytes to show.
+struct LabNormsBlock: Decodable {
+    let h: String?
+    /// Ids into `labs.json`, in display order.
+    let analytes: [String]
+
+    /// The listed analytes found in `labs`, in the block's order. An id
+    /// missing from the registry is skipped here; the integrity gate fails
+    /// on it before release.
+    func labTests(in labs: [LabTest]) -> [LabTest] {
+        analytes.compactMap { id in labs.first { $0.id == id } }
     }
 }

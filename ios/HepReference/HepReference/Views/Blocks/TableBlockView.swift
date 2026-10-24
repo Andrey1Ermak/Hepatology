@@ -57,7 +57,7 @@ struct TableBlockView: View {
 /// to its tallest cell (the `fixedSize` above keeps text at its ideal
 /// height) — fine in a scrolling card, but a table under a fixed-height
 /// parent would stretch.
-private struct TableCell: ViewModifier {
+struct TableCell: ViewModifier {
     let fill: Color
 
     func body(content: Content) -> some View {

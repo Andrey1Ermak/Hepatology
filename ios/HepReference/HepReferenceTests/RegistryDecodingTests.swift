@@ -28,6 +28,44 @@ final class RegistryDecodingTests: XCTestCase {
         XCTAssertEqual(labs.first?.bands.last?.low, 5)
     }
 
+    private func band(_ json: String) throws -> LabBand {
+        try decode(LabBand.self, json)
+    }
+
+    func testLabBandRangeText() throws {
+        XCTAssertEqual(try band(#"{"age":"teen","high":22.1,"source":"s"}"#).rangeText, "≤ 22.1")
+        XCTAssertEqual(try band(#"{"age":"teen","high":26,"source":"s"}"#).rangeText, "≤ 26")
+        XCTAssertEqual(try band(#"{"age":"teen","low":7,"high":40,"source":"s"}"#).rangeText, "7–40")
+        XCTAssertEqual(try band(#"{"age":"teen","low":150,"source":"s"}"#).rangeText, "≥ 150")
+        XCTAssertEqual(try band(#"{"age":"neo","low":0.15,"high":1.25,"source":"s"}"#).rangeText, "0.15–1.25")
+    }
+
+    func testLimitHeadingFollowsTheBands() throws {
+        let labs = try decode([LabTest].self, #"""
+        [{"id":"a","name":"A","unit":"U/L","bands":[{"age":"teen","high":22,"source":"s"}]},
+         {"id":"b","name":"B","unit":"U/L","bands":[{"age":"teen","high":22,"source":"s"},{"age":"child","low":5,"high":40,"source":"s"}]}]
+        """#)
+        XCTAssertEqual(labs.map(\.limitHeading), ["ULN", "Range"])
+    }
+
+    func testLabBandLabels() throws {
+        let teenF = try band(#"{"age":"teen","sex":"F","high":22.1,"source":"s"}"#)
+        XCTAssertEqual(teenF.ageLabel, "11–18 y")
+        XCTAssertEqual(teenF.sexLabel, "F")
+        let fine = try band(#"{"age":"0–7 d","high":1,"source":"s"}"#)
+        XCTAssertEqual(fine.ageLabel, "0–7 d", "a finer band keeps its own label")
+        XCTAssertEqual(fine.sexLabel, "All")
+    }
+
+    func testLabBandMatchesOnlyTheSelectedAgeBand() throws {
+        let teen = try band(#"{"age":"teen","high":1,"source":"s"}"#)
+        XCTAssertTrue(teen.matches(.teen))
+        XCTAssertFalse(teen.matches(.child))
+        XCTAssertFalse(teen.matches(.neo))
+        XCTAssertFalse(teen.matches(nil), "nothing is highlighted before an age is chosen")
+        XCTAssertFalse(try band(#"{"age":"0–7 d","high":1,"source":"s"}"#).matches(.neo))
+    }
+
     func testPlanBlock() throws {
         let plan = try decode([PlanBlock].self, #"""
         [{"block":2,"title":"Neonatal cholestasis: approach","start":"2026-10-12",
@@ -50,5 +88,11 @@ final class RegistryDecodingTests: XCTestCase {
     func testBundledRegistryLoads() {
         let registry = Registry(bundle: Bundle(for: RegistryDecodingTests.self))
         XCTAssertEqual(registry.plan.count, 26)
+        // Adolescent ALT limits, AASLD 2025 (> 22 U/L girls, > 26 U/L boys;
+        // SAFETY 2010 rounded, as in NASPGHAN 2017).
+        let alt = registry.lab("alt")
+        XCTAssertEqual(alt?.bands.first { $0.sex == .F }?.high, 22)
+        XCTAssertEqual(alt?.bands.first { $0.sex == .M }?.high, 26)
+        XCTAssertEqual(alt?.bands.first?.source, "aasld_2025_masld_peds")
     }
 }

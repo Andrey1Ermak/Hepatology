@@ -1,1 +1,26 @@
-[]
+[
+  {"id": "aasld_2025_masld_peds",
+   "title": "AASLD Practice Statement on the evaluation and management of metabolic dysfunction-associated steatotic liver disease in children",
+   "society": "AASLD",
+   "year": 2025,
+   "citation": "Xanthakos SA et al. Hepatology 2025;82:1352-1394",
+   "url": "https://doi.org/10.1097/HEP.0000000000001368",
+   "checked": "2026-10",
+   "supersedes": null},
+  {"id": "naspghan_2017_nafld",
+   "title": "NASPGHAN Clinical Practice Guideline for the Diagnosis and Treatment of Nonalcoholic Fatty Liver Disease in Children",
+   "society": "NASPGHAN",
+   "year": 2017,
+   "citation": "Vos MB et al. JPGN 2017;64:319-334",
+   "url": "https://doi.org/10.1097/MPG.0000000000001482",
+   "checked": "2026-10",
+   "supersedes": null},
+  {"id": "safety_2010",
+   "title": "SAFETY study: alanine aminotransferase cutoff values are set too high for reliable detection of pediatric chronic liver disease",
+   "society": "SAFETY study",
+   "year": 2010,
+   "citation": "Schwimmer JB et al. Gastroenterology 2010;138:1357-1364",
+   "url": "https://doi.org/10.1053/j.gastro.2009.12.052",
+   "checked": "2026-10",
+   "supersedes": null}
+]

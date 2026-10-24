@@ -215,6 +215,30 @@ final class BlockDecodingTests: XCTestCase {
         XCTAssertEqual(block.copyText(), "Calls\n- Poison center 1-800-222-1222")
     }
 
+    func testLabNorms() throws {
+        let json = #"{"t":"lab_norms","h":"Norms for age","analytes":["alt","ggt","alp"]}"#
+        guard case .labNorms(let block) = try decodeBlock(json) else {
+            return XCTFail("expected lab_norms")
+        }
+        XCTAssertEqual(block.h, "Norms for age")
+        XCTAssertEqual(block.analytes, ["alt", "ggt", "alp"])
+    }
+
+    func testLabNormsRequiresAnalytes() {
+        XCTAssertThrowsError(try decodeBlock(#"{"t":"lab_norms","h":"Norms for age"}"#))
+    }
+
+    func testLabNormsKeepsBlockOrderAndSkipsUnknownIds() throws {
+        let labs = try JSONDecoder().decode([LabTest].self, from: Data(#"""
+        [{"id":"alt","name":"ALT","unit":"U/L","bands":[{"age":"teen","high":1,"source":"s"}]},
+         {"id":"ggt","name":"GGT","unit":"U/L","bands":[{"age":"teen","high":1,"source":"s"}]}]
+        """#.utf8))
+        guard case .labNorms(let block) = try decodeBlock(#"{"t":"lab_norms","analytes":["ggt","nope","alt"]}"#) else {
+            return XCTFail("expected lab_norms")
+        }
+        XCTAssertEqual(block.labTests(in: labs).map(\.id), ["ggt", "alt"])
+    }
+
     func testUnknownBlockTypeThrows() {
         XCTAssertThrowsError(try decodeBlock(#"{"t":"sep2col"}"#))
     }

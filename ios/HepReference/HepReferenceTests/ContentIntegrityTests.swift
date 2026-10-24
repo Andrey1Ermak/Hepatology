@@ -301,6 +301,42 @@ final class ContentIntegrityTests: XCTestCase {
         }
     }
 
+    /// A lab_norms block shows registry limits: it names at least one
+    /// analyte, none twice, and every one exists in labs.json with at least
+    /// one band (each band's source is checked in testRegistryLinksResolve).
+    func testEveryLabNormsAnalyteExists() throws {
+        let labs = try registry("labs", as: [LabTest].self)
+        let byID = Dictionary(labs.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
+        for card in try allCards() {
+            for block in card.blocks {
+                guard case .labNorms(let b) = block else { continue }
+                XCTAssertFalse(b.analytes.isEmpty, "\(card.id): lab_norms lists no analytes")
+                XCTAssertEqual(Set(b.analytes).count, b.analytes.count, "\(card.id): lab_norms repeats an analyte")
+                for id in b.analytes {
+                    XCTAssertNotNil(byID[id], "\(card.id): lab_norms analyte '\(id)' not in labs.json")
+                    XCTAssertFalse(byID[id]?.bands.isEmpty ?? false, "\(card.id): lab_norms analyte '\(id)' has no bands")
+                }
+            }
+        }
+    }
+
+    /// Every lab band has an age, no two bands of one analyte share an
+    /// age and sex (both rows would light up with conflicting limits), and
+    /// every limit displays exactly as stored.
+    func testEveryLabBandIsUniqueAndShownAsStored() throws {
+        for lab in try registry("labs", as: [LabTest].self) {
+            XCTAssertFalse(lab.bands.isEmpty, "\(lab.id): no bands")
+            let keys = lab.bands.map { "\($0.age)|\($0.sex?.rawValue ?? "all")" }
+            XCTAssertEqual(Set(keys).count, keys.count, "\(lab.id): two bands share an age and sex")
+            for band in lab.bands {
+                XCTAssertFalse(band.age.trimmingCharacters(in: .whitespaces).isEmpty, "\(lab.id): band without an age")
+                for value in [band.low, band.high].compactMap({ $0 }) {
+                    XCTAssertEqual(Double(LabBand.format(value)), value, "\(lab.id) \(band.age): limit \(value) would display as \(LabBand.format(value))")
+                }
+            }
+        }
+    }
+
     // MARK: Presentation
 
     func testEveryGridTitleFitsTheBrowseTile() throws {

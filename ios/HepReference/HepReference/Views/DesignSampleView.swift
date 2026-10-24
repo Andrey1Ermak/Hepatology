@@ -58,6 +58,24 @@ struct DesignSampleView: View {
       {"label": "Sample group two", "items": ["Sample order C"]}]}
     """)
 
+    /// Placeholder limits for the sample `lab_norms` — not real norms.
+    private static let labNorms: LabNormsBlock? = decode("""
+    {"t": "lab_norms", "h": "Norms for age", "analytes": ["sample"]}
+    """)
+
+    private static let sampleLabs: [LabTest] = decode("""
+    [{"id": "sample", "name": "Sample analyte", "unit": "U/L", "bands": [
+      {"age": "child", "high": 10, "source": "sample"},
+      {"age": "teen", "sex": "F", "low": 1, "high": 20, "source": "sample"},
+      {"age": "teen", "sex": "M", "high": 30.5, "source": "sample"}]}]
+    """) ?? []
+
+    private static let sampleSession: CardSession = {
+        let session = CardSession()
+        session.age = .teen
+        return session
+    }()
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: Spacing.l) {
@@ -66,8 +84,14 @@ struct DesignSampleView: View {
                     if index == 0, let ageSwitch = Self.ageSwitch {
                         AgeSwitchBlockView(block: ageSwitch, loadPathway: { Self.agePathways[$0] })
                     }
-                    // Gallery order, not card anatomy: the workup sits
-                    // high enough to show in the first screenshot.
+                    // Gallery order, not card anatomy: the norms table and
+                    // the workup sit high enough to show in the first
+                    // screenshots. The norms get their own session with an
+                    // age chosen, so the highlighted row shows.
+                    if index == 0, let labNorms = Self.labNorms {
+                        LabNormsBlockView(block: labNorms, labs: Self.sampleLabs)
+                            .environment(Self.sampleSession)
+                    }
                     if index == 0, let workup = Self.workup {
                         WorkupBlockView(block: workup)
                     }

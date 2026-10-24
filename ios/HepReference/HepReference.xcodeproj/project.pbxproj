@@ -29,6 +29,7 @@
 		3EEB07FC2701DAFEA972C508 /* Elevation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3F7BF9A3E68F759795A972 /* Elevation.swift */; };
 		3F113353B9ECFDD8558FEDA7 /* CardLinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578ED5C458F616A288AA4F79 /* CardLinksView.swift */; };
 		401666ADBA3640CAF51BB9ED /* Content in Resources */ = {isa = PBXBuildFile; fileRef = 0E0F17F4EF9CFE165F94CC07 /* Content */; };
+		42A4C63AF11EDF4D070DF2B4 /* LabNormsBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE2F5A636E07496B8D6E6D9 /* LabNormsBlockView.swift */; };
 		44B2D6F2973351E92ADA70EE /* PathwayNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B839D89C5C2C94AC64C6C5F /* PathwayNode.swift */; };
 		44DC096A5301119352FC7C23 /* DispositionArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A50DE35F8C19D0E50C7ADB /* DispositionArrow.swift */; };
 		45AB1C1422C85C455A20EFC9 /* BlockHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84CBC7A2E2688BA6EBE9081 /* BlockHeading.swift */; };
@@ -135,6 +136,7 @@
 		366FB1B29728495354AA0DDF /* AgeSwitchBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeSwitchBlockView.swift; sourceTree = "<group>"; };
 		3D4588C975059DEF1AF99BAC /* CardLibraryGroupingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLibraryGroupingTests.swift; sourceTree = "<group>"; };
 		3D57E18E1CC1C86293720D7B /* NACCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NACCalc.swift; sourceTree = "<group>"; };
+		3DE2F5A636E07496B8D6E6D9 /* LabNormsBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabNormsBlockView.swift; sourceTree = "<group>"; };
 		400044A20D7DCB283956C5A4 /* ScoreCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCalc.swift; sourceTree = "<group>"; };
 		41BB30B1F0C5DF22521CF116 /* PathwayStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathwayStyle.swift; sourceTree = "<group>"; };
 		424942CF1B02578655D720DE /* NestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestView.swift; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 				820E6783963139414EF2AD8E /* BranchBlockView.swift */,
 				7CFAF5CB9638C1CF262E6C85 /* DoseBlockView.swift */,
 				541E28122B00FA3A4189AC31 /* KVBlockView.swift */,
+				3DE2F5A636E07496B8D6E6D9 /* LabNormsBlockView.swift */,
 				167C9464C130DB92F2277AD4 /* ListBlockView.swift */,
 				BB2960A6A7B580DB9277E10A /* NoteBlockView.swift */,
 				43CB3F1B11B649D27028143A /* PlaceholderBlockView.swift */,
@@ -554,6 +557,7 @@
 				B170CCAE01DF516A94A1B479 /* GrpView.swift in Sources */,
 				D4685C77BA11C2D3B9708E08 /* HepReferenceApp.swift in Sources */,
 				B1DAFBD4174622F07ACCBC87 /* KVBlockView.swift in Sources */,
+				42A4C63AF11EDF4D070DF2B4 /* LabNormsBlockView.swift in Sources */,
 				0C15D2B57D31167DE3EA455D /* LinkIndex.swift in Sources */,
 				A42C373D69313FD9A4C2CB62 /* ListBlockView.swift in Sources */,
 				1577CE77F31C5DCDEA91484F /* Manifest.swift in Sources */,

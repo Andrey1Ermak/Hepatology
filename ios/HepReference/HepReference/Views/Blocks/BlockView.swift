@@ -11,7 +11,8 @@ import SwiftUI
 /// `NumericCalcRegistry` — otherwise each falls back to a placeholder.
 /// age_switch renders its chips and the selected branch's pathway
 /// (AgeSwitchBlockView), with the same placeholder for a missing path_id;
-/// workup renders tickable orders with a Copy button (WorkupBlockView).
+/// workup renders tickable orders with a Copy button (WorkupBlockView);
+/// lab_norms renders each analyte's limits from labs.json (LabNormsBlockView).
 struct BlockView: View {
     let block: Block
 
@@ -50,6 +51,7 @@ struct BlockView: View {
             }
         case .ageSwitch(let b): AgeSwitchBlockView(block: b)
         case .workup(let b): WorkupBlockView(block: b)
+        case .labNorms(let b): LabNormsBlockView(block: b)
         }
     }
 }

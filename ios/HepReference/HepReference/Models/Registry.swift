@@ -24,6 +24,14 @@ struct LabTest: Identifiable, Decodable {
     let bands: [LabBand]
 }
 
+extension LabTest {
+    /// Heading of the limit column: "ULN" when every band is an upper limit
+    /// only (a health-based cut-off), otherwise "Range".
+    var limitHeading: String {
+        bands.allSatisfy { $0.low == nil } ? "ULN" : "Range"
+    }
+}
+
 struct LabBand: Decodable {
     /// An `AgeBand` raw value or a finer label the analyte needs.
     let age: String
@@ -33,6 +41,49 @@ struct LabBand: Decodable {
     let high: Double?
     /// Id into `guidelines.json`.
     let source: String
+}
+
+extension LabBand {
+    /// Age column: the `AgeBand` chip label ("11–18 y"), or the finer label
+    /// as written in `labs.json`.
+    var ageLabel: String {
+        AgeBand(rawValue: age)?.label ?? age
+    }
+
+    /// Sex column; "All" when the limit applies to both sexes.
+    var sexLabel: String {
+        switch sex {
+        case .F: "F"
+        case .M: "M"
+        case nil: "All"
+        }
+    }
+
+    /// The reference interval as shown: "7–22", "≤ 22.1" or "≥ 150".
+    var rangeText: String {
+        switch (low, high) {
+        case let (low?, high?): "\(Self.format(low))–\(Self.format(high))"
+        case let (nil, high?): "≤ \(Self.format(high))"
+        case let (low?, nil): "≥ \(Self.format(low))"
+        case (nil, nil): "—"
+        }
+    }
+
+    /// True when this band is the age the card has selected — only an
+    /// `AgeBand` value can match; a finer label never does.
+    func matches(_ selected: AgeBand?) -> Bool {
+        selected != nil && age == selected?.rawValue
+    }
+
+    /// Limits as published: up to two decimals, trailing zeros trimmed
+    /// ("26", "22.1", "0.15"). The integrity gate checks that every
+    /// bundled limit survives this unchanged.
+    static func format(_ value: Double) -> String {
+        var text = String(format: "%.2f", value)
+        while text.hasSuffix("0") { text.removeLast() }
+        if text.hasSuffix(".") { text.removeLast() }
+        return text
+    }
 }
 
 enum Sex: String, Decodable {

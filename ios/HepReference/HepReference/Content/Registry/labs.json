@@ -1,1 +1,6 @@
-[]
+[
+  {"id": "alt", "name": "ALT", "unit": "U/L", "bands": [
+    {"age": "teen", "sex": "F", "high": 22, "source": "aasld_2025_masld_peds"},
+    {"age": "teen", "sex": "M", "high": 26, "source": "aasld_2025_masld_peds"}
+  ]}
+]
