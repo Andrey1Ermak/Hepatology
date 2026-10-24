@@ -21,3 +21,7 @@ Card not built yet (trigger: lesson 01-14, see BACKLOG). Inbox is filled by dail
 - Yield 4% (PN cholestasis) to 71% (genetic phenotype); genome beat panel 49% vs 27% (GEMINI) — consistent with 02-12 Inbox.
 - Family referral: after GALD → obstetrics (antenatal IVIG); after familial idiopathic neonatal hepatitis → genetics ("the next pregnancy is also our patient").
 - Suspected ARC → genetics, not biopsy.
+
+### 03-02 · Biliary atresia: pathogenesis (synced 2026-10-24)
+- Atresia is not a Mendelian disease (slide 14): ADD3/XPNPEP1 locus (GWAS, Garcia-Barceló 2010), GPC1 deletions (Cui 2013), rare biallelic PKD1L1 variants in 5/67 with splenic malformation (Berauer, Hepatology 2019). Common variants shift risk only modestly.
+- Whom to test (slides 18, 20): no atresia-susceptibility gene test for the patient, siblings or co-twin (recurrence is rare; 19/19 twin pairs discordant). The cholestasis panel or rapid genome to rule out mimics still runs in parallel (02-14). Identical co-twin: low risk; screen with fractionated bilirubin and stool color. Splenic malformation + situs anomaly → consider a ciliary gene panel (PKD1L1) and echocardiogram; counsel that onset is embryonic. Expert opinion (lesson synthesis).
