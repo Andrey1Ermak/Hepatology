@@ -35,3 +35,8 @@ Card not built yet (trigger: lesson 05-14). Inbox is filled by daily lesson sync
 - **Endocrine mimic (case 3):** GGT is normal in about half of hypopituitary cholestatic infants → hypoglycemia + low-GGT cholestasis = cortisol + free T4 before (or alongside) the low-GGT genetic panel; normal TSH does not exclude central hypothyroidism. Hydrocortisone before levothyroxine. Belongs in Don't miss.
 - Split by clue (slide 3): low GGT with intense itch → transporter defect (PFIC/BSEP); low GGT with low serum bile acids and **no itch** → bile acid synthesis defect → urine bile acids by mass spectrometry **before** UDCA (pearl 11, self-test).
 - ARC: never biopsy (7/16 bled) — repeated from 02-11.
+
+### 03-03 · Biliary atresia: diagnosis (synced 2026-10-25)
+- A normal or low GGT in a cholestatic infant points away from atresia → PFIC1/2, bile acid synthesis defects, TJP2 (slide 4). Atresia with low GGT exists but is uncommon — pale stools still go to the atresia pathway.
+- GGT is physiologically higher in neonates — interpret "low" against age norms (→ lab_norms / ref_norms).
+- Case (slide 20): 5-week-old, GGT 90 U/L, normal contracting gallbladder, MMP-7 below the assay cut-off → atresia unlikely; work up PFIC, bile acid synthesis, genetics.
