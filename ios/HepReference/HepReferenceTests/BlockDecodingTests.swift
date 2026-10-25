@@ -1,4 +1,5 @@
 import XCTest
+import SwiftUI
 @testable import HepReference
 
 final class BlockDecodingTests: XCTestCase {
@@ -237,6 +238,79 @@ final class BlockDecodingTests: XCTestCase {
             return XCTFail("expected lab_norms")
         }
         XCTAssertEqual(block.labTests(in: labs).map(\.id), ["ggt", "alt"])
+    }
+
+    func testPearls() throws {
+        let json = #"""
+        {"t":"pearls","items":[
+          {"k":"pearl","text":"A normal gallbladder does not exclude atresia."},
+          {"k":"pitfall","text":"Check CK before a liver biopsy."}]}
+        """#
+        guard case .pearls(let block) = try decodeBlock(json) else {
+            return XCTFail("expected pearls")
+        }
+        XCTAssertNil(block.h)
+        XCTAssertEqual(block.items.map(\.k), [.pearl, .pitfall])
+        XCTAssertEqual(block.items[1].text, "Check CK before a liver biopsy.")
+    }
+
+    func testPearlsRejectsUnknownKind() {
+        XCTAssertThrowsError(try decodeBlock(#"{"t":"pearls","items":[{"k":"tip","text":"x"}]}"#))
+    }
+
+    func testGuidelineCompareDecodesEveryVerdict() throws {
+        let json = #"""
+        {"t":"guideline_compare","h":"Guidelines","rows":[
+          {"topic":"A","positions":{"g1":"Yes"},"verdict":"aligned"},
+          {"topic":"B","positions":{"g1":"Yes"},"verdict":"differs","note":"Why it matters"},
+          {"topic":"C","positions":{"g1":"Yes"},"verdict":"material"},
+          {"topic":"D","positions":{"g1":"Not addressed"},"verdict":"gap"}]}
+        """#
+        guard case .guidelineCompare(let block) = try decodeBlock(json) else {
+            return XCTFail("expected guideline_compare")
+        }
+        XCTAssertEqual(block.h, "Guidelines")
+        XCTAssertEqual(block.rows.map(\.verdict), [.aligned, .differs, .material, .gap])
+        XCTAssertEqual(block.rows[1].note, "Why it matters")
+        XCTAssertNil(block.rows[0].note)
+        XCTAssertEqual(block.rows[3].positions, ["g1": "Not addressed"])
+    }
+
+    func testGuidelineCompareRejectsUnknownVerdict() {
+        XCTAssertThrowsError(try decodeBlock(#"{"t":"guideline_compare","rows":[{"topic":"A","positions":{},"verdict":"partial"}]}"#))
+    }
+
+    func testGuidelineComparePositionsReadOldestFirst() throws {
+        let guidelines = try JSONDecoder().decode([Guideline].self, from: Data(#"""
+        [{"id":"new","title":"t","society":"S","year":2025,"citation":"c","checked":"2026-10"},
+         {"id":"old_b","title":"t","society":"S","year":2017,"citation":"c","checked":"2026-10"},
+         {"id":"old_a","title":"t","society":"S","year":2017,"citation":"c","checked":"2026-10"}]
+        """#.utf8))
+        guard case .guidelineCompare(let block) = try decodeBlock(#"""
+        {"t":"guideline_compare","rows":[{"topic":"A","verdict":"differs",
+          "positions":{"zz_unknown":"?","new":"2025","old_a":"2017 a","old_b":"2017 b","aa_unknown":"?"}}]}
+        """#) else {
+            return XCTFail("expected guideline_compare")
+        }
+        // Year first, then registry order for a tie; unregistered ids last by id.
+        XCTAssertEqual(block.rows[0].orderedPositions(in: guidelines).map(\.guidelineId),
+                       ["old_b", "old_a", "new", "aa_unknown", "zz_unknown"])
+        XCTAssertEqual(block.rows[0].orderedPositions(in: guidelines).first?.text, "2017 b")
+    }
+
+    /// CLAUDE.md §12.2: ALIGNED ok, DIFFERS urg, MATERIAL crit, GAP gap;
+    /// dark text on the bright urg and gap fills.
+    func testGuidelineVerdictColorsAndSpokenLabel() {
+        XCTAssertEqual(GuidelineVerdict.aligned.fill, Tier.rt.solid)
+        XCTAssertEqual(GuidelineVerdict.differs.fill, Tier.urg.solid)
+        XCTAssertEqual(GuidelineVerdict.material.fill, Tier.crit.solid)
+        XCTAssertEqual(GuidelineVerdict.gap.fill, Color.hepGap)
+        XCTAssertEqual(GuidelineVerdict.aligned.onFill, Color.hepOnSolid)
+        XCTAssertEqual(GuidelineVerdict.differs.onFill, Color.hepOnBright)
+        XCTAssertEqual(GuidelineVerdict.material.onFill, Color.hepOnSolid)
+        XCTAssertEqual(GuidelineVerdict.gap.onFill, Color.hepOnBright)
+        XCTAssertEqual(GuidelineVerdict.material.accessibilityLabel, "Verdict: material difference, changes management")
+        XCTAssertEqual(GuidelineVerdict.allCases.map(\.label), ["ALIGNED", "DIFFERS", "MATERIAL", "GAP"])
     }
 
     func testUnknownBlockTypeThrows() {

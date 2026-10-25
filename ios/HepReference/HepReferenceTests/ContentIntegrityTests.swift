@@ -337,6 +337,42 @@ final class ContentIntegrityTests: XCTestCase {
         }
     }
 
+    /// A pearls block holds at least one non-empty line.
+    func testEveryPearlsBlockIsWellFormed() throws {
+        for card in try allCards() {
+            for block in card.blocks {
+                guard case .pearls(let b) = block else { continue }
+                XCTAssertFalse(b.items.isEmpty, "\(card.id): pearls has no items")
+                for item in b.items {
+                    XCTAssertFalse(item.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, "\(card.id): empty \(item.k.rawValue)")
+                }
+            }
+        }
+    }
+
+    /// A guideline_compare cites only registered documents (so every
+    /// position shows a society and year), has at least one row, no topic
+    /// twice, and every row states at least one non-empty position.
+    func testEveryGuidelineComparePositionExists() throws {
+        let guidelineIDs = Set(try registry("guidelines", as: [Guideline].self).map(\.id))
+        for card in try allCards() {
+            for block in card.blocks {
+                guard case .guidelineCompare(let b) = block else { continue }
+                XCTAssertFalse(b.rows.isEmpty, "\(card.id): guideline_compare has no rows")
+                let topics = b.rows.map(\.topic)
+                XCTAssertEqual(Set(topics).count, topics.count, "\(card.id): guideline_compare repeats a topic")
+                for row in b.rows {
+                    XCTAssertFalse(row.topic.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, "\(card.id): guideline_compare row without a topic")
+                    XCTAssertFalse(row.positions.isEmpty, "\(card.id): '\(row.topic)' has no positions")
+                    for (id, text) in row.positions {
+                        XCTAssertTrue(guidelineIDs.contains(id), "\(card.id): '\(row.topic)' cites '\(id)', not in guidelines.json")
+                        XCTAssertFalse(text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, "\(card.id): '\(row.topic)' has an empty position for '\(id)'")
+                    }
+                }
+            }
+        }
+    }
+
     // MARK: Presentation
 
     func testEveryGridTitleFitsTheBrowseTile() throws {

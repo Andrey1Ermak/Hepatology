@@ -12,7 +12,9 @@ import SwiftUI
 /// age_switch renders its chips and the selected branch's pathway
 /// (AgeSwitchBlockView), with the same placeholder for a missing path_id;
 /// workup renders tickable orders with a Copy button (WorkupBlockView);
-/// lab_norms renders each analyte's limits from labs.json (LabNormsBlockView).
+/// lab_norms renders each analyte's limits from labs.json (LabNormsBlockView);
+/// pearls and guideline_compare render collapsed Learn-layer sections
+/// (PearlsBlockView, GuidelineCompareBlockView).
 struct BlockView: View {
     let block: Block
 
@@ -52,6 +54,8 @@ struct BlockView: View {
         case .ageSwitch(let b): AgeSwitchBlockView(block: b)
         case .workup(let b): WorkupBlockView(block: b)
         case .labNorms(let b): LabNormsBlockView(block: b)
+        case .pearls(let b): PearlsBlockView(block: b)
+        case .guidelineCompare(let b): GuidelineCompareBlockView(block: b)
         }
     }
 }

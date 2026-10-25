@@ -70,6 +70,29 @@ struct DesignSampleView: View {
       {"age": "teen", "sex": "M", "high": 30.5, "source": "sample"}]}]
     """) ?? []
 
+    /// Placeholder pearls — no clinical content.
+    private static let pearls: PearlsBlock? = decode("""
+    {"t": "pearls", "items": [
+      {"k": "pearl", "text": "Sample pearl: a line worth carrying onto the ward."},
+      {"k": "pitfall", "text": "Sample pitfall: a reasoning error to avoid."}]}
+    """)
+
+    /// Placeholder comparison, one row per verdict — not real positions.
+    private static let guidelineCompare: GuidelineCompareBlock? = decode("""
+    {"t": "guideline_compare", "h": "Guidelines", "rows": [
+      {"topic": "Sample topic one", "positions": {"sample_a": "Position A", "sample_b": "Position B"}, "verdict": "aligned"},
+      {"topic": "Sample topic two", "positions": {"sample_a": "Position A", "sample_b": "Different position B"}, "verdict": "differs", "note": "Sample note on why it matters."},
+      {"topic": "Sample topic three", "positions": {"sample_a": "Not addressed", "sample_b": "Position B"}, "verdict": "material", "note": "Sample note: changes management."},
+      {"topic": "Sample topic four", "positions": {"sample_a": "Not addressed"}, "verdict": "gap"}]}
+    """)
+
+    private static let sampleGuidelines: [Guideline] = decode("""
+    [{"id": "sample_a", "title": "Sample guideline A", "society": "Society A", "year": 2017,
+      "citation": "Sample citation A", "url": null, "checked": "2026-10", "supersedes": null},
+     {"id": "sample_b", "title": "Sample guideline B", "society": "Society B", "year": 2025,
+      "citation": "Sample citation B", "url": null, "checked": "2026-10", "supersedes": null}]
+    """) ?? []
+
     private static let sampleSession: CardSession = {
         let session = CardSession()
         session.age = .teen
@@ -88,6 +111,14 @@ struct DesignSampleView: View {
                     // the workup sit high enough to show in the first
                     // screenshots. The norms get their own session with an
                     // age chosen, so the highlighted row shows.
+                    // Learn-layer sections open, so the verdict cells
+                    // and pearl markers show in the first screenshot.
+                    if index == 0, let guidelineCompare = Self.guidelineCompare {
+                        GuidelineCompareBlockView(block: guidelineCompare, guidelines: Self.sampleGuidelines, startsExpanded: true)
+                    }
+                    if index == 0, let pearls = Self.pearls {
+                        PearlsBlockView(block: pearls, startsExpanded: true)
+                    }
                     if index == 0, let labNorms = Self.labNorms {
                         LabNormsBlockView(block: labNorms, labs: Self.sampleLabs)
                             .environment(Self.sampleSession)

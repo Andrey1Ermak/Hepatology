@@ -19,6 +19,8 @@ enum Block: Decodable {
     case ageSwitch(AgeSwitchBlock)
     case workup(WorkupBlock)
     case labNorms(LabNormsBlock)
+    case pearls(PearlsBlock)
+    case guidelineCompare(GuidelineCompareBlock)
 
     private enum CodingKeys: String, CodingKey {
         case type = "t"
@@ -33,6 +35,8 @@ enum Block: Decodable {
         case ageSwitch = "age_switch"
         case workup
         case labNorms = "lab_norms"
+        case pearls
+        case guidelineCompare = "guideline_compare"
     }
 
     init(from decoder: Decoder) throws {
@@ -52,6 +56,8 @@ enum Block: Decodable {
         case .ageSwitch: self = .ageSwitch(try AgeSwitchBlock(from: decoder))
         case .workup: self = .workup(try WorkupBlock(from: decoder))
         case .labNorms: self = .labNorms(try LabNormsBlock(from: decoder))
+        case .pearls: self = .pearls(try PearlsBlock(from: decoder))
+        case .guidelineCompare: self = .guidelineCompare(try GuidelineCompareBlock(from: decoder))
         }
     }
 }
@@ -264,4 +270,68 @@ struct LabNormsBlock: Decodable {
     func labTests(in labs: [LabTest]) -> [LabTest] {
         analytes.compactMap { id in labs.first { $0.id == id } }
     }
+}
+
+enum PearlKind: String, Decodable {
+    case pearl, pitfall
+}
+
+/// One teaching line: a pearl to carry, or a pitfall to avoid.
+struct PearlItem: Decodable {
+    let k: PearlKind
+    let text: String
+}
+
+/// Pearls & pitfalls (CLAUDE.md §3.3 row 7, §5.2) — Learn layer.
+struct PearlsBlock: Decodable {
+    let h: String?
+    let items: [PearlItem]
+}
+
+/// How the cited documents relate on one topic (CLAUDE.md §5.2, §12.2):
+/// `material` changes management, `gap` means no guideline covers it.
+enum GuidelineVerdict: String, Decodable, CaseIterable {
+    case aligned, differs, material, gap
+}
+
+/// One document's position on a `guideline_compare` topic.
+struct GuidelinePosition {
+    /// Id into `guidelines.json`.
+    let guidelineId: String
+    let text: String
+}
+
+/// One topic of a `guideline_compare`: each document's position, keyed by
+/// guideline id, and the team's verdict.
+struct GuidelineCompareRow: Decodable {
+    let topic: String
+    let positions: [String: String]
+    let verdict: GuidelineVerdict
+    /// Why the difference matters clinically.
+    let note: String?
+
+    /// Positions oldest document first, as the lessons' comparison tables
+    /// read (JSON object order is not preserved by decoding): by year, then
+    /// by order in `guidelines.json`; ids missing from the registry go last
+    /// by id (the integrity gate forbids them in shipped content).
+    func orderedPositions(in guidelines: [Guideline]) -> [GuidelinePosition] {
+        let index = Dictionary(guidelines.enumerated().map { ($1.id, ($1.year, $0)) }, uniquingKeysWith: { first, _ in first })
+        return positions
+            .sorted { a, b in
+                switch (index[a.key], index[b.key]) {
+                case let (x?, y?): x.0 != y.0 ? x.0 < y.0 : x.1 < y.1
+                case (_?, nil): true
+                case (nil, _?): false
+                case (nil, nil): a.key < b.key
+                }
+            }
+            .map { GuidelinePosition(guidelineId: $0.key, text: $0.value) }
+    }
+}
+
+/// Where the guidelines agree and differ (CLAUDE.md §3.3 row 8, §5.2) —
+/// Learn layer. Society names and years come from `guidelines.json`.
+struct GuidelineCompareBlock: Decodable {
+    let h: String?
+    let rows: [GuidelineCompareRow]
 }

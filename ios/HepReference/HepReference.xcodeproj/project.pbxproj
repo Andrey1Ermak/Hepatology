@@ -41,12 +41,14 @@
 		4F8B1F74CE0AA1C30607FDB7 /* BranchBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820E6783963139414EF2AD8E /* BranchBlockView.swift */; };
 		541AD44FCD39EF372B737C2C /* ScoreCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400044A20D7DCB283956C5A4 /* ScoreCalc.swift */; };
 		5D2EC96B40E6A2914998282A /* SectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82967B5A0BE18BF5E7EEA93C /* SectionCard.swift */; };
+		61CCBE76035E4091DEE58F88 /* CitationFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25A3EBEE6F636E82EEEEB37 /* CitationFooter.swift */; };
 		620EBF2C8175AF73C7F22A16 /* WorkupBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF3FF8A81BE972157B26F03 /* WorkupBlockView.swift */; };
 		64DD7EEF516894C7B2EB643E /* AgeSwitchBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366FB1B29728495354AA0DDF /* AgeSwitchBlockView.swift */; };
 		6603690DDDB85156EDF7A2BF /* CardLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F469CA2B0FF565BAE90688A /* CardLibrary.swift */; };
 		684D4762365031EFF3DA810F /* CollapsibleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4870B5B3A2090D439DBE0381 /* CollapsibleSection.swift */; };
 		685FC123D570E54E882A09E2 /* PathwayBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221C5867FC3C24FB9A75BF0E /* PathwayBlockView.swift */; };
 		6ABB034CC1FF9174C0DD1C55 /* NumericCalcSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C29C8CF62141AA29BA9C923 /* NumericCalcSheet.swift */; };
+		707D7949D2BCEF41F8AE8F0E /* GuidelineCompareBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12B2EE7C189C55F4CEC1E2C /* GuidelineCompareBlockView.swift */; };
 		724502285222E1AED7A4F390 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25019922C87743AC09841EB1 /* FlowLayout.swift */; };
 		72AC5EC75733BAA460D0E3CF /* DesignSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958A1510D85C828F2BA67DAD /* DesignSystemTests.swift */; };
 		750D9EBA1AA7B8F70DDA1D42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4D29FA599B03ECE29F0AFF /* Assets.xcassets */; };
@@ -75,6 +77,7 @@
 		C07DFCDB7E1A3D1FCCCD9A84 /* ColView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69319EE20AB7131988F63E64 /* ColView.swift */; };
 		C5D6CEF950797DBF9E893018 /* CardCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA7E6006308709CF40FA4C4 /* CardCategory.swift */; };
 		CA10484B81C114346D71867D /* CalculatorResetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617645515C201EB540B5CF04 /* CalculatorResetButton.swift */; };
+		CA7275C0915C7B1E580034DC /* GuidelineVerdict+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE39FCD9A84505F8F9B57FAE /* GuidelineVerdict+Style.swift */; };
 		CA824CE8EF29E0A07E2A1FE7 /* NoteBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2960A6A7B580DB9277E10A /* NoteBlockView.swift */; };
 		CE07342B94812AA3ED612ACD /* NumericCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9105D7E5281223F14D9D9C /* NumericCalcTests.swift */; };
 		CE3C033AF210A09CAC7936C3 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56053F480C7E51B63D4D991 /* SearchView.swift */; };
@@ -93,6 +96,7 @@
 		EC880CA6746898B049E07E9B /* CardRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FE9624118A34C010B492C9 /* CardRowView.swift */; };
 		EC98CB7C3F3ACC75D208EE9C /* ArmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8662A63F7E3034B627B4E /* ArmView.swift */; };
 		EF5A49124DC914A98D531283 /* PathwayStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BB30B1F0C5DF22521CF116 /* PathwayStyle.swift */; };
+		F40417F1E8F0D2FF111652DB /* PearlsBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AD778A33358A313C2A69 /* PearlsBlockView.swift */; };
 		F5BF5306CA4EC995852A2F1D /* PathwayNodeDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A56AF10D096F6BA21472C5 /* PathwayNodeDecodingTests.swift */; };
 		F84D15681A9B0A0775E7113C /* CardLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25251AE39358EFDF15C23816 /* CardLinkButton.swift */; };
 		FA9E3EF1DCC635EE7907D42A /* RegistryDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7C394F13E0FCA443EBE2D9 /* RegistryDecodingTests.swift */; };
@@ -149,6 +153,7 @@
 		4EE8F19EBCF792A80DE2E29E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		541E28122B00FA3A4189AC31 /* KVBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVBlockView.swift; sourceTree = "<group>"; };
 		563AC1B574416E0A89C3E80C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5648AD778A33358A313C2A69 /* PearlsBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PearlsBlockView.swift; sourceTree = "<group>"; };
 		578ED5C458F616A288AA4F79 /* CardLinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLinksView.swift; sourceTree = "<group>"; };
 		5B7C394F13E0FCA443EBE2D9 /* RegistryDecodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistryDecodingTests.swift; sourceTree = "<group>"; };
 		5F880D8133D078BAE1B77DE0 /* AcuLevel+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AcuLevel+Style.swift"; sourceTree = "<group>"; };
@@ -180,6 +185,7 @@
 		BB2960A6A7B580DB9277E10A /* NoteBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBlockView.swift; sourceTree = "<group>"; };
 		BB2D9C57695F03F5F7C2C4D7 /* TableBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableBlockView.swift; sourceTree = "<group>"; };
 		BD274D527BDF935B5CE1E02B /* CalculatorHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorHeader.swift; sourceTree = "<group>"; };
+		C12B2EE7C189C55F4CEC1E2C /* GuidelineCompareBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidelineCompareBlockView.swift; sourceTree = "<group>"; };
 		C69CD7E59496A94BEBB86CEA /* CardSourcesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSourcesTests.swift; sourceTree = "<group>"; };
 		C88244BCD2FC3ED97C99B7D3 /* CalcFormRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcFormRow.swift; sourceTree = "<group>"; };
 		C8A56AF10D096F6BA21472C5 /* PathwayNodeDecodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathwayNodeDecodingTests.swift; sourceTree = "<group>"; };
@@ -187,6 +193,7 @@
 		CD336DA683265B657ACBC2B6 /* CardDecodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDecodingTests.swift; sourceTree = "<group>"; };
 		CF0BE1C40A6FF228AC59E1AC /* NumericCalcRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericCalcRegistry.swift; sourceTree = "<group>"; };
 		D10BE75C1587BBCFE4E31351 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		D25A3EBEE6F636E82EEEEB37 /* CitationFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitationFooter.swift; sourceTree = "<group>"; };
 		D28826C35DA71B801B2DBCC2 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		D3A3D2B12172C4D0A8253D10 /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
 		D40FDE06247E9A673E1113D4 /* Card+Sources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Sources.swift"; sourceTree = "<group>"; };
@@ -197,6 +204,7 @@
 		E7A50DE35F8C19D0E50C7ADB /* DispositionArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispositionArrow.swift; sourceTree = "<group>"; };
 		E822D34F70C01854FDD8F263 /* BranchedChildrenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchedChildrenView.swift; sourceTree = "<group>"; };
 		E9AC60AFBF1EA048AFB31EED /* CardMarkupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMarkupTests.swift; sourceTree = "<group>"; };
+		EE39FCD9A84505F8F9B57FAE /* GuidelineVerdict+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GuidelineVerdict+Style.swift"; sourceTree = "<group>"; };
 		F72BA2AC978EC6371E2FCD4D /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		FC37CEB0E5CA29B7ED090AB2 /* Manifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manifest.swift; sourceTree = "<group>"; };
 		FD00610F261A547E8DD2C9D3 /* CardMarkup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMarkup.swift; sourceTree = "<group>"; };
@@ -234,6 +242,7 @@
 				D10BE75C1587BBCFE4E31351 /* Badge.swift */,
 				C88244BCD2FC3ED97C99B7D3 /* CalcFormRow.swift */,
 				617645515C201EB540B5CF04 /* CalculatorResetButton.swift */,
+				D25A3EBEE6F636E82EEEEB37 /* CitationFooter.swift */,
 				4870B5B3A2090D439DBE0381 /* CollapsibleSection.swift */,
 				09039DD8496221F029F80A4A /* DesignSystem.swift */,
 				75FE50AD71D546325C9F2021 /* EditorialHeader.swift */,
@@ -297,6 +306,7 @@
 				8B6346A41417A486CF030A17 /* ChipBoardView.swift */,
 				4EE8F19EBCF792A80DE2E29E /* ContentView.swift */,
 				08469650D07B56E285FA6064 /* DesignSampleView.swift */,
+				EE39FCD9A84505F8F9B57FAE /* GuidelineVerdict+Style.swift */,
 				2C29C8CF62141AA29BA9C923 /* NumericCalcSheet.swift */,
 				2A58F57D0EA93E1344E69EB1 /* ScoreCalcView.swift */,
 				E56053F480C7E51B63D4D991 /* SearchView.swift */,
@@ -361,10 +371,12 @@
 				DC82B16AFE627B057B2779DA /* BlockView.swift */,
 				820E6783963139414EF2AD8E /* BranchBlockView.swift */,
 				7CFAF5CB9638C1CF262E6C85 /* DoseBlockView.swift */,
+				C12B2EE7C189C55F4CEC1E2C /* GuidelineCompareBlockView.swift */,
 				541E28122B00FA3A4189AC31 /* KVBlockView.swift */,
 				3DE2F5A636E07496B8D6E6D9 /* LabNormsBlockView.swift */,
 				167C9464C130DB92F2277AD4 /* ListBlockView.swift */,
 				BB2960A6A7B580DB9277E10A /* NoteBlockView.swift */,
+				5648AD778A33358A313C2A69 /* PearlsBlockView.swift */,
 				43CB3F1B11B649D27028143A /* PlaceholderBlockView.swift */,
 				BB2D9C57695F03F5F7C2C4D7 /* TableBlockView.swift */,
 				92A5BAE9A5B9668A85B96FC7 /* TextBlockView.swift */,
@@ -543,6 +555,7 @@
 				0E1B259F0200BF7DFF38F56A /* ChipScoreRule.swift in Sources */,
 				BF28633F08FE57B4D466439A /* ChipScreen.swift in Sources */,
 				489B3D6EBA08F57CAC14E66E /* ChipTierRule.swift in Sources */,
+				61CCBE76035E4091DEE58F88 /* CitationFooter.swift in Sources */,
 				C07DFCDB7E1A3D1FCCCD9A84 /* ColView.swift in Sources */,
 				684D4762365031EFF3DA810F /* CollapsibleSection.swift in Sources */,
 				10944861781EC3128EA42EB2 /* ContentView.swift in Sources */,
@@ -555,6 +568,8 @@
 				3EEB07FC2701DAFEA972C508 /* Elevation.swift in Sources */,
 				724502285222E1AED7A4F390 /* FlowLayout.swift in Sources */,
 				B170CCAE01DF516A94A1B479 /* GrpView.swift in Sources */,
+				707D7949D2BCEF41F8AE8F0E /* GuidelineCompareBlockView.swift in Sources */,
+				CA7275C0915C7B1E580034DC /* GuidelineVerdict+Style.swift in Sources */,
 				D4685C77BA11C2D3B9708E08 /* HepReferenceApp.swift in Sources */,
 				B1DAFBD4174622F07ACCBC87 /* KVBlockView.swift in Sources */,
 				42A4C63AF11EDF4D070DF2B4 /* LabNormsBlockView.swift in Sources */,
@@ -571,6 +586,7 @@
 				685FC123D570E54E882A09E2 /* PathwayBlockView.swift in Sources */,
 				44B2D6F2973351E92ADA70EE /* PathwayNode.swift in Sources */,
 				EF5A49124DC914A98D531283 /* PathwayStyle.swift in Sources */,
+				F40417F1E8F0D2FF111652DB /* PearlsBlockView.swift in Sources */,
 				A31547AAA9B30F64B78FA92A /* PlaceholderBlockView.swift in Sources */,
 				10139B5F5791571F097404D2 /* Registry.swift in Sources */,
 				D38B55DD98B72AD67F2DB683 /* RowView.swift in Sources */,

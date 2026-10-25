@@ -13,8 +13,24 @@ struct CollapsibleSection<Content: View>: View {
     /// Top stripe color — navy (a neutral block) unless the caller passes
     /// the tier of what's inside.
     var stripe: Color = Color.hepNavy
-    @State private var isExpanded = false
+    @State private var isExpanded: Bool
     @ViewBuilder var content: () -> Content
+
+    /// Collapsed is the default; only the DEBUG design sample passes
+    /// `startsExpanded` (for screenshots).
+    init(
+        title: String,
+        background: Color = Color.hepSurface,
+        stripe: Color = Color.hepNavy,
+        startsExpanded: Bool = false,
+        @ViewBuilder content: @escaping () -> Content
+    ) {
+        self.title = title
+        self.background = background
+        self.stripe = stripe
+        self._isExpanded = State(initialValue: startsExpanded)
+        self.content = content
+    }
 
     var body: some View {
         SectionCard(background: background, stripe: stripe) {

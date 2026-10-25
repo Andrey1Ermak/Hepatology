@@ -30,9 +30,7 @@ struct LabNormsBlockView: View {
                 ForEach(tests) { test in
                     table(for: test)
                 }
-                if !sources.isEmpty {
-                    citation
-                }
+                CitationFooter(citations: sources)
             }
         }
     }
@@ -97,17 +95,6 @@ struct LabNormsBlockView: View {
         return tests.flatMap(\.bands).compactMap { band in
             guard seen.insert(band.source).inserted else { return nil }
             return registry?.guideline(band.source)?.citation
-        }
-    }
-
-    private var citation: some View {
-        VStack(alignment: .leading, spacing: Spacing.xs) {
-            Rectangle()
-                .fill(Color.hepRule)
-                .frame(height: 0.5)
-            Text(sources.joined(separator: " · "))
-                .font(.hepCitation)
-                .foregroundStyle(Color.hepMuted)
         }
     }
 }
