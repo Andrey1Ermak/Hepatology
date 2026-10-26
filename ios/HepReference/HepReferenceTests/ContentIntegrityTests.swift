@@ -373,6 +373,48 @@ final class ContentIntegrityTests: XCTestCase {
         }
     }
 
+    /// A case block shows registry cases on their own card: at least one
+    /// id, none twice, each in cases.json and written for this card (a case
+    /// about another card's problem would teach the wrong algorithm).
+    func testEveryCaseBlockResolvesToItsCard() throws {
+        let cases = try registry("cases", as: [ClinicalCase].self)
+        let byID = Dictionary(cases.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
+        for card in try allCards() {
+            for block in card.blocks {
+                guard case .cases(let b) = block else { continue }
+                XCTAssertFalse(b.caseIds.isEmpty, "\(card.id): case block lists no cases")
+                XCTAssertEqual(Set(b.caseIds).count, b.caseIds.count, "\(card.id): case block repeats a case")
+                for id in b.caseIds {
+                    guard let c = byID[id] else {
+                        XCTFail("\(card.id): case '\(id)' not in cases.json")
+                        continue
+                    }
+                    XCTAssertEqual(c.card, card.id, "\(card.id): case '\(id)' belongs to '\(c.card)'")
+                }
+            }
+        }
+    }
+
+    /// Every case in cases.json has a stem, a question and an answer, and
+    /// is shown by a case block on its card — no orphan cases.
+    func testEveryCaseIsCompleteAndShown() throws {
+        var shown = Set<String>()
+        for card in try allCards() {
+            for block in card.blocks {
+                if case .cases(let b) = block { shown.formUnion(b.caseIds) }
+            }
+        }
+        for c in try registry("cases", as: [ClinicalCase].self) {
+            for (field, text) in [("stem", c.stem), ("question", c.question), ("answer", c.answer)] {
+                XCTAssertFalse(text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, "\(c.id): empty \(field)")
+            }
+            if let teaching = c.teaching {
+                XCTAssertFalse(teaching.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, "\(c.id): empty teaching — omit the key instead")
+            }
+            XCTAssertTrue(shown.contains(c.id), "\(c.id): not shown by any case block")
+        }
+    }
+
     // MARK: Presentation
 
     func testEveryGridTitleFitsTheBrowseTile() throws {

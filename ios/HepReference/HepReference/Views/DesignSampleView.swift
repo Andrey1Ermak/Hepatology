@@ -93,6 +93,18 @@ struct DesignSampleView: View {
       "citation": "Sample citation B", "url": null, "checked": "2026-10", "supersedes": null}]
     """) ?? []
 
+    /// Placeholder cases for the sample `case` block — no clinical content.
+    private static let caseBlock: CaseBlock? = decode("""
+    {"t": "case", "h": "Test yourself", "case_ids": ["sample_c1", "sample_c2"]}
+    """)
+
+    private static let sampleCases: [ClinicalCase] = decode("""
+    [{"id": "sample_c1", "card": "__design_sample", "stem": "Sample stem: age, presentation, key findings.",
+      "question": "Sample question: what next?", "answer": "Sample answer.", "teaching": "Sample take-home line."},
+     {"id": "sample_c2", "card": "__design_sample", "stem": "Second sample stem.",
+      "question": "Second sample question?", "answer": "Second sample answer."}]
+    """) ?? []
+
     private static let sampleSession: CardSession = {
         let session = CardSession()
         session.age = .teen
@@ -111,8 +123,11 @@ struct DesignSampleView: View {
                     // the workup sit high enough to show in the first
                     // screenshots. The norms get their own session with an
                     // age chosen, so the highlighted row shows.
-                    // Learn-layer sections open, so the verdict cells
-                    // and pearl markers show in the first screenshot.
+                    // Learn-layer sections open, so the verdict cells,
+                    // pearl markers and case reveal buttons show in the first screenshot.
+                    if index == 0, let caseBlock = Self.caseBlock {
+                        CaseBlockView(block: caseBlock, cases: Self.sampleCases, startsExpanded: true, startsRevealed: true)
+                    }
                     if index == 0, let guidelineCompare = Self.guidelineCompare {
                         GuidelineCompareBlockView(block: guidelineCompare, guidelines: Self.sampleGuidelines, startsExpanded: true)
                     }

@@ -21,6 +21,7 @@ enum Block: Decodable {
     case labNorms(LabNormsBlock)
     case pearls(PearlsBlock)
     case guidelineCompare(GuidelineCompareBlock)
+    case cases(CaseBlock)
 
     private enum CodingKeys: String, CodingKey {
         case type = "t"
@@ -37,6 +38,7 @@ enum Block: Decodable {
         case labNorms = "lab_norms"
         case pearls
         case guidelineCompare = "guideline_compare"
+        case cases = "case"
     }
 
     init(from decoder: Decoder) throws {
@@ -58,6 +60,7 @@ enum Block: Decodable {
         case .labNorms: self = .labNorms(try LabNormsBlock(from: decoder))
         case .pearls: self = .pearls(try PearlsBlock(from: decoder))
         case .guidelineCompare: self = .guidelineCompare(try GuidelineCompareBlock(from: decoder))
+        case .cases: self = .cases(try CaseBlock(from: decoder))
         }
     }
 }
@@ -334,4 +337,24 @@ struct GuidelineCompareRow: Decodable {
 struct GuidelineCompareBlock: Decodable {
     let h: String?
     let rows: [GuidelineCompareRow]
+}
+
+/// "Test yourself" (CLAUDE.md §3.3 row 9, §5.2) — Learn layer. The cases
+/// live only in `Registry/cases.json`; the block names which to show.
+struct CaseBlock: Decodable {
+    let h: String?
+    /// Ids into `cases.json`, in display order.
+    let caseIds: [String]
+
+    enum CodingKeys: String, CodingKey {
+        case h
+        case caseIds = "case_ids"
+    }
+
+    /// The listed cases found in `cases`, in the block's order. An id
+    /// missing from the registry is skipped here; the integrity gate fails
+    /// on it before release.
+    func clinicalCases(in cases: [ClinicalCase]) -> [ClinicalCase] {
+        caseIds.compactMap { id in cases.first { $0.id == id } }
+    }
 }

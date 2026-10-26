@@ -240,6 +240,30 @@ final class BlockDecodingTests: XCTestCase {
         XCTAssertEqual(block.labTests(in: labs).map(\.id), ["ggt", "alt"])
     }
 
+    func testCase() throws {
+        guard case .cases(let block) = try decodeBlock(#"{"t":"case","h":"Test yourself","case_ids":["c1","c2"]}"#) else {
+            return XCTFail("expected case")
+        }
+        XCTAssertEqual(block.h, "Test yourself")
+        XCTAssertEqual(block.caseIds, ["c1", "c2"])
+    }
+
+    func testCaseRequiresCaseIds() {
+        XCTAssertThrowsError(try decodeBlock(#"{"t":"case"}"#))
+    }
+
+    func testCaseKeepsBlockOrderAndSkipsUnknownIds() throws {
+        let cases = try JSONDecoder().decode([ClinicalCase].self, from: Data(#"""
+        [{"id":"c1","card":"x","stem":"s","question":"q","answer":"a"},
+         {"id":"c2","card":"x","stem":"s","question":"q","answer":"a","teaching":"t"}]
+        """#.utf8))
+        guard case .cases(let block) = try decodeBlock(#"{"t":"case","case_ids":["c2","nope","c1"]}"#) else {
+            return XCTFail("expected case")
+        }
+        XCTAssertEqual(block.clinicalCases(in: cases).map(\.id), ["c2", "c1"])
+        XCTAssertNil(block.clinicalCases(in: cases)[1].teaching)
+    }
+
     func testPearls() throws {
         let json = #"""
         {"t":"pearls","items":[

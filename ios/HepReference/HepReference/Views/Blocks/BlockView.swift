@@ -14,7 +14,9 @@ import SwiftUI
 /// workup renders tickable orders with a Copy button (WorkupBlockView);
 /// lab_norms renders each analyte's limits from labs.json (LabNormsBlockView);
 /// pearls and guideline_compare render collapsed Learn-layer sections
-/// (PearlsBlockView, GuidelineCompareBlockView).
+/// (PearlsBlockView, GuidelineCompareBlockView); case renders the
+/// "Test yourself" cases from cases.json, answers hidden until tapped
+/// (CaseBlockView).
 struct BlockView: View {
     let block: Block
 
@@ -56,6 +58,7 @@ struct BlockView: View {
         case .labNorms(let b): LabNormsBlockView(block: b)
         case .pearls(let b): PearlsBlockView(block: b)
         case .guidelineCompare(let b): GuidelineCompareBlockView(block: b)
+        case .cases(let b): CaseBlockView(block: b)
         }
     }
 }

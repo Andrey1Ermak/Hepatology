@@ -43,7 +43,7 @@ final class DesignSystemTests: XCTestCase {
         ("onSolid", "crit"), ("onSolid", "ok"), ("onSolid", "info"), ("onSolid", "brandAccent"),
         ("onSolid", "maroon"), ("onBright", "urg"), ("onBright", "gap"),
         ("muted", "critTint"), ("muted", "urgTint"), ("muted", "okTint"), ("muted", "infoTint"),
-        ("brandAccent", "card"), ("brandAccent", "surface"), ("blue", "surface"), ("blue", "card"),
+        ("brandAccent", "card"), ("brandAccent", "surface"), ("brandAccent", "infoTint"), ("blue", "surface"), ("blue", "card"),
     ]
 
     func testTextContrastInBothThemes() {
