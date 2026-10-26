@@ -34,3 +34,7 @@ Card not built yet (trigger: lesson 05-14). Inbox is filled by daily lesson sync
 ### 03-01 · Biliary atresia: epidemiology and phenotypes (synced 2026-10-23)
 - **Late presenters (slides 5, 12):** CMV IgM-positive atresia presents older, with a larger spleen and more fibrosis. An infant referred late (> 60–90 d) with pale stools still needs the atresia pathway — never relabel as "CMV hepatitis" without a cholangiogram (extrapolated from slides 12 and 18).
 - Vitamin K deficiency bleeding before the Kasai in 8.8% (335/3,809, Okubo 2025) — INR and parenteral vitamin K in every cholestatic infant (consistent with the 02-14 day-1 list).
+
+### 03-04 · Biliary atresia: timing of the Kasai (synced 2026-10-26)
+- **Late-presenting atresia (slides 8, 18, 20):** never "too old for a Kasai". Native liver after a Kasai > 3 mo: 19% at 25 y (France, Fanna 2019); > 90 d: 23% at 4 y (Canada, Schreiber 2007). Offer a Kasai if not decompensated (no ascites, INR corrects with vitamin K, no established cirrhosis on imaging/biopsy); transplant assessment first if ascites, uncorrected coagulopathy, cirrhosis. A working Kasai buys growth before transplant. Judge the liver, not the calendar; discuss with a transplant center (lesson gives no timing; "same week" is team expert opinion). No guideline addresses the older infant (GAP; expert practice, Zhan 2018).
+- Case (slide 20): 16 wk, ascites, INR 2.0 despite vitamin K, cirrhotic liver → transplant assessment first.
