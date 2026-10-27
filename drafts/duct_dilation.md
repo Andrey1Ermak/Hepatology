@@ -14,3 +14,6 @@ Card not built yet (trigger: lesson 18-14). Inbox is filled by daily lesson sync
 - **MMP-7 is high in choledochal cyst:** 7 of 8 above the 52.8 ng/mL single-plex cut-off in ChiLDReN (Pandurangi 2024) — a high MMP-7 with a cyst is not atresia by default.
 - **Porta cyst on US (slides 12, 15):** non-dilated intrahepatic ducts → cystic atresia; dilated intrahepatic ducts → choledochal cyst. At cholangiogram, a bile-free cyst with abnormal intrahepatic ducts is cystic atresia.
 - Case (slide 20): 8-week-old, high MMP-7, porta cyst with dilated intrahepatic ducts → choledochal cyst more likely; MRCP or cholangiogram, not a Kasai by default.
+
+### 03-05 · Biliary atresia: the Kasai operation (synced 2026-10-27)
+- Type I atresia (~5%) often has a cyst in the remnant; cystic atresia clears more often than type III and is **not** a choledochal cyst (slide 5; consistent with the 03-01 entry). At the Kasai, the cyst is anastomosed to the Roux limb or the porta is drained (slide 8).
