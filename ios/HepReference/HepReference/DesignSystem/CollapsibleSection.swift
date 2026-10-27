@@ -42,7 +42,7 @@ struct CollapsibleSection<Content: View>: View {
             }
             // Matches `CardRowView.contentHeight` — collapsed, this is just
             // the header row, and a "deck" of collapsed sub-cards should
-            // read as the same size as the Browse tiles it echoes, not a
+            // read as the same size as the card-list tiles it echoes, not a
             // thin strip. `.leading` (vertically centered), not `.topLeading`
             // — collapsed, the header should sit centered in that taller
             // frame, not stuck to its top edge. Harmless once expanded: real

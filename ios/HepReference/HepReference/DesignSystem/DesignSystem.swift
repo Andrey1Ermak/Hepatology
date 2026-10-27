@@ -18,9 +18,9 @@ enum Radius {
     static let large: CGFloat = 12
 }
 
-/// Shared grid layouts — `CardListView` and `SearchView` both lay out card
+/// Shared grid layouts — `CategoryView` and `SearchView` both lay out card
 /// tiles two-up, and must use the exact same `GridItem` spacing so a search
-/// result reads as the identical tile it is in Browse, not a slightly
+/// result reads as the identical tile it is in a category, not a slightly
 /// different one.
 enum GridLayout {
     /// For a `ChipRow`'s `gridColumns: 1` — every chip full-width and
@@ -120,7 +120,7 @@ extension Color {
     static let hepMuted = Color("muted")
     static let hepSurface = Color("surface")
     static let hepBackground = Color("appBackground")
-    /// Raised card on the page background (Browse tiles, the search field).
+    /// Raised card on the page background (card-list tiles, the search field).
     static let hepCard = Color("card")
     static let hepGap = Color("gap")
     /// Text on a saturated fill (`Tier.solid`, navy, maroon): white in light

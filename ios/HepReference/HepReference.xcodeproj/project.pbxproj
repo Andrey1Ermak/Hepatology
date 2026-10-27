@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		051C69491DBB9F170A225C96 /* CardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EB2A09B67E9237C43E011E /* CardHeaderView.swift */; };
 		06356B0C9BF4915358EAA8EA /* ScoreCalcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58F57D0EA93E1344E69EB1 /* ScoreCalcView.swift */; };
-		0A1D711E5025F66C75DC077F /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A3D2B12172C4D0A8253D10 /* CardListView.swift */; };
 		0C15D2B57D31167DE3EA455D /* LinkIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00FD4836240C067477D6285 /* LinkIndex.swift */; };
 		0E1B259F0200BF7DFF38F56A /* ChipScoreRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C6C76AF68F51F86C0FB35 /* ChipScoreRule.swift */; };
 		10139B5F5791571F097404D2 /* Registry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446D93E4CDB00514BB51E68A /* Registry.swift */; };
@@ -37,6 +36,7 @@
 		489B3D6EBA08F57CAC14E66E /* ChipTierRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E345C468C53C191F5B81F1 /* ChipTierRule.swift */; };
 		4A9B00D7EC3AA2E4C68043B3 /* SquareBullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E0073FF3C8AACE7497EE /* SquareBullet.swift */; };
 		4B13D2879C0EA62A0664B1AE /* ChecklistAnyRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9357B09215E0402FEB31BD /* ChecklistAnyRule.swift */; };
+		4B6E61CB48961382961536BF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE088E3885C095CE2B61427 /* HomeView.swift */; };
 		4BBD92C09F52B2D13FAC65A9 /* CardSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88237CD1A8F2C2E498602338 /* CardSession.swift */; };
 		4F8B1F74CE0AA1C30607FDB7 /* BranchBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820E6783963139414EF2AD8E /* BranchBlockView.swift */; };
 		541AD44FCD39EF372B737C2C /* ScoreCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400044A20D7DCB283956C5A4 /* ScoreCalc.swift */; };
@@ -77,6 +77,7 @@
 		BF28633F08FE57B4D466439A /* ChipScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2643586157AA1DE125EF176 /* ChipScreen.swift */; };
 		C07DFCDB7E1A3D1FCCCD9A84 /* ColView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69319EE20AB7131988F63E64 /* ColView.swift */; };
 		C5D6CEF950797DBF9E893018 /* CardCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA7E6006308709CF40FA4C4 /* CardCategory.swift */; };
+		C84E17071A9452B4455FD5E2 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24724738616B1AFB5DAD2059 /* CategoryView.swift */; };
 		CA10484B81C114346D71867D /* CalculatorResetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617645515C201EB540B5CF04 /* CalculatorResetButton.swift */; };
 		CA7275C0915C7B1E580034DC /* GuidelineVerdict+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE39FCD9A84505F8F9B57FAE /* GuidelineVerdict+Style.swift */; };
 		CA824CE8EF29E0A07E2A1FE7 /* NoteBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2960A6A7B580DB9277E10A /* NoteBlockView.swift */; };
@@ -100,6 +101,7 @@
 		F40417F1E8F0D2FF111652DB /* PearlsBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5648AD778A33358A313C2A69 /* PearlsBlockView.swift */; };
 		F5BF5306CA4EC995852A2F1D /* PathwayNodeDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A56AF10D096F6BA21472C5 /* PathwayNodeDecodingTests.swift */; };
 		F84D15681A9B0A0775E7113C /* CardLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25251AE39358EFDF15C23816 /* CardLinkButton.swift */; };
+		FA5AC232F0CF7B58DC75A503 /* CardCategory+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A543BC8389FC0BE71998ED /* CardCategory+Style.swift */; };
 		FA9E3EF1DCC635EE7907D42A /* RegistryDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7C394F13E0FCA443EBE2D9 /* RegistryDecodingTests.swift */; };
 		FF262137A0175CFFEEEC2110 /* CardMarkupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC60AFBF1EA048AFB31EED /* CardMarkupTests.swift */; };
 /* End PBXBuildFile section */
@@ -121,6 +123,7 @@
 		055C6C76AF68F51F86C0FB35 /* ChipScoreRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipScoreRule.swift; sourceTree = "<group>"; };
 		08469650D07B56E285FA6064 /* DesignSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSampleView.swift; sourceTree = "<group>"; };
 		09039DD8496221F029F80A4A /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		0DE088E3885C095CE2B61427 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0E0F17F4EF9CFE165F94CC07 /* Content */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Content; path = HepReference/Content; sourceTree = SOURCE_ROOT; };
 		167C9464C130DB92F2277AD4 /* ListBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBlockView.swift; sourceTree = "<group>"; };
 		1783E4C659E72C2ACD3B6173 /* GrpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrpView.swift; sourceTree = "<group>"; };
@@ -131,6 +134,7 @@
 		1D2CADD3860F64E71F95651C /* HepReferenceTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = HepReferenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20F4645FF4B9F3EFDCE86395 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		221C5867FC3C24FB9A75BF0E /* PathwayBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathwayBlockView.swift; sourceTree = "<group>"; };
+		24724738616B1AFB5DAD2059 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		25019922C87743AC09841EB1 /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
 		2522CBC0F7780A40B120FBFA /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
 		25251AE39358EFDF15C23816 /* CardLinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLinkButton.swift; sourceTree = "<group>"; };
@@ -197,7 +201,6 @@
 		D10BE75C1587BBCFE4E31351 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		D25A3EBEE6F636E82EEEEB37 /* CitationFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitationFooter.swift; sourceTree = "<group>"; };
 		D28826C35DA71B801B2DBCC2 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
-		D3A3D2B12172C4D0A8253D10 /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
 		D40FDE06247E9A673E1113D4 /* Card+Sources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Sources.swift"; sourceTree = "<group>"; };
 		DBD2FB3392D250B0D9967CFD /* DecimalTextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalTextInput.swift; sourceTree = "<group>"; };
 		DC82B16AFE627B057B2779DA /* BlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockView.swift; sourceTree = "<group>"; };
@@ -207,6 +210,7 @@
 		E822D34F70C01854FDD8F263 /* BranchedChildrenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchedChildrenView.swift; sourceTree = "<group>"; };
 		E9AC60AFBF1EA048AFB31EED /* CardMarkupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMarkupTests.swift; sourceTree = "<group>"; };
 		EE39FCD9A84505F8F9B57FAE /* GuidelineVerdict+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GuidelineVerdict+Style.swift"; sourceTree = "<group>"; };
+		F1A543BC8389FC0BE71998ED /* CardCategory+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardCategory+Style.swift"; sourceTree = "<group>"; };
 		F72BA2AC978EC6371E2FCD4D /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		FC37CEB0E5CA29B7ED090AB2 /* Manifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manifest.swift; sourceTree = "<group>"; };
 		FD00610F261A547E8DD2C9D3 /* CardMarkup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMarkup.swift; sourceTree = "<group>"; };
@@ -299,16 +303,18 @@
 			children = (
 				5F880D8133D078BAE1B77DE0 /* AcuLevel+Style.swift */,
 				BD274D527BDF935B5CE1E02B /* CalculatorHeader.swift */,
+				F1A543BC8389FC0BE71998ED /* CardCategory+Style.swift */,
 				2522CBC0F7780A40B120FBFA /* CardDetailView.swift */,
 				67EB2A09B67E9237C43E011E /* CardHeaderView.swift */,
 				578ED5C458F616A288AA4F79 /* CardLinksView.swift */,
-				D3A3D2B12172C4D0A8253D10 /* CardListView.swift */,
 				FD00610F261A547E8DD2C9D3 /* CardMarkup.swift */,
 				63FE9624118A34C010B492C9 /* CardRowView.swift */,
+				24724738616B1AFB5DAD2059 /* CategoryView.swift */,
 				8B6346A41417A486CF030A17 /* ChipBoardView.swift */,
 				4EE8F19EBCF792A80DE2E29E /* ContentView.swift */,
 				08469650D07B56E285FA6064 /* DesignSampleView.swift */,
 				EE39FCD9A84505F8F9B57FAE /* GuidelineVerdict+Style.swift */,
+				0DE088E3885C095CE2B61427 /* HomeView.swift */,
 				2C29C8CF62141AA29BA9C923 /* NumericCalcSheet.swift */,
 				2A58F57D0EA93E1344E69EB1 /* ScoreCalcView.swift */,
 				E56053F480C7E51B63D4D991 /* SearchView.swift */,
@@ -542,17 +548,18 @@
 				E5DC12F89137DD876CEC1F73 /* Card+Sources.swift in Sources */,
 				A5A2E2C7F5314CC7CA669559 /* Card+Subtitle.swift in Sources */,
 				D6F80DE52CCBEEEB41290FC4 /* Card.swift in Sources */,
+				FA5AC232F0CF7B58DC75A503 /* CardCategory+Style.swift in Sources */,
 				C5D6CEF950797DBF9E893018 /* CardCategory.swift in Sources */,
 				961BDA2C6F1C8DAA715CDEC1 /* CardDetailView.swift in Sources */,
 				051C69491DBB9F170A225C96 /* CardHeaderView.swift in Sources */,
 				6603690DDDB85156EDF7A2BF /* CardLibrary.swift in Sources */,
 				F84D15681A9B0A0775E7113C /* CardLinkButton.swift in Sources */,
 				3F113353B9ECFDD8558FEDA7 /* CardLinksView.swift in Sources */,
-				0A1D711E5025F66C75DC077F /* CardListView.swift in Sources */,
 				27BF59369C6AE7197B51286F /* CardMarkup.swift in Sources */,
 				EC880CA6746898B049E07E9B /* CardRowView.swift in Sources */,
 				4BBD92C09F52B2D13FAC65A9 /* CardSession.swift in Sources */,
 				6225A4C900E02D1170870BDC /* CaseBlockView.swift in Sources */,
+				C84E17071A9452B4455FD5E2 /* CategoryView.swift in Sources */,
 				4B13D2879C0EA62A0664B1AE /* ChecklistAnyRule.swift in Sources */,
 				3D82234C2249C06E751793FB /* ChipBoardView.swift in Sources */,
 				3C7E0C7B85F33D63E3EB9485 /* ChipCountRule.swift in Sources */,
@@ -575,6 +582,7 @@
 				707D7949D2BCEF41F8AE8F0E /* GuidelineCompareBlockView.swift in Sources */,
 				CA7275C0915C7B1E580034DC /* GuidelineVerdict+Style.swift in Sources */,
 				D4685C77BA11C2D3B9708E08 /* HepReferenceApp.swift in Sources */,
+				4B6E61CB48961382961536BF /* HomeView.swift in Sources */,
 				B1DAFBD4174622F07ACCBC87 /* KVBlockView.swift in Sources */,
 				42A4C63AF11EDF4D070DF2B4 /* LabNormsBlockView.swift in Sources */,
 				0C15D2B57D31167DE3EA455D /* LinkIndex.swift in Sources */,

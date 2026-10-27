@@ -4,7 +4,7 @@ import SwiftUI
 /// Debug-only gallery of every block style, for design screenshots while
 /// the bundle holds almost no content: `tools/screenshot.sh` with
 /// `HEP_OPEN_CARD=__design_sample` (passed on as `-hepOpenCard`, read by
-/// `CardListView`). Placeholder wording only — no clinical
+/// `HomeView`). Placeholder wording only — no clinical
 /// thresholds, doses or criteria. Never reachable in a Release build.
 struct DesignSampleView: View {
     static let id = "__design_sample"
@@ -114,6 +114,14 @@ struct DesignSampleView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: Spacing.l) {
+                // Every home tile, including categories that have no
+                // cards yet and so stay hidden on the real Home screen.
+                LazyVGrid(columns: GridLayout.twoColumns, spacing: Spacing.s) {
+                    ForEach(CardCategory.homeOrder.filter { $0 != .ref }, id: \.self) { category in
+                        CategoryTile(category: category, cardCount: 3)
+                    }
+                }
+                CategoryTile(category: .ref, cardCount: 1)
                 ForEach(Array(Self.blocks.enumerated()), id: \.offset) { index, block in
                     BlockView(block: block)
                     if index == 0, let ageSwitch = Self.ageSwitch {

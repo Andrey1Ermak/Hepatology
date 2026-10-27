@@ -2,12 +2,12 @@ import SwiftUI
 
 /// A pathway step's hand-off to another card (`link_card_id`). Pushes the
 /// target onto the enclosing `NavigationStack`, whose `String` destination
-/// already resolves card ids (Browse and Search both register one).
+/// already resolves card ids (Home and Search both register one).
 ///
 /// Deliberately the inverse of the solid navy "Calculate" capsule: an
 /// outlined capsule on `hepCard` with navy text and a trailing arrow, so a
 /// fellow can tell "open a calculator over this card" from "leave for
-/// another card" at a glance. Shows the target's `gridTitle` (the Browse
+/// another card" at a glance. Shows the target's `gridTitle` (the card-list
 /// tile name, ≤ 25 characters), wrapping to a second line at large text.
 struct CardLinkButton: View {
     let cardId: String

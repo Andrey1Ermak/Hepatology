@@ -7,8 +7,8 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
-            CardListView(library: library)
-                .tabItem { Label("Browse", systemImage: "list.bullet") }
+            HomeView(library: library)
+                .tabItem { Label("Home", systemImage: "square.grid.2x2") }
 
             SearchView(library: library)
                 .tabItem { Label("Search", systemImage: "magnifyingglass") }

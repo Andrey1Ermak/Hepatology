@@ -2,7 +2,6 @@ import SwiftUI
 
 struct CardDetailView: View {
     let card: Card
-    @Environment(\.dismiss) private var dismiss
     /// Per-card choices (age branch); a linked card pushed on top gets its own.
     @State private var session = CardSession()
 
@@ -34,7 +33,7 @@ struct CardDetailView: View {
     private var fixedHeader: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(alignment: .top, spacing: 0) {
-                backButton
+                HeaderBackButton()
                 CardHeaderView(card: card)
                     .padding(.trailing, Spacing.l)
             }
@@ -43,16 +42,5 @@ struct CardDetailView: View {
                 .padding(.bottom, Spacing.xs)
         }
         .background(Color.hepBackground)
-    }
-
-    private var backButton: some View {
-        Button(action: { dismiss() }) {
-            Image(systemName: "chevron.left")
-                .font(.system(size: 17, weight: .semibold))
-                .foregroundStyle(Color.hepNavy)
-                .frame(width: 44, height: 44)
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel("Back")
     }
 }

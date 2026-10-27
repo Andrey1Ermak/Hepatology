@@ -7,6 +7,10 @@ import Observation
 /// written) are simply absent from every view below.
 @Observable
 final class CardLibrary {
+    /// One home-screen category with its bundled cards, in manifest order.
+    typealias CategorySection = (section: String, category: CardCategory, cards: [Card])
+    typealias HomeSections = (problems: [CategorySection], reference: CategorySection?)
+
     private(set) var cardsByID: [String: Card] = [:]
     private(set) var manifestEntries: [ManifestEntry] = []
     /// Every card's outgoing and incoming links — see `LinkIndex`.
@@ -46,12 +50,12 @@ final class CardLibrary {
         manifestEntries.filter { cardsByID[$0.id] != nil }
     }
 
-    /// Browse sections, grouped by each card's `cat` (not `manifest.json`'s
+    /// Home sections, grouped by each card's `cat` (not `manifest.json`'s
     /// free-text `section` field, which produced 39 near-singleton sections
-    /// for 78 cards) and ordered by `CardCategory.browseOrder`. `.ref` cards
-    /// form their own "Reference" section like any other category — there is
+    /// for 78 cards) and ordered by `CardCategory.homeOrder`. `.ref` cards
+    /// form their own "Reference" section, which `homeSections` sets apart — there is
     /// no separate Quick Reference carve-out.
-    var groupedSections: [(section: String, category: CardCategory, cards: [Card])] {
+    var groupedSections: [CategorySection] {
         Self.groupedSections(manifestEntries: manifestEntries, cardsByID: cardsByID)
     }
 
@@ -63,16 +67,35 @@ final class CardLibrary {
     /// entries without bundled JSON.
     static func groupedSections(
         manifestEntries: [ManifestEntry], cardsByID: [String: Card]
-    ) -> [(section: String, category: CardCategory, cards: [Card])] {
+    ) -> [CategorySection] {
         var byCategory: [CardCategory: [Card]] = [:]
         for entry in manifestEntries {
             guard let card = cardsByID[entry.id] else { continue }
             byCategory[entry.cat, default: []].append(card)
         }
-        return CardCategory.browseOrder.compactMap { cat in
+        return CardCategory.homeOrder.compactMap { cat in
             guard let cards = byCategory[cat], !cards.isEmpty else { return nil }
             return (section: cat.displayName, category: cat, cards: cards)
         }
+    }
+
+    /// The home screen: one tile per clinical category with at least one
+    /// bundled card, plus the Reference tile set apart below them. Empty
+    /// categories never show (§10: no placeholders on the home screen).
+    var homeSections: HomeSections {
+        Self.homeSections(from: groupedSections)
+    }
+
+    static func homeSections(from sections: [CategorySection]) -> HomeSections {
+        (
+            problems: sections.filter { $0.category != .ref },
+            reference: sections.first { $0.category == .ref }
+        )
+    }
+
+    /// The cards of one category in manifest order — empty when it has none.
+    func cards(in category: CardCategory) -> [Card] {
+        groupedSections.first { $0.category == category }?.cards ?? []
     }
 
     func search(_ query: String) -> [Card] {

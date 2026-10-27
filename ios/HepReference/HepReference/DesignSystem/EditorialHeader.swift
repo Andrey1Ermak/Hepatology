@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// Roman numerals for section numbering, as in the lesson decks
-/// (I Red flags · II Age · … · IX Test yourself; Browse categories I–IX).
+/// (I Red flags · II Age · … · IX Test yourself; home categories I–IX).
 enum RomanNumeral {
     /// `nil` outside 1...39 — the app never numbers past a few dozen.
     static func string(_ n: Int) -> String? {
@@ -42,6 +42,26 @@ struct KickerLine: View {
                 .hepKickerStyle()
         }
         .accessibilityElement(children: .combine)
+    }
+}
+
+/// The back chevron beside a fixed screen header (card, category): navy,
+/// scaled with Dynamic Type, never smaller than a 44 pt target. Screens
+/// hide the system bar to keep their lesson-style header, so they share
+/// this one button instead of each drawing their own.
+struct HeaderBackButton: View {
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        Button(action: { dismiss() }) {
+            Image(systemName: "chevron.left")
+                .font(.hepBodyEmphasis)
+                .imageScale(.large)
+                .foregroundStyle(Color.hepNavy)
+                .frame(minWidth: 44, minHeight: 44)
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("Back")
     }
 }
 

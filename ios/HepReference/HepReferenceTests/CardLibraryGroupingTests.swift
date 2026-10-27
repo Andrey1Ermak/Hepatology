@@ -42,8 +42,8 @@ final class CardLibraryGroupingTests: XCTestCase {
         XCTAssertEqual(sections.first?.cards.map(\.id), ["chol_0_3m"])
     }
 
-    /// Section order follows `CardCategory.browseOrder`, not manifest order.
-    func testSectionOrderFollowsBrowseOrderNotManifestOrder() {
+    /// Section order follows `CardCategory.homeOrder`, not manifest order.
+    func testSectionOrderFollowsHomeOrderNotManifestOrder() {
         let manifest = [
             ManifestEntry(id: "about", cat: .ref, section: "REFERENCE"),
             ManifestEntry(id: "chol_0_3m", cat: .jaundice, section: "JAUNDICE"),
@@ -56,5 +56,58 @@ final class CardLibraryGroupingTests: XCTestCase {
         let sections = CardLibrary.groupedSections(manifestEntries: manifest, cardsByID: cardsByID)
 
         XCTAssertEqual(sections.map(\.section), [CardCategory.jaundice.displayName, CardCategory.ref.displayName])
+    }
+
+    // MARK: - Home screen (day 11)
+
+    /// Reference never joins the problem grid: it is its own tile below.
+    /// Empty categories produce no tile, and the grid keeps homeOrder.
+    func testHomeSetsReferenceApartAndHidesEmptyCategories() {
+        let manifest = [
+            ManifestEntry(id: "about", cat: .ref, section: "REFERENCE"),
+            ManifestEntry(id: "palf", cat: .acute, section: "ACUTE"),
+            ManifestEntry(id: "chol_0_3m", cat: .jaundice, section: "JAUNDICE"),
+            ManifestEntry(id: "liver_mass", cat: .mass, section: "MASS"),
+        ]
+        let cardsByID = [
+            "about": card("about", cat: .ref),
+            "palf": card("palf", cat: .acute),
+            "chol_0_3m": card("chol_0_3m", cat: .jaundice),
+        ]
+
+        let home = CardLibrary.homeSections(
+            from: CardLibrary.groupedSections(manifestEntries: manifest, cardsByID: cardsByID)
+        )
+
+        XCTAssertEqual(home.problems.map(\.category), [.jaundice, .acute])
+        XCTAssertEqual(home.reference?.cards.map(\.id), ["about"])
+    }
+
+    /// With no reference card bundled there is no Reference tile at all.
+    func testHomeHasNoReferenceTileWithoutReferenceCards() {
+        let manifest = [ManifestEntry(id: "alt_elevated", cat: .labs, section: "LABS")]
+        let cardsByID = ["alt_elevated": card("alt_elevated", cat: .labs)]
+
+        let home = CardLibrary.homeSections(
+            from: CardLibrary.groupedSections(manifestEntries: manifest, cardsByID: cardsByID)
+        )
+
+        XCTAssertEqual(home.problems.map(\.category), [.labs])
+        XCTAssertNil(home.reference)
+    }
+
+    /// The bundled library: every available card sits behind exactly one
+    /// home tile (home → tile → card), and no tile is empty.
+    func testBundledHomeTilesCoverEveryCardExactlyOnce() {
+        let library = CardLibrary()
+        let home = library.homeSections
+        let tiles = home.problems + (home.reference.map { [$0] } ?? [])
+
+        XCTAssertFalse(tiles.contains { $0.cards.isEmpty })
+        let tiled = tiles.flatMap { $0.cards.map(\.id) }
+        XCTAssertEqual(tiled.sorted(), library.availableEntries.map(\.id).sorted())
+        for tile in tiles {
+            XCTAssertEqual(library.cards(in: tile.category).map(\.id), tile.cards.map(\.id))
+        }
     }
 }

@@ -21,7 +21,7 @@ struct SearchView: View {
                         }
                         .padding(.top, Spacing.xl)
                     } else {
-                        // Same two-column grid as Browse — a search result is
+                        // Same two-column grid as a category list — a search result is
                         // the identical tile, not a different single-column
                         // layout. `.padding(.top, Spacing.s)` matches the
                         // grid's own inter-row `spacing:` exactly, so the gap
@@ -40,7 +40,7 @@ struct SearchView: View {
             }
             .background(Color.hepBackground.ignoresSafeArea())
             // No nav title/bar — the search field itself explains the screen
-            // now, matching Browse's own "title only ate space" fix.
+            // now, matching Home's own "title only ate space" fix.
             .toolbar(.hidden, for: .navigationBar)
             .navigationDestination(for: String.self) { id in
                 if let card = library.cardsByID[id] {
@@ -92,7 +92,7 @@ struct SearchView: View {
         .padding(.top, Spacing.s)
     }
 
-    /// A card link, styled the same way as Browse's own tiles.
+    /// A card link, styled the same way as a category's own tiles.
     private func cardLink(_ card: Card) -> some View {
         NavigationLink(value: card.id) {
             CardRowView(card: card)

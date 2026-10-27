@@ -5,7 +5,7 @@ struct HepReferenceApp: App {
     init() {
         // The tab bar's default translucent "glass" material sits in a
         // higher system layer than anything inside a tab's own content view
-        // — no overlay/background trick within CardListView/SearchView can
+        // — no overlay/background trick within HomeView/SearchView can
         // ever composite above it, and SwiftUI's own `.toolbarBackground(_:
         // for: .tabBar)` (see ContentView) only blends a tint *under* that
         // glass rather than replacing it, so cards were still visibly

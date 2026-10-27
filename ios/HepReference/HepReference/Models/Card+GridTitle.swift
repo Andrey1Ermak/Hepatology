@@ -1,7 +1,7 @@
 import Foundation
 
 extension Card {
-    /// A shorter display name for the Browse grid's compact two-column
+    /// A shorter display name for the card-list grid's compact two-column
     /// tiles. `title` itself (shown in Card Detail, Search, and everywhere
     /// else) is never touched. Add an override only when a title is longer
     /// than `ContentIntegrityTests` allows (25 characters) — e.g.

@@ -38,7 +38,7 @@ struct CardHeaderView: View {
 
     /// Age chips (pale info tint) then the status badge. Draft shows too:
     /// in the header an unreviewed card should say so (§3.2 "freshness
-    /// visible"); the Browse tile keeps hiding it (D-2026-10-20-1).
+    /// visible"); the card-list tile keeps hiding it (D-2026-10-20-1).
     @ViewBuilder
     private var metaRow: some View {
         let ages = card.ages ?? []
@@ -58,7 +58,7 @@ struct CardHeaderView: View {
 }
 
 private extension CardStatus {
-    /// Same colors as the Browse tile's check badge; draft is neutral gray.
+    /// Same colors as the card-list tile's check badge; draft is neutral gray.
     var tier: Tier? {
         switch self {
         case .draft: nil

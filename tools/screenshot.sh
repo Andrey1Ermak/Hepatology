@@ -5,6 +5,7 @@
 # Optional environment:
 #   HEP_APPEARANCE=dark|light   simulator appearance for the shot (reset to light afterwards)
 #   HEP_OPEN_CARD=<card_id>     open this card on launch (Debug builds only)
+#   HEP_OPEN_CATEGORY=<cat>     open this home category on launch (Debug builds only)
 set -euo pipefail
 OUT="${1:?usage: tools/screenshot.sh <output.png> [wait-seconds]}"
 WAIT="${2:-6}"
@@ -18,11 +19,10 @@ xcrun simctl bootstatus "$SIM" -b >/dev/null
 xcrun simctl install "$SIM" "$APP"
 [ -n "${HEP_APPEARANCE:-}" ] && xcrun simctl ui "$SIM" appearance "$HEP_APPEARANCE"
 xcrun simctl terminate "$SIM" com.hepreference.app 2>/dev/null || true
-if [ -n "${HEP_OPEN_CARD:-}" ]; then
-  xcrun simctl launch "$SIM" com.hepreference.app -hepOpenCard "$HEP_OPEN_CARD" >/dev/null
-else
-  xcrun simctl launch "$SIM" com.hepreference.app >/dev/null
-fi
+ARGS=()
+[ -n "${HEP_OPEN_CATEGORY:-}" ] && ARGS+=(-hepOpenCategory "$HEP_OPEN_CATEGORY")
+[ -n "${HEP_OPEN_CARD:-}" ] && ARGS+=(-hepOpenCard "$HEP_OPEN_CARD")
+xcrun simctl launch "$SIM" com.hepreference.app ${ARGS[@]+"${ARGS[@]}"} >/dev/null
 sleep "$WAIT"
 mkdir -p "$(dirname "$OUT")"
 xcrun simctl io "$SIM" screenshot "$OUT" >/dev/null

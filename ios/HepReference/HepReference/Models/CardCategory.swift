@@ -1,7 +1,7 @@
 import Foundation
 
-/// Home-screen entry points. Every card's `cat` is one of these; Browse shows
-/// one section per category in `browseOrder`. Named `CardCategory`, not
+/// Home-screen entry points. Every card's `cat` is one of these; Home shows
+/// one tile per category in `homeOrder`. Named `CardCategory`, not
 /// `Category` — the latter collides with the Objective-C runtime's
 /// `Category` typedef.
 enum CardCategory: String, Decodable, CaseIterable {
@@ -30,15 +30,15 @@ enum CardCategory: String, Decodable, CaseIterable {
         }
     }
 
-    /// 1-based position in `browseOrder` — shown as the roman-numeral
+    /// 1-based position in `homeOrder` — shown as the roman-numeral
     /// badge in category and card kickers, like a lesson's section number.
     var number: Int {
-        (Self.browseOrder.firstIndex(of: self) ?? 0) + 1
+        (Self.homeOrder.firstIndex(of: self) ?? 0) + 1
     }
 
-    /// Fixed Browse order: the most frequent consult questions first,
+    /// Fixed home-screen order: the most frequent consult questions first,
     /// reference material last.
-    static let browseOrder: [CardCategory] = [
+    static let homeOrder: [CardCategory] = [
         .jaundice, .labs, .acute, .organomegaly, .portal, .mass, .disease, .special, .ref,
     ]
 }

@@ -417,7 +417,7 @@ final class ContentIntegrityTests: XCTestCase {
 
     // MARK: Presentation
 
-    func testEveryGridTitleFitsTheBrowseTile() throws {
+    func testEveryGridTitleFitsTheCardTile() throws {
         for card in try allCards() {
             XCTAssertLessThanOrEqual(card.gridTitle.count, 25, "\(card.id): add a gridTitleOverrides entry")
         }

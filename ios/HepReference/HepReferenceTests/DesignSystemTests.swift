@@ -103,9 +103,16 @@ final class DesignSystemTests: XCTestCase {
         XCTAssertNil(RomanNumeral.string(40))
     }
 
-    func testCategoryNumbersFollowBrowseOrder() {
+    /// Every home tile's icon exists on the deployment target.
+    func testEveryCategorySymbolResolves() {
+        for category in CardCategory.allCases {
+            XCTAssertNotNil(UIImage(systemName: category.symbol), "\(category): \(category.symbol)")
+        }
+    }
+
+    func testCategoryNumbersFollowHomeOrder() {
         XCTAssertEqual(CardCategory.jaundice.number, 1)
-        XCTAssertEqual(CardCategory.ref.number, CardCategory.browseOrder.count)
+        XCTAssertEqual(CardCategory.ref.number, CardCategory.homeOrder.count)
     }
 
     // MARK: - WCAG relative luminance
