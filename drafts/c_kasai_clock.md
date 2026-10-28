@@ -15,3 +15,6 @@ Calculator not built yet (trigger reached 2026-10-22: lesson 02-14; backlog day 
 - Band evidence: France native liver at 25 y 38% / 27% / 22% / 19% by month 1 / 2 / 3 / > 3 (Fanna 2019); Serinet 2009 — operating all before 46 d would spare ~5.7% of transplants (evidence shown under the 31–45 d band, slide 2); Hoshino 2023 ≤ 30 vs 31–60 d RR 1.13 (the first month helps even inside the usual target).
 - Targets by source (slide 17): AAP 2025 — before 30 days (2-week visit advised); European centers — "first 4 weeks" (02-14 entry said "Europe: no number" — reconcile); Fawaz 2017 — no number per 02-14 (TODO(verify) full text). Lesson rates target age ALIGNED (02-14 rated MATERIAL) — one verdict at card 2 build.
 - Context line for the result screen (optional, Learn): US median 57 d, 45% at ≥ 60 d (PHIS 2016–2019); England 54 d (Davenport 2011; replaces the 02-14 "UK median ~50 days"); France 59 d.
+
+### 03-06 · Biliary atresia: adjuvant therapy after the Kasai (synced 2026-10-28)
+- The 45- and 70-day figures in the steroid literature (Davenport 2013; START post hoc ≤ 70 d) are subgroup/expert cut-offs for adjuvant steroids, not Kasai-window bands — do not show them in the calculator.
