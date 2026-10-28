@@ -13,5 +13,5 @@ echo "Simulator: $SIM"
 xcodebuild -project HepReference.xcodeproj -scheme HepReference \
   -destination "platform=iOS Simulator,name=$SIM" test 2>&1 \
   | tee /tmp/hep-test.log \
-  | grep -E "error:|failed|Executed .* tests|TEST (SUCCEEDED|FAILED)"
+  | grep -E "error:|failed|warning: freshness|Executed .* tests|TEST (SUCCEEDED|FAILED)"
 exit "${PIPESTATUS[0]}"

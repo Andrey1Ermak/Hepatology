@@ -50,8 +50,7 @@ final class ContentIntegrityTests: XCTestCase {
     // MARK: Manifest
 
     func testManifestAndCardFilesMatchOneToOne() throws {
-        let url = try XCTUnwrap(bundle.url(forResource: "manifest", withExtension: "json", subdirectory: "Content"))
-        let entries = try Manifest.decode(from: Data(contentsOf: url))
+        let entries = try manifestEntries()
         let manifestIDs = entries.map(\.id)
         XCTAssertEqual(Set(manifestIDs).count, manifestIDs.count, "duplicate id in manifest.json")
 
@@ -412,6 +411,45 @@ final class ContentIntegrityTests: XCTestCase {
                 XCTAssertFalse(teaching.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, "\(c.id): empty teaching — omit the key instead")
             }
             XCTAssertTrue(shown.contains(c.id), "\(c.id): not shown by any case block")
+        }
+    }
+
+    // MARK: Gate rules (§3.2–§3.3) — see ContentGate
+
+    private func manifestEntries() throws -> [ManifestEntry] {
+        let url = try XCTUnwrap(bundle.url(forResource: "manifest", withExtension: "json", subdirectory: "Content"))
+        return try Manifest.decode(from: Data(contentsOf: url))
+    }
+
+    func testEveryCardIsReachableFromHomeInTwoSteps() throws {
+        let cardsByID = Dictionary(uniqueKeysWithValues: try allCards().map { ($0.id, $0) })
+        for violation in ContentGate.unreachableCards(manifestEntries: try manifestEntries(), cardsByID: cardsByID) {
+            XCTFail(violation)
+        }
+    }
+
+    func testNoPathwayOutcomeIsADeadEnd() throws {
+        for url in jsonFiles("Pathways") {
+            for violation in ContentGate.deadEnds(in: try decode(Pathway.self, url)) {
+                XCTFail(violation)
+            }
+        }
+    }
+
+    func testEveryAlgorithmCardFollowsTheAnatomy() throws {
+        for card in try allCards() {
+            for violation in ContentGate.anatomyViolations(of: card) {
+                XCTFail(violation)
+            }
+        }
+    }
+
+    /// Never fails: prints a warning per guideline not checked for over 12
+    /// months, so the daily log shows what to re-check (§6).
+    func testFreshnessWarnsOnOldChecks() throws {
+        let guidelines = try registry("guidelines", as: [Guideline].self)
+        for warning in ContentGate.staleGuidelines(guidelines, now: Date()) {
+            print("warning: freshness: \(warning)") // tools/test.sh surfaces these lines
         }
     }
 
