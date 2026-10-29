@@ -38,6 +38,16 @@ final class RegistryDecodingTests: XCTestCase {
         XCTAssertEqual(try band(#"{"age":"teen","low":7,"high":40,"source":"s"}"#).rangeText, "7–40")
         XCTAssertEqual(try band(#"{"age":"teen","low":150,"source":"s"}"#).rangeText, "≥ 150")
         XCTAssertEqual(try band(#"{"age":"neo","low":0.15,"high":1.25,"source":"s"}"#).rangeText, "0.15–1.25")
+        XCTAssertEqual(try band(#"{"age":"neo","low":9120,"high":190546,"source":"s"}"#).rangeText, "9,120–190,546")
+        XCTAssertEqual(try band(#"{"age":"neo","low":316,"high":1045.5,"source":"s"}"#).rangeText, "316–1,045.5")
+        XCTAssertEqual(LabBand.parse(LabBand.format(1_234_567.25)), 1_234_567.25)
+        XCTAssertEqual(LabBand.format(-123), "-123")
+        XCTAssertEqual(LabBand.format(-123_456), "-123,456")
+        XCTAssertEqual(LabBand.format(999), "999")
+        XCTAssertNil(LabBand.parse("-,123"), "a misplaced separator must fail the gate")
+        XCTAssertNil(LabBand.parse("12,34"))
+        XCTAssertEqual(try band(#"{"age":"neo","low":9120,"high":190546,"source":"s"}"#).spokenRange, "9,120 to 190,546")
+        XCTAssertEqual(try band(#"{"age":"neo","high":50,"source":"s"}"#).spokenRange, "up to 50")
     }
 
     func testLimitHeadingFollowsTheBands() throws {
@@ -63,7 +73,25 @@ final class RegistryDecodingTests: XCTestCase {
         XCTAssertFalse(teen.matches(.child))
         XCTAssertFalse(teen.matches(.neo))
         XCTAssertFalse(teen.matches(nil), "nothing is highlighted before an age is chosen")
-        XCTAssertFalse(try band(#"{"age":"0–7 d","high":1,"source":"s"}"#).matches(.neo))
+        XCTAssertFalse(try band(#"{"age":"0–7 d","high":1,"source":"s"}"#).matches(.neo), "a finer band without within never matches")
+    }
+
+    func testFinerBandMatchesItsParentAgeBand() throws {
+        let firstWeek = try band(#"{"age":"0–7 d","within":"neo","high":1,"source":"s"}"#)
+        XCTAssertEqual(firstWeek.ageBand, .neo)
+        XCTAssertEqual(firstWeek.ageLabel, "0–7 d")
+        XCTAssertTrue(firstWeek.matches(.neo))
+        XCTAssertFalse(firstWeek.matches(.infant))
+        XCTAssertFalse(firstWeek.matches(nil))
+    }
+
+    func testLabTestNoteIsOptional() throws {
+        let labs = try decode([LabTest].self, #"""
+        [{"id":"a","name":"A","unit":"U/L","note":"Health-based cut-off.","bands":[{"age":"teen","high":22,"source":"s"}]},
+         {"id":"b","name":"B","unit":"U/L","bands":[{"age":"teen","high":22,"source":"s"}]}]
+        """#)
+        XCTAssertEqual(labs.first?.note, "Health-based cut-off.")
+        XCTAssertNil(labs.last?.note)
     }
 
     func testPlanBlock() throws {

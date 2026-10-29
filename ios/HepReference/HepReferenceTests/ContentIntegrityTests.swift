@@ -319,18 +319,30 @@ final class ContentIntegrityTests: XCTestCase {
         }
     }
 
-    /// Every lab band has an age, no two bands of one analyte share an
-    /// age and sex (both rows would light up with conflicting limits), and
-    /// every limit displays exactly as stored.
+    /// Every lab band has an age that resolves to an `AgeBand`, no two
+    /// bands of one analyte share an age label and sex (two rows for the
+    /// same age with conflicting limits), no limit is negative, and every
+    /// limit displays exactly as stored. Several finer bands inside one
+    /// `AgeBand` all light up together by design.
     func testEveryLabBandIsUniqueAndShownAsStored() throws {
         for lab in try registry("labs", as: [LabTest].self) {
             XCTAssertFalse(lab.bands.isEmpty, "\(lab.id): no bands")
+            if let note = lab.note {
+                XCTAssertFalse(note.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, "\(lab.id): empty note")
+            }
             let keys = lab.bands.map { "\($0.age)|\($0.sex?.rawValue ?? "all")" }
             XCTAssertEqual(Set(keys).count, keys.count, "\(lab.id): two bands share an age and sex")
             for band in lab.bands {
                 XCTAssertFalse(band.age.trimmingCharacters(in: .whitespaces).isEmpty, "\(lab.id): band without an age")
+                // A finer label must name the AgeBand it sits in, or the row
+                // could never light up for the card's chosen age.
+                XCTAssertNotNil(band.ageBand, "\(lab.id) \(band.age): finer band without \"within\"")
+                if AgeBand(rawValue: band.age) != nil {
+                    XCTAssertNil(band.within, "\(lab.id) \(band.age): \"within\" on a band that is already an AgeBand")
+                }
                 for value in [band.low, band.high].compactMap({ $0 }) {
-                    XCTAssertEqual(Double(LabBand.format(value)), value, "\(lab.id) \(band.age): limit \(value) would display as \(LabBand.format(value))")
+                    XCTAssertGreaterThanOrEqual(value, 0, "\(lab.id) \(band.age): negative limit")
+                    XCTAssertEqual(LabBand.parse(LabBand.format(value)), value, "\(lab.id) \(band.age): limit \(value) would display as \(LabBand.format(value))")
                 }
             }
         }

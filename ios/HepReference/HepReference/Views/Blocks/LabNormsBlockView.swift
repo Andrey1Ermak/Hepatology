@@ -56,6 +56,12 @@ struct LabNormsBlockView: View {
                 }
             }
             .clipShape(RoundedRectangle(cornerRadius: Radius.small))
+            if let note = test.note {
+                Text(note)
+                    .font(.hepCaption)
+                    .foregroundStyle(Color.hepInk)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
         }
     }
 
@@ -75,7 +81,7 @@ struct LabNormsBlockView: View {
             // A GridRow hands its modifiers to every cell, so the row is
             // spoken once from its first cell and the others are hidden.
             .accessibilityElement(children: .ignore)
-            .accessibilityLabel("\(test.name), \(band.ageLabel), \(band.sexLabel): \(band.rangeText) \(test.unit)")
+            .accessibilityLabel("\(test.name), \(band.ageLabel.replacingOccurrences(of: "–", with: " to ")), \(band.sexLabel): \(band.spokenRange) \(test.unit)")
             .accessibilityAddTraits(isSelected ? .isSelected : [])
             Text(band.sexLabel)
                 .font(.hepCaption)

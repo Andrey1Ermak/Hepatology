@@ -21,6 +21,10 @@ struct LabTest: Identifiable, Decodable {
     let id: String
     let name: String
     let unit: String
+    /// What the limits mean and where they stop applying (a health-based
+    /// cut-off versus a laboratory interval, assay dependence). Shown under
+    /// the analyte's table.
+    let note: String?
     let bands: [LabBand]
 }
 
@@ -35,6 +39,9 @@ extension LabTest {
 struct LabBand: Decodable {
     /// An `AgeBand` raw value or a finer label the analyte needs.
     let age: String
+    /// The `AgeBand` a finer label ("0–7 d", "1–3 y") falls inside, so the
+    /// row can still be highlighted for the card's chosen age.
+    let within: AgeBand?
     /// Nil when the limit is the same for both sexes.
     let sex: Sex?
     let low: Double?
@@ -69,20 +76,53 @@ extension LabBand {
         }
     }
 
-    /// True when this band is the age the card has selected — only an
-    /// `AgeBand` value can match; a finer label never does.
-    func matches(_ selected: AgeBand?) -> Bool {
-        selected != nil && age == selected?.rawValue
+    /// The `AgeBand` this row belongs to: its own age when that is an
+    /// `AgeBand` value, otherwise `within`.
+    var ageBand: AgeBand? {
+        AgeBand(rawValue: age) ?? within
     }
 
-    /// Limits as published: up to two decimals, trailing zeros trimmed
-    /// ("26", "22.1", "0.15"). The integrity gate checks that every
-    /// bundled limit survives this unchanged.
+    /// True when this band belongs to the age the card has selected. Several
+    /// finer bands inside one `AgeBand` all match it.
+    func matches(_ selected: AgeBand?) -> Bool {
+        selected != nil && ageBand == selected
+    }
+
+    /// Limits as published: up to two decimals, trailing zeros trimmed,
+    /// thousands grouped with commas ("26", "22.1", "0.15", "190,546").
+    /// The integrity gate checks that every bundled limit survives this
+    /// unchanged.
     static func format(_ value: Double) -> String {
         var text = String(format: "%.2f", value)
         while text.hasSuffix("0") { text.removeLast() }
         if text.hasSuffix(".") { text.removeLast() }
-        return text
+        let sign = text.hasPrefix("-") ? "-" : ""
+        let parts = text.dropFirst(sign.count).split(separator: ".", maxSplits: 1)
+        var whole = String(parts[0])
+        var index = whole.endIndex
+        while whole.distance(from: whole.startIndex, to: index) > 3 {
+            index = whole.index(index, offsetBy: -3)
+            whole.insert(",", at: index)
+        }
+        return sign + (parts.count > 1 ? "\(whole).\(parts[1])" : whole)
+    }
+
+    /// The range as VoiceOver should say it: "9,120 to 190,546".
+    var spokenRange: String {
+        switch (low, high) {
+        case let (low?, high?): "\(Self.format(low)) to \(Self.format(high))"
+        case let (nil, high?): "up to \(Self.format(high))"
+        case let (low?, nil): "at least \(Self.format(low))"
+        case (nil, nil): "no limit"
+        }
+    }
+
+    /// Reads back a `format` result for the integrity gate. Accepts only
+    /// well-formed text — commas exactly every three digits — so a
+    /// misplaced separator fails the gate instead of round-tripping.
+    static func parse(_ text: String) -> Double? {
+        guard text.wholeMatch(of: #/-?\d{1,3}(,\d{3})*(\.\d{1,2})?/#) != nil else { return nil }
+        return Double(text.replacingOccurrences(of: ",", with: ""))
     }
 }
 

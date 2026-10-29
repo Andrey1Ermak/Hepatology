@@ -10,5 +10,7 @@ extension Card {
         Self.gridTitleOverrides[id] ?? title
     }
 
-    private static let gridTitleOverrides: [String: String] = [:]
+    private static let gridTitleOverrides: [String: String] = [
+        "ref_norms": "Liver Test Norms",
+    ]
 }

@@ -1,7 +1,7 @@
 [
   {"block": 1, "title": "The hepatologist's diagnostic toolkit", "start": "2026-09-28", "days": [
-    {"day": 1, "topic": "Liver tests: how to read them", "cards": []},
-    {"day": 2, "topic": "Bilirubin: from metabolism to numbers", "cards": []},
+    {"day": 1, "topic": "Liver tests: how to read them", "cards": ["ref_norms"]},
+    {"day": 2, "topic": "Bilirubin: from metabolism to numbers", "cards": ["ref_norms"]},
     {"day": 3, "topic": "Synthetic function and hemostasis", "cards": []},
     {"day": 4, "topic": "Histology I: patterns of injury", "cards": []},
     {"day": 5, "topic": "Histology II: fibrosis and stains", "cards": []},
@@ -13,7 +13,7 @@
     {"day": 11, "topic": "Genetic testing", "cards": []},
     {"day": 12, "topic": "Nutrition in cholestasis", "cards": []},
     {"day": 13, "topic": "Endoscopy and ERCP in pediatric hepatology", "cards": []},
-    {"day": 14, "topic": "Synthesis and self-test", "cards": []}
+    {"day": 14, "topic": "Synthesis and self-test", "cards": ["ref_norms"]}
   ]},
   {"block": 2, "title": "Neonatal cholestasis: approach", "start": "2026-10-12", "days": [
     {"day": 1, "topic": "Epidemiology and definitions", "cards": []},

@@ -1,0 +1,153 @@
+{
+  "id": "ref_norms",
+  "title": "Age-Based Liver Test Norms",
+  "code": "AASLD 2025 · NASPGHAN/ESPGHAN 2017 · Blohm 1998 · Häberle 2019",
+  "cat": "ref",
+  "acu": "ref",
+  "tags": [
+    "norms",
+    "reference range",
+    "upper limit of normal",
+    "ULN",
+    "ALT",
+    "AST",
+    "GGT",
+    "ALP",
+    "alkaline phosphatase",
+    "bilirubin",
+    "direct bilirubin",
+    "conjugated bilirubin",
+    "AFP",
+    "alpha-fetoprotein",
+    "ammonia"
+  ],
+  "ages": [
+    "neo",
+    "infant",
+    "child",
+    "teen"
+  ],
+  "entry": "reference",
+  "guidelines": [
+    "aasld_2025_masld_peds",
+    "safety_2010",
+    "naspghan_espghan_2017_nc",
+    "bsg_2018_lft",
+    "blohm_1998_afp",
+    "haberle_2019_ucd",
+    "belanger_quintana_2022_ucd",
+    "savy_2018_hyperammonemia"
+  ],
+  "plan": [
+    {
+      "block": 1,
+      "days": [
+        1,
+        2,
+        14
+      ]
+    }
+  ],
+  "related": [],
+  "status": "reviewed",
+  "blocks": [
+    {
+      "t": "note",
+      "k": "info",
+      "h": "Read your laboratory's range first",
+      "text": "Pediatric limits depend on the assay and the population behind them. Use your laboratory's age- and sex-specific range. This card lists only limits or thresholds a guideline or population study publishes, and says which is which; where none exists, it says so."
+    },
+    {
+      "t": "lab_norms",
+      "h": "ALT",
+      "analytes": [
+        "alt"
+      ]
+    },
+    {
+      "t": "note",
+      "k": "info",
+      "h": "Direct bilirubin in infants",
+      "text": "Direct bilirubin > 1.0 mg/dL (17 µmol/L) is abnormal at any total: start the cholestasis workup and refer to pediatric hepatology (NASPGHAN/ESPGHAN 2017). This is a disease threshold, not a normal range. It applies to direct bilirubin; conjugated assays read lower — use your laboratory's conjugated cut-off."
+    },
+    {
+      "t": "lab_norms",
+      "h": "AFP and ammonia",
+      "analytes": [
+        "afp",
+        "ammonia"
+      ]
+    },
+    {
+      "t": "list",
+      "h": "Lab-dependent: no single pediatric limit",
+      "items": [
+        {
+          "t": "GGT",
+          "sub": [
+            "Highest in newborns; falls over the first year to low childhood values.",
+            "In a cholestatic infant, a GGT normal for age is the finding: think PFIC 1 and 2 (and other low-GGT forms) and bile acid synthesis defects."
+          ]
+        },
+        {
+          "t": "ALP",
+          "sub": [
+            "Follows bone growth: high through childhood, peaks in puberty (girls earlier than boys).",
+            "An adult upper limit makes every growing child look cholestatic.",
+            "Isolated high ALP: check GGT first, then vitamin D.",
+            "Very high ALP in a well toddler with normal GGT: think transient hyperphosphatasemia (benign)."
+          ]
+        },
+        {
+          "t": "AST",
+          "sub": [
+            "Also from muscle and red cells: check CK and hemolysis before blaming the liver.",
+            "Isolated high AST with normal CK and no hemolysis: think macro-AST."
+          ]
+        },
+        {
+          "t": "Total bilirubin",
+          "sub": [
+            "Beyond the newborn period: no pediatric guideline limit. Use the laboratory range."
+          ]
+        }
+      ]
+    },
+    {
+      "t": "list",
+      "h": "Ammonia: sample it right",
+      "items": [
+        "Free-flowing venous blood; no tourniquet.",
+        "Not a capillary sample.",
+        "Crying, struggling and seizures raise it falsely.",
+        "Put the sample on ice and send it at once; analyze within 1 hour.",
+        "Hemolysis raises it falsely."
+      ]
+    },
+    {
+      "t": "pearls",
+      "items": [
+        {
+          "k": "pitfall",
+          "text": "Direct is not conjugated: the 1.0 mg/dL cut-off is for direct bilirubin. Conjugated assays read lower — use your laboratory's conjugated cut-off."
+        },
+        {
+          "k": "pitfall",
+          "text": "Low ALP for age is abnormal too: think hypophosphatasia, zinc deficiency and, with jaundice and hemolysis, Wilson acute liver failure."
+        },
+        {
+          "k": "pearl",
+          "text": "ALT 22/26 U/L is a health-based cut-off for teens, not the laboratory's reference interval."
+        },
+        {
+          "k": "pearl",
+          "text": "AFP at birth runs in the tens of thousands and halves about every 5 days in the first month. Judge it against age, and follow the trend."
+        },
+        {
+          "k": "pearl",
+          "text": "A normal ammonia virtually excludes a urea cycle disorder in a symptomatic newborn, but not in an older child."
+        }
+      ]
+    }
+  ]
+}
