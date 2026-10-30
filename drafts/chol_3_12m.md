@@ -41,3 +41,7 @@ Card not built yet (trigger: lesson 05-14). Inbox is filled by daily lesson sync
 
 ### 03-06 · Biliary atresia: adjuvant therapy after the Kasai (synced 2026-10-28)
 - Late-presenting atresia: a Kasai after 90 days — no adjuvant steroids (any signal is confined to early surgery; harm persists — START early SAEs 37% vs 19%, growth penalty; slides 11, 19). IBAT inhibitors after the Kasai — trials only (BOLD 2026 and EMBARK 2023 negative). Contrast with Alagille/PFIC, where ducts drain and IBAT inhibitors treat pruritus — keep the two lines apart on the card.
+
+### 03-08 · Biliary atresia: prognosis after the Kasai (synced 2026-10-30)
+- Late Kasai is not futile (slides 10, 19): 19% native liver at 25 y after month 3 (France), 23% at 4 y after > 90 d (Canada) — same numbers as 03-04; "discuss case by case".
+- Kasai at 3–12 months of age: total bilirubin < 2 mg/dL by 3 months after the Kasai is the early signal (extrapolated — ChiLDReN/Shneider 2016 was not a late-Kasai cohort); TB > 6 mg/dL beyond 3 months → prompt transplant referral (AASLD 2014 or its 2026 successor — TODO(verify) current guideline and wording, see chol_0_3m Inbox).

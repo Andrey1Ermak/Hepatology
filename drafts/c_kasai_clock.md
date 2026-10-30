@@ -18,3 +18,6 @@ Calculator not built yet (trigger reached 2026-10-22: lesson 02-14; backlog day 
 
 ### 03-06 · Biliary atresia: adjuvant therapy after the Kasai (synced 2026-10-28)
 - The 45- and 70-day figures in the steroid literature (Davenport 2013; START post hoc ≤ 70 d) are subgroup/expert cut-offs for adjuvant steroids, not Kasai-window bands — do not show them in the calculator.
+
+### 03-08 · Biliary atresia: prognosis after the Kasai (synced 2026-10-30)
+- Same France bands as 03-04 confirmed (Fanna 2019, native liver at 25 y: 38% / 27% / 22% / 19% for month 1 / 2 / 3 / later); Canada 4 y: ≤ 30 d 49%, 31–90 d 36%, > 90 d 23% (Schreiber 2007). Message for the result screen: continuous gradient, no threshold; "late is not futile". Learn-layer only; no new numbers needed in the calculator.
