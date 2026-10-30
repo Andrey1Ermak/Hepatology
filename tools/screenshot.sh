@@ -6,6 +6,7 @@
 #   HEP_APPEARANCE=dark|light   simulator appearance for the shot (reset to light afterwards)
 #   HEP_OPEN_CARD=<card_id>     open this card on launch (Debug builds only)
 #   HEP_OPEN_CATEGORY=<cat>     open this home category on launch (Debug builds only)
+#   HEP_OPEN_CALC=<calc_id>     open this calculator on launch (Debug builds only)
 set -euo pipefail
 OUT="${1:?usage: tools/screenshot.sh <output.png> [wait-seconds]}"
 WAIT="${2:-6}"
@@ -22,6 +23,7 @@ xcrun simctl terminate "$SIM" com.hepreference.app 2>/dev/null || true
 ARGS=()
 [ -n "${HEP_OPEN_CATEGORY:-}" ] && ARGS+=(-hepOpenCategory "$HEP_OPEN_CATEGORY")
 [ -n "${HEP_OPEN_CARD:-}" ] && ARGS+=(-hepOpenCard "$HEP_OPEN_CARD")
+[ -n "${HEP_OPEN_CALC:-}" ] && ARGS+=(-hepOpenCalc "$HEP_OPEN_CALC")
 xcrun simctl launch "$SIM" com.hepreference.app ${ARGS[@]+"${ARGS[@]}"} >/dev/null
 sleep "$WAIT"
 mkdir -p "$(dirname "$OUT")"

@@ -10,7 +10,7 @@ struct NACCalcView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: Spacing.l) {
             SectionCard {
-                weightField
+                CalcNumberField(label: "Weight (kg)", text: $weightText)
             }
             if let result {
                 // `RowView` for each dose line — the same bulleted fact-line
@@ -21,36 +21,12 @@ struct NACCalcView: View {
                         RowView(label: "Maintenance · over 20 h", text: doseText(result.maintMg, ml: result.maintML, capped: result.maintCapped))
                         RowView(label: "Infusion rate", text: doseText(result.rateMgPerHour, unit: "mg/h", capped: result.rateCapped, sub: "15 mg/kg/h"))
                         Divider()
-                        HStack(alignment: .firstTextBaseline, spacing: Spacing.xs) {
-                            Text("Total 21-h NAC").font(.hepCaption).foregroundStyle(Color.hepMuted)
-                            Spacer()
-                            Text("\(result.totalMg)").font(.hepMetric)
-                            Text("mg").font(.hepCaption).foregroundStyle(Color.hepMuted)
-                        }
+                        CalcMetricRow(label: "Total 21-h NAC", value: "\(result.totalMg)", unit: "mg")
                     }
                 }
             }
             CalculatorResetButton { weightText = "" }
         }
-    }
-
-    // Shared compact numeric-input container — every numeric calculator
-    // should reuse this look so inputs read as one component.
-    private var weightField: some View {
-        HStack(spacing: 4) {
-            Text("Weight (kg)")
-                .font(.hepCaption)
-                .foregroundStyle(Color.hepMuted)
-            TextField("", text: $weightText)
-                .keyboardType(.decimalPad)
-                .font(.hepCaption)
-                .multilineTextAlignment(.center)
-        }
-        .frame(maxWidth: .infinity, minHeight: 32, alignment: .center)
-        .padding(.horizontal, Spacing.m)
-        .padding(.vertical, Spacing.s)
-        .background(Color.hepCard, in: RoundedRectangle(cornerRadius: Radius.medium))
-        .overlay(RoundedRectangle(cornerRadius: Radius.medium).stroke(Color.hepRule, lineWidth: 1))
     }
 
     private func doseText(_ mg: Int, ml: Double? = nil, unit: String = "mg", capped: Bool, sub: String? = nil) -> String {

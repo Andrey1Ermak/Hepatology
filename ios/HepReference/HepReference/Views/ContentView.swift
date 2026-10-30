@@ -37,11 +37,27 @@ struct ContentView: View {
         // everything, tab bar included. See CalculatorPresenter.
         .overlay {
             if let active = calculatorPresenter.active {
+                // An overlay does not inherit the environment set on the
+                // view it decorates, so pass the registry on explicitly
+                // (`c_uln` reads labs.json, every calculator cites sources) and the
+                // library (any card link inside a calculator).
                 NumericCalcSheet(calcId: active.calcId, title: active.title)
                     .environmentObject(calculatorPresenter)
+                    .environment(registry)
+                    .environment(library)
                     .transition(.scale(scale: 0.01, anchor: .center).combined(with: .opacity))
             }
         }
+        #if DEBUG
+        // `-hepOpenCalc <calc_id>` opens a calculator on launch, so
+        // tools/screenshot.sh can capture it without UI automation.
+        .task {
+            let args = ProcessInfo.processInfo.arguments
+            if let i = args.firstIndex(of: "-hepOpenCalc"), args.indices.contains(i + 1) {
+                calculatorPresenter.present(calcId: args[i + 1], title: NumericCalcRegistry.title(for: args[i + 1]))
+            }
+        }
+        #endif
         // Avenir Next body in ink for any text without an explicit role —
         // applied last so the calculator overlay inherits it too.
         .font(.hepBody)
