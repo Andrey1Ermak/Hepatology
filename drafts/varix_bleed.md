@@ -1,0 +1,21 @@
+# varix_bleed — Suspected Variceal Bleed (draft)
+
+Card not built yet (trigger: lesson 14-14). Inbox is filled by daily lesson sync (§3.4).
+
+## Inbox
+
+### 03-09 · Biliary atresia: portal hypertension after the Kasai (synced 2026-10-31)
+Source of the paediatric numbers: APSPGHAN 2026 expert statement (lesson cites Pediatr Gastroenterol Hepatol Nutr 2026;29:1–21, PMID 41567251 — **TODO(verify) the citation and every number below against the full text before publishing**; register in guidelines.json). Adult comparators: Baveno VII (de Franchis R et al. J Hepatol 2022;76:959–74), AASLD 2024 (Kaplan DE et al. Hepatology 2024;79:1180–211 — adults only).
+- **First hour and first day, in order (slide 15):** resuscitate → vasoactive drug → antibiotics → endoscopy → secondary prophylaxis + transplant assessment.
+- **Restrictive transfusion:** transfuse red cells below Hb 7 g/dL, target 7–9 g/dL (paediatric statement; TODO(verify) the adult Hb targets in Baveno VII and AASLD 2024 before building the compare row — the lesson's "Hb 7" shorthand may hide a 7–8 target); no routine fresh frozen plasma. Over-transfusion raises portal pressure and rebleeding (pitfall: "Hb above 9"). ALIGNED across AASLD 2024, Baveno VII and paediatric statements (slide 17).
+- **Octreotide (lesson, APSPGHAN 2026):** 1 µg/kg IV bolus (max 50 µg), then 1–2 µg/kg/h for 2–5 days. Dose — TODO(verify) in the full text, including any maximum for the infusion (the lesson gives a cap only for the bolus); do not publish from the lesson alone.
+- **Antibiotics:** a third-generation cephalosporin for 5–7 days (infection is common after a bleed and worsens outcome). Agent/dose — TODO(verify) at build.
+- **Endoscopy:** within 24 h of resuscitation in the paediatric statement vs ≤ 12 h in adult Baveno VII/AASLD → `guideline_compare` row DIFFERS. Band ligation preferred where size allows (ligators need an adult-diameter scope; preferred from about 10 kg); sclerotherapy when the child is too small to band.
+- **After the bleed:** secondary prophylaxis by banding every 2–4 weeks until eradication; start transplant assessment; screen for HPS/POPH (→ hps_poph). Adults add NSBB to banding; paediatric NSBB evidence lacking → DIFFERS.
+- **Prognosis line (slides 6, 15; Bass LM et al. Hepatology 2022;76:712–26, ChiLDReN, n = 869, 80 bleeds):** within 6 weeks of a first bleed 2.5% died and 12.5% were transplanted. "A bleed is the moment to recalculate prognosis, not only to stop bleeding."
+- **Pre-emptive TIPS** (standard for high-risk adults in Baveno VII) is rarely available or appropriate in a small child with a hypoplastic portal vein; paediatric TIPS meta-analysis n = 198: technical success 94%, dysfunction 27%, encephalopathy 10.6% (lesson cites Raissi D et al. J Clin Imaging Sci 2023;13:18 — TODO(verify)). Bridge to transplant in BA. → Learn layer + guideline_compare note.
+- **Beta-blocker pitfall (slide 14):** a child on propranolol may not become tachycardic when bleeding and may look deceptively stable; propranolol can also mask hypoglycaemia. → Red flag / pitfall: "On a beta-blocker: normal heart rate does not exclude a significant bleed."
+- **Don't miss (slide 16):** melaena with a clean esophagus and stomach after a Kasai → varices at the hepaticojejunostomy or in the Roux loop, or portal hypertensive enteropathy; capsule, enteroscopy or angiography may be needed. Numbers (Korean series of > 300 BA children, Jeon 2024, J Pediatr Surg Open — TODO(verify) volume/pages): PH enteropathy in 15.2% of those scoped; in ~30% **of those with enteropathy** it was the only bleed source (≈ 4.5% of all scoped) — never quote 29.8% as a share of all children.
+- **Family plan (slide 18):** black stools or vomiting blood → nearest emergency department, with a letter naming the diagnosis and the transplant centre.
+- **Guideline compare (slide 17):** acute bleed — DIFFERS (scope ≤ 24 h vs ≤ 12 h; Hb 7–9 vs Hb 7; pre-emptive TIPS adult only); restrictive transfusion — ALIGNED; secondary prophylaxis — DIFFERS. No ESPGHAN/NASPGHAN guideline on portal hypertension. Check for a newer Baveno (VIII) and paediatric Baveno statement at build.
+- **Case (slide 21):** first bleed at 2 y, albumin 30 g/L → octreotide, antibiotics, Hb 7–9, banding; transplant assessment (12.5% transplanted within 6 weeks).

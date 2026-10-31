@@ -11,3 +11,6 @@ Card not built yet (trigger: lesson 14-14). Inbox is filled by daily lesson sync
 
 ### 03-08 · Biliary atresia: prognosis after the Kasai (synced 2026-10-30)
 - After the Kasai: oxygen saturation at least yearly to screen for HPS (lesson monitoring frame, slide 16 — expert framework, not a guideline schedule); yearly is a minimum — the 02-13 method still applies (routine, upright and supine, < 97% → investigate). HPS/POPH is a transplant indication regardless of bilirubin (Sundaram 2017, Liver Transpl 2017;23:96–109). The lesson's practical point (slide 14, not a Jain 2019 finding): adult native-liver survivors can still develop HPS.
+
+### 03-09 · Biliary atresia: portal hypertension after the Kasai (synced 2026-10-31)
+- After any variceal bleed in biliary atresia: screen for HPS and POPH (in addition to — not instead of — the routine/yearly SpO2 screen in the 03-08 and 02-13 entries) as part of the post-bleed work-up, alongside banding and transplant assessment (lesson surveillance frame, slide 18 — APSPGHAN 2026 + registry data; label "Expert framework"; TODO(verify) wording in APSPGHAN 2026). Mechanism slide 3: HPS and POPH are portal-hypertension events that each worsen native-liver prognosis.
