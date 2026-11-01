@@ -1,6 +1,6 @@
 # alt_elevated — Elevated Transaminases (draft)
 
-Card 7 · `cat: labs` · `acu: rt` · ages: neo, infant, child, teen · `entry: lab` · status: draft (day 15; JSON build — day 16).
+Card 7 · `cat: labs` · `acu: rt` · ages: neo, infant, child, teen · `entry: lab` · status: built 2026-11-01 (day 16) — the JSON in Content/ is now the source of truth; build changes vs this draft: D-2026-11-01-1…3, -5.
 Pipeline §7, stages 1–2. Lessons read: 01-01 Reading the liver panel (core), 01-14 Block 1 synthesis. Plan links (§4.5): blocks 1, 7, 8, 11, 13, 16, 25 — only block 1 has been taught; other branches are written from guidelines and marked **enrich after block N**.
 Decisions: D-2026-10-31-1 … -6. Clinical review 2026-10-31: 9 blocking + 19 non-blocking addressed.
 

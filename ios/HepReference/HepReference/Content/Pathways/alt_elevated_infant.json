@@ -1,0 +1,284 @@
+{
+  "id": "alt_elevated_infant",
+  "children": [
+    {
+      "t": "section",
+      "h": "1 · Is the child sick?",
+      "children": [
+        {
+          "t": "out",
+          "cond": "Encephalopathy, hypoglycemia, renal failure or shock — or INR ≥ 1.5 with encephalopathy, ≥ 2.0 without, not corrected by IV vitamin K",
+          "pill": {
+            "kind": "picu",
+            "text": "Call PICU / transplant center now"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Possible acetaminophen ingestion with a raised ALT — including repeated supratherapeutic doses or self-harm",
+          "pill": {
+            "kind": "step",
+            "text": "Start IV N-acetylcysteine (NAC) now; send acetaminophen level — do not wait for it"
+          },
+          "link_calc_id": "nac",
+          "link_label": "IV NAC dosing"
+        },
+        {
+          "t": "row",
+          "text": "ALT > 15 × ULN with no clear cause: send an acetaminophen level now."
+        },
+        {
+          "t": "out",
+          "cond": "Jaundice beyond 2 weeks of age, or pale stools or dark urine at any age",
+          "pill": {
+            "kind": "step",
+            "text": "Fractionated bilirubin today: direct > 1.0 mg/dL = cholestasis"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Bleeding · ALT > 10 × ULN · liver mass · large liver or spleen, or low platelets",
+          "pill": {
+            "kind": "step",
+            "text": "Same-day hepatology"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "INR > 1.5 without encephalopathy",
+          "subtext": "Give IV vitamin K and recheck INR; same-day hepatology"
+        },
+        {
+          "t": "out",
+          "cond": "Poor growth",
+          "pill": {
+            "kind": "dc",
+            "text": "Priority hepatology referral"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Suspected acute hepatitis (unwell, recent onset)",
+          "subtext": "Retest in 24–48 h and refer urgently to hepatology (AASLD 2025)"
+        },
+        {
+          "t": "out",
+          "cond": "Well, none of the above",
+          "subtext": "Go to step 2"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "2 · Read against the right ULN",
+      "children": [
+        {
+          "t": "row",
+          "text": "Under 11 y: use your lab's age-specific range — the app applies 26/22 from 11 y; AASLD validates it from 10 y.",
+          "link_calc_id": "c_uln",
+          "link_label": "ALT × ULN"
+        },
+        {
+          "t": "row",
+          "text": "Write down the ULN you used.",
+          "link_card_id": "ref_norms"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "3 · Name the pattern",
+      "children": [
+        {
+          "t": "row",
+          "text": "R = (ALT ÷ ALT ULN) ÷ (ALP ÷ ALP ULN). Use the child's own age-specific ALP ULN — growth raises ALP.",
+          "link_calc_id": "c_rratio",
+          "link_label": "R ratio"
+        },
+        {
+          "t": "out",
+          "cond": "R ≥ 5 hepatocellular · R 2–5 mixed",
+          "subtext": "Go to step 4"
+        },
+        {
+          "t": "out",
+          "cond": "R ≤ 2 cholestatic",
+          "pill": {
+            "kind": "step",
+            "text": "Cholestasis question: GGT and fractionated bilirubin today"
+          }
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "4 · Repeat or investigate",
+      "children": [
+        {
+          "t": "arm",
+          "kind": "mild",
+          "tag": "Well · ALT < 5 × ULN · no red flags",
+          "children": [
+            {
+              "t": "out",
+              "pill": {
+                "kind": "dc",
+                "text": "Repeat panel (First contact) + glucose in 2–4 weeks"
+              }
+            },
+            {
+              "t": "row",
+              "text": "Up to 8 weeks if a transient cause is likely (recent viral illness)."
+            },
+            {
+              "t": "row",
+              "text": "Not during an acute infection."
+            },
+            {
+              "t": "row",
+              "text": "No strenuous exercise for ≥ 7 days, ideally 2 weeks, before the repeat."
+            },
+            {
+              "t": "out",
+              "cond": "Normal on repeat",
+              "pill": {
+                "kind": "dc",
+                "text": "Recheck in 3–6 months"
+              }
+            }
+          ]
+        },
+        {
+          "t": "arm",
+          "kind": "mod",
+          "tag": "New drug or supplement",
+          "children": [
+            {
+              "t": "out",
+              "subtext": "Stop or review it now — do not wait it out"
+            }
+          ]
+        },
+        {
+          "t": "arm",
+          "kind": "mild",
+          "tag": "Still raised on repeat · ALT < 5 × ULN",
+          "children": [
+            {
+              "t": "out",
+              "pill": {
+                "kind": "dc",
+                "text": "Tier 1 workup and pediatric hepatology referral"
+              }
+            }
+          ]
+        },
+        {
+          "t": "arm",
+          "kind": "mod",
+          "tag": "ALT 5–10 × ULN",
+          "children": [
+            {
+              "t": "out",
+              "pill": {
+                "kind": "step",
+                "text": "Tier 1 workup now (First contact)"
+              }
+            }
+          ]
+        },
+        {
+          "t": "arm",
+          "kind": "sev",
+          "tag": "ALT > 10 × ULN",
+          "children": [
+            {
+              "t": "out",
+              "pill": {
+                "kind": "step",
+                "text": "Same-day panel and hepatology"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "5 · Traps",
+      "children": [
+        {
+          "t": "row",
+          "text": "AST > ALT, or ALT and AST both up in a boy → CK before any other liver test."
+        },
+        {
+          "t": "row",
+          "text": "Isolated AST with normal ALT and CK → think macro-AST."
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "Infant · what to weigh",
+      "children": [
+        {
+          "t": "row",
+          "text": "Check the newborn screen result — panels vary; check what your program covers (galactosemia, hypothyroidism, tyrosinemia)."
+        },
+        {
+          "t": "row",
+          "text": "Infection: CMV PCR, urine or blood — serology reflects maternal IgG. TORCH screen."
+        },
+        {
+          "t": "row",
+          "text": "Metabolic: galactosemia · hereditary fructose intolerance after fructose or sucrose · tyrosinemia · glycogen storage disease · mitochondrial disease."
+        },
+        {
+          "t": "row",
+          "text": "Also: cystic fibrosis if suggestive · alpha-1 antitrypsin (A1AT) deficiency · muscle (CK) · thyroid · heart failure."
+        },
+        {
+          "t": "row",
+          "text": "Anti-HCV reflects maternal antibody until about 18 months: send HCV RNA if the mother is HCV-positive (CDC 2023)."
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "If still raised · tiers",
+      "children": [
+        {
+          "t": "out",
+          "cond": "Tier 1 unrevealing, rise persists",
+          "subtext": "Tier 2: 24-h urine copper and slit-lamp exam if ceruloplasmin is low or Wilson is suspected · HBV DNA and HCV RNA if immunosuppressed or high risk, even with negative serology · HIV · IgA, IgM · abdominal Doppler ultrasound"
+        },
+        {
+          "t": "out",
+          "cond": "Tier 2 unrevealing",
+          "pill": {
+            "kind": "dc",
+            "text": "Pediatric hepatology: tier 3"
+          }
+        },
+        {
+          "t": "row",
+          "text": "Tier 3 (specialist): anti-SLA, anti-LC1, AMA, p-ANCA · amino acids, ammonia, blood gas, lactate · carbohydrate-deficient transferrin · lysosomal acid lipase activity · serum bile acids."
+        },
+        {
+          "t": "row",
+          "text": "3–6-month rule: finish tiers 1–2 within 3–6 months of the first abnormal result. Over 6 months = chronic. Full evaluation within 12 months."
+        },
+        {
+          "t": "out",
+          "cond": "Still unexplained",
+          "subtext": "Clinical exome with genetics"
+        },
+        {
+          "t": "out",
+          "cond": "Undiagnosed and well at 12–18 months",
+          "subtext": "Consider liver biopsy — earlier if AIH or Wilson disease is suspected"
+        }
+      ]
+    }
+  ]
+}

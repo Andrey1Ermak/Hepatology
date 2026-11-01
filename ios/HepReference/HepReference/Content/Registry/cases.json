@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "id": "alt_elevated_c1",
+    "card": "alt_elevated",
+    "stem": "A 14-year-old boy with obesity has ALT 38 U/L at a sports physical. The lab ULN is 45 U/L. He is well.",
+    "question": "Is this ALT normal?",
+    "answer": "No. It is about 1.5 × the health-based ULN of 26 U/L for boys. Record it as abnormal and repeat once with CK in 2–4 weeks. If it persists, send the focused panel and follow the MASLD pathway.",
+    "teaching": "Lab ULNs run high; AASLD 2025 sets 26 U/L (boys) and 22 U/L (girls) from age 10. Lesson 01-01, case 4."
+  },
+  {
+    "id": "alt_elevated_c2",
+    "card": "alt_elevated",
+    "stem": "A 4-year-old boy has ALT 180 U/L and AST 220 U/L on preoperative labs before tonsillectomy. He is well. His mother says he falls often and struggles with stairs.",
+    "question": "What is the first test?",
+    "answer": "CK. In this case it was 14,000 U/L: refer to neuromuscular, with no liver workup.",
+    "teaching": "Duchenne muscular dystrophy can present as raised transaminases; a liver workup delayed the diagnosis in 6 boys (McMillan 2011). Lesson 01-01, case 1."
+  },
+  {
+    "id": "alt_elevated_c3",
+    "card": "alt_elevated",
+    "stem": "A 7-year-old girl is well. ALT is 60 U/L (lab ULN 35). Three weeks later it is 64 U/L.",
+    "question": "What next?",
+    "answer": "Tier 1 workup: CK, celiac serology with total IgA, thyroid, viral serology, IgG with ANA, SMA and anti-LKM1, ceruloplasmin, A1AT level and phenotype, and abdominal ultrasound. Refer to pediatric hepatology if unrevealing.",
+    "teaching": "Repeat, but not twice. In Naples, one in three children with a persistent rise had a genetic disease, many treatable (Iorio 2005)."
+  },
+  {
+    "id": "alt_elevated_c4",
+    "card": "alt_elevated",
+    "stem": "A 13-year-old girl has jaundice and tiredness. Bilirubin 20 mg/dL, ALT 70 U/L, AST 180 U/L, ALP 40 U/L, hemoglobin 8.5 g/dL with a negative Coombs test, INR 2.4.",
+    "question": "What pattern is this, and what do you do now?",
+    "answer": "Acute Wilson disease with liver failure: ALP:bilirubin 2 (< 4), AST:ALT above 2.5, Coombs-negative hemolysis. Call the transplant center now; send ceruloplasmin and urine copper and request a slit-lamp exam.",
+    "teaching": "A modest ALT does not mean mild disease. Low ALP with hemolysis in a jaundiced child is a red flag (Korman 2008; in children the ratios are less sensitive — Yasmin 2022). Lesson 01-01, case 3."
+  }
+]

@@ -1,0 +1,98 @@
+{
+  "id": "alt_elevated_neo",
+  "children": [
+    {
+      "t": "section",
+      "h": "1 · Is the newborn sick?",
+      "children": [
+        {
+          "t": "out",
+          "cond": "Encephalopathy, hypoglycemia, renal failure or shock — or INR ≥ 1.5 with encephalopathy, ≥ 2.0 without, not corrected by IV vitamin K",
+          "pill": {
+            "kind": "picu",
+            "text": "Call NICU / transplant center now"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "INR > 1.5",
+          "pill": {
+            "kind": "step",
+            "text": "IV vitamin K, recheck INR; same-day hepatology / NICU"
+          }
+        },
+        {
+          "t": "row",
+          "text": "Still ≥ 2.0 after vitamin K → PALF criteria met (row above)."
+        },
+        {
+          "t": "out",
+          "cond": "Ill newborn with hepatitis — think herpes simplex virus (HSV)",
+          "pill": {
+            "kind": "picu",
+            "text": "Start empiric IV acyclovir now"
+          }
+        },
+        {
+          "t": "row",
+          "text": "Send plasma and CSF HSV PCR and surface swabs; do not wait for results. Dose per AAP Red Book or neonatal formulary."
+        },
+        {
+          "t": "out",
+          "cond": "Jaundice, pale stools or dark urine",
+          "pill": {
+            "kind": "step",
+            "text": "Fractionated bilirubin today: direct > 1.0 mg/dL = cholestasis"
+          }
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "2 · Look for the bigger picture",
+      "children": [
+        {
+          "t": "row",
+          "text": "A raised ALT in a newborn is usually part of something larger: sepsis, hypoxic-ischemic injury, congenital infection, cholestasis, metabolic crisis."
+        },
+        {
+          "t": "row",
+          "text": "Send fractionated bilirubin, INR, glucose, lactate and ammonia."
+        },
+        {
+          "t": "row",
+          "text": "Use your lab's neonatal range for ALT and AST.",
+          "link_card_id": "ref_norms"
+        }
+      ]
+    },
+    {
+      "t": "box",
+      "style": "warn",
+      "children": [
+        {
+          "t": "row",
+          "text": "Gestational alloimmune liver disease (GALD): ALT can be near normal despite liver failure — median ALT 35 U/L in GALD vs 618 U/L in viral failure in infants ≤ 90 days (Sundaram 2011). ALT height does not reassure — INR and glucose decide."
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "3 · Well newborn, isolated rise",
+      "children": [
+        {
+          "t": "row",
+          "text": "AST > ALT → CK; consider hemolysis and birth trauma."
+        },
+        {
+          "t": "out",
+          "cond": "Persistent rise",
+          "pill": {
+            "kind": "dc",
+            "text": "Pediatric hepatology referral"
+          }
+        }
+      ]
+    }
+  ]
+}

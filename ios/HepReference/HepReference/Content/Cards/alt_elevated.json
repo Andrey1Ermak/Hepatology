@@ -1,0 +1,328 @@
+{
+  "id": "alt_elevated",
+  "title": "Elevated Transaminases",
+  "code": "AASLD 2025 · SEGHNP 2022 · ESPGHAN 2026 · ACG 2017 · BSG 2018",
+  "cat": "labs",
+  "acu": "rt",
+  "tags": [
+    "ALT",
+    "AST",
+    "transaminases",
+    "transaminitis",
+    "hypertransaminasemia",
+    "elevated liver enzymes",
+    "raised LFTs",
+    "liver function tests",
+    "ULN",
+    "R ratio",
+    "CK",
+    "muscular dystrophy",
+    "MASLD",
+    "Wilson"
+  ],
+  "ages": [
+    "neo",
+    "infant",
+    "child",
+    "teen"
+  ],
+  "entry": "lab",
+  "guidelines": [
+    "aasld_2025_masld_peds",
+    "seghnp_2022_htra",
+    "espghan_2026_masld",
+    "kwo_2017_acg_lft",
+    "bsg_2018_lft",
+    "aap_redbook_2024_hsv",
+    "dart_2023_apap",
+    "cdc_2023_hcv_perinatal",
+    "naspghan_espghan_2017_nc"
+  ],
+  "plan": [
+    {
+      "block": 1,
+      "days": [
+        1,
+        14
+      ]
+    }
+  ],
+  "related": [
+    "ref_norms"
+  ],
+  "status": "reviewed",
+  "blocks": [
+    {
+      "t": "note",
+      "k": "crit",
+      "h": "Red flags",
+      "text": "**Call PICU / transplant center now:** encephalopathy, hypoglycemia, renal failure, shock, or INR not corrected by IV vitamin K: ≥ 1.5 with encephalopathy or ≥ 2.0 without.\n**Newborn, ill, with hepatitis:** think herpes simplex virus (HSV) — start IV acyclovir now.\n**Possible acetaminophen ingestion with a raised ALT:** start IV N-acetylcysteine (NAC) now and send a level. ALT > 15 × upper limit of normal (ULN) with no clear cause: send a level.\n**INR > 1.5:** give IV vitamin K, recheck INR, call hepatology today.\n**Same-day hepatology:** jaundice, pale stools or dark urine; bleeding; ALT > 10 × ULN; liver mass; large liver or spleen, or low platelets."
+    },
+    {
+      "t": "age_switch",
+      "h": "Age",
+      "options": [
+        {
+          "age": "neo",
+          "label": "0–28 d",
+          "path_id": "alt_elevated_neo"
+        },
+        {
+          "age": "infant",
+          "label": "1–12 mo",
+          "path_id": "alt_elevated_infant"
+        },
+        {
+          "age": "child",
+          "label": "1–10 y",
+          "path_id": "alt_elevated_child"
+        },
+        {
+          "age": "teen",
+          "label": "11–18 y",
+          "path_id": "alt_elevated_teen"
+        }
+      ]
+    },
+    {
+      "t": "lab_norms",
+      "h": "ALT norms for age",
+      "analytes": [
+        "alt"
+      ]
+    },
+    {
+      "t": "workup",
+      "h": "First contact",
+      "groups": [
+        {
+          "label": "Repeat — confirm in 2–4 weeks",
+          "items": [
+            "ALT, AST, GGT, ALP",
+            "Total and direct bilirubin",
+            "Creatine kinase (CK)",
+            "INR, albumin",
+            "Infant: glucose"
+          ]
+        },
+        {
+          "label": "Tier 1 — persistent rise",
+          "items": [
+            "ALT, AST, GGT, ALP; total and direct bilirubin",
+            "INR, albumin, CBC with platelets, glucose",
+            "CK",
+            "Tissue transglutaminase IgA (tTG-IgA) + total IgA (only if eating gluten)",
+            "TSH, free T4",
+            "HBsAg, anti-HCV (infant: HCV RNA if the mother is HCV-positive)",
+            "EBV serology (VCA); CMV (infant: PCR); HAV IgM if acute",
+            "IgG, ANA, smooth muscle antibody (SMA), anti-liver-kidney microsomal type 1 (anti-LKM1)",
+            "Ceruloplasmin (age ≥ 3 y)",
+            "Alpha-1 antitrypsin (A1AT) level + phenotype",
+            "Fasting lipids",
+            "Abdominal ultrasound"
+          ]
+        },
+        {
+          "label": "Focused panel — teen with obesity or metabolic risk, ALT < 2 × ULN",
+          "items": [
+            "ALT, AST, GGT, ALP; total and direct bilirubin",
+            "INR, albumin, CBC with platelets",
+            "CK",
+            "tTG-IgA + total IgA",
+            "TSH",
+            "HBsAg, anti-HCV",
+            "IgG, ANA, SMA",
+            "Ceruloplasmin",
+            "A1AT level + phenotype",
+            "Fasting lipids, glucose or HbA1c",
+            "Abdominal ultrasound"
+          ]
+        }
+      ]
+    },
+    {
+      "t": "list",
+      "h": "Don't miss",
+      "items": [
+        "Acetaminophen — including repeated supratherapeutic dosing and self-harm: level now",
+        "Wilson disease — usually from age 3, rarely younger; treatable. Low ALP or Coombs-negative hemolysis in a sick child: think acute Wilson",
+        "Autoimmune hepatitis — modest ALT with high IgG; autoantibodies can be negative",
+        "Muscular dystrophy — boy with ALT and AST up: CK before any liver workup",
+        "Celiac disease — tTG-IgA with total IgA",
+        "Chronic HBV or HCV — ALT can be normal",
+        "Drugs and supplements — ask directly",
+        "A1AT deficiency — the level alone can be falsely normal in an acute-phase response",
+        "Infants: congenital infection (CMV, HSV), metabolic disease, gestational alloimmune liver disease (GALD)"
+      ]
+    },
+    {
+      "t": "text",
+      "h": "Why",
+      "text": "ALT sits in the hepatocyte cytosol (half-life about 47 h). AST is also in muscle, heart and red cells (half-life about 17 h), so it falls first. AST above ALT points to muscle, hemolysis, macro-AST or advanced disease (Dufour 2000).\n\nLab ULNs run too high. The median ALT ULN at US children's hospitals was 53 U/L (range 30–90), while the 95th centile in healthy teens was 25.8 U/L in boys and 22.1 U/L in girls. Hospital cut-offs found 32–48% of children with NAFLD (now MASLD), HBV or HCV; health-based cut-offs found 72–82% (SAFETY 2010).\n\nIn Naples, 425 children had isolated raised transaminases: 61% normalized within 6 months. Of 166 with a persistent rise, one in three had a genetic disease — Wilson 18, muscular dystrophy 14, A1AT 4, Alagille 4, hereditary fructose intolerance 4, glycogen storage disease IX 3 (Iorio 2005). Repeat first: the second abnormal result is where treatable diseases hide.\n\nIn 120 obese, symptom-free children with ALT ≥ 40 U/L, extensive testing added little and produced false positives (Rudolph 2015). Pre-test probability decides the panel."
+    },
+    {
+      "t": "pearls",
+      "h": "Pearls & pitfalls",
+      "items": [
+        {
+          "k": "pearl",
+          "text": "From age 11, read ALT against 26 U/L (boys) or 22 U/L (girls), whatever the lab prints. AASLD applies these from age 10."
+        },
+        {
+          "k": "pearl",
+          "text": "Repeat, but not twice — the second abnormal result starts the workup."
+        },
+        {
+          "k": "pitfall",
+          "text": "Raised ALT and AST in a boy: check CK before any liver test or biopsy. Duchenne diagnosis was delayed by a liver workup in 6 boys (McMillan 2011)."
+        },
+        {
+          "k": "pitfall",
+          "text": "In adults, weightlifting raised ALT and AST for at least 7 days (Pettersson 2008). Ask about exercise; repeat after ≥ 7 days, ideally 2 weeks, of rest."
+        },
+        {
+          "k": "pearl",
+          "text": "Falling ALT with rising INR and bilirubin = loss of liver mass, not recovery."
+        },
+        {
+          "k": "pearl",
+          "text": "In jaundice, a low ALP is a red flag. ALP:bilirubin < 4 and AST:ALT > 2.2 each had 94% sensitivity for acute Wilson failure in a mixed adult–pediatric cohort (Korman 2008). In 40 children with Wilson liver failure, sensitivity fell to 32.5% (ALP:bilirubin < 4) and 77.5% (AST:ALT ≥ 1.85) (Yasmin 2022). A negative ratio does not exclude Wilson."
+        },
+        {
+          "k": "pitfall",
+          "text": "A normal ALT in a child with obesity is not a normal liver if the lab ULN is 40 U/L or more."
+        },
+        {
+          "k": "pearl",
+          "text": "Isolated AST with normal ALT and CK → macro-AST."
+        }
+      ]
+    },
+    {
+      "t": "guideline_compare",
+      "h": "Guidelines",
+      "rows": [
+        {
+          "topic": "Normal ALT",
+          "positions": {
+            "kwo_2017_acg_lft": "Adults: 29–33 U/L men, 19–25 U/L women",
+            "bsg_2018_lft": "Laboratory range",
+            "seghnp_2022_htra": "> 40 U/L boys, > 35 U/L girls over 18 months; > 60 / > 55 under 18 months; 26 / 22 for teen screening",
+            "aasld_2025_masld_peds": "> 26 U/L boys, > 22 U/L girls from age 10; no validated cut-off under 10",
+            "espghan_2026_masld": "ALT ≥ 30 U/L as the MASLD screening test (over 10 y with obesity, or any age with risk factors)"
+          },
+          "verdict": "differs",
+          "note": "The app reads ALT against 26/22 from age 11 and against the lab range below that. Lesson 01-01 reads AASLD as using 30 U/L for younger children — a population-study convention, not a validated limit."
+        },
+        {
+          "topic": "First response to a raised ALT",
+          "positions": {
+            "kwo_2017_acg_lft": "Repeat or clarify first",
+            "bsg_2018_lft": "Investigate, whatever the level",
+            "seghnp_2022_htra": "Confirm in 2–4 weeks (up to 8 if a transient cause is likely)",
+            "aasld_2025_masld_peds": "Repeat within 3 months; 24–48 h if acute hepatitis is suspected",
+            "espghan_2026_masld": "MASLD screen: ALT 30–80, repeat in 2–6 months; ≥ 80, clinical assessment and investigations"
+          },
+          "verdict": "material",
+          "note": "The app repeats in 2–4 weeks if the child is well and ALT is under 5 × ULN, and starts tier 1 at once above that. ESPGHAN's rule (repeat only if there is no concern for acute liver disease; 80 U/L) applies to MASLD screening in obese children (the app uses it in the teen branch); its figure says \"over 80\", its text \"≥ 80\"."
+        },
+        {
+          "topic": "CK",
+          "positions": {
+            "kwo_2017_acg_lft": "If the history suggests muscle",
+            "bsg_2018_lft": "May help in children",
+            "seghnp_2022_htra": "Tier 1",
+            "espghan_2026_masld": "First-line"
+          },
+          "verdict": "material",
+          "note": "The app adds CK to the first repeat in every child: a missed muscular dystrophy costs a liver biopsy (McMillan 2011)."
+        },
+        {
+          "topic": "Celiac serology",
+          "positions": {
+            "bsg_2018_lft": "Yes",
+            "seghnp_2022_htra": "Tier 1",
+            "aasld_2025_masld_peds": "tTG-IgA + total IgA",
+            "espghan_2026_masld": "First-line (tTG-IgA + total IgA)"
+          },
+          "verdict": "aligned"
+        },
+        {
+          "topic": "Anti-LKM1",
+          "positions": {
+            "bsg_2018_lft": "Yes",
+            "seghnp_2022_htra": "Tier 2",
+            "aasld_2025_masld_peds": "Yes",
+            "espghan_2026_masld": "Only if AIH is suspected (first-line: immunoglobulins, ANA, SMA)"
+          },
+          "verdict": "differs",
+          "note": "The app puts autoantibodies and IgG in tier 1: type 2 AIH (anti-LKM1) affects young children."
+        },
+        {
+          "topic": "Wilson screen",
+          "positions": {
+            "kwo_2017_acg_lft": "Ceruloplasmin if the rise persists, under 55 y",
+            "bsg_2018_lft": "Ceruloplasmin from age 3",
+            "seghnp_2022_htra": "Ceruloplasmin in tier 2",
+            "aasld_2025_masld_peds": "Ceruloplasmin + 24-h urine copper",
+            "espghan_2026_masld": "Ceruloplasmin first-line"
+          },
+          "verdict": "differs",
+          "note": "All screen for Wilson disease; they differ on when. The app tests ceruloplasmin in tier 1 from age 3 — Wilson is treatable and fatal if missed."
+        },
+        {
+          "topic": "A1AT deficiency",
+          "positions": {
+            "kwo_2017_acg_lft": "Phenotype",
+            "bsg_2018_lft": "Level",
+            "seghnp_2022_htra": "Level in tier 2, phenotype in tier 3",
+            "aasld_2025_masld_peds": "Phenotype or genotype",
+            "espghan_2026_masld": "Level"
+          },
+          "verdict": "differs",
+          "note": "The app sends level + phenotype together in tier 1: the level alone can be falsely normal."
+        },
+        {
+          "topic": "Iron studies",
+          "positions": {
+            "kwo_2017_acg_lft": "Everyone (adults)",
+            "bsg_2018_lft": "May not be indicated in children",
+            "aasld_2025_masld_peds": "Yes"
+          },
+          "verdict": "differs",
+          "note": "Hereditary hemochromatosis rarely presents in childhood; the app does not order iron studies routinely."
+        },
+        {
+          "topic": "Thyroid function",
+          "positions": {
+            "kwo_2017_acg_lft": "If the history suggests",
+            "seghnp_2022_htra": "Tier 1",
+            "aasld_2025_masld_peds": "TSH",
+            "espghan_2026_masld": "Thyroid function, first-line"
+          },
+          "verdict": "differs",
+          "note": "Pediatric documents test thyroid function in every child; ACG only if the history suggests it."
+        },
+        {
+          "topic": "Liver biopsy",
+          "positions": {
+            "seghnp_2022_htra": "Consider at 12–18 months if still undiagnosed",
+            "espghan_2026_masld": "MASLD: reserve for diagnostic uncertainty, treatment decisions and risk staging"
+          },
+          "verdict": "differs",
+          "note": "Only SEGHNP gives a timeline for unexplained raised transaminases."
+        }
+      ]
+    },
+    {
+      "t": "case",
+      "h": "Test yourself",
+      "case_ids": [
+        "alt_elevated_c1",
+        "alt_elevated_c2",
+        "alt_elevated_c3",
+        "alt_elevated_c4"
+      ]
+    }
+  ]
+}
