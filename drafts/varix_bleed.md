@@ -19,3 +19,7 @@ Source of the paediatric numbers: APSPGHAN 2026 expert statement (lesson cites P
 - **Family plan (slide 18):** black stools or vomiting blood → nearest emergency department, with a letter naming the diagnosis and the transplant centre.
 - **Guideline compare (slide 17):** acute bleed — DIFFERS (scope ≤ 24 h vs ≤ 12 h; Hb 7–9 vs Hb 7; pre-emptive TIPS adult only); restrictive transfusion — ALIGNED; secondary prophylaxis — DIFFERS. No ESPGHAN/NASPGHAN guideline on portal hypertension. Check for a newer Baveno (VIII) and paediatric Baveno statement at build.
 - **Case (slide 21):** first bleed at 2 y, albumin 30 g/L → octreotide, antibiotics, Hb 7–9, banding; transplant assessment (12.5% transplanted within 6 weeks).
+
+### 03-10 · Biliary atresia: HPS and portopulmonary hypertension (synced 2026-11-01)
+- **Team synthesis (not on a slide):** before secondary prophylaxis with a non-selective beta-blocker, ask about syncope/exertional chest pain and check the latest echo — in POPH, NSBB lower cardiac output and should be stopped in favor of band ligation; avoid TIPS (rescue or pre-emptive) in POPH (ILTS 2025 update, DuBrock HM et al. Liver Transpl 2026;32:296–314 — adult data; lesson slides 13, 18). Pitfall for Learn layer.
+- After a bleed, the HPS/POPH screen (03-09 entry), per the slide 17 "portal hypertension established" row: SpO2 (posture — see `hps_poph` 03-10 note) + contrast echo with RV pressure estimate + capillary or arterial gas.
