@@ -6,5 +6,13 @@
     "elevated liver enzymes",
     "high ALT",
     "abnormal liver tests"
+  ],
+  "isolated AST": [
+    "macro-AST",
+    "macro-aspartate aminotransferase",
+    "high AST",
+    "AST greater than ALT",
+    "creatine kinase",
+    "muscular dystrophy"
   ]
 }

@@ -50,3 +50,7 @@ Card not built yet (trigger: lesson 05-14). Inbox is filled by daily lesson sync
 - Same nutrition frame applies to any persistent infant cholestasis (Mouzaki 2019): energy ≥ 130% of age requirement (many centers 130–150%), protein 130–150% — no routine restriction (02-13 nuance: ≤ 2–3 days only for severe encephalopathy); fat 30–50% of energy; MCT about 30% of fat to start, more in tube feeds (50 vs 50–60% — lesson conflict, TODO(verify) as in the 02-13 entry), < 80% of fat (EFA deficiency). Detail and cases live in `chol_0_3m` 03-11 entry.
 - Tube trigger (Mouzaki 2019, lesson slide 11): energy goals unmet > 2 weeks, or 2–4 weeks of falling weight, arm or length → fine-bore NG (NJ if vomiting) with overnight pump feeds; varices are not a contraindication to a soft tube; **no percutaneous gastrostomy with portal hypertension**.
 - Pitfall: weight overstates nutrition (organs, ascites) — MUAC and triceps skinfold every 2–4 weeks.
+
+### Guideline watch (2026-11-02, weekly check)
+- AASLD/AST/NASPGHAN pediatric liver transplant candidate evaluation guideline, Hepatology 2026, doi 10.1097/HEP.0000000000001805 — published (June 2026), replaces Squires 2014; first author not confirmed (drafts say "Martinez 2026"). Settle the 03-08 referral-trigger TODO from its full text.
+- SEGHNP/AEPap/SEPEAP cholestasis consensus, An Pediatr 2025 — candidate extra column for guideline_compare (not a successor of Fawaz 2017).

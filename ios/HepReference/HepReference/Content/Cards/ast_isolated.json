@@ -1,0 +1,197 @@
+{
+  "id": "ast_isolated",
+  "title": "Isolated AST Elevation",
+  "code": "ACG 2017 · BSG 2018 · SEGHNP 2022",
+  "cat": "labs",
+  "acu": "rt",
+  "tags": [
+    "AST",
+    "isolated AST",
+    "AST greater than ALT",
+    "macro-AST",
+    "creatine kinase",
+    "CK",
+    "muscular dystrophy",
+    "Duchenne",
+    "rhabdomyolysis",
+    "hemolysis",
+    "hypothyroidism"
+  ],
+  "ages": [
+    "neo",
+    "infant",
+    "child",
+    "teen"
+  ],
+  "entry": "lab",
+  "guidelines": [
+    "kwo_2017_acg_lft",
+    "bsg_2018_lft",
+    "seghnp_2022_htra"
+  ],
+  "plan": [
+    {
+      "block": 1,
+      "days": [
+        1,
+        14
+      ]
+    }
+  ],
+  "related": [
+    "alt_elevated",
+    "ref_norms"
+  ],
+  "status": "reviewed",
+  "blocks": [
+    {
+      "t": "note",
+      "k": "crit",
+      "h": "Red flags",
+      "text": "**Dark or cola urine, muscle pain, swelling or weakness:** think rhabdomyolysis — emergency department now (CK, creatinine, potassium, urinalysis).\n**Heart failure, fainting, or chest pain with breathlessness:** think myocarditis — emergency department now (ECG, troponin). New murmur or chest pain in a well child: ECG, troponin, cardiology today.\n**Pallor, jaundice or dark urine with anemia:** hemolysis workup today. Coombs-negative hemolysis with jaundice in a sick child: think acute Wilson disease — INR now, call hepatology / transplant center now.\n**ALT also raised, jaundice without hemolysis, low platelets or a large spleen:** not isolated — use the Elevated Transaminases card."
+    },
+    {
+      "t": "pathway",
+      "h": "Algorithm",
+      "path_id": "ast_isolated"
+    },
+    {
+      "t": "workup",
+      "h": "First contact",
+      "groups": [
+        {
+          "label": "Repeat — clean venipuncture, ≥ 7 days without strenuous exercise (longer after heavy training)",
+          "items": [
+            "AST, ALT",
+            "Creatine kinase (CK)",
+            "LDH",
+            "GGT, ALP; total and direct bilirubin",
+            "CBC with reticulocyte count",
+            "TSH, free T4"
+          ]
+        },
+        {
+          "label": "If anemia or jaundice",
+          "items": [
+            "Haptoglobin",
+            "Direct antiglobulin test (DAT)",
+            "Blood film"
+          ]
+        },
+        {
+          "label": "If CK, LDH and hemolysis screen are normal",
+          "items": [
+            "AST in both parents",
+            "Polyethylene glycol (PEG) precipitation of AST — ask the lab",
+            "AST electrophoresis if PEG is equivocal"
+          ]
+        }
+      ]
+    },
+    {
+      "t": "list",
+      "h": "Don't miss",
+      "items": [
+        "Duchenne or Becker muscular dystrophy — boy with high AST: CK before any liver test",
+        "Rhabdomyolysis — dark urine, muscle pain; check creatinine and potassium",
+        "Cardiac injury — myocarditis",
+        "Hemolysis — including Coombs-negative hemolysis of acute Wilson disease",
+        "Hypothyroidism — TSH",
+        "Advanced liver disease — AST above ALT with low platelets or a large spleen"
+      ]
+    },
+    {
+      "t": "text",
+      "h": "Why",
+      "text": "AST sits in the cytosol and mitochondria of liver cells, but also in heart, skeletal muscle and red cells. ALT is far more liver-specific. AST has a half-life of about 17 h, ALT about 47 h (Dufour 2000). So an AST rise without ALT usually comes from outside the liver: ACG reads it as suggesting cardiac or muscle disease, and SEGHNP lists a difficult draw, hemolysis, rhabdomyolysis and macro-AST.\n\nRed cells hold AST. Even barely visible in-vitro hemolysis raises AST, LDH and potassium (Lippi 2006) — a common benign cause is the sample itself.\n\nMuscle is the cause that changes a life. In boys with Duchenne or Becker dystrophy, ALT and AST rise with CK: peak ALT 1,220 U/L and AST 801 U/L in walking boys with Duchenne (McMillan 2011). In 40 boys with Duchenne, ALT averaged about 20 × ULN while glutamate dehydrogenase (GLDH), a liver-only enzyme, stayed normal (Schomaker 2020). ALT can exceed AST in dystrophy, so a normal ALT never replaces CK.\n\nMacro-AST is AST bound to an immunoglobulin. The complex is too large to be cleared, so AST stays high while ALT, CK and LDH are normal. Of 44 well children with isolated raised AST, 17 (38.6%) had macro-AST; all stayed well over a mean of 4.7 years, and macro-AST persisted in 6 of 9 retested after about 6 years (Caropreso 2009). Familial macro-AST is common: a GOT1 variant was found in 54.3% of probands and 69% of families versus 0.18% of controls (Kulecka 2017)."
+    },
+    {
+      "t": "pearls",
+      "h": "Pearls & pitfalls",
+      "items": [
+        {
+          "k": "pitfall",
+          "text": "High AST in a boy: CK before any liver test or biopsy. Duchenne can present as a \"liver\" problem (McMillan 2011)."
+        },
+        {
+          "k": "pearl",
+          "text": "PEG precipitation screens for macro-AST: < 67.1% precipitable makes it very unlikely, > 82.2% very likely; in between, ask for electrophoresis (Caropreso 2009)."
+        },
+        {
+          "k": "pearl",
+          "text": "Macro-AST is harmless and often lifelong. Check the parents' AST — familial forms are common (Kulecka 2017)."
+        },
+        {
+          "k": "pitfall",
+          "text": "A hemolyzed or difficult draw raises AST, LDH and potassium. Redraw before you investigate (Lippi 2006)."
+        },
+        {
+          "k": "pitfall",
+          "text": "In adults, weightlifting raised AST and ALT for at least 7 days (Pettersson 2008). Ask about sport; repeat after ≥ 7 days of rest, longer after heavy training."
+        },
+        {
+          "k": "pearl",
+          "text": "GLDH stays normal in muscular dystrophy and rises with true liver injury (Schomaker 2020) — useful where available."
+        },
+        {
+          "k": "pearl",
+          "text": "In a jaundiced, sick child, AST far above ALT with a low ALP and Coombs-negative hemolysis suggests acute Wilson disease. A negative ratio does not exclude it (Korman 2008)."
+        }
+      ]
+    },
+    {
+      "t": "guideline_compare",
+      "h": "Guidelines",
+      "rows": [
+        {
+          "topic": "What isolated AST means",
+          "positions": {
+            "kwo_2017_acg_lft": "Suggests cardiac or muscle disease",
+            "bsg_2018_lft": "AST is abundant in muscle; CK may show whether an isolated AST rise is muscle",
+            "seghnp_2022_htra": "Usually extrahepatic: difficult draw, hemolysis, rhabdomyolysis, macro-AST"
+          },
+          "verdict": "aligned"
+        },
+        {
+          "topic": "Creatine kinase",
+          "positions": {
+            "kwo_2017_acg_lft": "CK and/or aldolase if muscle is suspected",
+            "bsg_2018_lft": "May help",
+            "seghnp_2022_htra": "CK in the first-tier panel"
+          },
+          "verdict": "differs",
+          "note": "The app sends CK with the first repeat in every child: a missed dystrophy costs a liver workup."
+        },
+        {
+          "topic": "Macro-AST",
+          "positions": {
+            "kwo_2017_acg_lft": "Listed as a non-hepatic cause",
+            "bsg_2018_lft": "Not addressed",
+            "seghnp_2022_htra": "Isolated, sustained AST: test for macro-AST (PEG screen, electrophoresis confirms)"
+          },
+          "verdict": "differs",
+          "note": "Only the pediatric consensus gives a step. The app tests for macro-AST once CK, LDH and the hemolysis screen are normal."
+        },
+        {
+          "topic": "Thyroid function",
+          "positions": {
+            "kwo_2017_acg_lft": "TSH if the history fits",
+            "bsg_2018_lft": "Not addressed",
+            "seghnp_2022_htra": "TSH and free T4 in the first-tier panel"
+          },
+          "verdict": "differs",
+          "note": "The app adds TSH and free T4 to the repeat; pediatric data on hypothyroid myopathy are limited."
+        }
+      ]
+    },
+    {
+      "t": "case",
+      "h": "Test yourself",
+      "case_ids": [
+        "ast_isolated_c1",
+        "ast_isolated_c2",
+        "ast_isolated_c3"
+      ]
+    }
+  ]
+}

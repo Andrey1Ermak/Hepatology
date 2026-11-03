@@ -26,3 +26,6 @@ Main home is `hps_poph` (32); here only the link from portal hypertension to the
 
 ### 03-11 · Biliary atresia: nutrition and growth (synced 2026-11-02)
 - Portal hypertension changes feeding plans (lesson slides 11, 19): if tube feeding is needed — fine-bore NG; no percutaneous gastrostomy (stomal varices, bleeding; peritonitis with ascites). Splenomegaly and ascites inflate weight — use MUAC and triceps skinfold to judge nutrition.
+
+### Guideline watch (2026-11-02, weekly check)
+- **Baveno VIII** published: J Hepatol, online 19 Aug 2026, doi 10.1016/j.jhep.2026.07.030 — includes the first Baveno pediatric recommendations. Use it instead of Baveno VII for adult/pediatric compare rows at build; read the full text first. The APSPGHAN 2026 statement cited by lesson 03-09 was not found by web search — keep TODO(verify).

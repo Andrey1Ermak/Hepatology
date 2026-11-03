@@ -26,3 +26,6 @@ Source of the paediatric numbers: APSPGHAN 2026 expert statement (lesson cites P
 
 ### 03-11 · Biliary atresia: nutrition and growth (synced 2026-11-02)
 - Pearl (lesson slides 11, 19, 21; Mouzaki 2019): a fine-bore, soft nasogastric feeding tube is **not** contraindicated by esophageal varices **for nutrition in a stable child** — not guidance for tube placement during or right after an acute bleed or band ligation (Expert opinion); a percutaneous gastrostomy **is** avoided with portal hypertension (stomal varices, bleeding, peritonitis with ascites). Learn layer only.
+
+### Guideline watch (2026-11-02, weekly check)
+- **Baveno VIII** published: J Hepatol, online 19 Aug 2026, doi 10.1016/j.jhep.2026.07.030 — includes the first Baveno pediatric recommendations. Use it instead of Baveno VII for adult/pediatric compare rows at build; read the full text first. The APSPGHAN 2026 statement cited by lesson 03-09 was not found by web search — keep TODO(verify).

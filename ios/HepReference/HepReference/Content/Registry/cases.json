@@ -30,5 +30,29 @@
     "question": "What pattern is this, and what do you do now?",
     "answer": "Acute Wilson disease with liver failure: ALP:bilirubin 2 (< 4), AST:ALT above 2.5, Coombs-negative hemolysis. Call the transplant center now; send ceruloplasmin and urine copper and request a slit-lamp exam.",
     "teaching": "A modest ALT does not mean mild disease. Low ALP with hemolysis in a jaundiced child is a red flag (Korman 2008; in children the ratios are less sensitive — Yasmin 2022). Lesson 01-01, case 3."
+  },
+  {
+    "id": "ast_isolated_c1",
+    "card": "ast_isolated",
+    "stem": "A well 4-year-old boy has a pre-operative screen before ear tubes: AST 210 U/L, ALT 22 U/L, GGT and bilirubin normal. The result is the same 3 months later. He is referred for \"liver workup and biopsy\".",
+    "question": "What do you do first, and what do you avoid?",
+    "answer": "CK first — a muscular dystrophy can present this way. If CK, LDH and the hemolysis screen are normal, ask for PEG precipitation of AST and check both parents' AST. No imaging, no biopsy; write a letter that stops the next referral.",
+    "teaching": "AST without ALT is not liver until proven. Macro-AST was found in 38.6% of well children with isolated AST (Caropreso 2009). Lesson 01-14, case 2."
+  },
+  {
+    "id": "ast_isolated_c2",
+    "card": "ast_isolated",
+    "stem": "A well 8-year-old girl has AST 95 U/L on three occasions over a year. ALT, CK, LDH, CBC and TSH are normal.",
+    "question": "Most likely explanation, and the simplest next test?",
+    "answer": "Macro-AST. Check the parents' AST, then PEG precipitation of the child's AST (> 82.2% precipitable: very likely; 67.1–82.2%: electrophoresis).",
+    "teaching": "Familial macro-AST is common (GOT1 variant, Kulecka 2017); it is harmless and often persists for years. Lesson 01-01, question 5."
+  },
+  {
+    "id": "ast_isolated_c3",
+    "card": "ast_isolated",
+    "stem": "A 16-year-old boy has AST 140 U/L and ALT 24 U/L at a sports physical. CK is 4,800 U/L. He lifted weights two days ago. He is well, with normal urine color.",
+    "question": "What next?",
+    "answer": "No strenuous exercise for at least 7 days (longer after heavy training), then repeat CK, AST and ALT. If CK stays high at rest, refer to neuromuscular for myopathy testing. If he develops dark urine or muscle swelling, send him to the emergency department.",
+    "teaching": "Weightlifting raised AST and ALT for at least 7 days — values were still up on day 7 (Pettersson 2008, adults); ACG lists strenuous exercise among non-hepatic causes."
   }
 ]

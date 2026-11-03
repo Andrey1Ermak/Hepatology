@@ -82,7 +82,8 @@
       "children": [
         {
           "t": "row",
-          "text": "AST > ALT → CK; consider hemolysis and birth trauma."
+          "text": "AST > ALT → CK; consider hemolysis and birth trauma.",
+          "link_card_id": "ast_isolated"
         },
         {
           "t": "out",

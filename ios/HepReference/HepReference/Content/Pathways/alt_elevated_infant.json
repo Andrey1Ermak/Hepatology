@@ -213,7 +213,8 @@
         },
         {
           "t": "row",
-          "text": "Isolated AST with normal ALT and CK → think macro-AST."
+          "text": "Isolated AST with normal ALT and CK → think macro-AST.",
+          "link_card_id": "ast_isolated"
         }
       ]
     },

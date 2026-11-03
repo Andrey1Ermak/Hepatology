@@ -1,0 +1,195 @@
+{
+  "id": "ast_isolated",
+  "children": [
+    {
+      "t": "section",
+      "h": "1 · Is it really isolated?",
+      "children": [
+        {
+          "t": "row",
+          "text": "Isolated AST: AST above the lab's range for age, ALT normal."
+        },
+        {
+          "t": "row",
+          "text": "Hemolyzed sample? Red cells release AST. Redraw by clean venipuncture before anything else."
+        },
+        {
+          "t": "out",
+          "cond": "ALT also raised",
+          "subtext": "Not isolated — follow Elevated Transaminases",
+          "link_card_id": "alt_elevated"
+        },
+        {
+          "t": "out",
+          "cond": "Low platelets, large spleen, or abnormal GGT, direct bilirubin or INR",
+          "subtext": "Not isolated — possible liver disease: follow Elevated Transaminases",
+          "link_card_id": "alt_elevated"
+        },
+        {
+          "t": "out",
+          "cond": "AST alone",
+          "subtext": "Go to step 2"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "2 · Is the child sick?",
+      "children": [
+        {
+          "t": "out",
+          "cond": "Dark or cola urine, muscle pain, swelling or weakness",
+          "pill": {
+            "kind": "floor",
+            "text": "Emergency department now: CK, creatinine, potassium, urinalysis"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Heart failure, fainting, or chest pain with breathlessness",
+          "pill": {
+            "kind": "floor",
+            "text": "Emergency department now: ECG, troponin"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "New murmur or chest pain, otherwise well",
+          "pill": {
+            "kind": "step",
+            "text": "ECG, troponin, cardiology today"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Pallor, jaundice or dark urine with anemia",
+          "pill": {
+            "kind": "step",
+            "text": "Hemolysis workup today: CBC, reticulocytes, LDH, haptoglobin, bilirubin, DAT"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Coombs-negative hemolysis, jaundice, low ALP — sick child",
+          "pill": {
+            "kind": "picu",
+            "text": "Think acute Wilson disease: INR now; call hepatology / transplant center now"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Well",
+          "subtext": "Go to step 3"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "3 · Muscle first: repeat with CK",
+      "children": [
+        {
+          "t": "row",
+          "text": "Repeat AST and ALT with CK, LDH, CBC with reticulocytes, TSH and free T4 (First contact)."
+        },
+        {
+          "t": "row",
+          "text": "No strenuous exercise for ≥ 7 days (longer after heavy training) before the repeat — ask about sport and weight training."
+        },
+        {
+          "t": "arm",
+          "kind": "mod",
+          "tag": "CK raised",
+          "children": [
+            {
+              "t": "row",
+              "text": "Newborn: CK is high after delivery and birth trauma — repeat before any referral."
+            },
+            {
+              "t": "out",
+              "cond": "High TSH, low free T4",
+              "subtext": "Treat hypothyroidism; recheck CK and AST once euthyroid"
+            },
+            {
+              "t": "out",
+              "cond": "Recent strenuous exercise or muscle injury",
+              "subtext": "Rest ≥ 7 days, then repeat CK and AST"
+            },
+            {
+              "t": "out",
+              "cond": "Boy, no exertion (beyond the newborn period)",
+              "pill": {
+                "kind": "dc",
+                "text": "Neuromuscular referral: Duchenne or Becker testing — no liver workup, no biopsy"
+              }
+            },
+            {
+              "t": "out",
+              "cond": "Girl, or weakness, rash or myalgia",
+              "pill": {
+                "kind": "dc",
+                "text": "Neuromuscular or rheumatology referral: myositis, metabolic myopathy"
+              }
+            }
+          ]
+        },
+        {
+          "t": "arm",
+          "kind": "mild",
+          "tag": "CK normal",
+          "children": [
+            {
+              "t": "out",
+              "cond": "High TSH, low free T4",
+              "subtext": "Treat hypothyroidism; recheck AST and CK once euthyroid"
+            },
+            {
+              "t": "out",
+              "cond": "Anemia, high reticulocytes or LDH, low haptoglobin",
+              "subtext": "Hemolysis workup (step 2)"
+            },
+            {
+              "t": "out",
+              "cond": "All normal, AST still raised",
+              "subtext": "Go to step 4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "4 · Well child, AST alone → macro-AST",
+      "children": [
+        {
+          "t": "row",
+          "text": "Macro-AST: AST bound to immunoglobulin, too large to clear. Child well; ALT, CK and LDH normal."
+        },
+        {
+          "t": "row",
+          "text": "Check AST in both parents — familial forms are common."
+        },
+        {
+          "t": "row",
+          "text": "Ask the lab for polyethylene glycol (PEG) precipitation of AST; electrophoresis confirms."
+        },
+        {
+          "t": "out",
+          "cond": "Macro-AST confirmed",
+          "pill": {
+            "kind": "dc",
+            "text": "No imaging, no biopsy — letter to family and primary care"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Macro-AST excluded",
+          "pill": {
+            "kind": "dc",
+            "text": "Hepatology referral; abdominal ultrasound"
+          },
+          "link_card_id": "alt_elevated"
+        }
+      ]
+    }
+  ]
+}
