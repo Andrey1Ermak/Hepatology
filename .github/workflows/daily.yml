@@ -2,10 +2,13 @@ name: Daily autonomous run
 
 # Runs every day on a GitHub-hosted Mac, independent of the author's computer.
 # 11:00 UTC = 07:00 New York (summer) / 06:00 (winter). GitHub may start
-# scheduled jobs a few minutes late.
+# scheduled jobs hours late, or fail to give them a Mac at all. The 15:00 and
+# 19:00 UTC runs are backups: the gate job skips them once today's report exists.
 on:
   schedule:
     - cron: "0 11 * * *"
+    - cron: "0 15 * * *"
+    - cron: "0 19 * * *"
   workflow_dispatch:
     inputs:
       mode:
@@ -22,7 +25,34 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Runs inside the concurrency group, so a backup that queued behind a running
+  # attempt checks for the report only after that attempt has finished.
+  gate:
+    runs-on: ubuntu-latest
+    env:
+      TZ: America/New_York
+      GH_TOKEN: ${{ github.token }}
+    outputs:
+      should_run: ${{ steps.check.outputs.should_run }}
+    steps:
+      - id: check
+        run: |
+          SHOULD_RUN=true
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            if gh api "repos/${{ github.repository }}/contents/reports/$(date +%Y-%m-%d).md?ref=main" --silent 2>/dev/null; then
+              echo "::notice title=Skipped::Report for $(date +%Y-%m-%d) already exists"
+              SHOULD_RUN=false
+            elif [ "$(date +%-H)" -ge 22 ]; then
+              # A run crossing midnight would look for the next day's report and fail.
+              echo "::warning title=Skipped::Too late to start today's run ($(date +%H:%M) New York)"
+              SHOULD_RUN=false
+            fi
+          fi
+          echo "should_run=$SHOULD_RUN" >> "$GITHUB_OUTPUT"
+
   run:
+    needs: gate
+    if: needs.gate.outputs.should_run == 'true'
     runs-on: macos-26
     timeout-minutes: 240
     env:
@@ -32,9 +62,14 @@ jobs:
       ANTHROPIC_MODEL: claude-opus-5-5
       CLAUDE_CODE_SUBAGENT_MODEL: claude-opus-5-5
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      # The team waits on background subagents; the default 10-minute ceiling
+      # kills slow ones and ends the run early. timeout-minutes still applies.
+      CLAUDE_CODE_PRINT_BG_WAIT_CEILING_MS: "0"
     steps:
       - uses: actions/checkout@v7
         with:
+          # A queued backup must start from the latest main, not its trigger commit.
+          ref: ${{ github.ref }}
           fetch-depth: 0
 
       - name: Select Xcode 26
