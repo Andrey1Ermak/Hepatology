@@ -1,6 +1,6 @@
 [
   {"block": 1, "title": "The hepatologist's diagnostic toolkit", "start": "2026-09-28", "days": [
-    {"day": 1, "topic": "Liver tests: how to read them", "cards": ["ref_norms", "alt_elevated", "ast_isolated"]},
+    {"day": 1, "topic": "Liver tests: how to read them", "cards": ["ref_norms", "alt_elevated", "ast_isolated", "alp_isolated", "ggt_isolated"]},
     {"day": 2, "topic": "Bilirubin: from metabolism to numbers", "cards": ["ref_norms"]},
     {"day": 3, "topic": "Synthetic function and hemostasis", "cards": []},
     {"day": 4, "topic": "Histology I: patterns of injury", "cards": []},
@@ -13,7 +13,7 @@
     {"day": 11, "topic": "Genetic testing", "cards": []},
     {"day": 12, "topic": "Nutrition in cholestasis", "cards": []},
     {"day": 13, "topic": "Endoscopy and ERCP in pediatric hepatology", "cards": []},
-    {"day": 14, "topic": "Synthesis and self-test", "cards": ["ref_norms", "alt_elevated", "ast_isolated"]}
+    {"day": 14, "topic": "Synthesis and self-test", "cards": ["ref_norms", "alt_elevated", "ast_isolated", "alp_isolated", "ggt_isolated"]}
   ]},
   {"block": 2, "title": "Neonatal cholestasis: approach", "start": "2026-10-12", "days": [
     {"day": 1, "topic": "Epidemiology and definitions", "cards": []},
@@ -128,9 +128,9 @@
     {"day": 14, "topic": "Synthesis and self-test", "cards": []}
   ]},
   {"block": 9, "title": "PSC and other sclerosing cholangitides", "start": "2027-01-18", "days": [
-    {"day": 1, "topic": "Epidemiology and IBD", "cards": []},
+    {"day": 1, "topic": "Epidemiology and IBD", "cards": ["ggt_isolated"]},
     {"day": 2, "topic": "Pathogenesis", "cards": []},
-    {"day": 3, "topic": "Diagnosis", "cards": []},
+    {"day": 3, "topic": "Diagnosis", "cards": ["ggt_isolated"]},
     {"day": 4, "topic": "Secondary sclerosing cholangitis and IgG4", "cards": []},
     {"day": 5, "topic": "Natural history", "cards": []},
     {"day": 6, "topic": "UDCA", "cards": []},

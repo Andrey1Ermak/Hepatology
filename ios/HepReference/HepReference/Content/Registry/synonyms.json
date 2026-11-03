@@ -14,5 +14,22 @@
     "AST greater than ALT",
     "creatine kinase",
     "muscular dystrophy"
+  ],
+  "isolated ALP": [
+    "high alkaline phosphatase",
+    "raised ALP",
+    "transient hyperphosphatasemia",
+    "THI",
+    "low alkaline phosphatase",
+    "hypophosphatasia",
+    "rickets"
+  ],
+  "isolated GGT": [
+    "high GGT",
+    "raised gamma-GT",
+    "gamma-glutamyl transferase",
+    "GGTP",
+    "enzyme induction",
+    "sclerosing cholangitis screen"
   ]
 }

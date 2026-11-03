@@ -216,6 +216,16 @@
           "t": "row",
           "text": "Isolated AST with normal ALT and CK → think macro-AST.",
           "link_card_id": "ast_isolated"
+        },
+        {
+          "t": "row",
+          "text": "ALP raised alone, ALT normal → GGT first; think growth, transient hyperphosphatasemia, rickets.",
+          "link_card_id": "alp_isolated"
+        },
+        {
+          "t": "row",
+          "text": "GGT raised alone, ALT normal → enzyme-inducing drugs, IBD (sclerosing cholangitis), range for age.",
+          "link_card_id": "ggt_isolated"
         }
       ]
     },

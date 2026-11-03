@@ -54,5 +54,61 @@
     "question": "What next?",
     "answer": "No strenuous exercise for at least 7 days (longer after heavy training), then repeat CK, AST and ALT. If CK stays high at rest, refer to neuromuscular for myopathy testing. If he develops dark urine or muscle swelling, send him to the emergency department.",
     "teaching": "Weightlifting raised AST and ALT for at least 7 days — values were still up on day 7 (Pettersson 2008, adults); ACG lists strenuous exercise among non-hepatic causes."
+  },
+  {
+    "id": "alp_isolated_c1",
+    "card": "alp_isolated",
+    "stem": "A 15-month-old girl had gastroenteritis two weeks ago. A blood test then showed ALP 2,400 U/L. ALT, GGT, bilirubin, calcium, phosphate and vitamin D are normal. She is growing well and her exam is normal.",
+    "question": "What next?",
+    "answer": "Transient hyperphosphatasemia. Reassure the family and repeat ALP in 3–4 months. No imaging or other tests if the repeat is normal.",
+    "teaching": "In THI, ALP is often ≥ 5 × ULN; 80% normalize within 4 months, about 20% take longer (Gualco 2013). Lesson 01-01, case 2."
+  },
+  {
+    "id": "alp_isolated_c2",
+    "card": "alp_isolated",
+    "stem": "A well 9-year-old boy has a pre-sports panel. ALP is flagged high against the adult range. ALT, GGT and bilirubin are normal; growth and exam are normal.",
+    "question": "Is the ALP abnormal?",
+    "answer": "Compare it with the lab's range for a 9-year-old boy first. Growing children run ALP well above adult limits; if it is within the range for age and sex, no workup.",
+    "teaching": "ALP is physiologically higher in childhood from bone growth (ACG 2017; BSG 2018). An adult range flags almost every growing child."
+  },
+  {
+    "id": "alp_isolated_c3",
+    "card": "alp_isolated",
+    "stem": "An 18-month-old, exclusively breastfed without vitamin D, is slow to walk. ALP is high for age, GGT normal. Wrists look wide and legs are bowed.",
+    "question": "What is the next step?",
+    "answer": "Bone, not liver: calcium, phosphate, 25-OH vitamin D, PTH and wrist and knee X-rays for nutritional rickets; treat and refer as needed. If she has seizures or tetany, send to the emergency department.",
+    "teaching": "Normal GGT points away from the liver. Rickets is diagnosed from history, exam and biochemistry and confirmed by radiographs (Munns 2016)."
+  },
+  {
+    "id": "alp_isolated_c4",
+    "card": "alp_isolated",
+    "stem": "A 3-year-old has lost two lower incisors without trauma; the roots came out whole. He is short for his family. ALP is below the lab's range for age.",
+    "question": "What does the low ALP suggest?",
+    "answer": "Hypophosphatasia. Repeat ALP in a proper tube, check zinc and PLP (vitamin B6) and refer to endocrinology or metabolic bone for ALPL testing.",
+    "teaching": "Early non-traumatic loss of baby teeth is a major criterion; raised natural substrates such as PLP support the diagnosis (Khan 2024). Diagnosis is often delayed (Högler 2019)."
+  },
+  {
+    "id": "ggt_isolated_c1",
+    "card": "ggt_isolated",
+    "stem": "A 12-year-old boy with epilepsy has taken carbamazepine for two years. Routine bloods: GGT 2 × ULN; ALT, ALP, bilirubin and platelets normal. He is well.",
+    "question": "Does he need a liver workup?",
+    "answer": "No. This is most likely enzyme induction. Recheck with his routine drug monitoring; investigate if GGT keeps rising or ALT or bilirubin rise, or he becomes unwell.",
+    "teaching": "After a year, GGT was raised in 34% of children on carbamazepine versus 14.9% on valproate (Hadzagic-Catibusic 2017). ACG lists phenytoin and barbiturates."
+  },
+  {
+    "id": "ggt_isolated_c2",
+    "card": "ggt_isolated",
+    "stem": "A 14-year-old girl with ulcerative colitis in remission has GGT 3 × ULN on two checks a month apart. ALT, bilirubin and platelets are normal. Ultrasound is normal.",
+    "question": "What next?",
+    "answer": "Investigate promptly: MRCP and hepatology referral for primary or autoimmune sclerosing cholangitis; add IgG and autoantibodies. A normal ultrasound does not exclude it.",
+    "teaching": "ESPGHAN advises GGT checks every 3–6 months in children with IBD, prompt investigation at ≥ 2 × ULN and MRCP for diagnosis (van Rheenen 2025). Below 2 × ULN, PSC was rare in one IBD cohort (Berhane 2025)."
+  },
+  {
+    "id": "ggt_isolated_c3",
+    "card": "ggt_isolated",
+    "stem": "A well, breastfed 3-week-old has a liver panel for mild jaundice. Bilirubin is mostly unconjugated, direct bilirubin is normal, stools are yellow. GGT is above the adult range but within the lab's range for age.",
+    "question": "Is the GGT abnormal?",
+    "answer": "No. GGT is physiologically high in the first months and falls over the first year. With a normal direct bilirubin and pigmented stools, there is no GGT workup; follow the neonatal jaundice rules.",
+    "teaching": "Read GGT against the range for age: the newborn ceiling is higher than the adult one (lesson 01-01). In a cholestatic infant, by contrast, a GGT normal for age is itself a clue (low-GGT cholestasis)."
   }
 ]

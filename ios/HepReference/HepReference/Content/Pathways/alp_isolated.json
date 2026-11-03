@@ -1,0 +1,285 @@
+{
+  "id": "alp_isolated",
+  "children": [
+    {
+      "t": "section",
+      "h": "1 · Is it high for this child?",
+      "children": [
+        {
+          "t": "row",
+          "text": "Read ALP against the lab's range for age and sex — never the adult range. Growth plates keep ALP high through childhood, highest in the pubertal growth spurt."
+        },
+        {
+          "t": "row",
+          "text": "After a fatty meal, ALP can rise in blood groups O and B (intestinal ALP): repeat fasting if unsure."
+        },
+        {
+          "t": "out",
+          "cond": "Within the range for age and sex",
+          "subtext": "Normal for age — no workup"
+        },
+        {
+          "t": "out",
+          "cond": "Low for age",
+          "subtext": "Not normal — go to step 5"
+        },
+        {
+          "t": "out",
+          "cond": "High for age",
+          "subtext": "Go to step 2"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "2 · Liver or bone? Check GGT",
+      "children": [
+        {
+          "t": "row",
+          "text": "GGT is not made by bone. A raised GGT means the ALP is from the liver."
+        },
+        {
+          "t": "row",
+          "text": "Read GGT against the lab's range for age: high in young infants, lowest at 1–6 years — below adult values."
+        },
+        {
+          "t": "out",
+          "cond": "Direct bilirubin raised, or jaundice",
+          "pill": {
+            "kind": "step",
+            "text": "Hepatology today: cholestasis workup"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "ALT also raised",
+          "subtext": "Not isolated — follow Elevated Transaminases",
+          "link_card_id": "alt_elevated"
+        },
+        {
+          "t": "out",
+          "cond": "GGT raised",
+          "subtext": "Liver source — follow Isolated GGT",
+          "link_card_id": "ggt_isolated"
+        },
+        {
+          "t": "out",
+          "cond": "GGT equivocal",
+          "subtext": "Ask the lab for ALP isoenzymes: liver fraction → treat as liver (Isolated GGT); bone fraction → step 3"
+        },
+        {
+          "t": "out",
+          "cond": "GGT normal",
+          "subtext": "Bone (or other) source — go to step 3"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "3 · Bone: rickets, tumor, endocrine",
+      "children": [
+        {
+          "t": "row",
+          "text": "Calcium, phosphate, 25-OH vitamin D, PTH, creatinine (First contact)."
+        },
+        {
+          "t": "row",
+          "text": "Examine: wide wrists, bowed legs, rachitic rosary, bone pain, limp, swelling."
+        },
+        {
+          "t": "out",
+          "cond": "Fever with bone pain, or refuses to bear weight",
+          "pill": {
+            "kind": "floor",
+            "text": "Emergency department now: infection or leukemia"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Night bone pain, limp, swelling, a mass or weight loss",
+          "pill": {
+            "kind": "step",
+            "text": "Today: X-ray, CBC with smear, LDH, uric acid; oncology if a lesion or abnormal smear (expert opinion)"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Seizure, tetany or stridor",
+          "pill": {
+            "kind": "floor",
+            "text": "Emergency department now: calcium"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Low calcium, no symptoms",
+          "pill": {
+            "kind": "step",
+            "text": "Same day: repeat calcium with magnesium; pediatrician or endocrinology (expert opinion)"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "High calcium with high PTH",
+          "pill": {
+            "kind": "dc",
+            "text": "Endocrinology: hyperparathyroidism"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "High calcium, PTH low or normal",
+          "pill": {
+            "kind": "step",
+            "text": "Same day: endocrinology — think malignancy, immobilization, vitamin D excess (expert opinion)"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Low vitamin D, high PTH, or signs of rickets",
+          "pill": {
+            "kind": "dc",
+            "text": "Wrist and knee X-rays; treat rickets — pediatrician or endocrinology"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Low phosphate, vitamin D normal",
+          "pill": {
+            "kind": "dc",
+            "text": "Endocrinology: hypophosphatemic rickets"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "High creatinine, or signs of thyroid disease",
+          "pill": {
+            "kind": "dc",
+            "text": "Nephrology (bone disease of CKD) or endocrinology (check TSH)"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "All normal, child well",
+          "subtext": "Go to step 4"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "4 · Well child, ALP alone",
+      "children": [
+        {
+          "t": "arm",
+          "kind": "mild",
+          "tag": "Under 5 years",
+          "children": [
+            {
+              "t": "row",
+              "text": "Transient hyperphosphatasemia (THI): age < 5 years, no bone or liver disease, normal again within about 4 months. Often follows an infection."
+            },
+            {
+              "t": "row",
+              "text": "ALP is ≥ 5 × ULN in about 70% — even in the thousands. A very high ALP does not argue against THI."
+            },
+            {
+              "t": "out",
+              "cond": "Fits THI",
+              "pill": {
+                "kind": "dc",
+                "text": "Reassure; repeat ALP and GGT in 3–4 months — no imaging"
+              }
+            },
+            {
+              "t": "out",
+              "cond": "Still high at 4 months, child well",
+              "subtext": "About 20% take longer: repeat again; endocrinology if rising or any new finding (expert opinion)"
+            }
+          ]
+        },
+        {
+          "t": "arm",
+          "kind": "mod",
+          "tag": "5 years and older",
+          "children": [
+            {
+              "t": "row",
+              "text": "The pubertal growth spurt explains most. THI also occurs in older children and adults."
+            },
+            {
+              "t": "out",
+              "cond": "Growing well, exam normal",
+              "pill": {
+                "kind": "dc",
+                "text": "Repeat ALP and GGT in 3–4 months (expert opinion)"
+              }
+            },
+            {
+              "t": "out",
+              "cond": "Persistent or rising",
+              "pill": {
+                "kind": "dc",
+                "text": "Endocrinology or metabolic bone referral; ALP isoenzymes (expert opinion)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "5 · ALP low for age",
+      "children": [
+        {
+          "t": "row",
+          "text": "Low ALP is abnormal. Repeat first: an EDTA or oxalate tube, or hemolysis, falsely lowers ALP."
+        },
+        {
+          "t": "out",
+          "cond": "Sick, jaundiced, Coombs-negative hemolysis",
+          "pill": {
+            "kind": "picu",
+            "text": "Think acute Wilson disease: INR now; call hepatology / transplant center now"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Infant with seizures or breathing difficulty",
+          "pill": {
+            "kind": "floor",
+            "text": "Emergency department now: possible severe hypophosphatasia — tell the team ALP is low"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Infant with rickets and low ALP",
+          "pill": {
+            "kind": "step",
+            "text": "Same day: endocrinology or metabolic bone — severe hypophosphatasia"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Cholestasis, malnutrition or intestinal failure",
+          "subtext": "Check zinc — ALP needs zinc; a \"normal\" ALP may hide cholestasis"
+        },
+        {
+          "t": "out",
+          "cond": "Early loss of baby teeth with the root intact, rickets, poor growth, craniosynostosis",
+          "pill": {
+            "kind": "dc",
+            "text": "Hypophosphatasia: PLP (vitamin B6), ALPL gene — endocrinology or metabolic bone"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Persistently low, well child",
+          "pill": {
+            "kind": "dc",
+            "text": "Repeat with zinc, magnesium and PLP; review drugs (steroids, chemotherapy), nutrition, thyroid, celiac disease; endocrinology if still low"
+          }
+        }
+      ]
+    }
+  ]
+}

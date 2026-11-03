@@ -1,6 +1,8 @@
 [
   {"id": "alt_elevated", "cat": "labs", "section": "ABNORMAL LIVER TESTS"},
   {"id": "ast_isolated", "cat": "labs", "section": "ABNORMAL LIVER TESTS"},
+  {"id": "alp_isolated", "cat": "labs", "section": "ABNORMAL LIVER TESTS"},
+  {"id": "ggt_isolated", "cat": "labs", "section": "ABNORMAL LIVER TESTS"},
   {"id": "ref_norms", "cat": "ref", "section": "REFERENCE"},
   {"id": "about", "cat": "ref", "section": "REFERENCE"}
 ]

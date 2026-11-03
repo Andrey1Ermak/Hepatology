@@ -1,0 +1,194 @@
+{
+  "id": "ggt_isolated",
+  "title": "Isolated GGT Elevation",
+  "code": "ACG 2017 · BSG 2018 · ESPGHAN 2025",
+  "cat": "labs",
+  "acu": "rt",
+  "tags": [
+    "GGT",
+    "gamma-glutamyl transferase",
+    "isolated GGT",
+    "high GGT",
+    "antiepileptic",
+    "carbamazepine",
+    "phenobarbital",
+    "enzyme induction",
+    "PSC",
+    "sclerosing cholangitis",
+    "IBD",
+    "Alagille",
+    "MRCP"
+  ],
+  "ages": [
+    "neo",
+    "infant",
+    "child",
+    "teen"
+  ],
+  "entry": "lab",
+  "guidelines": [
+    "kwo_2017_acg_lft",
+    "bsg_2018_lft",
+    "espghan_2025_psc_ibd",
+    "berhane_2025_ggt_ibd"
+  ],
+  "plan": [
+    {
+      "block": 1,
+      "days": [
+        1,
+        14
+      ]
+    },
+    {
+      "block": 9,
+      "days": [
+        1,
+        3
+      ]
+    }
+  ],
+  "related": [
+    "alp_isolated",
+    "alt_elevated",
+    "ref_norms"
+  ],
+  "status": "reviewed",
+  "blocks": [
+    {
+      "t": "note",
+      "k": "crit",
+      "h": "Red flags",
+      "text": "**Jaundice, pale stools, dark urine or itch:** not isolated — fractionated bilirubin and hepatology today.\n**Vomiting blood, black stools or active bleeding:** emergency department now.\n**Fever with jaundice or right upper quadrant pain:** think cholangitis or a stone — emergency department now (blood cultures, ultrasound).\n**Fever or rash after a new antiepileptic drug:** think DRESS or drug-induced liver injury — same day.\n**Bloody diarrhea, weight loss or poor growth:** think IBD — fecal calprotectin, pediatric GI this week.\n**Large spleen or low platelets:** not isolated — possible advanced liver disease; hepatology within days."
+    },
+    {
+      "t": "pathway",
+      "h": "Algorithm",
+      "path_id": "ggt_isolated"
+    },
+    {
+      "t": "workup",
+      "h": "First contact",
+      "groups": [
+        {
+          "label": "Repeat — confirm it is isolated",
+          "items": [
+            "GGT, ALT, AST, ALP",
+            "Total and direct bilirubin",
+            "CBC with platelets"
+          ]
+        },
+        {
+          "label": "If still raised and unexplained",
+          "items": [
+            "Abdominal ultrasound with Doppler",
+            "ANA, SMA, anti-LKM1",
+            "IgG",
+            "Fecal calprotectin"
+          ]
+        }
+      ]
+    },
+    {
+      "t": "list",
+      "h": "Don't miss",
+      "items": [
+        "Primary or autoimmune sclerosing cholangitis — IBD may be silent",
+        "Choledochal cyst or stones — ultrasound",
+        "Autoimmune hepatitis — autoantibodies, IgG",
+        "Alagille syndrome — murmur, face, vertebrae, eyes",
+        "Cystic fibrosis liver disease",
+        "Valproate toxicity — check ALT, INR and ammonia",
+        "Drug-induced liver injury — once ALT or bilirubin rise"
+      ]
+    },
+    {
+      "t": "text",
+      "h": "Why",
+      "text": "GGT sits on the canalicular membrane and in bile duct cells, and also in kidney and pancreas — but not in bone. It is high in young infants and lowest at 1–6 years, below adult values (lesson 01-01), so it must be read against the range for age.\n\nGGT is sensitive but not specific. Adult guidelines list alcohol, obesity and drugs as the usual causes of an isolated rise; ACG names phenytoin and barbiturates and advises against using GGT as a screen when other liver tests are normal. BSG still calls GGT one of the best predictors of liver mortality. In children, carbamazepine mainly raises GGT, by enzyme induction (Cepelak 1998): after a year GGT was raised in 34% of children on carbamazepine and 14.9% on valproate (Hadzagic-Catibusic 2017).\n\nIn children, the cause that matters most is bile duct disease. PSC is usually silent and lives beside IBD; ESPGHAN advises GGT checks every 3–6 months in every child with IBD, prompt investigation at ≥ 2 × ULN, further evaluation if a milder rise persists > 1 month, and MRCP to diagnose (van Rheenen 2025). In 469 children with IBD, 34 developed PSC; a GGT under 2 × ULN (100 U/L) had a negative predictive value of 98%, so MRCP could be skipped (Berhane 2025, single center). Once PSC is diagnosed, GGT also tracks prognosis: normal GGT at 1 year meant 91% versus 67% 5-year event-free survival (Deneau 2018, 287 children)."
+    },
+    {
+      "t": "pearls",
+      "h": "Pearls & pitfalls",
+      "items": [
+        {
+          "k": "pitfall",
+          "text": "GGT is high in young infants but lowest at 1–6 years. A value \"normal\" for an adult can be raised in a toddler (lesson 01-01)."
+        },
+        {
+          "k": "pearl",
+          "text": "Well child on carbamazepine, phenytoin or phenobarbital with GGT alone up: likely enzyme induction. No workup unless GGT keeps rising or ALT or bilirubin rise (expert opinion)."
+        },
+        {
+          "k": "pitfall",
+          "text": "Obese teen with \"isolated\" GGT: check ALT against 26 (boys) or 22 (girls) — if above, it is not isolated (AASLD 2025)."
+        },
+        {
+          "k": "pearl",
+          "text": "Every child with IBD: check GGT every 3–6 months. PSC is often found this way (van Rheenen 2025)."
+        },
+        {
+          "k": "pearl",
+          "text": "In IBD, GGT < 2 × ULN makes PSC unlikely enough to skip MRCP — but a rise lasting > 1 month still needs a cause workup, and GGT checks continue (Berhane 2025; van Rheenen 2025)."
+        },
+        {
+          "k": "pitfall",
+          "text": "A normal ultrasound does not exclude sclerosing cholangitis. MRCP is the test (ACG 2017; van Rheenen 2025)."
+        }
+      ]
+    },
+    {
+      "t": "guideline_compare",
+      "h": "Guidelines",
+      "rows": [
+        {
+          "topic": "GGT as a screening test",
+          "positions": {
+            "kwo_2017_acg_lft": "Do not use GGT to screen when other liver tests are normal",
+            "bsg_2018_lft": "Include GGT in the initial liver panel",
+            "espghan_2025_psc_ibd": "Regular GGT screening in every child with IBD"
+          },
+          "verdict": "differs",
+          "note": "The app does not order GGT alone to screen, except in IBD — where it finds silent PSC."
+        },
+        {
+          "topic": "Usual causes of isolated GGT",
+          "positions": {
+            "kwo_2017_acg_lft": "Alcohol; phenytoin, barbiturates; pancreatic, kidney disease, diabetes",
+            "bsg_2018_lft": "Obesity, alcohol, drugs",
+            "espghan_2025_psc_ibd": "Not addressed"
+          },
+          "verdict": "aligned",
+          "note": "Adult lists. In children add bile duct disease (PSC, Alagille, choledochal cyst) and the newborn range."
+        },
+        {
+          "topic": "When bile duct disease is suspected",
+          "positions": {
+            "kwo_2017_acg_lft": "MRCP or ERCP, as PSC may not show on ultrasound",
+            "bsg_2018_lft": "Not addressed for isolated GGT",
+            "espghan_2025_psc_ibd": "MRCP is the modality of choice; biopsy for small-duct PSC or AIH overlap"
+          },
+          "verdict": "aligned"
+        },
+        {
+          "topic": "Mild GGT rise in IBD (< 2 × ULN)",
+          "positions": {
+            "espghan_2025_psc_ibd": "Persisting > 1 month: further evaluation; ≥ 2 × ULN: prompt investigation",
+            "berhane_2025_ggt_ibd": "< 2 × ULN (100 U/L): PSC very unlikely (NPV 98%); MRCP and biopsy can be omitted"
+          },
+          "verdict": "differs",
+          "note": "Compatible: the app works up a persistent mild rise but keeps MRCP for ≥ 2 × ULN or a rising GGT."
+        }
+      ]
+    },
+    {
+      "t": "case",
+      "h": "Test yourself",
+      "case_ids": [
+        "ggt_isolated_c1",
+        "ggt_isolated_c2",
+        "ggt_isolated_c3"
+      ]
+    }
+  ]
+}

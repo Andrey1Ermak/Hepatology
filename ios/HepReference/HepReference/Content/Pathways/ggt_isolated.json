@@ -1,0 +1,238 @@
+{
+  "id": "ggt_isolated",
+  "children": [
+    {
+      "t": "section",
+      "h": "1 · Is it really isolated?",
+      "children": [
+        {
+          "t": "row",
+          "text": "Isolated GGT: GGT above the lab's range for age; ALT and bilirubin normal. ALP may be raised too."
+        },
+        {
+          "t": "row",
+          "text": "Use the lab's range for age: GGT is high in young infants and lowest at 1–6 years — below adult values."
+        },
+        {
+          "t": "out",
+          "cond": "Fever with jaundice or right upper quadrant pain",
+          "pill": {
+            "kind": "floor",
+            "text": "Emergency department now: blood cultures, ultrasound — cholangitis or a stone"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Direct bilirubin raised, jaundice, pale stools or itch",
+          "pill": {
+            "kind": "step",
+            "text": "Hepatology today: cholestasis workup"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Vomiting blood, black stools or active bleeding",
+          "pill": {
+            "kind": "floor",
+            "text": "Emergency department now"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Large spleen or low platelets, no bleeding",
+          "pill": {
+            "kind": "dc",
+            "text": "Hepatology within days: possible portal hypertension or advanced liver disease"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "ALT also raised",
+          "subtext": "Not isolated — follow Elevated Transaminases",
+          "link_card_id": "alt_elevated"
+        },
+        {
+          "t": "out",
+          "cond": "GGT alone",
+          "subtext": "Go to step 2"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "2 · Is there a known cause?",
+      "children": [
+        {
+          "t": "out",
+          "cond": "Carbamazepine, phenytoin or phenobarbital, child well",
+          "subtext": "Likely enzyme induction — no workup (expert opinion). Recheck with routine drug monitoring; investigate if GGT keeps rising, or ALT or bilirubin rise"
+        },
+        {
+          "t": "out",
+          "cond": "Fever, rash or lymph nodes in the first months of a new drug",
+          "pill": {
+            "kind": "step",
+            "text": "Same day: think DRESS or drug-induced liver injury — CBC with eosinophils, ALT, INR"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Valproate, child well",
+          "pill": {
+            "kind": "dc",
+            "text": "Not an inducer: ALT, INR and ammonia this week"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Valproate, drowsy or confused",
+          "pill": {
+            "kind": "floor",
+            "text": "Emergency department now: ammonia, ALT, INR, glucose"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Valproate with vomiting or lethargy; or under 2 years; or mitochondrial disease",
+          "pill": {
+            "kind": "step",
+            "text": "Same day: ALT, INR, ammonia (valproate boxed warning)"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Obese teen, ALT above 26 (boys) or 22 (girls)",
+          "subtext": "Not isolated — follow Elevated Transaminases",
+          "link_card_id": "alt_elevated"
+        },
+        {
+          "t": "out",
+          "cond": "Obese teen, suspected MASLD, GGT ≥ 60 U/L",
+          "pill": {
+            "kind": "step",
+            "text": "Full tier 1 now and pediatric hepatology — not MASLD until proven (ESPGHAN 2026)"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Teen: alcohol",
+          "subtext": "Ask privately; advise stopping; repeat"
+        },
+        {
+          "t": "out",
+          "cond": "Known inflammatory bowel disease (IBD)",
+          "subtext": "Go to step 4"
+        },
+        {
+          "t": "out",
+          "cond": "None, or obese with normal ALT",
+          "subtext": "Go to step 3"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "3 · Unexplained: repeat, then look",
+      "children": [
+        {
+          "t": "row",
+          "text": "Repeat once with ALT, AST, ALP, bilirubin and platelets — within 3 months (expert opinion)."
+        },
+        {
+          "t": "out",
+          "cond": "Normal on repeat",
+          "pill": {
+            "kind": "dc",
+            "text": "No further tests"
+          }
+        },
+        {
+          "t": "row",
+          "text": "Still raised: abdominal ultrasound with Doppler; ANA, SMA, anti-LKM1, IgG; fecal calprotectin."
+        },
+        {
+          "t": "row",
+          "text": "Examine for Alagille features: heart murmur, typical face, butterfly vertebrae, posterior embryotoxon. Sweat test if cystic fibrosis is possible."
+        },
+        {
+          "t": "out",
+          "cond": "Abdominal pain with dilated ducts or stones",
+          "pill": {
+            "kind": "step",
+            "text": "Hepatology or surgery today"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Dilated ducts or cyst, no pain",
+          "pill": {
+            "kind": "dc",
+            "text": "Hepatology or surgery referral within days"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Positive autoantibodies or high IgG",
+          "pill": {
+            "kind": "dc",
+            "text": "Hepatology within 1–2 weeks: autoimmune hepatitis or autoimmune sclerosing cholangitis (expert opinion)"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Raised calprotectin",
+          "pill": {
+            "kind": "dc",
+            "text": "Pediatric GI: IBD workup; hepatology for MRCP"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "All negative, GGT still raised",
+          "pill": {
+            "kind": "dc",
+            "text": "Hepatology referral: MRCP. Biopsy only if persistent > 6 months with a normal MRCP — hepatologist decision"
+          }
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "4 · Child with IBD",
+      "children": [
+        {
+          "t": "row",
+          "text": "Check GGT every 3–6 months in every child with IBD — PSC is often silent."
+        },
+        {
+          "t": "out",
+          "cond": "GGT ≥ 2 × ULN, or rising",
+          "pill": {
+            "kind": "dc",
+            "text": "Investigate promptly: MRCP and hepatology referral"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "GGT < 2 × ULN, first finding",
+          "pill": {
+            "kind": "dc",
+            "text": "Repeat GGT in 1 month"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "GGT < 2 × ULN, persisting > 1 month",
+          "pill": {
+            "kind": "dc",
+            "text": "Cause workup: drugs, viral serology, ANA, SMA, anti-LKM1, IgG. MRCP not routine; recheck GGT every 3–6 months"
+          }
+        },
+        {
+          "t": "row",
+          "text": "In the study behind the 2 × ULN cut-off, ULN was 50 U/L (2 × ULN = 100 U/L)."
+        }
+      ]
+    }
+  ]
+}

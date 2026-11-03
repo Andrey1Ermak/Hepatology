@@ -1,0 +1,202 @@
+{
+  "id": "alp_isolated",
+  "title": "Isolated ALP Elevation",
+  "code": "ACG 2017 · BSG 2018 · Gualco 2013",
+  "cat": "labs",
+  "acu": "ref",
+  "tags": [
+    "ALP",
+    "alkaline phosphatase",
+    "isolated ALP",
+    "high ALP",
+    "low ALP",
+    "transient hyperphosphatasemia",
+    "THI",
+    "rickets",
+    "vitamin D",
+    "hypophosphatasia",
+    "bone",
+    "growth spurt",
+    "zinc"
+  ],
+  "ages": [
+    "neo",
+    "infant",
+    "child",
+    "teen"
+  ],
+  "entry": "lab",
+  "guidelines": [
+    "kwo_2017_acg_lft",
+    "bsg_2018_lft",
+    "gualco_2013_thi",
+    "khan_2024_hpp"
+  ],
+  "plan": [
+    {
+      "block": 1,
+      "days": [
+        1,
+        14
+      ]
+    }
+  ],
+  "related": [
+    "ggt_isolated",
+    "alt_elevated",
+    "ref_norms"
+  ],
+  "status": "reviewed",
+  "blocks": [
+    {
+      "t": "note",
+      "k": "crit",
+      "h": "Red flags",
+      "text": "**Jaundice, pale stools or dark urine:** not isolated — fractionated bilirubin and hepatology today.\n**Fever with bone pain, or refuses to bear weight:** emergency department now — infection or leukemia.\n**Night bone pain, limp, bone swelling or a mass, weight loss:** today — X-ray, CBC with smear; oncology if a lesion or abnormal smear. A normal X-ray does not exclude leukemia.\n**Seizure, tetany or stridor in a child with possible rickets:** emergency department now — calcium.\n**Sick, jaundiced child with a LOW ALP and Coombs-negative hemolysis:** think acute Wilson disease — INR now, call hepatology / transplant center now."
+    },
+    {
+      "t": "pathway",
+      "h": "Algorithm",
+      "path_id": "alp_isolated"
+    },
+    {
+      "t": "workup",
+      "h": "First contact",
+      "groups": [
+        {
+          "label": "Repeat — confirm and locate",
+          "items": [
+            "ALP, GGT",
+            "ALT, AST",
+            "Total and direct bilirubin"
+          ]
+        },
+        {
+          "label": "If GGT normal — bone",
+          "items": [
+            "Calcium, phosphate",
+            "25-OH vitamin D",
+            "PTH",
+            "Creatinine",
+            "ALP isoenzymes if GGT is equivocal"
+          ]
+        },
+        {
+          "label": "If ALP low for age",
+          "items": [
+            "Repeat ALP (not an EDTA or oxalate tube; not hemolyzed)",
+            "Zinc, magnesium",
+            "Pyridoxal 5'-phosphate (PLP) — off pyridoxine for 1 week"
+          ]
+        }
+      ]
+    },
+    {
+      "t": "list",
+      "h": "Don't miss",
+      "items": [
+        "Cholestatic liver disease — raised GGT means liver",
+        "Rickets — nutritional or hypophosphatemic",
+        "Leukemia — bone pain or limp with a normal X-ray: CBC with smear",
+        "Bone tumor — night pain, limp, swelling",
+        "Hypophosphatasia — ALP LOW for age, early tooth loss",
+        "Zinc deficiency — lowers ALP and can hide cholestasis",
+        "Acute Wilson disease — low ALP, hemolysis, jaundice"
+      ]
+    },
+    {
+      "t": "text",
+      "h": "Why",
+      "text": "ALP comes from liver (canalicular membrane), bone, intestine, placenta and kidney. In children, bone dominates: rapid bone growth keeps ALP well above adult levels (ACG 2017; BSG 2018), highest in the pubertal spurt (lesson 01-01). Read against an adult range, almost every growing child looks high.\n\nGGT is in liver and bile ducts but not in bone. ACG and BSG both use it to decide whether a raised ALP comes from the liver; ALP isoenzymes do the same when GGT is unhelpful. BSG suggests — without data — that an isolated ALP rise without symptoms is most often vitamin D deficiency or normal growth.\n\nTransient hyperphosphatasemia (THI) is probably the commonest cause of a very high ALP in a well infant or toddler. In 813 published cases, ALP was ≥ 5 × ULN in about 70%; it was back to normal within 4 months in 80% and took longer in about 20%. It often follows an infection and affects 1.1–3.5% of children aged 2–24 months (Gualco 2013). Recognizing it avoids imaging and biopsies.\n\nA low ALP is also abnormal. Hypophosphatasia (ALPL variants) is diagnosed late: in a global registry, children's first sign came at a median 7.2 months and diagnosis at 20.4 months (Högler 2019). ALP is a zinc enzyme, so zinc deficiency lowers it (Khan 2024; lesson 01-01). In acute Wilson disease, a low ALP beside hemolysis and jaundice is a classic clue (Korman 2008)."
+    },
+    {
+      "t": "pearls",
+      "h": "Pearls & pitfalls",
+      "items": [
+        {
+          "k": "pitfall",
+          "text": "An adult ALP range flags almost every growing child. Use the lab's range for age and sex."
+        },
+        {
+          "k": "pearl",
+          "text": "GGT first: raised GGT = liver; normal GGT = bone or other (ACG 2017; BSG 2018)."
+        },
+        {
+          "k": "pearl",
+          "text": "Well toddler, ALP in the thousands, everything else normal: THI. Repeat in 3–4 months, nothing else (Gualco 2013)."
+        },
+        {
+          "k": "pitfall",
+          "text": "GGT is high in young infants and lowest at 1–6 years — below adult values. A GGT \"normal\" for an adult can be raised in a toddler (lesson 01-01)."
+        },
+        {
+          "k": "pitfall",
+          "text": "Low ALP for age is never \"normal\". Think hypophosphatasia, zinc deficiency and, in a sick jaundiced child, Wilson disease (Khan 2024)."
+        },
+        {
+          "k": "pearl",
+          "text": "Hypophosphatasia: early non-traumatic loss of baby teeth, root intact, is a major clue. Raised PLP (vitamin B6) supports it (Khan 2024)."
+        },
+        {
+          "k": "pitfall",
+          "text": "In a cholestatic child, a \"normal\" ALP may be zinc deficiency. Check zinc before you trust it."
+        },
+        {
+          "k": "pitfall",
+          "text": "ALP is not a reliable marker of bile duct injury in children — a normal-for-age ALP does not exclude it. Use GGT (ESPGHAN 2025)."
+        }
+      ]
+    },
+    {
+      "t": "guideline_compare",
+      "h": "Guidelines",
+      "rows": [
+        {
+          "topic": "Is a raised ALP from the liver?",
+          "positions": {
+            "kwo_2017_acg_lft": "Confirm with GGT or ALP fractionation",
+            "bsg_2018_lft": "GGT shows hepatic or non-hepatic origin; isoenzyme electrophoresis also separates them"
+          },
+          "verdict": "aligned"
+        },
+        {
+          "topic": "Children",
+          "positions": {
+            "kwo_2017_acg_lft": "Physiologically higher from rapid bone growth",
+            "bsg_2018_lft": "Higher in childhood; commonest isolated cause is vitamin D deficiency or growth"
+          },
+          "verdict": "aligned",
+          "note": "Neither gives pediatric limits — the app reads ALP against the lab's age- and sex-specific range."
+        },
+        {
+          "topic": "Transient hyperphosphatasemia",
+          "positions": {
+            "kwo_2017_acg_lft": "Not addressed",
+            "bsg_2018_lft": "Not addressed"
+          },
+          "verdict": "gap",
+          "note": "Adult guidelines. The app follows the systematic review (Gualco 2013): repeat in 3–4 months, no imaging."
+        },
+        {
+          "topic": "Low ALP",
+          "positions": {
+            "kwo_2017_acg_lft": "Not addressed (ALP is a zinc metalloenzyme)",
+            "bsg_2018_lft": "Not addressed"
+          },
+          "verdict": "gap",
+          "note": "The app follows the hypophosphatasia criteria (Khan 2024) and the author's lesson 01-01."
+        }
+      ]
+    },
+    {
+      "t": "case",
+      "h": "Test yourself",
+      "case_ids": [
+        "alp_isolated_c1",
+        "alp_isolated_c2",
+        "alp_isolated_c3",
+        "alp_isolated_c4"
+      ]
+    }
+  ]
+}

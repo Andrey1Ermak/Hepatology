@@ -49,7 +49,9 @@
   ],
   "related": [
     "ref_norms",
-    "ast_isolated"
+    "ast_isolated",
+    "alp_isolated",
+    "ggt_isolated"
   ],
   "status": "reviewed",
   "blocks": [
