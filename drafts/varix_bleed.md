@@ -23,3 +23,6 @@ Source of the paediatric numbers: APSPGHAN 2026 expert statement (lesson cites P
 ### 03-10 · Biliary atresia: HPS and portopulmonary hypertension (synced 2026-11-01)
 - **Team synthesis (not on a slide):** before secondary prophylaxis with a non-selective beta-blocker, ask about syncope/exertional chest pain and check the latest echo — in POPH, NSBB lower cardiac output and should be stopped in favor of band ligation; avoid TIPS (rescue or pre-emptive) in POPH (ILTS 2025 update, DuBrock HM et al. Liver Transpl 2026;32:296–314 — adult data; lesson slides 13, 18). Pitfall for Learn layer.
 - After a bleed, the HPS/POPH screen (03-09 entry), per the slide 17 "portal hypertension established" row: SpO2 (posture — see `hps_poph` 03-10 note) + contrast echo with RV pressure estimate + capillary or arterial gas.
+
+### 03-11 · Biliary atresia: nutrition and growth (synced 2026-11-02)
+- Pearl (lesson slides 11, 19, 21; Mouzaki 2019): a fine-bore, soft nasogastric feeding tube is **not** contraindicated by esophageal varices **for nutrition in a stable child** — not guidance for tube placement during or right after an acute bleed or band ligation (Expert opinion); a percutaneous gastrostomy **is** avoided with portal hypertension (stomal varices, bleeding, peritonitis with ascites). Learn layer only.

@@ -16,3 +16,8 @@ Card not built yet (block 1 trigger reached; backlog task). Inbox is filled by d
 - INR out of proportion to the bilirubin in a young infant → tyrosinemia (send succinylacetone, not tyrosine), galactosemia (stop lactose; GALT before transfusion) or GALD (lesson 02-14 slides 3, 11, 15).
 - Parenteral vitamin K belongs to the day-1 list of every cholestatic infant at first presentation (slide 19); the staged oral/IM regimen above is for maintenance. TODO(verify) at card build: IV vs IM route and dose at first presentation in a coagulopathic infant (IM hematoma risk) — Mouzaki 2019.
 - Neonatal liver failure: acyclovir before the HSV PCR returns (pearl 10) — belongs to palf (card 13); move there when its draft starts.
+
+### 03-11 · Biliary atresia: nutrition and growth (synced 2026-11-02)
+- Lesson case (slide 21): INR 1.6 before a liver biopsy in a cholestatic infant → IV vitamin K, recheck INR, then continue daily oral K — "distinguish deficiency from synthetic failure". Doses as in the 02-13 entry (oral 2–5 mg/day; IV 1–10 mg) — TODO(verify) against Mouzaki 2019 Table 3 before publishing; IV reactions reported.
+- Before procedures, especially during a cholangitis admission: recheck INR (slide 16). Whenever feeds stop: check glucose.
+- Japanese BA Registry (Pediatr Int 2025;67:e70075): **weekly** oral vitamin K to 3 months of age — no vitamin K deficiency bleeding; more bleeding with the three-dose schedule (slide 15 and chapter). Intracranial bleeding can be the first sign of biliary atresia. Same paper as the 02-13 entry — TODO(verify) authors and numbers still open.

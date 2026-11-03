@@ -45,3 +45,8 @@ Card not built yet (trigger: lesson 05-14). Inbox is filled by daily lesson sync
 ### 03-08 · Biliary atresia: prognosis after the Kasai (synced 2026-10-30)
 - Late Kasai is not futile (slides 10, 19): 19% native liver at 25 y after month 3 (France), 23% at 4 y after > 90 d (Canada) — same numbers as 03-04; "discuss case by case".
 - Kasai at 3–12 months of age: total bilirubin < 2 mg/dL by 3 months after the Kasai is the early signal (extrapolated — ChiLDReN/Shneider 2016 was not a late-Kasai cohort); TB > 6 mg/dL beyond 3 months → prompt transplant referral (AASLD 2014 or its 2026 successor — TODO(verify) current guideline and wording, see chol_0_3m Inbox).
+
+### 03-11 · Biliary atresia: nutrition and growth (synced 2026-11-02)
+- Same nutrition frame applies to any persistent infant cholestasis (Mouzaki 2019): energy ≥ 130% of age requirement (many centers 130–150%), protein 130–150% — no routine restriction (02-13 nuance: ≤ 2–3 days only for severe encephalopathy); fat 30–50% of energy; MCT about 30% of fat to start, more in tube feeds (50 vs 50–60% — lesson conflict, TODO(verify) as in the 02-13 entry), < 80% of fat (EFA deficiency). Detail and cases live in `chol_0_3m` 03-11 entry.
+- Tube trigger (Mouzaki 2019, lesson slide 11): energy goals unmet > 2 weeks, or 2–4 weeks of falling weight, arm or length → fine-bore NG (NJ if vomiting) with overnight pump feeds; varices are not a contraindication to a soft tube; **no percutaneous gastrostomy with portal hypertension**.
+- Pitfall: weight overstates nutrition (organs, ascites) — MUAC and triceps skinfold every 2–4 weeks.
