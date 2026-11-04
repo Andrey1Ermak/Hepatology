@@ -1,0 +1,196 @@
+{
+  "id": "unconj_bili_infant",
+  "children": [
+    {
+      "t": "section",
+      "h": "1 · Is it really unconjugated?",
+      "children": [
+        {
+          "t": "row",
+          "text": "Under 28 days: neonatal team — use the AAP 2022 phototherapy and escalation thresholds."
+        },
+        {
+          "t": "row",
+          "text": "Pallor, rapid heart rate or poor feeding: go to step 2 first."
+        },
+        {
+          "t": "row",
+          "text": "Jaundiced after 2 weeks of age, breastfed or not: fractionate — total and direct (or conjugated) bilirubin."
+        },
+        {
+          "t": "row",
+          "text": "Know your lab's method: direct-reacting and conjugated bilirubin are different tests with different cut-offs."
+        },
+        {
+          "t": "row",
+          "text": "Never divide. Read the direct or conjugated value itself — the 20% rule misses biliary atresia."
+        },
+        {
+          "t": "row",
+          "text": "Hemolyzed sample? It lowers the measured direct bilirubin. Redraw rather than reassure."
+        },
+        {
+          "t": "out",
+          "cond": "Pale stools, or dark urine with bilirubin on dipstick — whatever the numbers",
+          "pill": {
+            "kind": "step",
+            "text": "Same-day pediatric hepatology: biliary atresia until proved otherwise — look at the stool yourself"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Direct > 1.0 mg/dL, or conjugated > 0.3 mg/dL — at any total",
+          "pill": {
+            "kind": "step",
+            "text": "Cholestasis, not this card: call pediatric hepatology today, to be seen this week — biliary atresia until proved otherwise"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Direct or conjugated normal, stools pigmented",
+          "subtext": "Unconjugated — go to step 2"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "2 · Is the infant sick?",
+      "children": [
+        {
+          "t": "out",
+          "cond": "Poor feeding, lethargy, high-pitched cry, arching or abnormal tone",
+          "pill": {
+            "kind": "picu",
+            "text": "Emergency department now → NICU/PICU: possible bilirubin encephalopathy — emergency phototherapy, prepare for exchange; sepsis evaluation"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Any of: total at or near the AAP 2022 phototherapy threshold, whatever the cause (curves end at day 14 — use the day-14 value; expert opinion) · bilirubin:albumin molar ratio ≥ 1.0 · bilirubin rising day by day without hemolysis (Crigler–Najjar type I?)",
+          "pill": {
+            "kind": "floor",
+            "text": "Admit: intensive phototherapy now; bilirubin and albumin; call hepatology today"
+          }
+        },
+        {
+          "t": "row",
+          "text": "Bilirubin:albumin molar ratio 1.0 ≈ total bilirubin (mg/dL) ÷ albumin (g/dL) of 8.8."
+        },
+        {
+          "t": "out",
+          "cond": "Pallor, rapid heart rate, dark urine",
+          "pill": {
+            "kind": "floor",
+            "text": "Emergency department now: acute hemolysis — CBC, reticulocytes, DAT, bilirubin"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Well, feeding and growing",
+          "subtext": "Go to step 3"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "3 · Hemolysis?",
+      "children": [
+        {
+          "t": "row",
+          "text": "CBC with reticulocytes, blood film, direct antiglobulin (Coombs) test (DAT), blood group of mother and infant, glucose-6-phosphate dehydrogenase (G6PD) activity (First contact)."
+        },
+        {
+          "t": "arm",
+          "kind": "mod",
+          "tag": "Hemolysis",
+          "children": [
+            {
+              "t": "out",
+              "cond": "DAT positive",
+              "pill": {
+                "kind": "dc",
+                "text": "Immune hemolysis: hematology; follow hemoglobin — late anemia can need transfusion"
+              }
+            },
+            {
+              "t": "out",
+              "cond": "DAT negative",
+              "pill": {
+                "kind": "step",
+                "text": "Hematology: G6PD, spherocytes or other red-cell disorder on the film"
+              }
+            },
+            {
+              "t": "row",
+              "text": "G6PD deficiency plus a Gilbert-type UGT1A1 variant raises the risk of severe jaundice (Kaplan 1997)."
+            }
+          ]
+        },
+        {
+          "t": "out",
+          "cond": "No hemolysis",
+          "subtext": "Go to step 4"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "4 · Screen, thyroid, feeding",
+      "children": [
+        {
+          "t": "row",
+          "text": "Review the newborn screen: hypothyroidism, galactosemia, tyrosinemia (AAP 2022)."
+        },
+        {
+          "t": "out",
+          "cond": "High thyroid-stimulating hormone (TSH) or low free T4",
+          "pill": {
+            "kind": "step",
+            "text": "Endocrinology today: treat hypothyroidism; recheck bilirubin when euthyroid"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Poor weight gain or few stools",
+          "subtext": "Assess feeding and intake; recheck weight and bilirubin within 1 week (expert opinion)"
+        },
+        {
+          "t": "out",
+          "cond": "Normal",
+          "subtext": "Go to step 5"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "5 · Well, breastfed, unconjugated",
+      "children": [
+        {
+          "t": "out",
+          "cond": "Thriving breastfed infant, normal exam, pigmented stools; bilirubin well below the phototherapy threshold and not rising",
+          "pill": {
+            "kind": "dc",
+            "text": "Likely breast-milk jaundice: continue breastfeeding; recheck total and direct bilirubin in 2–4 weeks (expert opinion)"
+          }
+        },
+        {
+          "t": "row",
+          "text": "Breast-milk jaundice can last for weeks. It is an unconjugated diagnosis: it explains nothing once direct bilirubin is raised."
+        },
+        {
+          "t": "out",
+          "cond": "Formula-fed, or still jaundiced at 3 months (expert opinion), or bilirubin rising",
+          "pill": {
+            "kind": "dc",
+            "text": "Hepatology clinic: repeat fractionated bilirubin; consider UGT1A1 sequencing (Crigler–Najjar type II)"
+          }
+        },
+        {
+          "t": "row",
+          "text": "Liver test norms for age: see Age-Based Liver Test Norms.",
+          "link_card_id": "ref_norms"
+        }
+      ]
+    }
+  ]
+}

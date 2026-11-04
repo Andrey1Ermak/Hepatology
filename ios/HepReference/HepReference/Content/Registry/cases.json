@@ -110,5 +110,37 @@
     "question": "Is the GGT abnormal?",
     "answer": "No. GGT is physiologically high in the first months and falls over the first year. With a normal direct bilirubin and pigmented stools, there is no GGT workup; follow the neonatal jaundice rules.",
     "teaching": "Read GGT against the range for age: the newborn ceiling is higher than the adult one (lesson 01-01). In a cholestatic infant, by contrast, a GGT normal for age is itself a clue (low-GGT cholestasis)."
+  },
+  {
+    "id": "unconj_bili_c1",
+    "card": "unconj_bili",
+    "stem": "A 15-year-old boy notices yellow eyes after 3 days of gastroenteritis, when he was hardly eating. Total bilirubin 3.1 mg/dL, direct 0.3 mg/dL. ALT, ALP, GGT, CBC and reticulocyte count are normal.",
+    "question": "What is the most likely diagnosis, and what next?",
+    "answer": "Gilbert syndrome. Repeat fractionated bilirubin with CBC and reticulocytes when he is well and eating. If the pattern holds, reassure him and stop testing. No genetic test is needed.",
+    "teaching": "Unconjugated bilirubin with normal enzymes and no hemolysis is Gilbert until proved otherwise; fasting and illness raise it (lesson 01-02). Record the diagnosis: irinotecan and atazanavir are handled differently in UGT1A1*28 homozygotes."
+  },
+  {
+    "id": "unconj_bili_c2",
+    "card": "unconj_bili",
+    "stem": "A 5-week-old girl from a consanguineous family had phototherapy in the first week. She is jaundiced again. Total bilirubin 21 mg/dL, rising since last week, direct 0.4 mg/dL, hemoglobin and reticulocytes normal, DAT negative. She is feeding well.",
+    "question": "What do you suspect, and what matters most now?",
+    "answer": "Crigler–Najjar type I. Admit for intensive phototherapy now, measure albumin and follow the bilirubin:albumin ratio, avoid displacing drugs such as ceftriaxone and sulfonamides, and call hepatology today. UGT1A1 sequencing confirms; introduce the family to a transplant center early.",
+    "teaching": "In untreated type I, bilirubin rose 4.3 mg/dL a day; kernicterus occurred between days 14 and 45, and phototherapy started after day 13 raised the risk 3.5-fold (Strauss 2020)."
+  },
+  {
+    "id": "unconj_bili_c3",
+    "card": "unconj_bili",
+    "stem": "A breastfed 4-week-old boy is still yellow. He is gaining weight well, stools are yellow, urine is pale. Total bilirubin 9 mg/dL, direct 0.4 mg/dL. CBC, reticulocytes and the newborn screen are normal.",
+    "question": "Is this breast-milk jaundice, and what follow-up does he need?",
+    "answer": "Likely. Continue breastfeeding and recheck total and direct bilirubin in 2–4 weeks (expert opinion). Refer to hepatology if he is still jaundiced at 3 months (expert opinion), if bilirubin rises, or if direct bilirubin or stool color changes. Pale stools at any point: same-day hepatology.",
+    "teaching": "Breast-milk jaundice is an unconjugated diagnosis and can last for weeks. It explains nothing once direct bilirubin is above 1.0 mg/dL. AAP 2022 fractionates breastfed infants still jaundiced at 3–4 weeks; the app does so after 2 weeks."
+  },
+  {
+    "id": "unconj_bili_c4",
+    "card": "unconj_bili",
+    "stem": "A 4-week-old has total bilirubin 10 mg/dL and direct bilirubin 1.6 mg/dL. The order set flags it as normal because direct is only 16% of total.",
+    "question": "Is this unconjugated hyperbilirubinemia?",
+    "answer": "No. The direct value itself is above 1.0 mg/dL. This infant has cholestasis and needs urgent evaluation for biliary atresia — look at the stool and call pediatric hepatology today (same day if stools are pale).",
+    "teaching": "Never divide. In 79% of newborns later diagnosed with biliary atresia, direct bilirubin was ≤ 20% of the total (Harpavat 2011)."
   }
 ]

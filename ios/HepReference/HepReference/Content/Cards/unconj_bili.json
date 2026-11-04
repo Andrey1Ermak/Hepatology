@@ -1,0 +1,219 @@
+{
+  "id": "unconj_bili",
+  "title": "Unconjugated Hyperbilirubinemia",
+  "code": "AAP 2022 · NASPGHAN/ESPGHAN 2017 · BSG 2018",
+  "cat": "jaundice",
+  "acu": "rt",
+  "tags": [
+    "unconjugated bilirubin",
+    "indirect bilirubin",
+    "Gilbert syndrome",
+    "Crigler-Najjar",
+    "UGT1A1",
+    "hemolysis",
+    "G6PD deficiency",
+    "breast milk jaundice",
+    "prolonged jaundice",
+    "phenobarbital",
+    "kernicterus"
+  ],
+  "ages": [
+    "infant",
+    "child",
+    "teen"
+  ],
+  "entry": "lab",
+  "guidelines": [
+    "aap_2022_hyperbili",
+    "naspghan_espghan_2017_nc",
+    "bsg_2018_lft"
+  ],
+  "plan": [
+    {
+      "block": 1,
+      "days": [
+        2,
+        14
+      ]
+    }
+  ],
+  "related": [
+    "ref_norms",
+    "alt_elevated",
+    "ast_isolated"
+  ],
+  "status": "reviewed",
+  "blocks": [
+    {
+      "t": "note",
+      "k": "crit",
+      "h": "Red flags",
+      "text": "**Under 28 days:** neonatal team — use the AAP 2022 phototherapy and escalation thresholds.\n**Jaundice with poor feeding, lethargy, high-pitched cry, arching or abnormal tone:** possible bilirubin encephalopathy — emergency department now; also evaluate for sepsis.\n**Infant with total bilirubin at or near the AAP 2022 phototherapy threshold (any cause), bilirubin:albumin molar ratio ≥ 1.0, or bilirubin rising day by day without hemolysis (think Crigler–Najjar type I):** admit for intensive phototherapy now, check bilirubin and albumin, call hepatology today.\n**Pallor, dark (tea-colored) urine, rapid heart rate:** acute hemolysis — emergency department now. Hemolysis with a negative direct antiglobulin (Coombs) test, jaundice and low ALP in a sick child: think acute Wilson disease — INR now, call hepatology / transplant center now.\n**Known Crigler–Najjar with fever, vomiting or fasting:** same-day bilirubin and albumin; call hepatology.\n**Pale stools at any age:** same-day hepatology. **Direct bilirubin > 1.0 mg/dL (conjugated > 0.3 mg/dL) in an infant:** not unconjugated — call hepatology today; biliary atresia until proved otherwise."
+    },
+    {
+      "t": "age_switch",
+      "h": "Age",
+      "options": [
+        {
+          "age": "infant",
+          "label": "1–12 mo",
+          "path_id": "unconj_bili_infant"
+        },
+        {
+          "age": "child",
+          "label": "1–18 y",
+          "path_id": "unconj_bili_child"
+        }
+      ]
+    },
+    {
+      "t": "workup",
+      "h": "First contact",
+      "groups": [
+        {
+          "label": "Bilirubin — know the method",
+          "items": [
+            "Total and direct (or conjugated) bilirubin — non-hemolyzed sample",
+            "ALT, AST, GGT, ALP, albumin"
+          ]
+        },
+        {
+          "label": "Hemolysis",
+          "items": [
+            "CBC with reticulocyte count and blood film",
+            "LDH, haptoglobin",
+            "Direct antiglobulin test (DAT); infant: blood group of mother and infant",
+            "Glucose-6-phosphate dehydrogenase (G6PD) activity"
+          ]
+        },
+        {
+          "label": "Infant",
+          "items": [
+            "Newborn screen result (hypothyroidism, galactosemia, tyrosinemia)",
+            "Thyroid-stimulating hormone (TSH), free T4",
+            "Weight trajectory and stool color — look yourself"
+          ]
+        },
+        {
+          "label": "Only if above the Gilbert range or jaundiced since infancy",
+          "items": [
+            "UGT1A1 sequencing — via hepatology"
+          ]
+        }
+      ]
+    },
+    {
+      "t": "list",
+      "h": "Don't miss",
+      "items": [
+        "Conjugated hyperbilirubinemia hidden by a large total — read the direct value, never the ratio",
+        "Crigler–Najjar type I — bilirubin rises ~4 mg/dL a day from birth; kernicterus in the first weeks",
+        "Hemolysis — G6PD deficiency, hereditary spherocytosis, immune hemolysis",
+        "Pigment gallstones in chronic hemolysis — right upper quadrant pain or fever",
+        "Congenital hypothyroidism in a jaundiced infant",
+        "Sepsis in a lethargic, jaundiced infant",
+        "Acute Wilson disease — Coombs-negative hemolysis with jaundice and low ALP",
+        "Low albumin or displacing drugs (ceftriaxone, sulfonamides) — free bilirubin rises while the total looks unchanged"
+      ]
+    },
+    {
+      "t": "text",
+      "h": "Why",
+      "text": "Bilirubin is handled in five steps: production from heme, transport on albumin, uptake into the liver cell, conjugation by UGT1A1, and excretion into bile. Unconjugated bilirubin rises when production goes up (hemolysis, a resorbing hematoma), when transport fails, or when conjugation is weak. Only a raised conjugated fraction points to liver or bile-duct disease (lesson 01-02).\n\nUnconjugated bilirubin travels bound to albumin. The unbound (free) fraction crosses into the brain. Low albumin or a displacing drug raises free bilirubin while the total stays the same — so read the albumin beside the bilirubin.\n\nGilbert syndrome, Crigler–Najjar type II and type I are one continuum of UGT1A1 activity. In Gilbert, activity is about 30% of normal, usually from a homozygous A(TA)7TAA promoter variant (UGT1A1*28); the allele was found in 40% of healthy controls in Amsterdam (Bosma 1995). In East Asia, *6 (p.G71R) is common. Among 163 Japanese patients, bilirubin was 2.8 ± 1.1 mg/dL in typical Gilbert, 5.2 ± 2.2 in an intermediate group and 12.9 ± 5.1 in typical type II — values overlap, so there is no sharp border (Maruo 2016).\n\nIn type I, activity is absent. In 28 untreated newborns with type I, bilirubin rose 4.3 ± 1.1 mg/dL a day; 4 (14%) developed kernicterus between days 14 and 45. A total ≥ 30 mg/dL or a bilirubin:albumin molar ratio ≥ 1.0 predicted brain injury, and starting phototherapy after day 13 raised the risk 3.5-fold. About 9 hours of phototherapy a day kept children safe, but bilirubin crept up 0.46 mg/dL a year; 17 of 28 had a liver transplant (Strauss 2020). Liver transplant still cures. Gene therapy with an adeno-associated virus vector (AAV8-UGT1A1) kept 3 patients off phototherapy for at least 78 weeks in a phase 1–2 trial, but durability in a growing liver is unknown (D'Antiga 2023)."
+    },
+    {
+      "t": "pearls",
+      "h": "Pearls & pitfalls",
+      "items": [
+        {
+          "k": "pitfall",
+          "text": "Never use the \"direct > 20% of total\" rule. In 79% of newborns with biliary atresia, direct bilirubin was ≤ 20% of the total (Harpavat 2011, lesson 01-02)."
+        },
+        {
+          "k": "pitfall",
+          "text": "A hemolyzed sample lowers the measured direct bilirubin and can hide cholestasis. Redraw."
+        },
+        {
+          "k": "pearl",
+          "text": "Fasting, fever, exercise or illness can double a Gilbert bilirubin. Label nothing until a repeat when the child is well and fed."
+        },
+        {
+          "k": "pearl",
+          "text": "Gilbert needs no genetic test. Reassure, stop testing, and record it: UGT1A1*28/*28 calls for a lower irinotecan starting dose, and atazanavir causes visible jaundice, most in *28/*28."
+        },
+        {
+          "k": "pitfall",
+          "text": "The standard Gilbert test counts TA repeats. It misses *6 (p.G71R), the common variant in East Asian children — ask for sequencing."
+        },
+        {
+          "k": "pearl",
+          "text": "G6PD deficiency alone or a Gilbert-type promoter alone did not raise neonatal jaundice; together they did: 31.6% with one variant allele and 50% with two, versus 9.7% with the normal promoter (Kaplan 1997)."
+        },
+        {
+          "k": "pearl",
+          "text": "Phenobarbital lowers bilirubin by more than 30% in Crigler–Najjar type II, not in type I (lesson 01-02). Use it only under hepatology."
+        },
+        {
+          "k": "pitfall",
+          "text": "In Crigler–Najjar type I, phototherapy fails in adolescence, not infancy, as the body outgrows the light (Strauss 2020). Plan transplant early."
+        }
+      ]
+    },
+    {
+      "t": "guideline_compare",
+      "h": "Guidelines",
+      "rows": [
+        {
+          "topic": "When to fractionate a jaundiced infant",
+          "positions": {
+            "aap_2022_hyperbili": "Breastfed still jaundiced at 3–4 weeks; formula-fed at 2 weeks",
+            "naspghan_espghan_2017_nc": "Any infant jaundiced after 2 weeks of age",
+            "bsg_2018_lft": "Not addressed (adult guideline)"
+          },
+          "verdict": "differs",
+          "note": "The app fractionates any infant jaundiced after 2 weeks, breastfed or not: a missed biliary atresia costs more than one extra test."
+        },
+        {
+          "topic": "What counts as abnormal direct or conjugated bilirubin",
+          "positions": {
+            "aap_2022_hyperbili": "Direct > 1.0 mg/dL or conjugated > 0.3 mg/dL",
+            "naspghan_espghan_2017_nc": "Direct > 1.0 mg/dL at any total",
+            "bsg_2018_lft": "Not addressed (adult guideline)"
+          },
+          "verdict": "aligned",
+          "note": "Thresholds belong to the assay. A conjugated cut-off applied to a direct result over-refers; the reverse under-refers."
+        },
+        {
+          "topic": "Confirming Gilbert syndrome",
+          "positions": {
+            "aap_2022_hyperbili": "Not addressed",
+            "naspghan_espghan_2017_nc": "Not addressed",
+            "bsg_2018_lft": "Repeat fasting with CBC and split bilirubin; unconjugated should rise with no anemia; reassure"
+          },
+          "verdict": "gap",
+          "note": "No pediatric guideline. The app repeats when the child is well and fed, with CBC and reticulocytes, and does not test genes (lesson 01-02)."
+        },
+        {
+          "topic": "When to look for Crigler–Najjar",
+          "positions": {
+            "aap_2022_hyperbili": "Not addressed",
+            "naspghan_espghan_2017_nc": "Not addressed",
+            "bsg_2018_lft": "Adults: unconjugated > 40 µmol/L (≈ 2.3 mg/dL) — consider rarer causes such as Crigler–Najjar and genetic testing"
+          },
+          "verdict": "gap",
+          "note": "No pediatric guideline; the BSG adult cut-off sits below the typical Gilbert mean (2.8 mg/dL, Maruo 2016). The app refers above 5 mg/dL when well, or jaundice since infancy — expert opinion."
+        }
+      ]
+    },
+    {
+      "t": "case",
+      "h": "Test yourself",
+      "case_ids": [
+        "unconj_bili_c1",
+        "unconj_bili_c2",
+        "unconj_bili_c3",
+        "unconj_bili_c4"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "id": "unconj_bili_child",
+  "children": [
+    {
+      "t": "section",
+      "h": "1 · Is the child sick?",
+      "children": [
+        {
+          "t": "out",
+          "cond": "Pallor, dark (tea-colored) urine, breathlessness or rapid heart rate",
+          "pill": {
+            "kind": "floor",
+            "text": "Emergency department now: acute hemolysis — CBC, reticulocytes, DAT, bilirubin, urinalysis"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Hemolysis with a negative direct antiglobulin (Coombs) test and jaundice in a sick child",
+          "pill": {
+            "kind": "picu",
+            "text": "Think acute Wilson disease (low ALP is a clue): INR now; call hepatology / transplant center now"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Known Crigler–Najjar with fever, vomiting or fasting",
+          "pill": {
+            "kind": "step",
+            "text": "Same-day bilirubin and albumin; call hepatology today — risk of kernicterus"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Well",
+          "subtext": "Go to step 2"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "2 · Is it really unconjugated?",
+      "children": [
+        {
+          "t": "row",
+          "text": "Fractionate: total and direct (or conjugated) bilirubin. Know which method your lab runs."
+        },
+        {
+          "t": "row",
+          "text": "Hemolyzed sample? It lowers the measured direct bilirubin. Redraw rather than reassure."
+        },
+        {
+          "t": "row",
+          "text": "AST and LDH also rise with hemolysis; ALP is high in growing children — read it against age norms."
+        },
+        {
+          "t": "out",
+          "cond": "Direct or conjugated above the lab's range, or ALT or GGT raised",
+          "subtext": "Not isolated unconjugated — follow Elevated Transaminases",
+          "link_card_id": "alt_elevated"
+        },
+        {
+          "t": "out",
+          "cond": "Pale stools, or dark urine with bilirubin on dipstick",
+          "pill": {
+            "kind": "step",
+            "text": "Conjugated problem: same-day hepatology"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Direct normal, enzymes normal",
+          "subtext": "Unconjugated — go to step 3"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "3 · Hemolysis?",
+      "children": [
+        {
+          "t": "row",
+          "text": "CBC with reticulocytes, blood film, LDH, haptoglobin, direct antiglobulin test (DAT); glucose-6-phosphate dehydrogenase (G6PD) activity (First contact)."
+        },
+        {
+          "t": "out",
+          "cond": "Anemia, high reticulocytes or LDH, low haptoglobin",
+          "pill": {
+            "kind": "step",
+            "text": "Hematology: G6PD deficiency, hereditary spherocytosis, sickle cell disease, immune hemolysis"
+          }
+        },
+        {
+          "t": "row",
+          "text": "Chronic hemolysis with right upper quadrant pain or fever: think pigment gallstones — ultrasound."
+        },
+        {
+          "t": "out",
+          "cond": "No hemolysis",
+          "subtext": "Go to step 4"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "4 · Drugs, fasting, illness",
+      "children": [
+        {
+          "t": "row",
+          "text": "Atazanavir inhibits UGT1A1 and raises unconjugated bilirubin — most visibly in Gilbert (UGT1A1*28/*28)."
+        },
+        {
+          "t": "row",
+          "text": "Fasting, fever, hard exercise or recent illness can double a Gilbert bilirubin — so can surgery or ICU stay."
+        },
+        {
+          "t": "out",
+          "cond": "Unwell, fasting or recently ill",
+          "subtext": "Repeat when well and eating normally"
+        },
+        {
+          "t": "out",
+          "cond": "Well and fed",
+          "subtext": "Go to step 5"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "5 · Repeat when well",
+      "children": [
+        {
+          "t": "arm",
+          "kind": "mild",
+          "tag": "Gilbert pattern",
+          "children": [
+            {
+              "t": "row",
+              "text": "Unconjugated, mean 2.8 ± 1.1 mg/dL (Maruo 2016) — usually below 5 mg/dL (expert opinion); CBC, reticulocytes and liver enzymes normal."
+            },
+            {
+              "t": "out",
+              "cond": "Pattern confirmed on repeat",
+              "pill": {
+                "kind": "dc",
+                "text": "Gilbert syndrome: reassure, stop testing; no genetic test needed. Record it for future drugs (irinotecan, atazanavir)"
+              }
+            }
+          ]
+        },
+        {
+          "t": "arm",
+          "kind": "mod",
+          "tag": "Above the Gilbert range",
+          "children": [
+            {
+              "t": "row",
+              "text": "Persistently > 5 mg/dL when well, or jaundice since infancy (expert opinion)."
+            },
+            {
+              "t": "out",
+              "cond": "No hemolysis",
+              "pill": {
+                "kind": "step",
+                "text": "Hepatology: UGT1A1 sequencing (not the TA-repeat test alone); phenobarbital trial only under hepatology (Crigler–Najjar type II)"
+              }
+            }
+          ]
+        },
+        {
+          "t": "row",
+          "text": "Liver test norms for age: see Age-Based Liver Test Norms.",
+          "link_card_id": "ref_norms"
+        }
+      ]
+    }
+  ]
+}
