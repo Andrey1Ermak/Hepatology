@@ -21,3 +21,10 @@ Card not built yet (block 1 trigger reached; backlog task). Inbox is filled by d
 - Lesson case (slide 21): INR 1.6 before a liver biopsy in a cholestatic infant → IV vitamin K, recheck INR, then continue daily oral K — "distinguish deficiency from synthetic failure". Doses as in the 02-13 entry (oral 2–5 mg/day; IV 1–10 mg) — TODO(verify) against Mouzaki 2019 Table 3 before publishing; IV reactions reported.
 - Before procedures, especially during a cholangitis admission: recheck INR (slide 16). Whenever feeds stop: check glucose.
 - Japanese BA Registry (Pediatr Int 2025;67:e70075): **weekly** oral vitamin K to 3 months of age — no vitamin K deficiency bleeding; more bleeding with the three-dose schedule (slide 15 and chapter). Intracranial bleeding can be the first sign of biliary atresia. Same paper as the 02-13 entry — TODO(verify) authors and numbers still open.
+
+### 03-12 · Biliary atresia: transplantation (synced 2026-11-05)
+- **Synthetic failure is a late sign in biliary atresia (lesson slides 5, 19; Sundaram SS et al. Liver Transpl 2017;23:96–109):** an INR that does not correct with vitamin K, or encephalopathy, is a transplant-referral trigger, but INR and albumin often stay normal long after the child has stopped growing. Pitfall: "Waiting for synthetic failure" — refer at the first complication (AASLD/AST/NASPGHAN 2026 per lesson, doi 10.1097/HEP.0000000000001805; "Martinez 2026" authorship TODO(verify)), which lists "coagulopathy that cannot be corrected" among them.
+- A near-normal INR keeps PELD low in cholestatic disease, so the score understates risk (→ c_peld_meld).
+
+### 03-13 · Biliary atresia: the adult with BA (synced 2026-11-05)
+- **"Two clocks" (slide 3):** in biliary atresia the synthetic clock (INR, albumin) runs slowly and can stay normal for decades; portal hypertension and cholangitis drive outcome. Normal INR/albumin ≠ low risk (slide 8). Synthetic failure was nonetheless the commonest indication (32%) for adult transplant at King's (Cortes-Cerisuelo M et al. J Clin Med 2021;10:4969, n = 34).

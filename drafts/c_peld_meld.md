@@ -1,0 +1,18 @@
+# c_peld_meld — PELD-Cr / MELD 3.0 (calculator draft)
+
+Calculator not built yet (trigger: lesson 12-14). Inbox is filled by daily lesson sync (§3.4).
+
+## Inbox
+
+### 03-12 · Biliary atresia: transplantation (synced 2026-11-05)
+Formula and coefficients are **not** in the lesson — take them only from the current OPTN policy (§4.4), with reference examples in tests. Every policy statement below — TODO(verify) against OPTN policy text at build.
+- **PELD-Cr (slide 7, chapter Part 5; OPTN "Improving Liver Allocation: MELD, PELD, Status 1A, Status 1B", Board approval June 2022, implemented 2023):** adds creatinine; refits the coefficients; age and growth become continuous (growth = the lower of the height or weight z-score) instead of categories. Original PELD: bilirubin, INR, albumin, age, growth-failure penalty. Pediatric score < 12 years; MELD 3.0 ≥ 12 (TODO(verify) age split in policy).
+- **Status 1B change (slide 7):** the calculated-PELD > 25 entry requirement for chronic liver disease removed; complication criteria (mechanical ventilation, major bleeding, kidney replacement therapy — chapter wording) retained. → Calculator note, not part of the score.
+- **AASLD/AST/NASPGHAN 2026 (Hepatology 2026, doi 10.1097/HEP.0000000000001805; "Martinez 2026" authorship TODO(verify)):** PELD-Cr and MELD 3.0 for initial waitlist priority (also stated in a Guideline Central summary found 2026-11-05), but non-standard exception requests kept for children whose score does not reflect risk.
+- **Result-screen caveat (slides 7, 19, 21):** in BA and other cholestatic disease the score understates risk — INR and albumin stay near normal; weight is inflated by organomegaly and ascites; cholangitis, pruritus, portal hypertension and sarcopenia are not in the score. Text: "Low score ≠ low risk in cholestatic disease. Consider an exception request when cholangitis, pruritus or growth failure drive the risk." Case: PELD 12, recurrent cholangitis, weight z −2.5 → list and request an exception.
+- **Context numbers (Learn):** SPLIT — PELD ≥ 20 and infancy predicted waitlist death (Utterson EC et al. J Pediatr 2005;147:180–5); older US data: median PELD at transplant ~15, survival benefit only above ~17 (lesson via Sundaram 2017, Liver Transpl 2017;23:96–109 — TODO(verify) primary before publishing).
+- **Renal input (slide 15):** creatinine + cystatin C (CKiD U25 eGFR) is the pre-LT renal baseline; the calculator takes serum creatinine as required by PELD-Cr (TODO(verify) units, floors/caps and dialysis rule in OPTN policy).
+
+### 03-13 · Biliary atresia: the adult with BA (synced 2026-11-05)
+- **MELD understates biliary disease (slides 3, 6, 8–9):** adult scores read the slow synthetic clock; MELD and UKELD were not designed for BA and miss biliary complications (Jain V et al. J Hepatol 2019;71:71–7). King's adults: median wait 292 days, MELD 12 at listing → 15 at transplant (Cortes-Cerisuelo M et al. J Clin Med 2021;10:4969). SRTR: adults with BA ~10.9× waitlist mortality vs adolescents (Moazzam 2021, as summarized by Kelly 2023). → Same caveat text for MELD 3.0: "Trusting a MELD of 9" is a listed trap; case "adult, MELD 11, recurrent cholangitis → list, request exception".
+- **Pre-conception MELD (slide 13; Westbrook RH et al. Clin Gastroenterol Hepatol 2011;9:694–9; EASL 2023 pregnancy CPG):** favorable vs > 10 = decompensation likely. **Internal lesson conflict:** slide 13 "< 6", chapter "six or less" — TODO(verify) in Westbrook; also Westbrook used original MELD, not MELD 3.0 — do not apply the cut-off to a MELD 3.0 result without a source. Learn-layer note only, if at all.

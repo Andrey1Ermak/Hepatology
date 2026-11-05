@@ -27,5 +27,16 @@ Main home is `hps_poph` (32); here only the link from portal hypertension to the
 ### 03-11 · Biliary atresia: nutrition and growth (synced 2026-11-02)
 - Portal hypertension changes feeding plans (lesson slides 11, 19): if tube feeding is needed — fine-bore NG; no percutaneous gastrostomy (stomal varices, bleeding; peritonitis with ascites). Splenomegaly and ascites inflate weight — use MUAC and triceps skinfold to judge nutrition.
 
+### 03-12 · Biliary atresia: transplantation (synced 2026-11-05)
+- **Transplant triggers from portal hypertension (lesson slide 5 (sources listed: Sundaram 2017 / AASLD 2026) — TODO(verify) primary source):** recurrent bleeding despite banding, diuretic-refractory ascites, severe hypersplenism → transplant referral; AASLD/AST/NASPGHAN 2026 (per lesson; "Martinez 2026" TODO(verify)): refer at the first complication. Single controlled bleed — see `varix_bleed` 03-12 conflict note.
+- **Portal vein matters for the graft (slides 14–15; Anderson CD et al. Am J Transplant 2008;8:1197–204):** pre-LT portal vein thrombosis and a preduodenal portal vein predicted death after LT in SPLIT → in the PHT work-up of a BA child, Doppler reports portal vein size, flow direction and patency; CT/MR angiography before listing. Hypoplastic or reversed flow changes the surgical inflow plan.
+- **Cleared ≠ safe (slide 19):** cirrhosis and PHT progress silently in the jaundice-free child — consistent with the 03-09 surveillance frame.
+
+### 03-13 · Biliary atresia: the adult with BA (synced 2026-11-05)
+- **Adult portal anatomy (slides 3, 10; Cortes-Cerisuelo M et al. J Clin Med 2021;10:4969, 34 adults):** spontaneous portosystemic shunts 73%, enlarged splenic artery 58%, multiple splenic artery aneurysms 21% (some > 5 cm), thin portal vein on imaging in almost half. → Don't miss (teen/adult with long-standing PHT): splenic artery aneurysm — cross-sectional imaging before pregnancy or abdominal surgery (rupture, especially in pregnancy; expert review, Joshi 2017/Kelly 2023).
+- **Varices before 16 predict adult LT (slide 6; Jain V et al. J Hepatol 2019;71:71–7):** 8.6-fold (lesson: "relative risk, as reported"; 03-09 entry says "HR 8.6" — TODO(verify) the measure); PHT before 16 ~7-fold. Same paper as 03-09.
+- **Platelets and spleen over MELD (slides 13, 22):** platelets > 150 ×10⁹/L with liver stiffness < 20 kPa → high-risk varices unlikely; < 110 → varices likely (EASL pregnancy CPG 2023 — **adult** cirrhosis data; consistent with the 03-09 note that the Baveno rule is not validated in infants). **In infants 62% of those with high-risk varices had platelets ≥ 150 (Ackermann 2026, `chol_0_3m` 03-09 entry) — never use this rule to skip endoscopy in a child.** Case: woman, platelets 90, planning pregnancy → endoscopy, band, NSBB, aneurysm scan (→ `varix_bleed`).
+- **Pitfall (slide 20):** "missing a splenic artery aneurysm before pregnancy or surgery".
+
 ### Guideline watch (2026-11-02, weekly check)
 - **Baveno VIII** published: J Hepatol, online 19 Aug 2026, doi 10.1016/j.jhep.2026.07.030 — includes the first Baveno pediatric recommendations. Use it instead of Baveno VII for adult/pediatric compare rows at build; read the full text first. The APSPGHAN 2026 statement cited by lesson 03-09 was not found by web search — keep TODO(verify).

@@ -47,3 +47,18 @@ Core lesson for this card (block 3 plan link: day 7).
 
 ### 03-11 · Biliary atresia: nutrition and growth (synced 2026-11-02)
 - Every cholangitis admission is a nutritional event: feeds stop while needs rise → restart NG feeds as soon as the infant is stable, do not wait for oral intake (lesson slide 16; Mouzaki 2019). Check glucose when feeds stop (small glycogen reserve). Recheck INR/vitamin K before procedures. → admission plan / workup line.
+
+### 03-12 · Biliary atresia: transplantation (synced 2026-11-05)
+- **Frequency (slide 3, chapter Part 1):** 40–80% have at least one cholangitis episode before age 2, a quarter several (lesson slide 3; sources listed: Sundaram 2017 / Fawaz 2017 — TODO(verify) primary source); consistent with the 03-07 "about half or more" wording.
+- **Transplant trigger (slide 5):** recurrent or resistant cholangitis = referral trigger; AASLD/AST/NASPGHAN 2026 (per lesson; "Martinez 2026" TODO(verify)) — refer at the **first complication**, recurrent cholangitis named among them. "About 3-fold risk of early Kasai failure" with repeated episodes — TODO(verify), no primary named. → After-treatment outcome: "Recurrent or resistant cholangitis → transplant-center referral" (supports 03-07/03-08 lines; definitions of "recurrent" still differ — see 03-08 note).
+- **PELD blind spot (slides 7, 19, 21):** cholangitis is not in PELD → exception request when cholangitis drives the risk (case: PELD 12, recurrent cholangitis, weight z −2.5). → `c_peld_meld`.
+- **Asplenia (slide 13):** BASM with asplenia/functional hyposplenism → encapsulated-bacteria risk; vaccines and prophylaxis matter — consider when choosing empiric cover in a febrile child with BASM (team synthesis; TODO(verify) source before publishing as advice).
+
+### 03-13 · Biliary atresia: the adult with BA (synced 2026-11-05)
+Card ages are infant/child (§4.2); these lines extend to teens/adults — decide at build whether to add `teen` or keep them in the Learn layer (DECISIONS).
+- **ERCP usually cannot reach the ducts after a Kasai (Roux loop) (slides 8, 20, 22; Joshi D et al. J Hepatol 2017;66:631–44; Kelly 2023):** the ducts drain into a Roux loop with no papilla — fever + jaundice in a teen/adult after a Kasai → blood cultures, antibiotics, US + MRCP, percutaneous drainage of a bile lake or obstructed segment by interventional radiology if needed. Pitfall: "Ordering ERCP for cholangitis after a Kasai." Case: adult with fever after Kasai, ERCP requested → cancel; antibiotics, MRCP, IR.
+- **Recurrent cholangitis in adults (slide 8):** each episode accelerates decline → culture, prolonged therapy, consider prophylaxis (expert review; no adult BA guideline); bile lakes and hepatolithiasis → MRCP, IR drainage.
+- **Prognosis (slide 6; Jain V et al. J Hepatol 2019;71:71–7):** cholangitis in adolescence ~5-fold risk of adult LT → note episodes in the transfer letter.
+- **Don't miss (slides 17, 20):** cholangitis that will not settle, or a new stricture, in a young adult → exclude cholangiocarcinoma (MRI/MRCP, CA 19-9) → `liver_mass`.
+- **Pregnancy (slides 11–12):** estrogen reduces bile flow and Roux-loop stasis invites cholangitis — 25% of 16 women after Kasai had ascending cholangitis (timing relative to pregnancy/delivery not stated) (Shimaoka S et al. J Pediatr Surg 2001;36:349–51); agree a cholangitis plan before conception.
+- **Self-management (slide 7):** the adolescent must know that fever with jaundice = possible cholangitis → urgent care (extends the "pale stools or fever: same day" family line).
