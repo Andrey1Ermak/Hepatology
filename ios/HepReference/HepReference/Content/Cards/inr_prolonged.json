@@ -1,0 +1,241 @@
+{
+  "id": "inr_prolonged",
+  "title": "Prolonged INR",
+  "code": "NASPGHAN 2022 · NASPGHAN/ESPGHAN 2019 · AASLD 2020",
+  "cat": "labs",
+  "acu": "urg",
+  "tags": [
+    "INR",
+    "prolonged INR",
+    "PT",
+    "prothrombin time",
+    "coagulopathy",
+    "vitamin K",
+    "vitamin K deficiency bleeding",
+    "VKDB",
+    "factor V",
+    "factor VII",
+    "factor VIII",
+    "DIC",
+    "rebalanced hemostasis",
+    "PIVKA-II"
+  ],
+  "ages": [
+    "neo",
+    "infant",
+    "child",
+    "teen"
+  ],
+  "entry": "lab",
+  "guidelines": [
+    "naspghan_2022_palf",
+    "mouzaki_2019_nutrition",
+    "aasld_2020_vascular",
+    "easl_2022_hemostasis",
+    "aga_2019_coag",
+    "espghan_2015_biopsy",
+    "espghan_2016_vkdb",
+    "aap_2022_vitk"
+  ],
+  "plan": [
+    {
+      "block": 1,
+      "days": [
+        3,
+        14
+      ]
+    },
+    {
+      "block": 2,
+      "days": [
+        13
+      ]
+    }
+  ],
+  "related": [
+    "alt_elevated",
+    "ref_norms"
+  ],
+  "status": "reviewed",
+  "blocks": [
+    {
+      "t": "note",
+      "k": "crit",
+      "h": "Red flags",
+      "text": "**Active or intracranial bleeding — in an infant also vomiting, bulging fontanelle, seizures or lethargy:** think vitamin K deficiency bleeding — emergency department / PICU now. IV vitamin K at once; in an infant, urgent head imaging; PCC or plasma for life-threatening bleeding.\n**Ill newborn with a prolonged INR:** think HSV and sepsis — start IV acyclovir and antibiotics now, PICU, call hepatology.\n**Encephalopathy, hypoglycemia, or jaundice with ALT in the thousands:** treat as acute liver failure — give parenteral vitamin K and call hepatology / transplant center now. Do not wait for the recheck.\n**INR not corrected by vitamin K — ≥ 1.5 with encephalopathy or ≥ 2.0 without:** PALF coagulopathy criterion — call hepatology / transplant center now.\n**Sepsis or shock with low platelets or falling fibrinogen:** think DIC — PICU.\n**Young infant, INR out of proportion to the bilirubin:** think tyrosinemia, galactosemia, GALD — admit, hepatology today.\n**Prolonged INR with jaundice or pale stools in an infant:** cholestasis until proven otherwise — parenteral vitamin K and fractionated bilirubin today; call hepatology.\n**INR > 1.5 in a well child:** give parenteral vitamin K and call hepatology today."
+    },
+    {
+      "t": "pathway",
+      "h": "Algorithm",
+      "path_id": "inr_prolonged"
+    },
+    {
+      "t": "workup",
+      "h": "First contact",
+      "groups": [
+        {
+          "label": "Blood — before vitamin K",
+          "items": [
+            "PT/INR — repeat by clean venipuncture",
+            "aPTT, fibrinogen",
+            "CBC with platelets",
+            "Factors V, VII, VIII",
+            "PIVKA-II where available"
+          ]
+        },
+        {
+          "label": "Liver and context",
+          "items": [
+            "Total and direct (conjugated) bilirubin",
+            "ALT, AST, GGT, albumin",
+            "Glucose",
+            "Ammonia if drowsy or confused",
+            "Blood culture if febrile or unwell"
+          ]
+        },
+        {
+          "label": "Treat and recheck",
+          "items": [
+            "Vitamin K IV or subcutaneous, 1–10 mg — not oral; confirm the infant dose with pharmacy",
+            "Call hepatology today if INR > 1.5 or an infant",
+            "INR the next day"
+          ]
+        }
+      ]
+    },
+    {
+      "t": "list",
+      "h": "Don't miss",
+      "items": [
+        "Late vitamin K deficiency bleeding — often the first sign of biliary atresia or α1-antitrypsin deficiency in a breastfed infant",
+        "Acute liver failure — INR not corrected by vitamin K",
+        "Tyrosinemia type 1, galactosemia, GALD — INR out of proportion to the bilirubin in a young infant",
+        "DIC from sepsis or shock — factors V and VIII both low",
+        "Cystic fibrosis or malabsorption on antibiotics — deficiency, not failure",
+        "Thrombosis despite a high INR — portal vein thrombosis in chronic liver disease"
+      ]
+    },
+    {
+      "t": "text",
+      "h": "Why",
+      "text": "The liver makes almost every clotting factor, and most of the brakes: antithrombin, protein C and protein S. Factor VIII and von Willebrand factor come from endothelium. Vitamin K lets the liver finish factors II, VII, IX and X; it is absorbed with bile, so cholestasis can starve the liver of it while every hepatocyte works (Tripodi 2011).\n\nFactor VII has the shortest half-life, about 5 hours. It sets the prothrombin time, so the INR moves within hours of a change in synthesis or vitamin K. Albumin, with a half-life of about 3 weeks, is the slow clock.\n\nThree causes give a long INR. Vitamin K deficiency: factor VII low, factor V normal, and the INR corrects within hours to a day after parenteral vitamin K. Liver failure: factor V low (it needs no vitamin K, so it reads the hepatocyte), factor VIII normal or high, no real change with vitamin K. DIC: factors V and VIII both low, fibrinogen falling (Pereira 1992; Tripodi 2011).\n\nThe INR was built to monitor warfarin. It ignores the falling anticoagulants, platelets and fibrinolysis, so it measures prognosis — PELD, MELD, the PALF definition — not bleeding risk. The same blood can read 1.4 in one lab and 1.9 in another. Liver disease lowers both sides of the balance: patients still clot, and portal vein thrombosis occurs at an INR of 2.\n\nIn infants, birth prophylaxis does not protect the cholestatic baby. In the Dutch registry, 25 of 30 breastfed infants with biliary atresia on daily low-dose oral vitamin K had bled by diagnosis; formula-fed infants rarely did (van Hasselt 2008). A late bleed, at 3–8 weeks and often intracranial, is a cholestasis screening failure (Shearer 2009)."
+    },
+    {
+      "t": "pearls",
+      "h": "Pearls & pitfalls",
+      "items": [
+        {
+          "k": "pearl",
+          "text": "Give parenteral vitamin K before you call any INR synthetic failure. Recheck the next day."
+        },
+        {
+          "k": "pitfall",
+          "text": "For a prolonged INR, give vitamin K IV or subcutaneously, not by mouth (lesson 01-03)."
+        },
+        {
+          "k": "pearl",
+          "text": "Factor V is the hepatocyte's readout: low factor V means failure; normal factor V with low factor VII means vitamin K."
+        },
+        {
+          "k": "pearl",
+          "text": "PIVKA-II stays high for days after vitamin K — it can still prove deficiency once the INR has corrected."
+        },
+        {
+          "k": "pitfall",
+          "text": "A normal INR does not mean adequate vitamin K for bone (Mouzaki 2019)."
+        },
+        {
+          "k": "pitfall",
+          "text": "Plasma before a procedure treats the INR, not the patient: it rarely normalizes the number and adds volume (Youssef 2003; Rassi 2020). The INR did not predict procedural bleeding (Intagliata 2023)."
+        },
+        {
+          "k": "pearl",
+          "text": "In cholestasis, recheck the INR before any procedure — especially during a cholangitis admission."
+        },
+        {
+          "k": "pitfall",
+          "text": "A high INR is not protection from clotting and not, on its own, a reason to withhold thromboprophylaxis."
+        },
+        {
+          "k": "pearl",
+          "text": "Newborns start with about half the adult vitamin K-dependent factors. Read a neonatal INR against neonatal ranges (Andrew 1987)."
+        },
+        {
+          "k": "pitfall",
+          "text": "In biliary atresia the INR often stays normal long after the child stops growing. A normal INR is not a reason to delay transplant referral."
+        },
+        {
+          "k": "pitfall",
+          "text": "A near-normal INR keeps PELD low in cholestatic disease, so the score understates risk."
+        }
+      ]
+    },
+    {
+      "t": "guideline_compare",
+      "h": "Guidelines",
+      "rows": [
+        {
+          "topic": "Plasma to correct the INR before procedures",
+          "positions": {
+            "aasld_2020_vascular": "INR is not a bleeding-risk tool; do not correct routinely",
+            "easl_2022_hemostasis": "Plasma to correct the INR not recommended",
+            "aga_2019_coag": "INR thresholds not evidence-based",
+            "naspghan_2022_palf": "Plasma or platelets only for active bleeding or an invasive procedure, not to improve the number",
+            "espghan_2015_biopsy": "Liver biopsy: INR > 1.5 — correct, or use a transjugular or laparoscopic route"
+          },
+          "verdict": "material",
+          "note": "Adult documents agree; the PALF paper still allows plasma before an invasive procedure, and the pediatric biopsy paper asks for correction above 1.5. The app: no plasma for a number; agree the route with the proceduralist."
+        },
+        {
+          "topic": "Platelets",
+          "positions": {
+            "aasld_2020_vascular": "No routine correction",
+            "easl_2022_hemostasis": "Case by case if < 50 × 10⁹/L and a high-risk procedure",
+            "aga_2019_coag": "> 50 × 10⁹/L for active bleeding or a high-risk procedure"
+          },
+          "verdict": "differs",
+          "note": "Limited pediatric data."
+        },
+        {
+          "topic": "Fibrinogen",
+          "positions": {
+            "aasld_2020_vascular": "< 100 mg/dL linked to bleeding; causality unproven",
+            "easl_2022_hemostasis": "Correction not recommended to reduce procedural bleeding",
+            "aga_2019_coag": "Keep > 120 mg/dL during active bleeding"
+          },
+          "verdict": "differs",
+          "note": "Different settings: AGA sets a target during active bleeding, EASL addresses procedural prophylaxis. The app replaces fibrinogen for active bleeding, not for a number."
+        },
+        {
+          "topic": "Vitamin K for a prolonged INR",
+          "positions": {
+            "mouzaki_2019_nutrition": "2–5 mg/day; 1–10 mg IV may be required; IM possible; IV anaphylaxis reported",
+            "naspghan_2022_palf": "The PALF INR is the INR after vitamin K",
+            "aasld_2020_vascular": "Outside scope"
+          },
+          "verdict": "aligned",
+          "note": "Only the pediatric documents speak. The app follows lesson 01-03: IV or subcutaneous, not oral."
+        },
+        {
+          "topic": "Vitamin K at birth",
+          "positions": {
+            "espghan_2016_vkdb": "1 mg IM preferred; oral regimens allowed for healthy infants, unsuitable in cholestasis",
+            "aap_2022_vitk": "Single IM dose; oral methods less effective"
+          },
+          "verdict": "aligned",
+          "note": "Both prefer IM. Either way, a cholestatic infant needs parenteral vitamin K at diagnosis — birth prophylaxis does not protect (van Hasselt 2008)."
+        }
+      ]
+    },
+    {
+      "t": "case",
+      "h": "Test yourself",
+      "case_ids": [
+        "inr_prolonged_c1",
+        "inr_prolonged_c2",
+        "inr_prolonged_c3",
+        "inr_prolonged_c4"
+      ]
+    }
+  ]
+}

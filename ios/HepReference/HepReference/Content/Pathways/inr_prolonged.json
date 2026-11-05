@@ -1,0 +1,269 @@
+{
+  "id": "inr_prolonged",
+  "children": [
+    {
+      "t": "section",
+      "h": "1 · Is the INR real?",
+      "children": [
+        {
+          "t": "row",
+          "text": "Newborn: judge the INR against neonatal ranges from the same lab — vitamin K-dependent factors start near half of adult levels (Andrew 1987)."
+        },
+        {
+          "t": "row",
+          "text": "Difficult draw, underfilled citrate tube or sample from a heparinized line: redraw by clean venipuncture."
+        },
+        {
+          "t": "row",
+          "text": "INR differs between labs on the same blood. Record the lab with the number and trend within one lab."
+        },
+        {
+          "t": "row",
+          "text": "On warfarin or another vitamin K antagonist: not this card — follow the anticoagulation plan."
+        },
+        {
+          "t": "out",
+          "cond": "Repeat INR normal",
+          "subtext": "No further workup; repeat if it was found for a reason"
+        },
+        {
+          "t": "out",
+          "cond": "Prolonged on repeat",
+          "subtext": "Go to step 2"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "2 · Is the child sick?",
+      "children": [
+        {
+          "t": "out",
+          "cond": "Active or intracranial bleeding — in an infant also vomiting, bulging fontanelle, seizures, lethargy",
+          "pill": {
+            "kind": "picu",
+            "text": "Emergency department / PICU now: IV vitamin K; urgent head imaging in an infant; PCC or plasma for life-threatening bleeding"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Ill newborn",
+          "pill": {
+            "kind": "picu",
+            "text": "Think HSV and sepsis: start IV acyclovir and antibiotics now; PICU; call hepatology"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Encephalopathy, hypoglycemia, jaundice with ALT in the thousands",
+          "pill": {
+            "kind": "picu",
+            "text": "Treat as acute liver failure: give parenteral vitamin K and call hepatology / transplant center now — do not wait for the recheck"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Sepsis or shock, low platelets or falling fibrinogen",
+          "pill": {
+            "kind": "picu",
+            "text": "Think DIC: PICU; treat the cause"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Young infant: INR out of proportion to the bilirubin",
+          "pill": {
+            "kind": "floor",
+            "text": "Admit: think tyrosinemia (succinylacetone), galactosemia (stop lactose; send GALT before any red-cell transfusion), GALD; parenteral vitamin K; hepatology today"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Well",
+          "subtext": "Go to step 3"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "3 · Vitamin K trial",
+      "children": [
+        {
+          "t": "row",
+          "text": "Before the dose, send factors V, VII, VIII and fibrinogen (and PIVKA-II where available) — factor VII changes within hours of vitamin K."
+        },
+        {
+          "t": "row",
+          "text": "Give vitamin K IV or subcutaneously, not by mouth: 1–10 mg (Mouzaki 2019). Limited infant dosing data — confirm the dose with pharmacy. IV reactions, including anaphylaxis, are reported."
+        },
+        {
+          "t": "row",
+          "text": "INR > 1.5, or any infant: call hepatology today while you give vitamin K."
+        },
+        {
+          "t": "row",
+          "text": "Recheck the INR the next day.",
+          "link_calc_id": "c_vitk_inr",
+          "link_label": "Read the response"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "4 · Read the response",
+      "children": [
+        {
+          "t": "arm",
+          "kind": "mild",
+          "tag": "INR normal for age",
+          "children": [
+            {
+              "t": "row",
+              "text": "Vitamin K deficiency, not synthetic failure."
+            },
+            {
+              "t": "out",
+              "cond": "Infant",
+              "pill": {
+                "kind": "step",
+                "text": "Fractionated bilirubin and stool color today; call hepatology — vitamin K deficiency can be the first sign of biliary atresia"
+              }
+            },
+            {
+              "t": "out",
+              "cond": "Cystic fibrosis, malabsorption, antibiotics, poor intake",
+              "pill": {
+                "kind": "dc",
+                "text": "Treat the cause; recheck INR"
+              }
+            },
+            {
+              "t": "out",
+              "cond": "Known cholestasis",
+              "pill": {
+                "kind": "dc",
+                "text": "Daily vitamin K 2–5 mg (Mouzaki 2019); INR every visit and before procedures"
+              }
+            },
+            {
+              "t": "out",
+              "cond": "No cause found",
+              "pill": {
+                "kind": "dc",
+                "text": "Direct bilirubin, GGT; look for cholestasis or fat malabsorption; hepatology clinic"
+              }
+            }
+          ]
+        },
+        {
+          "t": "arm",
+          "kind": "sev",
+          "tag": "Still prolonged",
+          "children": [
+            {
+              "t": "out",
+              "cond": "INR ≥ 2.0, or ≥ 1.5 with encephalopathy",
+              "pill": {
+                "kind": "picu",
+                "text": "Meets the PALF coagulopathy criterion: call hepatology / transplant center now"
+              }
+            },
+            {
+              "t": "out",
+              "cond": "Factors V and VIII both low, fibrinogen falling",
+              "pill": {
+                "kind": "picu",
+                "text": "Consumption (DIC): PICU; treat the cause"
+              }
+            },
+            {
+              "t": "out",
+              "cond": "Factor V low, factor VIII normal or high",
+              "pill": {
+                "kind": "step",
+                "text": "Synthetic failure: hepatology today; watch glucose and mental status"
+              }
+            },
+            {
+              "t": "out",
+              "cond": "Factor V normal, INR < 2.0 without encephalopathy",
+              "pill": {
+                "kind": "step",
+                "text": "Mostly deficiency: repeat parenteral vitamin K and recheck INR (expert opinion); hepatology today"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "5 · Read the factors",
+      "children": [
+        {
+          "t": "table",
+          "head": [
+            "",
+            "Vitamin K deficiency",
+            "Liver failure",
+            "DIC"
+          ],
+          "rows": [
+            [
+              "Factor VII",
+              "Low — falls first",
+              "Low",
+              "Low"
+            ],
+            [
+              "Factor V",
+              "Normal",
+              "Low",
+              "Low"
+            ],
+            [
+              "Factor VIII",
+              "Normal",
+              "Normal or high",
+              "Low"
+            ],
+            [
+              "Fibrinogen",
+              "Normal",
+              "Normal until late",
+              "Low, falling"
+            ],
+            [
+              "After vitamin K",
+              "INR corrects within a day",
+              "No real change",
+              "No change"
+            ]
+          ]
+        },
+        {
+          "t": "row",
+          "text": "Order factors V, VII and VIII together: the pattern, not one level, gives the answer (Tripodi 2011; Pereira 1992)."
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "6 · Before a procedure",
+      "children": [
+        {
+          "t": "row",
+          "text": "The INR does not predict procedural bleeding (Intagliata 2023). Do not give plasma to correct the number."
+        },
+        {
+          "t": "row",
+          "text": "Check platelets and fibrinogen; treat infection and kidney injury first."
+        },
+        {
+          "t": "row",
+          "text": "Liver biopsy: ESPGHAN still asks for correction or a transjugular or laparoscopic route above INR 1.5 — agree the plan with the proceduralist."
+        }
+      ]
+    }
+  ]
+}

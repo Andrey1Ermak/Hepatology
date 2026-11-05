@@ -1,0 +1,111 @@
+{
+  "id": "c_vitk_inr",
+  "rows": [
+    {
+      "tag": "INR the day after parenteral vitamin K",
+      "exclusive": true,
+      "items": [
+        {
+          "key": "corrected",
+          "label": "Normal for age and lab"
+        },
+        {
+          "key": "inr_lt15",
+          "label": "Still prolonged, < 1.5"
+        },
+        {
+          "key": "inr_15_19",
+          "label": "1.5–1.9"
+        },
+        {
+          "key": "inr_ge2",
+          "label": "≥ 2.0"
+        }
+      ]
+    },
+    {
+      "tag": "Also present",
+      "items": [
+        {
+          "key": "enc",
+          "label": "Encephalopathy or hypoglycemia"
+        },
+        {
+          "key": "bleeding",
+          "label": "Active or intracranial bleeding"
+        },
+        {
+          "key": "dic",
+          "label": "Sepsis or shock, low platelets or fibrinogen"
+        },
+        {
+          "key": "infant",
+          "label": "Infant under 6 months"
+        }
+      ]
+    }
+  ],
+  "rule": {
+    "kind": "checklist_any",
+    "tiers": [
+      {
+        "band": "hi",
+        "keys": [
+          "inr_ge2"
+        ],
+        "text": "INR ≥ 2.0 not corrected by vitamin K meets the PALF coagulopathy criterion (with acute liver injury; in known chronic liver disease it is decompensation). Call hepatology and the transplant center now; PICU. If bleeding: IV vitamin K; PCC or plasma for life-threatening bleeding; head imaging in an infant."
+      },
+      {
+        "band": "hi",
+        "keys": [
+          "enc"
+        ],
+        "text": "Encephalopathy or hypoglycemia with a prolonged INR: treat as acute liver failure. With encephalopathy, an INR ≥ 1.5 after vitamin K meets the PALF criterion. Call hepatology and the transplant center now; PICU. If bleeding: IV vitamin K; PCC or plasma for life-threatening bleeding; head imaging in an infant."
+      },
+      {
+        "band": "hi",
+        "keys": [
+          "bleeding"
+        ],
+        "text": "Active bleeding: emergency department / PICU now. IV vitamin K; head imaging in an infant; check platelets and fibrinogen. PCC or plasma for life-threatening bleeding, not for the number."
+      },
+      {
+        "band": "hi",
+        "keys": [
+          "dic"
+        ],
+        "text": "Think consumption (DIC): factors V and VIII both low, fibrinogen falling. Treat sepsis or shock; PICU."
+      },
+      {
+        "band": "mid",
+        "keys": [
+          "inr_15_19"
+        ],
+        "text": "Not corrected by vitamin K. Send factors V, VII, VIII and fibrinogen; check mental status and glucose; call hepatology today. If encephalopathy appears, this is PALF — call the transplant center."
+      },
+      {
+        "band": "mid",
+        "keys": [
+          "inr_lt15"
+        ],
+        "text": "Still prolonged: deficiency may sit on top of liver disease. Factor V decides — low factor V means the hepatocytes are failing. Call hepatology today. In an infant: fractionated bilirubin and stool color today."
+      },
+      {
+        "band": "mid",
+        "keys": [
+          "infant"
+        ],
+        "text": "Infant: vitamin K deficiency can be the first sign of biliary atresia. Fractionated bilirubin and stool color today; call hepatology."
+      },
+      {
+        "band": "lo",
+        "keys": [
+          "corrected"
+        ],
+        "text": "Vitamin K deficiency, not synthetic failure. Find the cause: cholestasis (direct bilirubin, GGT, stool color), malabsorption, antibiotics, poor intake. In cholestasis continue daily vitamin K and check INR every visit."
+      }
+    ],
+    "noneBand": "mid",
+    "noneText": "Give parenteral vitamin K (IV or subcutaneous, not oral), recheck the INR the next day, then pick the result."
+  }
+}

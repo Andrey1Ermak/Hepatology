@@ -19,7 +19,8 @@
           "pill": {
             "kind": "step",
             "text": "IV vitamin K, recheck INR; same-day hepatology / NICU"
-          }
+          },
+          "link_card_id": "inr_prolonged"
         },
         {
           "t": "row",

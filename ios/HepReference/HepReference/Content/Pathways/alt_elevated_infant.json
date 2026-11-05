@@ -46,7 +46,8 @@
         {
           "t": "out",
           "cond": "INR > 1.5 without encephalopathy",
-          "subtext": "Give IV vitamin K and recheck INR; same-day hepatology"
+          "subtext": "Give IV vitamin K and recheck INR; same-day hepatology",
+          "link_card_id": "inr_prolonged"
         },
         {
           "t": "out",

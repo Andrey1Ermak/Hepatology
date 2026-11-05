@@ -142,5 +142,37 @@
     "question": "Is this unconjugated hyperbilirubinemia?",
     "answer": "No. The direct value itself is above 1.0 mg/dL. This infant has cholestasis and needs urgent evaluation for biliary atresia — look at the stool and call pediatric hepatology today (same day if stools are pale).",
     "teaching": "Never divide. In 79% of newborns later diagnosed with biliary atresia, direct bilirubin was ≤ 20% of the total (Harpavat 2011)."
+  },
+  {
+    "id": "inr_prolonged_c1",
+    "card": "inr_prolonged",
+    "stem": "A 7-week-old breastfed girl has vomiting and a bulging fontanelle. Head imaging shows an intracranial bleed. INR is over 5. She is mildly jaundiced and her stools have been pale for weeks. She had oral vitamin K at birth.",
+    "question": "What is this, and what do you do first?",
+    "answer": "Late vitamin K deficiency bleeding from cholestasis, with biliary atresia first on the list. Give IV vitamin K at once and consider PCC for the life-threatening bleed; PICU and neurosurgery. Then fractionated bilirubin and urgent pediatric hepatology.",
+    "teaching": "The bleed is the first sign of the liver disease. Birth prophylaxis does not protect a cholestatic infant (van Hasselt 2008). Lesson 01-03, case 1."
+  },
+  {
+    "id": "inr_prolonged_c2",
+    "card": "inr_prolonged",
+    "stem": "A 4-year-old boy with cystic fibrosis is admitted with a chest infection after several antibiotic courses. INR 2.1, ALT mildly raised, albumin normal. He looks well.",
+    "question": "Is this liver failure?",
+    "answer": "Probably not. Send factors V, VII and VIII, then give parenteral vitamin K. Factor VII low, factor V normal and an INR that corrects the next day mean deficiency from malabsorption and antibiotics.",
+    "teaching": "Vitamin K first, factor V second. Lesson 01-03, case 2."
+  },
+  {
+    "id": "inr_prolonged_c3",
+    "card": "inr_prolonged",
+    "stem": "A 9-year-old girl has acute liver failure of unknown cause. After IV vitamin K her INR is still 3.5. Factor V 15%, factor VII 10%, factor VIII 200%, fibrinogen normal. The team asks for plasma before a central line.",
+    "question": "What do you advise?",
+    "answer": "The pattern is hepatocyte failure, not DIC or deficiency. Place the line under ultrasound by an experienced operator without plasma; check platelets and fibrinogen and correct only if extremely low or she bleeds. Keep the transplant center involved.",
+    "teaching": "Plasma rarely normalizes the INR, adds volume and hides the trend you need for transplant decisions. Lesson 01-03, case 3."
+  },
+  {
+    "id": "inr_prolonged_c4",
+    "card": "inr_prolonged",
+    "stem": "A 13-year-old with cirrhosis from autoimmune hepatitis has INR 1.8 and platelets 60 × 10⁹/L. He develops abdominal pain; ultrasound shows a new portal vein thrombosis. A resident thought he was \"autoanticoagulated\".",
+    "question": "How do you explain it?",
+    "answer": "Liver disease lowers clotting factors and natural anticoagulants together, while factor VIII and von Willebrand factor rise. The INR sees only one side. A high INR does not protect from thrombosis and is not, on its own, a contraindication to anticoagulation — the hepatology team decides.",
+    "teaching": "Rebalanced hemostasis (Tripodi 2011). Lesson 01-03, case 4."
   }
 ]

@@ -42,5 +42,15 @@
     "prolonged jaundice",
     "hemolysis",
     "G6PD deficiency"
+  ],
+  "prolonged INR": [
+    "high INR",
+    "raised INR",
+    "prolonged PT",
+    "coagulopathy",
+    "vitamin K deficiency",
+    "VKDB",
+    "vitamin K trial",
+    "factor V"
   ]
 }

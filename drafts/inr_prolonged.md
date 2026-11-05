@@ -1,6 +1,13 @@
 # inr_prolonged — Prolonged INR (draft)
 
-Card not built yet (block 1 trigger reached; backlog task). Inbox is filled by daily lesson sync (§3.4).
+Built 2026-11-05 (Day 20) → `Content/Cards/inr_prolonged.json`, `Pathways/inr_prolonged.json`, `Calculators/c_vitk_inr.json`. The JSON is the source of truth; this file keeps the build notes and the Inbox for later lessons (block 12 — PALF — will add the `palf` / `c_palf` links).
+
+## Build notes (2026-11-05)
+- Anatomy §3.3: Red flags · Algorithm (6 steps: real? → sick? → vitamin K trial → response → factors → procedures) · First contact · Don't miss · Why · Pearls · Guidelines · Test yourself. No `age_switch`: the logic does not branch by age; infant specifics sit in red flags and steps 1, 2, 4.
+- Main sources: lesson 01-03 (all slides + chapter), 01-14 (guideline table on coagulopathy before biopsy, the "INR 1.9 and a request for biopsy" case, self-test), Mouzaki 2019 Table 3 (full text read: "Vitamin K 2–5 mg/day; 1–10 mg IV may be required; anaphylaxis with IV vitamin K has been reported; may also be given IM"), NASPGHAN 2022 PALF paper (full text not accessible; route "IV or subcutaneous, not oral" per lesson 01-03 slide 21; transfusion position per Indian Pediatrics 2022 summary table), Squires 2006 (PALF definition).
+- TODO(verify) closed: dose and route → Mouzaki 2019 (range 1–10 mg, no mg/kg published — D-2026-11-05-1).
+- Not published (no reliable source): ChiLDReN staged regimen (INR 1.2–1.5 → 2.5 mg/day; > 1.5 → IM 2–5 mg; Shneider 2012), Japanese BA registry numbers (Pediatr Int 2025), a numeric "corrected INR" threshold (D-2026-11-05-2).
+
 
 ## Inbox
 
