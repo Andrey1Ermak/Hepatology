@@ -38,5 +38,8 @@ Main home is `hps_poph` (32); here only the link from portal hypertension to the
 - **Platelets and spleen over MELD (slides 13, 22):** platelets > 150 ×10⁹/L with liver stiffness < 20 kPa → high-risk varices unlikely; < 110 → varices likely (EASL pregnancy CPG 2023 — **adult** cirrhosis data; consistent with the 03-09 note that the Baveno rule is not validated in infants). **In infants 62% of those with high-risk varices had platelets ≥ 150 (Ackermann 2026, `chol_0_3m` 03-09 entry) — never use this rule to skip endoscopy in a child.** Case: woman, platelets 90, planning pregnancy → endoscopy, band, NSBB, aneurysm scan (→ `varix_bleed`).
 - **Pitfall (slide 20):** "missing a splenic artery aneurysm before pregnancy or surgery".
 
+### 03-14 · Block 3 synthesis: biliary atresia (synced 2026-11-06)
+- **Synthesis (slides 3, 13, 18):** falling platelets, growing spleen and rising stiffness are the clues of progressive fibrosis after the Kasai; a normal bilirubin does not exclude portal hypertension (~half of survivors); 62% of infants with high-risk varices had platelets ≥ 150; non-invasive tests cannot replace endoscopy in children. Self-test: cleared infant, platelets 160 → do not skip endoscopy.
+
 ### Guideline watch (2026-11-02, weekly check)
 - **Baveno VIII** published: J Hepatol, online 19 Aug 2026, doi 10.1016/j.jhep.2026.07.030 — includes the first Baveno pediatric recommendations. Use it instead of Baveno VII for adult/pediatric compare rows at build; read the full text first. The APSPGHAN 2026 statement cited by lesson 03-09 was not found by web search — keep TODO(verify).

@@ -42,5 +42,12 @@ This is the main lesson for the card. Every number — TODO(verify) against the 
 - **Indication in adults:** HPS appeared among adult LT indications at King's (small numbers; Cortes-Cerisuelo M et al. J Clin Med 2021;10:4969).
 - **Family/self-management (slide 7):** the transitioning adolescent should know that breathlessness, chest pain or fainting need review — consistent with the 03-10 family message.
 
+### 03-14 · Block 3 synthesis: biliary atresia (synced 2026-11-06)
+- **Cleared-child case (slide 13):** girl, 7 y, Kasai at 35 d, cleared by 2 months, polysplenia + interrupted IVC; TB 0.8, platelets 88, spleen 4 cm; tires on stairs; SpO2 95% upright vs 97% supine (orthodeoxia pattern — dilated vessels at the lung bases) → contrast echocardiography, arterial gas, echo pulmonary pressures; endoscopy and banding; list with exception points if HPS confirmed; HPS resolves after LT.
+- **Frequency (pearl 16):** HPS ~2% in the Japanese registry, ~7% where children are actively screened; POPH appears in adolescence. Splenic malformation = strongest risk factor; oximetry finds only late HPS.
+- **Screening line (slides 4, 19):** AASLD/AST/NASPGHAN 2026 (Martinez M … Ng VL — authorship settled) screens every transplant candidate for HPS by pulse oximetry; lesson: screen every survivor yearly for HPS and POPH whatever the bilirubin. Self-test: polysplenia + SpO2 97% → HPS not excluded → contrast echo + arterial gas.
+- **Gap (slide 17):** every HPS/POPH threshold in children is borrowed from adults → "Limited pediatric data" label on thresholds.
+- Splenic malformation ~10% in the West, < 3% in Asia (pearl 3) — risk-factor prevalence line.
+
 ### Guideline watch (2026-11-02, weekly check)
 - **Baveno VIII** published: J Hepatol, online 19 Aug 2026, doi 10.1016/j.jhep.2026.07.030 — includes the first Baveno pediatric recommendations. Use it instead of Baveno VII for adult/pediatric compare rows at build; read the full text first. The APSPGHAN 2026 statement cited by lesson 03-09 was not found by web search — keep TODO(verify).

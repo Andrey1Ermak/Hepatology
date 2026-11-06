@@ -21,3 +21,7 @@ Calculator not built yet (trigger reached 2026-10-22: lesson 02-14; backlog day 
 
 ### 03-08 · Biliary atresia: prognosis after the Kasai (synced 2026-10-30)
 - Same France bands as 03-04 confirmed (Fanna 2019, native liver at 25 y: 38% / 27% / 22% / 19% for month 1 / 2 / 3 / later); Canada 4 y: ≤ 30 d 49%, 31–90 d 36%, > 90 d 23% (Schreiber 2007). Message for the result screen: continuous gradient, no threshold; "late is not futile". Learn-layer only; no new numbers needed in the calculator.
+
+### 03-14 · Block 3 synthesis: biliary atresia (synced 2026-11-06)
+- **Result-screen facts confirmed by the synthesis (slides 7, 15):** France 38 / 27 / 22 / 19% (month 1 / 2 / 3 / later, native liver at 25 y); Canada 49 / 36 / 23% (≤ 30 / 31–90 / > 90 d, 4 y). New: meta-analysis of 9 studies, Kasai ≤ 30 vs ≥ 31 days RR 1.22 for native-liver survival (Hoshino 2023 — TODO(verify)); AAP 2025 (Harpavat) sets a Kasai before 30 days as a target — show it as the AAP target, not a threshold or band (continuous gradient; see the open D-2026-10-26-2 item on day-based verdicts). Footer line: "No safe age, no futile age."
+- Context line (Learn): 45% of US infants had the Kasai at ≥ 60 days in 2016–2019; hospital medians 38–76 days (TODO(verify) primary) — a systems problem, not biology.

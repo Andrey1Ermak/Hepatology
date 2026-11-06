@@ -40,5 +40,11 @@ Pregnancy in BA/cirrhosis — Learn layer + guideline_compare; adult and obstetr
 - **Guideline compare (slide 18):** variceal screen before/in pregnancy — ALIGNED (AASLD 2021: before or during; EASL 2023: within 1 year, else 2nd trimester); beta-blocker/banding for high-risk varices in pregnancy — ALIGNED.
 - **Pitfall (slide 20):** skipping endoscopy because the woman feels well. Case: woman, platelets 90, planning pregnancy → endoscopy, banding, NSBB, aneurysm scan.
 
+### 03-14 · Block 3 synthesis: biliary atresia (synced 2026-11-06)
+- **Synthesis numbers (slides 3, 9, 13):** portal hypertension in ~half of native-liver survivors; 62% of infants < 12 months with high-risk varices had platelets ≥ 150 → normal platelets do not exclude high-risk varices; in children non-invasive tests cannot replace endoscopy; band high-risk varices from ~10 kg (lesson; consistent with 03-09). Below ~10 kg the lesson gives no guidance → "Limited pediatric data", not "no treatment" (decide at build).
+- **guideline_compare (slide 5):** variceal screening in children — GAP (Baveno VI pediatric report: no consensus; AASLD: portal hypertension → refer). Re-check against Baveno VIII (2026) pediatric recommendations at build (Guideline watch).
+- **Adult case (slide 14):** woman, 22, native liver, platelets 95, spleen 16 cm, MELD 8, small varices 3 years ago, planning pregnancy → endoscopy within a year before conception, continue a beta-blocker if she is taking one, band high-risk varices, joint hepatology–obstetric plan; Japanese survey: liver worse after delivery in 37.5%, cholangitis in 25% (slide 14 cites Shimaoka 2001 and Kuroda 2007 — TODO(verify) which paper gives 37.5%).
+- **Gaps and agreement (slides 6, 17):** varices in infants — one banding RCT (n = 22), no beta-blocker trial; restrictive transfusion in bleeding — listed among the ALIGNED answers of the block.
+
 ### Guideline watch (2026-11-02, weekly check)
 - **Baveno VIII** published: J Hepatol, online 19 Aug 2026, doi 10.1016/j.jhep.2026.07.030 — includes the first Baveno pediatric recommendations. Use it instead of Baveno VII for adult/pediatric compare rows at build; read the full text first. The APSPGHAN 2026 statement cited by lesson 03-09 was not found by web search — keep TODO(verify).
