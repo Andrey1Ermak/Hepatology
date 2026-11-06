@@ -1,0 +1,460 @@
+{
+  "id": "ref_imaging",
+  "title": "Which Imaging When",
+  "code": "NASPGHAN/ESPGHAN 2017 · ESPR 2021 · AASLD 2023 · EASL 2022",
+  "cat": "ref",
+  "acu": "ref",
+  "tags": [
+    "imaging",
+    "ultrasound",
+    "Doppler",
+    "MRCP",
+    "HIDA",
+    "hepatobiliary scintigraphy",
+    "MRI",
+    "CT",
+    "radiation",
+    "triangular cord",
+    "gallbladder ghost triad",
+    "spleen size",
+    "MRI-PDFF",
+    "gadoxetate",
+    "sedation"
+  ],
+  "ages": [
+    "neo",
+    "infant",
+    "child",
+    "teen"
+  ],
+  "entry": "reference",
+  "guidelines": [
+    "naspghan_espghan_2017_nc",
+    "espr_2021_ba_imaging",
+    "aasld_2023_psc",
+    "easl_2022_sc",
+    "baveno_vi_peds_2016",
+    "aasld_2020_vascular"
+  ],
+  "plan": [
+    {
+      "block": 1,
+      "days": [
+        7,
+        8,
+        14
+      ]
+    },
+    {
+      "block": 3,
+      "days": [
+        3
+      ]
+    }
+  ],
+  "related": [
+    "ggt_isolated",
+    "alt_elevated"
+  ],
+  "status": "reviewed",
+  "blocks": [
+    {
+      "t": "note",
+      "k": "info",
+      "h": "Ultrasound first",
+      "text": "Start almost every liver question with ultrasound (US) and Doppler: no radiation, no sedation, done at the bedside. Add magnetic resonance imaging (MRI) when ultrasound cannot answer. Use computed tomography (CT) rarely: abdominal CT is the highest-dose pediatric scan."
+    },
+    {
+      "t": "list",
+      "h": "Which test answers which question",
+      "items": [
+        {
+          "t": "Infant with cholestasis: biliary atresia?",
+          "sub": [
+            "First: Fasting ultrasound with Doppler; gamma-glutamyl transferase (GGT); liver biopsy",
+            "If unclear: Cholangiogram: intraoperative, percutaneous or endoscopic (ERCP)",
+            "Avoid: Magnetic resonance cholangiopancreatography (MRCP) or hepatobiliary scintigraphy (HIDA) as the decider"
+          ]
+        },
+        {
+          "t": "HIDA already done",
+          "sub": [
+            "First: Excretion: atresia unlikely",
+            "If unclear: No excretion: biopsy anyway",
+            "Avoid: Calling atresia on non-excretion"
+          ]
+        },
+        {
+          "t": "Infant: small cyst at the porta hepatis with an abnormal gallbladder",
+          "sub": [
+            "First: Treat as cystic atresia: call pediatric surgery today",
+            "If unclear: Intraoperative cholangiogram",
+            "Avoid: Waiting for MRCP"
+          ]
+        },
+        {
+          "t": "Older child: cyst at the porta hepatis",
+          "sub": [
+            "First: Ultrasound, then MRCP",
+            "If unclear: Intraoperative cholangiogram",
+            "Avoid: CT"
+          ]
+        },
+        {
+          "t": "Teen with inflammatory bowel disease (IBD) and high GGT: primary sclerosing cholangitis (PSC)?",
+          "sub": [
+            "First: MRCP",
+            "If unclear: Liver biopsy for small-duct PSC",
+            "Avoid: Diagnostic ERCP"
+          ]
+        },
+        {
+          "t": "High alanine aminotransferase (ALT) with obesity: how much fat?",
+          "sub": [
+            "First: Ultrasound; MRI proton density fat fraction (PDFF) if a number is needed",
+            "If unclear: Liver biopsy",
+            "Avoid: CT"
+          ]
+        },
+        {
+          "t": "Iron overload",
+          "sub": [
+            "First: MRI iron quantification (R2 or R2*)",
+            "Avoid: Ferritin alone"
+          ]
+        },
+        {
+          "t": "Liver mass",
+          "sub": [
+            "First: Ultrasound with Doppler, then contrast MRI",
+            "If unclear: Gadoxetate MRI; biopsy",
+            "Avoid: Multiphase abdominal CT, except for staging"
+          ]
+        },
+        {
+          "t": "Portal hypertension?",
+          "sub": [
+            "First: Doppler ultrasound: spleen length for age, collaterals, portal flow",
+            "If unclear: Endoscopy",
+            "Avoid: Adult spleen limits; skipping endoscopy for normal platelets"
+          ]
+        },
+        {
+          "t": "Portal vein thrombosis or cavernoma",
+          "sub": [
+            "First: Doppler ultrasound; is the left portal vein in the Rex recess patent?",
+            "If unclear: CT or MR angiography"
+          ]
+        },
+        {
+          "t": "Bile leak after surgery or transplant",
+          "sub": [
+            "First: Ultrasound for a collection",
+            "If unclear: HIDA or gadoxetate MRI"
+          ]
+        },
+        {
+          "t": "Vessels before transplant",
+          "sub": [
+            "First: Doppler ultrasound: portal vein size and flow direction",
+            "If unclear: CT or MR angiography",
+            "Avoid: Repeated CT"
+          ]
+        },
+        {
+          "t": "Graft after transplant",
+          "sub": [
+            "First: Doppler daily in week 1 and whenever enzymes rise (expert practice)",
+            "If unclear: CT angiography or angiography",
+            "Avoid: Adult velocity cutoffs"
+          ]
+        }
+      ]
+    },
+    {
+      "t": "note",
+      "k": "crit",
+      "h": "After liver transplant: hepatic artery thrombosis",
+      "text": "Hepatic artery thrombosis (HAT) affected 7.4% of first pediatric transplants within 90 days (Ebel 2020). No arterial signal, or a new tardus parvus waveform with rising enzymes: call the transplant surgeon now. Do not let more imaging delay re-exploration (expert practice). Tardus parvus is a screen, not a diagnosis."
+    },
+    {
+      "t": "note",
+      "k": "warn",
+      "h": "A normal ultrasound does not exclude biliary atresia",
+      "text": "NASPGHAN/ESPGHAN 2017: a normal scan does not rule out non-syndromic atresia. Pale stools or a rising GGT: go on to biopsy or cholangiogram without delay. If the first scan is normal and stools stay pale, scan again."
+    },
+    {
+      "t": "list",
+      "h": "Infant cholestasis ultrasound: what to ask for",
+      "items": [
+        {
+          "t": "Preparation",
+          "sub": [
+            "Fast 4 hours: a fed gallbladder contracts and looks abnormal.",
+            "Do not fast a hypoglycemic or hypopituitary infant: scan non-fasting.",
+            "High-frequency linear probe and an operator looking for atresia on purpose."
+          ]
+        },
+        {
+          "t": "Gallbladder",
+          "sub": [
+            "Length, wall, lining and contour.",
+            "Contraction after a feed."
+          ]
+        },
+        {
+          "t": "Porta hepatis",
+          "sub": [
+            "Triangular cord: echogenic plate anterior to the right portal vein.",
+            "Cyst at the hilum and whether intrahepatic ducts are dilated."
+          ]
+        },
+        {
+          "t": "Color Doppler",
+          "sub": [
+            "Hepatic artery diameter.",
+            "Subcapsular flow along the liver surface."
+          ]
+        },
+        {
+          "t": "Splenic malformation",
+          "sub": [
+            "Polysplenia, situs, preduodenal portal vein, interrupted inferior vena cava (IVC).",
+            "If present: echocardiogram and tell the surgeon."
+          ]
+        }
+      ]
+    },
+    {
+      "t": "table",
+      "h": "Atresia signs on ultrasound",
+      "head": [
+        "Sign",
+        "Definition",
+        "Sensitivity / specificity"
+      ],
+      "rows": [
+        [
+          "Abnormal gallbladder",
+          "Length < 1.9 cm, irregular contour, no smooth echogenic lining",
+          "85% / 92%"
+        ],
+        [
+          "Triangular cord",
+          "Echogenic plate > 4 mm anterior to the right portal vein",
+          "74% / 97%"
+        ],
+        [
+          "Cord or abnormal gallbladder",
+          "Combined reading of both signs",
+          "95% / 89%"
+        ],
+        [
+          "Absent gallbladder",
+          "Not seen after a 4-hour fast",
+          "Specificity 99%"
+        ],
+        [
+          "Subcapsular flow",
+          "Color flow along the liver surface",
+          "100% / 86%"
+        ],
+        [
+          "Large hepatic artery",
+          "Right hepatic artery > 1.5 mm at the porta",
+          "92% / 87%"
+        ]
+      ]
+    },
+    {
+      "t": "text",
+      "h": "How to read the signs",
+      "text": "A positive sign is actionable: proceed to biopsy or cholangiogram. A negative sign changes nothing. Doppler signs are the most sensitive: use them to look harder, not to decide. Pooled data: Zhou 2016 (23 studies); single centers: Lee 2009 (subcapsular flow, n = 64), Kim 2007 (hepatic artery, n = 68)."
+    },
+    {
+      "t": "list",
+      "h": "HIDA and infant MRCP: rule-out tests only",
+      "items": [
+        {
+          "t": "HIDA",
+          "sub": [
+            "Excretion into the bowel argues strongly against atresia.",
+            "Non-excretion is non-specific: neonatal hepatitis and bile duct paucity fail to excrete too (Gilmour 1997); NASPGHAN/ESPGHAN 2017 add PiZZ alpha-1 antitrypsin deficiency, low birth weight and parenteral nutrition (PN).",
+            "Pooled sensitivity 98.7%, specificity 70.4% (Kianifar 2013, 81 studies).",
+            "Phenobarbital premedication takes 3–5 days and changed nothing in the only randomized trial (Malik 2015): never let it delay biopsy or cholangiogram."
+          ]
+        },
+        {
+          "t": "Infant MRCP",
+          "sub": [
+            "Seeing the whole extrahepatic tree excludes atresia; not seeing it proves nothing.",
+            "Sensitivity 96%, specificity 58% (Wang 2018, 5 studies).",
+            "The infant duct is about 1 mm and collapsed: partial volume hides it."
+          ]
+        },
+        {
+          "t": "Liver biopsy",
+          "sub": [
+            "The only test high on both axes: sensitivity 98%, specificity 93% (Wang 2018, 11 studies)."
+          ]
+        }
+      ]
+    },
+    {
+      "t": "table",
+      "h": "Spleen length: upper limit by age",
+      "head": [
+        "Age",
+        "Upper limit"
+      ],
+      "rows": [
+        [
+          "3 months",
+          "6.0 cm"
+        ],
+        [
+          "6 months",
+          "6.5 cm"
+        ],
+        [
+          "12 months",
+          "7.0 cm"
+        ],
+        [
+          "2 years",
+          "8.0 cm"
+        ],
+        [
+          "4 years",
+          "9.0 cm"
+        ],
+        [
+          "6 years",
+          "9.5 cm"
+        ],
+        [
+          "8 years",
+          "10.0 cm"
+        ],
+        [
+          "10 years",
+          "11.0 cm"
+        ],
+        [
+          "12 years",
+          "11.5 cm"
+        ],
+        [
+          "15 years and older, girls",
+          "12.0 cm"
+        ],
+        [
+          "15 years and older, boys",
+          "13.0 cm"
+        ]
+      ]
+    },
+    {
+      "t": "text",
+      "h": "Spleen and varices",
+      "text": "Coronal length through the hilum, quiet breathing (Rosenberg 1991, 230 children). For a short child with chronic disease, height- and weight-based limits fit better (Megremis 2004). The platelet : spleen-length z-score ratio predicts varices (area under the curve 0.84; Gana 2011): use it to prioritize endoscopy, not to skip it."
+    },
+    {
+      "t": "list",
+      "h": "Pediatric Doppler is not adult Doppler",
+      "items": [
+        "Spleen: use age limits, not the adult 13 cm.",
+        "Portal vein pulsatility in a child with liver disease suggests portal hypertension, not right-heart disease (Westra 1995).",
+        "Cavernoma with a patent left portal vein in the Rex recess: refer for MesoRex bypass (Baveno VI pediatric 2016).",
+        "Before transplant in atresia: portal vein ≤ 4 mm or hepatofugal flow predicted early portal vein thrombosis (Gu 2015). Report diameter and direction to the surgeon.",
+        "After transplant, read velocities against day-specific pediatric ranges (Verhagen 2023): the hepatic artery stays well below the adult 200 cm/s cutoff; the portal vein exceeds the adult 125 cm/s in the first days, then its normal range falls to about 60 cm/s by 1 year — a late stenosis can look normal by adult rules.",
+        "Hepatic artery resistive index ≥ 1.0 in biliary atresia predicted early death in one center: expedite transplant evaluation (Broide 1997; not validated elsewhere)."
+      ]
+    },
+    {
+      "t": "list",
+      "h": "Radiation and sedation",
+      "items": [
+        "Abdominal CT: 14–25% of pediatric abdomen/pelvis scans gave ≥ 20 mSv (Miglioretti 2013).",
+        "If CT is needed: child-size protocol, one phase.",
+        "HIDA is not dose-free either.",
+        "MRI under about 4 months: feed-and-wrap often avoids sedation (Lollert 2024).",
+        "Book an MRCP only if the answer will change the plan."
+      ]
+    },
+    {
+      "t": "pearls",
+      "items": [
+        {
+          "k": "pearl",
+          "text": "Gallbladder ghost triad: 30 of 31 infants with atresia, no false positives. The 31st had a normal gallbladder at 6 weeks and a ghost at 8 (Tan Kendrick 2003)."
+        },
+        {
+          "k": "pearl",
+          "text": "A thick gallbladder wall argues for hepatitis, not atresia: seen in 46 of 186 infants without atresia and in none with it (Tan Kendrick 2003)."
+        },
+        {
+          "k": "pitfall",
+          "text": "Non-excreting HIDA is not atresia: 13 of 53 non-excreting infants had neonatal hepatitis, bile duct paucity or PN cholestasis. No infant with atresia excreted (Gilmour 1997)."
+        },
+        {
+          "k": "pitfall",
+          "text": "Normal platelets do not exclude varices. Noninvasive scores triage endoscopy; they do not replace it."
+        },
+        {
+          "k": "pitfall",
+          "text": "Gadoxetate MRI cannot prove bile duct patency in a cholestatic infant: liver uptake falls when bilirubin is high."
+        },
+        {
+          "k": "pearl",
+          "text": "MRI-PDFF grades liver fat in children against biopsy (Middleton 2018). CT attenuation is not the way to measure it."
+        },
+        {
+          "k": "pitfall",
+          "text": "A 9 cm spleen is normal at 10 years and massive at 3 months."
+        }
+      ]
+    },
+    {
+      "t": "guideline_compare",
+      "h": "Guidelines",
+      "rows": [
+        {
+          "topic": "HIDA in a cholestatic infant",
+          "positions": {
+            "naspghan_espghan_2017_nc": "Selective use: excretion argues against atresia",
+            "espr_2021_ba_imaging": "Not useful for diagnosing atresia"
+          },
+          "verdict": "differs",
+          "note": "Both agree non-excretion proves nothing. The app treats HIDA as optional and never lets it delay biopsy or cholangiogram."
+        },
+        {
+          "topic": "MRCP in a cholestatic infant",
+          "positions": {
+            "naspghan_espghan_2017_nc": "Limited role: low specificity",
+            "espr_2021_ba_imaging": "Not useful for diagnosing atresia"
+          },
+          "verdict": "aligned"
+        },
+        {
+          "topic": "Equivocal case",
+          "positions": {
+            "naspghan_espghan_2017_nc": "Liver biopsy; ERCP or percutaneous cholangiography have a limited role",
+            "espr_2021_ba_imaging": "Percutaneous cholecysto-cholangiography or ERCP, with liver biopsy"
+          },
+          "verdict": "differs",
+          "note": "Use what your center does well. The decision to operate comes from biopsy or a cholangiogram, not from cross-sectional imaging."
+        },
+        {
+          "topic": "Suspected PSC",
+          "positions": {
+            "aasld_2023_psc": "MRCP first",
+            "easl_2022_sc": "MRCP first"
+          },
+          "verdict": "aligned",
+          "note": "Both are adult-led documents. In children, MRCP had 81% sensitivity against ERCP (Ferrara 2002, n = 21): a normal MRCP does not exclude PSC. Keep ERCP for brushing, dilating or stenting a stricture."
+        }
+      ]
+    }
+  ]
+}

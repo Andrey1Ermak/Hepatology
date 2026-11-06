@@ -52,5 +52,23 @@
     "VKDB",
     "vitamin K trial",
     "factor V"
+  ],
+  "imaging": [
+    "ultrasound",
+    "US",
+    "sonography",
+    "Doppler",
+    "MRCP",
+    "MRI",
+    "CT",
+    "HIDA",
+    "scintigraphy",
+    "radiation",
+    "triangular cord",
+    "ghost triad",
+    "spleen size",
+    "УЗИ",
+    "МРХПГ",
+    "визуализация"
   ]
 }

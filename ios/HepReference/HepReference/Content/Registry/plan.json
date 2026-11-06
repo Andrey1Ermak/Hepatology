@@ -6,14 +6,14 @@
     {"day": 4, "topic": "Histology I: patterns of injury", "cards": []},
     {"day": 5, "topic": "Histology II: fibrosis and stains", "cards": []},
     {"day": 6, "topic": "Liver biopsy in children", "cards": []},
-    {"day": 7, "topic": "Ultrasound and Doppler", "cards": []},
-    {"day": 8, "topic": "CT, MRI, MRCP, HIDA", "cards": []},
+    {"day": 7, "topic": "Ultrasound and Doppler", "cards": ["ref_imaging"]},
+    {"day": 8, "topic": "CT, MRI, MRCP, HIDA", "cards": ["ref_imaging"]},
     {"day": 9, "topic": "Elastography", "cards": []},
     {"day": 10, "topic": "Serum fibrosis markers", "cards": []},
     {"day": 11, "topic": "Genetic testing", "cards": []},
     {"day": 12, "topic": "Nutrition in cholestasis", "cards": []},
     {"day": 13, "topic": "Endoscopy and ERCP in pediatric hepatology", "cards": []},
-    {"day": 14, "topic": "Synthesis and self-test", "cards": ["ref_norms", "alt_elevated", "ast_isolated", "alp_isolated", "ggt_isolated", "unconj_bili", "inr_prolonged"]}
+    {"day": 14, "topic": "Synthesis and self-test", "cards": ["ref_norms", "alt_elevated", "ast_isolated", "alp_isolated", "ggt_isolated", "unconj_bili", "inr_prolonged", "ref_imaging"]}
   ]},
   {"block": 2, "title": "Neonatal cholestasis: approach", "start": "2026-10-12", "days": [
     {"day": 1, "topic": "Epidemiology and definitions", "cards": []},
@@ -34,7 +34,7 @@
   {"block": 3, "title": "Biliary atresia", "start": "2026-10-26", "days": [
     {"day": 1, "topic": "Epidemiology and phenotypes", "cards": []},
     {"day": 2, "topic": "Pathogenesis", "cards": []},
-    {"day": 3, "topic": "Diagnosis", "cards": []},
+    {"day": 3, "topic": "Diagnosis", "cards": ["ref_imaging"]},
     {"day": 4, "topic": "Timing of the Kasai", "cards": []},
     {"day": 5, "topic": "The Kasai operation", "cards": []},
     {"day": 6, "topic": "Adjuvant therapy", "cards": []},

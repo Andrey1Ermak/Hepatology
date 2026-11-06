@@ -1,6 +1,11 @@
 # ref_imaging — Which Imaging When (draft)
 
-Reference card B (task: day 21). Inbox is filled by daily lesson sync (§3.4).
+Reference card B — **built 2026-11-06 (day 21)** → `Content/Cards/ref_imaging.json`. Inbox below stays as history; new lesson theses still land here.
+
+## Build notes (2026-11-06)
+- Sources: lessons 01-07, 01-08 (slides + chapter), Inbox 03-03; 24 entries registered in guidelines.json (all checked against Europe PMC abstracts).
+- Not published: PVT guideline row (EASL 2016 superseded by EASL 2025, full text unread), Humphrey 2007 CBD row, gadoxetate bilirubin > 3 mg/dL threshold (D-2026-11-06-2).
+- Open for later: hepatic-vein triphasic figure (42%) and Jequier 2000 source; Megremis z-scores; MRI-PDFF numbers (Middleton 2018) if a MASLD card needs them; EASL 2025 vascular full text → PVT row; links from cards 2, 3, 4, 15, 19–21, 33, 34 when built (§4.5).
 
 ## Inbox
 

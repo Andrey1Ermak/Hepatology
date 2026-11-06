@@ -6,5 +6,6 @@
   {"id": "ggt_isolated", "cat": "labs", "section": "ABNORMAL LIVER TESTS"},
   {"id": "inr_prolonged", "cat": "labs", "section": "ABNORMAL LIVER TESTS"},
   {"id": "ref_norms", "cat": "ref", "section": "REFERENCE"},
+  {"id": "ref_imaging", "cat": "ref", "section": "REFERENCE"},
   {"id": "about", "cat": "ref", "section": "REFERENCE"}
 ]
