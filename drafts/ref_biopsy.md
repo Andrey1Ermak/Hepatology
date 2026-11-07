@@ -9,3 +9,9 @@ Reference card C (task: day 22). Inbox is filled by daily lesson sync (§3.4).
 - Accuracy: 90–95% with experienced pediatric pathologists (Fawaz 2017, 1B); obstruction calls in proven atresia 79–98% across consortium pathologists, PPV 90.7% (Russo 2016); AUC 0.84 in ChiLDReN (Pandurangi 2024). → Ask for an experienced pediatric liver pathologist.
 - **Timing:** a biopsy at ~3 weeks may show only hepatitis; pale stools persist → repeat or go to cholangiogram.
 - Safety: complication rate ~1.7% in a large pediatric series, higher in small infants — vitamin K and INR first. TODO(verify) source of 1.7% (lesson cites Fawaz 2017) before publishing.
+
+## Build notes (day 22, 2026-11-07)
+- Card built from lessons 01-04, 01-05, 01-06 (slides + chapters) and the 03-03 Inbox above; JSON is the source of truth (`Content/Cards/ref_biopsy.json`).
+- **Not published:** the "1.7% complication rate" from the 03-03 Inbox (attributed by the lesson to Fawaz 2017; source not confirmed) — replaced by the primary pediatric series (Matos 2012, Westheim 2012, Cohen 1992, Short 2013).
+- **Not published (unverified beyond the lesson):** HCC needle-track seeding 1.6–5%; blind-percussion RCT (Mogahed 2016); EUS-guided biopsy (Schwartz 2025); Laennec/CPA cirrhosis subclasses; ductopenia ratio < 0.9 in term infants (Ayoub & Kamath 2020); IAIHPG 2022 histology criteria; C5b-9 in GALD. Candidates for a later pass or for cards 3, 24, 23.
+- Hemostasis wording aligned with `inr_prolonged` ("no plasma for a number; agree the route with the proceduralist").

@@ -1,0 +1,384 @@
+{
+ "id": "ref_biopsy",
+ "title": "Liver Biopsy",
+ "code": "ESPGHAN 2015 · BSG 2020 · AASLD 2009 · NASPGHAN/ESPGHAN 2017",
+ "cat": "ref",
+ "acu": "ref",
+ "tags": [
+  "liver biopsy",
+  "percutaneous biopsy",
+  "transjugular biopsy",
+  "portal tracts",
+  "specimen handling",
+  "hepatic copper",
+  "electron microscopy",
+  "BSEP stain",
+  "PAS-diastase",
+  "CK7",
+  "bile duct paucity",
+  "bleeding",
+  "INR",
+  "platelets",
+  "sedation",
+  "pathologist"
+ ],
+ "ages": [
+  "neo",
+  "infant",
+  "child",
+  "teen"
+ ],
+ "entry": "reference",
+ "guidelines": [
+  "espghan_2015_biopsy",
+  "bsg_2020_biopsy",
+  "aasld_2009_biopsy",
+  "naspghan_espghan_2017_nc",
+  "aasld_2020_vascular",
+  "easl_2022_hemostasis",
+  "espghan_2018_ail",
+  "aasld_2019_aih",
+  "aasld_2022_wilson",
+  "aasld_2025_masld_peds"
+ ],
+ "plan": [
+  {
+   "block": 1,
+   "days": [
+    4,
+    5,
+    6,
+    14
+   ]
+  },
+  {
+   "block": 3,
+   "days": [
+    3
+   ]
+  }
+ ],
+ "related": [
+  "inr_prolonged",
+  "ref_imaging"
+ ],
+ "status": "reviewed",
+ "blocks": [
+  {
+   "t": "note",
+   "k": "info",
+   "h": "Four questions before the needle",
+   "text": "Which question will the tissue answer? Which route is safest for this child? How many portal tracts does the answer need? Where does each piece of core go? If genes, enzymes or imaging can answer, skip the biopsy (ESPGHAN 2015)."
+  },
+  {
+   "t": "note",
+   "k": "crit",
+   "h": "Infant with pale stools: the biopsy never delays the cholangiogram",
+   "text": "Biopsy is the most supportive test for biliary atresia when well timed and read by a pediatric pathologist (NASPGHAN/ESPGHAN 2017). It must not push the cholangiogram or the Kasai past the atresia timetable. An early biopsy can look like hepatitis: repeat it or go to the cholangiogram."
+  },
+  {
+   "t": "list",
+   "h": "When biopsy helps",
+   "items": [
+    {
+     "t": "Diagnosis still open",
+     "sub": [
+      "Infant cholestasis, atresia possible: needle biopsy accuracy 90% (sensitivity 88%, specificity 93%; Russo 2016).",
+      "Low-GGT cholestasis: genes make the diagnosis; biopsy adds BSEP and MDR3 stains, electron microscopy (EM) and fibrosis stage before biliary diversion.",
+      "Alagille syndrome: send JAG1 and NOTCH2 first; paucity can be missing early.",
+      "Alpha-1 antitrypsin (A1AT) deficiency: phenotype or genotype decides; biopsy not needed for diagnosis.",
+      "Acute liver failure: rarely; transjugular only if autoimmune hepatitis (AIH) or Wilson disease would change treatment."
+     ]
+    },
+    {
+     "t": "Diagnosis known",
+     "sub": [
+      "AIH: biopsy at presentation (ESPGHAN 2018; AASLD 2019).",
+      "Wilson disease: when the diagnosis is uncertain; send a core for quantitative copper.",
+      "Metabolic dysfunction-associated steatotic liver disease (MASLD): when the diagnosis is uncertain or advanced fibrosis is a concern (AASLD 2025).",
+      "After liver transplant: for cause — rejection, recurrence, de novo AIH.",
+      "Liver mass: hepatoblastoma histology sets the risk group; for possible hepatocellular carcinoma, biopsy only if imaging cannot diagnose. Sample the lesion and the background liver."
+     ]
+    }
+   ]
+  },
+  {
+   "t": "list",
+   "h": "Routes",
+   "items": [
+    {
+     "t": "Ultrasound-guided percutaneous: the default",
+     "sub": [
+      "Required after a split or segmental graft (ESPGHAN 2015).",
+      "513 biopsies: major complications 1%; none needed surgery (Matos 2012)."
+     ]
+    },
+    {
+     "t": "Plugged percutaneous (tract embolization)",
+     "sub": [
+      "Infants < 10 kg, coagulopathy or ascites.",
+      "67 infants < 10 kg: all samples adequate, 1 complication (Lungren 2016)."
+     ]
+    },
+    {
+     "t": "Transjugular",
+     "sub": [
+      "Coagulopathy, ascites, or when hepatic venous pressure gradient is needed.",
+      "Technical success 99% in 374 pediatric biopsies (Smayra 2023).",
+      "Fewer portal tracts: median 4 vs 5 percutaneous (Srivastava 2020). Take at least 2 cores (BSG 2020).",
+      "Needs general anesthesia and an interventional radiology suite."
+     ]
+    },
+    {
+     "t": "Laparoscopic or open",
+     "sub": [
+      "Failed percutaneous biopsy, or a large sample is needed.",
+      "Subcapsular wedges overstage fibrosis.",
+      "Hepatoblastoma: open biopsy needed transfusion in 27 of 76 children; none of 28 percutaneous (Weldon 2020)."
+     ]
+    }
+   ]
+  },
+  {
+   "t": "list",
+   "h": "Stop or change the route",
+   "items": [
+    "Dilated bile ducts: no percutaneous biopsy — biliary leak risk; use the transjugular route (BSG 2020).",
+    "Suspected hemangioma, vascular lesion or hydatid cyst: do not needle it; discuss with radiology first (expert opinion).",
+    "Bowel between the liver and the abdominal wall or diaphragm on ultrasound: image-guided route only.",
+    "Cholangitis: relative contraindication (BSG 2020); treat it first (expert opinion).",
+    "Child cannot keep still: plan sedation or general anesthesia.",
+    "Abnormal INR or platelets, or ascites: see Hemostasis."
+   ]
+  },
+  {
+   "t": "workup",
+   "h": "Before, during, after",
+   "groups": [
+    {
+     "label": "Before",
+     "items": [
+      "Ultrasound: ascites, dilated ducts, hemangioma, anatomy",
+      "CBC and INR within 24 hours",
+      "Blood group and screen",
+      "Cholestasis or possible vitamin K deficiency: parenteral vitamin K at least 6 hours before (ESPGHAN 2015)",
+      "Glucose infusion if fasting risks hypoglycemia",
+      "Infant < 3 months: plan for sedation risk; many centers use local anesthesia alone"
+     ]
+    },
+    {
+     "label": "The pass",
+     "items": [
+      "Real-time ultrasound guidance",
+      "16-gauge needle if size allows",
+      "No more than 3 passes"
+     ]
+    },
+    {
+     "label": "Split the core at the bedside",
+     "items": [
+      "Formalin: histology",
+      "Snap-frozen at −80 °C: enzymes and molecular studies",
+      "Glutaraldehyde: electron microscopy",
+      "Separate unfixed dry core in a copper-free container: quantitative copper (preferred over a paraffin block)"
+     ]
+    },
+    {
+     "label": "After",
+     "items": [
+      "Firm pressure; bed rest at least 1 hour",
+      "Observe at least 6 hours (ESPGHAN 2015)",
+      "Antibiotics if a Roux loop or a biliary stricture after transplant",
+      "No contact sport for 1 week",
+      "Before discharge: return for fever, worsening pain, breathlessness, pallor, vomiting blood or black stools"
+     ]
+    }
+   ]
+  },
+  {
+   "t": "list",
+   "h": "Hemostasis: what the numbers mean",
+   "items": [
+    "No safe INR threshold has been published (ESPGHAN 2015).",
+    "Children who bled were younger (median 1.8 vs 84 months) and had a lower hematocrit; INR did not predict bleeding (Short 2013).",
+    "626 pediatric biopsies: bleeding unrelated to INR (Bolia 2017).",
+    "Do not give plasma to fix a number (AASLD 2020; EASL 2022). Guidelines differ on thresholds — see Guidelines.",
+    "Abnormal INR or platelets, or ascites: agree a transjugular or plugged route with the proceduralist.",
+    "Low-dose aspirin after transplant: no excess bleeding (Westheim 2012); ESPGHAN 2015 continues it."
+   ]
+  },
+  {
+   "t": "list",
+   "h": "Who bleeds",
+   "items": [
+    "Acute liver failure: odds ratio 26 for major complications (Westheim 2012).",
+    "Focal lesion or low-molecular-weight heparin: higher bleeding risk (Westheim 2012).",
+    "Cancer or stem cell transplant: all 3 deaths in 469 biopsies (Cohen 1992).",
+    "Infant < 3 months: complications in 12 of 66, 7 of them from sedation (Azzam 2005).",
+    "Alagille syndrome and arthrogryposis–renal dysfunction–cholestasis (ARC): bleeding tendency; platelet dysfunction in ARC (ESPGHAN 2015). Suspected ARC: diagnose by genes (expert opinion).",
+    "Overall: transfusion after 2.8–3.3% of pediatric percutaneous biopsies (Cohen 1992; Short 2013)."
+   ]
+  },
+  {
+   "t": "note",
+   "k": "warn",
+   "h": "The observation window keeps it safe",
+   "text": "All complications in 626 pediatric biopsies were recognized within 8 hours (Bolia 2017). Pain shows as irritability in an infant and as right shoulder pain in an older child. Tachycardia, pallor or a falling hemoglobin after biopsy: ultrasound now and call the proceduralist. Late events happen: fever with readmission at 36 hours (Lungren 2016); bacteremia, bile leak and pneumothorax are described (BSG 2020)."
+  },
+  {
+   "t": "list",
+   "h": "What to ask the pathologist",
+   "items": [
+    "Tell the pathologist the age, the GGT and the question.",
+    {
+     "t": "Infant cholestasis",
+     "sub": [
+      "Bile plugs, portal edema, ductular reaction, giant cells, extramedullary hematopoiesis.",
+      "Duct count on CK7 over enough portal tracts.",
+      "Read by a pediatric liver pathologist (NASPGHAN/ESPGHAN 2017)."
+     ]
+    },
+    {
+     "t": "Low-GGT cholestasis",
+     "sub": [
+      "BSEP and MDR3 immunostains; EM.",
+      "Normal staining does not exclude a missense variant."
+     ]
+    },
+    {
+     "t": "AIH or autoimmune sclerosing cholangitis (ASC)",
+     "sub": [
+      "Plasma cells, interface activity, biliary features.",
+      "Biopsy cannot separate them: biliary features in 65% of ASC and 31% of AIH (Gregorio 2001). Image the bile ducts in every child (ESPGHAN 2018)."
+     ]
+    },
+    {
+     "t": "Wilson disease",
+     "sub": [
+      "Quantitative copper on the unfixed core: > 250 µg/g dry weight is diagnostic in most (AASLD 2022).",
+      "Cholestasis also raises hepatic copper."
+     ]
+    },
+    {
+     "t": "Fibrosis stage",
+     "sub": [
+      "Trichrome or Sirius red; core length and portal tract count in the report.",
+      "Never compare stages from different scoring systems."
+     ]
+    },
+    {
+     "t": "MASLD",
+     "sub": [
+      "NASH CRN stage, including 1c (portal fibrosis only).",
+      "Zonal distribution and portal inflammation: the pediatric pattern is often portal (AASLD 2025)."
+     ]
+    },
+    {
+     "t": "Liver mass",
+     "sub": [
+      "Lesion and background liver."
+     ]
+    }
+   ]
+  },
+  {
+   "t": "list",
+   "h": "Is the core big enough?",
+   "items": [
+    "To stage fibrosis: at least 11 complete portal tracts (AASLD 2009).",
+    "To name a disease: at least 10 mm and 6 portal tracts (BSG 2020 minimum).",
+    "Short cores under-stage: cut to 1 cm, 80% of the same biopsies read as mild fibrosis vs 59% at ≥ 3 cm (Colloredo 2003, adults with viral hepatitis).",
+    "Ask for the tract count, not only the length."
+   ]
+  },
+  {
+   "t": "pearls",
+   "items": [
+    {
+     "k": "pitfall",
+     "text": "Alpha-1 antitrypsin globules: no PAS-diastase globules in PiZZ infants biopsied before 12 weeks (Talbot 1975). Phenotype decides."
+    },
+    {
+     "k": "pitfall",
+     "text": "Rhodanine stain misses Wilson disease: copper stained in only 13–37% of Wilson biopsies, worst early (Pilloni 1998, mostly adults). Send quantitative copper."
+    },
+    {
+     "k": "pitfall",
+     "text": "Quantitative copper > 250 µg/g found 83% of Wilson disease; a 75 µg/g cutoff found 97% (Ferenci 2005)."
+    },
+    {
+     "k": "pitfall",
+     "text": "Alagille syndrome without paucity: 18 of 77 infants under 16 weeks had no paucity on biopsy (Subramaniam 2011). A normal duct count does not exclude it."
+    },
+    {
+     "k": "pearl",
+     "text": "Giant cell hepatitis is a response, not a diagnosis: hypopituitarism was the second most common cause after idiopathic (Torbenson 2010). Check cortisol and TSH."
+    },
+    {
+     "k": "pearl",
+     "text": "Bleeding risk sits with the child, not the INR: young infant, cancer, failing liver."
+    },
+    {
+     "k": "pitfall",
+     "text": "AIH without plasma cells is still AIH: plasma cells support the diagnosis; their absence does not exclude it (AASLD 2019)."
+    }
+   ]
+  },
+  {
+   "t": "guideline_compare",
+   "h": "Guidelines",
+   "rows": [
+    {
+     "topic": "Core size",
+     "positions": {
+      "espghan_2015_biopsy": "20 mm; atresia: ≥ 2 cm or ≥ 10 portal tracts",
+      "aasld_2009_biopsy": "2–3 cm, 16 G; ≥ 11 complete portal tracts",
+      "bsg_2020_biopsy": "≥ 20 mm, 16 G; minimum 10 mm and 6 portal tracts"
+     },
+     "verdict": "differs",
+     "note": "Most pediatric cores are shorter than 2 cm. Ask for the tract count: 6 can name a disease, 11 are needed to stage it."
+    },
+    {
+     "topic": "INR before biopsy",
+     "positions": {
+      "espghan_2015_biopsy": "INR > 1.5: plasma or factor VIIa, or a transjugular or laparoscopic route",
+      "bsg_2020_biopsy": "INR > 1.4: transvenous route for non-lesional biopsy",
+      "aasld_2020_vascular": "Do not correct the INR before procedures",
+      "easl_2022_hemostasis": "Plasma to correct the INR not recommended"
+     },
+     "verdict": "material",
+     "note": "Pediatric data: INR did not predict bleeding (Short 2013; Bolia 2017). The app: no plasma for a number; choose the route with the proceduralist."
+    },
+    {
+     "topic": "Platelets before biopsy",
+     "positions": {
+      "espghan_2015_biopsy": "≤ 60 × 10⁹/L: transfuse just before",
+      "bsg_2020_biopsy": "< 50 × 10⁹/L: transvenous route; transfusion can be considered",
+      "aasld_2020_vascular": "No routine correction",
+      "easl_2022_hemostasis": "Liver biopsy classed low risk: prophylactic platelets not recommended"
+     },
+     "verdict": "differs",
+     "note": "Limited pediatric data."
+    },
+    {
+     "topic": "Observation after biopsy",
+     "positions": {
+      "espghan_2015_biopsy": "Bed rest ≥ 1 hour; observe ≥ 6 hours",
+      "bsg_2020_biopsy": "Up to 8 hours; 3 hours usually enough for a low-risk adult"
+     },
+     "verdict": "differs",
+     "note": "All pediatric complications in one series of 626 appeared within 8 hours (Bolia 2017)."
+    },
+    {
+     "topic": "Biopsy in acute liver failure",
+     "positions": {
+      "espghan_2015_biopsy": "Limited value; transjugular if AIH or Wilson disease is in question",
+      "bsg_2020_biopsy": "Avoid in decompensation; transvenous if essential"
+     },
+     "verdict": "aligned",
+     "note": "Biopsy only if the result changes treatment."
+    }
+   ]
+  }
+ ]
+}

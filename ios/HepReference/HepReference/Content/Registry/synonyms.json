@@ -70,5 +70,16 @@
     "УЗИ",
     "МРХПГ",
     "визуализация"
+  ],
+  "liver biopsy": [
+    "biopsy",
+    "percutaneous biopsy",
+    "transjugular biopsy",
+    "histology",
+    "pathology",
+    "portal tracts",
+    "hepatic copper",
+    "биопсия печени",
+    "гистология"
   ]
 }
