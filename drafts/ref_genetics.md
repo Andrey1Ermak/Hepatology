@@ -25,3 +25,12 @@ Card not built yet (trigger: lesson 01-14, see BACKLOG). Inbox is filled by dail
 ### 03-02 · Biliary atresia: pathogenesis (synced 2026-10-24)
 - Atresia is not a Mendelian disease (slide 14): ADD3/XPNPEP1 locus (GWAS, Garcia-Barceló 2010), GPC1 deletions (Cui 2013), rare biallelic PKD1L1 variants in 5/67 with splenic malformation (Berauer, Hepatology 2019). Common variants shift risk only modestly.
 - Whom to test (slides 18, 20): no atresia-susceptibility gene test for the patient, siblings or co-twin (recurrence is rare; 19/19 twin pairs discordant). The cholestasis panel or rapid genome to rule out mimics still runs in parallel (02-14). Identical co-twin: low risk; screen with fractionated bilirubin and stool color. Splenic malformation + situs anomaly → consider a ciliary gene panel (PKD1L1) and echocardiogram; counsel that onset is embryonic. Expert opinion (lesson synthesis).
+
+### 04-01 · Alagille syndrome I: genetics (synced 2026-11-07)
+- **Ask whether the panel calls copy-number variants:** ~13% of pathogenic JAG1 variants are whole-gene deletions (CHOP; ~6.4% of all probands in GALA — different denominator), invisible to Sanger and to some exome pipelines (Gilbert 2019; GeneReviews 2024: sequencing detects ~88%). Expert opinion (team generalization, not in the lesson): the same applies to any haploinsufficiency gene on a panel.
+- **Microarray** when a deletion is found with developmental delay, hearing loss or autism → size a contiguous deletion (20p12 for JAG1).
+- **Variant reinterpretation is real:** of 61 published NOTCH2 variants, 31% fell to VUS and 16% to likely benign under GALA 2025 disease-specific criteria (Vandriel 2025) → old "likely pathogenic" reports deserve reanalysis.
+- **VUS tie-breakers:** segregation in parents, targeted phenotype search, functional data; tissue (biopsy) acceptable (EASL 2024 per lesson — TODO(verify)).
+- **Parents negative in blood ≠ zero recurrence:** parental mosaicism in at least 8.2% of Alagille families (Giannakudis 2001); germline mosaicism is invisible in blood. Prenatal/preimplantation testing possible once the familial variant is known — a positive result says nothing about severity, and a normal fetal echo does not exclude Alagille syndrome.
+- **Variable expressivity:** of 53 carrier relatives, 47% did not meet clinical criteria (Kamath 2003) — clinical criteria were written for probands; cascade-test relatives.
+- **Record the exact variant** in the chart: it is needed for cascade testing and any related living-donor work-up.
