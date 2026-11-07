@@ -27,6 +27,7 @@ Hepatology/                         ← корень git-репозитория
 ├── .github/workflows/daily.yml     ← ежедневный облачный запуск (GitHub Actions, облачный Mac)
 ├── tools/test.sh                   ← сборка и все тесты
 ├── design/reference/               ← эталон стиля: слайды уроков автора, сравнение шрифтов
+├── design/animations/              ← обучающие GIF для карточек: <id>/ (исходник HTML + светлая и тёмная GIF), render.js, правила — README
 ├── reports/                        ← отчёты: YYYY-MM-DD.md, weekly/, latest.txt, shots/
 ├── logs/                           ← логи прогонов (локально, не коммитятся)
 ├── .claude/settings.json           ← права для автономного прогона
@@ -582,6 +583,7 @@ ID неизменны: на них держатся все ссылки. Наз�
 - **Чипы и сегменты** (возраст, калькуляторы): выбранный — заливка `navy`, белый текст; невыбранный — `surface`, `ink`.
 - **Главный экран:** плитки-категории — белые карточки с верхней полосой `navy`, иконка `navy`, название `hepSectionHeading`; плитка Reference — `surface`.
 - **Иконка приложения и launch screen:** фон `navy`, «HEP» белым Avenir Next Heavy.
+- **Анимации (GIF) для карточек:** `design/animations/<id>/`, холст 360 × 480 pt (экспорт @2x), две версии — светлая и тёмная, только токены §12.1–12.2; подписи — блок `surface` с полосой `navy` и `hepTakeaway`. Формат и экспорт — `design/animations/README.md`.
 
 ### 12.4. Правила
 - Никаких цветов и шрифтов «по месту»: только токены из Assets и `DesignSystem.swift`. Новый токен — сначала сюда.

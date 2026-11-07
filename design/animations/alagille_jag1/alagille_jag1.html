@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JAG1 and Alagille</title>
+<style>
+  html, body { margin: 0; background: #F2F2F7; font-family: "Avenir Next", Avenir, -apple-system, sans-serif; }
+  #wrap { max-width: 360px; margin: 16px auto; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.08); }
+  svg { display: block; width: 100%; height: auto; }
+  #ctl { max-width: 360px; margin: 0 auto; display: flex; gap: 8px; align-items: center; padding: 0 16px; font-size: 13px; color: #6E6E73; }
+  #ctl input { flex: 1; min-width: 0; }
+  #ctl button { font: inherit; padding: 4px 12px; border-radius: 9px; border: 1px solid #D1D1D6; background: #fff; }
+  body.dark { background: #000; }
+  body.render { background: transparent; }
+  body.render #wrap { margin: 0; border-radius: 0; box-shadow: none; max-width: none; width: 360px; }
+  body.render #ctl { display: none; }
+</style>
+</head>
+<body>
+<div id="wrap"><svg id="s" viewBox="0 0 360 480" xmlns="http://www.w3.org/2000/svg"></svg></div>
+<div id="ctl"><button id="pp">Pause</button><button id="th">Dark</button><input id="sc" type="range" min="0" max="44.5" step="0.05" value="0"><span id="tm">0.0</span></div>
+<script>
+const T = 44.5;
+const FD = "'Avenir Next', Avenir, -apple-system, sans-serif";       // hepKicker / hepTag / hepTitle
+const FB = "'Avenir Next', Avenir, -apple-system, sans-serif";       // hepBody / hepTakeaway
+// Colors follow CLAUDE.md §12.2 "Clinical Editorial" (ink, navy, blue, muted, surface, rule, crit, urg, ok, gap, onSolid).
+// Biology-only hues (bile, cholangiocyte, hepatocyte, vein) are derived to sit quietly next to those tokens.
+const THEMES = {
+  light: {
+    bg:'#FFFFFF', ink:'#1A1A1A', ink2:'#555555', sep:'#D4D7DB', fill2:'#F2F2F2', accent:'#1B355E', blue:'#2E5A88', onSolid:'#FFFFFF',
+    jag:'#D97A0B', jagL:'#F9DDB8', jagM:'#EFAE5C', jagT:'#A85A00',
+    notch:'#2E5A88', notchL:'#DCE6F1', nicd:'#1B355E', glow:'#5B7FB3',
+    enz:'#8A939B', enzT:'#555555', nuc:'#8C1C1C', nucL:'#FAF1F1', nucT:'#8C1C1C', genesOff:'#DCC5C5', maml:'#B5524F', cor:'#8A939B',
+    ok:'#1E7A33', bad:'#B22222', bile:'#9DB52A', bileT:'#5A6B0E',
+    chol:'#0E7C86', cholD:'#0A5960', hep:'#EFE3C9', hepS:'#BFA36F',
+    vein:'#B5525A', veinL:'#F6E0E2', veinT:'#8F3640',
+    mem:'#C9C2B4', memIn:'#F7F4EE', sendFill:'#FDF4E8', recvFill:'#EEF3F9',
+    chr:'#ECE9E2', chrS:'#8F887C', chrB:'#BDB6A8', mhead:'#D6CDBB', mfill:'#F0EBE0', ghost:'#C4C8CC', track:'#E4E6E9', barBad:'#9FB3CF',
+  },
+  dark: {
+    bg:'#121417', ink:'#ECEEF1', ink2:'#A3A8AE', sep:'#3A4048', fill2:'#1E2227', accent:'#9DB7DE', blue:'#8FB0DA', onSolid:'#121417',
+    jag:'#F0A04B', jagL:'#4A3218', jagM:'#9A6420', jagT:'#F0A04B',
+    notch:'#8FB0DA', notchL:'#1C2A3F', nicd:'#9DB7DE', glow:'#4E6E9E',
+    enz:'#8A939B', enzT:'#A3A8AE', nuc:'#D88A8A', nucL:'#2A1C1E', nucT:'#D88A8A', genesOff:'#4A3436', maml:'#C27373', cor:'#8A939B',
+    ok:'#5CB874', bad:'#E06666', bile:'#B5CC3A', bileT:'#C8DD5A',
+    chol:'#4FC1CB', cholD:'#8ADDE3', hep:'#3F3627', hepS:'#8C7650',
+    vein:'#E07A82', veinL:'#3A2226', veinT:'#F0A3A9',
+    mem:'#4E4A43', memIn:'#24221E', sendFill:'#221C15', recvFill:'#18202B',
+    chr:'#33302B', chrS:'#7D766A', chrB:'#55504A', mhead:'#57503F', mfill:'#2C2924', ghost:'#4A5058', track:'#2A2F36', barBad:'#3C5272',
+  }
+};
+let C = THEMES.light;
+
+const clamp = (x, a = 0, b = 1) => x < a ? a : x > b ? b : x;
+const lin = (t, a, b) => clamp((t - a) / (b - a));
+const ease = x => x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+const E = (t, a, b) => ease(lin(t, a, b));
+const L = (a, b, p) => a + (b - a) * p;
+const env = (t, a, b, f = .35) => Math.min(E(t, a, a + f), 1 - E(t, b - f, b));
+const r2 = n => Math.round(n * 100) / 100;
+const hx = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+const mix = (a, b, p) => { const A = hx(a), B = hx(b); return '#' + A.map((v, i) => Math.round(L(v, B[i], p)).toString(16).padStart(2, '0')).join(''); };
+const I = s => `<tspan font-style="italic">${s}</tspan>`;
+
+function tx(x, y, s, o = {}) {
+  const { size = 12, fill = C.ink, anchor = 'start', weight = 400, op = 1, italic = false, ls = 0, d = false, filter = '' } = o;
+  if (op <= 0.002) return '';
+  return `<text x="${r2(x)}" y="${r2(y)}" font-family="${d ? FD : FB}" font-size="${size}" fill="${fill}" text-anchor="${anchor}" font-weight="${weight}" opacity="${r2(op)}"${italic ? ' font-style="italic"' : ''}${ls ? ` letter-spacing="${ls}"` : ''}${filter ? ` filter="url(#${filter})"` : ''}>${s}</text>`;
+}
+const G = (op, inner, extra = '') => op <= 0.002 ? '' : `<g opacity="${r2(op)}" ${extra}>${inner}</g>`;
+const check = (x, y, s, c, w = 2.5) => `<path d="M${x - s * .5},${y} l${s * .35},${s * .38} l${s * .65},-${s * .8}" fill="none" stroke="${c}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"/>`;
+const cross = (x, y, s, c, w = 2.5) => { const h = s / 2; return `<path d="M${x - h},${y - h} L${x + h},${y + h} M${x + h},${y - h} L${x - h},${y + h}" stroke="${c}" stroke-width="${w}" stroke-linecap="round"/>`; };
+function arrow(x1, y1, x2, y2, c, w = 2) {
+  const a = Math.atan2(y2 - y1, x2 - x1), h = 7;
+  const p1 = [x2 - h * Math.cos(a - .5), y2 - h * Math.sin(a - .5)], p2 = [x2 - h * Math.cos(a + .5), y2 - h * Math.sin(a + .5)];
+  return `<line x1="${x1}" y1="${y1}" x2="${r2(x2 - 4 * Math.cos(a))}" y2="${r2(y2 - 4 * Math.sin(a))}" stroke="${c}" stroke-width="${w}" stroke-linecap="round"/><polygon points="${x2},${y2} ${r2(p1[0])},${r2(p1[1])} ${r2(p2[0])},${r2(p2[1])}" fill="${c}"/>`;
+}
+function flash(x, y, p) {
+  if (p <= 0 || p >= 1) return '';
+  let s = '';
+  for (let i = 0; i < 8; i++) { const a = i * Math.PI / 4, ra = 5 + 4 * p, rb = 10 + 6 * p; s += `<line x1="${r2(x + ra * Math.cos(a))}" y1="${r2(y + ra * Math.sin(a))}" x2="${r2(x + rb * Math.cos(a))}" y2="${r2(y + rb * Math.sin(a))}" stroke="#FFCC00" stroke-width="2" stroke-linecap="round"/>`; }
+  return G(Math.sin(Math.PI * p), s);
+}
+function scissors(x, y, open, rot, c) {
+  const a = open * 22;
+  const blade = `<path d="M0,0 C-3.5,-7 -3,-17 0,-24 C3,-17 3.5,-7 0,0Z" fill="${c}"/>`;
+  const half = sgn => `<g transform="rotate(${r2(sgn * a)})">${blade}<line x1="0" y1="0" x2="${sgn * 3.5}" y2="5" stroke="${c}" stroke-width="2.4"/><circle cx="${sgn * 5}" cy="9.5" r="4.6" fill="none" stroke="${c}" stroke-width="2.4"/></g>`;
+  return `<g transform="translate(${r2(x)},${r2(y)}) rotate(${rot})">${half(-1)}${half(1)}<circle r="2" fill="${C.bg}" stroke="${c}" stroke-width="1.4"/></g>`;
+}
+function blob(cx, cy, rx, ry, dent) {
+  const pts = [], N = 180;
+  for (let i = 0; i < N; i++) {
+    const a = i / N * 2 * Math.PI; let x = cx + rx * Math.cos(a), y = cy + ry * Math.sin(a);
+    if (dent && dent.depth) { const s = Math.sin(a) * dent.side; if (s > 0) y -= dent.side * dent.depth * Math.exp(-(((x - dent.x) / dent.w) ** 2)); }
+    pts.push(r2(x) + ',' + r2(y));
+  }
+  return 'M' + pts.join(' L') + 'Z';
+}
+const block = (x, y, w, h, stripe) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="9" fill="${C.fill2}"/><rect x="${x}" y="${y}" width="${w}" height="10" rx="9" fill="${stripe}"/><rect x="${x}" y="${y + 4}" width="${w}" height="7" fill="${C.fill2}"/>`;
+const memb = p => `<path d="${p}" fill="none" stroke="${C.mem}" stroke-width="6"/><path d="${p}" fill="none" stroke="${C.memIn}" stroke-width="2"/>`;
+function caption(t, list) {
+  let o = '';
+  for (const [a, b, s] of list) {
+    const e = env(t, a, b, .25); if (e <= 0) continue;
+    const lines = s.split('\n');
+    let txt = lines.map((l, i) => tx(180, (lines.length === 1 ? 452 : 443) + i * 18, l, { size: 14, anchor: 'middle', weight: 700, italic: true })).join('');
+    o += G(e, block(12, 420, 336, 50, C.accent) + txt);
+  }
+  return o;
+}
+function pill(cx, y, label, c, op = 1) {
+  const w = label.length * 7 + 16;
+  return G(op, `<rect x="${r2(cx - w / 2)}" y="${y - 12}" width="${r2(w)}" height="17" rx="8.5" fill="${c}"/>` + tx(cx, y + 0.5, label, { size: 10.5, anchor: 'middle', weight: 700, fill: C.onSolid, d: true, ls: .5 }));
+}
+
+/* ============ Scene 1 · gene and protein (0–5.5) ============ */
+function s1(t) {
+  let o = '';
+  // chromosome 20, horizontal: p arm left, q arm right
+  const y0 = 70, h = 13;
+  const chrom = `M37,${y0 - h} H82 Q90,${y0 - h} 92,${y0 - 5} Q94,${y0 - h} 102,${y0 - h} H183 A13,13 0 0 1 183,${y0 + h} H102 Q94,${y0 + h} 92,${y0 + 5} Q90,${y0 + h} 82,${y0 + h} H37 A13,13 0 0 1 37,${y0 - h}Z`;
+  const bands = [[30, 5], [44, 4], [72, 5], [110, 6], [124, 4], [138, 8], [156, 5], [170, 6]].map(([x, w]) => `<rect x="${x}" y="${y0 - 15}" width="${w}" height="30" fill="${C.chrB}"/>`).join('');
+  o += G(E(t, .1, .7), `<clipPath id="chc"><path d="${chrom}"/></clipPath><path d="${chrom}" fill="${C.chr}"/><g clip-path="url(#chc)">${bands}<rect x="55" y="${y0 - 15}" width="8" height="30" fill="${C.jag}"/></g><path d="${chrom}" fill="none" stroke="${C.chrS}" stroke-width="1.5"/>` +
+    tx(59, 48, '20p12.2', { size: 11, anchor: 'middle', weight: 700, fill: C.jagT, d: true }) +
+    tx(110, 103, 'Chromosome 20', { size: 11, anchor: 'middle', fill: C.ink2 }));
+  o += G(E(t, .5, 1.0), tx(270, 74, 'JAG1', { size: 22, anchor: 'middle', weight: 800, italic: true, d: true }) + tx(270, 92, 'gene · 26 exons', { size: 11, anchor: 'middle', fill: C.ink2 }));
+  // zoom wedge to gene
+  let ex = ''; [7, 4, 9, 5, 4, 8, 5, 4, 7, 4, 5, 8, 4, 10].forEach((w, i) => ex += `<rect x="${32 + i * 21.6}" y="132" width="${w}" height="14" rx="1.5" fill="${C.jag}"/>`);
+  o += G(E(t, .8, 1.4), `<path d="M55,${y0 + 15} L63,${y0 + 15} L336,128 L24,128Z" fill="${C.jag}" opacity=".12"/><line x1="24" y1="139" x2="336" y2="139" stroke="${C.ink}" stroke-width="1.8"/>${ex}`);
+  o += G(E(t, 1.4, 1.9), arrow(180, 154, 180, 178, C.ink2) + tx(188, 170, 'translation', { size: 10, fill: C.ink2 }));
+  // membrane
+  let heads = ''; for (let x = 26; x <= 214; x += 7) heads += `<circle cx="${x}" cy="427" r="2.6" fill="${C.mhead}"/><circle cx="${x}" cy="445" r="2.6" fill="${C.mhead}"/>`;
+  o += G(E(t, 1.8, 2.2), `<rect x="24" y="427" width="192" height="18" fill="${C.mfill}"/>${heads}` +
+    tx(28, 418, 'OUTSIDE', { size: 8.5, fill: C.blue, weight: 700, ls: 1, d: true }) + tx(28, 463, 'INSIDE', { size: 8.5, fill: C.blue, weight: 700, ls: 1, d: true }));
+  // protein, N-terminus at top
+  const X = 120, rv = a => E(t, a, a + .35);
+  o += G(rv(1.9), tx(X, 196, 'Jagged-1', { size: 15, anchor: 'middle', weight: 700, fill: C.accent, d: true }));
+  o += G(rv(2.0), `<rect x="${X - 9}" y="204" width="18" height="12" rx="5" fill="${C.jagL}" stroke="${C.jag}" stroke-width="1"/>` + tx(160, 214, 'N-terminal domain', { size: 11, fill: C.ink2 }));
+  const pulse = t > 2.8 ? .45 + .45 * Math.sin((t - 2.8) * 5) : 0;
+  o += G(rv(2.3), `<rect x="${X - 17}" y="219" width="34" height="24" rx="6" fill="${C.jag}"/>` +
+    (pulse ? `<rect x="${X - 21}" y="215" width="42" height="32" rx="8" fill="none" stroke="${C.jag}" stroke-width="2" opacity="${r2(pulse)}"/>` : '') +
+    tx(160, 236, 'DSL domain — binds Notch', { size: 13, weight: 700, fill: C.jagT }));
+  for (let i = 0; i < 16; i++) o += G(rv(2.6 + i * .05), `<ellipse cx="${X}" cy="${r2(252 + i * 9.1)}" rx="11" ry="4.1" fill="${C.jagM}" stroke="${C.jag}" stroke-width=".9"/>`);
+  o += G(rv(3.0), `<path d="M140,249 h4 v142 h-4" fill="none" stroke="${C.ink2}" stroke-width="1"/>` + tx(160, 324, '16 EGF-like repeats', { size: 12 }));
+  o += G(rv(3.5), `<rect x="${X - 12}" y="396" width="24" height="26" rx="7" fill="${C.jagL}" stroke="${C.jag}" stroke-width="1"/>` + tx(160, 412, 'Cysteine-rich region', { size: 12 }));
+  o += G(rv(3.8), `<rect x="${X - 4}" y="422" width="8" height="28" fill="${C.jag}"/>` + tx(224, 440, 'Transmembrane', { size: 12 }));
+  o += G(rv(4.1), `<path d="M${X},450 q5,5 0,10 q-5,5 0,10 q5,4 0,8" fill="none" stroke="${C.jag}" stroke-width="2.6" stroke-linecap="round"/>` + tx(160, 470, 'Intracellular tail', { size: 12 }));
+  return o;
+}
+
+/* ============ Scene 2 · Notch signaling (5.5–23.5) ============ */
+const STEPS = ['Binding', 'Pulling force', 'ADAM10 cut (S2)', 'γ-secretase cut (S3)', 'NICD released', 'Genes switched on'];
+const SB = [8.3, 11.0, 13.8, 16.4, 19.0, 20.4, 23.6];
+function s2(t) {
+  let o = '';
+  const bind = E(t, 8.4, 9.6), pull = E(t, 11.2, 12.8);
+  const sc1 = E(t, 14.0, 14.6), snip1 = E(t, 14.6, 14.85), cut1 = t >= 14.85, sep = E(t, 15.0, 15.9), ves = E(t, 15.4, 16.3);
+  const g2 = E(t, 16.5, 17.2), cut2 = t >= 17.45, rel = E(t, 19.0, 20.3);
+  const corOut = E(t, 20.2, 20.7), maml = E(t, 20.5, 21.0);
+  const X = 150, d = 10 * pull * (1 - sep);
+
+  // cells (organic, cropped by the frame)
+  const send = blob(180, 70, 210, 95, { x: X, depth: d, w: 16, side: 1 });
+  const recv = blob(180, 400, 220, 125);
+  o += `<path d="${send}" fill="${C.sendFill}"/>${memb(send)}<path d="${recv}" fill="${C.recvFill}"/>${memb(recv)}`;
+  o += tx(180, 64, 'SIGNAL-SENDING CELL', { size: 10, anchor: 'middle', weight: 700, fill: C.jagT, d: true, ls: 1 });
+  o += tx(40, 344, 'SIGNAL-RECEIVING', { size: 10, weight: 700, fill: C.notch, d: true, ls: 1 }) + tx(40, 357, 'CELL', { size: 10, weight: 700, fill: C.notch, d: true, ls: 1 });
+
+  // step chip
+  const k = SB.findIndex((b, i) => t >= b && t < SB[i + 1]);
+  if (k >= 0) {
+    const name = STEPS[k], w = name.length * 6.9 + 62, x0 = 180 - w / 2;
+    o += G(env(t, SB[k], SB[k + 1], .2), `<rect x="${r2(x0)}" y="12" width="${r2(w)}" height="26" rx="13" fill="${C.bg}" stroke="${C.sep}"/><rect x="${r2(x0 + 4)}" y="16" width="30" height="18" rx="9" fill="${C.accent}"/>` +
+      tx(x0 + 19, 29, `${k + 1}/6`, { size: 10.5, anchor: 'middle', weight: 700, fill: C.onSolid, d: true }) +
+      tx(x0 + 42, 29.5, name, { size: 12.5, weight: 600 }));
+  }
+
+  // nucleus
+  let dna = `<line x1="192" y1="377" x2="290" y2="377" stroke="${C.nuc}" stroke-width="1.6"/><line x1="192" y1="383" x2="290" y2="383" stroke="${C.nuc}" stroke-width="1.6"/>`;
+  for (let x = 195; x < 290; x += 5.5) dna += `<line x1="${r2(x)}" y1="377" x2="${r2(x)}" y2="383" stroke="${C.nuc}" stroke-width=".8" opacity=".6"/>`;
+  o += `<circle cx="240" cy="372" r="56" fill="${C.nucL}" stroke="${C.nuc}" stroke-width="1.8"/>` + tx(240, 334, 'NUCLEUS', { size: 9, anchor: 'middle', weight: 700, fill: C.nucT, d: true, ls: 1 }) + dna;
+  o += `<rect x="202" y="362" width="40" height="14" rx="4" fill="${C.nuc}"/>` + tx(222, 372.5, 'RBPJ', { size: 9, anchor: 'middle', weight: 700, fill: C.onSolid });
+  o += G(1 - corOut, `<g transform="translate(${r2(16 * corOut)},${r2(-14 * corOut)})"><circle cx="262" cy="369" r="8" fill="${C.cor}"/>${tx(262, 371.5, 'CoR', { size: 7, anchor: 'middle', weight: 700, fill: C.onSolid })}</g>`);
+  o += G(maml, `<ellipse cx="263" cy="354" rx="16" ry="8" fill="${C.maml}"/>` + tx(263, 357, 'MAML', { size: 7.5, anchor: 'middle', weight: 700, fill: C.onSolid }));
+  [['HES1', 222, 401], ['HEY1', 260, 401], ['HNF1B', 222, 414], ['SOX9', 260, 414]].forEach(([n, x, y], i) => {
+    const lit = E(t, 21.0 + i * .3, 21.35 + i * .3);
+    o += tx(x, y, n, { size: 9.5, anchor: 'middle', weight: 700, fill: C.genesOff });
+    o += tx(x, y, n, { size: 9.5, anchor: 'middle', weight: 700, fill: C.nucT, op: lit });
+  });
+
+  // JAG1 ligand (hangs down from the sender membrane)
+  const ly = -14 * (1 - bind) - 10 * pull - 30 * sep;
+  const mop = 1 - E(t, 15.4, 15.9);
+  let lig = `<path d="M${X},${r2(140 + ly)} q4,4 0,8 q-4,4 0,8" fill="none" stroke="${C.jag}" stroke-width="2.4" stroke-linecap="round"/>` +
+    `<rect x="${X - 3}" y="${r2(156 + ly)}" width="6" height="14" fill="${C.jag}"/>` +
+    `<line x1="${X}" y1="${r2(180 + ly)}" x2="${X}" y2="${r2(206 + ly)}" stroke="${C.jag}" stroke-width="1.4"/>` +
+    `<rect x="${X - 6}" y="${r2(171 + ly)}" width="12" height="9" rx="3" fill="${C.jagL}" stroke="${C.jag}" stroke-width="1"/>`;
+  for (let i = 0; i < 3; i++) lig += `<ellipse cx="${X}" cy="${r2(185 + i * 8 + ly)}" rx="6" ry="3.8" fill="${C.jagM}" stroke="${C.jag}" stroke-width=".9"/>`;
+  lig += `<rect x="${X - 7}" y="${r2(206 + ly)}" width="14" height="10" rx="3" fill="${C.jag}"/>`;
+  // NOTCH2 extracellular part (points up from the receiver membrane)
+  const ny = -10 * pull - 30 * sep, nr = -5 * pull - 30 * sep, sp = 4 * pull;
+  let ecd = `<line x1="${X}" y1="${r2(220 + ny)}" x2="${X}" y2="${r2(249 + nr)}" stroke="${C.notch}" stroke-width="1.4"/>`;
+  for (let i = 0; i < 4; i++) ecd += `<ellipse cx="${X}" cy="${r2(220 + i * 8 + ny)}" rx="5.4" ry="3.8" fill="${C.notchL}" stroke="${C.notch}" stroke-width=".9"/>`;
+  ecd += `<rect x="${r2(X - 7 - sp)}" y="${r2(249 + nr)}" width="7" height="14" rx="2.5" fill="${C.notch}"/><rect x="${r2(X + sp)}" y="${r2(249 + nr)}" width="7" height="14" rx="2.5" fill="${C.notch}"/>`;
+  if (!cut1) ecd += `<line x1="${X}" y1="${r2(263 + nr)}" x2="${X}" y2="270" stroke="${C.notch}" stroke-width="2"/>`;
+  const bg = Math.sin(Math.PI * lin(t, 9.4, 10.4));
+  const labOp = 1 - E(t, 14.8, 15.3);
+  o += G(mop, lig + ecd + (bg > 0 ? `<circle cx="${X}" cy="216" r="10" fill="none" stroke="#FFCC00" stroke-width="2" opacity="${r2(bg)}"/>` : ''));
+  // protein labels
+  o += G(E(t, 6.0, 6.5) * labOp, `<line x1="130" y1="${r2(194 + ly)}" x2="140" y2="${r2(194 + ly)}" stroke="${C.jag}" stroke-width="1"/>` + tx(126, 198 + ly, 'JAG1', { size: 12, anchor: 'end', weight: 700, fill: C.jagT, d: true }));
+  o += G(E(t, 6.2, 6.7) * labOp, `<line x1="130" y1="${r2(234 + ny)}" x2="140" y2="${r2(234 + ny)}" stroke="${C.notch}" stroke-width="1"/>` + tx(126, 238 + ny, 'NOTCH2', { size: 12, anchor: 'end', weight: 700, fill: C.notch, d: true }));
+  if (cut1) o += `<line x1="${X}" y1="266" x2="${X}" y2="270" stroke="${C.notch}" stroke-width="2"/>`;
+  o += G(pull * (1 - E(t, 14.8, 15.1)), `<polygon points="${X + 10},266 ${X + 16},262.5 ${X + 16},269.5" fill="${C.ink2}"/>` + tx(X + 19, 269, 'S2', { size: 9, weight: 700, fill: C.ink2, d: true }));
+
+  // TM stub + NICD
+  o += `<rect x="${X - 3}" y="270" width="6" height="12" fill="${C.notch}"/>`;
+  const p = rel, ncx = L(X, 220, p), ncy = L(296, 354, p) - 10 * Math.sin(Math.PI * p), nw = L(56, 44, p), nh = L(18, 16, p);
+  if (!cut2) o += `<line x1="${X}" y1="282" x2="${X}" y2="288" stroke="${C.nicd}" stroke-width="2.4"/>`;
+  o += `<rect x="${r2(ncx - nw / 2)}" y="${r2(ncy - nh / 2)}" width="${r2(nw)}" height="${r2(nh)}" rx="${r2(nh / 2)}" fill="${C.nicd}"${cut2 ? ' filter="url(#glow)"' : ''}/>` +
+    tx(ncx, ncy + L(4, 3.4, p), 'NICD', { size: L(11, 9, p), anchor: 'middle', weight: 700, fill: C.onSolid });
+
+  // endocytic pull
+  o += G(E(t, 11.2, 11.5) * (1 - E(t, 13.6, 14.0)), arrow(172, 150, 172, 120, C.jagT, 2.2) + tx(180, 134, 'pull', { size: 11, weight: 700, fill: C.jagT, d: true }));
+  // ADAM10
+  const sop = E(t, 14.0, 14.25) * (1 - E(t, 15.5, 15.9)), px = L(300, 176, sc1);
+  o += G(sop, scissors(px, 266, 1 - snip1 + .3 * E(t, 15.0, 15.4), -90, C.enz) + tx(px + 20, 270, 'ADAM10', { size: 10, weight: 700, fill: C.enzT, d: true }));
+  o += flash(X, 266, lin(t, 14.85, 15.35));
+  // trans-endocytosed vesicle
+  const vx = L(X, 104, ves), vy = L(150, 104, ves);
+  o += G(ves, `<circle cx="${r2(vx)}" cy="${r2(vy)}" r="11" fill="${C.bg}" stroke="${C.mem}" stroke-width="2.5"/><circle cx="${r2(vx - 3)}" cy="${r2(vy)}" r="3" fill="${C.jag}"/><circle cx="${r2(vx + 3.5)}" cy="${r2(vy)}" r="3" fill="${C.notchL}" stroke="${C.notch}" stroke-width=".8"/>`
+    + tx(vx, vy + 24, 'taken up by sender', { size: 9.5, anchor: 'middle', fill: C.ink2 }));
+  // gamma-secretase
+  const gop = E(t, 16.4, 16.7) * (1 - E(t, 18.6, 19.0)), gx = L(250, 168, g2);
+  o += G(gop, `<rect x="${r2(gx - 15)}" y="271" width="30" height="11" rx="5.5" fill="${C.enz}"/>` + tx(gx + 20, 280, 'γ-secretase', { size: 10, weight: 700, fill: C.enzT, d: true }) +
+    tx(X - 12, 280, 'S3', { size: 9, anchor: 'end', weight: 700, fill: C.ink2, d: true }));
+  o += flash(X, 276, lin(t, 17.45, 17.95));
+  return o + caption(t, [
+    [5.6, 8.3, 'Signaling requires direct\ncell-to-cell contact'],
+    [11.0, 13.8, 'Pulling force exposes\nthe cleavage site'],
+    [16.4, 19.0, 'γ-secretase — cut 2 (S3),\ninside the membrane'],
+  ]);
+}
+
+/* ============ Scene 3 · bile duct development (23.5–34) ============ */
+const S3 = (() => {
+  const cx = 180, cy = 168, n = 20, Ri = 84;
+  const cells = [...Array(n)].map((_, i) => ({ a: (i * 18 - 90) * Math.PI / 180, duct: -1, k: 0 }));
+  const ducts = [-90, 30, 150].map(dg => ({ a: dg * Math.PI / 180, cells: [] }));
+  const angd = (x, y) => { let d = Math.abs(x - y) % (2 * Math.PI); return d > Math.PI ? 2 * Math.PI - d : d; };
+  const pairs = []; cells.forEach((c, i) => ducts.forEach((d, j) => pairs.push([angd(c.a, d.a), i, j])));
+  pairs.sort((a, b) => a[0] - b[0]);
+  for (const [, i, j] of pairs) if (cells[i].duct < 0 && ducts[j].cells.length < 6) { cells[i].duct = j; ducts[j].cells.push(i); }
+  ducts.forEach(d => {
+    d.cells.sort((a, b) => ((cells[a].a - d.a + 3 * Math.PI) % (2 * Math.PI)) - ((cells[b].a - d.a + 3 * Math.PI) % (2 * Math.PI)));
+    d.cells.forEach((ci, k) => cells[ci].k = k);
+    d.x = cx + Ri * Math.cos(d.a); d.y = cy + Ri * Math.sin(d.a);
+  });
+  return { cx, cy, Ri, cells, ducts };
+})();
+function s3(t) {
+  let o = '';
+  const { cx, cy, Ri, cells, ducts } = S3;
+  const ap = a => E(t, a, a + .5);
+  const toChol = E(t, 26.2, 27.6), toHep = E(t, 27.0, 28.4), remod = E(t, 28.6, 30.6), bileP = E(t, 31.0, 31.6);
+  [[141, 32, 11.6], [114, 26, 11]].forEach(([R, n, r], ri) => {
+    let s = '';
+    for (let i = 0; i < n; i++) { const a = (i / n) * 2 * Math.PI + ri * .1; s += `<circle cx="${r2(cx + R * Math.cos(a))}" cy="${r2(cy + R * Math.sin(a))}" r="${r2(r + toHep)}" fill="${mix(C.notchL, C.hep, toHep)}" stroke="${mix(C.notch, C.hepS, toHep)}" stroke-width="1"/>`; }
+    o += G(ap(23.9 - ri * .2), s);
+  });
+  o += G(ap(23.5), `<circle cx="${cx}" cy="${cy}" r="35" fill="${C.veinL}" stroke="${C.vein}" stroke-width="2"/>` +
+    tx(cx, cy - 2, 'Portal', { size: 10, anchor: 'middle', fill: C.veinT, weight: 700, d: true }) + tx(cx, cy + 10, 'vein', { size: 10, anchor: 'middle', fill: C.veinT, weight: 700, d: true }));
+  let mes = ''; for (let i = 0; i < 14; i++) { const a = i / 14 * 2 * Math.PI; mes += `<circle cx="${r2(cx + 59 * Math.cos(a))}" cy="${r2(cy + 59 * Math.sin(a))}" r="8.5" fill="${C.jagL}" stroke="${C.jag}" stroke-width="1.4"/>`; }
+  o += G(ap(23.6), mes);
+  const spk = lin(t, 25.0, 26.8);
+  if (spk > 0 && spk < 1) {
+    let s = ''; const ph = (spk * 3) % 1;
+    for (let i = 0; i < 14; i++) { const a = i / 14 * 2 * Math.PI + .22, r = L(68, 77, ph); s += `<circle cx="${r2(cx + r * Math.cos(a))}" cy="${r2(cy + r * Math.sin(a))}" r="2.6" fill="${C.nicd}" filter="url(#glowS)"/>`; }
+    o += G(Math.sin(Math.PI * ph), s);
+  }
+  let inner = '';
+  cells.forEach(c => {
+    let x = cx + Ri * Math.cos(c.a), y = cy + Ri * Math.sin(c.a), sz = L(21, 18, toChol), op = 1;
+    if (c.duct >= 0) {
+      const d = ducts[c.duct], ka = d.a + Math.PI + (c.k - 2.5) * Math.PI / 3;
+      x = L(x, d.x + 12 * Math.cos(ka), remod); y = L(y, d.y + 12 * Math.sin(ka), remod); sz = L(sz, 9.5, remod);
+    } else op = 1 - remod;
+    inner += G(op, `<rect x="${r2(x - sz / 2)}" y="${r2(y - sz / 2)}" width="${r2(sz)}" height="${r2(sz)}" rx="${r2(L(10.5, 3, toChol) * sz / 21)}" fill="${mix(C.notchL, C.chol, toChol)}" stroke="${mix(C.notch, C.cholD, toChol)}" stroke-width="1"/>`);
+  });
+  o += G(ap(23.7), inner);
+  ducts.forEach(d => {
+    o += G(remod, `<circle cx="${r2(d.x)}" cy="${r2(d.y)}" r="${r2(6 * remod)}" fill="${C.bg}"/>`);
+    if (bileP > 0) for (let i = 0; i < 3; i++) { const a = i * 2.1 + t * 2; o += G(bileP, `<circle cx="${r2(d.x + 2.4 * Math.cos(a))}" cy="${r2(d.y + 2.4 * Math.sin(a))}" r="1.8" fill="${C.bile}"/>`); }
+  });
+  // key card (acts as the legend)
+  const rows = [
+    [C.jag, 'Portal mesenchyme · JAG1', 24.0, false, false],
+    [C.notch, 'Hepatoblasts · NOTCH2', 24.3, false, false],
+    [C.chol, 'Contact → cholangiocytes', 26.4, true, false],
+    [C.hepS, 'No contact → hepatocytes', 27.2, true, false],
+    [C.bile, 'New ducts carry bile', 31.0, true, true],
+  ];
+  o += G(E(t, 23.9, 24.3), block(12, 322, 336, 94, C.accent));
+  rows.forEach(([c, s, a, b], i) => {
+    const y = 345 + i * 16.5;
+    o += G(E(t, a, a + .4), `<circle cx="30" cy="${y - 4}" r="5" fill="${c}"/>` + tx(42, y, s, { size: 12.5, weight: b ? 600 : 400 }));
+  });
+  return o + caption(t, [[23.7, 28.5, 'JAG1→NOTCH2 signaling turns a\nhepatoblast into a cholangiocyte']]);
+}
+
+/* ============ Scene 4 · haploinsufficiency (34–44.5) ============ */
+function s4(t) {
+  let o = '';
+  [0, 1].forEach(side => {
+    const y0 = side ? 206 : 12, bad = side === 1, col = bad ? C.bad : C.ok;
+    let s = block(12, y0, 336, 186, col);
+    s += (bad ? cross(30, y0 + 23, 10, col) : check(29, y0 + 26, 13, col)) + tx(44, y0 + 28, bad ? 'Alagille syndrome' : 'Normal', { size: 15, weight: 700, fill: col, d: true });
+    o += G(E(t, 34.0 + side * .15, 34.5 + side * .15), s);
+    o += pill(296, y0 + 27, bad ? 'DOSE ≈ 50%' : 'DOSE 100%', bad ? C.bad : C.accent, E(t, 37.3, 37.7));
+    // alleles
+    const hit = bad ? E(t, 35.2, 35.7) : 0;
+    [0, 1].forEach(a => {
+      const y = y0 + 48 + a * 17, broken = a === 1 && bad;
+      let ex = ''; for (let i = 0; i < 10; i++) ex += `<rect x="${80 + i * 21.5}" y="${y - 5}" width="9" height="10" rx="1.5" fill="${broken ? mix(C.jag, C.ghost, hit) : C.jag}"/>`;
+      o += G(E(t, 34.3 + a * .2, 34.8 + a * .2), tx(28, y + 3.5, `allele ${a + 1}`, { size: 10, fill: C.ink2 }) +
+        `<line x1="76" y1="${y}" x2="296" y2="${y}" stroke="${C.ink}" stroke-width="1.4"/>${ex}` + tx(302, y + 3.5, I('JAG1'), { size: 10, fill: C.ink2 }));
+    });
+    if (bad) o += G(hit, cross(186, y0 + 65, 15, C.bad, 3)) + tx(186, y0 + 82, 'truncating variant or deletion', { size: 9.5, anchor: 'middle', fill: C.bad, op: E(t, 35.6, 36.0) });
+    // JAG1 on the surface
+    let m = `<rect x="28" y="${y0 + 120}" width="304" height="6" rx="2" fill="${C.mfill}" stroke="${C.mem}"/>`;
+    for (let i = 0; i < 8; i++) {
+      const x = 47 + i * 38, present = !bad || i % 2 === 0, a = E(t, 36.3 + i * .08, 36.6 + i * .08);
+      if (present) m += G(a, `<line x1="${x}" y1="${y0 + 120}" x2="${x}" y2="${y0 + 108}" stroke="${C.jag}" stroke-width="2.4"/><rect x="${x - 5}" y="${y0 + 99}" width="10" height="10" rx="2" fill="${C.jag}"/>`);
+      else m += G(a * .8, `<rect x="${x - 5}" y="${y0 + 99}" width="10" height="21" rx="2" fill="none" stroke="${C.ghost}" stroke-width="1" stroke-dasharray="3 2"/>`);
+    }
+    o += G(E(t, 36.2, 36.5), tx(28, y0 + 94, 'JAG1 on the cell surface', { size: 10, fill: C.ink2 }) + m);
+    // signal bar
+    const lvl = bad ? .38 : .85, grow = E(t, 38.0, 39.3), thr = 28 + .6 * 304, res = E(t, 39.5, 40.0);
+    o += G(E(t, 37.8, 38.1),
+      tx(28, y0 + 144, 'Notch signal (NICD)', { size: 10, fill: C.ink2 }) + tx(thr + 4, y0 + 144, 'threshold', { size: 9.5, fill: C.ink2 }) +
+      `<rect x="28" y="${y0 + 150}" width="304" height="12" rx="6" fill="${C.track}"/>` +
+      `<rect x="28" y="${y0 + 150}" width="${r2(304 * lvl * grow)}" height="12" rx="6" fill="${bad ? C.barBad : C.nicd}"/>` +
+      `<rect x="27" y="${y0 + 149}" width="306" height="14" rx="7" fill="none" stroke="${col}" stroke-width="1.6" opacity="${r2(res)}"${bad ? ' stroke-dasharray="4 3"' : ''}/>` +
+      `<line x1="${thr}" y1="${y0 + 146}" x2="${thr}" y2="${y0 + 166}" stroke="${C.ink}" stroke-width="1.2" stroke-dasharray="3 2"/>`);
+    o += G(E(t, 40.2, 40.7), (bad ? cross(32, y0 + 176, 9, col, 2.2) : check(31, y0 + 179, 11, col, 2.2)) + tx(44, y0 + 180, bad ? 'Too few bile ducts form' : 'Bile ducts form', { size: 13, weight: 700, fill: col }));
+  });
+  o += tx(180, 408, `~94% ${I('JAG1')} (ALGS1) · ~2–4% ${I('NOTCH2')} (ALGS2) · AD · ~50–60% ${I('de novo')}`, { size: 9.5, anchor: 'middle', fill: C.ink2, italic: true, op: E(t, 41.0, 41.5) });
+  return o + caption(t, [[34.2, 39.4, 'One working copy isn’t enough:\nhaploinsufficiency']]);
+}
+
+const SC = [{ a: 0, b: 5.5, draw: s1 }, { a: 5.5, b: 23.5, draw: s2 }, { a: 23.5, b: 34, draw: s3 }, { a: 34, b: 44.5, draw: s4 }];
+function draw(t) {
+  t = clamp(t, 0, T - 1e-6);
+  const DEFS = `<defs>
+    <filter id="glow" x="-50%" y="-100%" width="200%" height="300%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="glowS" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="1.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>`;
+  const sc = SC.find(s => t >= s.a && t < s.b);
+  document.getElementById('s').innerHTML = DEFS + `<rect width="360" height="480" fill="${C.bg}"/>` + G(env(t, sc.a, sc.b, .35), sc.draw(t));
+}
+function setTheme(name) { C = THEMES[name]; document.body.classList.toggle('dark', name === 'dark'); }
+window.draw = draw; window.setTheme = setTheme;
+
+const q = new URLSearchParams(location.search);
+const isR = q.has('render');
+setTheme(q.get('theme') === 'dark' ? 'dark' : 'light');
+if (isR) document.body.classList.add('render');
+const pp = document.getElementById('pp'), th = document.getElementById('th'), scb = document.getElementById('sc'), tm = document.getElementById('tm');
+let playing = !isR, cur = 0, t0 = performance.now();
+const show = v => { cur = v; draw(v); scb.value = v; tm.textContent = v.toFixed(1); };
+function loop(now) { if (playing) show(((now - t0) / 1000) % T); requestAnimationFrame(loop); }
+pp.onclick = () => { playing = !playing; if (playing) t0 = performance.now() - cur * 1000; pp.textContent = playing ? 'Pause' : 'Play'; };
+th.onclick = () => { const dk = C === THEMES.light; setTheme(dk ? 'dark' : 'light'); th.textContent = dk ? 'Light' : 'Dark'; draw(cur); };
+scb.oninput = () => { show(+scb.value); t0 = performance.now() - cur * 1000; };
+document.addEventListener('keydown', e => {
+  if (e.code === 'Space') { e.preventDefault(); pp.click(); }
+  if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { show(clamp(cur + (e.key === 'ArrowRight' ? 1 : -1), 0, T - .01)); t0 = performance.now() - cur * 1000; }
+});
+window.ready = document.fonts.ready;
+window.ready.then(() => draw(cur));
+draw(0);
+if (!isR) requestAnimationFrame(loop);
+</script>
+</body>
+</html>
