@@ -34,3 +34,9 @@ Card not built yet (trigger: lesson 01-14, see BACKLOG). Inbox is filled by dail
 - **Parents negative in blood ≠ zero recurrence:** parental mosaicism in at least 8.2% of Alagille families (Giannakudis 2001); germline mosaicism is invisible in blood. Prenatal/preimplantation testing possible once the familial variant is known — a positive result says nothing about severity, and a normal fetal echo does not exclude Alagille syndrome.
 - **Variable expressivity:** of 53 carrier relatives, 47% did not meet clinical criteria (Kamath 2003) — clinical criteria were written for probands; cascade-test relatives.
 - **Record the exact variant** in the chart: it is needed for cascade testing and any related living-donor work-up.
+
+### 04-02 · Alagille syndrome II: clinical criteria (synced 2026-11-08)
+- **A variant lowers the clinical bar:** with a pathogenic/likely pathogenic JAG1 or NOTCH2 variant (or a family history), one feature suffices (GeneReviews 2024; Turnpenny & Ellard 2012). In relatives the variant test is the criterion; the exam measures severity (Kamath 2003: 47% of carrier relatives fail classic criteria).
+- **Test early, low threshold:** molecular yield falls with fewer features but never to zero (~1/3 with only 1–2 features — TODO(verify) source, lesson: Exeter/Guegan 2012). EASL 2024: NGS early in unexplained cholestasis, not single-gene Sanger.
+- Genotype does not tell which organs are affected: the full systems work-up is the same after a gene diagnosis.
+

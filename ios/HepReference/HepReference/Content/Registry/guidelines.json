@@ -902,5 +902,13 @@
    "citation": "Matos H et al. Pediatr Radiol 2012;42:1322-1325",
    "url": "https://doi.org/10.1007/s00247-012-2433-z",
    "checked": "2026-11",
+   "supersedes": null},
+  {"id": "emerick_1999_alagille",
+   "title": "Features of Alagille syndrome in 92 patients: frequency and relation to prognosis",
+   "society": "Study",
+   "year": 1999,
+   "citation": "Emerick KM et al. Hepatology 1999;29:822-829",
+   "url": "https://doi.org/10.1002/hep.510290331",
+   "checked": "2026-11",
    "supersedes": null}
 ]

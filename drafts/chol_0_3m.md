@@ -254,6 +254,13 @@ Mostly Learn layer for this card (ages neo/infant): the long-term picture behind
 - Paucity may be absent on an early infant biopsy (first-biopsy paucity 64.9% JAG1 / 56.5% NOTCH2, GALA 2025); neonatal cholestasis in 83–91%.
 - NOTCH2 patients (2.5–3.6%) often lack the face, eye and vertebral findings → normal face and spine do not exclude Alagille.
 
+### 04-02 · Alagille syndrome II: clinical criteria (synced 2026-11-08)
+- **The atresia mimic (slides 5–6):** paucity on biopsy in only 60% (29/48) before 6 months vs 95% (38/40) after (Emerick 1999); 61% (22/36) of AGS infants had no isotope excretion at 24 h on scintigraphy. A normal duct count in a young infant does not exclude Alagille; non-excretion does not mean atresia.
+- **Kasai in Alagille (Kaye 2010, CHOP):** liver transplant 47.3% vs 13.9%, death 31.6% vs 2.8% with vs without portoenterostomy; Seoul series (Lee 2015, 5 vs 10) same direction. Confounded (sickest infants went to surgery), but no evidence that Kasai helps AGS. → Cholestatic infant with a murmur: echo, spine film, slit lamp and panel requested during the work-up, before the cholangiogram (Fawaz 2017). Consistent with 04-01 entry: a pending gene result never delays the cholangiogram when atresia is likely; the point is to *look* for features in parallel.
+- **Pearl candidate:** thin but patent extrahepatic ducts in an infant with Alagille features argue against a Kasai (lesson: "often hypoplastic but patent").
+- Absent scintigraphy excretion in AGS did not predict transplant or death (Emerick 1999 abstract) — supports "non-excretion ≠ atresia".
+- Peripheral pulmonary stenosis murmur (both axillae) should always prompt the diagnosis (McElhinney 2002).
+
 ### Guideline watch (2026-11-02, weekly check)
 - AASLD/AST/NASPGHAN pediatric liver transplant candidate evaluation guideline, Hepatology 2026, doi 10.1097/HEP.0000000000001805 — published (June 2026), replaces Squires 2014; first author Martinez M, senior author Ng VL (confirmed 2026-11-06, CiteDrive record; the 03-14 lesson calls it "Ng 2026"). Settle the 03-08 referral-trigger TODO from its full text.
 - SEGHNP/AEPap/SEPEAP cholestasis consensus, An Pediatr 2025 — candidate extra column for guideline_compare (not a successor of Fawaz 2017).
