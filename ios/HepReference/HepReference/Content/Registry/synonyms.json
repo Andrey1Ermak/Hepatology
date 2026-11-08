@@ -81,5 +81,20 @@
     "hepatic copper",
     "биопсия печени",
     "гистология"
+  ],
+  "elastography": [
+    "FibroScan",
+    "liver stiffness",
+    "VCTE",
+    "shear wave",
+    "MRE",
+    "эластография"
+  ],
+  "fibrosis score": [
+    "APRI",
+    "GPR",
+    "FIB-4",
+    "ELF",
+    "фиброз"
   ]
 }

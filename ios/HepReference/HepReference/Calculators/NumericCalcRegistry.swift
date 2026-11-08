@@ -6,7 +6,7 @@ import SwiftUI
 /// `BlockView`, `NumericCalcSheet` and `ContentIntegrityTests` all read
 /// from this list, so there is nothing else to update.
 enum NumericCalcRegistry {
-    static let ids: Set<String> = ["nac", "c_uln", "c_rratio"]
+    static let ids: Set<String> = ["nac", "c_uln", "c_rratio", "c_apri_gpr"]
 
     /// Default sheet title when a calculator is opened without a card's
     /// `numeric_calc` label (e.g. the DEBUG `-hepOpenCalc` launch argument).
@@ -15,6 +15,7 @@ enum NumericCalcRegistry {
         case "nac": "Acetaminophen: 21-h IV NAC"
         case "c_uln": "Liver enzymes × ULN"
         case "c_rratio": "R ratio: injury pattern"
+        case "c_apri_gpr": "APRI & GGT-to-platelet ratio"
         default: calcId
         }
     }
@@ -24,6 +25,7 @@ enum NumericCalcRegistry {
         case "nac": AnyView(NACCalcView())
         case "c_uln": AnyView(ULNCalcView())
         case "c_rratio": AnyView(RRatioCalcView())
+        case "c_apri_gpr": AnyView(APRIGPRCalcView())
         default: nil
         }
     }

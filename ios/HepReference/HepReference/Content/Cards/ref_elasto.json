@@ -1,0 +1,405 @@
+{
+ "id": "ref_elasto",
+ "title": "Elastography & Fibrosis Scores",
+ "code": "AASLD 2025 · WFUMB 2024 · ESPGHAN 2026 · CFF 2024",
+ "cat": "ref",
+ "acu": "ref",
+ "tags": [
+  "elastography",
+  "liver stiffness",
+  "transient elastography",
+  "FibroScan",
+  "VCTE",
+  "shear wave elastography",
+  "SWE",
+  "MR elastography",
+  "MRE",
+  "CAP",
+  "spleen stiffness",
+  "fibrosis",
+  "APRI",
+  "GPR",
+  "FIB-4",
+  "ELF",
+  "noninvasive"
+ ],
+ "ages": [
+  "neo",
+  "infant",
+  "child",
+  "teen"
+ ],
+ "entry": "reference",
+ "guidelines": [
+  "aasld_2025_imaging_nilda",
+  "aasld_2025_blood_nilda",
+  "wfumb_2024_elastography",
+  "sru_2020_elastography",
+  "aasld_2025_masld_peds",
+  "espghan_2026_masld",
+  "cff_2024_cfld",
+  "baveno_vii_2022",
+  "who_2024_hbv",
+  "baveno_vi_peds_2016"
+ ],
+ "plan": [
+  {
+   "block": 1,
+   "days": [
+    9,
+    10,
+    14
+   ]
+  }
+ ],
+ "related": [
+  "alt_elevated",
+  "ref_imaging",
+  "ref_biopsy"
+ ],
+ "status": "reviewed",
+ "blocks": [
+  {
+   "t": "note",
+   "k": "info",
+   "h": "Stiffness is not fibrosis",
+   "text": "Elastography measures how stiff the liver is. Scar is one cause; inflammation, cholestasis, congestion and food are others. No pediatric cut-off is endorsed by AASLD (2025) or WFUMB (2024). Read every value with the child's ALT, bilirubin, heart and last meal, and against the child's own earlier values."
+  },
+  {
+   "t": "table",
+   "h": "Four methods",
+   "head": [
+    "Method",
+    "Reports",
+    "Child catch"
+   ],
+   "rows": [
+    [
+     "Transient elastography (VCTE, FibroScan)",
+     "kPa; CAP in dB/m",
+     "Blind sample; S probe for small chests (see below)"
+    ],
+    [
+     "Point shear wave (pSWE, ARFI)",
+     "m/s or kPa, vendor-specific",
+     "Short breath-hold; few child norms per vendor"
+    ],
+    [
+     "2D shear wave (2D-SWE)",
+     "m/s or kPa, vendor-specific",
+     "Works in infants, in free breathing"
+    ],
+    [
+     "MR elastography (MRE)",
+     "kPa of shear stiffness",
+     "Different scale from ultrasound kPa; young children need sedation"
+    ]
+   ]
+  },
+  {
+   "t": "list",
+   "h": "A valid reading in a child",
+   "items": [
+    {
+     "t": "Ask the report to name",
+     "sub": [
+      "Method, probe and vendor: each platform has its own normal."
+     ]
+    },
+    {
+     "t": "Before the scan",
+     "sub": [
+      "Fast if possible; an infant: scan just before the next feed (expert opinion: stiffness rises after a meal).",
+      "No sedation if avoidable: sedation raises stiffness (Li 2020)."
+     ]
+    },
+    {
+     "t": "VCTE quality",
+     "sub": [
+      "At least 10 valid shots and IQR/median ≤ 30% (Lewindon 2019; WFUMB 2024).",
+      "Invalid readings cluster in young children: reliable without sedation from about 6 years (Engelmann 2012).",
+      "Probe by chest circumference: S1 < 45 cm, S2 45–75 cm, M > 75 cm (Engelmann 2012)."
+     ]
+    },
+    {
+     "t": "Follow-up",
+     "sub": [
+      "Same machine, same probe, same conditions every time."
+     ]
+    }
+   ]
+  },
+  {
+   "t": "table",
+   "h": "Normal liver stiffness (VCTE)",
+   "head": [
+    "Age",
+    "Median",
+    "Upper limit"
+   ],
+   "rows": [
+    [
+     "0–5 years",
+     "4.4 kPa",
+     "6.0 kPa"
+    ],
+    [
+     "6–11 years",
+     "4.7 kPa",
+     "6.7 kPa"
+    ],
+    [
+     "12–18 years",
+     "5.1 kPa",
+     "6.8 kPa"
+    ]
+   ]
+  },
+  {
+   "t": "text",
+   "h": "Reading the norms",
+   "text": "Table: 240 healthy children, Heidelberg (Engelmann 2012). Pooled data from 652 healthy children gave 2.45–5.56 kPa (Li 2020); age, sedation, S-probe use and steatosis pushed values up. On different machines in the same 4–17-year-olds, median 3.3 kPa on 2D-SWE vs 4.1 kPa on pSWE and VCTE (Mjelle 2019)."
+  },
+  {
+   "t": "list",
+   "h": "Stiff is not always scarred",
+   "items": [
+    {
+     "t": "Inflammation",
+     "sub": [
+      "Acute viral hepatitis pushed stiffness into the cirrhosis range at the ALT peak (Arena 2008, adults).",
+      "Children and young adults with F0–F2: higher ALT, more often > 8.6 kPa; no effect once F3–F4 (Raizner 2017, 154 patients)."
+     ]
+    },
+    {
+     "t": "Extrahepatic cholestasis",
+     "sub": [
+      "Stiffness fell after biliary drainage, irrespective of fibrosis (Millonig 2008, adults)."
+     ]
+    },
+    {
+     "t": "Venous congestion",
+     "sub": [
+      "Stiffness tracks central venous pressure (Millonig 2010, adults).",
+      "Fontan children: median 18.6 vs 4.7 kPa in controls (Chen 2016). Follow the child's own trend."
+     ]
+    },
+    {
+     "t": "Also",
+     "sub": [
+      "Food, infiltration (HLH, storage disease, leukemia), and moderate-to-severe steatosis (AASLD 2025)."
+     ]
+    },
+    {
+     "t": "Rule",
+     "sub": [
+      "Measure after drainage, decongestion, or once the ALT has settled. Otherwise do not stage."
+     ]
+    }
+   ]
+  },
+  {
+   "t": "note",
+   "k": "warn",
+   "h": "Adult cut-offs do not transfer",
+   "text": "Baveno VII \"rule of five\" (< 10 kPa rules out, > 15 kPa rules in compensated advanced chronic liver disease; < 20 kPa with platelets ≥ 150 × 10⁹/L skips screening endoscopy) is adult. WFUMB 2024: no pediatric cut-off can be recommended. Do not skip an endoscopy in a child on the adult rule."
+  },
+  {
+   "t": "list",
+   "h": "By disease",
+   "items": [
+    {
+     "t": "Biliary atresia, before the Kasai",
+     "sub": [
+      "Stiffness pooled: sensitivity 83%, specificity 79% for atresia (Wagner 2022, 11 studies).",
+      "2D-SWE > 1.84 m/s: sensitivity 92%, specificity 79% (Dillman 2019, 41 infants).",
+      "A high value raises urgency. A low value never delays biopsy or cholangiogram."
+     ]
+    },
+    {
+     "t": "Biliary atresia, after the Kasai",
+     "sub": [
+      "Cirrhosis (F4): sensitivity 96%, specificity 89%; varices: 85% / 76% (Wagner 2022).",
+      "Spleen stiffness ≥ 28.9 kPa: AUROC 0.87 vs 0.73 for liver stiffness; sensitivity 75%, specificity 87% (Sintusek 2019, 51 children).",
+      "No variceal bleed with spleen stiffness < 60 kPa (Goldschmidt 2014, 99 children, 19 scoped). Small series: never use it to skip endoscopy."
+     ]
+    },
+    {
+     "t": "Cystic fibrosis",
+     "sub": [
+      "5.55 kPa flags CF liver disease: sensitivity 70%, specificity 82% (Lewindon 2019, 160 children).",
+      "8.7 kPa separates F3–F4 from F1–F2: sensitivity 75%, specificity 100%; with APRI, AUROC 0.92 (Lewindon 2019)."
+     ]
+    },
+    {
+     "t": "MASLD",
+     "sub": [
+      "Advanced fibrosis: AUROC 0.67, PPV 40%, NPV 90% (Nichols 2026, NASH CRN, 92 children). A rule-out test at best.",
+      "ESPGHAN 2026: < 5.5 kPa may help exclude significant fibrosis; > 10 kPa suggests advanced chronic liver disease (MASLD only, low evidence). AASLD 2025: adult thresholds not validated in children."
+     ]
+    },
+    {
+     "t": "Fontan",
+     "sub": [
+      "Congestion dominates: trend only, never stage from one value."
+     ]
+    }
+   ]
+  },
+  {
+   "t": "text",
+   "h": "CAP and MRE",
+   "text": "CAP (fat on VCTE) did not separate steatosis grades in pediatric MASLD: medians 325, 310 and 323 dB/m for grades 1–3 (Nichols 2026). AASLD 2025 advises against diagnostic CAP in children; ESPGHAN 2026 accepts it as an adjunct. MRE samples the whole liver and is least affected by obesity and ascites, but its kPa is shear stiffness: never compare it with ultrasound kPa. Use MRE when an MRI is needed anyway or ultrasound fails."
+  },
+  {
+   "t": "list",
+   "h": "Serum scores in children",
+   "items": [
+    {
+     "t": "APRI = (AST ÷ AST ULN) ÷ platelets × 100",
+     "sub": [
+      "Built in adults with hepatitis C (Wai 2003). Muscle, hemolysis and a hepatitis flare raise AST; hypersplenism lowers platelets.",
+      "Depends on the lab's AST ULN."
+     ]
+    },
+    {
+     "t": "GPR = (GGT ÷ GGT ULN) ÷ platelets × 100",
+     "sub": [
+      "Built in adults with hepatitis B (Lemoine 2016). Meaningless in early infancy, when GGT is physiologically high."
+     ]
+    },
+    {
+     "t": "FIB-4",
+     "sub": [
+      "Contains age in years: low in children. Never reassure with a low FIB-4."
+     ]
+    },
+    {
+     "t": "Where scores help",
+     "sub": [
+      "Cystic fibrosis: APRI > 0.264 (Leung 2015) and GPR > 0.20 (Calvopina 2022) flag liver disease. CFF 2024: calculate at least one index and follow it at least yearly.",
+      "Adolescent hepatitis B without elastography: APRI > 0.5 significant fibrosis, > 1.0 cirrhosis (WHO 2024)."
+     ]
+    },
+    {
+     "t": "Where they fail",
+     "sub": [
+      "MASLD: APRI AUROC 0.76, FIB-4 0.61 for F ≥ 3; none beat ALT > 50 U/L (Kalveram 2024, 457 children). AASLD 2025 and ESPGHAN 2026: do not use."
+     ]
+    }
+   ]
+  },
+  {
+   "t": "numeric_calc",
+   "calc_id": "c_apri_gpr",
+   "label": "APRI & GGT-to-platelet ratio"
+  },
+  {
+   "t": "pearls",
+   "items": [
+    {
+     "k": "pearl",
+     "text": "Pooled upper limit of normal VCTE: 5.56 kPa (Li 2020); age-specific upper limits reach 6.8 kPa in teens (Engelmann 2012). Age, sedation, S-probe and fat push values up."
+    },
+    {
+     "k": "pitfall",
+     "text": "Each platform has its own normal: 2D-SWE reads lower than pSWE and VCTE in the same child (Mjelle 2019)."
+    },
+    {
+     "k": "pitfall",
+     "text": "Inflammation, cholestasis and congestion each make a non-cirrhotic liver read like cirrhosis. Stage after the cause settles."
+    },
+    {
+     "k": "pearl",
+     "text": "In biliary atresia, stiffness ranks the infant; the cholangiogram decides."
+    },
+    {
+     "k": "pearl",
+     "text": "After the Kasai, spleen stiffness ≥ 28.9 kPa: AUROC 0.87 vs 0.73 for liver stiffness; sensitivity 75%, specificity 87% (Sintusek 2019)."
+    },
+    {
+     "k": "pitfall",
+     "text": "Pediatric MASLD: VCTE is a rule-out test (NPV 90%, PPV 40%); CAP cannot grade fat (Nichols 2026)."
+    },
+    {
+     "k": "pitfall",
+     "text": "MRE kPa and ultrasound kPa live on different scales. Never compare them."
+    },
+    {
+     "k": "pitfall",
+     "text": "FIB-4 < 1.30 does not reassure in a child: the age term makes it low."
+    }
+   ]
+  },
+  {
+   "t": "guideline_compare",
+   "h": "Guidelines",
+   "rows": [
+    {
+     "topic": "Pediatric elastography cut-offs",
+     "positions": {
+      "aasld_2025_imaging_nilda": "None endorsed; no preferred method",
+      "wfumb_2024_elastography": "None can be recommended; ≤ 5 kPa rules out, ≥ 15 kPa rules in, except biliary atresia, CF and Fontan"
+     },
+     "verdict": "differs",
+     "note": "Use the WFUMB rule-out value (≤ 5 kPa) only outside biliary atresia, CF and congestion."
+    },
+    {
+     "topic": "VCTE in pediatric MASLD",
+     "positions": {
+      "aasld_2025_masld_peds": "Adult thresholds not validated",
+      "espghan_2026_masld": "May help: < 5.5 kPa to exclude significant fibrosis, > 10 kPa suggests advanced chronic liver disease"
+     },
+     "verdict": "material",
+     "note": "Between 5.5 and 10 kPa ESPGHAN gives no answer and AASLD gives no threshold: decide on the whole picture, not the number."
+    },
+    {
+     "topic": "CAP in pediatric MASLD",
+     "positions": {
+      "aasld_2025_masld_peds": "Not a diagnostic tool",
+      "espghan_2026_masld": "May be an adjunct; > 280 dB/m strongly associated with steatosis"
+     },
+     "verdict": "differs",
+     "note": "CAP did not track histologic grade (Nichols 2026)."
+    },
+    {
+     "topic": "Serum scores in pediatric MASLD",
+     "positions": {
+      "aasld_2025_masld_peds": "Adult cut-offs should not be applied",
+      "espghan_2026_masld": "FIB-4, APRI, PNFI, PNFS not recommended"
+     },
+     "verdict": "aligned",
+     "note": "Do not reassure with a low FIB-4 or APRI."
+    },
+    {
+     "topic": "Serum scores, pediatric chronic liver disease (not MASLD)",
+     "positions": {
+      "aasld_2025_blood_nilda": "Suggests APRI or FIB-4 for F3–F4 (ungraded, low evidence); not for monitoring",
+      "cff_2024_cfld": "Cystic fibrosis: at least one index (APRI, GPR or FIB-4), at least yearly",
+      "espghan_2026_masld": "MASLD: FIB-4, APRI, PNFI, PNFS not recommended"
+     },
+     "verdict": "differs",
+     "note": "Scores help most in cystic fibrosis and as a trend in one child; never as a single staging value."
+    },
+    {
+     "topic": "Serial measurements",
+     "positions": {
+      "aasld_2025_imaging_nilda": "Not a standalone test of regression or progression",
+      "wfumb_2024_elastography": "Same machine and probe; a change > 10% is meaningful"
+     },
+     "verdict": "differs",
+     "note": "Confirm any change with the clinical picture."
+    },
+    {
+     "topic": "Skipping screening endoscopy",
+     "positions": {
+      "baveno_vii_2022": "Adults: < 20 kPa and platelets ≥ 150 × 10⁹/L",
+      "baveno_vi_peds_2016": "Children: no noninvasive rule to skip endoscopy"
+     },
+     "verdict": "gap",
+     "note": "No pediatric rule exists."
+    }
+   ]
+  }
+ ]
+}

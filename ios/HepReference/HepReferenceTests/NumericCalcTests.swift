@@ -148,12 +148,78 @@ final class NumericCalcSourceTests: XCTestCase {
     /// and every registered calculator has a real title.
     func testCalculatorSourcesExist() {
         let registry = Registry(bundle: Bundle(for: NumericCalcSourceTests.self))
-        for id in ULNCalc.sourceIds + RRatioCalc.sourceIds {
+        for id in ULNCalc.sourceIds + RRatioCalc.sourceIds + APRIGPRCalc.sourceIds {
             XCTAssertNotNil(registry.guideline(id), "calculator source '\(id)' missing from guidelines.json")
         }
         for id in NumericCalcRegistry.ids {
             XCTAssertNotEqual(NumericCalcRegistry.title(for: id), id, "\(id): no title")
             XCTAssertNotNil(NumericCalcRegistry.view(for: id), "\(id): no view")
         }
+    }
+}
+
+final class APRIGPRCalcTests: XCTestCase {
+    /// Wai 2003 formula: AST twice the ULN with platelets 200 gives APRI 1.0.
+    func testAPRIFormula() throws {
+        XCTAssertEqual(try XCTUnwrap(APRIGPRCalc.index(value: 80, uln: 40, platelets: 200)), 1.0)
+        XCTAssertEqual(try XCTUnwrap(APRIGPRCalc.index(value: 45, uln: 40, platelets: 250)), 0.45, accuracy: 0.0001)
+    }
+
+    /// Lemoine 2016 formula: GGT twice the ULN with platelets 100 gives GPR 2.0.
+    func testGPRFormula() throws {
+        XCTAssertEqual(try XCTUnwrap(APRIGPRCalc.index(value: 60, uln: 30, platelets: 100)), 2.0)
+    }
+
+    /// The same AST reads one-third higher against ULN 30 than ULN 40.
+    func testAPRIDependsOnTheLabULN() throws {
+        let uln40 = try XCTUnwrap(APRIGPRCalc.index(value: 60, uln: 40, platelets: 150))
+        let uln30 = try XCTUnwrap(APRIGPRCalc.index(value: 60, uln: 30, platelets: 150))
+        XCTAssertEqual(uln30 / uln40, 4.0 / 3.0, accuracy: 0.0001)
+    }
+
+    /// Reference points are "> cut-off": a value exactly on a threshold is not above it.
+    func testThresholdsAreStrict() throws {
+        let half = try XCTUnwrap(APRIGPRCalc.index(value: 50, uln: 40, platelets: 250))
+        XCTAssertEqual(half, 0.5)
+        let who = APRIGPRCalc.apriReferences.map { APRIGPRCalc.isAbove(half, $0) }
+        XCTAssertEqual(who, [true, false, false])
+        let one = try XCTUnwrap(APRIGPRCalc.index(value: 100, uln: 40, platelets: 250))
+        XCTAssertEqual(APRIGPRCalc.apriReferences.map { APRIGPRCalc.isAbove(one, $0) }, [true, true, false])
+        let gprEdge = try XCTUnwrap(APRIGPRCalc.index(value: 30, uln: 50, platelets: 300))
+        XCTAssertEqual(gprEdge, 0.2)
+        XCTAssertFalse(APRIGPRCalc.isAbove(gprEdge, APRIGPRCalc.gprReferences[0]))
+    }
+
+    /// Published cut-offs, in ascending order: Leung 2015, WHO 2024, Calvopina 2022.
+    func testReferencePoints() {
+        XCTAssertEqual(APRIGPRCalc.apriReferences.map(\.threshold), [0.264, 0.5, 1.0])
+        XCTAssertEqual(APRIGPRCalc.gprReferences.map(\.threshold), [0.20])
+        for ref in APRIGPRCalc.apriReferences + APRIGPRCalc.gprReferences {
+            XCTAssertEqual(Double(ref.thresholdText), ref.threshold)
+        }
+    }
+
+    func testInvalidInputReturnsNil() {
+        XCTAssertNil(APRIGPRCalc.index(value: 80, uln: 40, platelets: 0))
+        XCTAssertNil(APRIGPRCalc.index(value: 80, uln: 0, platelets: 200))
+        XCTAssertNil(APRIGPRCalc.index(value: 0, uln: 40, platelets: 200))
+        XCTAssertNil(APRIGPRCalc.index(value: -5, uln: 40, platelets: 200))
+    }
+
+    func testFormat() {
+        XCTAssertEqual(APRIGPRCalc.format(0.264), "0.26")
+        XCTAssertEqual(APRIGPRCalc.format(1.236), "1.24")
+        XCTAssertEqual(APRIGPRCalc.format(2), "2.00")
+        // Near a reference point, a third decimal keeps number and label consistent.
+        XCTAssertEqual(APRIGPRCalc.format(0.5004, near: APRIGPRCalc.apriReferences), "0.5004")
+        XCTAssertEqual(APRIGPRCalc.format(0.4996, near: APRIGPRCalc.apriReferences), "0.4996")
+        XCTAssertEqual(APRIGPRCalc.format(0.2641, near: APRIGPRCalc.apriReferences), "0.2641")
+        XCTAssertEqual(APRIGPRCalc.format(0.5, near: APRIGPRCalc.apriReferences), "0.50")
+        XCTAssertEqual(APRIGPRCalc.format(0.75, near: APRIGPRCalc.apriReferences), "0.75")
+    }
+
+    func testReferenceIdsAreUnique() {
+        let ids = (APRIGPRCalc.apriReferences + APRIGPRCalc.gprReferences).map(\.id)
+        XCTAssertEqual(Set(ids).count, ids.count)
     }
 }

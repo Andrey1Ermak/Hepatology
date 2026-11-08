@@ -13,5 +13,6 @@ extension Card {
     private static let gridTitleOverrides: [String: String] = [
         "ref_norms": "Liver Test Norms",
         "unconj_bili": "Unconjugated Bilirubin",
+        "ref_elasto": "Elastography & Scores",
     ]
 }

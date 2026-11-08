@@ -24,6 +24,7 @@ struct CardHeaderView: View {
             KickerLine(number: RomanNumeral.string(card.cat.number), text: card.cat.displayName)
             Text(card.title)
                 .hepTitleStyle()
+                .fixedSize(horizontal: false, vertical: true)
                 .accessibilityAddTraits(.isHeader)
             if let sourceText {
                 Text(sourceText)

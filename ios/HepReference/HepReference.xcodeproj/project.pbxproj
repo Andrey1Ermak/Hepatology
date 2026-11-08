@@ -18,6 +18,7 @@
 		1455D8F80E997C9E8BFEADF7 /* VerdictRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6C593AD02E59E70DD140D /* VerdictRule.swift */; };
 		1577CE77F31C5DCDEA91484F /* Manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC37CEB0E5CA29B7ED090AB2 /* Manifest.swift */; };
 		1695A41F95A8867E5E043F8B /* TextBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A5BAE9A5B9668A85B96FC7 /* TextBlockView.swift */; };
+		180CA01A9E38E4A2497E3AEA /* APRIGPRCalcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5878F8195902B3223BA88CC0 /* APRIGPRCalcView.swift */; };
 		1ECA7240560348FBA515348B /* ContentGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E7305C8AB9ED3A2DED3B23 /* ContentGate.swift */; };
 		210B7BF089AE840F3C8E3D9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 563AC1B574416E0A89C3E80C /* LaunchScreen.storyboard */; };
 		2295C3C0FD1295915AA7CCDE /* ContentGateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B740A2C04B02F78FDF1CE592 /* ContentGateTests.swift */; };
@@ -27,6 +28,7 @@
 		306BDB307D8497F20F7BF31D /* OutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA84F05240E0512FDD1B5D /* OutView.swift */; };
 		314F1FA62489B523FE90FF47 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10BE75C1587BBCFE4E31351 /* Badge.swift */; };
 		34A5A37E3A1ACF2181EEA7FC /* Card+Pathways.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CCA92DE2CF348232BA1994 /* Card+Pathways.swift */; };
+		3A3331DDBE6872C743798402 /* APRIGPRCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AA24BF84034F85CC2DE0D /* APRIGPRCalc.swift */; };
 		3C7E0C7B85F33D63E3EB9485 /* ChipCountRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F48F661E3A6FE32916D21 /* ChipCountRule.swift */; };
 		3D82234C2249C06E751793FB /* ChipBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6346A41417A486CF030A17 /* ChipBoardView.swift */; };
 		3EEB07FC2701DAFEA972C508 /* Elevation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3F7BF9A3E68F759795A972 /* Elevation.swift */; };
@@ -172,6 +174,7 @@
 		563AC1B574416E0A89C3E80C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5648AD778A33358A313C2A69 /* PearlsBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PearlsBlockView.swift; sourceTree = "<group>"; };
 		578ED5C458F616A288AA4F79 /* CardLinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLinksView.swift; sourceTree = "<group>"; };
+		5878F8195902B3223BA88CC0 /* APRIGPRCalcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APRIGPRCalcView.swift; sourceTree = "<group>"; };
 		5B7C394F13E0FCA443EBE2D9 /* RegistryDecodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistryDecodingTests.swift; sourceTree = "<group>"; };
 		5F880D8133D078BAE1B77DE0 /* AcuLevel+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AcuLevel+Style.swift"; sourceTree = "<group>"; };
 		617645515C201EB540B5CF04 /* CalculatorResetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorResetButton.swift; sourceTree = "<group>"; };
@@ -183,6 +186,7 @@
 		77C5B4590992996138683F64 /* ULNCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ULNCalc.swift; sourceTree = "<group>"; };
 		7CFAF5CB9638C1CF262E6C85 /* DoseBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoseBlockView.swift; sourceTree = "<group>"; };
 		7E3F7BF9A3E68F759795A972 /* Elevation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elevation.swift; sourceTree = "<group>"; };
+		7F2AA24BF84034F85CC2DE0D /* APRIGPRCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APRIGPRCalc.swift; sourceTree = "<group>"; };
 		820E6783963139414EF2AD8E /* BranchBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchBlockView.swift; sourceTree = "<group>"; };
 		82967B5A0BE18BF5E7EEA93C /* SectionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCard.swift; sourceTree = "<group>"; };
 		88237CD1A8F2C2E498602338 /* CardSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSession.swift; sourceTree = "<group>"; };
@@ -281,6 +285,7 @@
 		3DB14406009FE18ED2754FAB /* Calculators */ = {
 			isa = PBXGroup;
 			children = (
+				5878F8195902B3223BA88CC0 /* APRIGPRCalcView.swift */,
 				9CAAEBE72535C29AEBF1EC37 /* CalcNumberField.swift */,
 				B306463A6CAE9C4A74717DEA /* NACCalcView.swift */,
 				F9751601FD9BE9557099026B /* RRatioCalcView.swift */,
@@ -378,6 +383,7 @@
 		BC1F2F30F7AB42FD6D5DFFBE /* Calculators */ = {
 			isa = PBXGroup;
 			children = (
+				7F2AA24BF84034F85CC2DE0D /* APRIGPRCalc.swift */,
 				1C9357B09215E0402FEB31BD /* ChecklistAnyRule.swift */,
 				320F48F661E3A6FE32916D21 /* ChipCountRule.swift */,
 				055C6C76AF68F51F86C0FB35 /* ChipScoreRule.swift */,
@@ -558,6 +564,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A3331DDBE6872C743798402 /* APRIGPRCalc.swift in Sources */,
+				180CA01A9E38E4A2497E3AEA /* APRIGPRCalcView.swift in Sources */,
 				E3048B8A5A79D2211CC3FBF9 /* AcuLevel+Style.swift in Sources */,
 				64DD7EEF516894C7B2EB643E /* AgeSwitchBlockView.swift in Sources */,
 				EC98CB7C3F3ACC75D208EE9C /* ArmView.swift in Sources */,

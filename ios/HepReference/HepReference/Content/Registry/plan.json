@@ -8,12 +8,12 @@
     {"day": 6, "topic": "Liver biopsy in children", "cards": ["ref_biopsy"]},
     {"day": 7, "topic": "Ultrasound and Doppler", "cards": ["ref_imaging"]},
     {"day": 8, "topic": "CT, MRI, MRCP, HIDA", "cards": ["ref_imaging"]},
-    {"day": 9, "topic": "Elastography", "cards": []},
-    {"day": 10, "topic": "Serum fibrosis markers", "cards": []},
+    {"day": 9, "topic": "Elastography", "cards": ["ref_elasto"]},
+    {"day": 10, "topic": "Serum fibrosis markers", "cards": ["ref_elasto"]},
     {"day": 11, "topic": "Genetic testing", "cards": []},
     {"day": 12, "topic": "Nutrition in cholestasis", "cards": []},
     {"day": 13, "topic": "Endoscopy and ERCP in pediatric hepatology", "cards": []},
-    {"day": 14, "topic": "Synthesis and self-test", "cards": ["ref_norms", "alt_elevated", "ast_isolated", "alp_isolated", "ggt_isolated", "unconj_bili", "inr_prolonged", "ref_imaging", "ref_biopsy"]}
+    {"day": 14, "topic": "Synthesis and self-test", "cards": ["ref_norms", "alt_elevated", "ast_isolated", "alp_isolated", "ggt_isolated", "unconj_bili", "inr_prolonged", "ref_imaging", "ref_biopsy", "ref_elasto"]}
   ]},
   {"block": 2, "title": "Neonatal cholestasis: approach", "start": "2026-10-12", "days": [
     {"day": 1, "topic": "Epidemiology and definitions", "cards": []},
