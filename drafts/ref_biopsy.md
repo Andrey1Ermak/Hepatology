@@ -19,3 +19,6 @@ Reference card C (task: day 22). Inbox is filled by daily lesson sync (§3.4).
 - **Not published:** the "1.7% complication rate" from the 03-03 Inbox (attributed by the lesson to Fawaz 2017; source not confirmed) — replaced by the primary pediatric series (Matos 2012, Westheim 2012, Cohen 1992, Short 2013).
 - **Not published (unverified beyond the lesson):** HCC needle-track seeding 1.6–5%; blind-percussion RCT (Mogahed 2016); EUS-guided biopsy (Schwartz 2025); Laennec/CPA cirrhosis subclasses; ductopenia ratio < 0.9 in term infants (Ayoub & Kamath 2020); IAIHPG 2022 histology criteria; C5b-9 in GALD. Candidates for a later pass or for cards 3, 24, 23.
 - Hemostasis wording aligned with `inr_prolonged` ("no plasma for a number; agree the route with the proceduralist").
+
+### Guideline watch (2026-11-09, weekly check)
+- **AASLD EXPO: Liver Biopsy** — Verna EC, Adler DG, Kappus MR, Rand EB, Tapper EB, Rockey DC. Hepatology 2026, doi 10.1097/HEP.0000000000001828 (published 2026-10-15; PMID 42841770). Updates AASLD 2009; has pediatric recommendations (age/size, sedation, anatomy, coagulopathy, local expertise); adds EUS-guided biopsy. Full text not accessible on 2026-11-09 → re-check the AASLD 2009 lines (≥ 11 portal tracts etc.) before changing anything.

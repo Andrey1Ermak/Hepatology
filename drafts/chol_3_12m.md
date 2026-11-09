@@ -103,3 +103,7 @@ Card not built yet (trigger: lesson 05-14). Inbox is filled by daily lesson sync
 ### Guideline watch (2026-11-02, weekly check)
 - AASLD/AST/NASPGHAN pediatric liver transplant candidate evaluation guideline, Hepatology 2026, doi 10.1097/HEP.0000000000001805 — published (June 2026), replaces Squires 2014; first author Martinez M, senior author Ng VL (confirmed 2026-11-06, CiteDrive record; the 03-14 lesson calls it "Ng 2026"). Settle the 03-08 referral-trigger TODO from its full text.
 - SEGHNP/AEPap/SEPEAP cholestasis consensus, An Pediatr 2025 — candidate extra column for guideline_compare (not a successor of Fawaz 2017).
+
+### Guideline watch (2026-11-09, weekly check)
+- EASL CPG genetic cholestatic liver diseases 2024 now registered (`easl_2024_genetic_cholestasis`; full text at sources/guidelines/, local only). ALGS recommendations verified: no routine biopsy for prognosis/management (LoE 3); IBAT inhibitor offered for pruritus (LoE 2); no statins (LoE 4).
+- An AASLD EXPO on pruritus in genetic cholestatic syndromes was mentioned at The Liver Meeting 2026 (AASLD TLM-26 news) — citation not found on 2026-11-09; re-search at build.

@@ -40,7 +40,8 @@
   "related": [
     "ref_norms",
     "alt_elevated",
-    "ast_isolated"
+    "ast_isolated",
+    "ref_genetics"
   ],
   "status": "reviewed",
   "blocks": [

@@ -1,6 +1,6 @@
 # ref_genetics — Genetic Testing (draft)
 
-Card not built yet (trigger: lesson 01-14, see BACKLOG). Inbox is filled by daily lesson sync (§3.4).
+**Built 2026-11-09 (day 24) → Content/Cards/ref_genetics.json.** Inbox below stays as the reading list for future enrichment.
 
 ## Inbox
 
@@ -40,3 +40,9 @@ Card not built yet (trigger: lesson 01-14, see BACKLOG). Inbox is filled by dail
 - **Test early, low threshold:** molecular yield falls with fewer features but never to zero (~1/3 with only 1–2 features — TODO(verify) source, lesson: Exeter/Guegan 2012). EASL 2024: NGS early in unexplained cholestasis, not single-gene Sanger.
 - Genotype does not tell which organs are affected: the full systems work-up is the same after a gene diagnosis.
 
+## Build notes (day 24, 2026-11-09)
+- Sources read: lessons 01-11, 02-12 (+ Inbox 02-14, 03-02, 04-01, 04-02); EASL 2024 full text (general recommendations: NGS early in infants/children; Sanger discouraged except ABCB4 in small-duct PSC; WGS if WES negative; reanalyse ≥ every 3 years; counselling before testing; incidental findings agreed in advance; VUS upgrade via family testing, in vitro data; ALGS biopsy useful with a VUS).
+- 20 primary citations checked against Europe PMC/Crossref abstracts (13 confirmed, 5 partly, 2 not in abstract) — see D-2026-11-09-2.
+- **Not published (no verified number):** JAG1 whole-gene deletion share (6.4% GALA / ~13% CHOP / 70 of ~700 catalogued, Gilbert 2019); single ABCB4/ABCB11 variant 25% vs 26% controls (Chen 2019); panel median 21 days (Karpen 2021); GEMINI hours (abstract: urgent 3.3 vs 4.0 days; routine genome slower, 6.1 vs 4.2 days); NHS R171 criteria; FDA/EMA IBAT label ages for PFIC (lesson slide 17 — labels not checked).
+- Fawaz 2017 positions taken from the lessons (full text not accessible today) — D-2026-11-09-3; verify.
+- Deferred: case block (reference card; no cases), BSEP genotype table (only BSEP3 vs BSEP1 line published), NBAS fever protocol (→ palf card), NPC1 case report.

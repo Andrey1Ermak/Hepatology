@@ -1,0 +1,461 @@
+{
+ "id": "ref_genetics",
+ "title": "Genetic Testing",
+ "code": "EASL 2024 · NASPGHAN/ESPGHAN 2017 · ACMG 2015 · 2019 · 2021",
+ "cat": "ref",
+ "acu": "ref",
+ "tags": [
+  "genetic testing",
+  "gene panel",
+  "exome",
+  "genome",
+  "rapid genome",
+  "trio",
+  "VUS",
+  "variant of uncertain significance",
+  "reanalysis",
+  "copy number",
+  "del/dup",
+  "microarray",
+  "ACMG",
+  "JAG1",
+  "ABCB11",
+  "SERPINA1",
+  "secondary findings",
+  "genetic counseling"
+ ],
+ "ages": [
+  "neo",
+  "infant",
+  "child",
+  "teen"
+ ],
+ "entry": "reference",
+ "guidelines": [
+  "easl_2024_genetic_cholestasis",
+  "naspghan_espghan_2017_nc",
+  "acmg_2015_variants",
+  "acmg_2019_reanalysis",
+  "acmg_2021_exome",
+  "acmg_2025_sf_v33",
+  "nhs_2026_genomic_directory",
+  "fda_valproate_label"
+ ],
+ "plan": [
+  {
+   "block": 1,
+   "days": [
+    11,
+    14
+   ]
+  },
+  {
+   "block": 2,
+   "days": [
+    12
+   ]
+  },
+  {
+   "block": 4,
+   "days": [
+    1
+   ]
+  }
+ ],
+ "related": [
+  "ref_biopsy",
+  "unconj_bili"
+ ],
+ "status": "reviewed",
+ "blocks": [
+  {
+   "t": "note",
+   "k": "crit",
+   "h": "Never wait for the result",
+   "text": "A pending gene test never delays the cholangiogram, stopping lactose, nitisinone, cholic acid or intravenous immunoglobulin (IVIG). A result can remove the reason to operate; it can never supply a reason to wait (expert opinion; no guideline states it)."
+  },
+  {
+   "t": "list",
+   "h": "Treat on suspicion",
+   "items": [
+    {
+     "t": "Possible biliary atresia",
+     "sub": [
+      "Cholangiogram on the atresia timetable; send genetics the same day, in parallel.",
+      "Before the cholangiogram, look for Alagille syndrome: echocardiogram, spine film, eye exam for posterior embryotoxon (NASPGHAN/ESPGHAN 2017)."
+     ]
+    },
+    {
+     "t": "Galactosemia",
+     "sub": [
+      "Stop lactose on suspicion. Send GALT activity before any red cell transfusion."
+     ]
+    },
+    {
+     "t": "Tyrosinemia type 1",
+     "sub": [
+      "Succinylacetone is diagnostic; start nitisinone with the metabolic team without waiting for genes."
+     ]
+    },
+    {
+     "t": "Bile acid synthesis defect",
+     "sub": [
+      "Low gamma-glutamyl transferase (GGT) with normal or low serum bile acids: send urine bile acids; oral cholic acid treats it."
+     ]
+    },
+    {
+     "t": "Citrin deficiency",
+     "sub": [
+      "High citrulline and galactose, fatty liver: lactose-free formula with medium-chain triglycerides (MCT)."
+     ]
+    },
+    {
+     "t": "Gestational alloimmune liver disease (GALD)",
+     "sub": [
+      "Not genetic. Treat with IVIG ± exchange transfusion; no gene result is coming."
+     ]
+    }
+   ]
+  },
+  {
+   "t": "list",
+   "h": "Which test reads what",
+   "items": [
+    {
+     "t": "Single gene (Sanger)",
+     "sub": [
+      "Known family variant only. EASL 2024 discourages it as a first test, except ABCB4 in small-duct primary sclerosing cholangitis (PSC)."
+     ]
+    },
+    {
+     "t": "Cholestasis panel",
+     "sub": [
+      "Listed genes only; misses newer genes and non-coding variants.",
+      "Ask whether copy-number (deletion/duplication) analysis is included."
+     ]
+    },
+    {
+     "t": "Exome, ideally trio",
+     "sub": [
+      "Coding exons; misses most copy-number changes, non-coding variants, repeats and mitochondrial DNA.",
+      "Can be reanalyzed as new genes are published."
+     ]
+    },
+    {
+     "t": "Rapid genome, trio",
+     "sub": [
+      "Coding and non-coding variants, copy number, mitochondrial DNA; more variants of uncertain significance (VUS) to sift.",
+      "Results in days: the test for the intensive care unit (ICU) and a pending transplant decision."
+     ]
+    },
+    {
+     "t": "Chromosomal microarray",
+     "sub": [
+      "Copy-number gains and losses only; misses single-letter variants. Use when there are several anomalies or developmental delay."
+     ]
+    }
+   ]
+  },
+  {
+   "t": "list",
+   "h": "Which child, which test",
+   "items": [
+    {
+     "t": "Infant with pale stools",
+     "sub": [
+      "Atresia pathway first; rapid trio genome or broad panel the same day."
+     ]
+    },
+    {
+     "t": "Infant cholestasis, atresia excluded",
+     "sub": [
+      "Broad panel with deletion/duplication analysis, or trio exome. Add urine bile acids if GGT is low."
+     ]
+    },
+    {
+     "t": "Syndromic features (heart, vertebrae, eyes, face)",
+     "sub": [
+      "JAG1 and NOTCH2 with deletion analysis. Negative sequencing does not exclude Alagille syndrome."
+     ]
+    },
+    {
+     "t": "Indeterminate or recurrent acute liver failure",
+     "sub": [
+      "Rapid trio genome or exome. Do not wait for it if transplant criteria are met."
+     ]
+    },
+    {
+     "t": "Older child, unexplained alanine aminotransferase (ALT) or cholestasis",
+     "sub": [
+      "Exome with liver-focused analysis (ATP7B, ABCB4 and others).",
+      "Wilson disease: ceruloplasmin and urine copper first; ATP7B confirms."
+     ]
+    },
+    {
+     "t": "Preterm infant on parenteral nutrition (PN)",
+     "sub": [
+      "Test only if cholestasis persists off PN: yield was 4.3% in this group (Togawa 2016)."
+     ]
+    }
+   ]
+  },
+  {
+   "t": "note",
+   "k": "info",
+   "h": "Alpha-1 antitrypsin: test it separately",
+   "text": "SERPINA1 is not on every panel. Send a serum alpha-1 antitrypsin level and a Pi type (phenotype) or genotype in the first-line workup. The level rises with inflammation: if inconclusive, repeat it with a C-reactive protein (EASL 2024)."
+  },
+  {
+   "t": "list",
+   "h": "Yield depends on who is tested",
+   "items": [
+    "71% (22 of 31) when the phenotype looked genetic; 4.3% (2 of 46) with prematurity and other causes (Togawa 2016).",
+    "Open referral to US panels: 12% of 2,171 (Karpen 2021); 6.8% of 10,894 (Hoskins 2026).",
+    "Indeterminate pediatric acute liver failure: 37% of 260 by exome; 41% with onset in the first year; 64% when recurrent (Lenz 2024).",
+    "Acute liver dysfunction: rapid genome diagnosed 7 of 18 (Bonser 2023).",
+    "Infants under 1 year, same sample: rapid genome 49% vs targeted panel 27% (GEMINI, Maron 2023; yield included some VUS).",
+    "Pooled, 20,068 children: genome 41%, exome 36%, microarray 10% (Clark 2018)."
+   ]
+  },
+  {
+   "t": "list",
+   "h": "Use GGT to read the panel",
+   "items": [
+    "Low or normal GGT: ATP8B1, ABCB11, TJP2, MYO5B, USP53; bile acid synthesis defects.",
+    "High GGT: JAG1, NOTCH2, ABCB4, CFTR, SERPINA1.",
+    "Limiting ATP8B1/ABCB11 sequencing to low peak GGT doubled the yield (18.8% to 35.1%) and missed no case (Wang 2016; one center in China).",
+    "Use GGT to interpret a result, not to refuse broad testing."
+   ]
+  },
+  {
+   "t": "list",
+   "h": "What a negative result misses",
+   "items": [
+    "Whole-gene deletions, if the test did not include copy-number analysis (JAG1 especially).",
+    "Genes added after the panel was built (for example KIF12, USP53, ZFYVE19).",
+    "Deep intronic and promoter variants: exome capture misses them; consider genome or RNA studies.",
+    "Negative means negative for what was looked at, by the method used."
+   ]
+  },
+  {
+   "t": "list",
+   "h": "Send the parents",
+   "items": [
+    "Trio testing doubled the odds of a diagnosis vs testing the child alone (odds ratio 2.04; Clark 2018).",
+    "Only parents can prove two recessive variants sit on different copies of the gene (in trans).",
+    "A new (de novo) dominant variant, such as in JAG1, is classified faster when both parents are negative.",
+    "Two variants in ABCB11 in the child alone is a hypothesis until the parents are tested."
+   ]
+  },
+  {
+   "t": "table",
+   "h": "Reading the report",
+   "head": [
+    "Class",
+    "Do"
+   ],
+   "rows": [
+    [
+     "Pathogenic",
+     "Diagnose, treat, test relatives"
+    ],
+    [
+     "Likely pathogenic (> 90% certain)",
+     "Act as diagnosed if the phenotype fits"
+    ],
+    [
+     "Uncertain significance (VUS)",
+     "Do not diagnose; resolve it"
+    ],
+    [
+     "Likely benign",
+     "Do not act"
+    ],
+    [
+     "Benign",
+     "Ignore"
+    ]
+   ]
+  },
+  {
+   "t": "list",
+   "h": "Resolving a VUS",
+   "items": [
+    {
+     "t": "Family",
+     "sub": [
+      "Test parents (phase) and affected and healthy siblings (segregation). EASL 2024 lists this as a route to upgrade a VUS."
+     ]
+    },
+    {
+     "t": "Tissue and biochemistry",
+     "sub": [
+      "BSEP or multidrug resistance protein 3 (MDR3) immunostaining on a biopsy; GGT and serum bile acids that fit the gene.",
+      "Urine bile acids, succinylacetone, citrulline, copper studies as the gene suggests.",
+      "A biopsy can help in suspected Alagille syndrome with a VUS (EASL 2024)."
+     ]
+    },
+    {
+     "t": "Function",
+     "sub": [
+      "RNA or splicing studies, transport assays. In silico predictions are supporting evidence only."
+     ]
+    },
+    {
+     "t": "Numbers",
+     "sub": [
+      "41% of 1.69 million people tested carried at least one VUS; 80% of reclassified VUS became benign or likely benign (Chen 2023).",
+      "Mean 22 months for a VUS to be upgraded (Chen 2023)."
+     ]
+    }
+   ]
+  },
+  {
+   "t": "list",
+   "h": "When the gene changes the plan",
+   "items": [
+    {
+     "t": "JAG1 or NOTCH2, pathogenic",
+     "sub": [
+      "Alagille syndrome: avoid a Kasai unless atresia is still suspected. After a Kasai, transplant 47% vs 14% and death 32% vs 3% in matched patients (Kaye 2010)."
+     ]
+    },
+    {
+     "t": "ABCC2, both copies",
+     "sub": [
+      "Neonatal Dubin–Johnson syndrome: high conjugated bilirubin, near-normal transaminases; no surgery."
+     ]
+    },
+    {
+     "t": "SLC25A13, both copies",
+     "sub": [
+      "Citrin deficiency: no surgery; lactose-free MCT formula."
+     ]
+    },
+    {
+     "t": "ATP8B1, ABCB11, TJP2, USP53",
+     "sub": [
+      "Low-GGT cholestasis: no surgery; the genotype guides drugs and biliary diversion."
+     ]
+    },
+    {
+     "t": "ABCB11 with two truncating variants (BSEP3)",
+     "sub": [
+      "Severe bile salt export pump (BSEP) deficiency: median native liver survival 3.5 years and liver cancer in 34% by age 15, vs 20.4 years and 4% with at least one p.E297G or p.D482G variant (BSEP1; van Wessel 2020).",
+      "EASL 2024: closer liver cancer screening, no surgical biliary diversion, consider early transplant."
+     ]
+    },
+    {
+     "t": "POLG",
+     "sub": [
+      "Valproate is contraindicated: it can trigger fatal acute liver failure (FDA label). The neurological course weighs on transplant."
+     ]
+    },
+    {
+     "t": "One ABCB4 or ABCB11 variant, or a VUS",
+     "sub": [
+      "Not a diagnosis; at most a modifier. Never cancels or delays a cholangiogram."
+     ]
+    }
+   ]
+  },
+  {
+   "t": "text",
+   "h": "Reanalysis and counseling",
+   "text": "A negative exome is a draft. Reanalysis added a diagnosis in 10% pooled across 29 studies (Dai 2022). EASL 2024: reanalyze exome or genome data at least every 3 years. ACMG 2019 asks laboratories for a reanalysis policy but sets no interval, so in practice the clinician must ask.\n\nCounseling comes before the test (EASL 2024). Agree in advance which incidental and secondary findings will be returned: a genome can report adult-onset actionable genes (ACMG secondary findings list v3.3, 2025).\n\nRecord the exact variant in the chart. It is needed for testing relatives and for any related living donor."
+  },
+  {
+   "t": "pearls",
+   "items": [
+    {
+     "k": "pearl",
+     "text": "Yield reflects who was tested: 71% when the phenotype looked genetic, 4.3% with prematurity (Togawa 2016)."
+    },
+    {
+     "k": "pearl",
+     "text": "Exome and genome data can be re-read; a panel cannot."
+    },
+    {
+     "k": "pearl",
+     "text": "Indeterminate acute liver failure was genetic in 37%, and in 64% when recurrent (Lenz 2024). Sequence before or alongside listing."
+    },
+    {
+     "k": "pitfall",
+     "text": "\"Sequencing negative\" without copy-number analysis: a whole-gene JAG1 deletion is missed, and Alagille syndrome gets a Kasai."
+    },
+    {
+     "k": "pitfall",
+     "text": "A VUS is not a diagnosis. Test relatives to resolve it (segregation), not to diagnose or clear them."
+    },
+    {
+     "k": "pitfall",
+     "text": "One heterozygous ABCB4 or ABCB11 variant does not explain an infant's cholestasis: 77.5% of one Taiwanese cohort carried at least one heterozygous variant in cholestasis panel genes (Chen 2019)."
+    },
+    {
+     "k": "pitfall",
+     "text": "Genome for every cholestatic infant: in a preterm on PN the yield is low and VUS add anxiety without benefit."
+    }
+   ]
+  },
+  {
+   "t": "guideline_compare",
+   "h": "Guidelines",
+   "rows": [
+    {
+     "topic": "When to test",
+     "positions": {
+      "naspghan_espghan_2017_nc": "Low threshold for panel or exome, with the hepatologist; ungraded",
+      "easl_2024_genetic_cholestasis": "Early in the workup in infants and children"
+     },
+     "verdict": "aligned",
+     "note": "Test early; do not wait for every other result."
+    },
+    {
+     "topic": "Which test",
+     "positions": {
+      "easl_2024_genetic_cholestasis": "Panel or exome; Sanger discouraged; genome if exome is negative",
+      "acmg_2021_exome": "Exome or genome first- or second-tier for congenital anomalies or developmental delay — not liver disease"
+     },
+     "verdict": "differs",
+     "note": "Liver use of exome or genome first is extrapolated."
+    },
+    {
+     "topic": "Rapid genome in the ICU",
+     "positions": {
+      "nhs_2026_genomic_directory": "R14: acutely unwell children with a likely monogenic disorder, when the result could change management",
+      "naspghan_espghan_2017_nc": "Not addressed"
+     },
+     "verdict": "gap",
+     "note": "Liver data come from mixed ICU and acute liver failure cohorts."
+    },
+    {
+     "topic": "Alagille screen before surgery",
+     "positions": {
+      "naspghan_espghan_2017_nc": "Look for Alagille features before the cholangiogram; preoperative testing helps the surgeon",
+      "easl_2024_genetic_cholestasis": "Not addressed"
+     },
+     "verdict": "differs",
+     "note": "After a Kasai, Alagille patients had more transplants and deaths (Kaye 2010)."
+    },
+    {
+     "topic": "Genetics vs cholangiogram timing",
+     "positions": {
+      "naspghan_espghan_2017_nc": "Expedite the atresia workup; no explicit rule",
+      "easl_2024_genetic_cholestasis": "Not addressed"
+     },
+     "verdict": "gap",
+     "note": "No guideline says a pending result must not delay the cholangiogram. Do not let it."
+    },
+    {
+     "topic": "Reanalysis",
+     "positions": {
+      "easl_2024_genetic_cholestasis": "At least every 3 years",
+      "acmg_2019_reanalysis": "Laboratory policy required; no interval"
+     },
+     "verdict": "differs",
+     "note": "Set a reminder; the laboratory will not call."
+    }
+   ]
+  }
+ ]
+}

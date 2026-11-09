@@ -9,5 +9,6 @@
   {"id": "ref_imaging", "cat": "ref", "section": "REFERENCE"},
   {"id": "ref_biopsy", "cat": "ref", "section": "REFERENCE"},
   {"id": "ref_elasto", "cat": "ref", "section": "REFERENCE"},
+  {"id": "ref_genetics", "cat": "ref", "section": "REFERENCE"},
   {"id": "about", "cat": "ref", "section": "REFERENCE"}
 ]
