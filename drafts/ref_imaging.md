@@ -16,3 +16,7 @@ Reference card B — **built 2026-11-06 (day 21)** → `Content/Cards/ref_imagin
 - **ERCP** 86–100%/87–94% — expert centers, general anesthesia; **percutaneous cholecystocholangiography** 100%/87% where expertise exists (Ge 2025).
 - **Shear wave elastography** in infants: adjunct for atresia (Wagner 2022 meta-analysis, 11 studies, 1,307 infants: 83%/79%, AUC 0.91); also stages fibrosis before the Kasai (→ ref_elasto).
 - Rule for the card: a test with high sensitivity and low specificity is useful only when negative.
+
+### 04-03 · Alagille syndrome III: the liver (synced 2026-11-09)
+- **Published 2026-11-09:** pearl — ALGS giant central regenerative nodule (Rapp 2017, abstract verified): segment VIII; T2-dark 6/6, isointense in all contrast phases 5/6, pathology 5/6 → MRI, usually no biopsy.
+

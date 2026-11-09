@@ -261,6 +261,11 @@ Mostly Learn layer for this card (ages neo/infant): the long-term picture behind
 - Absent scintigraphy excretion in AGS did not predict transplant or death (Emerick 1999 abstract) — supports "non-excretion ≠ atresia".
 - Peripheral pulmonary stenosis murmur (both axillae) should always prompt the diagnosis (McElhinney 2002).
 
+### 04-03 · Alagille syndrome III: the liver (synced 2026-11-09)
+- **Ducts on an early biopsy do not exclude Alagille:** paucity in 60% of biopsies < 6 mo vs 95% after (Emerick 1999); serial biopsies can go from duct proliferation (6, 10 mo — looks obstructive) to near-total loss by 2 y (Deutsch 2001). Pitfall line; same fact already published in ref_biopsy.
+- **GGT does not separate Alagille from atresia** (both high); median 612 U/L < 1 y in ALGS (Kamath 2020, ChiLDReN).
+- Hilum preserved in ALGS (Libbrecht 2005) — the deficit is peripheral, where the needle goes, not where the surgeon looks.
+
 ### Guideline watch (2026-11-02, weekly check)
 - AASLD/AST/NASPGHAN pediatric liver transplant candidate evaluation guideline, Hepatology 2026, doi 10.1097/HEP.0000000000001805 — published (June 2026), replaces Squires 2014; first author Martinez M, senior author Ng VL (confirmed 2026-11-06, CiteDrive record; the 03-14 lesson calls it "Ng 2026"). Settle the 03-08 referral-trigger TODO from its full text.
 - SEGHNP/AEPap/SEPEAP cholestasis consensus, An Pediatr 2025 — candidate extra column for guideline_compare (not a successor of Fawaz 2017).

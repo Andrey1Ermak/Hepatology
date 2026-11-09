@@ -19,3 +19,8 @@ BA is a model for malignancy in a cholestatic, cirrhotic native liver; every num
 
 ### 03-14 · Block 3 synthesis: biliary atresia (synced 2026-11-06)
 - **Synthesis (pearl 20, slides 3, 14):** native-liver tumours in BA split by age — HCC in young children (median 4 y), cholangiocarcinoma in adults (median 23.5 y) (57-tumour review — Madadi-Sanjani O et al. Pediatr Surg Int 2025;41:165, as in the 03-13 entry; Hadžić 2011 is the King's series); 57 tumours published, no surveillance guideline (gap). Surveillance frame: US + AFP every 6 months for life, CA 19-9 in adults; any new biliary stricture in an adult native liver = cholangiocarcinoma until proven otherwise.
+
+### 04-03 · Alagille syndrome III: the liver (synced 2026-11-09)
+- **Alagille: giant central regenerative nodule (Rapp 2017, verified abstract):** 6 of 20 imaged ALGS patients, segment VIII, cirrhotic features; T2-hypointense 6/6, isointense in all post-contrast phases 5/6, preserved ducts in 5 (pathology available in 5) → benign; MRI first, biopsy only if atypical (peripheral, arterial enhancement, rising AFP — lesson synthesis). Benign nodules up to 30% (Ayoub 2023 adult review — TODO(verify)).
+- **HCC in ALGS (Ayoub 2023 — TODO(verify)):** ~35 cases (14 adults, 21 children); 67% of adult cases with known status non-cirrhotic; 38% normal AFP → AFP alone is not surveillance. US + AFP every 6 mo is expert opinion; no guideline interval (MATERIAL gap; EASL 2024 none).
+

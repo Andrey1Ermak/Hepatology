@@ -10,6 +10,10 @@ Reference card C (task: day 22). Inbox is filled by daily lesson sync (§3.4).
 - **Timing:** a biopsy at ~3 weeks may show only hepatitis; pale stools persist → repeat or go to cholangiogram.
 - Safety: complication rate ~1.7% in a large pediatric series, higher in small infants — vitamin K and INR first. TODO(verify) source of 1.7% (lesson cites Fawaz 2017) before publishing.
 
+### 04-03 · Alagille syndrome III: the liver (synced 2026-11-09)
+- **Published 2026-11-09:** "Diagnosis known" → ALGS: no routine biopsy for prognosis or management (EASL 2024 rec., LoE 3, strong — verified in full text); with a known variant, do not biopsy to prove paucity (lesson 04-03, slide 18).
+- Paucity definition: duct/portal tract ratio < 0.9 on ≥ 10 tracts; some use duct/artery < 0.5 — definitions not interchangeable; CK7/CK19 to find remnants; paucity not specific (~11% of pediatric biopsies at one centre — TODO(verify) source).
+
 ## Build notes (day 22, 2026-11-07)
 - Card built from lessons 01-04, 01-05, 01-06 (slides + chapters) and the 03-03 Inbox above; JSON is the source of truth (`Content/Cards/ref_biopsy.json`).
 - **Not published:** the "1.7% complication rate" from the 03-03 Inbox (attributed by the lesson to Fawaz 2017; source not confirmed) — replaced by the primary pediatric series (Matos 2012, Westheim 2012, Cohen 1992, Short 2013).

@@ -39,7 +39,8 @@
   "espghan_2018_ail",
   "aasld_2019_aih",
   "aasld_2022_wilson",
-  "aasld_2025_masld_peds"
+  "aasld_2025_masld_peds",
+  "easl_2024_genetic_cholestasis"
  ],
  "plan": [
   {
@@ -96,6 +97,7 @@
       "AIH: biopsy at presentation (ESPGHAN 2018; AASLD 2019).",
       "Wilson disease: when the diagnosis is uncertain; send a core for quantitative copper.",
       "Metabolic dysfunction-associated steatotic liver disease (MASLD): when the diagnosis is uncertain or advanced fibrosis is a concern (AASLD 2025).",
+      "Alagille syndrome: no routine biopsy for prognosis or management (EASL 2024). With a known JAG1 or NOTCH2 variant, do not biopsy to prove paucity.",
       "After liver transplant: for cause — rejection, recurrence, de novo AIH.",
       "Liver mass: hepatoblastoma histology sets the risk group; for possible hepatocellular carcinoma, biopsy only if imaging cannot diagnose. Sample the lesion and the background liver."
      ]

@@ -32,3 +32,6 @@ BA is the commonest pediatric LT indication; this lesson supplies the early-comp
 - **Never clear a related donor by classic criteria (Kamath 2003):** of 53 relatives carrying the proband's JAG1 variant, 47% did not meet classic criteria and 4% had no feature at all; penetrance ~96% with variable expressivity. Reinforces the 04-01 donor rule: variant test, not phenotype.
 - **Before LT in AGS:** right ventricular pressure known (echo/cardiology; intracardiac disease halves 20-year survival — Emerick 1999); kidney (39% renal involvement, Kamath 2012) assessed before calcineurin inhibitors; brain MRI/MRA if never imaged (vascular events = 34% of deaths, Kamath 2004).
 
+### 04-03 · Alagille syndrome III: the liver (synced 2026-11-09)
+- **ALGS transplant burden (GALA, Vandriel 2023):** 27% by 5 y, 38% by 10 y, 50% by 18 y; bilirubin median at 6–12 mo ≥ 10 mg/dL → HR 15.6 for transplant (vs < 5). Middle band (5 to < 10) → transplant-centre review before decompensation (lesson synthesis; no society threshold).
+
