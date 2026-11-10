@@ -148,7 +148,7 @@ final class NumericCalcSourceTests: XCTestCase {
     /// and every registered calculator has a real title.
     func testCalculatorSourcesExist() {
         let registry = Registry(bundle: Bundle(for: NumericCalcSourceTests.self))
-        for id in ULNCalc.sourceIds + RRatioCalc.sourceIds + APRIGPRCalc.sourceIds {
+        for id in ULNCalc.sourceIds + RRatioCalc.sourceIds + APRIGPRCalc.sourceIds + VitaminsCalc.sourceIds {
             XCTAssertNotNil(registry.guideline(id), "calculator source '\(id)' missing from guidelines.json")
         }
         for id in NumericCalcRegistry.ids {
@@ -221,5 +221,70 @@ final class APRIGPRCalcTests: XCTestCase {
     func testReferenceIdsAreUnique() {
         let ids = (APRIGPRCalc.apriReferences + APRIGPRCalc.gprReferences).map(\.id)
         XCTAssertEqual(Set(ids).count, ids.count)
+    }
+}
+
+final class VitaminsCalcTests: XCTestCase {
+    /// Mouzaki 2019 Table 3: vitamin A 5,000 IU/day under 10 kg, 10,000 above;
+    /// exactly 10 kg takes the lower dose (D-2026-11-10-2).
+    func testVitaminAStepsAtTenKilograms() throws {
+        XCTAssertEqual(try XCTUnwrap(VitaminsCalc.compute(weightKg: 4)).vitaminAIU, 5_000)
+        XCTAssertEqual(try XCTUnwrap(VitaminsCalc.compute(weightKg: 10)).vitaminAIU, 5_000)
+        XCTAssertEqual(try XCTUnwrap(VitaminsCalc.compute(weightKg: 10.1)).vitaminAIU, 10_000)
+        XCTAssertEqual(try XCTUnwrap(VitaminsCalc.compute(weightKg: 30)).vitaminAIU, 10_000)
+    }
+
+    /// TPGS 15–25 IU/kg/day: a 4 kg infant gets 60–100 IU/day; 6.3 kg rounds
+    /// to whole IU (94.5 → 95, 157.5 → 158).
+    func testTPGSRangeIsPerKilogram() throws {
+        let infant = try XCTUnwrap(VitaminsCalc.compute(weightKg: 4))
+        XCTAssertEqual(infant.tpgsLowIU, 60)
+        XCTAssertEqual(infant.tpgsHighIU, 100)
+        let odd = try XCTUnwrap(VitaminsCalc.compute(weightKg: 6.3))
+        XCTAssertEqual(odd.tpgsLowIU, 95)
+        XCTAssertEqual(odd.tpgsHighIU, 158)
+    }
+
+    /// Shneider 2012: separate dosing at total bilirubin ≥ 2 mg/dL; no flag
+    /// when bilirubin is not entered.
+    func testBilirubinTriggerIsInclusiveAtTwo() throws {
+        XCTAssertNil(try XCTUnwrap(VitaminsCalc.compute(weightKg: 5)).separateDosing)
+        XCTAssertEqual(try XCTUnwrap(VitaminsCalc.compute(weightKg: 5, totalBilirubin: 1.9)).separateDosing, false)
+        XCTAssertEqual(try XCTUnwrap(VitaminsCalc.compute(weightKg: 5, totalBilirubin: 2.0)).separateDosing, true)
+        XCTAssertEqual(try XCTUnwrap(VitaminsCalc.compute(weightKg: 5, totalBilirubin: 9.8)).separateDosing, true)
+    }
+
+    func testRejectsImplausibleInputs() {
+        XCTAssertNil(VitaminsCalc.compute(weightKg: 0))
+        XCTAssertNil(VitaminsCalc.compute(weightKg: 0.4))
+        XCTAssertNil(VitaminsCalc.compute(weightKg: 151))
+        XCTAssertNil(VitaminsCalc.compute(weightKg: 5, totalBilirubin: -1))
+        XCTAssertNil(VitaminsCalc.compute(weightKg: 5, totalBilirubin: .nan))
+        XCTAssertNil(VitaminsCalc.compute(weightKg: 5, totalBilirubin: .infinity))
+        XCTAssertNil(VitaminsCalc.compute(weightKg: 5, totalBilirubin: 51))
+        XCTAssertNil(VitaminsCalc.compute(weightKg: .nan))
+        XCTAssertNotNil(VitaminsCalc.compute(weightKg: 0.5))
+        XCTAssertNotNil(VitaminsCalc.compute(weightKg: 150))
+    }
+
+    /// Mouzaki 2019 Table 3 fixed ranges: cholecalciferol 2,000–5,000 IU/day,
+    /// vitamin K 2–5 mg/day.
+    func testFixedRangesMatchTableThree() {
+        XCTAssertEqual(VitaminsCalc.vitaminDRangeIU, 2_000...5_000)
+        XCTAssertEqual(VitaminsCalc.vitaminKRangeMg, 2...5)
+        XCTAssertEqual(VitaminsCalc.formatRange(VitaminsCalc.vitaminDRangeIU), "2,000–5,000")
+        XCTAssertEqual(VitaminsCalc.formatRange(VitaminsCalc.vitaminKRangeMg), "2–5")
+    }
+
+    /// Under 2.5 kg the calculator flags that no preterm dose is published.
+    func testFlagsLowBirthWeight() throws {
+        XCTAssertTrue(try XCTUnwrap(VitaminsCalc.compute(weightKg: 1.8)).belowTermWeight)
+        XCTAssertFalse(try XCTUnwrap(VitaminsCalc.compute(weightKg: 2.5)).belowTermWeight)
+    }
+
+    func testFormatsThousands() {
+        XCTAssertEqual(VitaminsCalc.formatIU(5_000), "5,000")
+        XCTAssertEqual(VitaminsCalc.formatIU(10_000), "10,000")
+        XCTAssertEqual(VitaminsCalc.formatIU(95), "95")
     }
 }

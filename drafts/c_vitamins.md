@@ -1,6 +1,6 @@
 # c_vitamins — Fat-soluble vitamin dosing in cholestasis (calculator draft)
 
-Calculator not built yet (block 1 trigger reached; backlog task). Inbox is filled by daily lesson sync (§3.4).
+**Built 2026-11-10 (day 25)** — numeric Swift calculator (VitaminsCalc / VitaminsCalcView). Doses verified in the Mouzaki 2019 full text (ESPGHAN site PDF, Table 2 and Table 3) and the Shneider 2012 full text (PMC3428752, Table 1); choices in D-2026-11-10-2. The TODO(verify) items below are closed by that entry: doses = Table 3; D marker < 15 ng/mL (ChiLDReN); E:lipid 0.6 (1–12 y) / 0.8 (older); bilirubin trigger ≥ 2; escalation = Shneider Table 1 (shown as research protocol). Closed: TPGS helps absorb "other fat-soluble vitamins (vitamin D)" (Mouzaki text) — the app names D only. Not published: weekly 50,000 IU D as a recommendation (Mouzaki: "limited available data preclude formal recommendations"); cholestyramine/IBAT-inhibitor interactions (no registered source yet — backlog), MCT 30–60% (not in this calculator), Mouzaki 25-OH D target ("> 20 nmol/L", likely unit error; the calculator shows the ChiLDReN 15–45 ng/mL target instead). Under 2.5 kg the calculator shows no doses, only a caution. Links from cards 2, 3, 4, 5, 29 — at their build.
 
 ## Inbox
 

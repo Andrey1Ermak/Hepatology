@@ -1286,5 +1286,13 @@
    "citation": "US FDA. Depakote (divalproex sodium) prescribing information, AbbVie, April 2026 (DailyMed)",
    "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=08a65cf4-7749-4ceb-6895-8f4805e2b01f",
    "checked": "2026-11",
+   "supersedes": null},
+  {"id": "shneider_2012_fsv",
+   "title": "Efficacy of fat-soluble vitamin supplementation in infants with biliary atresia",
+   "society": "Study",
+   "year": 2012,
+   "citation": "Shneider BL et al. Pediatrics 2012;130:e607-e614",
+   "url": "https://doi.org/10.1542/peds.2011-1423",
+   "checked": "2026-11",
    "supersedes": null}
 ]

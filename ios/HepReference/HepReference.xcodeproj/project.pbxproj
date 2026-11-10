@@ -27,6 +27,7 @@
 		2C4228336ADA60A58BDA9476 /* NACCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D57E18E1CC1C86293720D7B /* NACCalc.swift */; };
 		306BDB307D8497F20F7BF31D /* OutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA84F05240E0512FDD1B5D /* OutView.swift */; };
 		314F1FA62489B523FE90FF47 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10BE75C1587BBCFE4E31351 /* Badge.swift */; };
+		322C8AC4B753FD97442CB33F /* VitaminsCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133590D7BDE7EE6B36492DF5 /* VitaminsCalc.swift */; };
 		34A5A37E3A1ACF2181EEA7FC /* Card+Pathways.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CCA92DE2CF348232BA1994 /* Card+Pathways.swift */; };
 		3A3331DDBE6872C743798402 /* APRIGPRCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AA24BF84034F85CC2DE0D /* APRIGPRCalc.swift */; };
 		3C7E0C7B85F33D63E3EB9485 /* ChipCountRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F48F661E3A6FE32916D21 /* ChipCountRule.swift */; };
@@ -47,6 +48,7 @@
 		4F8B1F74CE0AA1C30607FDB7 /* BranchBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820E6783963139414EF2AD8E /* BranchBlockView.swift */; };
 		51223C55F2A99A2ED94C0DA7 /* ULNCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C5B4590992996138683F64 /* ULNCalc.swift */; };
 		541AD44FCD39EF372B737C2C /* ScoreCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400044A20D7DCB283956C5A4 /* ScoreCalc.swift */; };
+		5C00175198E3F2BD4B95E04D /* VitaminsCalcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083534AC6CCFC217FA1789EE /* VitaminsCalcView.swift */; };
 		5D2EC96B40E6A2914998282A /* SectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82967B5A0BE18BF5E7EEA93C /* SectionCard.swift */; };
 		61CCBE76035E4091DEE58F88 /* CitationFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25A3EBEE6F636E82EEEEB37 /* CitationFooter.swift */; };
 		620EBF2C8175AF73C7F22A16 /* WorkupBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF3FF8A81BE972157B26F03 /* WorkupBlockView.swift */; };
@@ -131,11 +133,13 @@
 		0375E0073FF3C8AACE7497EE /* SquareBullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareBullet.swift; sourceTree = "<group>"; };
 		03E345C468C53C191F5B81F1 /* ChipTierRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipTierRule.swift; sourceTree = "<group>"; };
 		055C6C76AF68F51F86C0FB35 /* ChipScoreRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipScoreRule.swift; sourceTree = "<group>"; };
+		083534AC6CCFC217FA1789EE /* VitaminsCalcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaminsCalcView.swift; sourceTree = "<group>"; };
 		08469650D07B56E285FA6064 /* DesignSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSampleView.swift; sourceTree = "<group>"; };
 		09039DD8496221F029F80A4A /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		0DE088E3885C095CE2B61427 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0E0F17F4EF9CFE165F94CC07 /* Content */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Content; path = HepReference/Content; sourceTree = SOURCE_ROOT; };
 		112995B422A8F767C71F130B /* ScenarioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioTests.swift; sourceTree = "<group>"; };
+		133590D7BDE7EE6B36492DF5 /* VitaminsCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaminsCalc.swift; sourceTree = "<group>"; };
 		167C9464C130DB92F2277AD4 /* ListBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBlockView.swift; sourceTree = "<group>"; };
 		1783E4C659E72C2ACD3B6173 /* GrpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrpView.swift; sourceTree = "<group>"; };
 		1BD2C61CBC4E9082D11186CD /* SelectableChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableChip.swift; sourceTree = "<group>"; };
@@ -290,6 +294,7 @@
 				B306463A6CAE9C4A74717DEA /* NACCalcView.swift */,
 				F9751601FD9BE9557099026B /* RRatioCalcView.swift */,
 				4B9DCE673ABD36F4C727EEEA /* ULNCalcView.swift */,
+				083534AC6CCFC217FA1789EE /* VitaminsCalcView.swift */,
 			);
 			path = Calculators;
 			sourceTree = "<group>";
@@ -396,6 +401,7 @@
 				400044A20D7DCB283956C5A4 /* ScoreCalc.swift */,
 				77C5B4590992996138683F64 /* ULNCalc.swift */,
 				AFE6C593AD02E59E70DD140D /* VerdictRule.swift */,
+				133590D7BDE7EE6B36492DF5 /* VitaminsCalc.swift */,
 			);
 			name = Calculators;
 			path = HepReference/Calculators;
@@ -651,6 +657,8 @@
 				51223C55F2A99A2ED94C0DA7 /* ULNCalc.swift in Sources */,
 				0D731FF6DB9C1812B73CB958 /* ULNCalcView.swift in Sources */,
 				1455D8F80E997C9E8BFEADF7 /* VerdictRule.swift in Sources */,
+				322C8AC4B753FD97442CB33F /* VitaminsCalc.swift in Sources */,
+				5C00175198E3F2BD4B95E04D /* VitaminsCalcView.swift in Sources */,
 				620EBF2C8175AF73C7F22A16 /* WorkupBlockView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
