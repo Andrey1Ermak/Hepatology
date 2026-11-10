@@ -37,6 +37,9 @@ jobs:
       - name: Lesson sync dry check
         run: python3 tools/sync_sources.py --extract 01-01
 
+      - name: Full-text library check
+        run: python3 tools/library.py check
+
       - name: Build and test
         run: tools/test.sh
 

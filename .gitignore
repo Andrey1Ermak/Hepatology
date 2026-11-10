@@ -5,9 +5,12 @@ xcuserdata/
 DerivedData/
 ~$*
 
-# Guideline PDFs are copyrighted; keep them local only
-sources/guidelines/*
-!sources/guidelines/.gitkeep
+# Full-text library: copyrighted PDFs and their extracted text stay on the Mac only
+# (the repository is public). Committed: library/catalog.json, WANTED.md, README.md, notes/.
+library/inbox/*
+!library/inbox/.gitkeep
+library/pdf/
+library/text/
 
 # Lesson repository (its own git repo) and text extracted from it — regenerable
 sources/reading-final/
