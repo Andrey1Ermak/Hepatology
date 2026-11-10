@@ -266,6 +266,10 @@ Mostly Learn layer for this card (ages neo/infant): the long-term picture behind
 - **GGT does not separate Alagille from atresia** (both high); median 612 U/L < 1 y in ALGS (Kamath 2020, ChiLDReN).
 - Hilum preserved in ALGS (Libbrecht 2005) — the deficit is peripheral, where the needle goes, not where the surgeon looks.
 
+### 04-04 · Alagille syndrome IV: the heart (synced 2026-11-10)
+- **Murmur + cholestasis in an infant → think Alagille:** murmur in 97% of ALGS (Emerick 1999); branch PA stenosis 76%, TOF 12% (McElhinney 2002). Echo with Doppler **in parallel** when ALGS is suspected — never delay the cholangiogram or a Kasai for it (the syndrome workup runs alongside the atresia algorithm, see 04-01/04-02 entries). TODO(verify) at build whether Fawaz 2017 lists echo in the initial workup.
+- Intracardiac disease was the only clinical feature tied to higher mortality (Emerick 1999); later reviews (Kamath 2010, Ruth 2019) summarize the age pattern: cardiac deaths lead in infancy, liver deaths later.
+
 ### Guideline watch (2026-11-02, weekly check)
 - AASLD/AST/NASPGHAN pediatric liver transplant candidate evaluation guideline, Hepatology 2026, doi 10.1097/HEP.0000000000001805 — published (June 2026), replaces Squires 2014; first author Martinez M, senior author Ng VL (confirmed 2026-11-06, CiteDrive record; the 03-14 lesson calls it "Ng 2026"). Settle the 03-08 referral-trigger TODO from its full text.
 - SEGHNP/AEPap/SEPEAP cholestasis consensus, An Pediatr 2025 — candidate extra column for guideline_compare (not a successor of Fawaz 2017).

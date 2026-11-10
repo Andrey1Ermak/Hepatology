@@ -49,5 +49,9 @@ This is the main lesson for the card. Every number — TODO(verify) against the 
 - **Gap (slide 17):** every HPS/POPH threshold in children is borrowed from adults → "Limited pediatric data" label on thresholds.
 - Splenic malformation ~10% in the West, < 3% in Asia (pearl 3) — risk-factor prevalence line.
 
+### 04-04 · Alagille syndrome IV: the heart (synced 2026-11-10)
+- **Pitfall — branch PA stenosis is not pulmonary hypertension (slides 6, 18):** in ALGS a high tricuspid jet (RVSP ≈ 4v² + RA; 4.2 m/s → 71 mmHg + RA) reflects a fixed obstruction upstream of the stenoses; distal arteries may be at normal pressure. Portopulmonary hypertension (POPH) = raised resistance in small arteries and when severe can rule out transplant; branch stenosis is a different risk category. Only a catheter separates a transstenotic gradient from raised PVR (Kamath 2010 JPGN; Ruth 2019 Liver Transpl). → In the card's "high RV pressure on echo" branch: ask "Alagille / known branch PA stenosis?" before labelling POPH.
+- Echo misses lobar/segmental PA disease; CT angiography images the branches; catheter measures (slide 7).
+
 ### Guideline watch (2026-11-02, weekly check)
 - **Baveno VIII** published: J Hepatol, online 19 Aug 2026, doi 10.1016/j.jhep.2026.07.030 — includes the first Baveno pediatric recommendations. Use it instead of Baveno VII for adult/pediatric compare rows at build; read the full text first. The APSPGHAN 2026 statement cited by lesson 03-09 was not found by web search — keep TODO(verify).

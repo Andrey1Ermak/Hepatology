@@ -40,6 +40,9 @@
 - **Test early, low threshold:** molecular yield falls with fewer features but never to zero (~1/3 with only 1–2 features — TODO(verify) source, lesson: Exeter/Guegan 2012). EASL 2024: NGS early in unexplained cholestasis, not single-gene Sanger.
 - Genotype does not tell which organs are affected: the full systems work-up is the same after a gene diagnosis.
 
+### 04-04 · Alagille syndrome IV: the heart (synced 2026-11-10)
+- Candidate for the published card — deferred to the block 4 synthesis (day 36, trigger 04-14) by D-2026-11-10-1: JAG1 variants in ~2% (2/94) of isolated TOF and ~4% (2/50) of pulmonary valve or peripheral pulmonary stenosis without an ALGS diagnosis (Bauer 2010, Hum Mutat 2010;31:594–601) — matters when a parent with an "innocent" murmur is offered as living donor. JAG1 variant type/position does not predict the cardiac phenotype (McElhinney 2002). NOTCH2: cardiac anomaly 64% vs JAG1 92% (Vandriel 2025). TODO(verify) all three against abstracts at build.
+
 ## Build notes (day 24, 2026-11-09)
 - Sources read: lessons 01-11, 02-12 (+ Inbox 02-14, 03-02, 04-01, 04-02); EASL 2024 full text (general recommendations: NGS early in infants/children; Sanger discouraged except ABCB4 in small-duct PSC; WGS if WES negative; reanalyse ≥ every 3 years; counselling before testing; incidental findings agreed in advance; VUS upgrade via family testing, in vitro data; ALGS biopsy useful with a VUS).
 - 20 primary citations checked against Europe PMC/Crossref abstracts (13 confirmed, 5 partly, 2 not in abstract) — see D-2026-11-09-2.
