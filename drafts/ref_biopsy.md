@@ -14,6 +14,9 @@ Reference card C (task: day 22). Inbox is filled by daily lesson sync (§3.4).
 - **Published 2026-11-09:** "Diagnosis known" → ALGS: no routine biopsy for prognosis or management (EASL 2024 rec., LoE 3, strong — verified in full text); with a known variant, do not biopsy to prove paucity (lesson 04-03, slide 18).
 - Paucity definition: duct/portal tract ratio < 0.9 on ≥ 10 tracts; some use duct/artery < 0.5 — definitions not interchangeable; CK7/CK19 to find remnants; paucity not specific (~11% of pediatric biopsies at one centre — TODO(verify) source).
 
+### 04-05 · Alagille syndrome V: the vessels (synced 2026-11-11)
+- **ALGS bleeding with normal tests (Lykavieris 2003, 174 records reviewed):** 38 (22%) without liver failure bled, median PT and platelets normal; 1 death after needle liver biopsy, 4 after surgery. The published card already says "ALGS: bleeding tendency (ESPGHAN 2015)" — at block 4 synthesis consider adding the Lykavieris numbers and "normal INR/platelets do not clear the procedure; vitamin K, cross-match, experienced operator, longer observation". TODO(verify) Lykavieris 2003 abstract.
+
 ## Build notes (day 22, 2026-11-07)
 - Card built from lessons 01-04, 01-05, 01-06 (slides + chapters) and the 03-03 Inbox above; JSON is the source of truth (`Content/Cards/ref_biopsy.json`).
 - **Not published:** the "1.7% complication rate" from the 03-03 Inbox (attributed by the lesson to Fawaz 2017; source not confirmed) — replaced by the primary pediatric series (Matos 2012, Westheim 2012, Cohen 1992, Short 2013).

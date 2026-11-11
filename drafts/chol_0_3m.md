@@ -270,6 +270,9 @@ Mostly Learn layer for this card (ages neo/infant): the long-term picture behind
 - **Murmur + cholestasis in an infant → think Alagille:** murmur in 97% of ALGS (Emerick 1999); branch PA stenosis 76%, TOF 12% (McElhinney 2002). Echo with Doppler **in parallel** when ALGS is suspected — never delay the cholangiogram or a Kasai for it (the syndrome workup runs alongside the atresia algorithm, see 04-01/04-02 entries). TODO(verify) at build whether Fawaz 2017 lists echo in the initial workup.
 - Intracardiac disease was the only clinical feature tied to higher mortality (Emerick 1999); later reviews (Kamath 2010, Ruth 2019) summarize the age pattern: cardiac deaths lead in infancy, liver deaths later.
 
+### 04-05 · Alagille syndrome V: the vessels (synced 2026-11-11)
+- **At ALGS diagnosis in an infant (lesson 04-05; Ayoub 2023, expert practice):** BP in both arms, renal ultrasound, INR, family history of aneurysm/stroke. Expert schedule from Ayoub 2023. Non-cardiac vascular deaths occur at a median of 2.2 y (IQR 1.5–3.2; GALA 2023) — mention in the Why of the Alagille branch only; brain MRA is not part of the infant cholestasis workup (expert schedule ≈ 8 y unless symptoms or sedation anyway). TODO(verify) GALA figure.
+
 ### Guideline watch (2026-11-02, weekly check)
 - AASLD/AST/NASPGHAN pediatric liver transplant candidate evaluation guideline, Hepatology 2026, doi 10.1097/HEP.0000000000001805 — published (June 2026), replaces Squires 2014; first author Martinez M, senior author Ng VL (confirmed 2026-11-06, CiteDrive record; the 03-14 lesson calls it "Ng 2026"). Settle the 03-08 referral-trigger TODO from its full text.
 - SEGHNP/AEPap/SEPEAP cholestasis consensus, An Pediatr 2025 — candidate extra column for guideline_compare (not a successor of Fawaz 2017).

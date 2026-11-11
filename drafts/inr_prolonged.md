@@ -35,3 +35,7 @@ Built 2026-11-05 (Day 20) → `Content/Cards/inr_prolonged.json`, `Pathways/inr_
 
 ### 03-13 · Biliary atresia: the adult with BA (synced 2026-11-05)
 - **"Two clocks" (slide 3):** in biliary atresia the synthetic clock (INR, albumin) runs slowly and can stay normal for decades; portal hypertension and cholangitis drive outcome. Normal INR/albumin ≠ low risk (slide 8). Synthetic failure was nonetheless the commonest indication (32%) for adult transplant at King's (Cortes-Cerisuelo M et al. J Clin Med 2021;10:4969, n = 34).
+
+### 04-05 · Alagille syndrome V: the vessels (synced 2026-11-11)
+- **ALGS (lesson 04-05; Lykavieris 2003):** bleeding in 22% of 174 children with normal median PT and platelets → a normal INR does not mean a safe procedure in ALGS; vitamin K before procedures and after head trauma. Candidate pearl for inr_prolonged at block 4 synthesis. TODO(verify).
+

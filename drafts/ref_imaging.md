@@ -20,3 +20,6 @@ Reference card B — **built 2026-11-06 (day 21)** → `Content/Cards/ref_imagin
 ### 04-03 · Alagille syndrome III: the liver (synced 2026-11-09)
 - **Published 2026-11-09:** pearl — ALGS giant central regenerative nodule (Rapp 2017, abstract verified): segment VIII; T2-dark 6/6, isointense in all contrast phases 5/6, pathology 5/6 → MRI, usually no biopsy.
 
+### 04-05 · Alagille syndrome V: the vessels (synced 2026-11-11)
+- **Brain MRA in ALGS — expert schedule, no graded guideline (Ayoub 2023; GeneReviews 2024):** about age 8 without sedation; before LT/major surgery (with abdominal CT angiography); at transition and before pregnancy; emergency MRI/MRA or CT/CTA for neuro symptoms or head injury with vomiting. Read the posterior circulation (adult ruptures mostly vertebrobasilar). Persistent falcine sinus 5.8% vs 1–2.1% in the general population (Carpenter 2018, per chapter — TODO(verify)) — incidental. Candidate row for ref_imaging at block 4 synthesis (D-2026-11-10-1 pattern: published reference cards change at synthesis, not daily).
+
