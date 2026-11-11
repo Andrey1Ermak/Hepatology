@@ -108,6 +108,9 @@ struct VerdictBanner: View {
     /// Pass `false` when `verdict.text` would only repeat the band name
     /// already shown by `bandAnnouncement`.
     var showDetail: Bool = true
+    /// Replaces the generic risk wording ("High risk"…) when a calculator's
+    /// bands are not risk levels (e.g. "Cholestasis").
+    var headline: String? = nil
 
     var body: some View {
         HStack(alignment: .top, spacing: Spacing.s) {
@@ -149,7 +152,8 @@ struct VerdictBanner: View {
     }
 
     private var bandAnnouncement: String {
-        switch verdict.band {
+        if let headline { return headline }
+        return switch verdict.band {
         case .hi: "High risk"
         case .mid: "Intermediate"
         case .lo: "Low risk"

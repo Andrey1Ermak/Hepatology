@@ -109,12 +109,12 @@ struct VitaminsCalcView: View {
             VStack(alignment: .leading, spacing: Spacing.s) {
                 Text("What to measure").font(.hepSectionHeading).foregroundStyle(Color.hepInk)
                     .accessibilityAddTraits(.isHeader)
-                bullet("When: every 3–6 months; monthly in severely cholestatic infants. Adjust doses to the levels.")
-                bullet("A: serum retinol and retinol-binding protein (RBP). Retinol below 20 µg/dL → confirm with a modified relative dose response. ChiLDReN target: retinol 19–77 µg/dL and retinol:RBP molar ratio above 0.8. RBP is unreliable in advanced liver disease.")
-                bullet("D: 25-OH vitamin D. ChiLDReN target 15–45 ng/mL; below 15 was called insufficient (a conservative cut-off; others use 20). With low D, check calcium, phosphate and PTH.")
-                bullet("E: vitamin E to total lipid ratio, not serum E alone (high lipids hide deficiency). Deficient below 0.6 mg/g at 1–12 years, below 0.8 mg/g if older. ChiLDReN infants: target above 0.6 mg/g.")
-                bullet("K: INR (ChiLDReN target 1.2 or less). A normal INR does not prove enough vitamin K for bone; PIVKA-II helps where available.")
-                bullet("Essential fatty acids every 3–6 months: red-cell fatty acid profile. A triene:tetraene ratio alone is not enough.")
+                CalcBullet(text: "When: every 3–6 months; monthly in severely cholestatic infants. Adjust doses to the levels.")
+                CalcBullet(text: "A: serum retinol and retinol-binding protein (RBP). Retinol below 20 µg/dL → confirm with a modified relative dose response. ChiLDReN target: retinol 19–77 µg/dL and retinol:RBP molar ratio above 0.8. RBP is unreliable in advanced liver disease.")
+                CalcBullet(text: "D: 25-OH vitamin D. ChiLDReN target 15–45 ng/mL; below 15 was called insufficient (a conservative cut-off; others use 20). With low D, check calcium, phosphate and PTH.")
+                CalcBullet(text: "E: vitamin E to total lipid ratio, not serum E alone (high lipids hide deficiency). Deficient below 0.6 mg/g at 1–12 years, below 0.8 mg/g if older. ChiLDReN infants: target above 0.6 mg/g.")
+                CalcBullet(text: "K: INR (ChiLDReN target 1.2 or less). A normal INR does not prove enough vitamin K for bone; PIVKA-II helps where available.")
+                CalcBullet(text: "Essential fatty acids every 3–6 months: red-cell fatty acid profile. A triene:tetraene ratio alone is not enough.")
             }
         }
     }
@@ -124,22 +124,14 @@ struct VitaminsCalcView: View {
             VStack(alignment: .leading, spacing: Spacing.s) {
                 Text("If a level stays low (ChiLDReN protocol)").font(.hepSectionHeading).foregroundStyle(Color.hepInk)
                     .accessibilityAddTraits(.isHeader)
-                bullet("A: raise by 5,000 IU/day, up to 25,000–50,000 IU/day by mouth. Keep retinol within 19–77 µg/dL: too much causes liver fibrosis.")
-                bullet("D: raise cholecalciferol in steps of 1,200–8,000 IU/day, or switch to calcitriol 0.05–0.20 µg/kg/day.")
-                bullet("E: raise TPGS by 25 IU/kg/day, up to 100 IU/kg/day.")
-                bullet("K: INR above 1.2 to 1.5 → 2.5 mg/day by mouth. Above 1.5 to 1.8 → a parenteral dose of 2–5 mg plus 2.5 mg/day by mouth. Above 1.8 → a parenteral dose of 2–5 mg plus 5 mg/day by mouth. Give it IV or subcutaneously, not IM, in a coagulopathic infant (Prolonged INR card).")
+                CalcBullet(text: "A: raise by 5,000 IU/day, up to 25,000–50,000 IU/day by mouth. Keep retinol within 19–77 µg/dL: too much causes liver fibrosis.")
+                CalcBullet(text: "D: raise cholecalciferol in steps of 1,200–8,000 IU/day, or switch to calcitriol 0.05–0.20 µg/kg/day.")
+                CalcBullet(text: "E: raise TPGS by 25 IU/kg/day, up to 100 IU/kg/day.")
+                CalcBullet(text: "K: INR above 1.2 to 1.5 → 2.5 mg/day by mouth. Above 1.5 to 1.8 → a parenteral dose of 2–5 mg plus 2.5 mg/day by mouth. Above 1.8 → a parenteral dose of 2–5 mg plus 5 mg/day by mouth. Give it IV or subcutaneously, not IM, in a coagulopathic infant (Prolonged INR card).")
                 Text("A research protocol in infants after Kasai (the trial gave parenteral doses IM), not a guideline.")
                     .font(.hepCaption).foregroundStyle(Color.hepMuted)
                     .fixedSize(horizontal: false, vertical: true)
             }
-        }
-    }
-
-    private func bullet(_ text: String) -> some View {
-        HStack(alignment: .top, spacing: Spacing.s) {
-            SquareBullet(color: Color.hepNavy, size: Spacing.xs, topInset: 5)
-            Text(text).font(.hepCaption).foregroundStyle(Color.hepInk)
-                .fixedSize(horizontal: false, vertical: true)
         }
     }
 

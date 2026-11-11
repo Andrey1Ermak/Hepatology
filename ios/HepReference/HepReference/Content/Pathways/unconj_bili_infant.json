@@ -43,7 +43,9 @@
           "pill": {
             "kind": "step",
             "text": "Cholestasis, not this card: call pediatric hepatology today, to be seen this week — biliary atresia until proved otherwise"
-          }
+          },
+          "link_calc_id": "c_conj_bili",
+          "link_label": "Conjugated bilirubin: cholestasis?"
         },
         {
           "t": "out",

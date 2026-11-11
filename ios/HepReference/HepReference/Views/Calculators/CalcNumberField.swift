@@ -70,3 +70,16 @@ struct CalcCaution: View {
         .background(Tier.urg.tint, in: RoundedRectangle(cornerRadius: Radius.medium))
     }
 }
+
+/// A square-bulleted caption line in a calculator's reference card.
+struct CalcBullet: View {
+    let text: String
+
+    var body: some View {
+        HStack(alignment: .top, spacing: Spacing.s) {
+            SquareBullet(color: Color.hepNavy, size: Spacing.xs, topInset: 5)
+            Text(text).font(.hepCaption).foregroundStyle(Color.hepInk)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+    }
+}

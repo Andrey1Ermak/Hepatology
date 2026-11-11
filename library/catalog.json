@@ -207,5 +207,46 @@
     "noted": null,
     "applied": null,
     "oa": "Europe PMC 2026-11-09: закрыт"
+  },
+  {
+    "id": "aap_2022_hyperbili",
+    "citation": "Kemper AR et al. Clinical Practice Guideline Revision: Management of Hyperbilirubinemia in the Newborn Infant 35 or More Weeks of Gestation (AAP). Pediatrics 2022;150:e2022058859",
+    "doi": "10.1542/peds.2022-058859",
+    "url": null,
+    "priority": 1,
+    "status": "wanted",
+    "need": "Есть ли в тексте порог «конъюгированный > 0,3 мг/дл» (и «прямой > 1,0 мг/дл») для холестаза — точная формулировка и страница. Он опубликован в карточке 6 (unconj_bili) со ссылкой на AAP 2022, но подтверждён только уроком 01-02. Также сроки фракционирования (2 нед на смеси / 3–4 нед на ГВ)",
+    "for": [
+      "unconj_bili",
+      "c_conj_bili",
+      "neo_jaundice",
+      "D-2026-11-11-2"
+    ],
+    "added": "2026-11-11",
+    "received": null,
+    "noted": null,
+    "applied": null,
+    "oa": "Europe PMC 2026-11-11: нет в PMC; сайт AAP закрыт для облачного прогона (403)"
+  },
+  {
+    "id": "aap_2025_ba_primary_care",
+    "citation": "Harpavat S et al. Guidance for the Primary Care Provider in Identifying Infants With Biliary Atresia by 2-4 Weeks of Life: Clinical Report (AAP). Pediatrics 2025;155:e2024070077",
+    "doi": "10.1542/peds.2024-070077",
+    "url": null,
+    "priority": 2,
+    "status": "wanted",
+    "need": "Точная формулировка: прямой/конъюгированный «≥ 1 мг/дл» или «> 1 мг/дл» → срочно к гастроэнтерологу; правило «любое значение выше нормы лаборатории у новорождённого — повтор» (к какому сроку); исключения «< 1 и снижается»; есть ли целевой возраст Kasai «до 30 дней». Используется в калькуляторах c_conj_bili и c_kasai_clock",
+    "for": [
+      "c_conj_bili",
+      "c_kasai_clock",
+      "neo_jaundice",
+      "chol_0_3m",
+      "D-2026-11-11-2"
+    ],
+    "added": "2026-11-11",
+    "received": null,
+    "noted": null,
+    "applied": null,
+    "oa": "Europe PMC 2026-11-11: закрыт; сайт AAP 403"
   }
 ]

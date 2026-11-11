@@ -148,7 +148,8 @@ final class NumericCalcSourceTests: XCTestCase {
     /// and every registered calculator has a real title.
     func testCalculatorSourcesExist() {
         let registry = Registry(bundle: Bundle(for: NumericCalcSourceTests.self))
-        for id in ULNCalc.sourceIds + RRatioCalc.sourceIds + APRIGPRCalc.sourceIds + VitaminsCalc.sourceIds {
+        for id in ULNCalc.sourceIds + RRatioCalc.sourceIds + APRIGPRCalc.sourceIds + VitaminsCalc.sourceIds
+                + ConjBiliCalc.sourceIds + KasaiClockCalc.sourceIds {
             XCTAssertNotNil(registry.guideline(id), "calculator source '\(id)' missing from guidelines.json")
         }
         for id in NumericCalcRegistry.ids {
@@ -286,5 +287,127 @@ final class VitaminsCalcTests: XCTestCase {
         XCTAssertEqual(VitaminsCalc.formatIU(5_000), "5,000")
         XCTAssertEqual(VitaminsCalc.formatIU(10_000), "10,000")
         XCTAssertEqual(VitaminsCalc.formatIU(95), "95")
+    }
+}
+
+final class ConjBiliCalcTests: XCTestCase {
+    /// NASPGHAN/ESPGHAN 2017: direct > 1.0 mg/dL (17 µmol/L) abnormal at any
+    /// total; AAP 2025: 1 mg/dL or more — the boundary itself is cholestasis.
+    func testThresholdInclusiveInBothUnits() throws {
+        XCTAssertEqual(try XCTUnwrap(ConjBiliCalc.compute(direct: 1.0, unit: .mgdl)).verdict, .cholestasis)
+        XCTAssertEqual(try XCTUnwrap(ConjBiliCalc.compute(direct: 0.99, unit: .mgdl)).verdict, .belowThresholdNoULN)
+        XCTAssertEqual(try XCTUnwrap(ConjBiliCalc.compute(direct: 17, unit: .umol)).verdict, .cholestasis)
+        XCTAssertEqual(try XCTUnwrap(ConjBiliCalc.compute(direct: 16.9, unit: .umol)).verdict, .belowThresholdNoULN)
+    }
+
+    /// Lesson 02-03: direct 1.2 with total 12 is cholestasis, not breast-milk
+    /// jaundice — the 10% fraction changes nothing.
+    func testLessonExampleIgnoresFraction() throws {
+        let r = try XCTUnwrap(ConjBiliCalc.compute(direct: 1.2, unit: .mgdl, total: 12))
+        XCTAssertEqual(r.verdict, .cholestasis)
+        XCTAssertEqual(try XCTUnwrap(r.fraction), 0.1, accuracy: 1e-9)
+        XCTAssertEqual(ConjBiliCalc.formatPercent(0.1), "10%")
+        XCTAssertFalse(r.directExceedsTotal)
+    }
+
+    /// Lesson 02-02 case: day 2, conjugated 0.4 mg/dL, lab limit 0.3 → above
+    /// the range (AAP 2025: abnormal even by 0.1); at the limit → within.
+    func testLabUpperLimit() throws {
+        XCTAssertEqual(try XCTUnwrap(ConjBiliCalc.compute(direct: 0.4, unit: .mgdl, labULN: 0.3, age: .under2Weeks)).verdict, .aboveLabRangeNewborn)
+        // 2 weeks or older, or age not given: hepatology today (as card 6).
+        XCTAssertEqual(try XCTUnwrap(ConjBiliCalc.compute(direct: 0.5, unit: .mgdl, labULN: 0.3, age: .twoWeeksOrOlder)).verdict, .aboveLabRangeOlder)
+        XCTAssertEqual(try XCTUnwrap(ConjBiliCalc.compute(direct: 0.5, unit: .mgdl, labULN: 0.3)).verdict, .aboveLabRangeOlder)
+        XCTAssertEqual(try XCTUnwrap(ConjBiliCalc.compute(direct: 0.3, unit: .mgdl, labULN: 0.3)).verdict, .withinLabRange)
+        // The absolute threshold wins over a generous lab range.
+        XCTAssertEqual(try XCTUnwrap(ConjBiliCalc.compute(direct: 1.1, unit: .mgdl, labULN: 1.5)).verdict, .cholestasis)
+    }
+
+    func testPaleStoolOverridesNumber() throws {
+        XCTAssertEqual(try XCTUnwrap(ConjBiliCalc.compute(direct: 0.2, unit: .mgdl, labULN: 0.3, paleStool: true)).verdict, .paleStool)
+        // No number yet, or an entry error: the override still shows.
+        XCTAssertEqual(try XCTUnwrap(ConjBiliCalc.compute(direct: nil, unit: .mgdl, paleStool: true)).verdict, .paleStool)
+        let r = try XCTUnwrap(ConjBiliCalc.compute(direct: 3, unit: .mgdl, total: 2, paleStool: true))
+        XCTAssertEqual(r.verdict, .paleStool)
+        XCTAssertTrue(r.directExceedsTotal)
+    }
+
+    /// A lab limit at or above the threshold was probably typed in the other unit.
+    func testSuspectLabULN() throws {
+        let suspect = try XCTUnwrap(ConjBiliCalc.compute(direct: 0.8, unit: .mgdl, labULN: 5))
+        XCTAssertTrue(suspect.labULNSuspect)
+        XCTAssertEqual(suspect.verdict, .belowThresholdNoULN, "no green verdict on a suspect limit")
+        XCTAssertFalse(try XCTUnwrap(ConjBiliCalc.compute(direct: 0.8, unit: .mgdl, labULN: 0.3)).labULNSuspect)
+        XCTAssertFalse(try XCTUnwrap(ConjBiliCalc.compute(direct: 10, unit: .umol, labULN: 5)).labULNSuspect)
+    }
+
+    func testEntryErrorsAndInvalidInput() throws {
+        XCTAssertTrue(try XCTUnwrap(ConjBiliCalc.compute(direct: 3, unit: .mgdl, total: 2)).directExceedsTotal)
+        XCTAssertNil(ConjBiliCalc.compute(direct: 0, unit: .mgdl))
+        XCTAssertNil(ConjBiliCalc.compute(direct: -1, unit: .mgdl))
+        XCTAssertNil(ConjBiliCalc.compute(direct: .nan, unit: .mgdl))
+        XCTAssertNil(ConjBiliCalc.compute(direct: .infinity, unit: .mgdl))
+        XCTAssertNil(ConjBiliCalc.compute(direct: nil, unit: .mgdl))
+        // Zero optional inputs count as absent.
+        let r = try XCTUnwrap(ConjBiliCalc.compute(direct: 0.5, unit: .mgdl, total: 0, labULN: 0))
+        XCTAssertNil(r.fraction)
+        XCTAssertEqual(r.verdict, .belowThresholdNoULN)
+    }
+}
+
+final class KasaiClockCalcTests: XCTestCase {
+    private var utc: Calendar {
+        var c = Calendar(identifier: .gregorian)
+        c.timeZone = TimeZone(identifier: "UTC")!
+        return c
+    }
+
+    private func date(_ y: Int, _ m: Int, _ d: Int, hour: Int = 12, in cal: Calendar) -> Date {
+        cal.date(from: DateComponents(year: y, month: m, day: d, hour: hour))!
+    }
+
+    /// Born 1 Oct, seen 5 Nov → 35 days: 31–45 band, day 30 passed 5 days ago,
+    /// day 45 in 10 days, day 60 in 25 days.
+    func testAgeAndMilestones() throws {
+        let r = try XCTUnwrap(KasaiClockCalc.compute(birth: date(2026, 10, 1, in: utc), today: date(2026, 11, 5, in: utc), calendar: utc))
+        XCTAssertEqual(r.ageDays, 35)
+        XCTAssertEqual(r.band, .d31to45)
+        XCTAssertEqual(r.milestones.map(\.daysLeft), [-5, 10, 25])
+        XCTAssertEqual(KasaiClockCalc.formatMilestone(r.milestones[0]), "5 days past")
+        XCTAssertEqual(KasaiClockCalc.formatMilestone(.init(day: 30, daysLeft: -1)), "1 day past")
+        XCTAssertEqual(KasaiClockCalc.formatWeeks(59), "8 wk 3 d")
+        XCTAssertEqual(KasaiClockCalc.formatMilestone(r.milestones[1]), "in 10 days")
+        XCTAssertEqual(KasaiClockCalc.formatWeeks(35), "5 wk 0 d")
+    }
+
+    /// Calendar days, not 24-hour blocks: born late evening, seen next
+    /// morning is day 1; a daylight-saving change does not lose a day.
+    func testCalendarDaysAcrossDST() throws {
+        XCTAssertEqual(KasaiClockCalc.ageDays(birth: date(2026, 3, 1, hour: 23, in: utc), today: date(2026, 3, 2, hour: 1, in: utc), calendar: utc), 1)
+        var ny = Calendar(identifier: .gregorian)
+        ny.timeZone = TimeZone(identifier: "America/New_York")!
+        // US DST starts 8 March 2026.
+        XCTAssertEqual(KasaiClockCalc.ageDays(birth: date(2026, 3, 1, hour: 0, in: ny), today: date(2026, 3, 31, hour: 0, in: ny), calendar: ny), 30)
+    }
+
+    /// Serinet 2009 bands: ≤ 30, 31–45, 46–60; then 61–90 and > 90 (Schreiber 2007).
+    func testBandBoundaries() {
+        XCTAssertEqual(KasaiClockCalc.Band(ageDays: 0), .upTo30)
+        XCTAssertEqual(KasaiClockCalc.Band(ageDays: 30), .upTo30)
+        XCTAssertEqual(KasaiClockCalc.Band(ageDays: 31), .d31to45)
+        XCTAssertEqual(KasaiClockCalc.Band(ageDays: 45), .d31to45)
+        XCTAssertEqual(KasaiClockCalc.Band(ageDays: 46), .d46to60)
+        XCTAssertEqual(KasaiClockCalc.Band(ageDays: 60), .d46to60)
+        XCTAssertEqual(KasaiClockCalc.Band(ageDays: 61), .d61to90)
+        XCTAssertEqual(KasaiClockCalc.Band(ageDays: 90), .d61to90)
+        XCTAssertEqual(KasaiClockCalc.Band(ageDays: 91), .over90)
+        XCTAssertFalse(KasaiClockCalc.Band(ageDays: 60).isLate)
+        XCTAssertTrue(KasaiClockCalc.Band(ageDays: 61).isLate)
+    }
+
+    func testMilestoneOnTheDayAndFutureBirth() throws {
+        let r = try XCTUnwrap(KasaiClockCalc.compute(ageDays: 45))
+        XCTAssertEqual(KasaiClockCalc.formatMilestone(r.milestones[1]), "today")
+        XCTAssertNil(KasaiClockCalc.compute(birth: date(2026, 11, 6, in: utc), today: date(2026, 11, 5, in: utc), calendar: utc))
+        XCTAssertNil(KasaiClockCalc.compute(ageDays: -1))
     }
 }

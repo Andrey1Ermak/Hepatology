@@ -1,6 +1,10 @@
 # c_kasai_clock — Age in days & Kasai window (calculator draft)
 
-Calculator not built yet (trigger reached 2026-10-22: lesson 02-14; backlog day 26). Inbox is filled by daily lesson sync (§3.4).
+Calculator **built 2026-11-11 (day 26)** → `Calculators/KasaiClockCalc.swift`, `Views/Calculators/KasaiClockCalcView.swift`; decisions D-2026-11-11-3. Inbox below stays as history.
+
+## Build notes (2026-11-11)
+- Verified (Europe PMC abstracts): Serinet 2009 (bands ≤ 30/31–45/46–60/61–75/76–90; < 46 d spares 5.7% of transplants), Schreiber 2007 (49/36/23% at 4 y; median 55 d), Fanna 2019 (38/27/22/19% at 25 y; median 59 d), Hoshino 2023 (RR 1.22, 9 studies).
+- Not published: AAP 2025 "Kasai before 30 days" target (not in the abstract; library `aap_2025_ba_primary_care`); US/England medians (PHIS, Davenport 2011) — Learn context for card 2.
 
 ## Inbox
 
