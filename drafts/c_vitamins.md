@@ -29,3 +29,8 @@
 ### 03-14 · Block 3 synthesis: biliary atresia (synced 2026-11-06)
 - **Synthesis (slides 9, 16, 18):** 0 of 23 infants with TB ≥ 2 mg/dL sufficient in all four fat-soluble vitamins at 6 months (Shneider 2012/Venkat 2014; consistent with 03-11); MCT 30–60% of fat, always < 80% (self-test: MCT 85% of fat → too much, essential fatty acid deficiency). The 30–60% range is new vs 03-11 ("< 80%") — TODO(verify) against Mouzaki 2019 before publishing the lower bound.
 - Energy need ~130–150% of normal (slide 3); weight z −2.1 vs −1.2 at 6 months (DeRusso 2007) — context for the nutrition line, not a dose.
+
+### 04-06 · Alagille syndrome VI: kidney, skeleton, eyes and face (synced 2026-11-12)
+- **Bone in ALGS mainly follows cholestasis, not a primary Notch defect (Loomes 2019, ChiLDReN):** size-adjusted density falls as bilirubin and bile acids rise; fractures 28% in a survey cohort, 84% low-trauma (Bales 2010). Candidate caution line: "Fractures or low DXA: correct vitamin D, acidosis, calories and cholestasis before bisphosphonates" — expert synthesis, no guideline; check fits the calculator scope (probably belongs in chol_3_12m, not here).
+- **25-OH D every visit and after each dose change; water-miscible forms** (lesson; consistent with existing Mouzaki 2019 rhythm). Lesson: INR-guided vitamin K "covers bone matrix proteins too" — physiological rationale only; a normal INR does not prove full carboxylation of bone Gla-proteins. Do not publish as fact.
+- **Interaction to add with the IBAT/cholestyramine item already in backlog:** IBAT-inhibitor diarrhea can lower bicarbonate as well as vitamins; acidosis harms bone (normal-gap acidosis → check urine before blaming the drug; a negative urine anion gap does not exclude proximal RTA).

@@ -273,6 +273,11 @@ Mostly Learn layer for this card (ages neo/infant): the long-term picture behind
 ### 04-05 · Alagille syndrome V: the vessels (synced 2026-11-11)
 - **At ALGS diagnosis in an infant (lesson 04-05; Ayoub 2023, expert practice):** BP in both arms, renal ultrasound, INR, family history of aneurysm/stroke. Expert schedule from Ayoub 2023. Non-cardiac vascular deaths occur at a median of 2.2 y (IQR 1.5–3.2; GALA 2023) — mention in the Why of the Alagille branch only; brain MRA is not part of the infant cholestasis workup (expert schedule ≈ 8 y unless symptoms or sedation anyway). TODO(verify) GALA figure.
 
+### 04-06 · Alagille syndrome VI: kidney, skeleton, eyes and face (synced 2026-11-12)
+- **Alagille look-for list in the cholestatic infant (runs in parallel with the atresia algorithm, never delays the cholangiogram):** AP thoracic spine film **with the radiologist told to look for clefts** (54% of original reports wrong — Sanderson 2002; Fawaz 2017 Tier 2 already lists the spine film); slit lamp + dilated fundus; echo (see 04-04 entry); renal ultrasound + urinalysis + bicarbonate (kidney involved in ~4 in 10 with either gene — Kamath 2012, GALA 2025).
+- **NOTCH2 is quiet on spine and eye:** butterfly vertebrae 3.3%, embryotoxon 18.5% (GALA 2025) → a normal spine film or slit lamp never excludes ALGS; the gene panel decides.
+- **Butterfly vertebra in a cholestatic infant = strong support** (any anomaly 66% ALGS vs 9.7% cholestatic controls), but only if deliberately sought. Embryotoxon = supportive only (8–15% of the general population, per lesson — TODO(verify) source; see 04-02 entry).
+
 ### Guideline watch (2026-11-02, weekly check)
 - AASLD/AST/NASPGHAN pediatric liver transplant candidate evaluation guideline, Hepatology 2026, doi 10.1097/HEP.0000000000001805 — published (June 2026), replaces Squires 2014; first author Martinez M, senior author Ng VL (confirmed 2026-11-06, CiteDrive record; the 03-14 lesson calls it "Ng 2026"). Settle the 03-08 referral-trigger TODO from its full text.
 - SEGHNP/AEPap/SEPEAP cholestasis consensus, An Pediatr 2025 — candidate extra column for guideline_compare (not a successor of Fawaz 2017).

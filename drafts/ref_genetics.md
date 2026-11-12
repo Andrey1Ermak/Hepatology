@@ -43,6 +43,13 @@
 ### 04-04 · Alagille syndrome IV: the heart (synced 2026-11-10)
 - Candidate for the published card — deferred to the block 4 synthesis (day 36, trigger 04-14) by D-2026-11-10-1: JAG1 variants in ~2% (2/94) of isolated TOF and ~4% (2/50) of pulmonary valve or peripheral pulmonary stenosis without an ALGS diagnosis (Bauer 2010, Hum Mutat 2010;31:594–601) — matters when a parent with an "innocent" murmur is offered as living donor. JAG1 variant type/position does not predict the cardiac phenotype (McElhinney 2002). NOTCH2: cardiac anomaly 64% vs JAG1 92% (Vandriel 2025). TODO(verify) all three against abstracts at build.
 
+### 04-06 · Alagille syndrome VI: kidney, skeleton, eyes and face (synced 2026-11-12)
+- **Signs raise or lower the prior; JAG1/NOTCH2 testing makes the diagnosis; a missing sign never excludes ALGS** (lesson rule, slide 14). Candidate pearl at block 4 synthesis (D-2026-11-10-1).
+- **NOTCH2 silent signs (GALA 2025):** butterfly vertebrae 3.3%, embryotoxon 18.5%, facies 57.6%, but renal 34.5% (same as JAG1) → order a panel with NOTCH2 even with a normal spine and eye.
+- **Facies depends on examiner and ancestry (Lin 2012):** 51.8% agreement among 37 dysmorphologists on Vietnamese faces → never a reason to skip or override the gene test.
+- **Gain-of-function NOTCH2 = Hajdu–Cheney syndrome** (osteoporosis, acro-osteolysis; Simpson 2011, Isidor 2011, Nat Genet) — direction of the variant matters; not relevant to ALGS bone, which follows cholestasis.
+- **Relatives:** ≥ 1 eye sign in 36% of parents (Hingorani 1999); examine parents (slit lamp, spine film, echo, renal US) and test for the family variant before any living-donor work-up.
+
 ## Build notes (day 24, 2026-11-09)
 - Sources read: lessons 01-11, 02-12 (+ Inbox 02-14, 03-02, 04-01, 04-02); EASL 2024 full text (general recommendations: NGS early in infants/children; Sanger discouraged except ABCB4 in small-duct PSC; WGS if WES negative; reanalyse ≥ every 3 years; counselling before testing; incidental findings agreed in advance; VUS upgrade via family testing, in vitro data; ALGS biopsy useful with a VUS).
 - 20 primary citations checked against Europe PMC/Crossref abstracts (13 confirmed, 5 partly, 2 not in abstract) — see D-2026-11-09-2.

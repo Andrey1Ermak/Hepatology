@@ -23,3 +23,8 @@ Reference card B — **built 2026-11-06 (day 21)** → `Content/Cards/ref_imagin
 ### 04-05 · Alagille syndrome V: the vessels (synced 2026-11-11)
 - **Brain MRA in ALGS — expert schedule, no graded guideline (Ayoub 2023; GeneReviews 2024):** about age 8 without sedation; before LT/major surgery (with abdominal CT angiography); at transition and before pregnancy; emergency MRI/MRA or CT/CTA for neuro symptoms or head injury with vomiting. Read the posterior circulation (adult ruptures mostly vertebrobasilar). Persistent falcine sinus 5.8% vs 1–2.1% in the general population (Carpenter 2018, per chapter — TODO(verify)) — incidental. Candidate row for ref_imaging at block 4 synthesis (D-2026-11-10-1 pattern: published reference cards change at synthesis, not daily).
 
+### 04-06 · Alagille syndrome VI: kidney, skeleton, eyes and face (synced 2026-11-12)
+- **Spine film for Alagille (candidate row at block 4 synthesis, D-2026-11-10-1 pattern):** AP thoracic spine radiograph read by someone told to look for sagittal clefts (T6–T9); original reports inaccurate in 54% (Sanderson 2002, Pediatr Radiol, 50 ALGS vs 31 cholestatic controls; any anomaly 66% vs 9.7%). Butterfly vertebrae rare in NOTCH2 (3.3%, GALA 2025).
+- **Renal ultrasound in ALGS:** dysplasia (small, echogenic, ± cysts) is the leading lesion; an abnormal renal US marked lower eGFR (Demaret 2017 abstract — do not publish the numbers). Before LT: renal imaging including the renal arteries.
+- **Ocular ultrasound:** optic disc drusen as a sign (Nischal 1997) — mention only if the eye row is ever added; not an imaging-card priority.
+- **DXA:** in a short child a raw Z-score overstates the deficit → adjust for height-for-age (Loomes 2019 ChiLDReN pattern); compare with the child's own scans.
