@@ -1,6 +1,12 @@
 # neo_jaundice — Neonatal Jaundice: Conjugated or Not? (draft)
 
-Card not built yet (trigger reached 2026-10-22: lesson 02-14; backlog day 27). Inbox is filled by daily lesson sync (§3.4).
+**Built 2026-11-12 (day 27)** — `Cards/neo_jaundice.json`, pathways `neo_jaundice_early` (under 2 weeks) and `neo_jaundice_prolonged` (2 weeks and older), cases c1–c3. Decisions: D-2026-11-12-2 (age split at 14 days, thresholds as in c_conj_bili, no 0.3 conjugated cut-off), D-2026-11-12-3 (guideline_compare verdicts that the Inbox left open).
+
+## Build notes (day 27, 2026-11-12)
+- Sources read: lessons 01-02, 02-01, 02-02, 02-03 (+ Inbox 02-14, 03-02, 03-03, 03-04, 03-14). Guideline check 2026-11-12: no newer NASPGHAN/ESPGHAN (2017) or AAP hyperbilirubinemia (2022, valid to Aug 2027) version.
+- Verified against Europe PMC abstracts: Fawaz 2017 (> 1.0 mg/dL / 17 µmol/L; jaundiced after 2 weeks), Davis 2011 (99th centile conjugated 0.5 / direct 2.1; CB ≥ 5 → 47% biliary, 43% liver), Maisels 2014 (visibly jaundiced 34% at 21 ± 3 d, 21% at 28 ± 3 d; TcB ≥ 5 in 43% / 34% — **lesson 02-01 slide 12 swaps the labels**), Gottesman 2015, Harpavat 2020, Gopal 2024, AAP 2025 abstract (three-step check at the 2–4 week visit; no threshold in the abstract).
+- Not published: AAP 2022 conjugated "> 0.3 mg/dL" (library aap_2022_hyperbili, P1); AAP 2025 "≥ 1 urgent" and "Kasai before 30 days" (library aap_2025_ba_primary_care, P2); SIGENP/Spanish 20% rule, UK NSC 2026 and screening-program verdicts (stay in Inbox for chol_0_3m / Why later); stool card sensitivities by program (Why keeps only the pooled Gopal 2024 figure).
+- Links: c_conj_bili (both pathways), unconj_bili (both), inr_prolonged (bleeding). Backlink: unconj_bili_infant step 1 "Under 28 days" → neo_jaundice. chol_0_3m and chol_preterm_pn links — when those cards exist (days 29, 30).
 
 ## Inbox
 

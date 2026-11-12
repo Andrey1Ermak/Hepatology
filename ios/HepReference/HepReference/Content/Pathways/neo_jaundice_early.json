@@ -1,0 +1,163 @@
+{
+  "id": "neo_jaundice_early",
+  "children": [
+    {
+      "t": "section",
+      "h": "1 · Is the newborn sick or bleeding?",
+      "children": [
+        {
+          "t": "out",
+          "cond": "High-pitched cry, arching, abnormal tone or poor suck in a deeply jaundiced infant",
+          "pill": {
+            "kind": "picu",
+            "text": "Emergency department now: possible bilirubin encephalopathy — total and direct bilirubin and albumin now; intensive phototherapy now; neonatal team for urgent exchange transfusion; sepsis evaluation"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Poor feeding, lethargy, vomiting, fever or low temperature, poor color",
+          "pill": {
+            "kind": "picu",
+            "text": "Emergency department now: blood and urine culture, urine reducing substances, glucose, INR; neonatal or pediatric ICU if unstable"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Vomiting on milk feeds, E. coli or other gram-negative sepsis, cataracts — galactosemia possible, newborn screen pending or missing",
+          "pill": {
+            "kind": "floor",
+            "text": "Send urine reducing substances now, before the switch; then stop breast milk and lactose formula — feed a soy-based or elemental formula and keep feeding; check glucose. Red-cell GALT activity (false-normal after transfusion). Mother expresses milk to keep her supply (lesson 02-03)"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Bleeding — umbilical stump, bruising, blood in stool or vomit, bulging fontanelle",
+          "pill": {
+            "kind": "picu",
+            "text": "Emergency department now: vitamin K IV (slowly) now, INR, head imaging if neurologic signs — vitamin K deficiency bleeding until proved otherwise. Ask whether vitamin K was given at birth"
+          },
+          "link_card_id": "inr_prolonged"
+        },
+        {
+          "t": "out",
+          "cond": "Visible jaundice in the first 24 hours of life",
+          "pill": {
+            "kind": "floor",
+            "text": "Pathologic until proved otherwise: bilirubin now; hemolysis workup (blood groups, DAT, CBC, reticulocytes); neonatal team uses the AAP 2022 thresholds"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Well and feeding",
+          "subtext": "Go to step 2"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "2 · Look at the stool and urine",
+      "children": [
+        {
+          "t": "row",
+          "text": "Ask about stool and urine color at every visit, and look at a diaper yourself. Parents often call pale stools \"yellow\"."
+        },
+        {
+          "t": "out",
+          "cond": "Pale, clay-colored or white stools, or dark urine that stains the diaper — whatever the numbers",
+          "pill": {
+            "kind": "step",
+            "text": "Same-day pediatric hepatology: fractionated bilirubin and INR today — biliary atresia until proved otherwise. Look at the stool yourself"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Pigmented stools, pale-yellow urine",
+          "subtext": "Go to step 3"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "3 · Read the direct or conjugated value",
+      "children": [
+        {
+          "t": "row",
+          "text": "Look up every bilirubin drawn since birth. A direct or conjugated value is often reported beside the total and never read."
+        },
+        {
+          "t": "row",
+          "text": "Read the number itself. Never divide by the total — the 20% rule misses biliary atresia."
+        },
+        {
+          "t": "row",
+          "text": "Direct and conjugated bilirubin are different tests: direct runs higher. Know your lab's method and its upper limit."
+        },
+        {
+          "t": "row",
+          "text": "Days 1–3: a direct (diazo) value runs higher than a conjugated one (99th centile 2.1 vs 0.5 mg/dL, Davis 2011). Still call at ≥ 1.0 mg/dL; hepatology may repeat it as conjugated within days — never wait if stools are pale (expert opinion)."
+        },
+        {
+          "t": "out",
+          "cond": "Direct or conjugated ≥ 1.0 mg/dL (17 µmol/L), at any total",
+          "pill": {
+            "kind": "step",
+            "text": "Cholestasis: call pediatric GI or hepatology today. Urinalysis and urine culture. INR — if prolonged, parenteral vitamin K and recheck INR. Do not wait for an ultrasound"
+          },
+          "link_calc_id": "c_conj_bili",
+          "link_label": "Conjugated bilirubin: cholestasis?"
+        },
+        {
+          "t": "out",
+          "cond": "Above the lab's upper limit but below 1.0 mg/dL",
+          "pill": {
+            "kind": "dc",
+            "text": "Not normal — early biliary atresia can look like this. Rule out infection (urinalysis, urine culture). Repeat total and direct (same method) by the 2-week visit; ask about stool color. Higher than before, or ≥ 1.0 mg/dL → hepatology today (expert opinion)"
+          },
+          "link_calc_id": "c_conj_bili",
+          "link_label": "Conjugated bilirubin: cholestasis?"
+        },
+        {
+          "t": "out",
+          "cond": "Within the lab's range, or not yet measured",
+          "subtext": "Go to step 4"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "4 · Unconjugated in the first 2 weeks",
+      "children": [
+        {
+          "t": "row",
+          "text": "Total bilirubin against the AAP 2022 phototherapy and escalation thresholds for gestational age and risk factors — neonatal team."
+        },
+        {
+          "t": "row",
+          "text": "Hemolysis (blood groups, DAT, CBC, reticulocytes, G6PD) if jaundice is early, rising fast, or near the threshold."
+        },
+        {
+          "t": "out",
+          "cond": "Near or above the AAP 2022 phototherapy threshold, or rising fast",
+          "pill": {
+            "kind": "floor",
+            "text": "Neonatal team: phototherapy per AAP 2022; hemolysis workup; feeding support"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Hemolysis, or a known unconjugated disorder in the family",
+          "subtext": "Unconjugated workup and follow-up",
+          "link_card_id": "unconj_bili"
+        },
+        {
+          "t": "out",
+          "cond": "Well, feeding, stools pigmented, bilirubin below threshold",
+          "pill": {
+            "kind": "dc",
+            "text": "Routine newborn follow-up. Still jaundiced at 2 weeks → fractionated bilirubin (use the 2 weeks and older branch)"
+          }
+        }
+      ]
+    }
+  ]
+}

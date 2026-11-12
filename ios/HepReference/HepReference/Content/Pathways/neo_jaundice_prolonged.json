@@ -1,0 +1,147 @@
+{
+  "id": "neo_jaundice_prolonged",
+  "children": [
+    {
+      "t": "section",
+      "h": "1 · Is the infant sick or bleeding?",
+      "children": [
+        {
+          "t": "out",
+          "cond": "High-pitched cry, arching, abnormal tone or poor suck in a deeply jaundiced infant",
+          "pill": {
+            "kind": "picu",
+            "text": "Emergency department now: possible bilirubin encephalopathy — total and direct bilirubin and albumin now; intensive phototherapy now; neonatal team for urgent exchange transfusion; sepsis evaluation"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Poor feeding, lethargy, vomiting, fever or low temperature, poor color",
+          "pill": {
+            "kind": "picu",
+            "text": "Emergency department now: blood and urine culture, urine reducing substances, glucose, INR; neonatal or pediatric ICU if unstable"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Vomiting on milk feeds, E. coli or other gram-negative sepsis, cataracts — galactosemia possible, newborn screen pending or missing",
+          "pill": {
+            "kind": "floor",
+            "text": "Send urine reducing substances now, before the switch; then stop breast milk and lactose formula — feed a soy-based or elemental formula and keep feeding; check glucose. Red-cell GALT activity (false-normal after transfusion). Mother expresses milk to keep her supply (lesson 02-03)"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Bleeding — umbilical stump, bruising, blood in stool or vomit, bulging fontanelle",
+          "pill": {
+            "kind": "picu",
+            "text": "Emergency department now: vitamin K IV (slowly) now, INR, head imaging if neurologic signs — vitamin K deficiency bleeding until proved otherwise. Ask whether vitamin K was given at birth"
+          },
+          "link_card_id": "inr_prolonged"
+        },
+        {
+          "t": "out",
+          "cond": "Well, feeding and gaining weight",
+          "subtext": "Go to step 2"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "2 · Fractionate every jaundiced infant",
+      "children": [
+        {
+          "t": "row",
+          "text": "Still jaundiced at 2 weeks or later — breastfed or formula-fed — measure total and direct (or conjugated) bilirubin today. Do not wait for 3–4 weeks."
+        },
+        {
+          "t": "row",
+          "text": "Preterm or on parenteral nutrition: same rule. Biliary atresia hides among sick and PN-fed infants."
+        },
+        {
+          "t": "row",
+          "text": "You cannot see the fraction: about 1 in 3 breastfed infants still look yellow at 3 weeks (Maisels 2014)."
+        },
+        {
+          "t": "row",
+          "text": "Look at the stool yourself, and use a stool color card. Pale stools can come and go."
+        },
+        {
+          "t": "out",
+          "cond": "Pale, clay-colored or white stools, or dark urine that stains the diaper — whatever the numbers",
+          "pill": {
+            "kind": "step",
+            "text": "Same-day pediatric hepatology: fractionated bilirubin and INR today — biliary atresia until proved otherwise. Look at the stool yourself"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Pigmented stools",
+          "subtext": "Go to step 3"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "3 · Conjugated or not?",
+      "children": [
+        {
+          "t": "row",
+          "text": "Read the direct or conjugated value itself, never the ratio. A hemolyzed sample lowers the direct value — redraw rather than reassure."
+        },
+        {
+          "t": "out",
+          "cond": "Direct or conjugated ≥ 1.0 mg/dL (17 µmol/L), at any total",
+          "pill": {
+            "kind": "step",
+            "text": "Cholestasis: call pediatric GI or hepatology today — same-day visit if stools are pale or the value is rising. Urinalysis and urine culture. INR — if prolonged, parenteral vitamin K and recheck INR. Do not wait for an ultrasound"
+          },
+          "link_calc_id": "c_conj_bili",
+          "link_label": "Conjugated bilirubin: cholestasis?"
+        },
+        {
+          "t": "out",
+          "cond": "Above the lab's upper limit but below 1.0 mg/dL",
+          "pill": {
+            "kind": "step",
+            "text": "Not normal: discuss with pediatric hepatology today and repeat within days (expert opinion)"
+          },
+          "link_calc_id": "c_conj_bili",
+          "link_label": "Conjugated bilirubin: cholestasis?"
+        },
+        {
+          "t": "out",
+          "cond": "Within the lab's range",
+          "subtext": "Unconjugated — go to step 4"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "4 · Prolonged unconjugated jaundice",
+      "children": [
+        {
+          "t": "row",
+          "text": "Review the newborn screen (hypothyroidism, galactosemia) and check TSH and free T4 (AAP 2022)."
+        },
+        {
+          "t": "row",
+          "text": "Weight trajectory and feeding. CBC with reticulocytes and DAT if pale, or if jaundice is deepening."
+        },
+        {
+          "t": "out",
+          "cond": "Hemolysis, high TSH or low free T4, poor weight gain, formula-fed, bilirubin rising, or still jaundiced at 3 months (expert opinion)",
+          "subtext": "Work up the cause; hepatology clinic for persistent jaundice",
+          "link_card_id": "unconj_bili"
+        },
+        {
+          "t": "out",
+          "cond": "Thriving breastfed infant, normal exam, pigmented stools, conjugated value normal",
+          "pill": {
+            "kind": "dc",
+            "text": "Likely breast-milk jaundice: keep breastfeeding. Still jaundiced → recheck total and direct bilirubin in 2–4 weeks (expert opinion). Pale stool or dark urine → same day"
+          }
+        }
+      ]
+    }
+  ]
+}

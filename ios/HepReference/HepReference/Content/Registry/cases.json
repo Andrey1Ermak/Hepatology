@@ -174,5 +174,29 @@
     "question": "How do you explain it?",
     "answer": "Liver disease lowers clotting factors and natural anticoagulants together, while factor VIII and von Willebrand factor rise. The INR sees only one side. A high INR does not protect from thrombosis and is not, on its own, a contraindication to anticoagulation — the hepatology team decides.",
     "teaching": "Rebalanced hemostasis (Tripodi 2011). Lesson 01-03, case 4."
+  },
+  {
+    "id": "neo_jaundice_c1",
+    "card": "neo_jaundice",
+    "stem": "A breastfed girl, 26 days old, gaining 35 g a day, has been yellow since day 4. Her parents say the stools are yellow. A day-2 bilirubin showed total 9.8 mg/dL and direct 0.6 mg/dL (lab upper limit 0.3); it was never repeated. Today: total 7.9 mg/dL, direct 2.1 mg/dL.",
+    "question": "Is this breast-milk jaundice?",
+    "answer": "No. A direct bilirubin of 2.1 mg/dL is cholestasis at any total. Call pediatric GI or hepatology today; urinalysis and urine culture; check INR; look at a diaper yourself.",
+    "teaching": "Breast-milk jaundice is unconjugated, and thriving does not exclude biliary atresia. The day-2 direct value above the lab range was the first signal (Harpavat 2011), and no one repeated it."
+  },
+  {
+    "id": "neo_jaundice_c2",
+    "card": "neo_jaundice",
+    "stem": "A formula-fed boy, 15 days old, is mildly yellow. He feeds well and his stools are yellow-brown on a diaper you inspect. Total bilirubin 8.4 mg/dL, conjugated 0.2 mg/dL (lab upper limit 0.3).",
+    "question": "What next?",
+    "answer": "Unconjugated jaundice. Review the newborn screen and check TSH and free T4; CBC with reticulocytes and DAT. Review in 1–2 weeks, sooner for pale stools or dark urine.",
+    "teaching": "Prolonged unconjugated jaundice is less common on formula than on breast milk, so look for hypothyroidism and hemolysis (lesson 02-01; NICE CG98). The follow-up interval is expert opinion."
+  },
+  {
+    "id": "neo_jaundice_c3",
+    "card": "neo_jaundice",
+    "stem": "A 3-week-old breastfed boy is thriving and mildly jaundiced. Total bilirubin 11 mg/dL, direct 1.2 mg/dL. The resident notes that the direct fraction is only 11% and plans to recheck in 2 weeks.",
+    "question": "Is the plan right?",
+    "answer": "No. Direct 1.2 mg/dL is cholestasis whatever the total. Call pediatric GI or hepatology today; urinalysis and urine culture; check INR and look at the stool — same-day review if the stool is pale.",
+    "teaching": "The 20% rule is gone: 79% of newborns with biliary atresia had a direct-to-total ratio of 0.2 or less (Harpavat 2011). A two-week wait at 3 weeks can push a Kasai past the best window."
   }
 ]

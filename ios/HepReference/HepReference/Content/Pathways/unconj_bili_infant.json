@@ -7,7 +7,8 @@
       "children": [
         {
           "t": "row",
-          "text": "Under 28 days: neonatal team — use the AAP 2022 phototherapy and escalation thresholds."
+          "text": "Under 28 days: neonatal team — use the AAP 2022 phototherapy and escalation thresholds.",
+          "link_card_id": "neo_jaundice"
         },
         {
           "t": "row",

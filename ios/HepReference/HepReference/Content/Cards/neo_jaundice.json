@@ -1,0 +1,218 @@
+{
+  "id": "neo_jaundice",
+  "title": "Neonatal Jaundice: Conjugated or Not?",
+  "code": "NASPGHAN/ESPGHAN 2017 · AAP 2022 · AAP 2025 · NICE CG98",
+  "cat": "jaundice",
+  "acu": "urg",
+  "tags": [
+    "neonatal jaundice",
+    "newborn jaundice",
+    "prolonged jaundice",
+    "conjugated bilirubin",
+    "direct bilirubin",
+    "pale stool",
+    "acholic stool",
+    "stool color card",
+    "dark urine",
+    "breast milk jaundice",
+    "biliary atresia",
+    "fractionated bilirubin"
+  ],
+  "ages": [
+    "neo",
+    "infant"
+  ],
+  "entry": "symptom",
+  "guidelines": [
+    "naspghan_espghan_2017_nc",
+    "aap_2022_hyperbili",
+    "aap_2025_ba_primary_care",
+    "nice_cg98_2010"
+  ],
+  "plan": [
+    {
+      "block": 1,
+      "days": [
+        2,
+        14
+      ]
+    },
+    {
+      "block": 2,
+      "days": [
+        1,
+        2,
+        14
+      ]
+    }
+  ],
+  "related": [
+    "unconj_bili",
+    "inr_prolonged",
+    "ref_norms",
+    "ref_imaging"
+  ],
+  "status": "reviewed",
+  "blocks": [
+    {
+      "t": "note",
+      "k": "crit",
+      "h": "Red flags",
+      "text": "**Pale, clay-colored or white stools, or dark urine, at any age:** fractionated bilirubin and INR today; pediatric hepatology the same day — biliary atresia until proved otherwise.\n**Direct or conjugated bilirubin ≥ 1.0 mg/dL (17 µmol/L), at any total:** cholestasis — call pediatric GI or hepatology today.\n**Jaundiced and sick — poor feeding, lethargy, vomiting, fever or low temperature:** emergency department now; blood and urine culture, glucose, INR.\n**Galactosemia possible (vomiting on milk, E. coli sepsis, screen pending):** urine reducing substances first, then stop breast milk and lactose formula — feed a soy-based or elemental formula.\n**Bleeding or prolonged INR:** vitamin K IV now — vitamin K deficiency bleeding until proved otherwise.\n**High-pitched cry, arching or abnormal tone:** possible bilirubin encephalopathy — emergency department now.\n**Jaundice in the first 24 hours, or bilirubin near the AAP 2022 phototherapy threshold:** neonatal team now."
+    },
+    {
+      "t": "age_switch",
+      "h": "Age",
+      "options": [
+        {
+          "age": "neo",
+          "label": "Under 2 weeks",
+          "path_id": "neo_jaundice_early"
+        },
+        {
+          "age": "infant",
+          "label": "2 weeks and older",
+          "path_id": "neo_jaundice_prolonged"
+        }
+      ]
+    },
+    {
+      "t": "workup",
+      "h": "First contact",
+      "groups": [
+        {
+          "label": "Every infant still jaundiced at 2 weeks",
+          "items": [
+            "Total and direct (or conjugated) bilirubin — note the method and the lab's upper limit",
+            "Stool and urine color — look at a diaper yourself",
+            "Weight, feeding, newborn screen result"
+          ]
+        },
+        {
+          "label": "Direct or conjugated ≥ 1.0 mg/dL, or pale stool — today",
+          "items": [
+            "Urinalysis, urine culture and urine reducing substances — febrile or not",
+            "INR — if prolonged, parenteral vitamin K and recheck INR; ask whether vitamin K was given at birth",
+            "ALT, AST, GGT, ALP, albumin, glucose, CBC",
+            "Newborn screen result; TSH and free T4 (a TSH-only screen misses central hypothyroidism)",
+            "Blood culture if febrile or ill",
+            "Abdominal ultrasound, ideally fasting — scan non-fasting if hypoglycemic or hypopituitarism is possible; it must not delay the call to pediatric GI or hepatology"
+          ]
+        },
+        {
+          "label": "Unconjugated and prolonged",
+          "items": [
+            "TSH and free T4",
+            "CBC with reticulocytes, blood film, DAT; blood groups of mother and infant",
+            "Glucose-6-phosphate dehydrogenase (G6PD) activity if hemolysis or at-risk ancestry"
+          ]
+        }
+      ]
+    },
+    {
+      "t": "list",
+      "h": "Don't miss",
+      "items": [
+        "Biliary atresia — conjugated bilirubin is high from the first days; stools may still look pigmented early",
+        "Sepsis or urinary tract infection in a jaundiced infant — culture the urine",
+        "Galactosemia — vomiting on milk feeds, E. coli sepsis, cataracts; the newborn screen can be late or missing",
+        "Congenital hypothyroidism — check the newborn screen, TSH and free T4",
+        "Hypopituitarism — hypoglycemia, micropenis, midline defects, roving eyes",
+        "Vitamin K deficiency bleeding in a cholestatic, breastfed infant",
+        "Hemolysis behind early or fast-rising jaundice — G6PD deficiency, immune hemolysis",
+        "A raised direct value hidden by a large total, a falling total or a hemolyzed sample"
+      ]
+    },
+    {
+      "t": "text",
+      "h": "Why",
+      "text": "A newborn makes about twice the adult bilirubin load, and the conjugating enzyme UGT1A1 is still immature, so unconjugated jaundice in the first weeks is expected. The bilirubin that is conjugated is normally exported into bile. A high conjugated fraction means bile is not leaving the liver cell or the liver — it is never just immaturity (lessons 01-02, 02-01).\n\n\"Direct\" and \"conjugated\" are different tests. Direct bilirubin includes delta bilirubin (conjugated bilirubin bound to albumin) and reads higher. Among 271,186 term newborns, the 99th centile was 0.5 mg/dL for conjugated and 2.1 mg/dL for direct bilirubin. At a conjugated value of 5 mg/dL or more, 47% had biliary and 43% liver disease (Davis 2011).\n\nBiliary atresia starts before birth. Of 61 infants later diagnosed with atresia, 34 had a direct or conjugated bilirubin measured in the first days; every one was above the lab range, while 79% had a direct-to-total ratio of 0.2 or less (Harpavat 2011). That is why the 20% rule was dropped and an absolute value is used.\n\nYou cannot see the fraction. Among 1,044 mostly breastfed infants, 34% were visibly jaundiced at 3 weeks and 21% at 4 weeks (Maisels 2014). Only a blood test separates breast-milk jaundice from cholestasis.\n\nAmong 1,692 infants with conjugated hyperbilirubinemia, idiopathic neonatal hepatitis (26%) and biliary atresia (26%) led, followed by infection (11%), parenteral nutrition (6%), metabolic disease (4%) and alpha-1 antitrypsin deficiency (4%) (Gottesman 2015).\n\nDays matter. Native-liver survival at 4 years was 49% after a Kasai at 30 days or less, 36% at 31–90 days and 23% after 90 days (Schreiber 2007). Two-stage newborn direct or conjugated bilirubin screening in Texas found all 7 infants with atresia (specificity 99.9%, positive predictive value 5.9%) and was followed by a fall in mean Kasai age from 56 to 36 days in a before–after comparison (Harpavat 2020). Pooled, newborn bilirubin screening had a sensitivity of 100% and stool color cards 79.6% (Gopal 2024)."
+    },
+    {
+      "t": "pearls",
+      "h": "Pearls & pitfalls",
+      "items": [
+        {
+          "k": "pitfall",
+          "text": "\"Breastfed — recheck in two weeks.\" Breast-milk jaundice is unconjugated. Fractionate first; a thriving breastfed infant can have biliary atresia."
+        },
+        {
+          "k": "pitfall",
+          "text": "Never divide. A direct bilirubin of 1.4 mg/dL on a total of 12 is a ratio of 0.12 — and still cholestasis."
+        },
+        {
+          "k": "pitfall",
+          "text": "A falling total can hide a rising direct value. Follow the direct or conjugated number, not the total."
+        },
+        {
+          "k": "pearl",
+          "text": "Direct runs higher than conjugated (newborn 99th centile 2.1 vs 0.5 mg/dL, Davis 2011). Repeat with the same method, and compare like with like."
+        },
+        {
+          "k": "pearl",
+          "text": "Lesson 02-01 calls a day-2 direct value of 1.1–1.2 mg/dL borderline, because direct runs higher than conjugated. The app still calls at ≥ 1.0 mg/dL: mean direct bilirubin was 1.4 mg/dL at 24–48 hours in atresia (Harpavat 2011), and a call costs less than a missed week."
+        },
+        {
+          "k": "pitfall",
+          "text": "A hemolyzed sample lowers the measured direct bilirubin. Redraw rather than reassure."
+        },
+        {
+          "k": "pearl",
+          "text": "A newborn direct value above the lab range is a signal, not a footnote. Repeat it by the 2-week visit and ask about the stools."
+        },
+        {
+          "k": "pitfall",
+          "text": "\"Stools look yellow\" from parents is not enough. Look at a diaper yourself; pallor can be intermittent and early atresia stools can be pigmented."
+        },
+        {
+          "k": "pearl",
+          "text": "Delta bilirubin shares albumin's half-life of about 3 weeks, so a direct value falls slowly after recovery. Judge by the conjugated value and the stool color (lesson 01-02)."
+        }
+      ]
+    },
+    {
+      "t": "guideline_compare",
+      "h": "Guidelines",
+      "rows": [
+        {
+          "topic": "When to fractionate a jaundiced infant",
+          "positions": {
+            "naspghan_espghan_2017_nc": "Any infant jaundiced after 2 weeks of age; a well breastfed infant may be reviewed at 3 weeks",
+            "aap_2022_hyperbili": "Breastfed still jaundiced at 3–4 weeks; formula-fed at 2 weeks (per lesson 02-01; full text not yet checked)",
+            "aap_2025_ba_primary_care": "At the 2–4 week visit: eye color, stool color and prior results decide who gets a direct or conjugated bilirubin",
+            "nice_cg98_2010": "Prolonged jaundice: more than 14 days at term, more than 21 days preterm"
+          },
+          "verdict": "material",
+          "note": "A breastfed infant first tested at 4 weeks has used most of the time before an early Kasai. The app fractionates any infant jaundiced at 2 weeks or later, breastfed or not."
+        },
+        {
+          "topic": "What counts as abnormal",
+          "positions": {
+            "naspghan_espghan_2017_nc": "Direct > 1.0 mg/dL (17 µmol/L), at any total",
+            "nice_cg98_2010": "Conjugated > 25 µmol/L (≈ 1.5 mg/dL): follow expert advice"
+          },
+          "verdict": "differs",
+          "note": "The app uses ≥ 1.0 mg/dL (17 µmol/L) for direct or conjugated bilirubin, and treats any value above the lab's own range as not normal (expert opinion; Harpavat 2011). Lesson 02-01 calls a day-2 direct value of 1.2 mg/dL ordinary, because direct includes delta bilirubin; the app still calls at ≥ 1.0 (mean 1.4 mg/dL at 24–48 hours in atresia, Harpavat 2011)."
+        },
+        {
+          "topic": "Stool and urine color",
+          "positions": {
+            "aap_2025_ba_primary_care": "Check stool color at the 2–4 week visit",
+            "nice_cg98_2010": "Look for pale chalky stools and/or dark urine at the prolonged-jaundice check"
+          },
+          "verdict": "aligned",
+          "note": "A pale stool at any age is a same-day referral; a normal-looking stool does not clear a raised direct value."
+        }
+      ]
+    },
+    {
+      "t": "case",
+      "h": "Test yourself",
+      "case_ids": [
+        "neo_jaundice_c1",
+        "neo_jaundice_c2",
+        "neo_jaundice_c3"
+      ]
+    }
+  ]
+}
