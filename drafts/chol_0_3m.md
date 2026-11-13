@@ -1,8 +1,129 @@
 # chol_0_3m — Cholestasis 0–3 Months (draft)
 
-Card not built yet (trigger reached 2026-10-22: lesson 02-14; backlog day 28–29). Inbox is filled by daily lesson sync (§3.4).
+**Status: card draft written 2026-11-13 (day 28, stages 1–2 of §7). JSON build — day 29.** Sources: lessons 02-01…02-14 (all re-read for this draft; 02-03 is the backbone), 03-01…03-14 and 04-01…04-06 via the Inbox below, registered guidelines (`guidelines.json`), decisions D-2026-11-11-2/-3, D-2026-11-12-2…4, D-2026-10-26-2, D-2026-11-13-2. Guideline check 2026-11-13: no newer NASPGHAN/ESPGHAN neonatal cholestasis guideline than Fawaz 2017; **new: FIGHS position paper 2025** (Chen HL et al. JPGN 2025;81:1360–77, doi 10.1002/jpn3.70207; abstract only → `library` fighs_2025_infant_cholestasis, P2); AAP 2025 clinical report title confirmed ("identifying infants with biliary atresia by 2–4 weeks of life"); German S2k guideline expired, revision planned.
+
+Card header: `acu: crit` · ages `neo`, `infant` · entry `symptom` · code `NASPGHAN/ESPGHAN 2017 · AAP 2025 · EASL 2024` · guidelines: naspghan_espghan_2017_nc, aap_2025_ba_primary_care, easl_2024_genetic_cholestasis, mouzaki_2019_nutrition, nice_cg98_2010 (+ to register: fighs_2025, ranucci_2022_sigenp, martinez_2026_lt_eval, superina_2011, shneider_2016_ba_3mo, pandurangi_2024_mmp7, levy_1977_galactosemia, welling_2017_galnet, braslavsky_2011, kimberlin_2001_hsv, bezerra_2014_start, kaye_2010 (exists), mckiernan_2000, davenport_2011) · plan: block 2 days 1–14 (esp. 3, 13, 14), block 3 days 1–5, 14, block 4 days 1–2 · related: neo_jaundice, chol_preterm_pn, inr_prolonged, ref_imaging, ref_biopsy, ref_genetics, ref_norms.
+
+Organizing idea (02-03 slide 3, 02-14 slide 2): **one sign, several clocks — order the workup by the fastest clock, not the commonest disease.** Sick infant → treat the systemic cause today; well infant → biliary atresia until excluded, this week. Every section below follows that order.
+
+## Card draft
+
+### I · Red flags (`note`, k: crit)
+- **Looks sick — poor feeding, vomiting, lethargy, temperature instability, bleeding:** sepsis, galactosemia, HSV/enterovirus, adrenal crisis until proved otherwise → emergency department / admit now. Blood and urine culture, glucose, INR, ammonia. (02-03 s3, s17; 02-14 s2)
+- **INR prolonged or any bleeding:** vitamin K IV or subcutaneous now (infant dose confirmed with pharmacy) and recheck INR the next day — **same wording as published inr_prolonged**; if liver failure is suspected, do not wait for the recheck. INR that does not correct → liver failure → call a transplant center (→ inr_prolonged; palf when built). (02-03 s12, s19; Sutor 1995: ≥ 37% of late VKDB had cholestasis, 58% intracranial)
+- **Pale, clay or white stools, or a rising direct bilirubin:** pediatric hepatology **the same day**; cholangiogram on the atresia clock (D-2026-10-26-2 rule). (02-14, 03-04)
+- **Galactosemia possible (vomiting on milk, E. coli sepsis or UTI, cataract, screen pending):** urine reducing substances while still on lactose and red-cell GALT **before any transfusion** → then stop breast milk and lactose formula; feed soy-based or elemental formula; glucose. (Same wording as neo_jaundice, D-2026-11-12-4.) **Resolved (review + GalNet 2017 rec 4, Welling 2017, PMC5306419):** wording for both cards — "Stop breast milk and lactose formula; feed a galactose-free formula — soy-based, extensively hydrolyzed casein or elemental. If HFI is possible (sick after sucrose or fructose), choose one without sucrose or fructose — elemental is the safe default." Register `welling_2017_galnet`; neo_jaundice update is a backlog item (its current wording is a correct subset). Background: lesson 02-06 s16 says "lactose- *and sucrose*-free (extensively hydrolyzed or elemental)" because a sucrose-sweetened formula unmasks HFI — reconcile with neo_jaundice's "soy-based or elemental" (many soy formulas contain sucrose) → proposed "elemental or extensively hydrolyzed, lactose- and sucrose-free" in both cards; decision at build, clinical review.
+- **Hypoglycemia, micropenis, midline defects, roving eyes:** hypopituitarism → critical sample (cortisol, free T4 + TSH), **hydrocortisone before levothyroxine**, do not fast for the ultrasound. (02-03 s11; 02-05 s13–14; van Trotsenburg 2021 ESPE) — no hydrocortisone dose on the card (lesson's 17 mg/m²/day is a case-series figure; endocrinology decides).
+- **Liver failure in the first weeks (INR high, glucose low, ALT very high, or near-normal ALT with very high ferritin and AFP above the age norm → ref_norms; `blohm_1998_afp`):** IV acyclovir now, before the HSV PCR — **no dose on the card**, as in the published alt_elevated and inr_prolonged cards (lesson 02-04: 20 mg/kg q8h, Kimberlin 2001 — publish only after checking `aap_redbook_2024_hsv`, with renal/preterm adjustment); consider GALD → transplant center. (02-04 s13; 02-10)
+- **Contractures or renal Fanconi signs:** suspect ARC — **no percutaneous liver biopsy** (Gissen 2006: 7/16 life-threatening bleeds). (02-11)
+- **Older infant with ascites or INR not correcting with vitamin K:** transplant-center assessment before any Kasai. (03-04, 03-05)
+
+### II · Age (`age_switch`)
+- `neo` — "0–28 days" → `chol_0_3m_neo`: the fast clocks dominate (sepsis/UTI, HSV/enterovirus, galactosemia, tyrosinemia, hypopituitarism, GALD/HLH, VKDB) — atresia runs in parallel (present from birth: Harpavat 2011).
+- `infant` — "1–3 months" → `chol_0_3m_infant`: the atresia race (stool, US, GGT, biopsy/MMP-7, cholangiogram) + mimics (Alagille, A1AT, CF, PFIC/BASD, CMV, NICCD); > 90 days branch "judge the liver, not the calendar".
+- Why split at 28 d and not at 14 d like neo_jaundice: neo_jaundice decides *whether* to fractionate (14-day rule); this card starts once cholestasis is proven, and the cause mix changes with the first month (02-03 s3; 02-04/02-10 neonatal liver failure). Record in DECISIONS (D-2026-11-13-2).
+
+### III · Algorithm (two pathways)
+**chol_0_3m_neo (0–28 d)**
+1. section "Is the infant sick?" — box crit: yes → admit/ED; cultures (blood, catheter urine; CSF if febrile or ill), glucose, INR → IV vitamin K, ammonia, lactate; IV antibiotics; **acyclovir if liver failure or sepsis with raised ALT**; galactosemia steps (see red flags); pill `picu` "PICU / transplant center" if INR does not correct or encephalopathy.
+2. section "Day-1 exclusions in every infant" (Fawaz 2017 Table 4 as summarized by 02-03 s7): urinalysis + urine culture + urine reducing substances (febrile or not — Chen 2022: 14.3% bacteriuria in afebrile jaundiced infants < 1 mo, mostly unconjugated cohorts); glucose; INR + parenteral vitamin K; TSH **with free T4**; newborn screen result; cortisol if hypoglycemic or other pituitary clue.
+3. section "Clues → branch" (rows with `link_card_id` where cards exist):
+   - E. coli / gram-negative sepsis or INR out of proportion → galactosemia, tyrosinemia (succinylacetone, not tyrosine), GALD → `link_card_id: inr_prolonged`.
+   - Hypoglycemia ± micropenis → hypopituitarism (GGT normal in ~half — mimics PFIC; Braslavsky 2011).
+   - Splenomegaly, very high ferritin, cytopenias → HLH, storage, GALD (ferritin ≥ 500 = HLH-2004 criterion; GALD vs HLH not separated by ferritin — 02-10 s7).
+   - Preterm or on PN → still exclude atresia → `chol_preterm_pn` (link added day 30).
+   - Dysmorphism, murmur, contractures → syndrome work-up alongside (Alagille, ARC, trisomy 21/TAM blood film).
+4. section "Atresia runs in parallel": duplicate the infant pathway's "Stool first" and "Decide" nodes here (a well 3-week-old with pale stools must not have to switch tabs; reviewer N1).
+
+**chol_0_3m_infant (1–3 mo)**
+0. **Same opening as the neo pathway (reviewer, blocking):** box "Is the infant sick?" → admit, cultures, glucose, INR + parenteral vitamin K; section "Day-1 exclusions in every infant" (urine culture + reducing substances, glucose, INR, TSH + free T4, newborn screen, cortisol if pituitary clues). Hypopituitarism is often diagnosed at ~7.6 weeks (Karnsakul 2007, 02-03 s11) and 02-03 frames the first visit at 2–8 weeks — the exclusions belong to the whole 0–3-month range.
+1. section "Stool first": pale/acholic stool (look yourself; stool card) → crit box with out "Call pediatric hepatology and surgery today" (`pill: step` — `picu` is reserved for PICU / transplant center, §5.3), `link_calc_id: c_kasai_clock`.
+2. section "Parallel, not serial (one or two days)": INR + IV vitamin K before any invasive step; GGT, ALT, AST, ALP, albumin, CBC; fasting US (non-fasting if hypoglycemia/hypopituitarism risk) — gallbladder, triangular cord, subcapsular flow, porta cyst, splenic malformation; α1-antitrypsin level **and** Pi type; MMP-7 where a validated assay exists (no cut-off on the card — D-2026-11-13-3); CMV IgM + blood/urine PCR (record; never delays); sweat test/CFTR; echo, AP spine film (tell the radiologist to look for clefts), slit-lamp + dilated fundus if high GGT and any Alagille clue (murmur, face, embryotoxon); genetics with copy-number sent the same day.
+3. section "Decide" (arms):
+   - arm sev "High probability of atresia" — acholic stools, abnormal/absent gallbladder or triangular cord, high GGT, high MMP-7 (validated assay) → out "Intraoperative cholangiogram ± Kasai under one anesthetic in an experienced center, this week" (pill `step` text "Surgery this week"), `link_calc_id: c_kasai_clock`. Row: "Do not order HIDA or wait for genetics — they cannot change this decision" (02-03 s19; 03-03).
+   - arm mod "Unclear" — pigmented stools but GGT high, normal gallbladder → liver biopsy read by an experienced pediatric pathologist within days (`link_card_id: ref_biopsy`); obstructive → cholangiogram; hepatitic but stools pale → cholangiogram anyway (early biopsy can look hepatitic, giant cells in 20–50% of atresia). Row: HIDA only if biopsy is unavailable — excretion argues against atresia, non-excretion proves nothing; no phenobarbital priming (Fawaz rec 7, 1B; 02-03 s5, s13).
+   - arm mild "Atresia unlikely" — pigmented stools, normal contracting gallbladder, low or normal GGT, low MMP-7 after the first month → other causes: low GGT → chol_low_ggt (later) / urine bile acids before UDCA; PiZZ/SZ → aatd (later); Alagille features → genetics (`link_card_id: ref_genetics`), **no Kasai if the duct is patent**; NICCD (high citrulline, galactose) → lactose-free MCT formula (TODO(verify) source — else "metabolic team" only); CMV → still finish the atresia workup. Row: **stools turn pale or direct keeps rising → back to the cholangiogram** (~6% of atresia below the MMP-7 cut-off; a low MMP-7 never overrides pale stools). Tyrosinemia (succinylacetone high) → start nitisinone with the metabolic team (no dose on the card).
+4. section "After 90 days" (box warn): no decompensation (no ascites, INR corrects with vitamin K) → Kasai still offered (no futile age; Schreiber 2007: 23% native liver at 4 y after > 90 d); ascites, uncorrected INR or established cirrhosis → transplant-center assessment first (expert practice — GAP).
+5. section "After the Kasai" (Learn-heavy, but duty rows): fever, paler stools or rising bilirubin → cholangitis until proved otherwise → blood culture + IV antibiotics (→ kasai_fever when built); total bilirubin at 1, 2, 3 months: < 2 mg/dL by 3 months = cleared (Superina 2011, Shneider 2016: 2-y transplant-free 86% vs 20%); **not cleared by 3 months → refer to a transplant center (label "Expert opinion" — stronger than the Squires 2014 reading "consider"); > 6 mg/dL or rising → this week; any complication (growth failure, recurrent cholangitis, varices, hypoxemia) → refer at the first complication.** TODO(verify) against Martinez 2026 full text (library aasld_ast_naspghan_2026_lt_eval) — until then attribute to Squires 2014 thresholds as summarized by lesson 03-08, or label "Expert opinion" (decide at build; DECISIONS). Nutrition and vitamins → `link_calc_id: c_vitamins`.
+
+### IV · First contact (`workup`)
+- **Blood — today:** total and direct (or conjugated) bilirubin; ALT, AST, GGT, ALP, albumin; INR; CBC; glucose; blood culture if febrile or ill.
+- **Urine — today, febrile or not:** urinalysis and culture (catheter); urine reducing substances while on lactose.
+- **Hormones:** newborn screen result; TSH **and free T4** in every infant (beyond Fawaz Table 4 "if screen not available" — central hypothyroidism, 02-03 s11; D-2026-11-13-2); cortisol if hypoglycemic or pituitary clues.
+- **Before UDCA, transfusion or stopping feeds:** urine bile acids (before UDCA); red-cell GALT (before transfusion); enzyme/metabolic samples (→ ref_metabolic, day 31).
+- **Look yourself:** stool color in a diaper you open, liver and spleen, ill appearance (Fawaz rec 4–5, 1A).
+- **Imaging:** abdominal ultrasound with Doppler — fasting 3–4 h unless hypoglycemic or hypopituitarism is suspected (D-2026-11-12-4); tell the sonographer "rule out biliary atresia".
+- **Same-week hepatology adds:** α1-antitrypsin level + Pi type; MMP-7 (validated assay); GGT trend; CMV IgM + PCR; sweat test or CFTR; echo, spine film, eye exam (Alagille); genetic test with copy-number (panel or rapid exome/genome; → ref_genetics); serum bile acids; ammonia, lactate; succinylacetone; liver biopsy if unclear.
+- **Treat today:** parenteral vitamin K if INR prolonged (`link_calc_id: c_vitamins` for maintenance after diagnosis).
+- **From week 1, whatever the cause (02-13; Mouzaki 2019 — registered):** fat-soluble vitamins by weight and bilirubin (`link_calc_id: c_vitamins`; each vitamin separately once bilirubin stays ≥ 2 mg/dL — Shneider 2012); MCT-containing formula or fortified breast milk, energy ~130% of age requirement, no protein restriction (Mouzaki 2019 Table 3 — already verified for c_vitamins day 25; MCT share TODO(verify) stays out); UDCA only **after** the urine bile acid sample (Fawaz 2017 — lesson 02-13; dose 10–20 mg/kg/day TODO(verify) source, else omit); growth by length, MUAC and head circumference, not weight alone.
+- **Never wait:** "No test result may delay the cholangiogram in an infant with pale stools." (02-12 core rule)
+
+### V · Don't miss (`list`)
+- Biliary atresia — stools can still look pigmented early; a normal ultrasound or a hepatitic early biopsy does not exclude it.
+- Sepsis / urinary infection — fever may be absent.
+- Galactosemia — breast milk is lactose; GALT is false-normal after transfusion.
+- Hypopituitarism — normal TSH screen misses central disease; fasting can kill.
+- Vitamin K deficiency bleeding — breastfed, single oral dose at birth (Japanese registry: VKDB in 8.8% before the Kasai).
+- Neonatal HSV — liver failure without vesicles; acyclovir before the PCR.
+- Alagille syndrome — a Kasai harms (transplant 47% vs 14%, Kaye 2010); look before the cholangiogram, never delay it.
+- GALD and HLH — liver failure at birth; very high ferritin.
+- Bile acid synthesis defect — treatable (cholic acid); urine before UDCA.
+- ARC — no percutaneous biopsy.
+
+### VI · Why (`text`, Learn)
+Clocks paragraph (02-03 s3); causes (Gottesman 2015: INH 26%, BA 25.9%, infection 11.5%, PN 6.4%, metabolic 4.4%, A1AT 4.1%, endocrine 2%; treatable systemic ≈ 1 in 6 — registered `gottesman_2015_causes`); atresia present at birth (Harpavat 2011); Kasai age gradient — "no safe age, no futile age" (Serinet 2009, Schreiber 2007, Fanna 2019, Hoshino 2023 — all registered); centre volume (McKiernan 2000: 61% vs 14%; Davenport 2011 England after centralization — to register); phenotypes (BASM ~10% West, cystic, CMV-associated); "the Kasai is the first operation, not the last decision" (03-14). Max ~8 short paragraphs; no doses.
+
+### VII · Pearls & pitfalls (`pearls`, ≤ 10)
+- pearl: Direct ≥ 1.0 mg/dL is abnormal at any total — the 20% rule is gone (Fawaz 2017).
+- pitfall: "Breastfed, so breast milk jaundice" once direct is ≥ 1.0.
+- pitfall: "Normal ultrasound, so not atresia" / "gallbladder seen, so not atresia" (Fawaz 1A: abnormal GB suggests, normal does not exclude).
+- pitfall: Phenobarbital-primed HIDA — 5 days lost.
+- pearl: The second INR is a test — non-correction after parenteral vitamin K = synthetic failure (GALD, metabolic, sepsis).
+- pitfall: "MMP-7 high, book the Kasai" — choledochal cyst and A1AT also raise it; and the cut-off belongs to the assay.
+- pitfall: "CMV positive, so hepatitis" — finish the atresia workup.
+- pearl: Urine bile acids before the first UDCA dose — synthesis defects are treatable.
+- pitfall: Fasting the hypopituitary infant for the ultrasound.
+- pearl: Alagille look-for list (echo, spine film with clefts sought, slit lamp) runs beside the atresia clock, never in front of it.
+
+### VIII · Guidelines (`guideline_compare`) — columns (one id each): naspghan_espghan_2017_nc · aap_2025_ba_primary_care · ranucci_2022_sigenp (register first) · easl_2024_genetic_cholestasis; NICE only if a row needs it
+Rows (verdicts proposed; one row per topic — merges the Inbox candidates; owners per D-2026-11-12-3):
+1. **How fast to identify and refer** (renamed — AAP sets an identification window, not a Kasai age) — Fawaz: as early as possible (TODO(verify) full text — library P1); AAP 2025: identify by 2–4 weeks of life (title, verified); Europe: no number → **MATERIAL** (02-14/02-03 verdict; the 03-04 ALIGNED reading rejected: AAP sets an identification window, Europe none — changes how fast a well infant is worked up). Note: "30/45/60 are audit points, not deadlines" (c_kasai_clock).
+2. **HIDA** — Fawaz 1B: excretion helps exclude; SIGENP 2022: not standard → **DIFFERS**.
+3. **MMP-7** — Fawaz: not addressed (predates); Ge 2025: 2C, no cut-off; FIGHS 2025 mentions "emerging biomarkers" (abstract) → **GAP** for the guidelines we cite, ChiLDReN data in note (§5.2 "one document speaks" rule, as 03-06/03-08 build notes). DECISIONS.
+4. **Who operates (centralization)** — no North American caseload; England 3 centers; Nordic > 3/yr → **GAP** by §5.2 (only national policies speak; lesson 03-05 MATERIAL in note) — or drop the row.
+5. **Genetics vs cholangiogram timing** — Fawaz: expedite atresia workup, genetics tier 2; EASL 2024: early panel/WES; no document says "a pending result must not delay" → **GAP** (lesson 02-12 MATERIAL in note).
+6. **20% rule** — Fawaz: dropped; SIGENP 2022: kept (02-03 s16) → **DIFFERS** (TODO(verify) SIGENP wording; Spanish consensus 2025 and Ge 2025 optional columns only if checked).
+7. **Universal screening** — AAP 2025: future goal (TODO(verify)); FIGHS 2025: screening "shown to identify patients before symptoms" (abstract); UK NSC: not recommended (TODO(verify)) → **DIFFERS**.
+8. **Adjuvant steroids after Kasai** — no North American/European guideline position; Japan 2021 "cannot recommend for or against" → **GAP** (START in note).
+Rows 6 and 7 publish only after their positions are verified (as D-2026-11-12-3); otherwise dropped. Expected card: rows 1, 2, 3, 5, 8 (+ 6/7 if verified). Ge 2025 and Japan 2021 are not columns — say so in the row notes.
+
+### IX · Test yourself (`case`, 3)
+1. `chol_0_3m_c1` — 10-day-old, formula-fed, vomiting, E. coli bacteremia, direct 4.1 mg/dL, INR 3.2, glucose low → antibiotics; urine reducing substances + red-cell GALT before blood products; stop lactose (elemental formula); IV vitamin K and glucose; succinylacetone. (02-14 case 2; 02-03 s19)
+2. `chol_0_3m_c2` — 5-week-old breastfed, "yellow" stools on the card but pale in the diaper you open, direct 1.8 mg/dL, GGT 410, small irregular gallbladder; US for next week booked → same-day hepatology, vitamin K, parallel workup; cholangiogram and Kasai this week in an experienced center; no HIDA. (03-04 case 1; 03-03 case 1)
+3. `chol_0_3m_c3` — 6-week-old, murmur in both axillae, GGT 300, gallbladder seen, butterfly vertebra on chest film, stools pale-yellow → echo, eye exam, JAG1/NOTCH2 with copy number; cholangiogram only if atresia still possible; no Kasai if the duct is patent. (02-12 case 2; 02-14 case 4)
+Reserve: 3-week-old with hypoglycemia + micropenis (02-05 s20); 82-day-old with INR correcting → Kasai (03-14 case 1).
+
+### Links (§4.5)
+→ next: chol_low_ggt (5), inr_prolonged (12) ✔, palf (13), chol_preterm_pn (29, day 30), systemic (30) — only existing cards at build. calc: c_conj_bili, c_kasai_clock, c_vitamins (all exist). ref: A, B, C, E exist; F (day 31). Back-links to add at build: neo_jaundice → chol_0_3m (prolonged pathway outs, "pale stool" row); inr_prolonged → chol_0_3m (§4.5 12 → 2); c_conj_bili/c_kasai_clock result screens if they support links (check).
+
+### Open TODO(verify) carried to build (day 29)
+- Register or drop: shneider_2016_ba_3mo, superina_2011, mckiernan_2000, davenport_2011, gissen_2006_arc, van_trotsenburg_2021, karnsakul_2007, welling_2017_galnet, ranucci_2022_sigenp; "VKDB 8.8% before the Kasai" (Okubo 2025 per 03-01 Inbox) — register or drop.
+- Post-Kasai referral thresholds (2 / 6 mg/dL) — Martinez 2026 full text not available; decide wording ("Expert opinion" vs Squires 2014).
+- Fawaz 2017 positions in rows 1, 5 — full text P1 in library; until then cite abstract-level statements only.
+- SIGENP 2022 20% rule wording; UK NSC 2026 screening statement.
+- Biopsy accuracy wording: Fawaz "90–95%" (02-03 s14) vs Russo 2016 sensitivity 88% (02-09 s8) — publish "about 90% with an experienced pediatric pathologist".
+
 
 ## Inbox
+
+### Lessons 02-04…02-10 re-read for the draft (2026-11-13) — items not in the Inbox above
+- 02-04 infection: catheter urine culture early (Fawaz); CMV — saliva PCR, confirm in urine; congenital only if sample ≤ 21 days, otherwise dried blood spot (Rawlinson 2017); no routine TORCH serology; maternal syphilis results; enterovirus PCR (blood, CSF, stool) in every neonatal liver failure; acyclovir 20 mg/kg q8h before PCR (Kimberlin 2001) — no renal/preterm adjustment in the lesson → TODO(verify) Red Book wording. "An infection never closes the atresia question."
+- 02-05 endocrine: critical sample at hypoglycemia (cortisol, GH, insulin, BHB, FFA); random cortisol < 5.6 µg/dL — 100% specific, 43% sensitive (lesson cites Bulan 2023; the 02-14 entry said Braslavsky 2011 — TODO(verify) source); TSH 5–9 with low free T4 = central until proved otherwise; hydrocortisone first. Free T4 in the lesson is pmol/L — convert to ng/dL (÷ 12.87) if published.
+- 02-06 metabolic: succinylacetone (a tyrosine-based screen misses ~28% — De Jesús 2014); AFP trend, not value; no fructose challenge; sucrose-sweetened "lactose-free" formula unmasks HFI; nitisinone dose stays out of this card (metabolic team). "< 10% GALT = classic" — TODO(verify) GalNet definition; not published.
+- 02-07: urine bile acids before UDCA (stop UDCA 7–10 days if already started — Heubi 2007, TODO(verify)); low GGT + low serum bile acids + no itch → synthesis defect tendency (HSD3B7 serum bile acids 0.2–85 → not a rule); NICCD = high GGT, very high AFP, high citrulline → lactose-free MCT formula; avoid high-dextrose loads in NICCD (opposite of other urea-cycle reflexes).
+- 02-08 preterm/PN: direct bilirubin at 2 weeks of PN then every 1–2 weeks; "the PN label is earned by its course"; preterm atresia Kasai later (72 vs 53 d, Chiu 2013) → card 29.
+- 02-09 INH: pale stools override a "neonatal hepatitis" biopsy; giant cells are a pattern (Torbenson 2010: 15% hypopituitarism, 8% atresia); biopsy sensitivity 88% (Russo 2016) vs Fawaz 90–95% accuracy — publish "about 90%"; sibling affected → recessive, genetics now.
+- 02-10 infiltration: day-1 CBC, ferritin, triglycerides, fibrinogen, sCD25, INR, AFP, HSV/enterovirus PCR; enzyme activities before transfusion; GALD — near-normal transaminases + high AFP; HLH — high transaminases; ferritin does not separate; HLH-2004 in US units (Hb < 9 g/dL, < 10 g/dL under 4 weeks; triglycerides ≥ 265 mg/dL; fibrinogen ≤ 150 mg/dL; ferritin ≥ 500 ng/mL); GALD exchange/IVIG doses absent from the lesson — not published. GALD share of neonatal ALF: 60–90% (Whitington) vs 13.5% of PALF ≤ 90 days (Sundaram) — different denominators; publish neither without the denominator.
 
 ### 02-11 · Syndromic cholestasis (synced 2026-10-19)
 - Dysmorphism plus cholestasis: run a syndrome workup **alongside** the standard algorithm, never instead of it. Acholic stools still mean a cholangiogram early enough to allow a Kasai before about 60 days of age, whatever the face looks like (lesson 02-11 slide 18 and chapter; keep in line with the 30/45/60 Kasai clock — the day-60 figure is the lesson's, not Fawaz 2017).
