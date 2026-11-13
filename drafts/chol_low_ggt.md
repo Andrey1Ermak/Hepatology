@@ -40,3 +40,8 @@ Card not built yet (trigger: lesson 05-14). Inbox is filled by daily lesson sync
 - A normal or low GGT in a cholestatic infant points away from atresia → PFIC1/2, bile acid synthesis defects, TJP2 (slide 4). Atresia with low GGT exists but is uncommon — pale stools still go to the atresia pathway.
 - GGT is physiologically higher in neonates — interpret "low" against age norms (→ lab_norms / ref_norms).
 - Case (slide 20): 5-week-old, GGT 90 U/L, normal contracting gallbladder, MMP-7 below the assay cut-off → atresia unlikely; work up PFIC, bile acid synthesis, genetics.
+
+### 04-07 · Alagille syndrome VII: the pruritus ladder (synced 2026-11-13)
+- The ladder is extrapolated from ALGS (expert opinion; the PFIC ladder is genotype-dependent — block 5 lessons decide): measure with a 2-wk ItchRO(Obs) diary (0–4, twice daily; ≥ 1-point fall = responder); give each rung a scored 4–6-wk trial; remove a failed rung before adding the next.
+- Natural control (Kremer 2016, slide 4): children with bile acid synthesis defects are jaundiced but make few toxic bile acids and do not itch. → Low-GGT cholestasis + low or normal serum bile acids (often no itch) → suspect a synthesis defect; confirm with urine bile acid analysis (FAB-MS) before UDCA. **Absent itch does not exclude PFIC in young infants** — scratching appears later (reviewer, blocking).
+- Rifampin 5–10 mg/kg/day with ALT/bilirubin/INR at 2, 4, 8 wk (adult hepatitis 7.3%, Prince 2002); strong CYP3A4 inducer, lowers 25-OH D. Naltrexone titrated, blocks opioid analgesia. Sertraline — boxed warning. Cholestyramine — separate from UDCA and vitamins, hyperchloremic acidosis. TODO(verify) doses at build (see chol_3_12m 04-07 entry).
