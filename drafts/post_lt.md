@@ -56,3 +56,7 @@ BA is the commonest pediatric LT indication; this lesson supplies the early-comp
 ### 04-07 · Alagille syndrome VII: the pruritus ladder (synced 2026-11-13)
 - Rifampin (used for cholestatic itch before LT) is a strong CYP3A4 inducer → tacrolimus levels fall sharply; induction wears off over ~1–2 weeks after stopping, so levels rise later — plan levels (lesson slide 11; timing = general pharmacology). Naltrexone blocks opioid analgesia → stop before planned surgery and tell the anesthesiologist; a deceased-donor call-in is unplanned → flag naltrexone on the listing summary.
 - Transplant cures ALGS itch, but it is "a transplant for a symptom": persistent ItchRO ≥ 3 with sleep loss despite a scored ladder (incl. IBAT inhibitor) is the lesson's trigger for the transplant meeting — expert opinion.
+
+### 04-08 · Alagille syndrome VIII: IBAT inhibitors (synced 2026-11-14)
+- **Who reaches transplant:** GALA (2023) native liver survival 54% at 10 y and 40% at 18 y; 69% of ALGS transplants were for intractable itch. Sokol 2023: on maralixibat, none of the three responses at wk 48 — itch fall > 1 point, bilirubin < 6.5 mg/dL, bile acids < 200 µmol/L — → transplant assessment (6-y event-free survival of non-responders by each criterion 43–57%). Decompensation (variceal bleed, ascites, encephalopathy) ends IBAT therapy (label contraindication) and moves to the transplant decision.
+- **Listing summary:** record IBAT-inhibitor response history (diary, bile acids) — a non-responder's switch between agents should not delay the assessment (lesson, expert opinion).

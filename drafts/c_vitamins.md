@@ -37,3 +37,7 @@
 
 ### 04-07 · Alagille syndrome VII: the pruritus ladder (synced 2026-11-13)
 - **Drug interactions for the backlog item (cholestyramine / IBAT):** cholestyramine binds fat-soluble vitamins and UDCA — give them ≥ 1 h before or 4 h after; it can also cause hyperchloremic acidosis in small children → recheck 25-OH D, INR, bicarbonate within weeks. **Rifampin induces vitamin D catabolism** → check 25-OH D on rifampin. Source for the 1 h / 4 h rule: product label (TODO(verify) — register the cholestyramine label before publishing the line).
+
+### 04-08 · Alagille syndrome VIII: IBAT inhibitors (synced 2026-11-14)
+- **Class effect on vitamins:** IBAT inhibitors (maralixibat, odevixibat) push bile acid into the colon → less fat-soluble vitamin absorption; pooled maralixibat ALGS data (US label, uncontrolled): fat-soluble vitamin deficiency 26%, fractures 9%; vitamin K is lost too — bleeding reported, and the 2025 labels expanded the bleeding warning → INR in every vitamin check. → On an IBAT inhibitor: vitamins A, D, E and INR at baseline and through treatment; supplement; the label suggests considering stopping if deficiency persists. TODO(verify) label wording before adding an "on IBAT inhibitor" flag to the calculator.
+- Cholestyramine binds both IBAT inhibitors → give the IBAT inhibitor ≥ 4 h apart (both US labels; TODO(verify) and register the labels). Reinforces the 04-07 resin-spacing line.
