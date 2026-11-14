@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cholestatic itch: how the signal is made</title>
+<style>
+  html, body { margin: 0; background: #F2F2F7; font-family: "Avenir Next", Avenir, -apple-system, sans-serif; }
+  #wrap { max-width: 360px; margin: 16px auto; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.08); }
+  svg { display: block; width: 100%; height: auto; }
+  #ctl { max-width: 360px; margin: 0 auto; display: flex; gap: 8px; align-items: center; padding: 0 16px; font-size: 13px; color: #6E6E73; }
+  #ctl input { flex: 1; min-width: 0; }
+  #ctl button { font: inherit; padding: 4px 12px; border-radius: 9px; border: 1px solid #D1D1D6; background: #fff; }
+  body.dark { background: #000; }
+  body.render { background: transparent; }
+  body.render #wrap { margin: 0; border-radius: 0; box-shadow: none; max-width: none; width: 360px; }
+  body.render #ctl { display: none; }
+</style>
+</head>
+<body>
+<div id="wrap"><svg id="s" viewBox="0 0 360 480" xmlns="http://www.w3.org/2000/svg"></svg></div>
+<div id="ctl"><button id="pp">Pause</button><button id="th">Dark</button><input id="sc" type="range" min="0" max="24" step="0.05" value="0"><span id="tm">0.0</span></div>
+<script>
+const T = 24;
+const FD = "'Avenir Next', Avenir, -apple-system, sans-serif";       // hepKicker / hepTag / hepTitle
+const FB = "'Avenir Next', Avenir, -apple-system, sans-serif";       // hepBody / hepTakeaway
+// Colors follow CLAUDE.md §12.2 "Clinical Editorial" (ink, navy, blue, muted, surface, rule, crit, urg, ok, gap, onSolid).
+// Biology-only hues (bile, cholangiocyte, hepatocyte, vein) are derived to sit quietly next to those tokens.
+const THEMES = {
+  light: {
+    bg:'#FFFFFF', ink:'#1A1A1A', ink2:'#555555', sep:'#D4D7DB', fill2:'#F2F2F2', accent:'#1B355E', blue:'#2E5A88', onSolid:'#FFFFFF',
+    jag:'#D97A0B', jagL:'#F9DDB8', jagM:'#EFAE5C', jagT:'#A85A00',
+    notch:'#2E5A88', notchL:'#DCE6F1', nicd:'#1B355E', glow:'#5B7FB3',
+    enz:'#8A939B', enzT:'#555555', nuc:'#8C1C1C', nucL:'#FAF1F1', nucT:'#8C1C1C', genesOff:'#DCC5C5', maml:'#B5524F', cor:'#8A939B',
+    ok:'#1E7A33', bad:'#B22222', bile:'#9DB52A', bileT:'#5A6B0E',
+    chol:'#0E7C86', cholD:'#0A5960', hep:'#EFE3C9', hepS:'#BFA36F',
+    vein:'#B5525A', veinL:'#F6E0E2', veinT:'#8F3640',
+    mem:'#C9C2B4', memIn:'#F7F4EE', sendFill:'#FDF4E8', recvFill:'#EEF3F9',
+    chr:'#ECE9E2', chrS:'#8F887C', chrB:'#BDB6A8', mhead:'#D6CDBB', mfill:'#F0EBE0', ghost:'#C4C8CC', track:'#E4E6E9', barBad:'#9FB3CF',
+    gut:'#F3DCCB', gutS:'#D9A88A', epi:'#F2DCCB', derm:'#FAEEE6', cap:'#E3A3A8', nerve:'#C58A2A', bili:'#C9A227', lpa:'#7A5BA6', lpaL:'#ECE4F5', ileum:'#2E5A88',
+  },
+  dark: {
+    bg:'#121417', ink:'#ECEEF1', ink2:'#A3A8AE', sep:'#3A4048', fill2:'#1E2227', accent:'#9DB7DE', blue:'#8FB0DA', onSolid:'#121417',
+    jag:'#F0A04B', jagL:'#4A3218', jagM:'#9A6420', jagT:'#F0A04B',
+    notch:'#8FB0DA', notchL:'#1C2A3F', nicd:'#9DB7DE', glow:'#4E6E9E',
+    enz:'#8A939B', enzT:'#A3A8AE', nuc:'#D88A8A', nucL:'#2A1C1E', nucT:'#D88A8A', genesOff:'#4A3436', maml:'#C27373', cor:'#8A939B',
+    ok:'#5CB874', bad:'#E06666', bile:'#B5CC3A', bileT:'#C8DD5A',
+    chol:'#4FC1CB', cholD:'#8ADDE3', hep:'#3F3627', hepS:'#8C7650',
+    vein:'#E07A82', veinL:'#3A2226', veinT:'#F0A3A9',
+    mem:'#4E4A43', memIn:'#24221E', sendFill:'#221C15', recvFill:'#18202B',
+    chr:'#33302B', chrS:'#7D766A', chrB:'#55504A', mhead:'#57503F', mfill:'#2C2924', ghost:'#4A5058', track:'#2A2F36', barBad:'#3C5272',
+    gut:'#3A2E27', gutS:'#7A5A47', epi:'#3A2E28', derm:'#2A2320', cap:'#7A3A40', nerve:'#E0A84E', bili:'#E0C060', lpa:'#B49BD8', lpaL:'#2C2438', ileum:'#8FB0DA',
+  }
+};
+let C = THEMES.light;
+
+const clamp = (x, a = 0, b = 1) => x < a ? a : x > b ? b : x;
+const lin = (t, a, b) => clamp((t - a) / (b - a));
+const ease = x => x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+const E = (t, a, b) => ease(lin(t, a, b));
+const L = (a, b, p) => a + (b - a) * p;
+const env = (t, a, b, f = .35) => Math.min(E(t, a, a + f), 1 - E(t, b - f, b));
+const r2 = n => Math.round(n * 100) / 100;
+const hx = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+const mix = (a, b, p) => { const A = hx(a), B = hx(b); return '#' + A.map((v, i) => Math.round(L(v, B[i], p)).toString(16).padStart(2, '0')).join(''); };
+const I = s => `<tspan font-style="italic">${s}</tspan>`;
+
+function tx(x, y, s, o = {}) {
+  const { size = 12, fill = C.ink, anchor = 'start', weight = 400, op = 1, italic = false, ls = 0, d = false, filter = '' } = o;
+  if (op <= 0.002) return '';
+  return `<text x="${r2(x)}" y="${r2(y)}" font-family="${d ? FD : FB}" font-size="${size}" fill="${fill}" text-anchor="${anchor}" font-weight="${weight}" opacity="${r2(op)}"${italic ? ' font-style="italic"' : ''}${ls ? ` letter-spacing="${ls}"` : ''}${filter ? ` filter="url(#${filter})"` : ''}>${s}</text>`;
+}
+const G = (op, inner, extra = '') => op <= 0.002 ? '' : `<g opacity="${r2(op)}" ${extra}>${inner}</g>`;
+const check = (x, y, s, c, w = 2.5) => `<path d="M${x - s * .5},${y} l${s * .35},${s * .38} l${s * .65},-${s * .8}" fill="none" stroke="${c}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"/>`;
+const cross = (x, y, s, c, w = 2.5) => { const h = s / 2; return `<path d="M${x - h},${y - h} L${x + h},${y + h} M${x + h},${y - h} L${x - h},${y + h}" stroke="${c}" stroke-width="${w}" stroke-linecap="round"/>`; };
+function arrow(x1, y1, x2, y2, c, w = 2) {
+  const a = Math.atan2(y2 - y1, x2 - x1), h = 7;
+  const p1 = [x2 - h * Math.cos(a - .5), y2 - h * Math.sin(a - .5)], p2 = [x2 - h * Math.cos(a + .5), y2 - h * Math.sin(a + .5)];
+  return `<line x1="${x1}" y1="${y1}" x2="${r2(x2 - 4 * Math.cos(a))}" y2="${r2(y2 - 4 * Math.sin(a))}" stroke="${c}" stroke-width="${w}" stroke-linecap="round"/><polygon points="${x2},${y2} ${r2(p1[0])},${r2(p1[1])} ${r2(p2[0])},${r2(p2[1])}" fill="${c}"/>`;
+}
+function flash(x, y, p) {
+  if (p <= 0 || p >= 1) return '';
+  let s = '';
+  for (let i = 0; i < 8; i++) { const a = i * Math.PI / 4, ra = 5 + 4 * p, rb = 10 + 6 * p; s += `<line x1="${r2(x + ra * Math.cos(a))}" y1="${r2(y + ra * Math.sin(a))}" x2="${r2(x + rb * Math.cos(a))}" y2="${r2(y + rb * Math.sin(a))}" stroke="#FFCC00" stroke-width="2" stroke-linecap="round"/>`; }
+  return G(Math.sin(Math.PI * p), s);
+}
+function scissors(x, y, open, rot, c) {
+  const a = open * 22;
+  const blade = `<path d="M0,0 C-3.5,-7 -3,-17 0,-24 C3,-17 3.5,-7 0,0Z" fill="${c}"/>`;
+  const half = sgn => `<g transform="rotate(${r2(sgn * a)})">${blade}<line x1="0" y1="0" x2="${sgn * 3.5}" y2="5" stroke="${c}" stroke-width="2.4"/><circle cx="${sgn * 5}" cy="9.5" r="4.6" fill="none" stroke="${c}" stroke-width="2.4"/></g>`;
+  return `<g transform="translate(${r2(x)},${r2(y)}) rotate(${rot})">${half(-1)}${half(1)}<circle r="2" fill="${C.bg}" stroke="${c}" stroke-width="1.4"/></g>`;
+}
+function blob(cx, cy, rx, ry, dent) {
+  const pts = [], N = 180;
+  for (let i = 0; i < N; i++) {
+    const a = i / N * 2 * Math.PI; let x = cx + rx * Math.cos(a), y = cy + ry * Math.sin(a);
+    if (dent && dent.depth) { const s = Math.sin(a) * dent.side; if (s > 0) y -= dent.side * dent.depth * Math.exp(-(((x - dent.x) / dent.w) ** 2)); }
+    pts.push(r2(x) + ',' + r2(y));
+  }
+  return 'M' + pts.join(' L') + 'Z';
+}
+const block = (x, y, w, h, stripe) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="9" fill="${C.fill2}"/><rect x="${x}" y="${y}" width="${w}" height="10" rx="9" fill="${stripe}"/><rect x="${x}" y="${y + 4}" width="${w}" height="7" fill="${C.fill2}"/>`;
+const memb = p => `<path d="${p}" fill="none" stroke="${C.mem}" stroke-width="6"/><path d="${p}" fill="none" stroke="${C.memIn}" stroke-width="2"/>`;
+function caption(t, list) {
+  let o = '';
+  for (const [a, b, s] of list) {
+    const e = env(t, a, b, .25); if (e <= 0) continue;
+    const lines = s.split('\n');
+    let txt = lines.map((l, i) => tx(180, (lines.length === 1 ? 452 : 443) + i * 18, l, { size: 14, anchor: 'middle', weight: 700, italic: true })).join('');
+    o += G(e, block(12, 420, 336, 50, C.accent) + txt);
+  }
+  return o;
+}
+function pill(cx, y, label, c, op = 1) {
+  const w = label.length * 7 + 16;
+  return G(op, `<rect x="${r2(cx - w / 2)}" y="${y - 12}" width="${r2(w)}" height="17" rx="8.5" fill="${c}"/>` + tx(cx, y + 0.5, label, { size: 10.5, anchor: 'middle', weight: 700, fill: C.onSolid, d: true, ls: .5 }));
+}
+
+
+/* ---------- shared helpers for this animation ---------- */
+function tag(cx, y, label, fill, op = 1, txtFill) {
+  const w = label.length * 7 + 16;
+  return G(op, `<rect x="${r2(cx - w / 2)}" y="${y - 12}" width="${r2(w)}" height="17" rx="8.5" fill="${fill}"/>` +
+    tx(cx, y + 0.5, label, { size: 10.5, anchor: 'middle', weight: 700, fill: txtFill || C.onSolid, d: true, ls: .5 }));
+}
+const greyTag = (cx, y, label, op) => tag(cx, y, label, C.enz, op, C.ink === '#1A1A1A' ? '#1A1A1A' : '#121417');
+function chip(t, steps) {
+  let o = '';
+  steps.forEach(([a, b, name], k) => {
+    const w = name.length * 6.9 + 62, x0 = 180 - w / 2;
+    o += G(env(t, a, b, .2), `<rect x="${r2(x0)}" y="12" width="${r2(w)}" height="26" rx="13" fill="${C.bg}" stroke="${C.sep}"/><rect x="${r2(x0 + 4)}" y="16" width="30" height="18" rx="9" fill="${C.accent}"/>` +
+      tx(x0 + 19, 29, `${k + 1}/${steps.length}`, { size: 10.5, anchor: 'middle', weight: 700, fill: C.onSolid, d: true }) +
+      tx(x0 + 42, 29.5, name, { size: 12.5, weight: 600 }));
+  });
+  return o;
+}
+function plen(P) { const Lz = [0]; for (let i = 1; i < P.length; i++) Lz.push(Lz[i - 1] + Math.hypot(P[i][0] - P[i - 1][0], P[i][1] - P[i - 1][1])); return Lz; }
+function pat(P, Lz, s) {
+  s = ((s % 1) + 1) % 1 * Lz[Lz.length - 1];
+  for (let i = 1; i < P.length; i++) if (Lz[i] >= s) { const u = (s - Lz[i - 1]) / Math.max(1e-6, Lz[i] - Lz[i - 1]); return [L(P[i - 1][0], P[i][0], u), L(P[i - 1][1], P[i][1], u)]; }
+  return P[P.length - 1];
+}
+const dotc = (x, y, c, r = 3.6, op = 1) => `<circle cx="${r2(x)}" cy="${r2(y)}" r="${r}" fill="${c}" opacity="${r2(op)}"/>`;
+function rnd(seed) { let s = seed; return () => (s = (s * 16807) % 2147483647) / 2147483647; }
+
+const SPK = [.40, .49, .57, .635, .69, .74, .785, .825, .86, .895, .93, .96];
+function vtrace(u) {
+  if (u < .14) return -65;
+  if (u < .38) return L(-65, -50, ease((u - .14) / .24));
+  let v = -51 + 2 * Math.sin(u * 40);
+  for (const s of SPK) {
+    const d = u - s;
+    if (d >= 0 && d < .006) v = L(-50, 30, d / .006);
+    else if (d >= .006 && d < .016) v = L(30, -72, (d - .006) / .01);
+    else if (d >= .016 && d < .04) v = Math.min(v, L(-72, -52, (d - .016) / .024));
+  }
+  return v;
+}
+
+/* ============ Scene 1 · ending → spikes → spinal relay, stacked (0–24) ============ */
+const PA = [14, 150], PB = [162, 298], PC = [310, 466];
+function panel(y0, y1, n, title, note, op, active) {
+  return G(op, `<rect x="12" y="${y0}" width="336" height="${y1 - y0}" rx="10" fill="${active ? C.notchL : 'none'}" fill-opacity="${active ? .35 : 0}" stroke="${active ? C.accent : C.sep}" stroke-width="${active ? 1.5 : 1}"/>` +
+    (note ? tx(338, y0 + 17, note, { size: 9.5, anchor: 'end', fill: C.ink2, italic: true }) : ''));
+}
+const IONS2 = (() => { const r = rnd(21), a = []; for (let i = 0; i < 12; i++) a.push({ na: r() < .6, x0: L(-24, 24, r()), y0: L(40, 56, r()), x1: L(16, 44, r()), y1: L(98, 122, r()), d: r() * .9 }); return a; })();
+
+function s1(t) {
+  let o = '';
+  const aA = t < 8, aB = t >= 8 && t < 15, aC = t >= 15;
+  o += panel(PA[0], PA[1], 1, 'NERVE ENDING', '', E(t, 0, .5), aA);
+  o += panel(PB[0], PB[1], 2, 'ELECTRICAL SIGNAL', 'spike rate = itch intensity', E(t, 7.6, 8.1), aB);
+  o += panel(PC[0], PC[1], 3, 'SPINAL ITCH RELAY', 'mainly mouse data', E(t, 14.6, 15.1), aC);
+  // hand-off arrows between panels
+  [[PA[1], 7.4], [PB[1], 14.4]].forEach(([y, s]) => { o += G(E(t, s, s + .4), `<circle cx="180" cy="${y + 6}" r="8" fill="${C.bg}" stroke="${C.accent}" stroke-width="1.4"/>` + tx(180, y + 10, '↓', { size: 11, anchor: 'middle', weight: 700, fill: C.accent })); });
+
+  /* --- panel 1: membrane --- */
+  const my = 80, RM = 52, RL = 142, CXa = 286, GA = [RM, 118], GB = [RL, 118], PL = [214, 118];
+  const bind = E(t, .8, 2.2), gq = E(t, 2.5, 3.3), a1 = E(t, 3.2, 3.8), a2 = E(t, 3.8, 4.4), open = E(t, 4.2, 4.9), flow = lin(t, 4.9, 7.4);
+  let heads = ''; for (let x = 16; x <= 344; x += 6) heads += `<circle cx="${x}" cy="${my - 7}" r="2.2" fill="${C.mhead}"/><circle cx="${x}" cy="${my + 7}" r="2.2" fill="${C.mhead}"/>`;
+  o += G(E(t, .2, .7), `<rect x="13" y="${my - 7}" width="334" height="14" fill="${C.mfill}"/>${heads}`);
+  const rec = (x, c, cl, lit) => `<rect x="${x - 13}" y="${my - 20}" width="26" height="40" rx="8" fill="${mix(cl, c, .3 * lit)}" stroke="${c}" stroke-width="1.3"/>`;
+  o += G(E(t, .3, .8), rec(RM, C.accent, C.notchL, bind) + rec(RL, C.lpa, C.lpaL, bind) +
+    `<rect x="${r2(CXa - 1 - 4 * open - 9)}" y="${my - 20}" width="9" height="40" rx="4" fill="${C.bg}" stroke="${C.chol}" stroke-width="1.3"/>` +
+    `<rect x="${r2(CXa + 1 + 4 * open)}" y="${my - 20}" width="9" height="40" rx="4" fill="${C.bg}" stroke="${C.chol}" stroke-width="1.3"/>` +
+    tx(RM, 142, 'MRGPRX4', { size: 9.5, anchor: 'middle', weight: 700, fill: C.accent }) + tx(RL, 142, 'LPAR', { size: 9.5, anchor: 'middle', weight: 700, fill: C.lpa }) +
+    tx(CXa, 142, 'TRPA1 · TRPV1', { size: 9.5, anchor: 'middle', weight: 700, fill: C.chol }));
+  // ligands: bile acids + bilirubin -> MRGPRX4; LPA -> LPAR
+  [[C.bile, 28, 44, RM - 5], [C.bili, 46, 38, RM + 5], [C.lpa, 160, 40, RL - 5], [C.lpa, 176, 46, RL + 5]].forEach(([c, x0, y0, x1]) => {
+    o += G(E(t, .4, .9), `<circle cx="${r2(L(x0, x1, bind))}" cy="${r2(L(y0, my - 22, bind))}" r="4.5" fill="${c}" stroke="${C.bg}"/>`);
+  });
+  o += G(E(t, .4, .9), tx(24, 28, 'bile acids · bilirubin', { size: 9.5, fill: C.ink }) + tx(156, 28, 'LPA', { size: 9.5, fill: C.lpa, weight: 600 }));
+  // each receptor releases its own Gq; both converge on PLC; PLC opens the channel
+  const curve = (x1, y1, cx, cy, x2, y2, c, k) => {
+    if (k <= 0) return '';
+    const P = q => [(1 - q) ** 2 * x1 + 2 * (1 - q) * q * cx + q * q * x2, (1 - q) ** 2 * y1 + 2 * (1 - q) * q * cy + q * q * y2];
+    let d = `M${x1},${y1}`; const n = 24; for (let i = 1; i <= n * k; i++) { const [x, y] = P(i / n); d += ` L${r2(x)},${r2(y)}`; }
+    const [ex, ey] = P(k), [px, py] = P(Math.max(0, k - .06)), an = Math.atan2(ey - py, ex - px), h = 7;
+    return `<path d="${d}" fill="none" stroke="${c}" stroke-width="1.6" stroke-linecap="round"/>` +
+      `<path d="M${r2(ex - h * Math.cos(an - .45))},${r2(ey - h * Math.sin(an - .45))} L${r2(ex)},${r2(ey)} L${r2(ex - h * Math.cos(an + .45))},${r2(ey - h * Math.sin(an + .45))}" fill="none" stroke="${c}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>`;
+  };
+  const gqE = (x, y, c) => `<ellipse cx="${r2(x)}" cy="${r2(y)}" rx="13" ry="8" fill="${c}"/>` + tx(x, y + 3.5, 'Gq', { size: 9, anchor: 'middle', weight: 700, fill: C.onSolid, d: true });
+  o += G(E(t, 2.4, 2.7), gqE(GA[0], L(my + 22, GA[1], gq), C.accent) + gqE(GB[0], L(my + 22, GB[1], gq), C.lpa));
+  o += G(E(t, 3.0, 3.4), `<rect x="${PL[0] - 17}" y="${PL[1] - 9}" width="34" height="18" rx="6" fill="${C.jagL}" stroke="${C.jag}" stroke-width="1.3"/>` + tx(PL[0], PL[1] + 3.5, 'PLC', { size: 9, anchor: 'middle', weight: 700, fill: C.jagT, d: true }));
+  o += curve(GA[0] + 14, GA[1] - 5, (GA[0] + PL[0]) / 2, 94, PL[0] - 16, PL[1] - 9, C.accent, a1);
+  o += curve(GB[0] + 15, GB[1] + 2, (GB[0] + PL[0]) / 2, 126, PL[0] - 19, PL[1] + 3, C.lpa, a1);
+  o += curve(PL[0] + 19, PL[1], 258, 122, CXa - 14, my + 20, C.jag, a2);
+  // ions
+  if (t > 4.6) IONS2.forEach(ion => {
+    const ph = clamp((flow - ion.d * .45) * 1.7); let x, y;
+    if (ph < .4) { const q = ph / .4; x = L(CXa + ion.x0, CXa, q); y = L(ion.y0, my - 18, q); }
+    else if (ph < .6) { const q = (ph - .4) / .2; x = CXa; y = L(my - 18, my + 18, q); }
+    else { const q = (ph - .6) / .4; x = L(CXa, CXa + ion.x1, q); y = L(my + 18, ion.y1, q); }
+    o += G(E(t, 4.6, 5.1), `<circle cx="${r2(x)}" cy="${r2(y)}" r="3.6" fill="${ion.na ? C.notch : C.jag}"/>`);
+  });
+  o += G(E(t, 4.8, 5.2), tx(338, 30, 'Na⁺  Ca²⁺ in', { size: 9.5, anchor: 'end', weight: 700, fill: C.notch }));
+  const v = L(-65, -52, E(t, 5.2, 7.4));
+  o += G(E(t, 5.0, 5.4), tx(214, 142, `${Math.round(v)} mV`, { size: 10.5, anchor: 'middle', weight: 700, fill: C.accent }));
+
+  /* --- panel 2: spikes --- */
+  const gx0 = 56, gx1 = 336, gy0 = 190, gy1 = 270, Y = vv => gy1 - (vv + 78) / 118 * (gy1 - gy0);
+  o += G(E(t, 7.8, 8.3),
+    `<line x1="${gx0}" y1="${gy1}" x2="${gx1}" y2="${gy1}" stroke="${C.ink2}"/>` +
+    `<line x1="${gx0}" y1="${r2(Y(-50))}" x2="${gx1}" y2="${r2(Y(-50))}" stroke="${C.bad}" stroke-dasharray="4 3"/>` +
+    tx(gx0 - 4, Y(-50) + 3, '−50', { size: 9, anchor: 'end', weight: 700, fill: C.bad }) + tx(gx0 - 4, Y(-65) + 3, '−65', { size: 9, anchor: 'end', fill: C.ink2 }) +
+    tx(gx0 + 6, Y(-50) - 4, 'threshold', { size: 9, fill: C.bad }));
+  const p = E(t, 8.3, 14.0) * .985 + .01;
+  if (t > 8.2) {
+    const pts = []; for (let u = 0; u <= p; u += .0015) pts.push(`${r2(L(gx0, gx1, u))},${r2(Y(vtrace(u)))}`);
+    o += `<polyline points="${pts.join(' ')}" fill="none" stroke="${C.accent}" stroke-width="1.6" stroke-linejoin="round"/>`;
+  }
+  o += G(E(t, 9.0, 9.5), tx(L(gx0, gx1, .14), gy1 + 13, 'generator potential', { size: 9, weight: 700, fill: C.accent }));
+  o += G(E(t, 11.4, 11.9), tx(L(gx0, gx1, .52), gy1 + 13, 'NaV1.7/1.8 spikes · C-fibre ~1 m/s', { size: 9, weight: 700, fill: C.accent }));
+
+  /* --- panel 3: dorsal horn relay --- */
+  const ny = 384, Nx = [52, 132, 212, 288], nc = [C.nerve, C.chol, C.blue, C.accent], nl = ['AFFERENT', 'NPR1', 'GRPR', 'LAMINA I'];
+  const on = [E(t, 15.0, 15.5), E(t, 15.6, 16.2), E(t, 17.2, 17.8), E(t, 18.8, 19.4)];
+  for (let i = 0; i < 3; i++) o += G(on[i + 1], `<line x1="${Nx[i] + 11}" y1="${ny}" x2="${Nx[i + 1] - 11}" y2="${ny}" stroke="${C.sep}" stroke-width="2"/>`);
+  o += G(on[3], arrow(Nx[3] + 12, ny, 338, ny, C.accent, 2.2) + tx(326, ny - 8, 'brain', { size: 9.5, anchor: 'middle', weight: 700, fill: C.accent }));
+  Nx.forEach((x, i) => {
+    const glow = i === 3 ? on[3] : (on[i + 1] > 0 ? .6 : 0);
+    o += G(on[i], (glow > 0 ? `<circle cx="${x}" cy="${ny}" r="15" fill="${nc[i]}" opacity="${r2(.25 * glow)}"/>` : '') + `<circle cx="${x}" cy="${ny}" r="10" fill="${nc[i]}"/>` +
+      tx(x, ny + 24, nl[i], { size: 9.5, anchor: 'middle', weight: 700, fill: nc[i], d: true }));
+  });
+  o += packets(Nx[0] + 11, ny, Nx[1] - 11, ny, C.nerve, t, on[1]);
+  o += packets(Nx[1] + 11, ny, Nx[2] - 11, ny, C.chol, t, on[2]);
+  o += packets(Nx[2] + 11, ny, Nx[3] - 11, ny, C.blue, t, on[3]);
+  o += G(on[1], tx((Nx[0] + Nx[1]) / 2, ny - 10, 'NPPB', { size: 9.5, anchor: 'middle', weight: 700, fill: C.nerve }));
+  o += G(on[2], tx((Nx[1] + Nx[2]) / 2, ny - 10, 'GRP', { size: 9.5, anchor: 'middle', weight: 700, fill: C.chol }));
+  const bk = E(t, 19.8, 20.4), mo = E(t, 21.2, 21.8);
+  o += G(bk, tx(Nx[2], 432, '− dynorphin brake', { size: 9.5, anchor: 'middle', weight: 700, fill: C.bad }));
+  o += G(mo, tx(Nx[2], 448, '+ μ-opioid, high in cholestasis', { size: 9.5, anchor: 'middle', weight: 700, fill: C.blue }));
+  // impulse riding into the relay
+  if (t > 15.2 && t < 19.6) { const q = ((t - 15.2) * .5) % 1; o += `<circle cx="${r2(L(16, Nx[0] - 11, q))}" cy="${ny}" r="4" fill="#FFCC00" filter="url(#glowS)"/>`; }
+
+  return o;
+}
+function packets(x1, y1, x2, y2, c, t, on, n = 3) {
+  if (on <= 0) return '';
+  let s = '';
+  for (let k = 0; k < n; k++) { const q = ((t * .8) + k / n) % 1; s += `<circle cx="${r2(L(x1, x2, q))}" cy="${r2(L(y1, y2, q))}" r="3" fill="${c}" opacity="${r2(on * Math.sin(Math.PI * q))}"/>`; }
+  return s;
+}
+
+const SC = [{ a: 0, b: 24, draw: s1 }];
+function draw(t) {
+  t = clamp(t, 0, T - 1e-6);
+  const DEFS = `<defs>
+    <filter id="glow" x="-50%" y="-100%" width="200%" height="300%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="glowS" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="1.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>`;
+  const sc = SC.find(s => t >= s.a && t < s.b);
+  document.getElementById('s').innerHTML = DEFS + `<rect width="360" height="480" fill="${C.bg}"/>` + G(env(t, sc.a, sc.b, .35), sc.draw(t));
+}
+function setTheme(name) { C = THEMES[name]; document.body.classList.toggle('dark', name === 'dark'); }
+window.draw = draw; window.setTheme = setTheme;
+
+const q = new URLSearchParams(location.search);
+const isR = q.has('render');
+setTheme(q.get('theme') === 'dark' ? 'dark' : 'light');
+if (isR) document.body.classList.add('render');
+const pp = document.getElementById('pp'), th = document.getElementById('th'), scb = document.getElementById('sc'), tm = document.getElementById('tm');
+let playing = !isR, cur = 0, t0 = performance.now();
+const show = v => { cur = v; draw(v); scb.value = v; tm.textContent = v.toFixed(1); };
+function loop(now) { if (playing) show(((now - t0) / 1000) % T); requestAnimationFrame(loop); }
+pp.onclick = () => { playing = !playing; if (playing) t0 = performance.now() - cur * 1000; pp.textContent = playing ? 'Pause' : 'Play'; };
+th.onclick = () => { const dk = C === THEMES.light; setTheme(dk ? 'dark' : 'light'); th.textContent = dk ? 'Light' : 'Dark'; draw(cur); };
+scb.oninput = () => { show(+scb.value); t0 = performance.now() - cur * 1000; };
+document.addEventListener('keydown', e => {
+  if (e.code === 'Space') { e.preventDefault(); pp.click(); }
+  if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { show(clamp(cur + (e.key === 'ArrowRight' ? 1 : -1), 0, T - .01)); t0 = performance.now() - cur * 1000; }
+});
+window.ready = document.fonts.ready;
+window.ready.then(() => draw(cur));
+draw(0);
+if (!isR) requestAnimationFrame(loop);
+</script>
+</body>
+</html>

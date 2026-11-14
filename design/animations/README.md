@@ -50,3 +50,4 @@ Repeat with `dark`. Check a few frames of both GIFs before committing.
 | id | Topic | Length | Scenes |
 |---|---|---|---|
 | `alagille_jag1` | JAG1–Notch signaling and Alagille syndrome | 44.5 s | gene & protein · Notch signaling · bile duct development · haploinsufficiency |
+| `alagille_pruritus` | How cholestatic itch becomes a nerve signal | 24 s | one stacked frame: nerve ending (MRGPRX4 and LPAR → Gq → PLC → TRPA1/TRPV1) · generator potential and spikes · spinal itch relay (NPPB → GRP → GRPR → lamina I) |
