@@ -127,7 +127,8 @@
               "pill": {
                 "kind": "step",
                 "text": "Fractionated bilirubin and stool color today; call hepatology — vitamin K deficiency can be the first sign of biliary atresia"
-              }
+              },
+              "link_card_id": "chol_0_3m"
             },
             {
               "t": "out",

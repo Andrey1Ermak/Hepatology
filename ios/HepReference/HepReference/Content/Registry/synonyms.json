@@ -119,5 +119,20 @@
     "dark urine",
     "fractionated bilirubin",
     "желтуха новорождённых"
+  ],
+  "biliary atresia": [
+    "BA",
+    "kasai",
+    "portoenterostomy",
+    "atresia",
+    "атрезия"
+  ],
+  "neonatal cholestasis": [
+    "infant cholestasis",
+    "conjugated hyperbilirubinemia",
+    "direct hyperbilirubinemia",
+    "acholic stool",
+    "pale stool",
+    "холестаз"
   ]
 }

@@ -1,0 +1,304 @@
+{
+  "id": "chol_0_3m_neo",
+  "children": [
+    {
+      "t": "section",
+      "h": "1 · Is the infant sick?",
+      "children": [
+        {
+          "t": "out",
+          "cond": "Poor feeding, vomiting, lethargy, fever or low temperature, poor color",
+          "pill": {
+            "kind": "floor",
+            "text": "Emergency department or admit now: blood culture, catheter urine culture, CSF if febrile or ill; glucose; INR; ammonia and lactate. IV antibiotics. IV acyclovir now if ALT is raised or INR prolonged — before the HSV PCR (dose per AAP Red Book and pharmacy). Sepsis, galactosemia, HSV and adrenal crisis until proved otherwise"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Liver failure in the first weeks — INR high, glucose low, ALT very high, or near-normal ALT with very high ferritin",
+          "pill": {
+            "kind": "picu",
+            "text": "IV acyclovir now, before the HSV PCR (dose per AAP Red Book and pharmacy). Ferritin and AFP against the age norm. Think gestational alloimmune liver disease (GALD), HLH, metabolic disease — call a transplant center"
+          },
+          "link_card_id": "inr_prolonged"
+        },
+        {
+          "t": "out",
+          "cond": "Vomiting on milk feeds, E. coli or other gram-negative sepsis, cataract, newborn screen pending — galactosemia possible",
+          "pill": {
+            "kind": "floor",
+            "text": "Stop breast milk and lactose formula now, on suspicion — do not wait for results. Send urine reducing substances before the switch if it costs no time; red-cell GALT before any transfusion. Feed a galactose-free formula — soy-based, extensively hydrolyzed casein or elemental (GalNet 2017); sick after sucrose or fructose (HFI possible): elemental. Check glucose"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Active bleeding — umbilical stump, bruising, blood in stool or vomit, bulging fontanelle",
+          "pill": {
+            "kind": "picu",
+            "text": "Emergency department / PICU: vitamin K IV now; head imaging if neurologic signs — vitamin K deficiency bleeding until proved otherwise"
+          },
+          "link_card_id": "inr_prolonged"
+        },
+        {
+          "t": "out",
+          "cond": "INR prolonged, no bleeding",
+          "pill": {
+            "kind": "step",
+            "text": "Vitamin K IV or subcutaneously now (confirm the infant dose with pharmacy); recheck INR the next day. Does not correct → liver failure: call a transplant center"
+          },
+          "link_card_id": "inr_prolonged"
+        },
+        {
+          "t": "out",
+          "cond": "Hypoglycemia, micropenis, midline defects, roving eyes",
+          "pill": {
+            "kind": "floor",
+            "text": "Hypopituitarism: draw the critical sample (cortisol, free T4, TSH) if it takes seconds, then treat the glucose — never delay glucose; endocrinology today; hydrocortisone before levothyroxine. Do not fast this infant for the ultrasound"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Contractures, renal tubular signs (ARC syndrome possible)",
+          "pill": {
+            "kind": "step",
+            "text": "No percutaneous liver biopsy — bleeding risk (ESPGHAN 2015). Diagnose by genes"
+          },
+          "link_card_id": "ref_genetics"
+        },
+        {
+          "t": "out",
+          "cond": "Well, feeding and gaining weight",
+          "subtext": "Go to step 2"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "2 · Day-1 exclusions in every infant",
+      "children": [
+        {
+          "t": "row",
+          "text": "Urinalysis, catheter urine culture and urine reducing substances — febrile or not."
+        },
+        {
+          "t": "row",
+          "text": "Glucose. INR — if prolonged, parenteral vitamin K and recheck."
+        },
+        {
+          "t": "row",
+          "text": "Newborn screen result. TSH and free T4 — a TSH-only screen misses central hypothyroidism."
+        },
+        {
+          "t": "row",
+          "text": "Cortisol if hypoglycemic or any pituitary clue."
+        },
+        {
+          "t": "row",
+          "text": "Before UDCA or a transfusion: urine bile acids (before UDCA), red-cell GALT (before transfusion)."
+        },
+        {
+          "t": "row",
+          "text": "Cholestasis confirmed: start fat-soluble vitamins from week 1, whatever the cause.",
+          "link_calc_id": "c_vitamins",
+          "link_label": "Fat-soluble vitamin dosing"
+        },
+        {
+          "t": "out",
+          "cond": "All done and the infant is well",
+          "subtext": "Go to step 3"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "3 · Clues → branch",
+      "children": [
+        {
+          "t": "row",
+          "text": "E. coli or gram-negative sepsis, or INR out of proportion to the bilirubin: galactosemia, tyrosinemia (succinylacetone, not tyrosine), GALD.",
+          "link_card_id": "inr_prolonged"
+        },
+        {
+          "t": "row",
+          "text": "Hypoglycemia ± micropenis: hypopituitarism — GGT is often normal and can mimic PFIC (Braslavsky 2011)."
+        },
+        {
+          "t": "row",
+          "text": "Splenomegaly, very high ferritin, cytopenias: HLH, storage disease, GALD."
+        },
+        {
+          "t": "row",
+          "text": "Preterm or on parenteral nutrition: still exclude biliary atresia."
+        },
+        {
+          "t": "row",
+          "text": "Dysmorphism, murmur, contractures: syndrome workup alongside (Alagille, ARC, trisomy 21)."
+        },
+        {
+          "t": "out",
+          "cond": "No clue, or a clue being worked up",
+          "subtext": "Atresia still runs in parallel — go to step 4"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "4 · Stool first — atresia runs in parallel",
+      "children": [
+        {
+          "t": "row",
+          "text": "Open a diaper and look yourself; use a stool color card. Pallor can come and go, and early atresia stools can look pigmented."
+        },
+        {
+          "t": "out",
+          "cond": "Pale, clay-colored or white stools",
+          "pill": {
+            "kind": "step",
+            "text": "Call pediatric hepatology and surgery today: biliary atresia until proved otherwise. INR and vitamin K; ultrasound and GGT the same day. No test may delay the cholangiogram"
+          },
+          "link_calc_id": "c_kasai_clock",
+          "link_label": "Age in days & Kasai window"
+        },
+        {
+          "t": "out",
+          "cond": "Pigmented stools, direct or conjugated ≥ 1.0 mg/dL",
+          "subtext": "Atresia is still possible — finish the parallel workup within one or two days",
+          "link_calc_id": "c_conj_bili",
+          "link_label": "Conjugated bilirubin: cholestasis?"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "5 · Parallel, not serial — within 1–2 days",
+      "children": [
+        {
+          "t": "row",
+          "text": "INR and parenteral vitamin K before any invasive step."
+        },
+        {
+          "t": "row",
+          "text": "GGT, ALT, AST, ALP, albumin, CBC."
+        },
+        {
+          "t": "row",
+          "text": "Abdominal ultrasound with Doppler: gallbladder, triangular cord, subcapsular flow, porta hepatis cyst, splenic malformation. Fasting 3–4 h unless hypoglycemia or hypopituitarism is possible. Tell the sonographer: rule out biliary atresia.",
+          "link_card_id": "ref_imaging"
+        },
+        {
+          "t": "row",
+          "text": "Alpha-1 antitrypsin level and Pi type. CMV IgM and blood or urine PCR — record it; it never delays the cholangiogram."
+        },
+        {
+          "t": "row",
+          "text": "MMP-7 where a validated assay exists — read it against that lab's cut-off; it never overrides pale stools."
+        },
+        {
+          "t": "row",
+          "text": "Sweat test or CFTR. Echo before the cholangiogram in any high-GGT infant; AP spine film and slit-lamp exam if any Alagille clue (murmur, face, posterior embryotoxon)."
+        },
+        {
+          "t": "row",
+          "text": "Genetic test with copy-number analysis, sent the same day — the result must not delay the cholangiogram.",
+          "link_card_id": "ref_genetics"
+        },
+        {
+          "t": "out",
+          "cond": "Results in hand",
+          "subtext": "Go to the decision step"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "6 · Decide",
+      "children": [
+        {
+          "t": "arm",
+          "kind": "sev",
+          "tag": "High probability of atresia",
+          "children": [
+            {
+              "t": "row",
+              "text": "Pale stools, absent or abnormal gallbladder, triangular cord, high GGT, high MMP-7 on a validated assay."
+            },
+            {
+              "t": "row",
+              "text": "Do not order HIDA or wait for genetics — they cannot change this decision."
+            },
+            {
+              "t": "out",
+              "cond": "Atresia likely",
+              "pill": {
+                "kind": "floor",
+                "text": "Intraoperative cholangiogram, with Kasai under the same anesthetic, in an experienced center — this week"
+              },
+              "link_calc_id": "c_kasai_clock",
+              "link_label": "Age in days & Kasai window"
+            }
+          ]
+        },
+        {
+          "t": "arm",
+          "kind": "mod",
+          "tag": "Unclear",
+          "children": [
+            {
+              "t": "row",
+              "text": "Pigmented stools but GGT high, or ultrasound normal."
+            },
+            {
+              "t": "row",
+              "text": "Early biopsy can look like hepatitis: giant cells are common in atresia. A normal gallbladder does not exclude atresia."
+            },
+            {
+              "t": "row",
+              "text": "HIDA only if biopsy is not available: excretion argues against atresia; non-excretion proves nothing. No phenobarbital priming."
+            },
+            {
+              "t": "out",
+              "cond": "Biopsy needed",
+              "pill": {
+                "kind": "step",
+                "text": "Liver biopsy within days, read by an experienced pediatric pathologist. Obstructive pattern → cholangiogram. Stools pale or bilirubin rising whatever the biopsy → cholangiogram"
+              },
+              "link_card_id": "ref_biopsy"
+            }
+          ]
+        },
+        {
+          "t": "arm",
+          "kind": "mild",
+          "tag": "Atresia unlikely",
+          "children": [
+            {
+              "t": "row",
+              "text": "Pigmented stools, normal contracting gallbladder, low or normal GGT, low MMP-7 after the first month."
+            },
+            {
+              "t": "row",
+              "text": "Low GGT: PFIC, bile acid synthesis defect (treatable) — urine bile acids before UDCA."
+            },
+            {
+              "t": "row",
+              "text": "Alagille features: JAG1/NOTCH2 with copy number; no Kasai if the ducts are patent — a Kasai worsens Alagille outcomes.",
+              "link_card_id": "ref_genetics"
+            },
+            {
+              "t": "row",
+              "text": "Galactose or citrulline high: metabolic team (citrin deficiency, galactosemia). Succinylacetone high: tyrosinemia — metabolic team today."
+            },
+            {
+              "t": "out",
+              "cond": "Another cause found or likely, and the infant is well",
+              "pill": {
+                "kind": "dc",
+                "text": "Hepatology follow-up within 1–2 weeks with direct bilirubin and stool color. Stools turn pale or direct keeps rising → back to the cholangiogram"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "id": "chol_0_3m",
+  "title": "Cholestasis 0–3 Months",
+  "code": "NASPGHAN/ESPGHAN 2017 · AAP 2025 · EASL 2024",
+  "cat": "jaundice",
+  "acu": "crit",
+  "tags": [
+    "cholestasis",
+    "neonatal cholestasis",
+    "infant cholestasis",
+    "conjugated hyperbilirubinemia",
+    "direct bilirubin",
+    "biliary atresia",
+    "kasai",
+    "portoenterostomy",
+    "acholic stool",
+    "pale stool",
+    "triangular cord",
+    "MMP-7",
+    "cholangiogram",
+    "galactosemia",
+    "hypopituitarism",
+    "Alagille",
+    "GALD"
+  ],
+  "ages": [
+    "neo",
+    "infant"
+  ],
+  "entry": "symptom",
+  "guidelines": [
+    "naspghan_espghan_2017_nc",
+    "aap_2025_ba_primary_care",
+    "easl_2024_genetic_cholestasis",
+    "mouzaki_2019_nutrition",
+    "welling_2017_galnet",
+    "van_trotsenburg_2021_ch"
+  ],
+  "plan": [
+    {
+      "block": 2,
+      "days": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "block": 3,
+      "days": [
+        1,
+        3,
+        4,
+        5,
+        8,
+        14
+      ]
+    }
+  ],
+  "related": [
+    "neo_jaundice",
+    "inr_prolonged",
+    "ref_norms",
+    "ref_imaging",
+    "ref_biopsy",
+    "ref_genetics"
+  ],
+  "status": "reviewed",
+  "blocks": [
+    {
+      "t": "note",
+      "k": "crit",
+      "h": "Red flags",
+      "text": "**Looks sick — poor feeding, vomiting, lethargy, temperature instability:** emergency department or admit now; blood and urine culture, glucose, INR; IV acyclovir if ALT is raised or INR prolonged — sepsis, galactosemia, HSV, adrenal crisis.\n**Pale, clay-colored or white stools, or a rising direct bilirubin:** pediatric hepatology and surgery the same day — biliary atresia until proved otherwise.\n**INR prolonged or any bleeding:** parenteral vitamin K now; recheck INR the next day. Not correcting → liver failure: call a transplant center.\n**Liver failure in the first weeks:** IV acyclovir now, before the HSV PCR; think GALD — call a transplant center.\n**Galactosemia possible:** stop breast milk and lactose formula now, on suspicion — do not wait for results. Urine reducing substances before the switch if it costs no time; red-cell GALT before any transfusion.\n**Hypoglycemia, micropenis or midline defects:** hypopituitarism — never delay glucose; critical sample if it takes seconds; hydrocortisone before levothyroxine, no fasting.\n**Contractures or renal tubular signs:** suspect ARC — no percutaneous liver biopsy."
+    },
+    {
+      "t": "age_switch",
+      "h": "Age",
+      "options": [
+        {
+          "age": "neo",
+          "label": "0–28 days",
+          "path_id": "chol_0_3m_neo"
+        },
+        {
+          "age": "infant",
+          "label": "1–3 months",
+          "path_id": "chol_0_3m_infant"
+        }
+      ]
+    },
+    {
+      "t": "workup",
+      "h": "First contact",
+      "groups": [
+        {
+          "label": "Blood — today",
+          "items": [
+            "Total and direct (or conjugated) bilirubin",
+            "ALT, AST, GGT, ALP, albumin",
+            "INR — if prolonged, parenteral vitamin K and recheck",
+            "CBC, glucose; blood culture if febrile or ill"
+          ]
+        },
+        {
+          "label": "Urine — today, febrile or not",
+          "items": [
+            "Urinalysis and catheter urine culture",
+            "Urine reducing substances while still on lactose"
+          ]
+        },
+        {
+          "label": "Hormones",
+          "items": [
+            "Newborn screen result",
+            "TSH and free T4 in every infant",
+            "Cortisol if hypoglycemic or any pituitary clue"
+          ]
+        },
+        {
+          "label": "Before UDCA or a transfusion",
+          "items": [
+            "Urine bile acids before the first UDCA dose",
+            "Red-cell GALT before any transfusion"
+          ]
+        },
+        {
+          "label": "Look yourself",
+          "items": [
+            "Stool color in a diaper you open",
+            "Liver and spleen size, ill appearance, dysmorphism, murmur"
+          ]
+        },
+        {
+          "label": "Imaging",
+          "items": [
+            "Abdominal ultrasound with Doppler — fasting 3–4 h unless hypoglycemia or hypopituitarism is possible; ask to rule out biliary atresia"
+          ]
+        },
+        {
+          "label": "Within 1–2 days — hepatology",
+          "items": [
+            "Alpha-1 antitrypsin level and Pi type",
+            "MMP-7 on a validated assay, where available",
+            "CMV IgM and PCR (blood or urine)",
+            "Sweat test or CFTR",
+            "Echo before the cholangiogram in any high-GGT infant; AP spine film and slit-lamp exam if any Alagille clue",
+            "Genetic test with copy-number analysis",
+            "Ammonia, lactate, succinylacetone",
+            "Liver biopsy if atresia is still unclear"
+          ]
+        },
+        {
+          "label": "From week 1, whatever the cause",
+          "items": [
+            "Fat-soluble vitamins by weight and bilirubin (Mouzaki 2019)",
+            "MCT-containing formula or fortified breast milk; dietitian",
+            "Growth by length, arm circumference and head circumference, not weight alone"
+          ]
+        }
+      ]
+    },
+    {
+      "t": "list",
+      "h": "Don't miss",
+      "items": [
+        "Biliary atresia — stools may look pigmented early; a normal ultrasound or a hepatitic early biopsy does not exclude it",
+        "Sepsis or urinary tract infection — fever may be absent",
+        "Galactosemia — breast milk is lactose; GALT is falsely normal after a transfusion",
+        "Hypopituitarism — a TSH-only screen misses central disease; fasting is dangerous",
+        "Vitamin K deficiency bleeding — breastfed, cholestatic, no or oral-only vitamin K at birth",
+        "Neonatal HSV — liver failure without skin vesicles; acyclovir before the PCR",
+        "Alagille syndrome — a Kasai worsens outcomes; look for it, but never let it delay the cholangiogram",
+        "GALD and HLH — liver failure in the first weeks, very high ferritin",
+        "Bile acid synthesis defect — treatable; urine bile acids before UDCA",
+        "ARC syndrome — percutaneous biopsy can bleed"
+      ]
+    },
+    {
+      "t": "text",
+      "h": "Why",
+      "text": "One sign, several clocks. Cholestasis in a young infant has causes that kill in hours (sepsis, galactosemia, HSV, adrenal crisis), causes that harm in days (vitamin K deficiency bleeding) and one that loses value every week (biliary atresia). Order the workup by the fastest clock, not by the commonest disease (lessons 02-03, 02-14).\n\nAmong 1,692 infants with conjugated hyperbilirubinemia, idiopathic neonatal hepatitis (26%) and biliary atresia (26%) led, followed by infection (11.5%), parenteral nutrition (6%), metabolic disease (4%) and alpha-1 antitrypsin deficiency (4%) (Gottesman 2015).\n\nBiliary atresia starts before birth: every infant later diagnosed who had a direct or conjugated bilirubin measured in the first days was already above the lab range (Harpavat 2011).\n\nAge at Kasai matters, but there is no safe age and no futile age. Native-liver survival at 4 years was 49% after a Kasai at 30 days or less, 36% at 31–90 days and 23% after 90 days (Schreiber 2007).\n\nWhere matters too. In the UK and Ireland, 5-year survival without transplant was 61% in centers doing more than 5 Kasai operations a year and 14% in smaller centers (McKiernan 2000).\n\nBile flow after the Kasai predicts the next two years. Total bilirubin below 2 mg/dL within 3 months marks drainage; infants who do not reach it progress early and need transplant planning (Superina 2011; Shneider 2016).\n\nThe Kasai is the first operation, not the last decision (lesson 03-14)."
+    },
+    {
+      "t": "pearls",
+      "h": "Pearls & pitfalls",
+      "items": [
+        {
+          "k": "pearl",
+          "text": "Direct or conjugated ≥ 1.0 mg/dL is cholestasis at any total — the 20% rule is gone (Fawaz 2017)."
+        },
+        {
+          "k": "pitfall",
+          "text": "\"Breastfed, so breast-milk jaundice\" — not once the direct value is 1.0 mg/dL or more."
+        },
+        {
+          "k": "pitfall",
+          "text": "\"Gallbladder seen, so not atresia.\" An abnormal gallbladder suggests atresia; a normal one does not exclude it."
+        },
+        {
+          "k": "pitfall",
+          "text": "Phenobarbital priming before HIDA costs about 5 days and does not change the decision."
+        },
+        {
+          "k": "pearl",
+          "text": "The second INR is a test: no correction after parenteral vitamin K means synthetic failure — GALD, metabolic disease, sepsis."
+        },
+        {
+          "k": "pitfall",
+          "text": "\"MMP-7 high, book the Kasai.\" Choledochal cyst and other cholangiopathies raise it too, and the cut-off belongs to the assay."
+        },
+        {
+          "k": "pitfall",
+          "text": "\"CMV positive, so viral hepatitis.\" CMV can travel with atresia — finish the atresia workup."
+        },
+        {
+          "k": "pearl",
+          "text": "Urine bile acids before the first UDCA dose: synthesis defects are treatable, and UDCA hides the diagnosis."
+        },
+        {
+          "k": "pitfall",
+          "text": "Fasting the hypoglycemic or hypopituitary infant for the ultrasound."
+        },
+        {
+          "k": "pearl",
+          "text": "The Alagille look-for list — echo, spine film, eye exam — runs beside the atresia clock, never in front of it."
+        }
+      ]
+    },
+    {
+      "t": "guideline_compare",
+      "h": "Guidelines",
+      "rows": [
+        {
+          "topic": "How fast to identify and refer",
+          "positions": {
+            "naspghan_espghan_2017_nc": "Evaluate any infant jaundiced beyond 2 weeks; expedite the atresia workup",
+            "aap_2025_ba_primary_care": "Identify infants with biliary atresia by 2–4 weeks of life"
+          },
+          "verdict": "material",
+          "note": "Only the AAP sets an identification window, which changes how fast a well infant is worked up. The app calls hepatology today for pale stools and finishes the parallel workup within 1–2 days; 30/45/60 days are audit points, not deadlines."
+        },
+        {
+          "topic": "HIDA",
+          "positions": {
+            "naspghan_espghan_2017_nc": "Selective use: excretion argues against atresia",
+            "espr_2021_ba_imaging": "Not useful for diagnosing atresia"
+          },
+          "verdict": "differs",
+          "note": "Both agree non-excretion proves nothing. The app treats HIDA as optional and never lets it delay biopsy or cholangiogram."
+        },
+        {
+          "topic": "MMP-7",
+          "positions": {
+            "naspghan_espghan_2017_nc": "Not addressed (published before validated assays)"
+          },
+          "verdict": "gap",
+          "note": "Serum MMP-7 is the most promising atresia biomarker, but the cut-off depends on the assay platform. The app gives no number: read it against the lab's validated cut-off, and never let a low value override pale stools."
+        },
+        {
+          "topic": "Genetics vs cholangiogram timing",
+          "positions": {
+            "naspghan_espghan_2017_nc": "Expedite the atresia workup; no explicit rule",
+            "easl_2024_genetic_cholestasis": "Not addressed"
+          },
+          "verdict": "gap",
+          "note": "No guideline says a pending result must not delay the cholangiogram. Do not let it."
+        },
+        {
+          "topic": "Steroids after the Kasai",
+          "positions": {
+            "naspghan_espghan_2017_nc": "Not addressed"
+          },
+          "verdict": "gap",
+          "note": "The START trial found no significant gain in bile drainage at 6 months with steroids (Bezerra 2014). Adjuvant therapy is a surgical-center decision."
+        }
+      ]
+    },
+    {
+      "t": "case",
+      "h": "Test yourself",
+      "case_ids": [
+        "chol_0_3m_c1",
+        "chol_0_3m_c2",
+        "chol_0_3m_c3"
+      ]
+    }
+  ]
+}

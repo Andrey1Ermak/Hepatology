@@ -54,7 +54,8 @@
   ],
   "related": [
     "alt_elevated",
-    "ref_norms"
+    "ref_norms",
+    "chol_0_3m"
   ],
   "status": "reviewed",
   "blocks": [

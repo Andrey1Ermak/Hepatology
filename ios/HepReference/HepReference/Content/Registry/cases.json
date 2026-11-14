@@ -198,5 +198,29 @@
     "question": "Is the plan right?",
     "answer": "No. Direct 1.2 mg/dL is cholestasis whatever the total. Call pediatric GI or hepatology today; urinalysis and urine culture; check INR and look at the stool — same-day review if the stool is pale.",
     "teaching": "The 20% rule is gone: 79% of newborns with biliary atresia had a direct-to-total ratio of 0.2 or less (Harpavat 2011). A two-week wait at 3 weeks can push a Kasai past the best window."
+  },
+  {
+    "id": "chol_0_3m_c1",
+    "card": "chol_0_3m",
+    "stem": "A 10-day-old formula-fed girl is vomiting and lethargic. Blood culture grows E. coli. Direct bilirubin 4.1 mg/dL, INR 3.2, glucose 38 mg/dL. The team plans a plasma transfusion before a central line.",
+    "question": "What must happen before the plasma, and what do you feed her?",
+    "answer": "Stop lactose formula now — do not wait for results — and feed a galactose-free formula (elemental if hereditary fructose intolerance is possible). Send red-cell GALT before any blood product, and urine reducing substances if collected before the switch. Give IV antibiotics, IV acyclovir until the HSV PCR is negative, IV vitamin K and glucose; INR 3.2 with low glucose is liver failure — call a transplant center. Send succinylacetone for tyrosinemia.",
+    "teaching": "E. coli sepsis with liver failure in a newborn is galactosemia until proved otherwise. A transfusion makes the GALT result falsely normal (GalNet 2017)."
+  },
+  {
+    "id": "chol_0_3m_c2",
+    "card": "chol_0_3m",
+    "stem": "A 5-week-old breastfed boy is thriving. His parents say the stools are yellow, but the diaper you open is pale. Direct bilirubin 1.8 mg/dL, GGT 410 U/L; ultrasound shows a small irregular gallbladder. A HIDA scan is booked for next week.",
+    "question": "What is your plan?",
+    "answer": "Call pediatric hepatology and surgery today. Check INR and give parenteral vitamin K. Cancel the HIDA. Arrange an intraoperative cholangiogram, with a Kasai under the same anesthetic, this week in an experienced center.",
+    "teaching": "Pale stools, high GGT and an abnormal gallbladder make atresia likely; HIDA cannot change that decision. Native-liver survival falls as age at Kasai rises — 49% at 30 days or less vs 23% after 90 days (Schreiber 2007)."
+  },
+  {
+    "id": "chol_0_3m_c3",
+    "card": "chol_0_3m",
+    "stem": "A 6-week-old girl has direct bilirubin 3.0 mg/dL, GGT 300 U/L, pale-yellow stools and a murmur heard in both axillae. The gallbladder is seen on ultrasound. A chest film shows a butterfly vertebra.",
+    "question": "Does she need a Kasai?",
+    "answer": "Not before Alagille syndrome is considered. Order an echo, an eye exam and JAG1/NOTCH2 testing with copy-number analysis. Biopsy or cholangiogram only if atresia is still possible — and no Kasai if the ducts are patent.",
+    "teaching": "In matched patients with Alagille syndrome, a Kasai was followed by more transplants (47% vs 14%) and deaths (32% vs 3%) (Kaye 2010). The Alagille look-for list never delays a needed cholangiogram."
   }
 ]

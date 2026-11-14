@@ -72,7 +72,17 @@ final class ScenarioTests: XCTestCase {
     /// §4.6 acceptance scenarios. Empty until their cards exist — add each
     /// one in the release that ships its last card (scenario 1 → v0.1,
     /// scenario 3 → v0.4, scenario 2 → v0.5).
-    static let scenarios: [Scenario] = []
+    static let scenarios: [Scenario] = [
+        // 1 · Night call: 5 weeks, jaundice, pale stool → chol_0_3m →
+        // (INR 2.4) → inr_prolonged → back → Kasai clock. Not modeled yet,
+        // checked by eye: the 1–3 month age branch, the workup block, and the
+        // pale-stool out "Call pediatric hepatology and surgery today".
+        // `.card("inr_prolonged")` also passes via `related`; tighten to the
+        // pathway link when `.age` steps exist.
+        Scenario(name: "Scenario 1 · night call", start: "chol_0_3m", steps: [
+            .card("inr_prolonged"), .back, .calc("c_kasai_clock"),
+        ]),
+    ]
 
     func testEveryScenarioWalksOverRealLinks() {
         let library = CardLibrary(bundle: Bundle(for: ScenarioTests.self))
