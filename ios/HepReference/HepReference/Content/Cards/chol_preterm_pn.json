@@ -1,0 +1,223 @@
+{
+  "id": "chol_preterm_pn",
+  "title": "Cholestasis in Preterm or PN-Fed Infants",
+  "code": "NASPGHAN/ESPGHAN 2017 · ESPGHAN/ESPEN 2018 · Omegaven label",
+  "cat": "jaundice",
+  "acu": "urg",
+  "tags": [
+    "cholestasis",
+    "preterm",
+    "NICU",
+    "parenteral nutrition",
+    "PN",
+    "TPN",
+    "PNAC",
+    "IFALD",
+    "PNALD",
+    "fish oil",
+    "Omegaven",
+    "SMOFlipid",
+    "lipid emulsion",
+    "NEC",
+    "short bowel",
+    "gastroschisis",
+    "sepsis",
+    "biliary atresia",
+    "direct bilirubin"
+  ],
+  "ages": [
+    "neo",
+    "infant"
+  ],
+  "entry": "situation",
+  "guidelines": [
+    "naspghan_espghan_2017_nc",
+    "lapillonne_2018_espghan_lipids",
+    "fda_omegaven_label",
+    "nice_cg98_2010",
+    "aap_2022_hyperbili",
+    "christensen_2007_pnald"
+  ],
+  "plan": [
+    {
+      "block": 2,
+      "days": [
+        8,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "block": 3,
+      "days": [
+        1
+      ]
+    }
+  ],
+  "related": [
+    "chol_0_3m",
+    "neo_jaundice",
+    "inr_prolonged",
+    "ref_imaging",
+    "ref_biopsy",
+    "ref_genetics"
+  ],
+  "status": "reviewed",
+  "blocks": [
+    {
+      "t": "note",
+      "k": "crit",
+      "h": "Red flags",
+      "text": "**Pale, clay-colored or white stools:** biliary atresia until proved otherwise — ultrasound now and call pediatric hepatology and surgery today. Never accept PN as the cause of pale stools.\n**Sudden rise in direct bilirubin in a stable infant, or new lethargy, apnea, feed intolerance or temperature instability:** sepsis until proved otherwise — blood culture (line and peripheral), urine culture, antibiotics now.\n**INR prolonged or any bleeding:** parenteral vitamin K now; recheck INR. Not correcting → liver failure: call a transplant center.\n**Direct bilirubin still rising on full feeds or after PN stops:** obstruction until proved otherwise — not PN cholestasis.\n**Long PN with falling platelets, a growing spleen or GI bleeding:** IFALD with portal hypertension — refer to an intestinal-failure center now."
+    },
+    {
+      "t": "pathway",
+      "h": "Algorithm",
+      "path_id": "chol_preterm_pn"
+    },
+    {
+      "t": "workup",
+      "h": "First contact",
+      "groups": [
+        {
+          "label": "Blood — today",
+          "items": [
+            "Total and direct (or conjugated) bilirubin",
+            "ALT, AST, GGT, ALP, albumin",
+            "INR — if prolonged, parenteral vitamin K and recheck",
+            "CBC with platelets, glucose, triglycerides",
+            "Blood culture (line and peripheral) if any change in the infant"
+          ]
+        },
+        {
+          "label": "Urine and hormones",
+          "items": [
+            "Catheter urine culture",
+            "Newborn screen result; TSH and free T4",
+            "CMV PCR (urine or blood)"
+          ]
+        },
+        {
+          "label": "Look yourself",
+          "items": [
+            "Stool color at every diaper change — use a stool color card",
+            "Liver and spleen size; feeds, PN days, lipid type and dose, antibiotic days"
+          ]
+        },
+        {
+          "label": "Imaging",
+          "items": [
+            "Abdominal ultrasound with Doppler — tell the sonographer the infant is on PN; a small or absent gallbladder on PN is less specific"
+          ]
+        },
+        {
+          "label": "Before UDCA or a transfusion",
+          "items": [
+            "Urine bile acids before the first UDCA dose",
+            "Red-cell GALT before any transfusion if galactosemia is still possible"
+          ]
+        },
+        {
+          "label": "Prolonged cholestasis or long PN",
+          "items": [
+            "Fat-soluble vitamin levels and dosing",
+            "Copper and manganese — both leave the body in bile",
+            "On pure fish oil: triene:tetraene ratio, growth",
+            "Genetic testing only if cholestasis persists off PN or the phenotype looks genetic"
+          ]
+        }
+      ]
+    },
+    {
+      "t": "list",
+      "h": "Don't miss",
+      "items": [
+        "Biliary atresia — more common in preterm infants, and diagnosed later because the PN gets the blame",
+        "Sepsis — line, urine and NEC-related; a new rise in direct bilirubin can be its first sign",
+        "Vitamin K deficiency bleeding — cholestasis plus little enteral intake",
+        "Central hypothyroidism and hypopituitarism — a normal TSH does not exclude them: measure free T4; cortisol if hypoglycemic",
+        "Galactosemia — once milk feeds start; GALT is falsely normal after a transfusion",
+        "Congenital CMV — sick preterm with cholestasis, low platelets or a big spleen",
+        "IFALD with fibrosis — bilirubin can normalize while fibrosis persists"
+      ]
+    },
+    {
+      "t": "text",
+      "h": "Why",
+      "text": "PN cholestasis is common and usually reversible, but it is a diagnosis of exclusion. It should follow the PN dose, improve as feeds advance, and never come with pale stools (lessons 02-08, 02-14).\n\nThe longer the PN, the more cholestasis. In 1,366 Intermountain neonates on PN for 14 days or more, direct bilirubin ≥ 2.0 mg/dL developed in 14% after 14–28 days of PN, 43% after 29–56 days, 72% after 57–100 days and 85% beyond 100 days (Christensen 2007). Birth weight under 750 g, gastroschisis and jejunal atresia carried the highest risk.\n\nSeveral hits converge on an immature bile acid pool. No enteral feeds means no gut signal for bile flow. Plant sterols in soybean lipid block the bile acid sensor FXR. Endotoxin from an injured gut and cytokines from sepsis switch off the bile transporters. This is why NEC and gut surgery add so much: cholestasis followed 70% of surgical NEC and 38% of medical NEC in one large database (Nayak 2024).\n\nThe treatment is the reverse of the cause: feed the gut, change the lipid, treat infection. In infants with short bowel and PN cholestasis, fish-oil lipid reversed cholestasis about 6 times faster than soybean lipid in historical controls, with fewer deaths and transplants (Puder 2009). Cutting soybean lipid alone did not prevent cholestasis (Levit 2016). For prevention, fish-oil lipid did not clearly lower cholestasis in preterm trials: RR 0.61 (95% CI 0.24–1.56), low certainty (Kapoor 2019).\n\nThe hidden atresia is the real danger. In Taiwan, preterm infants had more biliary atresia than term infants, fewer had a Kasai before 60 days (44% vs 69%), and fewer kept their native liver at 18 months (50% vs 73%). The stool card worked just as well in them (Chiu 2013)."
+    },
+    {
+      "t": "pearls",
+      "h": "Pearls & pitfalls",
+      "items": [
+        {
+          "k": "pitfall",
+          "text": "\"It's the PN.\" Without a course that fits — PN for 2 weeks or more, improving as feeds advance — it is not a diagnosis."
+        },
+        {
+          "k": "pearl",
+          "text": "Pale stools trump every explanation, preterm or not. Ask for a stool card in the NICU."
+        },
+        {
+          "k": "pitfall",
+          "text": "\"HIDA didn't excrete.\" PN and low birth weight cause non-excretion; it does not prove atresia."
+        },
+        {
+          "k": "pitfall",
+          "text": "Cutting soybean lipid to 1 g/kg/day did not prevent cholestasis (by a broad definition) in a randomized trial in infants ≤ 29 weeks (Levit 2016). Change the lipid and feed the gut."
+        },
+        {
+          "k": "pearl",
+          "text": "A new rise in direct bilirubin in a stable infant on PN is a reason to look for infection."
+        },
+        {
+          "k": "pearl",
+          "text": "Fish-oil lipid for established PN cholestasis: 1 g/kg/day, which is also the maximum (Omegaven label)."
+        },
+        {
+          "k": "pitfall",
+          "text": "\"Bilirubin is normal, the liver is fine.\" Fibrosis can persist on fish oil — follow platelets and spleen size."
+        },
+        {
+          "k": "pitfall",
+          "text": "Genetic testing for every PN-fed preterm: the panel yield was about 4% (Togawa 2016). Test if cholestasis persists off PN."
+        }
+      ]
+    },
+    {
+      "t": "guideline_compare",
+      "h": "Guidelines",
+      "rows": [
+        {
+          "topic": "When a preterm infant's jaundice is prolonged",
+          "positions": {
+            "naspghan_espghan_2017_nc": "No separate timing for preterm infants",
+            "nice_cg98_2010": "Prolonged jaundice: more than 21 days in a preterm infant",
+            "aap_2022_hyperbili": "Applies to infants of 35 weeks or more only"
+          },
+          "verdict": "gap",
+          "note": "No validated direct bilirubin cut-off or timing below 35 weeks. The app checks direct bilirubin after 2 weeks of PN and every 1–2 weeks after (lesson 02-08), measures it in any jaundiced preterm infant, and acts at ≥ 1.0 mg/dL, as in term infants."
+        },
+        {
+          "topic": "Lipid when PN cholestasis is established",
+          "positions": {
+            "fda_omegaven_label": "Pure fish-oil lipid 1 g/kg/day for PN-associated cholestasis",
+            "lapillonne_2018_espghan_lipids": "IFALD: stop soybean lipid, lower the lipid dose and/or use composite lipid; pure fish oil only as short-term rescue (conditional)"
+          },
+          "verdict": "differs",
+          "note": "Both move away from pure soybean lipid. US practice uses pure fish oil; European practice prefers composite lipid with fish oil. Choose with the NICU dietitian and pharmacy."
+        }
+      ]
+    },
+    {
+      "t": "case",
+      "h": "Test yourself",
+      "case_ids": [
+        "chol_preterm_pn_c1",
+        "chol_preterm_pn_c2",
+        "chol_preterm_pn_c3"
+      ]
+    }
+  ]
+}

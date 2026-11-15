@@ -128,7 +128,8 @@
         },
         {
           "t": "row",
-          "text": "Preterm or on parenteral nutrition: still exclude biliary atresia."
+          "text": "Preterm or on parenteral nutrition: still exclude biliary atresia.",
+          "link_card_id": "chol_preterm_pn"
         },
         {
           "t": "row",

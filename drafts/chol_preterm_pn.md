@@ -1,6 +1,13 @@
 # chol_preterm_pn — Cholestasis in Preterm or PN-Fed Infants (draft)
 
-Card not built yet (trigger reached 2026-10-22: lesson 02-14; backlog day 30). Inbox is filled by daily lesson sync (§3.4).
+Card built 2026-11-15 (day 30) in one pass: research → this draft → JSON (Cards/chol_preterm_pn.json, Pathways/chol_preterm_pn.json, 3 cases, 8 registry sources). Inbox below stays as the source trail; block 19 (intestinal failure) will enrich the card.
+
+## Card draft (day 30)
+
+- **Anatomy:** Red flags (pale stools; sudden direct-bilirubin rise = sepsis; INR; rising on full feeds or after PN stops; IFALD with portal hypertension) → single pathway (causes do not depend on age band inside 0–3 mo: sick? → stool first → does the course fit PN? → treat → follow/escalate) → First contact → Don't miss → Why → 8 pearls → guideline_compare (2 rows) → 3 cases.
+- **Sources checked 2026-11-15 (PubMed abstracts):** Christensen 2007 (bands 14/43/72/85%, ≥ 2.0 mg/dL), Chiu 2013 (Kasai < 60 d 44.4 vs 68.7%; native liver 18 mo 50 vs 72.7%; stool card 96.3%), Puder 2009 (6× faster, 95% CI 2.0–37.3), Nayak 2024 (38.2 vs 70.1%), Levit 2016 (69 vs 63%, growth **not** different — lesson slide 20 "costs growth" not used). Omegaven label: 1 g/kg/day = maximum. ESPGHAN/ESPEN 2018 lipids: composite lipid first line; IFALD — stop soybean, lower dose and/or composite (conditional, low). Pure-fish-oil "short-term rescue" wording from lesson 02-08 not confirmed without full text → not published (library: lapillonne_2018_espghan_lipids).
+- **Not published (no source checked):** Fawaz 2017 "up to one-fifth" (full text in library, P1) — guideline_compare row "how common" omitted; UDCA doses and prophylaxis meta-analysis (Anne 2024 design unverified); erythromycin dose; cut-offs below 35 weeks (none exist).
+- **Ultrasound timing:** lesson 02-08 says "after a feed if possible"; chol_0_3m says fasting 3–4 h. Card gives no timing — tells the sonographer the infant is on PN (D-2026-11-15-1).
 
 ## Inbox
 

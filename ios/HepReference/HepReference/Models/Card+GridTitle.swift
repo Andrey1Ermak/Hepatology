@@ -15,5 +15,6 @@ extension Card {
         "neo_jaundice": "Neonatal Jaundice",
         "unconj_bili": "Unconjugated Bilirubin",
         "ref_elasto": "Elastography & Scores",
+        "chol_preterm_pn": "Preterm & PN Cholestasis",
     ]
 }

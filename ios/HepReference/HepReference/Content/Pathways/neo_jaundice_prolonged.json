@@ -55,7 +55,8 @@
         },
         {
           "t": "row",
-          "text": "Preterm or on parenteral nutrition: same rule. Biliary atresia hides among sick and PN-fed infants."
+          "text": "Preterm or on parenteral nutrition: same rule. Biliary atresia hides among sick and PN-fed infants.",
+          "link_card_id": "chol_preterm_pn"
         },
         {
           "t": "row",

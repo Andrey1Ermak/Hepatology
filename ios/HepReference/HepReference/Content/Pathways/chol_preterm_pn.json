@@ -1,0 +1,172 @@
+{
+  "id": "chol_preterm_pn",
+  "children": [
+    {
+      "t": "section",
+      "h": "1 · Is the infant sick?",
+      "children": [
+        {
+          "t": "out",
+          "cond": "New lethargy, apnea, feed intolerance, temperature instability, or a sudden rise in direct bilirubin in a stable infant",
+          "pill": {
+            "kind": "floor",
+            "text": "Sepsis until proved otherwise: blood culture (line and peripheral), catheter urine culture, antibiotics now; think NEC. The bilirubin follows the infection"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "INR prolonged or any bleeding",
+          "pill": {
+            "kind": "step",
+            "text": "Vitamin K IV now (confirm the dose with pharmacy); recheck INR. Not correcting → liver failure: call a transplant center"
+          },
+          "link_card_id": "inr_prolonged"
+        },
+        {
+          "t": "out",
+          "cond": "Stable",
+          "subtext": "Go to step 2"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "2 · Stool first",
+      "children": [
+        {
+          "t": "row",
+          "text": "Look at stool color at every diaper change; use a stool color card. An unfed infant passes little stool — look harder, not less."
+        },
+        {
+          "t": "out",
+          "cond": "Pale, clay-colored or white stools",
+          "pill": {
+            "kind": "step",
+            "text": "Biliary atresia until proved otherwise: ultrasound now, call pediatric hepatology and surgery today. Persistent pallor or rising direct bilirubin → cholangiogram. Never accept PN as the cause of pale stools"
+          },
+          "link_card_id": "chol_0_3m"
+        },
+        {
+          "t": "out",
+          "cond": "Pigmented stools, direct or conjugated ≥ 1.0 mg/dL",
+          "subtext": "Go to step 3",
+          "link_calc_id": "c_conj_bili",
+          "link_label": "Conjugated bilirubin: cholestasis?"
+        },
+        {
+          "t": "out",
+          "cond": "Pigmented stools, direct or conjugated below 1.0 mg/dL",
+          "subtext": "Not cholestasis now — recheck direct bilirubin every 1–2 weeks while on PN (lesson 02-08)"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "3 · Does the course fit PN cholestasis?",
+      "children": [
+        {
+          "t": "row",
+          "text": "Fits: PN for 2 weeks or more before the rise, little enteral feeding, NEC, gut surgery or sepsis, and direct bilirubin levels off or falls as feeds advance."
+        },
+        {
+          "t": "row",
+          "text": "Same day-1 exclusions as any infant: urine culture, TSH and free T4, newborn screen, CMV PCR, INR."
+        },
+        {
+          "t": "row",
+          "text": "Abdominal ultrasound with Doppler — tell the sonographer the infant is on PN.",
+          "link_card_id": "ref_imaging"
+        },
+        {
+          "t": "out",
+          "cond": "Course fits, stools pigmented, ultrasound unremarkable",
+          "subtext": "Working label: PN-associated cholestasis once direct bilirubin is ≥ 2.0 mg/dL after 2 weeks or more of PN (Christensen 2007) — treat (step 4) and keep watching (step 5)"
+        },
+        {
+          "t": "out",
+          "cond": "Cholestasis before PN or after less than 2 weeks of it, rising on full feeds, or not settling after PN stops",
+          "pill": {
+            "kind": "step",
+            "text": "Not PN cholestasis — full infant cholestasis workup, atresia first"
+          },
+          "link_card_id": "chol_0_3m"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "4 · Treat PN cholestasis",
+      "children": [
+        {
+          "t": "row",
+          "text": "Feed the gut: trophic feeds early, advance as tolerated; breast milk preferred. Feeds are the most reliable cure."
+        },
+        {
+          "t": "row",
+          "text": "Change the lipid: stop pure soybean lipid. Use composite lipid with fish oil, or pure fish-oil lipid 1 g/kg/day (the labeled dose and maximum) — choose with the dietitian and pharmacy."
+        },
+        {
+          "t": "row",
+          "text": "Do not rely on cutting soybean lipid to 1 g/kg/day — it did not prevent cholestasis in a randomized trial (Levit 2016)."
+        },
+        {
+          "t": "row",
+          "text": "Avoid excess glucose and calories; cycle PN when feasible (limited data)."
+        },
+        {
+          "t": "row",
+          "text": "Line care and early treatment of infection — every sepsis is a new hit."
+        },
+        {
+          "t": "row",
+          "text": "Review copper and manganese in PN while cholestasis lasts."
+        },
+        {
+          "t": "row",
+          "text": "Fat-soluble vitamins once cholestasis persists.",
+          "link_calc_id": "c_vitamins",
+          "link_label": "Fat-soluble vitamin dosing"
+        },
+        {
+          "t": "row",
+          "text": "UDCA: no definitive trial; only by the enteral route, and urine bile acids first."
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "5 · Follow and escalate",
+      "children": [
+        {
+          "t": "row",
+          "text": "Direct bilirubin every 1–2 weeks while on PN; stool color daily (expert opinion)."
+        },
+        {
+          "t": "out",
+          "cond": "Direct bilirubin falls as feeds reach full volume, stools pigmented",
+          "pill": {
+            "kind": "dc",
+            "text": "Continue feeds; recheck until normal. Keep checking stool color until discharge and beyond — a stool card until a month past the due date (lesson 02-08)"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Rising despite advancing feeds, still raised after PN stops, pale stools, or an abnormal scan",
+          "pill": {
+            "kind": "step",
+            "text": "Obstruction until proved otherwise: hepatology today; biopsy and cholangiogram. HIDA non-excretion proves nothing on PN"
+          },
+          "link_card_id": "chol_0_3m"
+        },
+        {
+          "t": "out",
+          "cond": "Long PN or short bowel with falling platelets, growing spleen, ascites or GI bleeding",
+          "pill": {
+            "kind": "picu",
+            "text": "IFALD with portal hypertension: refer to an intestinal-failure center now; fish-oil lipid; assess fibrosis — bilirubin alone misleads"
+          }
+        }
+      ]
+    }
+  ]
+}

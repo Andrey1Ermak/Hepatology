@@ -222,5 +222,29 @@
     "question": "Does she need a Kasai?",
     "answer": "Not before Alagille syndrome is considered. Order an echo, an eye exam and JAG1/NOTCH2 testing with copy-number analysis. Biopsy or cholangiogram only if atresia is still possible — and no Kasai if the ducts are patent.",
     "teaching": "In matched patients with Alagille syndrome, a Kasai was followed by more transplants (47% vs 14%) and deaths (32% vs 3%) (Kaye 2010). The Alagille look-for list never delays a needed cholangiogram."
+  },
+  {
+    "id": "chol_preterm_pn_c1",
+    "card": "chol_preterm_pn",
+    "stem": "A boy born at 29 weeks is now 35 weeks corrected. He has had 6 weeks of PN after a resection for NEC. Direct bilirubin is 4.4 mg/dL and rising, GGT 310 U/L, feeds 30 mL/kg/day. The nurse charted pale stools on 2 days.",
+    "question": "Is this PN cholestasis?",
+    "answer": "Not until atresia is excluded. Ultrasound now, a daily stool card, and a cholangiogram if the pallor persists or the direct bilirubin keeps rising. Meanwhile change the lipid and advance feeds.",
+    "teaching": "PN cholestasis is common, not exclusive. Preterm infants with biliary atresia had their Kasai at a mean 72 days vs 53 at term (Chiu 2013); the lessons put the delay down to cholestasis being blamed on PN (02-08, 02-14)."
+  },
+  {
+    "id": "chol_preterm_pn_c2",
+    "card": "chol_preterm_pn",
+    "stem": "A stable 27-week infant on PN for 5 weeks has a direct bilirubin that was flat at 3.0 mg/dL and has jumped to 5.2 mg/dL in 3 days. He has more apneas. Stools are yellow.",
+    "question": "What do you do first?",
+    "answer": "Treat it as sepsis: blood cultures from the line and a peripheral vein, urine culture, antibiotics now, and look for NEC. Recheck the bilirubin once the infection is treated.",
+    "teaching": "Cytokines and endotoxin switch off bile transporters. A new rise in direct bilirubin in a stable infant on PN is a reason to look for infection (lesson 02-08)."
+  },
+  {
+    "id": "chol_preterm_pn_c3",
+    "card": "chol_preterm_pn",
+    "stem": "A 4-month-old with short bowel after gastroschisis has been on PN since birth. Direct bilirubin 8 mg/dL; platelets have fallen from 250 to 90 × 10⁹/L over a month; the spleen is now palpable.",
+    "question": "What is happening, and who should know?",
+    "answer": "IFALD with portal hypertension. Switch to fish-oil lipid, refer to an intestinal-failure center now, and assess fibrosis.",
+    "teaching": "IFALD is the long-PN end of the same spectrum. Bilirubin can normalize on fish oil while fibrosis persists, so follow platelets and spleen size, not bilirubin alone (lesson 02-08)."
   }
 ]

@@ -134,5 +134,17 @@
     "acholic stool",
     "pale stool",
     "холестаз"
+  ],
+  "parenteral nutrition cholestasis": [
+    "PNAC",
+    "PNALD",
+    "IFALD",
+    "TPN cholestasis",
+    "PN cholestasis",
+    "intestinal failure liver disease",
+    "preterm cholestasis",
+    "NICU cholestasis",
+    "холестаз недоношенных",
+    "парентеральное питание"
   ]
 }
