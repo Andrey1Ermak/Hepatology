@@ -60,3 +60,8 @@ BA is the commonest pediatric LT indication; this lesson supplies the early-comp
 ### 04-08 · Alagille syndrome VIII: IBAT inhibitors (synced 2026-11-14)
 - **Who reaches transplant:** GALA (2023) native liver survival 54% at 10 y and 40% at 18 y; 69% of ALGS transplants were for intractable itch. Sokol 2023: on maralixibat, none of the three responses at wk 48 — itch fall > 1 point, bilirubin < 6.5 mg/dL, bile acids < 200 µmol/L — → transplant assessment (6-y event-free survival of non-responders by each criterion 43–57%). Decompensation (variceal bleed, ascites, encephalopathy) ends IBAT therapy (label contraindication) and moves to the transplant decision.
 - **Listing summary:** record IBAT-inhibitor response history (diary, bile acids) — a non-responder's switch between agents should not delay the assessment (lesson, expert opinion).
+
+### 04-09 · Alagille syndrome IX: surgical biliary diversion (synced 2026-11-15)
+- A child with prior PEBD, internal diversion or ileal exclusion arrives at transplant with altered anatomy: gallbladder used for a conduit or removed, jejunal/colonic conduit, stoma → tell the transplant surgeon; it changes later surgical planning (lesson slide 19).
+- GALA (Vandriel 2023, abstract): diverted ALGS children had HR 2.5 for transplant or death — likely confounded by indication and severity (diverted for severe itch, median bilirubin 8.8; abstract, no adjustment published); diversion should never postpone a transplant assessment that heart, growth or bilirubin already demand.
+- Transplant in progressive ALGS — standard of care, refer early (EASL 2024); cardiac and vascular work-up before listing (AASLD/AST/NASPGHAN 2014).

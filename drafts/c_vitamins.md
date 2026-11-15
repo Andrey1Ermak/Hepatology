@@ -41,3 +41,6 @@
 ### 04-08 · Alagille syndrome VIII: IBAT inhibitors (synced 2026-11-14)
 - **Class effect on vitamins:** IBAT inhibitors (maralixibat, odevixibat) push bile acid into the colon → less fat-soluble vitamin absorption; pooled maralixibat ALGS data (US label, uncontrolled): fat-soluble vitamin deficiency 26%, fractures 9%; vitamin K is lost too — bleeding reported, and the 2025 labels expanded the bleeding warning → INR in every vitamin check. → On an IBAT inhibitor: vitamins A, D, E and INR at baseline and through treatment; supplement; the label suggests considering stopping if deficiency persists. TODO(verify) label wording before adding an "on IBAT inhibitor" flag to the calculator.
 - Cholestyramine binds both IBAT inhibitors → give the IBAT inhibitor ≥ 4 h apart (both US labels; TODO(verify) and register the labels). Reinforces the 04-07 resin-spacing line.
+
+### 04-09 · Alagille syndrome IX: surgical biliary diversion (synced 2026-11-15)
+- After any surgical biliary diversion (PEBD, internal, ileal exclusion) less bile reaches the gut → more fat-soluble vitamin and energy loss; lesson: levels and dose adjustment every 3–6 months (practice, expert opinion). PEBD stoma output also loses water, sodium and bicarbonate — not a vitamin issue, but belongs in the same follow-up note.
