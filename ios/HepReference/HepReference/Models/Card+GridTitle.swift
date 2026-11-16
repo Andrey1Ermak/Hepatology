@@ -16,5 +16,6 @@ extension Card {
         "unconj_bili": "Unconjugated Bilirubin",
         "ref_elasto": "Elastography & Scores",
         "chol_preterm_pn": "Preterm & PN Cholestasis",
+        "ref_metabolic": "Metabolic Workup",
     ]
 }

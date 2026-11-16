@@ -94,7 +94,8 @@
         },
         {
           "t": "row",
-          "text": "Before UDCA or a transfusion: urine bile acids (before UDCA), red-cell GALT (before transfusion)."
+          "text": "Before UDCA or a transfusion: urine bile acids (before UDCA), red-cell GALT (before transfusion).",
+          "link_card_id": "ref_metabolic"
         },
         {
           "t": "row",

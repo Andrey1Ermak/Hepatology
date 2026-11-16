@@ -61,7 +61,8 @@
     "inr_prolonged",
     "ref_imaging",
     "ref_biopsy",
-    "ref_genetics"
+    "ref_genetics",
+    "ref_metabolic"
   ],
   "status": "reviewed",
   "blocks": [

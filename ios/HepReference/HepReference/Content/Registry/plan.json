@@ -20,16 +20,16 @@
     {"day": 2, "topic": "Biliary atresia screening: stool color card and early bilirubin", "cards": ["neo_jaundice"]},
     {"day": 3, "topic": "The NASPGHAN/ESPGHAN 2017 algorithm", "cards": ["chol_0_3m"]},
     {"day": 4, "topic": "Infectious causes", "cards": ["chol_0_3m"]},
-    {"day": 5, "topic": "Endocrine causes", "cards": ["chol_0_3m"]},
-    {"day": 6, "topic": "Metabolic I: galactosemia, tyrosinemia, HFI", "cards": ["chol_0_3m"]},
-    {"day": 7, "topic": "Metabolic II: citrin deficiency and bile-acid synthesis defects", "cards": ["chol_0_3m"]},
+    {"day": 5, "topic": "Endocrine causes", "cards": ["chol_0_3m", "ref_metabolic"]},
+    {"day": 6, "topic": "Metabolic I: galactosemia, tyrosinemia, HFI", "cards": ["chol_0_3m", "ref_metabolic"]},
+    {"day": 7, "topic": "Metabolic II: citrin deficiency and bile-acid synthesis defects", "cards": ["chol_0_3m", "ref_metabolic"]},
     {"day": 8, "topic": "Preterm and PN-associated cholestasis", "cards": ["chol_preterm_pn"]},
     {"day": 9, "topic": "Idiopathic neonatal hepatitis", "cards": ["chol_0_3m"]},
-    {"day": 10, "topic": "Infiltrative and storage disorders", "cards": ["chol_0_3m"]},
-    {"day": 11, "topic": "Syndromic cholestasis", "cards": ["chol_0_3m"]},
+    {"day": 10, "topic": "Infiltrative and storage disorders", "cards": ["chol_0_3m", "ref_metabolic"]},
+    {"day": 11, "topic": "Syndromic cholestasis", "cards": ["chol_0_3m", "ref_metabolic"]},
     {"day": 12, "topic": "Genetics in the infant", "cards": ["ref_genetics", "chol_0_3m", "chol_preterm_pn"]},
     {"day": 13, "topic": "Managing the cholestatic infant", "cards": ["inr_prolonged", "chol_0_3m", "chol_preterm_pn"]},
-    {"day": 14, "topic": "Synthesis and self-test", "cards": ["neo_jaundice", "chol_0_3m", "chol_preterm_pn"]}
+    {"day": 14, "topic": "Synthesis and self-test", "cards": ["neo_jaundice", "chol_0_3m", "chol_preterm_pn", "ref_metabolic"]}
   ]},
   {"block": 3, "title": "Biliary atresia", "start": "2026-10-26", "days": [
     {"day": 1, "topic": "Epidemiology and phenotypes", "cards": ["chol_0_3m", "chol_preterm_pn"]},

@@ -146,5 +146,17 @@
     "NICU cholestasis",
     "холестаз недоношенных",
     "парентеральное питание"
+  ],
+  "metabolic workup": [
+    "metabolic screen",
+    "critical sample",
+    "inborn errors of metabolism",
+    "IEM workup",
+    "before transfusion",
+    "red-cell GALT",
+    "succinylacetone",
+    "метаболический скрининг",
+    "критическая проба",
+    "наследственные болезни обмена"
   ]
 }
