@@ -50,6 +50,9 @@
 - **Gain-of-function NOTCH2 = Hajdu–Cheney syndrome** (osteoporosis, acro-osteolysis; Simpson 2011, Isidor 2011, Nat Genet) — direction of the variant matters; not relevant to ALGS bone, which follows cholestasis.
 - **Relatives:** ≥ 1 eye sign in 36% of parents (Hingorani 1999); examine parents (slit lamp, spine film, echo, renal US) and test for the family variant before any living-donor work-up.
 
+### 04-10 · Alagille syndrome X: natural history (synced 2026-11-16)
+- Genotype does not predict the liver: JAG1 (902) vs NOTCH2 (34) — fewer heart, eye, spine and face features with NOTCH2, but no native-liver or overall survival difference detected — underpowered, n = 34 NOTCH2 (p = 0.506 per lesson; Vandriel 2025, Liver Int 45:e70251). Use the gene for diagnosis and the extrahepatic search, not the liver forecast. Wide variability within families with the same variant. Counts and "no difference" verified against the abstract 2026-11-16 (Europe PMC); p-value only on the slide.
+
 ## Build notes (day 24, 2026-11-09)
 - Sources read: lessons 01-11, 02-12 (+ Inbox 02-14, 03-02, 04-01, 04-02); EASL 2024 full text (general recommendations: NGS early in infants/children; Sanger discouraged except ABCB4 in small-duct PSC; WGS if WES negative; reanalyse ≥ every 3 years; counselling before testing; incidental findings agreed in advance; VUS upgrade via family testing, in vitro data; ALGS biopsy useful with a VUS).
 - 20 primary citations checked against Europe PMC/Crossref abstracts (13 confirmed, 5 partly, 2 not in abstract) — see D-2026-11-09-2.

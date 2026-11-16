@@ -65,3 +65,8 @@ BA is the commonest pediatric LT indication; this lesson supplies the early-comp
 - A child with prior PEBD, internal diversion or ileal exclusion arrives at transplant with altered anatomy: gallbladder used for a conduit or removed, jejunal/colonic conduit, stoma → tell the transplant surgeon; it changes later surgical planning (lesson slide 19).
 - GALA (Vandriel 2023, abstract): diverted ALGS children had HR 2.5 for transplant or death — likely confounded by indication and severity (diverted for severe itch, median bilirubin 8.8; abstract, no adjustment published); diversion should never postpone a transplant assessment that heart, growth or bilirubin already demand.
 - Transplant in progressive ALGS — standard of care, refer early (EASL 2024); cardiac and vascular work-up before listing (AASLD/AST/NASPGHAN 2014).
+
+### 04-10 · Alagille syndrome X: natural history (synced 2026-11-16)
+- GALA (Vandriel 2023): transplant by 18 y in 50.4%, median age 2.8 y, 72% before age 5. Indications (328 with data): cholestasis complications 72%, PHT 30% (later, median 4.2 y vs 2.5 y), > 1 indication 53%. Post-LT patient survival 92% at 5 y and 88% at 20 y; graft 88% and 83% (TODO(verify) vs paper).
+- Median total bilirubin 6–12 mo ≥ 10 mg/dL → transplant HR 15.6; lesson synthesis: ≥ 10 → transplant-centre referral; 5–10 → closer review including an early transplant-centre introduction, as in the 04-03 entry and the lesson's own scenario and case (expert opinion, no guideline threshold). Early referral ≠ early transplant: time for cardiac/vascular work-up.
+- Deaths: cardiac (median 1.1 y) and non-cardiac vascular (2.2 y) act before liver deaths (2.8 y) → heart and vessels decide candidacy as much as the liver.
