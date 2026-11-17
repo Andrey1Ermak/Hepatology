@@ -7,6 +7,8 @@
 #   HEP_OPEN_CARD=<card_id>     open this card on launch (Debug builds only)
 #   HEP_OPEN_CATEGORY=<cat>     open this home category on launch (Debug builds only)
 #   HEP_OPEN_CALC=<calc_id>     open this calculator on launch (Debug builds only)
+#   HEP_OPEN_TAB=home|study|search   open this tab on launch (Debug builds only)
+#   HEP_STUDY_BLOCK=<n>         show this year-plan block in the Study tab (Debug builds only)
 set -euo pipefail
 OUT="${1:?usage: tools/screenshot.sh <output.png> [wait-seconds]}"
 WAIT="${2:-6}"
@@ -24,6 +26,8 @@ ARGS=()
 [ -n "${HEP_OPEN_CATEGORY:-}" ] && ARGS+=(-hepOpenCategory "$HEP_OPEN_CATEGORY")
 [ -n "${HEP_OPEN_CARD:-}" ] && ARGS+=(-hepOpenCard "$HEP_OPEN_CARD")
 [ -n "${HEP_OPEN_CALC:-}" ] && ARGS+=(-hepOpenCalc "$HEP_OPEN_CALC")
+[ -n "${HEP_OPEN_TAB:-}" ] && ARGS+=(-hepOpenTab "$HEP_OPEN_TAB")
+[ -n "${HEP_STUDY_BLOCK:-}" ] && ARGS+=(-hepStudyBlock "$HEP_STUDY_BLOCK")
 xcrun simctl launch "$SIM" com.hepreference.app ${ARGS[@]+"${ARGS[@]}"} >/dev/null
 sleep "$WAIT"
 mkdir -p "$(dirname "$OUT")"

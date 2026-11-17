@@ -146,8 +146,45 @@ final class ContentIntegrityTests: XCTestCase {
         }
     }
 
-    // TODO(day 5): once plan.json lists cards, also require that each listed
-    // card names that block/day in its own `plan`, and the reverse.
+    /// plan.json `cards` and each card's own `plan` describe the same links,
+    /// so the Study tab and a card's Links section never disagree.
+    func testPlanCardsMatchCardPlans() throws {
+        let plan = try registry("plan", as: [PlanBlock].self)
+        var fromPlan: [String: Set<String>] = [:]
+        for block in plan {
+            for day in block.days {
+                fromPlan["\(block.block)-\(day.day)"] = Set(day.cards)
+            }
+        }
+        var fromCards: [String: Set<String>] = [:]
+        for card in try allCards() {
+            for ref in card.plan ?? [] {
+                for day in ref.days {
+                    fromCards["\(ref.block)-\(day)", default: []].insert(card.id)
+                }
+            }
+        }
+        for key in Set(fromPlan.keys).union(fromCards.keys) {
+            let listed = fromPlan[key] ?? []
+            let cited = fromCards[key] ?? []
+            XCTAssertEqual(listed.subtracting(cited), [], "plan \(key): listed in plan.json, but the card's own plan omits this day")
+            XCTAssertEqual(cited.subtracting(listed), [], "plan \(key): the card cites this day, but plan.json does not list it")
+        }
+    }
+
+    /// A lesson stamp is a real calendar date (set by tools/sync_sources.py).
+    func testPlanLessonStamps() throws {
+        let plan = try registry("plan", as: [PlanBlock].self)
+        for block in plan {
+            for day in block.days {
+                if let lesson = day.lesson {
+                    XCTAssertNotNil(lesson.range(of: #"^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$"#, options: .regularExpression),
+                                    "plan \(block.block)-\(day.day): lesson '\(lesson)' must be YYYY-MM-DD")
+                }
+            }
+        }
+    }
+
     func testRegistryLinksResolve() throws {
         let cardIDs = Set(try allCards().map(\.id))
         let guidelines = try registry("guidelines", as: [Guideline].self)

@@ -4,14 +4,38 @@ struct ContentView: View {
     @State private var library = CardLibrary()
     @State private var registry = Registry()
     @StateObject private var calculatorPresenter = CalculatorPresenter()
+    @State private var tab: AppTab = Self.launchTab
+
+    enum AppTab: String {
+        case home, study, search
+    }
+
+    /// Home, unless a Debug launch argument `-hepOpenTab <home|study|search>`
+    /// asks for another tab (tools/screenshot.sh, `HEP_OPEN_TAB`).
+    private static var launchTab: AppTab {
+        #if DEBUG
+        let args = ProcessInfo.processInfo.arguments
+        if let i = args.firstIndex(of: "-hepOpenTab"), args.indices.contains(i + 1),
+           let tab = AppTab(rawValue: args[i + 1]) {
+            return tab
+        }
+        #endif
+        return .home
+    }
 
     var body: some View {
-        TabView {
+        TabView(selection: $tab) {
             HomeView(library: library)
                 .tabItem { Label("Home", systemImage: "square.grid.2x2") }
+                .tag(AppTab.home)
+
+            StudyView(library: library)
+                .tabItem { Label("Study", systemImage: "book") }
+                .tag(AppTab.study)
 
             SearchView(library: library)
                 .tabItem { Label("Search", systemImage: "magnifyingglass") }
+                .tag(AppTab.search)
         }
         // Explicit .tint (redundant with the Assets.xcassets global accent
         // color, but self-documenting). The tab bar's actual opacity fix
@@ -33,7 +57,7 @@ struct ContentView: View {
         .environment(library)
         .environment(registry)
         // Overlaid above the whole TabView (not a per-tab .sheet) so a
-        // numeric_calc opened from either tab grows from screen-center over
+        // numeric_calc opened from any tab grows from screen-center over
         // everything, tab bar included. See CalculatorPresenter.
         .overlay {
             if let active = calculatorPresenter.active {

@@ -46,6 +46,7 @@
 		4B13D2879C0EA62A0664B1AE /* ChecklistAnyRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9357B09215E0402FEB31BD /* ChecklistAnyRule.swift */; };
 		4B6E61CB48961382961536BF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE088E3885C095CE2B61427 /* HomeView.swift */; };
 		4BBD92C09F52B2D13FAC65A9 /* CardSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88237CD1A8F2C2E498602338 /* CardSession.swift */; };
+		4E2FAF55A997CC52D985B4B7 /* StudyPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE53C97D4E785F4C4A2F7053 /* StudyPlan.swift */; };
 		4F8B1F74CE0AA1C30607FDB7 /* BranchBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820E6783963139414EF2AD8E /* BranchBlockView.swift */; };
 		51223C55F2A99A2ED94C0DA7 /* ULNCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C5B4590992996138683F64 /* ULNCalc.swift */; };
 		541AD44FCD39EF372B737C2C /* ScoreCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400044A20D7DCB283956C5A4 /* ScoreCalc.swift */; };
@@ -108,6 +109,7 @@
 		E14BDF26B4C39EFA7C676716 /* CardDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD336DA683265B657ACBC2B6 /* CardDecodingTests.swift */; };
 		E1894326D03C791EE4231415 /* EditorialHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FE50AD71D546325C9F2021 /* EditorialHeader.swift */; };
 		E3048B8A5A79D2211CC3FBF9 /* AcuLevel+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F880D8133D078BAE1B77DE0 /* AcuLevel+Style.swift */; };
+		E385FE3C2702AEA0001E626E /* StudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7FCFC4CF26BA5655D88F2E /* StudyView.swift */; };
 		E5DC12F89137DD876CEC1F73 /* Card+Sources.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FDE06247E9A673E1113D4 /* Card+Sources.swift */; };
 		E9BFDE5B39FF03F247FF982E /* Card+GridTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE14A813BAADD69B9B07684 /* Card+GridTitle.swift */; };
 		EC880CA6746898B049E07E9B /* CardRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FE9624118A34C010B492C9 /* CardRowView.swift */; };
@@ -117,6 +119,7 @@
 		F5BF5306CA4EC995852A2F1D /* PathwayNodeDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A56AF10D096F6BA21472C5 /* PathwayNodeDecodingTests.swift */; };
 		F84D15681A9B0A0775E7113C /* CardLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25251AE39358EFDF15C23816 /* CardLinkButton.swift */; };
 		FA5AC232F0CF7B58DC75A503 /* CardCategory+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A543BC8389FC0BE71998ED /* CardCategory+Style.swift */; };
+		FA5C118D17765F0B10ED0BB0 /* StudyPlanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9408243CF78D88602464203 /* StudyPlanTests.swift */; };
 		FA9E3EF1DCC635EE7907D42A /* RegistryDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7C394F13E0FCA443EBE2D9 /* RegistryDecodingTests.swift */; };
 		FE084F46667999F4CE4030CB /* KasaiClockCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5604E983AD19E366E561A20D /* KasaiClockCalc.swift */; };
 		FF262137A0175CFFEEEC2110 /* CardMarkupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC60AFBF1EA048AFB31EED /* CardMarkupTests.swift */; };
@@ -209,6 +212,7 @@
 		9CAAEBE72535C29AEBF1EC37 /* CalcNumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcNumberField.swift; sourceTree = "<group>"; };
 		A84CBC7A2E2688BA6EBE9081 /* BlockHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockHeading.swift; sourceTree = "<group>"; };
 		A9C8662A63F7E3034B627B4E /* ArmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmView.swift; sourceTree = "<group>"; };
+		AD7FCFC4CF26BA5655D88F2E /* StudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyView.swift; sourceTree = "<group>"; };
 		AFE6C593AD02E59E70DD140D /* VerdictRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerdictRule.swift; sourceTree = "<group>"; };
 		B00FD4836240C067477D6285 /* LinkIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkIndex.swift; sourceTree = "<group>"; };
 		B1B07D08B7A33266528377EA /* ConjBiliCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConjBiliCalc.swift; sourceTree = "<group>"; };
@@ -217,9 +221,11 @@
 		B38F1F809B116292D6856ABE /* HepReference.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = HepReference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6CCA92DE2CF348232BA1994 /* Card+Pathways.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Pathways.swift"; sourceTree = "<group>"; };
 		B740A2C04B02F78FDF1CE592 /* ContentGateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentGateTests.swift; sourceTree = "<group>"; };
+		B9408243CF78D88602464203 /* StudyPlanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPlanTests.swift; sourceTree = "<group>"; };
 		BB2960A6A7B580DB9277E10A /* NoteBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBlockView.swift; sourceTree = "<group>"; };
 		BB2D9C57695F03F5F7C2C4D7 /* TableBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableBlockView.swift; sourceTree = "<group>"; };
 		BD274D527BDF935B5CE1E02B /* CalculatorHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorHeader.swift; sourceTree = "<group>"; };
+		BE53C97D4E785F4C4A2F7053 /* StudyPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPlan.swift; sourceTree = "<group>"; };
 		C12B2EE7C189C55F4CEC1E2C /* GuidelineCompareBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidelineCompareBlockView.swift; sourceTree = "<group>"; };
 		C5250FB002025F60C2E020EB /* ConjBiliCalcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConjBiliCalcView.swift; sourceTree = "<group>"; };
 		C69CD7E59496A94BEBB86CEA /* CardSourcesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSourcesTests.swift; sourceTree = "<group>"; };
@@ -357,6 +363,7 @@
 				2C29C8CF62141AA29BA9C923 /* NumericCalcSheet.swift */,
 				2A58F57D0EA93E1344E69EB1 /* ScoreCalcView.swift */,
 				E56053F480C7E51B63D4D991 /* SearchView.swift */,
+				AD7FCFC4CF26BA5655D88F2E /* StudyView.swift */,
 				DDF3BF88172A28970358CC08 /* Blocks */,
 				3DB14406009FE18ED2754FAB /* Calculators */,
 				3F6B8A9EB8514ED1E33E4D38 /* Pathway */,
@@ -383,6 +390,7 @@
 				5B7C394F13E0FCA443EBE2D9 /* RegistryDecodingTests.swift */,
 				8B72754100DB71FAD9D0DF77 /* RuleEngineTests.swift */,
 				112995B422A8F767C71F130B /* ScenarioTests.swift */,
+				B9408243CF78D88602464203 /* StudyPlanTests.swift */,
 			);
 			path = HepReferenceTests;
 			sourceTree = "<group>";
@@ -458,6 +466,7 @@
 				FC37CEB0E5CA29B7ED090AB2 /* Manifest.swift */,
 				2B839D89C5C2C94AC64C6C5F /* PathwayNode.swift */,
 				446D93E4CDB00514BB51E68A /* Registry.swift */,
+				BE53C97D4E785F4C4A2F7053 /* StudyPlan.swift */,
 			);
 			name = Models;
 			path = HepReference/Models;
@@ -575,6 +584,7 @@
 				FA9E3EF1DCC635EE7907D42A /* RegistryDecodingTests.swift in Sources */,
 				AF2DF29901EE5FBF18BA5D4C /* RuleEngineTests.swift in Sources */,
 				04EE77F7631105A7E21988C0 /* ScenarioTests.swift in Sources */,
+				FA5C118D17765F0B10ED0BB0 /* StudyPlanTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,6 +678,8 @@
 				5D2EC96B40E6A2914998282A /* SectionCard.swift in Sources */,
 				A901A4E0379AD644D2FB2275 /* SelectableChip.swift in Sources */,
 				4A9B00D7EC3AA2E4C68043B3 /* SquareBullet.swift in Sources */,
+				4E2FAF55A997CC52D985B4B7 /* StudyPlan.swift in Sources */,
+				E385FE3C2702AEA0001E626E /* StudyView.swift in Sources */,
 				9A1DD9BC2129AF09AEF19369 /* TableBlockView.swift in Sources */,
 				1695A41F95A8867E5E043F8B /* TextBlockView.swift in Sources */,
 				51223C55F2A99A2ED94C0DA7 /* ULNCalc.swift in Sources */,

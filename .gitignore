@@ -19,3 +19,4 @@ sources/extracted/
 # Autonomous run logs (local only)
 logs/
 run.log
+__pycache__/

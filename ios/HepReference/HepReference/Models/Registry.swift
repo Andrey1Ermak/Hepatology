@@ -147,6 +147,9 @@ struct PlanDay: Decodable {
     let topic: String
     /// Cards this lesson feeds.
     let cards: [String]
+    /// Date the lesson arrived in the lesson repository, "YYYY-MM-DD";
+    /// nil until it has. Stamped by `tools/sync_sources.py --done`.
+    let lesson: String?
 }
 
 /// A "Test yourself" case (`Registry/cases.json`).
