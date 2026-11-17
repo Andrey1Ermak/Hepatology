@@ -55,3 +55,6 @@ This is the main lesson for the card. Every number — TODO(verify) against the 
 
 ### Guideline watch (2026-11-02, weekly check)
 - **Baveno VIII** published: J Hepatol, online 19 Aug 2026, doi 10.1016/j.jhep.2026.07.030 — includes the first Baveno pediatric recommendations. Use it instead of Baveno VII for adult/pediatric compare rows at build; read the full text first. The APSPGHAN 2026 statement cited by lesson 03-09 was not found by web search — keep TODO(verify).
+
+### 04-11 · Alagille syndrome XI: liver transplantation (synced 2026-11-17)
+- **Pre-LT cardiac sequence in ALGS — new evidence (Vanguard, Yanagi 2026, n = 49):** heart disease in 80% (mostly branch PA stenosis); echo in all, 3 catheterised, 2 had cardiac surgery before LT; no circulatory support or intraoperative cardiac event; 1 PA stent after LT. Kyoto: 1 of 3 deaths = heart failure from progressive PA stenosis. Sequence unchanged from 04-04 (echo → CT angiography → catheter if RV > ½ systemic → dobutamine 10 → 20 µg/kg/min, output rise > 40% = reserve → repair first). Lesson guideline verdict: cardiac assessment DIFFERS (Squires 2014 "careful evaluation", EASL not graded) — re-check Martinez 2026. Branch PA stenosis ≠ POPH: keep the distinction in the card. HPS was the transplant indication in 1 of 49 Vanguard children (2.0%, slide 4).
