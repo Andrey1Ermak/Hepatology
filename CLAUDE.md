@@ -372,7 +372,8 @@ ID неизменны: на них держатся все ссылки. Наз�
 
 // plan.json  (из sources/reading-final/Hepatology_Year_Plan.docx)
 [{"block": 2, "title": "Neonatal cholestasis: approach", "start": "2026-10-12",
-  "days": [{"day": 1, "topic": "Epidemiology and definitions", "cards": ["neo_jaundice", "chol_0_3m"]}]}]
+  "days": [{"day": 1, "topic": "Epidemiology and definitions", "cards": ["neo_jaundice", "chol_0_3m"], "lesson": "2026-10-12"}]}]
+// lesson — дата появления урока в reading-final; ставит `tools/sync_sources.py --done` (или `--plan`), руками не править
 
 // cases.json
 [{"id": "chol_0_3m_c1", "card": "chol_0_3m", "stem": "…", "question": "…", "answer": "…", "teaching": "…"}]
