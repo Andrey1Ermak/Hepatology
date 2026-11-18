@@ -399,6 +399,11 @@ Mostly Learn layer for this card (ages neo/infant): the long-term picture behind
 - **NOTCH2 is quiet on spine and eye:** butterfly vertebrae 3.3%, embryotoxon 18.5% (GALA 2025) → a normal spine film or slit lamp never excludes ALGS; the gene panel decides.
 - **Butterfly vertebra in a cholestatic infant = strong support** (any anomaly 66% ALGS vs 9.7% cholestatic controls), but only if deliberately sought. Embryotoxon = supportive only (8–15% of the general population, per lesson — TODO(verify) source; see 04-02 entry).
 
+### 04-12 · Alagille syndrome XII: other causes of ductopenia (synced 2026-11-18)
+- **Card is published** — candidates for block 4 synthesis (day 36), not applied today:
+- **Trisomy 21 + cholestasis (Arnell & Fischler 2012, verified against the abstract):** 3.9% of newborns with Down syndrome, always with another organ involved; all 3 severe cases had marrow disease, and 2 of these 3 died early with liver failure. → Candidate Don't-miss / pearl: "Trisomy 21 with cholestasis: blood film; abnormal → hematology today (transient abnormal myelopoiesis)." Keep the BA pathway unchanged (stool color first) — the Cairo series' "no BA among 55" is not reassurance.
+- **Biopsy reading in the first weeks:** before 38 weeks post-conceptional age a duct:portal-tract ratio < 0.9 may be normal (Kahn 1989 — verified against the abstract); the ≥ 10-tract minimum is TODO(verify). This mostly belongs in ref_biopsy (see its Inbox).
+
 ### Guideline watch (2026-11-02, weekly check)
 - AASLD/AST/NASPGHAN pediatric liver transplant candidate evaluation guideline, Hepatology 2026, doi 10.1097/HEP.0000000000001805 — published (June 2026), replaces Squires 2014; first author Martinez M, senior author Ng VL (confirmed 2026-11-06, CiteDrive record; the 03-14 lesson calls it "Ng 2026"). Settle the 03-08 referral-trigger TODO from its full text.
 - SEGHNP/AEPap/SEPEAP cholestasis consensus, An Pediatr 2025 — candidate extra column for guideline_compare (not a successor of Fawaz 2017).
