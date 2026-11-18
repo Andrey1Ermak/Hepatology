@@ -1,19 +1,40 @@
 {
   "id": "about",
   "title": "About HepReference",
-  "code": "Educational reference · v0.1",
+  "code": "Educational reference · v0.1 · content checked 2026-11",
   "cat": "ref",
   "acu": "ref",
-  "tags": ["about", "disclaimer", "help", "how to use"],
+  "tags": ["about", "disclaimer", "help", "how to use", "version"],
   "entry": "reference",
-  "status": "draft",
+  "status": "reviewed",
   "blocks": [
-    {"t": "note", "k": "warn", "h": "Educational use only", "text": "HepReference is a study and orientation aid for pediatric hepatology fellows. It does not replace attending judgment, institutional protocols, or the primary guidelines it cites. It stores no patient data."},
+    {"t": "note", "k": "warn", "h": "Educational use only", "text": "HepReference is a study and orientation aid for pediatric hepatology fellows. It does not replace attending judgment, institutional protocols, or the primary guidelines it cites. It stores no patient data. Local protocols, phone numbers and hospital names are left out on purpose: follow your own."},
     {"t": "list", "h": "How to use", "items": [
-      "Start from the problem, not the diagnosis: pick the entry point that matches why you were called.",
+      "Start from the problem, not the diagnosis: pick the tile that matches why you were called.",
       "Choose the patient's age first — most hepatology workups branch by age.",
       "Red flags sit at the top of every card: act on them before reading further.",
+      "First contact lists the orders for today; Don't miss lists the treatable causes.",
+      "Pearls, Guidelines and Test yourself are collapsed until you open them; Why sits open below the duty sections.",
       "Every card lists its sources and the date they were last checked."
+    ]},
+    {"t": "list", "h": "Tabs", "items": [
+      {"t": "Home", "sub": ["Problem tiles, with Reference cards set apart below them."]},
+      {"t": "Study", "sub": ["Today's block and day of the fellowship year plan, its topic, and the cards it feeds."]},
+      {"t": "Search", "sub": ["Titles, tags, abbreviations and synonyms — \"BA\", \"kasai\" and \"атрезия\" all find biliary atresia."]}
+    ]},
+    {"t": "kv", "h": "Colors", "rows": [
+      ["Red", "Act now: red flags, PICU or transplant center"],
+      ["Amber", "Today: same-day workup or referral"],
+      ["Green", "Routine: outpatient follow-up"],
+      ["Navy", "Reference and admission"],
+      ["Guideline verdicts", "ALIGNED green · DIFFERS amber · MATERIAL red (changes management) · GAP gray (no guideline)"]
+    ]},
+    {"t": "list", "h": "In version 0.1", "items": [
+      "Jaundice and cholestasis: neonatal jaundice, cholestasis 0–3 months, preterm and PN cholestasis, unconjugated hyperbilirubinemia.",
+      "Abnormal liver tests: elevated transaminases, isolated AST, ALP and GGT, prolonged INR.",
+      "Reference: norms, imaging, biopsy, elastography, genetic testing, metabolic workup.",
+      "Calculators show their formula and source; open them from algorithm steps or from Links at the end of a card.",
+      "Cards are added as the matching block of the fellowship year is taught."
     ]}
   ]
 }

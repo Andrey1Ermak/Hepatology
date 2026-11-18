@@ -2,7 +2,22 @@ import SwiftUI
 
 struct SearchView: View {
     let library: CardLibrary
-    @State private var query = ""
+    /// Synonyms widen the search ("BA", "kasai", "атрезия" → biliary
+    /// atresia); without the registry, search falls back to titles and tags.
+    @Environment(Registry.self) private var registry: Registry?
+    @State private var query = Self.launchQuery
+
+    /// Empty, unless a Debug launch argument `-hepSearchQuery <text>` fills
+    /// the field (tools/screenshot.sh, `HEP_SEARCH_QUERY`).
+    private static var launchQuery: String {
+        #if DEBUG
+        let args = ProcessInfo.processInfo.arguments
+        if let i = args.firstIndex(of: "-hepSearchQuery"), args.indices.contains(i + 1) {
+            return args[i + 1]
+        }
+        #endif
+        return ""
+    }
 
     var body: some View {
         NavigationStack {
@@ -10,7 +25,7 @@ struct SearchView: View {
                 searchField
 
                 ScrollView {
-                    let results = library.search(query)
+                    let results = library.search(query, synonyms: registry?.synonyms ?? [:])
                     if results.isEmpty {
                         Group {
                             if query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
@@ -71,7 +86,7 @@ struct SearchView: View {
             HStack(spacing: Spacing.s) {
                 Image(systemName: "magnifyingglass")
                     .foregroundStyle(Color.hepNavy)
-                TextField("Title, code, or tag", text: $query)
+                TextField("Problem, test, or term", text: $query)
                     .font(.hepSectionHeading)
                     .textFieldStyle(.plain)
                     .autocorrectionDisabled()

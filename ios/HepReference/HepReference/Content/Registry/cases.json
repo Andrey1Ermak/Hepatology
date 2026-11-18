@@ -130,10 +130,10 @@
   {
     "id": "unconj_bili_c3",
     "card": "unconj_bili",
-    "stem": "A breastfed 4-week-old boy is still yellow. He is gaining weight well, stools are yellow, urine is pale. Total bilirubin 9 mg/dL, direct 0.4 mg/dL. CBC, reticulocytes and the newborn screen are normal.",
+    "stem": "A breastfed 4-week-old boy is still yellow. He is gaining weight well, stools are yellow, urine is pale. Total bilirubin 9 mg/dL, direct 0.2 mg/dL (within the lab's range). CBC, reticulocytes and the newborn screen are normal.",
     "question": "Is this breast-milk jaundice, and what follow-up does he need?",
     "answer": "Likely. Continue breastfeeding and recheck total and direct bilirubin in 2–4 weeks (expert opinion). Refer to hepatology if he is still jaundiced at 3 months (expert opinion), if bilirubin rises, or if direct bilirubin or stool color changes. Pale stools at any point: same-day hepatology.",
-    "teaching": "Breast-milk jaundice is an unconjugated diagnosis and can last for weeks. It explains nothing once direct bilirubin is above 1.0 mg/dL. AAP 2022 fractionates breastfed infants still jaundiced at 3–4 weeks; the app does so after 2 weeks."
+    "teaching": "Breast-milk jaundice is an unconjugated diagnosis and can last for weeks. It explains nothing once direct or conjugated bilirubin is ≥ 1.0 mg/dL, or above the lab's upper limit. The app fractionates any infant still jaundiced at 2 weeks, breastfed or not."
   },
   {
     "id": "unconj_bili_c4",

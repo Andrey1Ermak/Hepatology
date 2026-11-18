@@ -98,13 +98,9 @@ final class CardLibrary {
         groupedSections.first { $0.category == category }?.cards ?? []
     }
 
-    func search(_ query: String) -> [Card] {
-        let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-        guard !q.isEmpty else { return [] }
-        return availableEntries.compactMap { cardsByID[$0.id] }.filter { card in
-            card.title.lowercased().contains(q)
-                || card.code.lowercased().contains(q)
-                || card.tags.contains { $0.lowercased().contains(q) }
-        }
+    /// Cards matching the query or a canonical term it names in the
+    /// synonym registry — see `SearchMatcher`.
+    func search(_ query: String, synonyms: [String: [String]] = [:]) -> [Card] {
+        SearchMatcher.search(query, in: availableEntries.compactMap { cardsByID[$0.id] }, synonyms: synonyms)
     }
 }

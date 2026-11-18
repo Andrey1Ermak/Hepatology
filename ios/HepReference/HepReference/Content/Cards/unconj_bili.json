@@ -49,7 +49,7 @@
       "t": "note",
       "k": "crit",
       "h": "Red flags",
-      "text": "**Under 28 days:** neonatal team — use the AAP 2022 phototherapy and escalation thresholds.\n**Jaundice with poor feeding, lethargy, high-pitched cry, arching or abnormal tone:** possible bilirubin encephalopathy — emergency department now; also evaluate for sepsis.\n**Infant with total bilirubin at or near the AAP 2022 phototherapy threshold (any cause), bilirubin:albumin molar ratio ≥ 1.0, or bilirubin rising day by day without hemolysis (think Crigler–Najjar type I):** admit for intensive phototherapy now, check bilirubin and albumin, call hepatology today.\n**Pallor, dark (tea-colored) urine, rapid heart rate:** acute hemolysis — emergency department now. Hemolysis with a negative direct antiglobulin (Coombs) test, jaundice and low ALP in a sick child: think acute Wilson disease — INR now, call hepatology / transplant center now.\n**Known Crigler–Najjar with fever, vomiting or fasting:** same-day bilirubin and albumin; call hepatology.\n**Pale stools at any age:** same-day hepatology. **Direct bilirubin > 1.0 mg/dL (conjugated > 0.3 mg/dL) in an infant:** not unconjugated — call hepatology today; biliary atresia until proved otherwise."
+      "text": "**Under 28 days:** neonatal team — use the AAP 2022 phototherapy and escalation thresholds.\n**Jaundice with poor feeding, lethargy, high-pitched cry, arching or abnormal tone:** possible bilirubin encephalopathy — emergency department now; also evaluate for sepsis.\n**Infant with total bilirubin at or near the AAP 2022 phototherapy threshold (any cause), bilirubin:albumin molar ratio ≥ 1.0, or bilirubin rising day by day without hemolysis (think Crigler–Najjar type I):** admit for intensive phototherapy now, check bilirubin and albumin, call hepatology today.\n**Pallor, dark (tea-colored) urine, rapid heart rate:** acute hemolysis — emergency department now. Hemolysis with a negative direct antiglobulin (Coombs) test, jaundice and low ALP in a sick child: think acute Wilson disease — INR now, call hepatology / transplant center now.\n**Known Crigler–Najjar with fever, vomiting or fasting:** same-day bilirubin and albumin; call hepatology.\n**Pale stools at any age:** same-day hepatology. **Direct or conjugated bilirubin ≥ 1.0 mg/dL, or direct or conjugated above your laboratory's upper limit (expert opinion), in an infant:** not unconjugated — call hepatology today; biliary atresia until proved otherwise."
     },
     {
       "t": "age_switch",
@@ -167,7 +167,7 @@
         {
           "topic": "When to fractionate a jaundiced infant",
           "positions": {
-            "aap_2022_hyperbili": "Breastfed still jaundiced at 3–4 weeks; formula-fed at 2 weeks",
+            "aap_2022_hyperbili": "Breastfed still jaundiced at 3–4 weeks; formula-fed at 2 weeks (per lesson 02-01; full text not yet checked)",
             "naspghan_espghan_2017_nc": "Any infant jaundiced after 2 weeks of age",
             "bsg_2018_lft": "Not addressed (adult guideline)"
           },
@@ -177,12 +177,12 @@
         {
           "topic": "What counts as abnormal direct or conjugated bilirubin",
           "positions": {
-            "aap_2022_hyperbili": "Direct > 1.0 mg/dL or conjugated > 0.3 mg/dL",
+            "aap_2022_hyperbili": "Not verified — full text pending",
             "naspghan_espghan_2017_nc": "Direct > 1.0 mg/dL at any total",
             "bsg_2018_lft": "Not addressed (adult guideline)"
           },
-          "verdict": "aligned",
-          "note": "Thresholds belong to the assay. A conjugated cut-off applied to a direct result over-refers; the reverse under-refers."
+          "verdict": "gap",
+          "note": "Only NASPGHAN/ESPGHAN 2017 is verified, and it names direct bilirubin. With no verified cut-off for conjugated assays, the app calls either ≥ 1.0 mg/dL abnormal, and conjugated above the lab's upper limit too."
         },
         {
           "topic": "Confirming Gilbert syndrome",

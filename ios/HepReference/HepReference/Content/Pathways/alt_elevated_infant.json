@@ -32,8 +32,10 @@
           "cond": "Jaundice beyond 2 weeks of age, or pale stools or dark urine at any age",
           "pill": {
             "kind": "step",
-            "text": "Fractionated bilirubin today: direct > 1.0 mg/dL = cholestasis"
-          }
+            "text": "Fractionated bilirubin today: direct or conjugated ≥ 1.0 mg/dL = cholestasis"
+          },
+          "link_calc_id": "c_conj_bili",
+          "link_label": "Conjugated bilirubin: cholestasis?"
         },
         {
           "t": "out",

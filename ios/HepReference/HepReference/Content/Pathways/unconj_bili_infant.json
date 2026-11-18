@@ -40,7 +40,7 @@
         },
         {
           "t": "out",
-          "cond": "Direct > 1.0 mg/dL, or conjugated > 0.3 mg/dL — at any total",
+          "cond": "Direct or conjugated ≥ 1.0 mg/dL, or direct or conjugated above the lab's upper limit — at any total",
           "pill": {
             "kind": "step",
             "text": "Cholestasis, not this card: call pediatric hepatology today, to be seen this week — biliary atresia until proved otherwise"

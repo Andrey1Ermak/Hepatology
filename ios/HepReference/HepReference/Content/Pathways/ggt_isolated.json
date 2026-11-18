@@ -7,7 +7,9 @@
       "children": [
         {
           "t": "row",
-          "text": "Isolated GGT: GGT above the lab's range for age; ALT and bilirubin normal. ALP may be raised too."
+          "text": "Isolated GGT: GGT above the lab's range for age; ALT and bilirubin normal. ALP may be raised too.",
+          "link_calc_id": "c_uln",
+          "link_label": "GGT × ULN"
         },
         {
           "t": "row",

@@ -68,7 +68,7 @@
       "t": "note",
       "k": "info",
       "h": "Direct bilirubin in infants",
-      "text": "Direct bilirubin > 1.0 mg/dL (17 µmol/L) is abnormal at any total: start the cholestasis workup and refer to pediatric hepatology (NASPGHAN/ESPGHAN 2017). This is a disease threshold, not a normal range. It applies to direct bilirubin; conjugated assays read lower — use your laboratory's conjugated cut-off."
+      "text": "Direct or conjugated bilirubin ≥ 1.0 mg/dL (17 µmol/L) is abnormal at any total: start the cholestasis workup and refer to pediatric hepatology (NASPGHAN/ESPGHAN 2017). This is a disease threshold, not a normal range. Conjugated assays read lower: a direct or conjugated result above your laboratory's upper limit counts even below 1.0 mg/dL (expert opinion)."
     },
     {
       "t": "lab_norms",
@@ -129,7 +129,7 @@
       "items": [
         {
           "k": "pitfall",
-          "text": "Direct is not conjugated: the 1.0 mg/dL cut-off is for direct bilirubin. Conjugated assays read lower — use your laboratory's conjugated cut-off."
+          "text": "Direct is not conjugated: conjugated assays read lower. Above your laboratory's upper limit counts even below 1.0 mg/dL."
         },
         {
           "k": "pitfall",

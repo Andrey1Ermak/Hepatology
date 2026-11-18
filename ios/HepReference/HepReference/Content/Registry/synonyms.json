@@ -5,7 +5,12 @@
     "raised LFTs",
     "elevated liver enzymes",
     "high ALT",
-    "abnormal liver tests"
+    "abnormal liver tests",
+    "повышение трансаминаз",
+    "трансаминазы",
+    "гипертрансаминаземия",
+    "АЛТ",
+    "АСТ"
   ],
   "isolated AST": [
     "macro-AST",
@@ -13,7 +18,10 @@
     "high AST",
     "AST greater than ALT",
     "creatine kinase",
-    "muscular dystrophy"
+    "muscular dystrophy",
+    "изолированное повышение АСТ",
+    "КФК",
+    "АСТ"
   ],
   "isolated ALP": [
     "high alkaline phosphatase",
@@ -22,7 +30,10 @@
     "THI",
     "low alkaline phosphatase",
     "hypophosphatasia",
-    "rickets"
+    "rickets",
+    "щелочная фосфатаза",
+    "ЩФ",
+    "транзиторная гиперфосфатаземия"
   ],
   "isolated GGT": [
     "high GGT",
@@ -30,7 +41,9 @@
     "gamma-glutamyl transferase",
     "GGTP",
     "enzyme induction",
-    "sclerosing cholangitis screen"
+    "sclerosing cholangitis screen",
+    "ГГТ",
+    "гамма-глутамилтрансфераза"
   ],
   "unconjugated hyperbilirubinemia": [
     "indirect hyperbilirubinemia",
@@ -41,7 +54,13 @@
     "breast milk jaundice",
     "prolonged jaundice",
     "hemolysis",
-    "G6PD deficiency"
+    "G6PD deficiency",
+    "неконъюгированная гипербилирубинемия",
+    "непрямой билирубин",
+    "синдром Жильбера",
+    "Криглер-Найяр",
+    "гемолиз",
+    "желтуха"
   ],
   "prolonged INR": [
     "high INR",
@@ -51,7 +70,12 @@
     "vitamin K deficiency",
     "VKDB",
     "vitamin K trial",
-    "factor V"
+    "factor V",
+    "МНО",
+    "удлинение МНО",
+    "коагулопатия",
+    "витамин K",
+    "ПВ"
   ],
   "imaging": [
     "ultrasound",
@@ -88,14 +112,17 @@
     "VCTE",
     "shear wave",
     "MRE",
-    "эластография"
+    "эластография",
+    "фибросканирование",
+    "жёсткость печени"
   ],
   "fibrosis score": [
     "APRI",
     "GPR",
     "FIB-4",
     "ELF",
-    "фиброз"
+    "фиброз",
+    "фиброз печени"
   ],
   "genetic testing": [
     "gene panel",
@@ -106,7 +133,12 @@
     "rapid genome",
     "VUS",
     "trio",
-    "genetics"
+    "genetics",
+    "генетика",
+    "генетическое тестирование",
+    "экзом",
+    "геном",
+    "панель генов"
   ],
   "neonatal jaundice": [
     "newborn jaundice",
@@ -118,14 +150,19 @@
     "stool color card",
     "dark urine",
     "fractionated bilirubin",
-    "желтуха новорождённых"
+    "желтуха новорождённых",
+    "желтуха",
+    "затяжная желтуха",
+    "светлый стул"
   ],
   "biliary atresia": [
     "BA",
     "kasai",
     "portoenterostomy",
     "atresia",
-    "атрезия"
+    "атрезия",
+    "билиарная атрезия",
+    "операция Касаи"
   ],
   "neonatal cholestasis": [
     "infant cholestasis",
@@ -133,19 +170,11 @@
     "direct hyperbilirubinemia",
     "acholic stool",
     "pale stool",
-    "холестаз"
-  ],
-  "parenteral nutrition cholestasis": [
-    "PNAC",
-    "PNALD",
-    "IFALD",
-    "TPN cholestasis",
-    "PN cholestasis",
-    "intestinal failure liver disease",
-    "preterm cholestasis",
-    "NICU cholestasis",
-    "холестаз недоношенных",
-    "парентеральное питание"
+    "холестаз",
+    "холестаз новорождённых",
+    "прямой билирубин",
+    "конъюгированный билирубин",
+    "ахоличный стул"
   ],
   "metabolic workup": [
     "metabolic screen",
@@ -157,6 +186,41 @@
     "succinylacetone",
     "метаболический скрининг",
     "критическая проба",
-    "наследственные болезни обмена"
+    "наследственные болезни обмена",
+    "метаболическое обследование"
+  ],
+  "parenteral nutrition": [
+    "PNAC",
+    "PNALD",
+    "IFALD",
+    "TPN cholestasis",
+    "PN cholestasis",
+    "intestinal failure liver disease",
+    "preterm cholestasis",
+    "NICU cholestasis",
+    "холестаз недоношенных",
+    "парентеральное питание",
+    "parenteral nutrition cholestasis",
+    "ПП",
+    "ПП-ассоциированный холестаз"
+  ],
+  "norms": [
+    "normal values",
+    "normal range",
+    "reference range",
+    "reference interval",
+    "ULN",
+    "upper limit of normal",
+    "нормы",
+    "норма",
+    "референсные значения",
+    "возрастные нормы"
+  ],
+  "about": [
+    "disclaimer",
+    "help",
+    "how to use",
+    "о приложении",
+    "дисклеймер"
   ]
 }

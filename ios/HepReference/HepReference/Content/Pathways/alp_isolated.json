@@ -7,7 +7,9 @@
       "children": [
         {
           "t": "row",
-          "text": "Read ALP against the lab's range for age and sex — never the adult range. Growth plates keep ALP high through childhood, highest in the pubertal growth spurt."
+          "text": "Read ALP against the lab's range for age and sex — never the adult range. Growth plates keep ALP high through childhood, highest in the pubertal growth spurt.",
+          "link_calc_id": "c_uln",
+          "link_label": "ALP × ULN"
         },
         {
           "t": "row",

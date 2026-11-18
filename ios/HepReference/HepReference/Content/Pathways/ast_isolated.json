@@ -7,7 +7,9 @@
       "children": [
         {
           "t": "row",
-          "text": "Isolated AST: AST above the lab's range for age, ALT normal."
+          "text": "Isolated AST: AST above the lab's range for age, ALT normal.",
+          "link_calc_id": "c_uln",
+          "link_label": "AST × ULN"
         },
         {
           "t": "row",

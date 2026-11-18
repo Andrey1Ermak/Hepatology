@@ -120,6 +120,28 @@ final class ContentIntegrityTests: XCTestCase {
         _ = try registry("synonyms", as: [String: [String]].self)
     }
 
+    /// Every synonym's canonical term must find a card (otherwise its aliases
+    /// lead nowhere), every card must be findable through at least one
+    /// canonical term, and no alias may be blank or repeat its own term.
+    func testSynonymsReachEveryCard() throws {
+        let synonyms = try registry("synonyms", as: [String: [String]].self)
+        let cards = try allCards()
+        for (canonical, aliases) in synonyms.sorted(by: { $0.key < $1.key }) {
+            let term = SearchMatcher.normalize(canonical)
+            XCTAssertTrue(cards.contains { SearchMatcher.card($0, contains: term) },
+                          "synonym '\(canonical)' matches no card title, code or tag")
+            XCTAssertFalse(aliases.isEmpty, "synonym '\(canonical)' has no aliases")
+            let normalized = aliases.map(SearchMatcher.normalize)
+            XCTAssertFalse(normalized.contains(""), "synonym '\(canonical)' has a blank alias")
+            XCTAssertFalse(normalized.contains(term), "synonym '\(canonical)' lists itself as an alias")
+            XCTAssertEqual(Set(normalized).count, normalized.count, "synonym '\(canonical)' repeats an alias")
+        }
+        let terms = synonyms.keys.map(SearchMatcher.normalize)
+        for card in cards where !terms.contains(where: { SearchMatcher.card(card, contains: $0) }) {
+            XCTFail("card '\(card.id)' is not reachable from any synonym term")
+        }
+    }
+
     /// 26 blocks × 14 days, each block starting the day after the previous one ends.
     func testPlanCoversTheYearWithoutGaps() throws {
         let plan = try registry("plan", as: [PlanBlock].self)

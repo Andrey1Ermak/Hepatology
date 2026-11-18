@@ -30,6 +30,7 @@
 		314F1FA62489B523FE90FF47 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10BE75C1587BBCFE4E31351 /* Badge.swift */; };
 		322C8AC4B753FD97442CB33F /* VitaminsCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133590D7BDE7EE6B36492DF5 /* VitaminsCalc.swift */; };
 		34A5A37E3A1ACF2181EEA7FC /* Card+Pathways.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CCA92DE2CF348232BA1994 /* Card+Pathways.swift */; };
+		39824C57017496FBBE5E6AEB /* SearchMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B797FA5AF537EB797A511B01 /* SearchMatcherTests.swift */; };
 		3A3331DDBE6872C743798402 /* APRIGPRCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AA24BF84034F85CC2DE0D /* APRIGPRCalc.swift */; };
 		3C7E0C7B85F33D63E3EB9485 /* ChipCountRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F48F661E3A6FE32916D21 /* ChipCountRule.swift */; };
 		3D82234C2249C06E751793FB /* ChipBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6346A41417A486CF030A17 /* ChipBoardView.swift */; };
@@ -77,6 +78,7 @@
 		9A1DD9BC2129AF09AEF19369 /* TableBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2D9C57695F03F5F7C2C4D7 /* TableBlockView.swift */; };
 		9CD7A2B5B5E8B1BD7184DF89 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28826C35DA71B801B2DBCC2 /* Block.swift */; };
 		9E681A53CF0D51D70356EF58 /* DoseBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFAF5CB9638C1CF262E6C85 /* DoseBlockView.swift */; };
+		9FC2C33E80E80FD763B19AE3 /* SearchMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76DF29386E72D73E236A48C /* SearchMatcher.swift */; };
 		A0B511A040D1E28B2325CA22 /* CardSourcesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69CD7E59496A94BEBB86CEA /* CardSourcesTests.swift */; };
 		A31547AAA9B30F64B78FA92A /* PlaceholderBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CB3F1B11B649D27028143A /* PlaceholderBlockView.swift */; };
 		A42C373D69313FD9A4C2CB62 /* ListBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167C9464C130DB92F2277AD4 /* ListBlockView.swift */; };
@@ -221,6 +223,7 @@
 		B38F1F809B116292D6856ABE /* HepReference.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = HepReference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6CCA92DE2CF348232BA1994 /* Card+Pathways.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Pathways.swift"; sourceTree = "<group>"; };
 		B740A2C04B02F78FDF1CE592 /* ContentGateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentGateTests.swift; sourceTree = "<group>"; };
+		B797FA5AF537EB797A511B01 /* SearchMatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMatcherTests.swift; sourceTree = "<group>"; };
 		B9408243CF78D88602464203 /* StudyPlanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPlanTests.swift; sourceTree = "<group>"; };
 		BB2960A6A7B580DB9277E10A /* NoteBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBlockView.swift; sourceTree = "<group>"; };
 		BB2D9C57695F03F5F7C2C4D7 /* TableBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableBlockView.swift; sourceTree = "<group>"; };
@@ -242,6 +245,7 @@
 		DC82B16AFE627B057B2779DA /* BlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockView.swift; sourceTree = "<group>"; };
 		E2643586157AA1DE125EF176 /* ChipScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipScreen.swift; sourceTree = "<group>"; };
 		E56053F480C7E51B63D4D991 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		E76DF29386E72D73E236A48C /* SearchMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMatcher.swift; sourceTree = "<group>"; };
 		E7A50DE35F8C19D0E50C7ADB /* DispositionArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispositionArrow.swift; sourceTree = "<group>"; };
 		E822D34F70C01854FDD8F263 /* BranchedChildrenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchedChildrenView.swift; sourceTree = "<group>"; };
 		E9AC60AFBF1EA048AFB31EED /* CardMarkupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMarkupTests.swift; sourceTree = "<group>"; };
@@ -390,6 +394,7 @@
 				5B7C394F13E0FCA443EBE2D9 /* RegistryDecodingTests.swift */,
 				8B72754100DB71FAD9D0DF77 /* RuleEngineTests.swift */,
 				112995B422A8F767C71F130B /* ScenarioTests.swift */,
+				B797FA5AF537EB797A511B01 /* SearchMatcherTests.swift */,
 				B9408243CF78D88602464203 /* StudyPlanTests.swift */,
 			);
 			path = HepReferenceTests;
@@ -466,6 +471,7 @@
 				FC37CEB0E5CA29B7ED090AB2 /* Manifest.swift */,
 				2B839D89C5C2C94AC64C6C5F /* PathwayNode.swift */,
 				446D93E4CDB00514BB51E68A /* Registry.swift */,
+				E76DF29386E72D73E236A48C /* SearchMatcher.swift */,
 				BE53C97D4E785F4C4A2F7053 /* StudyPlan.swift */,
 			);
 			name = Models;
@@ -584,6 +590,7 @@
 				FA9E3EF1DCC635EE7907D42A /* RegistryDecodingTests.swift in Sources */,
 				AF2DF29901EE5FBF18BA5D4C /* RuleEngineTests.swift in Sources */,
 				04EE77F7631105A7E21988C0 /* ScenarioTests.swift in Sources */,
+				39824C57017496FBBE5E6AEB /* SearchMatcherTests.swift in Sources */,
 				FA5C118D17765F0B10ED0BB0 /* StudyPlanTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -674,6 +681,7 @@
 				D38B55DD98B72AD67F2DB683 /* RowView.swift in Sources */,
 				541AD44FCD39EF372B737C2C /* ScoreCalc.swift in Sources */,
 				06356B0C9BF4915358EAA8EA /* ScoreCalcView.swift in Sources */,
+				9FC2C33E80E80FD763B19AE3 /* SearchMatcher.swift in Sources */,
 				CE3C033AF210A09CAC7936C3 /* SearchView.swift in Sources */,
 				5D2EC96B40E6A2914998282A /* SectionCard.swift in Sources */,
 				A901A4E0379AD644D2FB2275 /* SelectableChip.swift in Sources */,
