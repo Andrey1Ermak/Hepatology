@@ -313,7 +313,8 @@
           "pill": {
             "kind": "floor",
             "text": "Cholangitis until proved otherwise: blood culture and IV antibiotics; admit"
-          }
+          },
+          "link_card_id": "kasai_fever"
         },
         {
           "t": "row",

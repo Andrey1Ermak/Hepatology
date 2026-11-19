@@ -1,0 +1,220 @@
+{
+  "id": "kasai_fever",
+  "title": "Fever After Kasai",
+  "code": "BARD Delphi 2022 · expert opinion · no society treatment guideline",
+  "cat": "acute",
+  "acu": "crit",
+  "tags": [
+    "cholangitis",
+    "kasai",
+    "biliary atresia",
+    "portoenterostomy",
+    "fever",
+    "pale stools",
+    "bile lakes",
+    "BARD",
+    "piperacillin-tazobactam",
+    "meropenem",
+    "prophylaxis",
+    "TMP-SMX",
+    "co-trimoxazole"
+  ],
+  "ages": [
+    "infant",
+    "child"
+  ],
+  "entry": "situation",
+  "guidelines": [
+    "bard_delphi_2022",
+    "madadi_sanjani_2024_bard",
+    "baek_2020_cholangitis",
+    "wang_2023_cholangitis_rct",
+    "kelley_quon_2022_kasai",
+    "alatas_2023_prophylaxis_meta",
+    "chen_2026_prophylaxis_meta",
+    "fda_ceftriaxone_label",
+    "fda_tmp_smx_label"
+  ],
+  "plan": [
+    {
+      "block": 3,
+      "days": [
+        5,
+        6,
+        7,
+        8,
+        11,
+        12,
+        13,
+        14
+      ]
+    }
+  ],
+  "related": [
+    "chol_0_3m",
+    "inr_prolonged",
+    "ref_imaging"
+  ],
+  "status": "reviewed",
+  "blocks": [
+    {
+      "t": "note",
+      "k": "crit",
+      "h": "Red flags",
+      "text": "**After a Kasai, any of: fever, paler stools, new or deeper jaundice, or a rising bilirubin or GGT:** think cholangitis — assess now, blood culture, low threshold for IV antibiotics and admission. Fever is not required.\n**Shock, lethargy, poor perfusion or apnea:** sepsis — resuscitate, culture, broad IV antibiotics now; check INR and glucose. Ill young infant: consider a lumbar puncture.\n**Bleeding:** INR and vitamin K; GI bleeding may be variceal.\n**On oral prophylaxis:** prophylaxis does not exclude cholangitis — treat it, with a different class.\n**Recurrent episodes, multiple bile lakes, or bilirubin that does not come back down:** call the transplant center."
+    },
+    {
+      "t": "pathway",
+      "h": "Algorithm",
+      "path_id": "kasai_fever"
+    },
+    {
+      "t": "workup",
+      "h": "First contact",
+      "groups": [
+        {
+          "label": "Before the first dose",
+          "items": [
+            "Blood culture — 2 sets if possible; line culture if a central line",
+            "Urinalysis and urine culture"
+          ]
+        },
+        {
+          "label": "Blood — today",
+          "items": [
+            "CBC with differential, CRP, procalcitonin",
+            "Total and conjugated bilirubin, GGT, ALT, AST, albumin",
+            "INR — vitamin K if prolonged",
+            "Glucose; electrolytes and creatinine"
+          ]
+        },
+        {
+          "label": "Imaging",
+          "items": [
+            "Abdominal ultrasound with Doppler within 24 h: bile lakes, ascites, portal flow, other source"
+          ]
+        },
+        {
+          "label": "Start now",
+          "items": [
+            "IV antibiotics after the culture — choice by local antibiogram; dose with pharmacy",
+            "Feeds back as soon as stable — NG if oral intake is poor",
+            "Ask: date of Kasai, stool color trend, prophylaxis agent, past episodes and cultures"
+          ]
+        }
+      ]
+    },
+    {
+      "t": "list",
+      "h": "Don't miss",
+      "items": [
+        "Cholangitis without fever — only 41% of physician-diagnosed episodes had fever or shivering; GGT or bilirubin was raised or rising in 90% (Madadi-Sanjani 2024)",
+        "Kasai failure behind the infection — bilirubin that does not come back down after treatment needs transplant referral",
+        "Bile lakes or a liver abscess — repeat the ultrasound when fever persists",
+        "Line sepsis and UTI — the other common sources",
+        "Meningitis — in an ill-appearing young infant, consider a lumbar puncture",
+        "Vitamin K deficiency — check INR before lines, drains or biopsy",
+        "Hypoglycemia when feeds stop — small glycogen reserve"
+      ]
+    },
+    {
+      "t": "text",
+      "h": "Why",
+      "text": "After a Kasai, bile drains through a Roux loop of bowel into a scarred, poorly draining biliary tree. Bacteria reach it easily and clear slowly. Antireflux valves and long conduits did not prevent this (lesson 03-05).\n\nCholangitis is the most common complication after the Kasai. In 223 US infants, 57% had at least one episode in the first year (Kelley-Quon 2022). In a Korean series the cumulative incidence was 76% at 1 year, and cholangitis recurred in 76% (Baek 2020). Reported rates vary widely, mostly because definitions differ.\n\nIt often looks mild. In 59 children with cholangitis in the first year, only 41% had fever or shivering, but GGT or bilirubin was raised or rising in 90%. Blood cultures were positive in 1 of 59 (Madadi-Sanjani 2024). So treat on criteria, not on the culture.\n\nThe organisms are gut flora. In Korea, Enterococcus faecium led (28%), then E. coli, Enterobacter cloacae and Klebsiella. Only 38% of gram-negatives were cefotaxime-susceptible (Baek 2020, single center). This is why many centers start with piperacillin–tazobactam or a carbapenem rather than ceftriaxone.\n\nEach episode can stop bile flow. Recurrent cholangitis predicts loss of the native liver and is an indication for transplant referral (lessons 03-07, 03-08, 03-12)."
+    },
+    {
+      "t": "pearls",
+      "h": "Pearls & pitfalls",
+      "items": [
+        {
+          "k": "pitfall",
+          "text": "\"No fever, so not cholangitis.\" Paler stools or a rising GGT may be the only sign."
+        },
+        {
+          "k": "pitfall",
+          "text": "\"Culture negative, so viral.\" Cultures are often negative; treat on the BARD criteria."
+        },
+        {
+          "k": "pitfall",
+          "text": "\"The Kasai has failed.\" Treat the cholangitis first, then judge drainage."
+        },
+        {
+          "k": "pitfall",
+          "text": "\"She is on prophylaxis.\" Breakthrough is common — treat it, and use a different class."
+        },
+        {
+          "k": "pitfall",
+          "text": "\"Oral after 3 days.\" Consensus durations are 10–14 days (suspected) and 14–21 days (confirmed); no data support an early oral switch (lesson 03-07)."
+        },
+        {
+          "k": "pearl",
+          "text": "Ceftriaxone (FDA label): contraindicated in hyperbilirubinemic neonates, in preterm infants up to 41 weeks postmenstrual age, and in neonates ≤ 28 days who need IV calcium, including PN. It also causes gallbladder pseudolithiasis — a trap on the next ultrasound."
+        },
+        {
+          "k": "pearl",
+          "text": "TMP-SMX is contraindicated under 2 months of age and in marked hepatic damage (FDA label) — relevant when choosing prophylaxis."
+        },
+        {
+          "k": "pearl",
+          "text": "Teen or adult after a Kasai: ERCP usually cannot reach the ducts through the Roux loop. Use antibiotics, MRCP and IR drainage (lesson 03-13)."
+        },
+        {
+          "k": "pearl",
+          "text": "Teach every family: pale stools or fever — call the same day."
+        }
+      ]
+    },
+    {
+      "t": "guideline_compare",
+      "h": "Guidelines",
+      "rows": [
+        {
+          "topic": "Definition of cholangitis after the Kasai",
+          "positions": {
+            "bard_delphi_2022": "Suspected: 1 clinical + 1 lab/imaging criterion. Confirmed: 2 + 2, or suspected plus a positive blood culture",
+            "madadi_sanjani_2024_bard": "Retrospective check: very strong correlation with clinicians' diagnosis (r = 0.8), but 15 of 59 clinical diagnoses (25%) did not meet the criteria"
+          },
+          "verdict": "gap",
+          "note": "No society guideline. The Delphi is expert consensus for the first year after the Kasai; prospective validation is ongoing. Adult Tokyo criteria do not fit infants."
+        },
+        {
+          "topic": "Treatment duration",
+          "positions": {
+            "bard_delphi_2022": "Suspected 10–14 days; confirmed 14–21 days"
+          },
+          "verdict": "gap",
+          "note": "Expert consensus only; no trial compares durations for cholangitis. The lessons used these durations as standard."
+        },
+        {
+          "topic": "Empiric antibiotic",
+          "positions": {
+            "bard_delphi_2022": "No agent recommended; piperacillin–tazobactam most used (71% of survey respondents)",
+            "wang_2023_cholangitis_rct": "Febrile cholangitis graded by the trial's own scale. Mild: cefoperazone–tazobactam no worse than meropenem; severe: meropenem, IVIG shortened fever (one open-label trial, China)",
+            "baek_2020_cholangitis": "Enterococci and cefotaxime-resistant gram-negatives common (Korea)"
+          },
+          "verdict": "gap",
+          "note": "No guideline. Choose by local resistance; cefoperazone is not available in the US."
+        },
+        {
+          "topic": "Oral prophylaxis",
+          "positions": {
+            "bard_delphi_2022": "Give for 6–12 months; agent not specified",
+            "alatas_2023_prophylaxis_meta": "No clear reduction in cholangitis (meta-analysis)",
+            "chen_2026_prophylaxis_meta": "Cholangitis 56.9% vs 56.6% with and without (OR 0.88, 95% CI 0.41–1.92); native-liver survival higher with prophylaxis in a subset of studies (54% vs 36%)"
+          },
+          "verdict": "gap",
+          "note": "Consensus practice versus null meta-analyses of weak studies; the survival signal comes from few studies. The North American transplant-evaluation guideline (AASLD/AST/NASPGHAN, 2014; updated 2026) is reported to support prophylaxis — pending its full text, so this verdict is provisional. The app treats prophylaxis as optional: one agent, a written stop date, and never a reason to skip cultures."
+        }
+      ]
+    },
+    {
+      "t": "case",
+      "h": "Test yourself",
+      "case_ids": [
+        "kasai_fever_c1",
+        "kasai_fever_c2",
+        "kasai_fever_c3"
+      ]
+    }
+  ]
+}

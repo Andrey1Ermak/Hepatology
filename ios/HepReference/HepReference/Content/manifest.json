@@ -8,6 +8,7 @@
   {"id": "alp_isolated", "cat": "labs", "section": "ABNORMAL LIVER TESTS"},
   {"id": "ggt_isolated", "cat": "labs", "section": "ABNORMAL LIVER TESTS"},
   {"id": "inr_prolonged", "cat": "labs", "section": "ABNORMAL LIVER TESTS"},
+  {"id": "kasai_fever", "cat": "acute", "section": "ACUTE LIVER ILLNESS"},
   {"id": "ref_norms", "cat": "ref", "section": "REFERENCE"},
   {"id": "ref_imaging", "cat": "ref", "section": "REFERENCE"},
   {"id": "ref_biopsy", "cat": "ref", "section": "REFERENCE"},

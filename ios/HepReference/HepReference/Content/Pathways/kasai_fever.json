@@ -1,0 +1,262 @@
+{
+  "id": "kasai_fever",
+  "children": [
+    {
+      "t": "section",
+      "h": "1 · Is the child septic?",
+      "children": [
+        {
+          "t": "out",
+          "cond": "Shock, poor perfusion, lethargy or apnea",
+          "pill": {
+            "kind": "picu",
+            "text": "Resuscitate; blood culture, then broad IV antibiotics (meropenem-class) now; INR and glucose; call the hepatology and surgical team now"
+          }
+        },
+        {
+          "t": "row",
+          "text": "Ill-appearing young infant: consider a lumbar puncture, and ask pharmacy for meningitic doses until meningitis is excluded (expert opinion)."
+        },
+        {
+          "t": "out",
+          "cond": "Bleeding",
+          "pill": {
+            "kind": "floor",
+            "text": "Check INR and give vitamin K; GI bleeding may be variceal — call hepatology and GI now; then step 2"
+          },
+          "link_card_id": "inr_prolonged"
+        },
+        {
+          "t": "out",
+          "cond": "Not septic",
+          "subtext": "Go to step 2 — do not wait for a fever to start"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "2 · Could this be cholangitis?",
+      "children": [
+        {
+          "t": "box",
+          "style": "info",
+          "children": [
+            {
+              "t": "group",
+              "label": "A · Clinical",
+              "children": [
+                {
+                  "t": "row",
+                  "text": "Fever without another source, or shivering",
+                  "bullet": true
+                },
+                {
+                  "t": "row",
+                  "text": "Paler stools",
+                  "bullet": true
+                },
+                {
+                  "t": "row",
+                  "text": "New or deeper jaundice",
+                  "bullet": true
+                },
+                {
+                  "t": "row",
+                  "text": "Abdominal discomfort: vomiting, poor feeding, irritability",
+                  "bullet": true
+                }
+              ]
+            },
+            {
+              "t": "group",
+              "label": "B · Lab and imaging",
+              "children": [
+                {
+                  "t": "row",
+                  "text": "Raised WBC, CRP or procalcitonin",
+                  "bullet": true
+                },
+                {
+                  "t": "row",
+                  "text": "Raised or rising ALT/AST",
+                  "bullet": true
+                },
+                {
+                  "t": "row",
+                  "text": "Raised or rising GGT or bilirubin",
+                  "bullet": true
+                },
+                {
+                  "t": "row",
+                  "text": "Bile lakes on ultrasound",
+                  "bullet": true
+                }
+              ]
+            },
+            {
+              "t": "row",
+              "text": "BARD Delphi 2022: for first episodes in the first year after the Kasai. Expert consensus, not yet validated prospectively. GGT and bilirubin together count as one B item."
+            }
+          ]
+        },
+        {
+          "t": "out",
+          "cond": "2 from A and 2 from B, or suspected with a positive blood culture",
+          "pill": {
+            "kind": "floor",
+            "text": "Confirmed cholangitis — admit, IV antibiotics 14–21 days"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "1 from A and 1 from B",
+          "pill": {
+            "kind": "floor",
+            "text": "Suspected cholangitis — admit, IV antibiotics 10–14 days"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Only A, or only B (for example fever with normal labs, or a rising GGT in a well child)",
+          "pill": {
+            "kind": "step",
+            "text": "Same day: blood culture, labs and ultrasound. BARD sets a very low threshold — if in doubt, treat as suspected cholangitis"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Fever with a clear other source (otitis, bronchiolitis, UTI, line), normal GGT, bilirubin and stools",
+          "subtext": "Treat that source; recheck bilirubin, GGT and stool color soon. If anything changes, go back to the BARD lists (expert opinion)"
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "3 · First hour",
+      "children": [
+        {
+          "t": "row",
+          "text": "Blood culture before the first dose — 2 sets if you can; culture the line too if there is one."
+        },
+        {
+          "t": "row",
+          "text": "Start IV antibiotics; do not wait for results. A negative culture does not stop treatment."
+        },
+        {
+          "t": "row",
+          "text": "Abdominal ultrasound with Doppler at every episode: bile lakes, ascites, portal flow, another source.",
+          "link_card_id": "ref_imaging"
+        },
+        {
+          "t": "row",
+          "text": "Urinalysis and urine culture: UTI is the main alternative source."
+        },
+        {
+          "t": "row",
+          "text": "INR — vitamin K if prolonged, and before any procedure.",
+          "link_card_id": "inr_prolonged"
+        },
+        {
+          "t": "row",
+          "text": "Glucose when feeds stop; restart feeds (NG if needed) as soon as the child is stable."
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "4 · Empiric antibiotics (expert opinion)",
+      "children": [
+        {
+          "t": "row",
+          "text": "No society guideline sets the drug. Follow your local antibiogram and ID advice; dose with pharmacy."
+        },
+        {
+          "t": "arm",
+          "kind": "mod",
+          "tag": "Stable, first episode or breakthrough",
+          "children": [
+            {
+              "t": "row",
+              "text": "Piperacillin–tazobactam is the most common choice (71% of BARD survey respondents); meropenem if local resistance is high."
+            },
+            {
+              "t": "row",
+              "text": "On prophylaxis: choose a different class from the prophylactic drug."
+            },
+            {
+              "t": "row",
+              "text": "Avoid ceftriaxone as first choice: it misses enterococci, resistant gram-negatives are common in some series, and it causes biliary sludge that confuses the ultrasound. Contraindicated in hyperbilirubinemic neonates (FDA label)."
+            }
+          ]
+        },
+        {
+          "t": "arm",
+          "kind": "sev",
+          "tag": "Septic",
+          "children": [
+            {
+              "t": "row",
+              "text": "Meropenem-class cover."
+            },
+            {
+              "t": "row",
+              "text": "Gram-positive cocci in the culture, or no response → add vancomycin."
+            }
+          ]
+        },
+        {
+          "t": "out",
+          "cond": "Culture positive",
+          "subtext": "Narrow to the isolate; keep the full duration"
+        },
+        {
+          "t": "out",
+          "cond": "No better at 72 h",
+          "pill": {
+            "kind": "floor",
+            "text": "Repeat cultures and ultrasound (bile lake, abscess, line); broaden cover; involve hepatology, surgery and ID"
+          }
+        }
+      ]
+    },
+    {
+      "t": "section",
+      "h": "5 · After the episode",
+      "children": [
+        {
+          "t": "row",
+          "text": "Complete the course: 10–14 days if suspected, 14–21 days if confirmed (BARD Delphi, first year). Give it IV — no data support an early oral switch (lesson 03-07)."
+        },
+        {
+          "t": "row",
+          "text": "Recheck bilirubin after the course. Do not call the Kasai failed until the cholangitis is treated."
+        },
+        {
+          "t": "out",
+          "cond": "Single bile lake near the porta",
+          "pill": {
+            "kind": "step",
+            "text": "Prolonged IV antibiotics; discuss drainage with hepatobiliary surgery and IR in a transplant center"
+          }
+        },
+        {
+          "t": "out",
+          "cond": "Recurrent or hard-to-treat cholangitis, multiple bile lakes, or bilirubin that does not return to its pre-episode level",
+          "pill": {
+            "kind": "picu",
+            "text": "Refer to a transplant center now — recurrent cholangitis is a transplant-referral trigger (expert opinion; lessons 03-07, 03-08, 03-12)"
+          },
+          "link_card_id": "chol_0_3m"
+        },
+        {
+          "t": "out",
+          "cond": "Settled, bilirubin back to baseline",
+          "pill": {
+            "kind": "dc",
+            "text": "Home with the family plan: pale stools or fever — same day. Review prophylaxis"
+          }
+        }
+      ]
+    }
+  ]
+}

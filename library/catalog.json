@@ -15,7 +15,7 @@
     "received": null,
     "noted": null,
     "applied": null,
-    "oa": "Europe PMC 2026-11-16: закрыт"
+    "oa": "Europe PMC 2026-11-19: закрыт"
   },
   {
     "id": "naspghan_espghan_2017_nc",
@@ -36,7 +36,7 @@
     "received": null,
     "noted": null,
     "applied": null,
-    "oa": "Europe PMC 2026-11-16: закрыт"
+    "oa": "Europe PMC 2026-11-19: закрыт"
   },
   {
     "id": "colantonio_2012_caliper",
@@ -56,7 +56,7 @@
     "received": null,
     "noted": null,
     "applied": null,
-    "oa": "Europe PMC 2026-11-16: закрыт"
+    "oa": "Europe PMC 2026-11-19: закрыт"
   },
   {
     "id": "naspghan_2022_palf",
@@ -75,7 +75,7 @@
     "received": null,
     "noted": null,
     "applied": null,
-    "oa": "Europe PMC 2026-11-16: закрыт"
+    "oa": "Europe PMC 2026-11-19: закрыт"
   },
   {
     "id": "aasld_2025_masld_peds",
@@ -94,7 +94,7 @@
     "received": null,
     "noted": null,
     "applied": null,
-    "oa": "Europe PMC 2026-11-16: закрыт"
+    "oa": "Europe PMC 2026-11-19: закрыт"
   },
   {
     "id": "aasld_ast_naspghan_2026_lt_eval",
@@ -103,17 +103,19 @@
     "url": null,
     "priority": 2,
     "status": "wanted",
-    "need": "Скрининг ГПС: порог SpO2 (< 96% или < 97%) и поза (лёжа/сидя/стоя); ортодеоксия ≥ 4%; ППГ — порог mPAP как противопоказание; критерии направления на трансплантацию (заменяет Squires 2014)",
+    "need": "Скрининг ГПС: порог SpO2 (< 96% или < 97%) и поза (лёжа/сидя/стоя); ортодеоксия ≥ 4%; ППГ — порог mPAP как противопоказание; критерии направления на трансплантацию (заменяет Squires 2014); холангит после Касаи: рекомендует ли профилактику антибиотиками и с каким уровнем; рецидивирующий холангит как повод к направлению",
     "for": [
       "hps_poph",
       "chol_0_3m",
-      "post_lt"
+      "post_lt",
+      "kasai_fever",
+      "D-2026-11-19-1"
     ],
     "added": "2026-11-09",
     "received": null,
     "noted": null,
     "applied": null,
-    "oa": "Europe PMC 2026-11-16: закрыт"
+    "oa": "Europe PMC 2026-11-19: закрыт"
   },
   {
     "id": "baveno_viii_2026",
@@ -133,7 +135,7 @@
     "received": null,
     "noted": null,
     "applied": null,
-    "oa": "Europe PMC 2026-11-16: закрыт"
+    "oa": "Europe PMC 2026-11-19: закрыт"
   },
   {
     "id": "easl_2025_vascular",
@@ -152,7 +154,7 @@
     "received": null,
     "noted": null,
     "applied": null,
-    "oa": "Europe PMC 2026-11-16: закрыт"
+    "oa": "Europe PMC 2026-11-19: закрыт"
   },
   {
     "id": "emerick_1999_alagille",
@@ -171,7 +173,7 @@
     "received": null,
     "noted": null,
     "applied": null,
-    "oa": "Europe PMC 2026-11-16: закрыт"
+    "oa": "Europe PMC 2026-11-19: закрыт"
   },
   {
     "id": "grieve_2013_apri",
@@ -189,7 +191,7 @@
     "received": null,
     "noted": null,
     "applied": null,
-    "oa": "Europe PMC 2026-11-16: закрыт"
+    "oa": "Europe PMC 2026-11-19: закрыт"
   },
   {
     "id": "iorio_2005",
@@ -206,7 +208,7 @@
     "received": null,
     "noted": null,
     "applied": null,
-    "oa": "Europe PMC 2026-11-16: закрыт"
+    "oa": "Europe PMC 2026-11-19: закрыт"
   },
   {
     "id": "aap_2022_hyperbili",
@@ -226,7 +228,7 @@
     "received": null,
     "noted": null,
     "applied": null,
-    "oa": "Europe PMC 2026-11-16: закрыт"
+    "oa": "Europe PMC 2026-11-19: закрыт"
   },
   {
     "id": "aap_2025_ba_primary_care",
@@ -247,7 +249,7 @@
     "received": null,
     "noted": null,
     "applied": null,
-    "oa": "Europe PMC 2026-11-16: закрыт"
+    "oa": "Europe PMC 2026-11-19: закрыт"
   },
   {
     "id": "fighs_2025_infant_cholestasis",
@@ -266,6 +268,43 @@
     "received": null,
     "noted": null,
     "applied": null,
-    "oa": "Europe PMC 2026-11-16: закрыт"
+    "oa": "Europe PMC 2026-11-19: закрыт"
+  },
+  {
+    "id": "japan_2026_ba",
+    "citation": "Okubo R, Kuroda T, Abukawa D, et al. Clinical Practice Guidelines for Biliary Atresia in Japan, 2nd Edition. J Hepatobiliary Pancreat Sci 2026",
+    "doi": "10.1002/jhbp.70101",
+    "url": null,
+    "priority": 2,
+    "status": "wanted",
+    "need": "Клинические вопросы о холангите после Касаи: профилактика антибиотиками (да/нет, срок, препарат), длительность лечения, стероиды; уровень рекомендаций. Это первое руководство общества по холангиту — может заменить вердикты GAP в kasai_fever",
+    "for": [
+      "kasai_fever",
+      "chol_0_3m",
+      "D-2026-11-19-1"
+    ],
+    "added": "2026-11-19",
+    "received": null,
+    "noted": null,
+    "applied": null,
+    "oa": "Europe PMC 2026-11-19: закрыт"
+  },
+  {
+    "id": "squires_2014_lt_eval",
+    "citation": "Squires RH, Ng V, Romero R, et al. Evaluation of the pediatric patient for liver transplantation: 2014 practice guideline by AASLD, AST and NASPGHAN. Hepatology 2014;60:362-398",
+    "doi": "10.1002/hep.27191",
+    "url": null,
+    "priority": 3,
+    "status": "wanted",
+    "need": "Раздел о билиарной атрезии после Касаи: точная формулировка о профилактике холангита антибиотиками (по Ravanbakhsh 2024 — ссылаются на одну работу) и уровень доказательств. Нужно, только если в Martinez 2026 этого нет",
+    "for": [
+      "kasai_fever",
+      "D-2026-11-19-1"
+    ],
+    "added": "2026-11-19",
+    "received": null,
+    "noted": null,
+    "applied": null,
+    "oa": "Europe PMC 2026-11-19: закрыт"
   }
 ]

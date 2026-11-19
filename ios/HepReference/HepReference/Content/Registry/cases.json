@@ -246,5 +246,29 @@
     "question": "What is happening, and who should know?",
     "answer": "IFALD with portal hypertension. Switch to fish-oil lipid, refer to an intestinal-failure center now, and assess fibrosis.",
     "teaching": "IFALD is the long-PN end of the same spectrum. Bilirubin can normalize on fish oil while fibrosis persists, so follow platelets and spleen size, not bilirubin alone (lesson 02-08)."
+  },
+  {
+    "id": "kasai_fever_c1",
+    "card": "kasai_fever",
+    "stem": "A girl of 4 months had a Kasai at 41 days; her bilirubin had fallen to 1.6 mg/dL. She is on oral prophylaxis. Today: 38.4 °C, irritable, paler stools, bilirubin 3.9 mg/dL, GGT 480 → 790 U/L, CRP 64 mg/L. The blood culture is pending.",
+    "question": "How do you classify and treat this?",
+    "answer": "Confirmed cholangitis by BARD: two clinical items (fever, paler stools) and two lab items (rising GGT and bilirubin — one item; raised CRP — the second). Admit, IV antibiotics from a class different from her prophylaxis — piperacillin–tazobactam or meropenem by local resistance — for 14–21 days. Ultrasound for bile lakes; escalate if no better at 72 h.",
+    "teaching": "Prophylaxis does not exclude cholangitis. Lesson 03-14, core case; BARD Delphi 2022."
+  },
+  {
+    "id": "kasai_fever_c2",
+    "card": "kasai_fever",
+    "stem": "A boy 4 weeks after his Kasai is afebrile and feeding a little less. His mother says the stools look paler. GGT has doubled since last week.",
+    "question": "Can you wait for a fever?",
+    "answer": "No. Paler stools (clinical) plus a rising GGT (lab) meet the BARD definition of suspected cholangitis. Blood culture, admit, IV antibiotics for 10–14 days.",
+    "teaching": "Only 41% of physician-diagnosed episodes had fever; GGT or bilirubin rose in 90% (Madadi-Sanjani 2024). Lesson 03-07, case 1."
+  },
+  {
+    "id": "kasai_fever_c3",
+    "card": "kasai_fever",
+    "stem": "A 7-month-old is admitted with her third cholangitis in 5 months. Ultrasound shows several cystic bile lakes. Bilirubin is 4.8 mg/dL and has not returned to its previous level of 1.5.",
+    "question": "What else, besides antibiotics?",
+    "answer": "Treat this episode, then refer to a transplant center now. Recurrent cholangitis with multiple bile lakes and a bilirubin that does not come back down mean the Kasai is failing.",
+    "teaching": "Recurrent cholangitis is a transplant indication (lessons 03-07, 03-12). Per lesson 03-07, multiple bile lakes mean dilated true ducts and a worse prognosis, while a single lake near the porta may be drained."
   }
 ]
