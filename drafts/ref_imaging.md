@@ -28,3 +28,7 @@ Reference card B — **built 2026-11-06 (day 21)** → `Content/Cards/ref_imagin
 - **Renal ultrasound in ALGS:** dysplasia (small, echogenic, ± cysts) is the leading lesion; an abnormal renal US marked lower eGFR (Demaret 2017 abstract — do not publish the numbers). Before LT: renal imaging including the renal arteries.
 - **Ocular ultrasound:** optic disc drusen as a sign (Nischal 1997) — mention only if the eye row is ever added; not an imaging-card priority.
 - **DXA:** in a short child a raw Z-score overstates the deficit → adjust for height-for-age (Loomes 2019 ChiLDReN pattern); compare with the child's own scans.
+
+### 04-13 · Alagille syndrome XIII: long-term outcomes (synced 2026-11-19)
+- **HCC surveillance in ALGS (candidate row at block 4 synthesis, D-2026-11-10-1 pattern):** liver US + AFP every 6 months for all ages and severities (Ayoub 2023 expert recommendation — verified in the full text PMC10522532); contrast CT/MRI for a suspicious lesion or poor US visibility (Ayoub Table 2). The existing Rapp 2017 pearl stays; add: "a large nodule on the first US → contrast MRI to characterize it, then it is the baseline — change, not size, signals HCC".
+- **Brain MRA at transition and before pregnancy** — already listed in the 04-05 entry; lesson repeats it as an adult-handover item.

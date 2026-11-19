@@ -50,3 +50,6 @@ Main home is `hps_poph` (32); here only the link from portal hypertension to the
 
 ### Guideline watch (2026-11-02, weekly check)
 - **Baveno VIII** published: J Hepatol, online 19 Aug 2026, doi 10.1016/j.jhep.2026.07.030 — includes the first Baveno pediatric recommendations. Use it instead of Baveno VII for adult/pediatric compare rows at build; read the full text first. The APSPGHAN 2026 statement cited by lesson 03-09 was not found by web search — keep TODO(verify).
+
+### 04-13 · Alagille syndrome XIII: long-term outcomes (synced 2026-11-19)
+- **Adult with ALGS:** late decompensation, sometimes at transition (Ayoub 2023 — verified); anicteric teen with platelets 110 and a 15-cm spleen → elastography + variceal assessment, before pregnancy or major surgery as well. Caveats: ongoing cholestasis (GGT 310) raises liver stiffness; Baveno rule-out criteria are adult-validated (see 04-10 note). Pregnancy may worsen portal hypertension; preconception endoscopic variceal screening is advised (Ayoub 2023 — verified).
