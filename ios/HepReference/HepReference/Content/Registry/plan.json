@@ -49,19 +49,19 @@
   ]},
   {"block": 4, "title": "Alagille syndrome and ductopenia", "start": "2026-11-09", "days": [
     {"day": 1, "topic": "Genetics", "cards": ["ref_genetics"], "lesson": "2026-11-07"},
-    {"day": 2, "topic": "Clinical criteria", "cards": [], "lesson": "2026-11-08"},
-    {"day": 3, "topic": "The liver in Alagille", "cards": [], "lesson": "2026-11-09"},
-    {"day": 4, "topic": "The heart", "cards": [], "lesson": "2026-11-10"},
-    {"day": 5, "topic": "Vessels", "cards": [], "lesson": "2026-11-11"},
-    {"day": 6, "topic": "Kidneys, skeleton, eyes, face", "cards": [], "lesson": "2026-11-12"},
+    {"day": 2, "topic": "Clinical criteria", "cards": ["ref_genetics"], "lesson": "2026-11-08"},
+    {"day": 3, "topic": "The liver in Alagille", "cards": ["ref_imaging", "ref_biopsy"], "lesson": "2026-11-09"},
+    {"day": 4, "topic": "The heart", "cards": ["ref_genetics"], "lesson": "2026-11-10"},
+    {"day": 5, "topic": "Vessels", "cards": ["ref_imaging", "ref_biopsy", "inr_prolonged"], "lesson": "2026-11-11"},
+    {"day": 6, "topic": "Kidneys, skeleton, eyes, face", "cards": ["ref_imaging"], "lesson": "2026-11-12"},
     {"day": 7, "topic": "Pruritus: the treatment ladder", "cards": [], "lesson": "2026-11-13"},
     {"day": 8, "topic": "IBAT inhibitors", "cards": [], "lesson": "2026-11-14"},
     {"day": 9, "topic": "Surgical biliary diversion", "cards": [], "lesson": "2026-11-15"},
     {"day": 10, "topic": "Natural history", "cards": [], "lesson": "2026-11-16"},
     {"day": 11, "topic": "Transplant in Alagille", "cards": [], "lesson": "2026-11-17"},
     {"day": 12, "topic": "Other causes of ductopenia", "cards": [], "lesson": "2026-11-18"},
-    {"day": 13, "topic": "Long-term outcomes", "cards": [], "lesson": "2026-11-19"},
-    {"day": 14, "topic": "Synthesis and self-test", "cards": []}
+    {"day": 13, "topic": "Long-term outcomes", "cards": ["ref_imaging"], "lesson": "2026-11-19"},
+    {"day": 14, "topic": "Synthesis and self-test", "cards": ["ref_genetics", "ref_imaging", "ref_biopsy", "inr_prolonged"], "lesson": "2026-11-20"}
   ]},
   {"block": 5, "title": "PFIC and genetic cholestasis", "start": "2026-11-23", "days": [
     {"day": 1, "topic": "Physiology of bile secretion", "cards": []},

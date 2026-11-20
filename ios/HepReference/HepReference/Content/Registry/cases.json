@@ -270,5 +270,13 @@
     "question": "What else, besides antibiotics?",
     "answer": "Treat this episode, then refer to a transplant center now. Recurrent cholangitis with multiple bile lakes and a bilirubin that does not come back down mean the Kasai is failing.",
     "teaching": "Recurrent cholangitis is a transplant indication (lessons 03-07, 03-12). Per lesson 03-07, multiple bile lakes mean dilated true ducts and a worse prognosis, while a single lake near the porta may be drained."
+  },
+  {
+    "id": "inr_prolonged_c5",
+    "card": "inr_prolonged",
+    "stem": "An 8-year-old with Alagille syndrome and his native liver (bilirubin 1.2 mg/dL, platelets 140 × 10⁹/L) fell off his bike without a helmet. Two hours later he has a headache, has vomited twice and is drowsy. INR is 1.7; his vitamins were stopped a year ago \"because the jaundice had gone\". Blood pressure is 128/84 mmHg.",
+    "question": "What do you do now?",
+    "answer": "Treat it as an intracranial bleed until proven otherwise: emergency head CT with CT angiography, IV vitamin K now, neurosurgery. If CT shows a bleed: prothrombin complex concentrate (PCC) or plasma — do not wait for vitamin K to work — and PICU. Later: brain MRA, renal artery Doppler if the blood pressure stays high once the head is cleared, restart fat-soluble vitamins, no contact sport.",
+    "teaching": "In Alagille syndrome, bleeding happens without liver failure and often with normal tests (38 of 174 children; Lykavieris 2003). Here a vitamin K lapse added to fragile vessels. Lesson 04-05; block 4 synthesis, case 4 (expert opinion)."
   }
 ]

@@ -57,6 +57,14 @@
    "days": [
     3
    ]
+  },
+  {
+   "block": 4,
+   "days": [
+    3,
+    5,
+    14
+   ]
   }
  ],
  "related": [
@@ -218,7 +226,8 @@
     "Focal lesion or low-molecular-weight heparin: higher bleeding risk (Westheim 2012).",
     "Cancer or stem cell transplant: all 3 deaths in 469 biopsies (Cohen 1992).",
     "Infant < 3 months: complications in 12 of 66, 7 of them from sedation (Azzam 2005).",
-    "Alagille syndrome and arthrogryposis–renal dysfunction–cholestasis (ARC): bleeding tendency; platelet dysfunction in ARC (ESPGHAN 2015). Suspected ARC: diagnose by genes (expert opinion).",
+    "Alagille syndrome: 38 of 174 children (22%) had a major bleed without liver failure, with normal median platelets and prothrombin time; 8 died of bleeding, 1 after needle liver biopsy (Lykavieris 2003). Normal tests do not clear the procedure.",
+    "Arthrogryposis–renal dysfunction–cholestasis (ARC): platelet dysfunction (ESPGHAN 2015). Suspected ARC: diagnose by genes (expert opinion).",
     "Overall: transfusion after 2.8–3.3% of pediatric percutaneous biopsies (Cohen 1992; Short 2013)."
    ]
   },

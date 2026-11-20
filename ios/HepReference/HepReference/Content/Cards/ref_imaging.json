@@ -50,6 +50,16 @@
       "days": [
         3
       ]
+    },
+    {
+      "block": 4,
+      "days": [
+        3,
+        5,
+        6,
+        13,
+        14
+      ]
     }
   ],
   "related": [
@@ -167,6 +177,15 @@
             "First: Doppler daily in week 1 and whenever enzymes rise (expert practice)",
             "If unclear: CT angiography or angiography",
             "Avoid: Adult velocity cutoffs"
+          ]
+        },
+        {
+          "t": "Alagille syndrome: lifelong surveillance",
+          "sub": [
+            "Liver: Ultrasound and alpha-fetoprotein (AFP) every 6 months, at any age and any severity, while the native liver is in place (expert opinion, Ayoub 2023)",
+            "If unclear: Contrast CT or MRI for a questionable lesion on ultrasound, whatever the AFP",
+            "Brain: MRI with angiography (MRA) at about 8 years, before major surgery, and at transition if never done (expert opinion, Ayoub 2023; no screening guideline)",
+            "Now: Emergency head imaging for neurological symptoms at any age, including after a head injury (Ayoub 2023)"
           ]
         }
       ]
@@ -416,6 +435,10 @@
         {
           "k": "pearl",
           "text": "Alagille syndrome: a giant central mass in segment VIII is usually a regenerative nodule. In 6 such children, all were dark on T2, 5 matched the liver in every contrast phase, and 5 had pathology showing preserved duct architecture, a regenerative nodule (Rapp 2017). Image with MRI; a peripheral or arterially enhancing lesion needs its own workup."
+        },
+        {
+          "k": "pitfall",
+          "text": "Butterfly vertebrae are easy to miss. In 50 children with Alagille syndrome, vertebral anomalies (most often at T6–T9) were found in 66% vs 10% of cholestatic controls, and 54% had been misreported (Sanderson 2002). Ask for an anteroposterior (AP) thoracic spine film read for clefts."
         }
       ]
     },

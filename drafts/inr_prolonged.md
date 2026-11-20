@@ -39,3 +39,6 @@ Built 2026-11-05 (Day 20) → `Content/Cards/inr_prolonged.json`, `Pathways/inr_
 ### 04-05 · Alagille syndrome V: the vessels (synced 2026-11-11)
 - **ALGS (lesson 04-05; Lykavieris 2003):** bleeding in 22% of 174 children with normal median PT and platelets → a normal INR does not mean a safe procedure in ALGS; vitamin K before procedures and after head trauma. Candidate pearl for inr_prolonged at block 4 synthesis. TODO(verify).
 
+
+### 04-14 · Block 4 synthesis (synced 2026-11-20)
+- **Published 2026-11-20 (D-2026-11-20-1):** pitfall — ALGS bleeds with a normal INR (Lykavieris 2003, abstract verified); head injury with symptoms → emergency head imaging + vitamin K whatever the INR (expert opinion; Ayoub 2023 emergent imaging for neuro symptoms); case inr_prolonged_c5 (block 4 synthesis case 4).

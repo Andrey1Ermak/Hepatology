@@ -50,6 +50,13 @@
       "days": [
         13
       ]
+    },
+    {
+      "block": 4,
+      "days": [
+        5,
+        14
+      ]
     }
   ],
   "related": [
@@ -168,6 +175,14 @@
         {
           "k": "pitfall",
           "text": "A near-normal INR keeps PELD low in cholestatic disease, so the score understates risk."
+        },
+        {
+          "k": "pitfall",
+          "text": "Alagille syndrome bleeds with a normal INR: 38 of 174 children (22%) had a major bleed without liver failure, with normal median platelets and prothrombin time (Lykavieris 2003)."
+        },
+        {
+          "k": "pitfall",
+          "text": "Alagille syndrome and a head injury with headache, vomiting or drowsiness: emergency head imaging and IV vitamin K, whatever the INR (expert opinion; Ayoub 2023)."
         }
       ]
     },
@@ -235,7 +250,8 @@
         "inr_prolonged_c1",
         "inr_prolonged_c2",
         "inr_prolonged_c3",
-        "inr_prolonged_c4"
+        "inr_prolonged_c4",
+        "inr_prolonged_c5"
       ]
     }
   ]

@@ -53,3 +53,6 @@ Main home is `hps_poph` (32); here only the link from portal hypertension to the
 
 ### 04-13 · Alagille syndrome XIII: long-term outcomes (synced 2026-11-19)
 - **Adult with ALGS:** late decompensation, sometimes at transition (Ayoub 2023 — verified); anicteric teen with platelets 110 and a 15-cm spleen → elastography + variceal assessment, before pregnancy or major surgery as well. Caveats: ongoing cholestasis (GGT 310) raises liver stiffness; Baveno rule-out criteria are adult-validated (see 04-10 note). Pregnancy may worsen portal hypertension; preconception endoscopic variceal screening is advised (Ayoub 2023 — verified).
+
+### 04-14 · Block 4 synthesis (synced 2026-11-20)
+- ALGS adult case (slide 14): normal bilirubin but platelets 105 and spleen 15 cm = portal hypertension → endoscopy before conception; brain MRA and echo before pregnancy; maternal-fetal medicine plan. Pre-conception counseling: 50% transmission risk, severity unpredictable (Ayoub 2023 — verified full text).

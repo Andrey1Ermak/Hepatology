@@ -63,3 +63,6 @@
 - **Not published (no verified number):** JAG1 whole-gene deletion share (6.4% GALA / ~13% CHOP / 70 of ~700 catalogued, Gilbert 2019); single ABCB4/ABCB11 variant 25% vs 26% controls (Chen 2019); panel median 21 days (Karpen 2021); GEMINI hours (abstract: urgent 3.3 vs 4.0 days; routine genome slower, 6.1 vs 4.2 days); NHS R171 criteria; FDA/EMA IBAT label ages for PFIC (lesson slide 17 — labels not checked).
 - Fawaz 2017 positions taken from the lessons (full text not accessible today) — D-2026-11-09-3; verify.
 - Deferred: case block (reference card; no cases), BSEP genotype table (only BSEP3 vs BSEP1 line published), NBAS fever protocol (→ palf card), NPC1 case report.
+
+### 04-14 · Block 4 synthesis (synced 2026-11-20)
+- **Published 2026-11-20 (D-2026-11-20-1):** "Send the parents" — 25 of 53 (47%) JAG1-positive relatives failed clinical criteria (Kamath 2003, abstract verified); pitfall — JAG1 in 2/94 TOF and 2/50 pulmonic stenosis without ALGS (Bauer 2010, abstract verified) → test a related donor for the family variant (expert practice). Still not published: parental mosaicism 8.2% (Giannakudis 2001 — not found in Europe PMC), whole-gene deletion share, NOTCH2 cardiac 64% vs 92%, McElhinney 2002, related-donor guideline row (Squires 2014 full text pending).

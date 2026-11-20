@@ -58,7 +58,10 @@
   {
    "block": 4,
    "days": [
-    1
+    1,
+    2,
+    4,
+    14
    ]
   }
  ],
@@ -244,7 +247,8 @@
     "Trio testing doubled the odds of a diagnosis vs testing the child alone (odds ratio 2.04; Clark 2018).",
     "Only parents can prove two recessive variants sit on different copies of the gene (in trans).",
     "A new (de novo) dominant variant, such as in JAG1, is classified faster when both parents are negative.",
-    "Two variants in ABCB11 in the child alone is a hypothesis until the parents are tested."
+    "Two variants in ABCB11 in the child alone is a hypothesis until the parents are tested.",
+    "Test relatives for the family variant, not by exam alone: 25 of 53 (47%) JAG1-positive relatives of Alagille probands did not meet clinical criteria (Kamath 2003)."
    ]
   },
   {
@@ -394,6 +398,10 @@
     {
      "k": "pitfall",
      "text": "Genome for every cholestatic infant: in a preterm on PN the yield is low and VUS add anxiety without benefit."
+    },
+    {
+     "k": "pitfall",
+     "text": "A well parent with a \"childhood murmur\" can carry the family JAG1 variant: JAG1 variants were found in 2 of 94 patients with tetralogy of Fallot and 2 of 50 with pulmonary valve or branch stenosis or atresia who had no Alagille diagnosis (Bauer 2010). Test every related living donor for the family JAG1 or NOTCH2 variant (Ayoub 2023, expert review)."
     }
    ]
   },

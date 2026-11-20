@@ -31,3 +31,6 @@ Reference card C (task: day 22). Inbox is filled by daily lesson sync (§3.4).
 
 ### Guideline watch (2026-11-09, weekly check)
 - **AASLD EXPO: Liver Biopsy** — Verna EC, Adler DG, Kappus MR, Rand EB, Tapper EB, Rockey DC. Hepatology 2026, doi 10.1097/HEP.0000000000001828 (published 2026-10-15; PMID 42841770). Updates AASLD 2009; has pediatric recommendations (age/size, sedation, anatomy, coagulopathy, local expertise); adds EUS-guided biopsy. Full text not accessible on 2026-11-09 → re-check the AASLD 2009 lines (≥ 11 portal tracts etc.) before changing anything.
+
+### 04-14 · Block 4 synthesis (synced 2026-11-20)
+- **Published 2026-11-20 (D-2026-11-20-1):** "Who bleeds" — Lykavieris 2003 (38/174, 22%, normal median platelets and PT, 8 bleeding deaths, 1 after needle biopsy; abstract verified); ARC split into its own line. Still open: paucity threshold conflict (0.9 vs 0.5), duct-count metrics, DILIN prognosis indication — at card 3/26 build.
