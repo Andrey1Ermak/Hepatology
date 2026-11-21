@@ -3,7 +3,7 @@
 > Файл генерируется командой `python3 tools/library.py render` из `library/catalog.json` — руками не править.
 > Как отдать документ — `library/README.md`. Коротко: положи PDF в `library/inbox/` (имя любое) и скажи Claude Code в проекте `/library`.
 
-**Нужно:** 9 (P1: 0, P2: 5, P3: 4) · **Получено, ждёт конспекта:** 0 · **Конспект готов:** 7 · **Учтено в приложении:** 0
+**Нужно:** 9 (P1: 0, P2: 5, P3: 4) · **Получено, ждёт конспекта:** 0 · **Конспект готов:** 5 · **Учтено в приложении:** 2
 
 ## Нужно (P2) — проверка уже опубликованного или карточки ближайших блоков
 
@@ -26,10 +26,13 @@
 
 ## Конспект готов — ждёт внесения в приложение
 
-- `aap_2022_hyperbili` · Kemper AR et al. Clinical Practice Guideline Revision: Management of Hyperbilirubinemia in the Newborn Infant 35 or More Weeks of Gestation (AAP). Pediatrics 2022;150:e2022058859 — [конспект](notes/aap_2022_hyperbili.md) · 2026-11-21
 - `aasld_2025_masld_peds` · Xanthakos SA et al. AASLD Practice Statement on pediatric MASLD. Hepatology 2025;82:1352-1394 — [конспект](notes/aasld_2025_masld_peds.md) · 2026-11-21
 - `aasld_2026_expo_biopsy` · Verna EC et al. AASLD EXPO: Liver biopsy. Hepatology 2026 — [конспект](notes/aasld_2026_expo_biopsy.md) · 2026-11-21
 - `aasld_ast_naspghan_2026_lt_eval` · Martinez M et al. AASLD/AST/NASPGHAN Practice Guideline on pediatric liver transplantation: candidate evaluation. Hepatology 2026 — [конспект](notes/aasld_ast_naspghan_2026_lt_eval.md) · 2026-11-21
 - `baveno_viii_2026` · Baveno VIII Faculty. Baveno VIII — Advancing consensus in portal hypertension. J Hepatol 2026;85:993-1018 — [конспект](notes/baveno_viii_2026.md) · 2026-11-21
 - `colantonio_2012_caliper` · Colantonio DA et al. Closing the gaps in pediatric laboratory reference intervals: a CALIPER database of 40 biochemical markers. Clin Chem 2012;58:854-868 — [конспект](notes/colantonio_2012_caliper.md) · 2026-11-21
+
+## Учтено в приложении
+
+- `aap_2022_hyperbili` · Kemper AR et al. Clinical Practice Guideline Revision: Management of Hyperbilirubinemia in the Newborn Infant 35 or More Weeks of Gestation (AAP). Pediatrics 2022;150:e2022058859 — [конспект](notes/aap_2022_hyperbili.md) · 2026-11-21
 - `naspghan_espghan_2017_nc` · Fawaz R et al. Guideline for the Evaluation of Cholestatic Jaundice in Infants (NASPGHAN/ESPGHAN). JPGN 2017;64:154-168 — [конспект](notes/naspghan_espghan_2017_nc.md) · 2026-11-21

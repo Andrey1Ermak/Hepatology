@@ -34,3 +34,6 @@ BA is a model for malignancy in a cholestatic, cirrhotic native liver; every num
 
 ### 04-14 · Block 4 synthesis (synced 2026-11-20)
 - ALGS: HCC without cirrhosis; AFP normal in about 4 of 10 tumors (38% — verified in Ayoub 2023 full text: "38% of patients had normal serum levels of AFP"); US + AFP every 6 months at any age and severity (Ayoub 2023 — verified full text; published in ref_imaging 2026-11-20). Gap: no registry of surveillance yield.
+
+### 05-01 · PFIC I: physiology of bile secretion (synced 2026-11-21)
+- **BSEP deficiency (ABCB11) — HCC in infancy and early childhood, mostly truncating genotypes.** NAPPED (van Wessel 2020, J Hepatol 73:84): HCC by age 15 — BSEP1 4%, BSEP2 7%, BSEP3 (two truncating) 34%. FXR deficiency (NR1H4): very high AFP (to 400,000 ng/mL). → HCC-risk list: BSEP deficiency, especially BSEP3; surveillance with AFP + US even when well (interval TODO(verify) — EASL 2024 / block 5 lessons). Pitfall: skipping surveillance because the child looks well.

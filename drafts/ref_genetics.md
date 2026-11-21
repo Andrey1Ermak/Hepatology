@@ -66,3 +66,8 @@
 
 ### 04-14 · Block 4 synthesis (synced 2026-11-20)
 - **Published 2026-11-20 (D-2026-11-20-1):** "Send the parents" — 25 of 53 (47%) JAG1-positive relatives failed clinical criteria (Kamath 2003, abstract verified); pitfall — JAG1 in 2/94 TOF and 2/50 pulmonic stenosis without ALGS (Bauer 2010, abstract verified) → test a related donor for the family variant (expert practice). Still not published: parental mosaicism 8.2% (Giannakudis 2001 — not found in Europe PMC), whole-gene deletion share, NOTCH2 cardiac 64% vs 92%, McElhinney 2002, related-donor guideline row (Squires 2014 full text pending).
+
+### 05-01 · PFIC I: physiology of bile secretion (synced 2026-11-21)
+- **Published 2026-11-21:** NR1H4 added to the low-GGT gene list; line "A normal ABCB11 gene does not prove BSEP is present: in NR1H4 (FXR) deficiency liver BSEP was undetectable (Gomez-Ospina 2016 — abstract verified, Europe PMC 26888176)". plan.json block 5 day 1 → ref_genetics.
+- Not published: MYO5B "BSEP mislocalized" (Gonzales 2017 — abstract does not state it; check full text at chol_low_ggt build).
+- Sorting by GGT + serum bile acids + itch, five GGT exceptions, panel vs exome (EASL 2024 reanalysis ≥ 3 y — already on card) → chol_low_ggt Inbox.

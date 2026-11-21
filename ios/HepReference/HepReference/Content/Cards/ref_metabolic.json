@@ -106,7 +106,7 @@
      "t": "Before the first dose of UDCA",
      "sub": [
       "Send: urine bile acids by mass spectrometry.",
-      "Why: UDCA metabolites obscure the profile (NASPGHAN/ESPGHAN 2017, tier 2)."
+      "Why: UDCA metabolites obscure the profile (expert opinion)."
      ]
     },
     {
@@ -326,7 +326,7 @@
     },
     {
      "k": "pearl",
-     "text": "Splenomegaly in a cholestatic infant adds ferritin, triglycerides, fibrinogen, soluble CD25 and enzyme activities to the same draw (NASPGHAN/ESPGHAN 2017)."
+     "text": "Splenomegaly in a cholestatic infant needs special consideration (NASPGHAN/ESPGHAN 2017). Add ferritin, triglycerides, fibrinogen, soluble CD25 and enzyme activities to the same draw (expert opinion)."
     },
     {
      "k": "pearl",
@@ -383,7 +383,7 @@
     {
      "topic": "HLH in the cholestasis workup",
      "positions": {
-      "naspghan_espghan_2017_nc": "Splenomegaly points to storage or hematologic disease; HLH not named (per lesson 02-10)",
+      "naspghan_espghan_2017_nc": "Rec 4 (1A): splenomegaly needs special consideration; HLH not named",
       "henter_2007_hlh2004": "Five of eight criteria, or a molecular diagnosis"
      },
      "verdict": "gap",

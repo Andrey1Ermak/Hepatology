@@ -199,7 +199,7 @@
       "items": [
         {
           "k": "pearl",
-          "text": "Direct or conjugated ≥ 1.0 mg/dL is cholestasis at any total — the 20% rule is gone (Fawaz 2017)."
+          "text": "Direct or conjugated ≥ 1.0 mg/dL is cholestasis at any total — the 20% rule is gone (app rule from Fawaz 2017: > 1.0)."
         },
         {
           "k": "pitfall",
@@ -246,7 +246,7 @@
         {
           "topic": "How fast to identify and refer",
           "positions": {
-            "naspghan_espghan_2017_nc": "Evaluate any infant jaundiced beyond 2 weeks; expedite the atresia workup",
+            "naspghan_espghan_2017_nc": "Fractionate at 2 weeks (formula-fed) or 3 weeks (well, breastfed) (Rec 1, 1A); expedite the atresia workup, especially after 6 weeks (text, ungraded)",
             "aap_2025_ba_primary_care": "Identify infants with biliary atresia by 2–4 weeks of life"
           },
           "verdict": "material",

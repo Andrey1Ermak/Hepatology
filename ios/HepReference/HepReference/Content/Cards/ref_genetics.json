@@ -39,7 +39,8 @@
   "acmg_2021_exome",
   "acmg_2025_sf_v33",
   "nhs_2026_genomic_directory",
-  "fda_valproate_label"
+  "fda_valproate_label",
+  "gomez_ospina_2016_fxr"
  ],
  "plan": [
   {
@@ -63,6 +64,12 @@
     4,
     14
    ]
+  },
+  {
+   "block": 5,
+   "days": [
+    1
+   ]
   }
  ],
  "related": [
@@ -85,7 +92,7 @@
      "t": "Possible biliary atresia",
      "sub": [
       "Cholangiogram on the atresia timetable; send genetics the same day, in parallel.",
-      "Before the cholangiogram, look for Alagille syndrome: echocardiogram, spine film, eye exam for posterior embryotoxon (NASPGHAN/ESPGHAN 2017)."
+      "Before the cholangiogram, look for Alagille syndrome: a hypoplastic biliary tree can mislead the cholangiogram in up to 20% of cases (NASPGHAN/ESPGHAN 2017). Echocardiogram, spine film, eye exam for posterior embryotoxon."
      ]
     },
     {
@@ -224,7 +231,8 @@
    "t": "list",
    "h": "Use GGT to read the panel",
    "items": [
-    "Low or normal GGT: ATP8B1, ABCB11, TJP2, MYO5B, USP53; bile acid synthesis defects.",
+    "Low or normal GGT: ATP8B1, ABCB11, TJP2, NR1H4, MYO5B, USP53; bile acid synthesis defects.",
+    "A normal ABCB11 gene does not prove BSEP is present: in NR1H4 (FXR) deficiency liver BSEP was undetectable (Gomez-Ospina 2016).",
     "High GGT: JAG1, NOTCH2, ABCB4, CFTR, SERPINA1.",
     "Limiting ATP8B1/ABCB11 sequencing to low peak GGT doubled the yield (18.8% to 35.1%) and missed no case (Wang 2016; one center in China).",
     "Use GGT to interpret a result, not to refuse broad testing."
@@ -439,7 +447,7 @@
     {
      "topic": "Alagille screen before surgery",
      "positions": {
-      "naspghan_espghan_2017_nc": "Look for Alagille features before the cholangiogram; preoperative testing helps the surgeon",
+      "naspghan_espghan_2017_nc": "Look for Alagille features (biopsy or facies) before the cholangiogram; ungraded",
       "easl_2024_genetic_cholestasis": "Not addressed"
      },
      "verdict": "differs",

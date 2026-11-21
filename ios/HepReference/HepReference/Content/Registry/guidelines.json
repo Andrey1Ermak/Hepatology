@@ -1678,5 +1678,13 @@
    "citation": "Ayoub MD et al. Hepatol Int 2023;17:1098-1112",
    "url": "https://doi.org/10.1007/s12072-023-10578-x",
    "checked": "2026-11",
+   "supersedes": null},
+  {"id": "gomez_ospina_2016_fxr",
+   "title": "Mutations in the nuclear bile acid receptor FXR cause progressive familial intrahepatic cholestasis",
+   "society": "Study",
+   "year": 2016,
+   "citation": "Gomez-Ospina N et al. Nat Commun 2016;7:10713",
+   "url": "https://doi.org/10.1038/ncomms10713",
+   "checked": "2026-11",
    "supersedes": null}
 ]

@@ -44,3 +44,7 @@
 
 ### 04-09 · Alagille syndrome IX: surgical biliary diversion (synced 2026-11-15)
 - After any surgical biliary diversion (PEBD, internal, ileal exclusion) less bile reaches the gut → more fat-soluble vitamin and energy loss; lesson: levels and dose adjustment every 3–6 months (practice, expert opinion). PEBD stoma output also loses water, sodium and bicarbonate — not a vitamin issue, but belongs in the same follow-up note.
+
+### 05-01 · PFIC I: physiology of bile secretion (synced 2026-11-21)
+- Bile acid synthesis defects: fat-soluble vitamin deficiency out of proportion to the jaundice, no itch, low/normal serum bile acids → urine bile acid mass spectrometry; oral cholic acid often reverses it (lesson slides 15, 21). A low vitamin E with low GGT and no itch is a diagnostic clue, not only a dosing problem.
+- IBAT inhibitors, diversion and ileal exclusion drain the bile acid pool (2–4 g, ~95% ileal reabsorption per cycle — Boyer 2013, adult values) → less bile in the gut → monitor vitamins (reinforces 04-08/04-09 entries).

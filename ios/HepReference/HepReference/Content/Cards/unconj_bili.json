@@ -132,6 +132,10 @@
         },
         {
           "k": "pitfall",
+          "text": "When comparing total bilirubin with the phototherapy or exchange thresholds, do not subtract the direct value. Direct or conjugated above 50% of the total in severe jaundice: call an expert (AAP 2022)."
+        },
+        {
+          "k": "pitfall",
           "text": "A hemolyzed sample lowers the measured direct bilirubin and can hide cholestasis. Redraw."
         },
         {
@@ -167,22 +171,22 @@
         {
           "topic": "When to fractionate a jaundiced infant",
           "positions": {
-            "aap_2022_hyperbili": "Breastfed still jaundiced at 3–4 weeks; formula-fed at 2 weeks (per lesson 02-01; full text not yet checked)",
-            "naspghan_espghan_2017_nc": "Any infant jaundiced after 2 weeks of age",
+            "aap_2022_hyperbili": "Breastfed still jaundiced at 3–4 weeks; formula-fed at 2 weeks (KAS 9)",
+            "naspghan_espghan_2017_nc": "Formula-fed infant jaundiced after 2 weeks; a well breastfed infant may be followed to 3 weeks (Rec 1, 1A)",
             "bsg_2018_lft": "Not addressed (adult guideline)"
           },
-          "verdict": "differs",
-          "note": "The app fractionates any infant jaundiced after 2 weeks, breastfed or not: a missed biliary atresia costs more than one extra test."
+          "verdict": "material",
+          "note": "The app fractionates any infant jaundiced at 2 weeks or later, breastfed or not: a missed biliary atresia costs more than one extra test."
         },
         {
           "topic": "What counts as abnormal direct or conjugated bilirubin",
           "positions": {
-            "aap_2022_hyperbili": "Not verified — full text pending",
+            "aap_2022_hyperbili": "No cut-off of its own: quotes direct > 1.0 mg/dL (NASPGHAN/ESPGHAN) and 0.3 mg/dL conjugated (about the 95th percentile) that has been used; repeat a single raised value within days to 2 weeks; a rising value needs a workup",
             "naspghan_espghan_2017_nc": "Direct > 1.0 mg/dL at any total",
             "bsg_2018_lft": "Not addressed (adult guideline)"
           },
-          "verdict": "gap",
-          "note": "Only NASPGHAN/ESPGHAN 2017 is verified, and it names direct bilirubin. With no verified cut-off for conjugated assays, the app calls either ≥ 1.0 mg/dL abnormal, and conjugated above the lab's upper limit too."
+          "verdict": "differs",
+          "note": "AAP 2022 sets no cut-off of its own; 0.3 mg/dL conjugated has been used in studies but is not a rule. The app calls direct or conjugated ≥ 1.0 mg/dL abnormal, and conjugated above the lab's upper limit too."
         },
         {
           "topic": "Confirming Gilbert syndrome",

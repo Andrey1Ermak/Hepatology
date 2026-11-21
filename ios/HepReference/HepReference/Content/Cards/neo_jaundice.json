@@ -160,7 +160,7 @@
         },
         {
           "k": "pearl",
-          "text": "A newborn direct value above the lab range is a signal, not a footnote. Repeat it by the 2-week visit and ask about the stools."
+          "text": "A newborn direct value above the lab range is a signal, not a footnote. Repeat it within days and by the 2-week visit, and ask about the stools. A rising value needs a workup (AAP 2022)."
         },
         {
           "k": "pitfall",
@@ -179,8 +179,8 @@
         {
           "topic": "When to fractionate a jaundiced infant",
           "positions": {
-            "naspghan_espghan_2017_nc": "Any infant jaundiced after 2 weeks of age; a well breastfed infant may be reviewed at 3 weeks",
-            "aap_2022_hyperbili": "Breastfed still jaundiced at 3–4 weeks; formula-fed at 2 weeks (per lesson 02-01; full text not yet checked)",
+            "naspghan_espghan_2017_nc": "Formula-fed infant jaundiced after 2 weeks; a well breastfed infant may be followed to 3 weeks (Rec 1, 1A)",
+            "aap_2022_hyperbili": "Breastfed still jaundiced at 3–4 weeks; formula-fed at 2 weeks (KAS 9)",
             "aap_2025_ba_primary_care": "At the 2–4 week visit: eye color, stool color and prior results decide who gets a direct or conjugated bilirubin",
             "nice_cg98_2010": "Prolonged jaundice: more than 14 days at term, more than 21 days preterm"
           },
@@ -191,6 +191,7 @@
           "topic": "What counts as abnormal",
           "positions": {
             "naspghan_espghan_2017_nc": "Direct > 1.0 mg/dL (17 µmol/L), at any total",
+            "aap_2022_hyperbili": "No cut-off of its own: quotes direct > 1.0 mg/dL (NASPGHAN/ESPGHAN) and 0.3 mg/dL conjugated (about the 95th percentile) that has been used; repeat a single raised value within days to 2 weeks; a rising value needs a workup",
             "nice_cg98_2010": "Conjugated > 25 µmol/L (≈ 1.5 mg/dL): follow expert advice"
           },
           "verdict": "differs",
