@@ -50,4 +50,5 @@ Repeat with `dark`. Check a few frames of both GIFs before committing.
 | id | Topic | Length | Scenes |
 |---|---|---|---|
 | `alagille_jag1` | JAG1–Notch signaling and Alagille syndrome | 44.5 s | gene & protein · Notch signaling · bile duct development · haploinsufficiency |
+| `bile_secretion` | Physiology of bile secretion (lesson 05-01) | 55 s | hepatocyte: NTCP → FXR → BSEP (~1000× uphill) → MDR3 micelles · cholangiocyte: CFTR/AE2 and the bicarbonate umbrella (pH 7.4 vs 6.4) · enterohepatic circulation (2–4 g, 4–12×/day, 95% via ASBT, FGF19) · logic of low vs high GGT |
 | `alagille_pruritus` | How cholestatic itch becomes a nerve signal | 24 s | one stacked frame: nerve ending (MRGPRX4 and LPAR → Gq → PLC → TRPA1/TRPV1) · generator potential and spikes · spinal itch relay (NPPB → GRP → GRPR → lamina I) |

@@ -19,7 +19,8 @@ const fps = Number(fpsArg);
 const chrome = process.env.CHROME || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 
 (async () => {
-  const browser = await puppeteer.launch({ executablePath: chrome, headless: true, args: ['--force-color-profile=srgb'] });
+  // CHROME_PROFILE: optional writable profile dir (needed when the default temp profile is not writable, e.g. in a sandbox).
+  const browser = await puppeteer.launch({ executablePath: chrome, headless: true, userDataDir: process.env.CHROME_PROFILE, args: ['--force-color-profile=srgb'] });
   const tab = await browser.newPage();
   const errors = [];
   tab.on('pageerror', e => errors.push(e.message));
