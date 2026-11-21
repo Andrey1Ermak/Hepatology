@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pediatric cholestasis: yes/no tree</title>
+<style>
+  html, body { margin: 0; background: #F2F2F7; font-family: "Avenir Next", Avenir, -apple-system, sans-serif; }
+  #wrap { max-width: 360px; margin: 16px auto; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.08); }
+  svg { display: block; width: 100%; height: auto; }
+  #ctl { max-width: 360px; margin: 0 auto; padding: 0 16px; font-size: 13px; }
+  #ctl button { font: inherit; padding: 4px 12px; border-radius: 9px; border: 1px solid #D1D1D6; background: #fff; }
+  body.dark { background: #000; }
+  body.render { background: transparent; }
+  body.render #wrap { margin: 0; border-radius: 0; box-shadow: none; max-width: none; width: 360px; }
+  body.render #ctl { display: none; }
+</style>
+</head>
+<body>
+<div id="wrap"><svg id="s" viewBox="0 0 360 600" xmlns="http://www.w3.org/2000/svg"></svg></div>
+<div id="ctl"><button id="th">Dark</button></div>
+<script>
+// Static scheme (no animation). Canvas 360 x 600 pt, export @2x -> 720 x 1200 px.
+// Colors follow CLAUDE.md §12.2 "Clinical Editorial"; Avenir Next only.
+const H = 600;
+const F = "'Avenir Next', Avenir, -apple-system, sans-serif";
+const THEMES = {
+  light: { bg:'#FFFFFF', ink:'#1A1A1A', muted:'#555555', surface:'#F2F2F2', rule:'#D4D7DB', navy:'#1B355E', blue:'#2E5A88', onSolid:'#FFFFFF',
+           crit:'#B22222', critTint:'#F6D2D2', urg:'#D97A0B', urgTint:'#FBEFBE', ok:'#1E7A33', gap:'#8A939B', line:'#8A939B' },
+  dark:  { bg:'#121417', ink:'#ECEEF1', muted:'#A3A8AE', surface:'#1E2227', rule:'#3A4048', navy:'#9DB7DE', blue:'#8FB0DA', onSolid:'#121417',
+           crit:'#E06666', critTint:'#3A1F21', urg:'#F0A04B', urgTint:'#3A2F17', ok:'#5CB874', gap:'#8A939B', line:'#6B737C' },
+};
+let C = THEMES.light;
+
+function tx(x, y, s, o = {}) {
+  const { size = 11, fill = C.ink, anchor = 'middle', weight = 400, italic = false, ls = 0 } = o;
+  return `<text x="${x}" y="${y}" font-family="${F}" font-size="${size}" fill="${fill}" text-anchor="${anchor}" font-weight="${weight}"${italic ? ' font-style="italic"' : ''}${ls ? ` letter-spacing="${ls}"` : ''}>${s}</text>`;
+}
+const I = s => `<tspan font-style="italic">${s}</tspan>`;
+// Section block: surface fill + coloured top stripe (as in the GIF captions).
+const block = (x, y, w, h, stripe, fill = C.surface) =>
+  `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="9" fill="${fill}"/>` +
+  `<rect x="${x}" y="${y}" width="${w}" height="10" rx="9" fill="${stripe}"/>` +
+  `<rect x="${x}" y="${y + 4}" width="${w}" height="7" fill="${fill}"/>`;
+const node = (x, y, w, h, fill) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="9" fill="${fill}"/>`;
+const wire = d => `<path d="${d}" fill="none" stroke="${C.line}" stroke-width="1.2" stroke-linejoin="round"/>`;
+const head = (x, y) => `<path d="M${x - 3.5} ${y - 5} L${x} ${y} L${x + 3.5} ${y - 5}" fill="none" stroke="${C.line}" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>`;
+const arrow = (d, x, y) => wire(d) + head(x, y);
+const yes = (x, y) => tx(x, y, 'YES', { size: 8.5, weight: 700, fill: C.blue, anchor: 'start', ls: .6 });
+const no = (x, y) => tx(x, y, 'NO', { size: 8.5, weight: 700, fill: C.blue, anchor: 'start', ls: .6 });
+
+function leaf(x, y, w, h, stripe, title, lines) {
+  let o = block(x, y, w, h, stripe) + tx(x + w / 2, y + 24, title, { size: 10.5, weight: 700, fill: stripe });
+  lines.forEach(([s, st = {}], i) => { o += tx(x + w / 2, y + 40 + i * 14, s, { size: 9.5, ...st }); });
+  return o;
+}
+
+function draw() {
+  const m = { fill: C.muted, italic: true };
+  let o = `<rect width="360" height="${H}" fill="${C.bg}"/>`;
+
+  // Level 1
+  o += node(60, 12, 240, 30, C.surface);
+  o += tx(180, 31.5, 'Conjugated bilirubin &gt; 1 mg/dL?', { size: 12, weight: 700 });
+  o += arrow('M140 42 V56 H93 V70', 93, 70) + no(98, 65);
+  o += arrow('M220 42 V56 H267 V70', 267, 70) + yes(272, 65);
+
+  // Level 2
+  o += node(12, 72, 162, 46, C.surface);
+  o += tx(93, 91, 'Bile acids ↑ or itch?', { size: 11.5, weight: 700 });
+  o += tx(93, 107, 'anicteric cholestasis?', { size: 10, ...m });
+  o += node(186, 72, 162, 46, C.surface);
+  o += tx(267, 91, 'Age &lt; 3–6 months?', { size: 11.5, weight: 700 });
+  o += tx(267, 107, 'infant cholestasis', { size: 10, ...m });
+
+  // Level 3
+  o += arrow('M60 118 V142', 60, 142) + no(65, 134);
+  o += leaf(12, 144, 104, 54, C.gap, 'Not cholestasis', [['Gilbert · hemolysis', m]]);
+  o += arrow('M150 118 V264', 150, 264) + yes(155, 134);
+  o += arrow('M210 118 V264', 210, 264) + no(215, 134);
+  o += arrow('M292 118 V142', 292, 142) + yes(297, 134);
+  o += leaf(236, 144, 112, 84, C.crit, 'Rule out first', [['biliary atresia'], ['sepsis · UTI'], ['galactosemia'], ['hypothyroidism']]);
+  o += wire('M292 228 V246 H210');
+
+  // Level 4: GGT
+  o += node(96, 266, 168, 42, C.navy);
+  o += tx(180, 284, 'GGT (age-adjusted)', { size: 12.5, weight: 700, fill: C.onSolid });
+  o += tx(180, 299, 'high or low?', { size: 10, italic: true, fill: C.onSolid });
+  o += arrow('M150 308 V320 H93 V334', 93, 334);
+  o += arrow('M210 308 V320 H267 V334', 267, 334);
+
+  // Level 5
+  o += node(12, 336, 162, 46, C.urgTint);
+  o += tx(93, 355, 'HIGH GGT', { size: 11.5, weight: 700, fill: C.urg, ls: .6 });
+  o += tx(93, 371, 'Severe itch?', { size: 11, weight: 700 });
+  o += node(186, 336, 162, 46, C.critTint);
+  o += tx(267, 355, 'LOW GGT', { size: 11.5, weight: 700, fill: C.crit, ls: .6 });
+  o += tx(267, 371, 'Serum bile acids high?', { size: 11, weight: 700 });
+
+  // Level 6: leaves
+  const ly = 410, lh = 112, lw = 79;
+  o += arrow('M51 382 V408', 51, 408) + yes(56, 399);
+  o += arrow('M135 382 V408', 135, 408) + no(140, 399);
+  o += arrow('M225 382 V408', 225, 408) + yes(230, 399);
+  o += arrow('M309 382 V408', 309, 408) + no(314, 399);
+  o += leaf(12, ly, lw, lh, C.urg, 'Severe itch', [['Alagille'], [I('JAG1 · NOTCH2'), m], ['PFIC3'], [I('ABCB4'), m], ['Sclerosing'], ['cholangitis']]);
+  o += leaf(96, ly, lw, lh, C.urg, 'Little itch', [['Biliary atresia'], ['Choledochal cyst', { size: 8.8 }], ['A1AT deficiency'], ['Cystic fibrosis'], ['CMV · PN'], ['NICCD']]);
+  o += leaf(186, ly, lw, lh, C.crit, 'High BA', [['severe itch', m], ['PFIC1 ' + I('ATP8B1')], ['PFIC2 ' + I('ABCB11')], [I('TJP2 · NR1H4')], [I('MYO5B · USP53')], ['BRIC: episodic']]);
+  o += leaf(269, ly, lw, lh, C.ok, 'Normal BA', [['no itch', m], ['BA synthesis'], ['defect'], ['→ urine BA', m], ['Zellweger'], ['Hypopituitarism', { size: 8.8 }]]);
+
+  // Takeaway
+  o += block(12, 538, 336, 50, C.navy);
+  o += tx(180, 559, 'GGT splits the tree;', { size: 13, weight: 700, italic: true });
+  o += tx(180, 577, 'bile acids + itch split low GGT', { size: 13, weight: 700, italic: true });
+
+  document.getElementById('s').innerHTML = o;
+}
+
+const q = new URLSearchParams(location.search);
+function setTheme(t) { C = THEMES[t]; document.body.classList.toggle('dark', t === 'dark'); document.getElementById('th').textContent = t === 'dark' ? 'Light' : 'Dark'; draw(); }
+if (q.get('render')) document.body.classList.add('render');
+document.getElementById('th').onclick = () => setTheme(C === THEMES.light ? 'dark' : 'light');
+window.ready = document.fonts.ready.then(() => setTheme(q.get('theme') || 'light'));
+</script>
+</body>
+</html>
