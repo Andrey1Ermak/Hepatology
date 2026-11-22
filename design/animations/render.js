@@ -24,16 +24,19 @@ const chrome = process.env.CHROME || '/Applications/Google Chrome.app/Contents/M
   const tab = await browser.newPage();
   const errors = [];
   tab.on('pageerror', e => errors.push(e.message));
-  // 360x480 pt design canvas, rendered @2x -> 720x960 px.
+  // Design canvas in pt, rendered @2x (360x480 -> 720x960 px).
   await tab.setViewport({ width: 360, height: 480, deviceScaleFactor: 2 });
   await tab.goto('file://' + path.resolve(page) + '?render=1&theme=' + theme, { waitUntil: 'networkidle0' });
   await tab.evaluate(() => window.ready);
   const fontOk = await tab.evaluate(() => document.fonts.check("700 16px 'Avenir Next'"));
+  // Canvas size comes from the SVG viewBox (360x480 by default; one-frame maps may be taller).
+  const [vw, vh] = await tab.evaluate(() => { const b = document.getElementById('s').viewBox.baseVal; return [b.width, b.height]; });
+  await tab.setViewport({ width: vw, height: vh, deviceScaleFactor: 2 });
   const duration = await tab.evaluate(() => T);
   const n = Math.round(duration * fps);
   for (let i = 0; i < n; i++) {
     await tab.evaluate(t => draw(t), i / fps);
-    await tab.screenshot({ path: path.join(out, `f${String(i).padStart(4, '0')}.png`), clip: { x: 0, y: 0, width: 360, height: 480 } });
+    await tab.screenshot({ path: path.join(out, `f${String(i).padStart(4, '0')}.png`), clip: { x: 0, y: 0, width: vw, height: vh } });
   }
   await browser.close();
   console.log(`frames=${n} avenirNext=${fontOk} errors=${errors.length ? errors.join(' | ') : 'none'}`);

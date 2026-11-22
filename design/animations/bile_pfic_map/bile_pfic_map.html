@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bile and PFIC map</title>
+<style>
+  html, body { margin: 0; background: #F2F2F7; font-family: "Avenir Next", Avenir, -apple-system, sans-serif; }
+  #wrap { max-width: 360px; margin: 16px auto; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.08); }
+  svg { display: block; width: 100%; height: auto; }
+  #ctl { max-width: 360px; margin: 0 auto; display: flex; gap: 8px; align-items: center; padding: 0 16px; font-size: 13px; color: #6E6E73; }
+  #ctl input { flex: 1; min-width: 0; }
+  #ctl button { font: inherit; padding: 4px 12px; border-radius: 9px; border: 1px solid #D1D1D6; background: #fff; }
+  body.dark { background: #000; }
+  body.render { background: transparent; }
+  body.render #wrap { margin: 0; border-radius: 0; box-shadow: none; max-width: none; width: 360px; }
+  body.render #ctl { display: none; }
+</style>
+</head>
+<body>
+<div id="wrap"><svg id="s" viewBox="0 0 360 640" xmlns="http://www.w3.org/2000/svg"></svg></div>
+<div id="ctl"><button id="pp">Pause</button><button id="th">Dark</button><input id="sc" type="range" min="0" max="24" step="0.05" value="0"><span id="tm">0.0</span></div>
+<script>
+const T = 24;
+const FD = "'Avenir Next', Avenir, -apple-system, sans-serif";       // hepKicker / hepTag / hepTitle
+const FB = "'Avenir Next', Avenir, -apple-system, sans-serif";       // hepBody / hepTakeaway
+// Colors follow CLAUDE.md §12.2 "Clinical Editorial" (ink, navy, blue, muted, surface, rule, crit, urg, ok, gap, onSolid).
+// Biology-only hues (bile, cholangiocyte, hepatocyte, vein) are derived to sit quietly next to those tokens.
+const THEMES = {
+  light: {
+    bg:'#FFFFFF', ink:'#1A1A1A', ink2:'#555555', sep:'#D4D7DB', fill2:'#F2F2F2', accent:'#1B355E', blue:'#2E5A88', onSolid:'#FFFFFF',
+    jag:'#D97A0B', jagL:'#F9DDB8', jagM:'#EFAE5C', jagT:'#A85A00',
+    notch:'#2E5A88', notchL:'#DCE6F1', nicd:'#1B355E', glow:'#5B7FB3',
+    enz:'#8A939B', enzT:'#555555', nuc:'#8C1C1C', nucL:'#FAF1F1', nucT:'#8C1C1C', genesOff:'#DCC5C5', maml:'#B5524F', cor:'#8A939B',
+    ok:'#1E7A33', bad:'#B22222', bile:'#9DB52A', bileT:'#5A6B0E',
+    chol:'#0E7C86', cholD:'#0A5960', hep:'#EFE3C9', hepS:'#BFA36F',
+    vein:'#B5525A', veinL:'#F6E0E2', veinT:'#8F3640',
+    mem:'#C9C2B4', memIn:'#F7F4EE', sendFill:'#FDF4E8', recvFill:'#EEF3F9',
+    chr:'#ECE9E2', chrS:'#8F887C', chrB:'#BDB6A8', mhead:'#D6CDBB', mfill:'#F0EBE0', ghost:'#C4C8CC', track:'#E4E6E9', barBad:'#9FB3CF',
+  },
+  dark: {
+    bg:'#121417', ink:'#ECEEF1', ink2:'#A3A8AE', sep:'#3A4048', fill2:'#1E2227', accent:'#9DB7DE', blue:'#8FB0DA', onSolid:'#121417',
+    jag:'#F0A04B', jagL:'#4A3218', jagM:'#9A6420', jagT:'#F0A04B',
+    notch:'#8FB0DA', notchL:'#1C2A3F', nicd:'#9DB7DE', glow:'#4E6E9E',
+    enz:'#8A939B', enzT:'#A3A8AE', nuc:'#D88A8A', nucL:'#2A1C1E', nucT:'#D88A8A', genesOff:'#4A3436', maml:'#C27373', cor:'#8A939B',
+    ok:'#5CB874', bad:'#E06666', bile:'#B5CC3A', bileT:'#C8DD5A',
+    chol:'#4FC1CB', cholD:'#8ADDE3', hep:'#3F3627', hepS:'#8C7650',
+    vein:'#E07A82', veinL:'#3A2226', veinT:'#F0A3A9',
+    mem:'#4E4A43', memIn:'#24221E', sendFill:'#221C15', recvFill:'#18202B',
+    chr:'#33302B', chrS:'#7D766A', chrB:'#55504A', mhead:'#57503F', mfill:'#2C2924', ghost:'#4A5058', track:'#2A2F36', barBad:'#3C5272',
+  }
+};
+let C = THEMES.light;
+
+const clamp = (x, a = 0, b = 1) => x < a ? a : x > b ? b : x;
+const lin = (t, a, b) => clamp((t - a) / (b - a));
+const ease = x => x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+const E = (t, a, b) => ease(lin(t, a, b));
+const L = (a, b, p) => a + (b - a) * p;
+const env = (t, a, b, f = .35) => Math.min(E(t, a, a + f), 1 - E(t, b - f, b));
+const r2 = n => Math.round(n * 100) / 100;
+const hx = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+const mix = (a, b, p) => { const A = hx(a), B = hx(b); return '#' + A.map((v, i) => Math.round(L(v, B[i], p)).toString(16).padStart(2, '0')).join(''); };
+const I = s => `<tspan font-style="italic">${s}</tspan>`;
+
+function tx(x, y, s, o = {}) {
+  const { size = 12, fill = C.ink, anchor = 'start', weight = 400, op = 1, italic = false, ls = 0, d = false, filter = '' } = o;
+  if (op <= 0.002) return '';
+  return `<text x="${r2(x)}" y="${r2(y)}" font-family="${d ? FD : FB}" font-size="${size}" fill="${fill}" text-anchor="${anchor}" font-weight="${weight}" opacity="${r2(op)}"${italic ? ' font-style="italic"' : ''}${ls ? ` letter-spacing="${ls}"` : ''}${filter ? ` filter="url(#${filter})"` : ''}>${s}</text>`;
+}
+const G = (op, inner, extra = '') => op <= 0.002 ? '' : `<g opacity="${r2(op)}" ${extra}>${inner}</g>`;
+const check = (x, y, s, c, w = 2.5) => `<path d="M${x - s * .5},${y} l${s * .35},${s * .38} l${s * .65},-${s * .8}" fill="none" stroke="${c}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"/>`;
+const cross = (x, y, s, c, w = 2.5) => { const h = s / 2; return `<path d="M${x - h},${y - h} L${x + h},${y + h} M${x + h},${y - h} L${x - h},${y + h}" stroke="${c}" stroke-width="${w}" stroke-linecap="round"/>`; };
+function arrow(x1, y1, x2, y2, c, w = 2) {
+  const a = Math.atan2(y2 - y1, x2 - x1), h = 7;
+  const p1 = [x2 - h * Math.cos(a - .5), y2 - h * Math.sin(a - .5)], p2 = [x2 - h * Math.cos(a + .5), y2 - h * Math.sin(a + .5)];
+  return `<line x1="${x1}" y1="${y1}" x2="${r2(x2 - 4 * Math.cos(a))}" y2="${r2(y2 - 4 * Math.sin(a))}" stroke="${c}" stroke-width="${w}" stroke-linecap="round"/><polygon points="${x2},${y2} ${r2(p1[0])},${r2(p1[1])} ${r2(p2[0])},${r2(p2[1])}" fill="${c}"/>`;
+}
+function flash(x, y, p) {
+  if (p <= 0 || p >= 1) return '';
+  let s = '';
+  for (let i = 0; i < 8; i++) { const a = i * Math.PI / 4, ra = 5 + 4 * p, rb = 10 + 6 * p; s += `<line x1="${r2(x + ra * Math.cos(a))}" y1="${r2(y + ra * Math.sin(a))}" x2="${r2(x + rb * Math.cos(a))}" y2="${r2(y + rb * Math.sin(a))}" stroke="#FFCC00" stroke-width="2" stroke-linecap="round"/>`; }
+  return G(Math.sin(Math.PI * p), s);
+}
+function scissors(x, y, open, rot, c) {
+  const a = open * 22;
+  const blade = `<path d="M0,0 C-3.5,-7 -3,-17 0,-24 C3,-17 3.5,-7 0,0Z" fill="${c}"/>`;
+  const half = sgn => `<g transform="rotate(${r2(sgn * a)})">${blade}<line x1="0" y1="0" x2="${sgn * 3.5}" y2="5" stroke="${c}" stroke-width="2.4"/><circle cx="${sgn * 5}" cy="9.5" r="4.6" fill="none" stroke="${c}" stroke-width="2.4"/></g>`;
+  return `<g transform="translate(${r2(x)},${r2(y)}) rotate(${rot})">${half(-1)}${half(1)}<circle r="2" fill="${C.bg}" stroke="${c}" stroke-width="1.4"/></g>`;
+}
+function blob(cx, cy, rx, ry, dent) {
+  const pts = [], N = 180;
+  for (let i = 0; i < N; i++) {
+    const a = i / N * 2 * Math.PI; let x = cx + rx * Math.cos(a), y = cy + ry * Math.sin(a);
+    if (dent && dent.depth) { const s = Math.sin(a) * dent.side; if (s > 0) y -= dent.side * dent.depth * Math.exp(-(((x - dent.x) / dent.w) ** 2)); }
+    pts.push(r2(x) + ',' + r2(y));
+  }
+  return 'M' + pts.join(' L') + 'Z';
+}
+const block = (x, y, w, h, stripe) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="9" fill="${C.fill2}"/><rect x="${x}" y="${y}" width="${w}" height="10" rx="9" fill="${stripe}"/><rect x="${x}" y="${y + 4}" width="${w}" height="7" fill="${C.fill2}"/>`;
+const memb = p => `<path d="${p}" fill="none" stroke="${C.mem}" stroke-width="6"/><path d="${p}" fill="none" stroke="${C.memIn}" stroke-width="2"/>`;
+function caption(t, list) {
+  let o = '';
+  for (const [a, b, s] of list) {
+    const e = env(t, a, b, .25); if (e <= 0) continue;
+    const lines = s.split('\n');
+    let txt = lines.map((l, i) => tx(180, (lines.length === 1 ? 452 : 443) + i * 18, l, { size: 14, anchor: 'middle', weight: 700, italic: true })).join('');
+    o += G(e, block(12, 420, 336, 50, C.accent) + txt);
+  }
+  return o;
+}
+function pill(cx, y, label, c, op = 1) {
+  const w = label.length * 7 + 16;
+  return G(op, `<rect x="${r2(cx - w / 2)}" y="${y - 12}" width="${r2(w)}" height="17" rx="8.5" fill="${c}"/>` + tx(cx, y + 0.5, label, { size: 10.5, anchor: 'middle', weight: 700, fill: C.onSolid, d: true, ls: .5 }));
+}
+
+const kick = (x, y, s, c, o = {}) => tx(x, y, s, Object.assign({ size: 9, weight: 700, fill: c, d: true, ls: 1 }, o));
+/* ============ One-frame map: bile formation and where each genetic cholestasis blocks it ============ */
+Object.assign(THEMES.light, {
+  ba:'#9DB52A', baS:'#6E8418', na:'#2E5A88', pc:'#D97A0B', ps:'#8C1C1C', cst:'#BFA36F', bili:'#C9A227', biliS:'#8F7210',
+  hepF:'#FBF4E8', cholF:'#E6F1F2', canal:'#F3F6E2', film:'#DCE6F1', blood:'#F6E0E2', urg:'#D97A0B', ggt:'#8C1C1C', onBright:'#1A1A1A',
+});
+Object.assign(THEMES.dark, {
+  ba:'#B5CC3A', baS:'#8AA022', na:'#8FB0DA', pc:'#F0A04B', ps:'#D88A8A', cst:'#8C7650', bili:'#E3C04A', biliS:'#B8962A',
+  hepF:'#241E16', cholF:'#152629', canal:'#20251A', film:'#1C2A3F', blood:'#3A2226', urg:'#F0A04B', ggt:'#D88A8A', onBright:'#121417',
+});
+
+const dot = (x, y, c, s, r = 3.4, o = 1) => G(o, `<circle cx="${r2(x)}" cy="${r2(y)}" r="${r}" fill="${c}"${s ? ` stroke="${s}" stroke-width=".7"` : ''}/>`);
+const BA = (x, y, o = 1, r = 3.4) => dot(x, y, C.ba, C.baS, r, o);
+const BILI = (x, y, o = 1) => dot(x, y, C.bili, C.biliS, 3, o);
+const NA = (x, y, o = 1) => dot(x, y, C.na, '', 2.3, o);
+const LIPID = (x, y, c, o = 1, rot = 0) => G(o, `<g transform="translate(${r2(x)},${r2(y)}) rotate(${r2(rot)})"><line x1="-1.2" y1="2" x2="-1.2" y2="8" stroke="${c}" stroke-width="1.1"/><line x1="1.2" y1="2" x2="1.2" y2="8" stroke="${c}" stroke-width="1.1"/><circle r="2.6" fill="${c}"/></g>`);
+const CHO = (x, y, o = 1) => G(o, `<rect x="${r2(x - 3.5)}" y="${r2(y - 2)}" width="7" height="4" rx="1.6" fill="${C.cst}"/>`);
+function micelle(x, y, o = 1, s = 1) {
+  let m = `<circle cx="${r2(x)}" cy="${r2(y)}" r="${r2(7 * s)}" fill="${C.bg}" fill-opacity=".55" stroke="${C.baS}" stroke-width=".5"/>`;
+  for (let i = 0; i < 6; i++) { const a = i * Math.PI / 3; m += `<circle cx="${r2(x + 4.6 * s * Math.cos(a))}" cy="${r2(y + 4.6 * s * Math.sin(a))}" r="${r2(1.8 * s)}" fill="${i % 2 ? C.pc : C.ba}"/>`; }
+  return G(o, m + `<rect x="${r2(x - 2 * s)}" y="${r2(y - 1.1 * s)}" width="${r2(4 * s)}" height="${r2(2.2 * s)}" rx="1" fill="${C.cst}"/>`);
+}
+const GGT = (x, y, o = 1) => G(o, `<path d="M${x},${y} V${y - 5} M${x},${y - 5} L${x - 3.4},${y - 9.5} M${x},${y - 5} L${x + 3.4},${y - 9.5}" stroke="${C.ggt}" stroke-width="1.6" fill="none" stroke-linecap="round"/>`);
+const tp = (x, y, w, h, o = 1) => G(o, `<rect x="${r2(x - w / 2)}" y="${r2(y - h / 2)}" width="${w}" height="${h}" rx="${Math.min(w, h) / 2}" fill="${C.accent}"/>`);
+// protein label: name (bold) + gene (italic, muted)
+function plab(x, y, name, gene, anchor = 'middle', o = 1) {
+  return G(o, tx(x, y, name, { size: 9.5, anchor, weight: 700, fill: C.accent, d: true }) + (gene ? tx(x, y + 10, gene, { size: 8.5, anchor, fill: C.ink2, italic: true }) : ''));
+}
+// disease tag: solid pill + cross at the blocked site
+const TAGC = () => ({ ret: [C.bad, C.onSolid], high: [C.urg, C.onBright], syn: [C.accent, C.onSolid], ben: [C.enz, C.onBright] });
+function tag(t, a, kind, label, x, y, anchor, site, lead) {
+  const e = E(t, a, a + .45); if (e <= 0) return '';
+  const [fill, txt] = TAGC()[kind], w = label.length * 5.5 + 14;
+  const x0 = anchor === 'end' ? x - w : anchor === 'middle' ? x - w / 2 : x;
+  let s = `<rect x="${r2(x0)}" y="${y - 10.5}" width="${r2(w)}" height="15" rx="7.5" fill="${fill}"/>` + tx(x0 + w / 2, y, label, { size: 8.5, anchor: 'middle', weight: 700, fill: txt, d: true, ls: .2 });
+  if (site && lead) s = `<line x1="${lead[0]}" y1="${lead[1]}" x2="${site[0]}" y2="${site[1]}" stroke="${fill}" stroke-width="1" stroke-dasharray="2 2"/>` + s;
+  if (site) {
+    const pop = 1 + .5 * Math.sin(Math.PI * lin(t, a, a + .5));
+    s += `<circle cx="${site[0]}" cy="${site[1]}" r="${r2(7 * pop)}" fill="${C.bg}" stroke="${fill}" stroke-width="1.6"/>` + cross(site[0], site[1], 6, fill, 2);
+  }
+  return G(e, s);
+}
+// points along a polyline, looping
+function along(pts, u) {
+  const seg = []; let tot = 0;
+  for (let i = 1; i < pts.length; i++) { const d = Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]); seg.push(d); tot += d; }
+  let s = (((u % 1) + 1) % 1) * tot;
+  for (let i = 0; i < seg.length; i++) { if (s <= seg[i]) { const p = s / seg[i]; return [L(pts[i][0], pts[i + 1][0], p), L(pts[i][1], pts[i + 1][1], p)]; } s -= seg[i]; }
+  return pts[pts.length - 1];
+}
+const fadeEnds = u => { u = ((u % 1) + 1) % 1; return Math.min(1, u * 6, (1 - u) * 6); };
+
+function s1(t) {
+  let o = '';
+  const st = E(t, 0, .8), lb = E(t, .8, 1.6), fl = E(t, 1.4, 2.2);
+
+  /* blood */
+  let b = `<rect x="-5" y="10" width="370" height="48" fill="${C.blood}"/>` + kick(14, 24, 'BLOOD · SINUSOID', C.veinT) +
+    BA(150, 21) + tx(156, 24, 'bile acid', { size: 8.5, fill: C.ink2 }) + BILI(214, 21) + tx(220, 24, 'bilirubin-G', { size: 8.5, fill: C.ink2 }) + NA(290, 21) + tx(295, 24, 'Na⁺', { size: 8.5, fill: C.ink2 });
+  for (let i = 0; i < 8; i++) b += BA(((i * 47 + t * 9) % 380) - 10, 40 + (i % 2) * 8);
+  for (let i = 0; i < 5; i++) b += BILI(((i * 76 + 20 + t * 7) % 380) - 10, 36 + (i % 3) * 7);
+  for (let i = 0; i < 5; i++) b += NA(((i * 69 + 44 + t * 8) % 380) - 10, 50 - (i % 2) * 5);
+  o += G(st, b);
+
+  /* two hepatocytes around a canaliculus */
+  const cellL = 'M28,64 H154 Q172,64 172,82 V374 Q172,392 154,392 H28 Q10,392 10,374 V82 Q10,64 28,64Z';
+  const cellR = 'M206,64 H332 Q350,64 350,82 V374 Q350,392 332,392 H206 Q188,392 188,374 V82 Q188,64 206,64Z';
+  let c = `<path d="${cellL}" fill="${C.hepF}"/>` + memb(cellL) + `<path d="${cellR}" fill="${C.hepF}"/>` + memb(cellR);
+  c += `<ellipse cx="180" cy="210" rx="22" ry="28" fill="${C.canal}"/><ellipse cx="180" cy="210" rx="22" ry="28" fill="none" stroke="${C.mem}" stroke-width="6"/><ellipse cx="180" cy="210" rx="22" ry="28" fill="none" stroke="${C.memIn}" stroke-width="2"/>`;
+  [176, 244].forEach(y => { for (let k = -1; k <= 1; k++) c += `<line x1="174" y1="${y + k * 3}" x2="186" y2="${y + k * 3}" stroke="${C.accent}" stroke-width="1.6"/>`; });
+  c += kick(340, 384, 'HEPATOCYTES', C.ink2, { anchor: 'end' }) + kick(180, 164, 'CANALICULUS', C.bileT, { anchor: 'middle', size: 7.5 });
+  // nucleus with FXR / SHP
+  c += `<circle cx="50" cy="178" r="27" fill="${C.nucL}" stroke="${C.nuc}" stroke-width="1.5"/>` + kick(50, 165, 'NUCLEUS', C.nucT, { anchor: 'middle', size: 7 });
+  // synthesis: cholesterol → CYP7A1 → bile acid
+  c += CHO(30, 296) + arrow(40, 296, 74, 296, C.ink2, 1.3) + BA(82, 296);
+  c += tx(30, 312, 'cholesterol', { size: 8, anchor: 'middle', fill: C.ink2, italic: true });
+  // MYO5B track: actin from recycling endosome to the canalicular membrane
+  c += `<line x1="112" y1="360" x2="158" y2="214" stroke="${C.ink2}" stroke-width="1.1" stroke-dasharray="1 2.5"/><circle cx="112" cy="362" r="6" fill="none" stroke="${C.ink2}" stroke-width="1"/>`;
+  // duct
+  c += `<line x1="180" y1="292" x2="180" y2="412" stroke="${C.bileT}" stroke-width="1.3" stroke-dasharray="3 3"/>` + arrow(180, 400, 180, 416, C.bileT, 1.3);
+  c += `<rect x="-5" y="418" width="370" height="30" fill="${C.canal}"/>` + kick(14, 431, 'BILE DUCT', C.bileT) + arrow(318, 441, 348, 441, C.bileT, 1.4);
+  c += `<rect x="-5" y="446" width="370" height="5" fill="${C.film}"/>`;
+  [[12, 96], [96, 180], [180, 264], [264, 348]].forEach(([a, b2]) => {
+    const p = `M${a + 8},451 H${b2 - 8} Q${b2},451 ${b2},459 V498 Q${b2},506 ${b2 - 8},506 H${a + 8} Q${a},506 ${a},498 V459 Q${a},451 ${a + 8},451Z`;
+    c += `<path d="${p}" fill="${C.cholF}"/>` + memb(p);
+  });
+  c += kick(306, 496, 'CHOLANGIOCYTES', C.chol, { anchor: 'middle', size: 7.5 });
+  [214, 228, 242, 256].forEach(x => c += GGT(x, 451));
+  o += G(st, c);
+
+  /* transporters */
+  let tr = tp(56, 64, 14, 22) + tp(236, 64, 14, 22) + tp(298, 64, 12, 20) + tp(326, 64, 12, 20);
+  tr += tp(160, 196, 10, 18) + tp(160, 224, 10, 18) + tp(200, 196, 10, 18) + tp(200, 224, 10, 18);
+  tr += tp(54, 451, 14, 18) + tp(138, 451, 14, 18);
+  tr += `<rect x="33" y="171" width="34" height="14" rx="4" fill="${C.nuc}"/>` + tx(50, 181.5, 'FXR', { size: 8.5, anchor: 'middle', weight: 700, fill: C.onSolid, d: true }) + tx(50, 197, 'SHP', { size: 8, anchor: 'middle', weight: 700, fill: C.nucT, d: true });
+  o += G(st, tr);
+  // escape arrows (basolateral export back to blood)
+  o += G(fl, arrow(298, 54, 298, 40, C.accent, 1.2) + arrow(326, 54, 326, 40, C.accent, 1.2));
+
+  /* labels: protein + gene */
+  let l = plab(56, 90, 'NTCP', 'SLC10A1') + plab(236, 90, 'OATP1B1/3', 'SLCO1B1/3') + plab(312, 90, 'OSTα/β · MRP3/4', 'escape to blood');
+  l += plab(152, 192, 'BSEP', 'ABCB11', 'end') + plab(152, 226, 'FIC1', 'ATP8B1 · PS in', 'end');
+  l += plab(208, 192, 'MDR3', 'ABCB4 · PC out', 'start') + plab(208, 226, 'MRP2', 'ABCC2', 'start');
+  l += plab(56, 288, 'CYP7A1', '', 'middle');
+  l += plab(196, 282, 'Tight junction', 'TJP2 (ZO-2) + claudin-1', 'start') + `<line x1="186" y1="246" x2="194" y2="272" stroke="${C.accent}" stroke-width=".8"/>`;
+  l += plab(106, 380, 'MYO5B · Rab11a', '', 'end');
+  l += plab(54, 474, 'CFTR', 'Cl⁻ out') + plab(138, 474, 'AE2', 'HCO₃⁻ out') + plab(235, 474, 'GGT', 'on membranes');
+  l += tx(188, 364, 'canals of Hering', { size: 8, fill: C.bileT, italic: true });
+  o += G(lb, l);
+
+  /* flows */
+  let f = '';
+  const pBA = [[30, 44], [56, 56], [56, 74], [96, 112], [132, 150], [160, 196], [178, 204]];
+  for (let k = 0; k < 7; k++) { const u = (t - 1.4) / 5 + k / 7, [x, y] = along(pBA, u); f += BA(x, y, fl * fadeEnds(u)); }
+  for (let k = 0; k < 4; k++) { const u = (t - 1.4) / 5 + k / 4 + .07, [x, y] = along(pBA.slice(0, 3), u * 2.4); if (((u * 2.4) % 1) < 1) f += NA(x + 6, y, fl * fadeEnds(u * 2.4) * .9); }
+  const pBi = [[250, 44], [236, 56], [236, 76], [232, 130], [214, 186], [200, 224], [184, 220]];
+  for (let k = 0; k < 5; k++) { const u = (t - 1.4) / 5.5 + k / 5, [x, y] = along(pBi, u); f += BILI(x, y, fl * fadeEnds(u)); }
+  // MDR3 flops phosphatidylcholine out; FIC1 flips phosphatidylserine in
+  for (let k = 0; k < 2; k++) {
+    const u = (((t - 1.4) / 2.6 + k / 2) % 1 + 1) % 1;
+    const x = u < .4 ? L(214, 202, u / .4) : u < .6 ? 201 : L(198, 186, (u - .6) / .4), rot = u < .4 ? 0 : u < .6 ? 180 * (u - .4) / .2 : 180;
+    f += LIPID(x, 196, C.pc, fl * fadeEnds(u), rot - 90);
+    const v = (((t - 1.9) / 2.6 + k / 2) % 1 + 1) % 1;
+    const x2 = v < .4 ? L(174, 162, v / .4) : v < .6 ? 160 : L(157, 146, (v - .6) / .4), rot2 = v < .4 ? 0 : v < .6 ? 180 * (v - .4) / .2 : 180;
+    f += LIPID(x2, 224, C.ps, fl * fadeEnds(v), 90 - rot2);
+  }
+  // lumen: bile acids + micelles
+  for (let k = 0; k < 3; k++) { const a = t * 1.3 + k * 2.1; f += micelle(180 + 8 * Math.cos(a), 210 + 12 * Math.sin(a * .8), fl, .9); }
+  // MYO5B vesicle delivering BSEP
+  { const u = ((t - 1.4) / 3 % 1 + 1) % 1, x = L(112, 156, u), y = L(360, 216, u);
+    f += G(fl * fadeEnds(u), `<circle cx="${r2(x)}" cy="${r2(y)}" r="6" fill="${C.bg}" stroke="${C.mem}" stroke-width="1.6"/><rect x="${r2(x - 2.5)}" y="${r2(y - 4)}" width="5" height="8" rx="2.5" fill="${C.accent}"/>`); }
+  // synthesis pulse and FXR glow
+  { const u = ((t - 1.4) / 3 % 1 + 1) % 1; f += BA(L(74, 82, u), 296, fl * Math.sin(Math.PI * u)); }
+  f += G(fl * (.3 + .3 * Math.sin(t * 2.4)), `<rect x="31" y="169" width="38" height="18" rx="5" fill="none" stroke="${C.nuc}" stroke-width="1.4"/>`);
+  // bile down to the duct and out
+  for (let k = 0; k < 3; k++) { const u = ((t - 1.4) / 3.2 + k / 3) % 1; f += micelle(180, L(296, 410, u), fl * fadeEnds(u), .75); }
+  for (let k = 0; k < 6; k++) { const x = ((k * 63 + (t - 1.4) * 26) % 400) - 20; f += k % 2 ? micelle(x, 432, fl, .9) : BA(x, 436, fl); }
+  // CFTR / AE2 secretion
+  for (let k = 0; k < 2; k++) {
+    const u = (((t - 1.4) / 2.2 + k / 2) % 1 + 1) % 1, op = fl * Math.sin(Math.PI * u);
+    f += tx(54, L(470, 424, u), 'Cl⁻', { size: 8, anchor: 'middle', weight: 700, fill: C.ink2, op });
+    f += tx(138, L(470, 424, u), 'HCO₃⁻', { size: 8, anchor: 'middle', weight: 700, fill: C.blue, op });
+  }
+  o += f;
+
+  /* where genetic cholestasis blocks the pathway */
+  o += tag(t, 9.0, 'ben', 'NTCP deficiency', 56, 120, 'middle', [56, 64]);
+  o += tag(t, 9.8, 'ben', 'Rotor', 236, 120, 'middle', [236, 64]);
+  o += tag(t, 10.6, 'syn', 'HSD3B7 · AKR1D1 · CYP7B1', 16, 332, 'start', [58, 296], [40, 322]);
+  o += tag(t, 11.4, 'ret', 'PFIC5 · NR1H4', 16, 224, 'start', [72, 196], [44, 214]);
+  o += tag(t, 12.2, 'ret', 'MYO5B', 16, 356, 'start', [134, 290], [62, 350]);
+  o += tag(t, 13.0, 'ret', 'PFIC2 · BSEP', 152, 140, 'end', [160, 196], [150, 144]);
+  o += tag(t, 13.8, 'ret', 'PFIC1 · FIC1', 152, 260, 'end', [160, 224], [150, 250]);
+  o += tag(t, 14.6, 'ret', 'PFIC4 · TJP2 · USP53', 196, 312, 'start', [180, 244], [200, 302]);
+  o += tag(t, 15.4, 'high', 'PFIC3 · MDR3', 208, 140, 'start', [200, 196], [210, 144]);
+  o += tag(t, 16.2, 'ben', 'Dubin–Johnson', 208, 260, 'start', [200, 224], [210, 250]);
+  o += tag(t, 17.0, 'high', 'JAG1/NOTCH2 · CFTR · DCDC2 · KIF12', 180, 528, 'middle', [306, 470], [250, 520]);
+
+  /* tag colour key (serum GGT) */
+  let k = block(12, 548, 336, 82, C.accent) + kick(24, 570, 'SERUM GGT', C.blue);
+  [[C.bad, 'Low · retention, intense itch', 24, 590], [C.urg, 'High · bile injures the ducts', 184, 590],
+   [C.accent, 'Low · synthesis defect, no itch', 24, 612], [C.enz, 'Normal · not progressive', 184, 612]].forEach(([cc, s, x, y]) => {
+    k += `<rect x="${x}" y="${y - 9}" width="12" height="12" rx="3" fill="${cc}"/>` + tx(x + 18, y + 1, s, { size: 9.5, fill: C.ink });
+  });
+  o += G(E(t, 17.8, 18.3), k);
+  return o;
+}
+
+const SC = [{ a: 0, b: 24, draw: s1 }];
+
+function draw(t) {
+  t = clamp(t, 0, T - 1e-6);
+  const DEFS = `<defs>
+    <filter id="glow" x="-50%" y="-100%" width="200%" height="300%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="glowS" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="1.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>`;
+  const sc = SC.find(s => t >= s.a && t < s.b);
+  document.getElementById('s').innerHTML = DEFS + `<rect width="360" height="640" fill="${C.bg}"/>` + G(env(t, sc.a, sc.b, .35), sc.draw(t));
+}
+function setTheme(name) { C = THEMES[name]; document.body.classList.toggle('dark', name === 'dark'); }
+window.draw = draw; window.setTheme = setTheme;
+
+const q = new URLSearchParams(location.search);
+const isR = q.has('render');
+setTheme(q.get('theme') === 'dark' ? 'dark' : 'light');
+if (isR) document.body.classList.add('render');
+const pp = document.getElementById('pp'), th = document.getElementById('th'), scb = document.getElementById('sc'), tm = document.getElementById('tm');
+let playing = !isR, cur = 0, t0 = performance.now();
+const show = v => { cur = v; draw(v); scb.value = v; tm.textContent = v.toFixed(1); };
+function loop(now) { if (playing) show(((now - t0) / 1000) % T); requestAnimationFrame(loop); }
+pp.onclick = () => { playing = !playing; if (playing) t0 = performance.now() - cur * 1000; pp.textContent = playing ? 'Pause' : 'Play'; };
+th.onclick = () => { const dk = C === THEMES.light; setTheme(dk ? 'dark' : 'light'); th.textContent = dk ? 'Light' : 'Dark'; draw(cur); };
+scb.oninput = () => { show(+scb.value); t0 = performance.now() - cur * 1000; };
+document.addEventListener('keydown', e => {
+  if (e.code === 'Space') { e.preventDefault(); pp.click(); }
+  if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { show(clamp(cur + (e.key === 'ArrowRight' ? 1 : -1), 0, T - .01)); t0 = performance.now() - cur * 1000; }
+});
+window.ready = document.fonts.ready;
+window.ready.then(() => draw(cur));
+draw(0);
+if (!isR) requestAnimationFrame(loop);
+</script>
+</body>
+</html>

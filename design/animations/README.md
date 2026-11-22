@@ -19,6 +19,7 @@ design/animations/
 ## Format (iPhone card)
 
 - Canvas **360 × 480 pt (3:4 portrait)**, exported **@2x → 720 × 960 px**, 12 fps, infinite loop.
+  One-frame reference maps may be taller (e.g. `bile_pfic_map`: 360 × 640 pt → 720 × 1280 px); `render.js` reads the size from the SVG `viewBox`.
 - Two exports per animation: **light** and **dark**. Backgrounds are the `background` token
   (`#FFFFFF` / `#121417`), so the GIF blends into the screen.
 - Style strictly per CLAUDE.md §12 "Clinical Editorial": Avenir Next only; colors from §12.2
@@ -51,4 +52,5 @@ Repeat with `dark`. Check a few frames of both GIFs before committing.
 |---|---|---|---|
 | `alagille_jag1` | JAG1–Notch signaling and Alagille syndrome | 44.5 s | gene & protein · Notch signaling · bile duct development · haploinsufficiency |
 | `bile_secretion` | Physiology of bile secretion (lesson 05-01) | 55 s | hepatocyte: NTCP → FXR → BSEP (~1000× uphill) → MDR3 micelles · cholangiocyte: CFTR/AE2 and the bicarbonate umbrella (pH 7.4 vs 6.4) · enterohepatic circulation (2–4 g, 4–12×/day, 95% via ASBT, FGF19) · logic of low vs high GGT |
+| `bile_pfic_map` | One-frame map: bile formation and where each genetic cholestasis blocks it (lesson 05-01) | 24 s | sinusoid → two hepatocytes (NTCP, OATP1B1/3, OSTα/β·MRP3/4, FXR/SHP, CYP7A1, MYO5B/Rab11a) → canaliculus (BSEP, FIC1, MDR3, MRP2, tight junction) → duct (CFTR, AE2, GGT); tags for PFIC1–5, MYO5B, USP53, synthesis defects, NTCP deficiency, Rotor, Dubin–Johnson, ductal genes; key by serum GGT |
 | `alagille_pruritus` | How cholestatic itch becomes a nerve signal | 24 s | one stacked frame: nerve ending (MRGPRX4 and LPAR → Gq → PLC → TRPA1/TRPV1) · generator potential and spikes · spinal itch relay (NPPB → GRP → GRPR → lamina I) |
