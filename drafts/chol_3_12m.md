@@ -258,3 +258,6 @@ Card not built yet (trigger: lesson 05-14). Inbox is filled by daily lesson sync
 - Mild/missense or single-copy ABCB4 can show near-normal GGT between episodes → do not exclude ABCB4 on one normal GGT.
 - **Case (slides 2, 21):** Infant B — 3 mo girl, direct bili 2.1 mg/dL, GGT 520 U/L, bile acids 140 µmol/L, mother had ICP → panel including ABCB4, start UDCA.
 - Unexpected result (ABCB11 variant in a high-GGT child) → second look (phasing, second diagnosis), not a new paradigm (slide 15).
+
+### 05-02 · PFIC II: FIC1 deficiency (ATP8B1) (synced 2026-11-22)
+- Examination/history clues that point to FIC1 in a cholestatic infant with low GGT: watery diarrhea out of proportion to steatorrhea, short stature beyond cholestasis, pancreatitis/exocrine insufficiency, high sweat chloride (→ do not chase CF first; panel with ATP8B1). Family history: heterozygous ATP8B1 relatives can present with cholestasis of pregnancy or adult cryptogenic cholestasis (lesson slides 5–6, 20). Detail → chol_low_ggt Inbox.

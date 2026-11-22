@@ -71,3 +71,7 @@
 - **Published 2026-11-21:** NR1H4 added to the low-GGT gene list; line "A normal ABCB11 gene does not prove BSEP is present: in NR1H4 (FXR) deficiency liver BSEP was undetectable (Gomez-Ospina 2016 — abstract verified, Europe PMC 26888176)". plan.json block 5 day 1 → ref_genetics.
 - Not published: MYO5B "BSEP mislocalized" (Gonzales 2017 — abstract does not state it; check full text at chol_low_ggt build).
 - Sorting by GGT + serum bile acids + itch, five GGT exceptions, panel vs exome (EASL 2024 reanalysis ≥ 3 y — already on card) → chol_low_ggt Inbox.
+
+### 05-02 · PFIC II: FIC1 deficiency (ATP8B1) (synced 2026-11-22)
+- **Published 2026-11-22:** "When the gene changes the plan" → item "ATP8B1, both copies (FIC1 deficiency)": number of truncating variants does not predict native liver survival (NLS at 10 y 67/41/59% by 0/1/2 truncating variants, NS; 44% at 18 y — van Wessel 2021, abstract verified Europe PMC 33666275); transplant resolves cholestasis, not the extrahepatic disease, + pre-transplant counseling line (Bull 2018, abstract verified Europe PMC 29761168). plan.json block 5 day 2 → ref_genetics. Not published (reviewer): "genotype does not set prognosis" in general — specific variants (p.I661T mild, p.G308V severe) do track severity.
+- Not published: founder variants (p.G308V, p.D554N, p.I661T — Klomp 2004 TODO(verify)); heterozygous carriers and ICP (→ chol_low_ggt build).

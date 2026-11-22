@@ -48,3 +48,6 @@
 ### 05-01 · PFIC I: physiology of bile secretion (synced 2026-11-21)
 - Bile acid synthesis defects: fat-soluble vitamin deficiency out of proportion to the jaundice, no itch, low/normal serum bile acids → urine bile acid mass spectrometry; oral cholic acid often reverses it (lesson slides 15, 21). A low vitamin E with low GGT and no itch is a diagnostic clue, not only a dosing problem.
 - IBAT inhibitors, diversion and ileal exclusion drain the bile acid pool (2–4 g, ~95% ileal reabsorption per cycle — Boyer 2013, adult values) → less bile in the gut → monitor vitamins (reinforces 04-08/04-09 entries).
+
+### 05-02 · PFIC II: FIC1 deficiency (ATP8B1) (synced 2026-11-22)
+- Bile acid binders (cholestyramine, colesevelam) — used for itch and for post-LT FIC1 diarrhea — bind fat-soluble vitamins and drugs: monitor vitamin levels; separate dosing from tacrolimus and other drugs (lesson slides 10, 15, 18; timing interval TODO(verify) against the product label before publishing a number).

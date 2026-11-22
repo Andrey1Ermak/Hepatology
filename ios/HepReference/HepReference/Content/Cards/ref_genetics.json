@@ -40,7 +40,9 @@
   "acmg_2025_sf_v33",
   "nhs_2026_genomic_directory",
   "fda_valproate_label",
-  "gomez_ospina_2016_fxr"
+  "gomez_ospina_2016_fxr",
+  "van_wessel_2021_napped_fic1",
+  "bull_2018_fic1_bsep_surgery"
  ],
  "plan": [
   {
@@ -68,7 +70,8 @@
   {
    "block": 5,
    "days": [
-    1
+    1,
+    2
    ]
   }
  ],
@@ -355,6 +358,14 @@
      "sub": [
       "Severe bile salt export pump (BSEP) deficiency: median native liver survival 3.5 years and liver cancer in 34% by age 15, vs 20.4 years and 4% with at least one p.E297G or p.D482G variant (BSEP1; van Wessel 2020).",
       "EASL 2024: closer liver cancer screening, no surgical biliary diversion, consider early transplant."
+     ]
+    },
+    {
+     "t": "ATP8B1, both copies (FIC1 deficiency)",
+     "sub": [
+      "The number of truncating variants does not predict native liver survival: 67%, 41% and 59% at 10 years with zero, one or two (P = 0.12); 44% overall at 18 years (van Wessel 2021).",
+      "Transplant resolves the cholestasis but not the extrahepatic disease: diarrhea, graft steatosis or pancreatic disease often follow, and poor growth often continues (Bull 2018).",
+      "Counsel before transplant: it ends the itch and jaundice, not the gut disease; follow stools, pancreas and growth after it (Bull 2018)."
      ]
     },
     {

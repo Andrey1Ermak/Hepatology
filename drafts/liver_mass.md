@@ -37,3 +37,6 @@ BA is a model for malignancy in a cholestatic, cirrhotic native liver; every num
 
 ### 05-01 · PFIC I: physiology of bile secretion (synced 2026-11-21)
 - **BSEP deficiency (ABCB11) — HCC in infancy and early childhood, mostly truncating genotypes.** NAPPED (van Wessel 2020, J Hepatol 73:84): HCC by age 15 — BSEP1 4%, BSEP2 7%, BSEP3 (two truncating) 34%. FXR deficiency (NR1H4): very high AFP (to 400,000 ng/mL). → HCC-risk list: BSEP deficiency, especially BSEP3; surveillance with AFP + US even when well (interval TODO(verify) — EASL 2024 / block 5 lessons). Pitfall: skipping surveillance because the child looks well.
+
+### 05-02 · PFIC II: FIC1 deficiency (ATP8B1) (synced 2026-11-22)
+- FIC1 deficiency: no link to hepatobiliary cancer shown (lesson slide 7; EASL 2024 HCC screening listed only for BSEP and MDR3 deficiency per lesson slide 17 — TODO(verify) in full text). → HCC-risk list: BSEP (esp. BSEP3), MDR3, FXR; not FIC1. A liver mass in low-GGT cholestasis favors BSEP over FIC1 (bedside rule, slide 6).
