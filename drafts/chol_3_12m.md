@@ -261,3 +261,6 @@ Card not built yet (trigger: lesson 05-14). Inbox is filled by daily lesson sync
 
 ### 05-02 · PFIC II: FIC1 deficiency (ATP8B1) (synced 2026-11-22)
 - Examination/history clues that point to FIC1 in a cholestatic infant with low GGT: watery diarrhea out of proportion to steatorrhea, short stature beyond cholestasis, pancreatitis/exocrine insufficiency, high sweat chloride (→ do not chase CF first; panel with ATP8B1). Family history: heterozygous ATP8B1 relatives can present with cholestasis of pregnancy or adult cryptogenic cholestasis (lesson slides 5–6, 20). Detail → chol_low_ggt Inbox.
+
+### 05-03 · PFIC III: BSEP deficiency (ABCB11) (synced 2026-11-23)
+- **Clues:** jaundice + itch + GGT normal for age + ALT several times normal + bile acids in the hundreds + giant-cell hepatitis (± gallstones, ± liver mass) → BSEP deficiency until proven otherwise → NGS panel, baseline AFP and ultrasound the same week (cancer from 13 mo — Knisely 2006, verified). A visible BSEP stain does not exclude it (Strautnieks 2008, verified; ref_biopsy). Genotype group drives the plan (→ ref_genetics, card 5).

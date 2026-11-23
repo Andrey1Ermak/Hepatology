@@ -51,3 +51,6 @@
 
 ### 05-02 · PFIC II: FIC1 deficiency (ATP8B1) (synced 2026-11-22)
 - Bile acid binders (cholestyramine, colesevelam) — used for itch and for post-LT FIC1 diarrhea — bind fat-soluble vitamins and drugs: monitor vitamin levels; separate dosing from tacrolimus and other drugs (lesson slides 10, 15, 18; timing interval TODO(verify) against the product label before publishing a number).
+
+### 05-03 · PFIC III: BSEP deficiency (ABCB11) (synced 2026-11-23)
+- Cholestyramine in BSEP deficiency — separate from fat-soluble vitamins (lesson slide 10; same rule as 05-02). Monitor levels and INR in all PFIC on binders. No new doses.

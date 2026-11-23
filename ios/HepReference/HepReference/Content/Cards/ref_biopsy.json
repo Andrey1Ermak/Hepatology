@@ -40,7 +40,8 @@
   "aasld_2019_aih",
   "aasld_2022_wilson",
   "aasld_2025_masld_peds",
-  "easl_2024_genetic_cholestasis"
+  "easl_2024_genetic_cholestasis",
+  "strautnieks_2008_bsep"
  ],
  "plan": [
   {
@@ -64,6 +65,12 @@
     3,
     5,
     14
+   ]
+  },
+  {
+   "block": 5,
+   "days": [
+    3
    ]
   }
  ],
@@ -254,7 +261,7 @@
      "t": "Low-GGT cholestasis",
      "sub": [
       "BSEP and MDR3 immunostains; EM.",
-      "Normal staining does not exclude a missense variant."
+      "Visible BSEP staining does not exclude BSEP deficiency: some BSEP was detected in 19 of 42 (45%) with p.E297G or p.D482G (Strautnieks 2008)."
      ]
     },
     {

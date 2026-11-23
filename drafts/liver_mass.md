@@ -40,3 +40,7 @@ BA is a model for malignancy in a cholestatic, cirrhotic native liver; every num
 
 ### 05-02 · PFIC II: FIC1 deficiency (ATP8B1) (synced 2026-11-22)
 - FIC1 deficiency: no link to hepatobiliary cancer shown (lesson slide 7; EASL 2024 HCC screening listed only for BSEP and MDR3 deficiency per lesson slide 17 — TODO(verify) in full text). → HCC-risk list: BSEP (esp. BSEP3), MDR3, FXR; not FIC1. A liver mass in low-GGT cholestasis favors BSEP over FIC1 (bedside rule, slide 6).
+
+### 05-03 · PFIC III: BSEP deficiency (ABCB11) (synced 2026-11-23)
+- **HCC in toddlers — VERIFIED (Knisely 2006, Hepatology 44:478; abstract):** 11 pediatric HCCs in PFIC/"neonatal hepatitis", age 13–52 mo; 9 (+ a sibling of a tenth) had BSEP deficiency. Strautnieks 2008 (abstract): HCC or cholangiocarcinoma 15%; 38% with two truncating variants. NAPPED: HCC by 15 y 4% / 7% / 34% by group. EASL 2024 (full text): ~15% HCC before age 5 with biallelic PPTMs; screen from diagnosis with US + AFP every 3 mo (PPTMs) or 3–6 mo (missense); keep screening after a good response to diversion.
+- **→ card 19:** a mass in a cholestatic child < 5 y with low GGT → think BSEP deficiency; AFP is high in young infants — follow the trend; new nodule or rising AFP → contrast MRI/CT; cholangiocarcinoma also reported — image the whole liver. Low-GGT cholestasis belongs in the "1–5 years" and "< 1 year" rows as a risk factor.

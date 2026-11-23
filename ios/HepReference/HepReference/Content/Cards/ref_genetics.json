@@ -42,7 +42,10 @@
   "fda_valproate_label",
   "gomez_ospina_2016_fxr",
   "van_wessel_2021_napped_fic1",
-  "bull_2018_fic1_bsep_surgery"
+  "bull_2018_fic1_bsep_surgery",
+  "van_wessel_2020_napped",
+  "felzen_2023_bsep_compound",
+  "jara_2009_bsep_recurrence"
  ],
  "plan": [
   {
@@ -71,7 +74,8 @@
    "block": 5,
    "days": [
     1,
-    2
+    2,
+    3
    ]
   }
  ],
@@ -356,8 +360,10 @@
     {
      "t": "ABCB11 with two truncating variants (BSEP3)",
      "sub": [
-      "Severe bile salt export pump (BSEP) deficiency: median native liver survival 3.5 years and liver cancer in 34% by age 15, vs 20.4 years and 4% with at least one p.E297G or p.D482G variant (BSEP1; van Wessel 2020).",
-      "EASL 2024: closer liver cancer screening, no surgical biliary diversion, consider early transplant."
+      "Severe bile salt export pump (BSEP) deficiency: median native liver survival 3.5 years and hepatocellular carcinoma (HCC) in 34% by age 15, vs 20.4 years and 4% with at least one p.E297G or p.D482G variant (BSEP1; van Wessel 2020). That BSEP1 group mixed two mild variants with one mild plus one truncating; only two mild variants carry the good outlook (next line).",
+      "One p.E297G or p.D482G variant plus one truncating variant behaves like two truncating variants: native liver survival at age 10 21%, vs 75% with two p.E297G or p.D482G variants and 23% with two truncating; poor response to diversion, and an IBAT inhibitor is unlikely to help (Felzen 2023). EASL 2024: may need the same approach as two truncating variants.",
+      "EASL 2024: ultrasound and alpha-fetoprotein (AFP) from diagnosis, every 3 months with two truncating variants (every 3–6 months with missense variants, even after a good response to diversion); no surgical biliary diversion; consider early transplant.",
+      "After transplant in a child with no native BSEP, the donor pump can trigger alloantibodies that recreate the disease: new itch and low-GGT cholestasis without rejection or biliary complication → anti-BSEP antibodies in plasma, or anti-canalicular IgG on liver immunofluorescence; first intensify immunosuppression, then consider rituximab with plasmapheresis (EASL 2024; Jara 2009)."
      ]
     },
     {

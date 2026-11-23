@@ -66,7 +66,7 @@
   {"block": 5, "title": "PFIC and genetic cholestasis", "start": "2026-11-23", "days": [
     {"day": 1, "topic": "Physiology of bile secretion", "cards": ["ref_genetics"], "lesson": "2026-11-21"},
     {"day": 2, "topic": "FIC1 (ATP8B1)", "cards": ["ref_genetics"], "lesson": "2026-11-22"},
-    {"day": 3, "topic": "BSEP (ABCB11)", "cards": []},
+    {"day": 3, "topic": "BSEP (ABCB11)", "cards": ["ref_genetics", "ref_biopsy"], "lesson": "2026-11-23"},
     {"day": 4, "topic": "MDR3 (ABCB4)", "cards": []},
     {"day": 5, "topic": "New genes", "cards": []},
     {"day": 6, "topic": "BRIC and cholestasis of pregnancy", "cards": []},
