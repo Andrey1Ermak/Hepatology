@@ -26,6 +26,7 @@
 		2589A61B5A1940B35ACF27AC /* DecimalTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD2FB3392D250B0D9967CFD /* DecimalTextInput.swift */; };
 		27BF59369C6AE7197B51286F /* CardMarkup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00610F261A547E8DD2C9D3 /* CardMarkup.swift */; };
 		2C4228336ADA60A58BDA9476 /* NACCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D57E18E1CC1C86293720D7B /* NACCalc.swift */; };
+		3061B981C111766854452D5A /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA9904C0A473B2DB5B8809 /* FavoriteButton.swift */; };
 		306BDB307D8497F20F7BF31D /* OutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA84F05240E0512FDD1B5D /* OutView.swift */; };
 		314F1FA62489B523FE90FF47 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10BE75C1587BBCFE4E31351 /* Badge.swift */; };
 		322C8AC4B753FD97442CB33F /* VitaminsCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133590D7BDE7EE6B36492DF5 /* VitaminsCalc.swift */; };
@@ -72,6 +73,7 @@
 		81013A46A0A6159AA75D8296 /* CardLibraryGroupingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4588C975059DEF1AF99BAC /* CardLibraryGroupingTests.swift */; };
 		84BBFD678B410B83F33A1987 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09039DD8496221F029F80A4A /* DesignSystem.swift */; };
 		8892464F6EF57284AD16EFF0 /* RRatioCalcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9751601FD9BE9557099026B /* RRatioCalcView.swift */; };
+		88A534038AD4C7DD914EA7C3 /* CardHistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787581344F4ED6A82F9421B /* CardHistoryTests.swift */; };
 		89306B37E719CB0C705FE7B2 /* CalculatorHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD274D527BDF935B5CE1E02B /* CalculatorHeader.swift */; };
 		8CA96048CFCB50BCF274EB4B /* BlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82B16AFE627B057B2779DA /* BlockView.swift */; };
 		961BDA2C6F1C8DAA715CDEC1 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2522CBC0F7780A40B120FBFA /* CardDetailView.swift */; };
@@ -91,6 +93,7 @@
 		B1DAFBD4174622F07ACCBC87 /* KVBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541E28122B00FA3A4189AC31 /* KVBlockView.swift */; };
 		B4A665A84EFB63BD48F459CE /* NumericCalcRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0BE1C40A6FF228AC59E1AC /* NumericCalcRegistry.swift */; };
 		BC5CC28A95AE9EAF9B2E4130 /* DesignSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08469650D07B56E285FA6064 /* DesignSampleView.swift */; };
+		BD2C697E72B64BBD09A8CD26 /* CardHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E214F1197C0A266183B2CA7 /* CardHistory.swift */; };
 		BE9CC65A3C286DD9E5505A62 /* NestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424942CF1B02578655D720DE /* NestView.swift */; };
 		BF28633F08FE57B4D466439A /* ChipScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2643586157AA1DE125EF176 /* ChipScreen.swift */; };
 		C07DFCDB7E1A3D1FCCCD9A84 /* ColView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69319EE20AB7131988F63E64 /* ColView.swift */; };
@@ -157,12 +160,14 @@
 		1C9357B09215E0402FEB31BD /* ChecklistAnyRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistAnyRule.swift; sourceTree = "<group>"; };
 		1CA7E6006308709CF40FA4C4 /* CardCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCategory.swift; sourceTree = "<group>"; };
 		1D2CADD3860F64E71F95651C /* HepReferenceTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = HepReferenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E214F1197C0A266183B2CA7 /* CardHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHistory.swift; sourceTree = "<group>"; };
 		20F4645FF4B9F3EFDCE86395 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		221C5867FC3C24FB9A75BF0E /* PathwayBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathwayBlockView.swift; sourceTree = "<group>"; };
 		24724738616B1AFB5DAD2059 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		25019922C87743AC09841EB1 /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
 		2522CBC0F7780A40B120FBFA /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
 		25251AE39358EFDF15C23816 /* CardLinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLinkButton.swift; sourceTree = "<group>"; };
+		2787581344F4ED6A82F9421B /* CardHistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHistoryTests.swift; sourceTree = "<group>"; };
 		2A58F57D0EA93E1344E69EB1 /* ScoreCalcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCalcView.swift; sourceTree = "<group>"; };
 		2B839D89C5C2C94AC64C6C5F /* PathwayNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathwayNode.swift; sourceTree = "<group>"; };
 		2C29C8CF62141AA29BA9C923 /* NumericCalcSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericCalcSheet.swift; sourceTree = "<group>"; };
@@ -212,6 +217,7 @@
 		92A5BAE9A5B9668A85B96FC7 /* TextBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBlockView.swift; sourceTree = "<group>"; };
 		958A1510D85C828F2BA67DAD /* DesignSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemTests.swift; sourceTree = "<group>"; };
 		9CAAEBE72535C29AEBF1EC37 /* CalcNumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcNumberField.swift; sourceTree = "<group>"; };
+		A7BA9904C0A473B2DB5B8809 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		A84CBC7A2E2688BA6EBE9081 /* BlockHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockHeading.swift; sourceTree = "<group>"; };
 		A9C8662A63F7E3034B627B4E /* ArmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmView.swift; sourceTree = "<group>"; };
 		AD7FCFC4CF26BA5655D88F2E /* StudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyView.swift; sourceTree = "<group>"; };
@@ -362,6 +368,7 @@
 				8B6346A41417A486CF030A17 /* ChipBoardView.swift */,
 				4EE8F19EBCF792A80DE2E29E /* ContentView.swift */,
 				08469650D07B56E285FA6064 /* DesignSampleView.swift */,
+				A7BA9904C0A473B2DB5B8809 /* FavoriteButton.swift */,
 				EE39FCD9A84505F8F9B57FAE /* GuidelineVerdict+Style.swift */,
 				0DE088E3885C095CE2B61427 /* HomeView.swift */,
 				2C29C8CF62141AA29BA9C923 /* NumericCalcSheet.swift */,
@@ -381,6 +388,7 @@
 			children = (
 				4271A932D78970936525FCBA /* BlockDecodingTests.swift */,
 				CD336DA683265B657ACBC2B6 /* CardDecodingTests.swift */,
+				2787581344F4ED6A82F9421B /* CardHistoryTests.swift */,
 				3D4588C975059DEF1AF99BAC /* CardLibraryGroupingTests.swift */,
 				E9AC60AFBF1EA048AFB31EED /* CardMarkupTests.swift */,
 				C69CD7E59496A94BEBB86CEA /* CardSourcesTests.swift */,
@@ -465,6 +473,7 @@
 				D40FDE06247E9A673E1113D4 /* Card+Sources.swift */,
 				B32E216AFB165744FB593B8D /* Card+Subtitle.swift */,
 				1CA7E6006308709CF40FA4C4 /* CardCategory.swift */,
+				1E214F1197C0A266183B2CA7 /* CardHistory.swift */,
 				8F469CA2B0FF565BAE90688A /* CardLibrary.swift */,
 				88237CD1A8F2C2E498602338 /* CardSession.swift */,
 				B00FD4836240C067477D6285 /* LinkIndex.swift */,
@@ -577,6 +586,7 @@
 			files = (
 				CECF45512E30328797A41599 /* BlockDecodingTests.swift in Sources */,
 				E14BDF26B4C39EFA7C676716 /* CardDecodingTests.swift in Sources */,
+				88A534038AD4C7DD914EA7C3 /* CardHistoryTests.swift in Sources */,
 				81013A46A0A6159AA75D8296 /* CardLibraryGroupingTests.swift in Sources */,
 				FF262137A0175CFFEEEC2110 /* CardMarkupTests.swift in Sources */,
 				A0B511A040D1E28B2325CA22 /* CardSourcesTests.swift in Sources */,
@@ -623,6 +633,7 @@
 				C5D6CEF950797DBF9E893018 /* CardCategory.swift in Sources */,
 				961BDA2C6F1C8DAA715CDEC1 /* CardDetailView.swift in Sources */,
 				051C69491DBB9F170A225C96 /* CardHeaderView.swift in Sources */,
+				BD2C697E72B64BBD09A8CD26 /* CardHistory.swift in Sources */,
 				6603690DDDB85156EDF7A2BF /* CardLibrary.swift in Sources */,
 				F84D15681A9B0A0775E7113C /* CardLinkButton.swift in Sources */,
 				3F113353B9ECFDD8558FEDA7 /* CardLinksView.swift in Sources */,
@@ -650,6 +661,7 @@
 				9E681A53CF0D51D70356EF58 /* DoseBlockView.swift in Sources */,
 				E1894326D03C791EE4231415 /* EditorialHeader.swift in Sources */,
 				3EEB07FC2701DAFEA972C508 /* Elevation.swift in Sources */,
+				3061B981C111766854452D5A /* FavoriteButton.swift in Sources */,
 				724502285222E1AED7A4F390 /* FlowLayout.swift in Sources */,
 				B170CCAE01DF516A94A1B479 /* GrpView.swift in Sources */,
 				707D7949D2BCEF41F8AE8F0E /* GuidelineCompareBlockView.swift in Sources */,

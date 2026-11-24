@@ -6,10 +6,11 @@ import SwiftUI
 struct CategoryView: View {
     let category: CardCategory
     let cards: [Card]
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: GridLayout.twoColumns, spacing: Spacing.s) {
+            LazyVGrid(columns: GridLayout.tiles(for: dynamicTypeSize), spacing: Spacing.s) {
                 ForEach(cards) { card in
                     NavigationLink(value: card.id) {
                         CardRowView(card: card)

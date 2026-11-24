@@ -2,6 +2,8 @@ import SwiftUI
 
 struct CardRowView: View {
     let card: Card
+    /// The check badge's circle grows with Dynamic Type like its glyph.
+    @ScaledMetric(relativeTo: .caption2) private var badgeSize: CGFloat = 16
 
     /// The row's inner content height (title block + code line), excluding
     /// `SectionCard`'s own padding — exposed so `SearchView`'s search field
@@ -66,9 +68,10 @@ struct CardRowView: View {
     /// `approved` card. Tier-driven so the two statuses read apart.
     private func statusBadge(tier: Tier) -> some View {
         Image(systemName: "checkmark")
-            .font(.system(size: 9, weight: .bold))
+            .font(.hepIconSmall.weight(.bold))
+            .imageScale(.small)
             .foregroundStyle(tier.onSolid)
-            .frame(width: 16, height: 16)
+            .frame(width: badgeSize, height: badgeSize)
             .background(tier.solid, in: Circle())
             .accessibilityLabel(card.status == .approved ? "Approved" : "Reviewed")
     }

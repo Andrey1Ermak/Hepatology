@@ -39,6 +39,12 @@ enum GridLayout {
         GridItem(.flexible(), spacing: Spacing.s),
         GridItem(.flexible(), spacing: Spacing.s),
     ]
+
+    /// Card and category tiles: two-up, but one column at accessibility
+    /// text sizes so no title is cut (Home, a category, Search).
+    static func tiles(for size: DynamicTypeSize) -> [GridItem] {
+        size.isAccessibilitySize ? oneColumn : twoColumns
+    }
 }
 
 /// Named text roles — CLAUDE.md §12.1. Avenir Next (built into iOS, no

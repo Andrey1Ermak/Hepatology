@@ -3,6 +3,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var library = CardLibrary()
     @State private var registry = Registry()
+    @State private var history = CardHistory()
     @StateObject private var calculatorPresenter = CalculatorPresenter()
     @State private var tab: AppTab = Self.launchTab
 
@@ -56,6 +57,8 @@ struct ContentView: View {
         // the library; the header and Study links read the registries.
         .environment(library)
         .environment(registry)
+        // Favorites and recent cards: the header star writes, Home reads.
+        .environment(history)
         // Overlaid above the whole TabView (not a per-tab .sheet) so a
         // numeric_calc opened from any tab grows from screen-center over
         // everything, tab bar included. See CalculatorPresenter.

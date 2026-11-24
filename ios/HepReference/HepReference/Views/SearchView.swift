@@ -6,6 +6,7 @@ struct SearchView: View {
     /// atresia); without the registry, search falls back to titles and tags.
     @Environment(Registry.self) private var registry: Registry?
     @State private var query = Self.launchQuery
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     /// Empty, unless a Debug launch argument `-hepSearchQuery <text>` fills
     /// the field (tools/screenshot.sh, `HEP_SEARCH_QUERY`).
@@ -43,7 +44,7 @@ struct SearchView: View {
                         // above the first row equals the gap between any two
                         // rows, instead of whatever List's own default inset
                         // happened to be.
-                        LazyVGrid(columns: GridLayout.twoColumns, spacing: Spacing.s) {
+                        LazyVGrid(columns: GridLayout.tiles(for: dynamicTypeSize), spacing: Spacing.s) {
                             ForEach(results) { card in
                                 cardLink(card)
                             }
@@ -71,7 +72,8 @@ struct SearchView: View {
     private var emptyStateLabel: some View {
         VStack(spacing: Spacing.s) {
             Image(systemName: "magnifyingglass")
-                .font(.system(size: 32, weight: .semibold))
+                .font(.hepTitle)
+                .imageScale(.large)
                 .foregroundStyle(Color.hepNavy)
             Text("Search Cards")
                 .hepTitleStyle()

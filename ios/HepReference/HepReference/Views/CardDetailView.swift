@@ -4,6 +4,7 @@ struct CardDetailView: View {
     let card: Card
     /// Per-card choices (age branch); a linked card pushed on top gets its own.
     @State private var session = CardSession()
+    @Environment(CardHistory.self) private var history: CardHistory?
 
     var body: some View {
         ScrollView {
@@ -26,6 +27,9 @@ struct CardDetailView: View {
             fixedHeader
         }
         .toolbar(.hidden, for: .navigationBar)
+        // Also on return from a linked card: the card on screen is the
+        // most recent one.
+        .onAppear { history?.recordVisit(card.id) }
     }
 
     /// Back button beside the title block, the lessons' double rule
@@ -35,7 +39,8 @@ struct CardDetailView: View {
             HStack(alignment: .top, spacing: 0) {
                 HeaderBackButton()
                 CardHeaderView(card: card)
-                    .padding(.trailing, Spacing.l)
+                FavoriteButton(cardID: card.id)
+                    .padding(.trailing, Spacing.s)
             }
             DoubleRule()
                 .padding(.horizontal, Spacing.l)

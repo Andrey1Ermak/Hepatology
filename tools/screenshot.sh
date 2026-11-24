@@ -10,6 +10,9 @@
 #   HEP_OPEN_TAB=home|study|search   open this tab on launch (Debug builds only)
 #   HEP_STUDY_BLOCK=<n>         show this year-plan block in the Study tab (Debug builds only)
 #   HEP_SEARCH_QUERY=<text>     prefill the Search field (Debug builds only; pair with HEP_OPEN_TAB=search)
+#   HEP_FAVORITES=<id,id,…>     Home's Favorites for this launch (default: none; any build)
+#   HEP_RECENTS=<id,id,…>       Home's Recent for this launch (default: none) — both keep shots
+#                               independent of cards opened in earlier runs
 set -euo pipefail
 OUT="${1:?usage: tools/screenshot.sh <output.png> [wait-seconds]}"
 WAIT="${2:-6}"
@@ -30,6 +33,14 @@ ARGS=()
 [ -n "${HEP_OPEN_TAB:-}" ] && ARGS+=(-hepOpenTab "$HEP_OPEN_TAB")
 [ -n "${HEP_STUDY_BLOCK:-}" ] && ARGS+=(-hepStudyBlock "$HEP_STUDY_BLOCK")
 [ -n "${HEP_SEARCH_QUERY:-}" ] && ARGS+=(-hepSearchQuery "$HEP_SEARCH_QUERY")
+# UserDefaults' argument domain: `-hep.favorites '("a","b")'` overrides the
+# stored list for this launch only.
+plist_array() {
+  local IFS=, out=() id
+  for id in ${1// /}; do [ -n "$id" ] && out+=("\"$id\""); done
+  echo "(${out[*]-})"
+}
+ARGS+=(-hep.favorites "$(plist_array "${HEP_FAVORITES:-}")" -hep.recents "$(plist_array "${HEP_RECENTS:-}")")
 xcrun simctl launch "$SIM" com.hepreference.app ${ARGS[@]+"${ARGS[@]}"} >/dev/null
 sleep "$WAIT"
 mkdir -p "$(dirname "$OUT")"

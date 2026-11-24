@@ -6,6 +6,7 @@ import SwiftUI
 /// Categories without a bundled card are not shown (§10: no placeholders).
 struct HomeView: View {
     let library: CardLibrary
+    @Environment(CardHistory.self) private var history: CardHistory?
     @State private var path = NavigationPath()
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
@@ -34,9 +35,13 @@ struct HomeView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: Spacing.l) {
                     masthead
+                    if let history {
+                        CardShortcutRow(title: "Favorites", symbol: "star.fill", cards: library.cards(ids: history.favorites))
+                        CardShortcutRow(title: "Recent", symbol: "clock", cards: library.cards(ids: history.recents))
+                    }
                     if !sections.problems.isEmpty {
                         // One column at accessibility sizes, so no category name is cut.
-                        LazyVGrid(columns: dynamicTypeSize.isAccessibilitySize ? GridLayout.oneColumn : GridLayout.twoColumns, spacing: Spacing.s) {
+                        LazyVGrid(columns: GridLayout.tiles(for: dynamicTypeSize), spacing: Spacing.s) {
                             ForEach(sections.problems, id: \.category) { section in
                                 tileLink(section)
                             }
@@ -97,6 +102,69 @@ struct HomeView: View {
     }
 }
 
+/// Favorites or Recent on Home: a kicker, then the cards as a sideways row
+/// of small tiles, one tap from the card. Absent when empty (§10: no
+/// placeholders), so a first launch shows only the categories.
+struct CardShortcutRow: View {
+    let title: String
+    let symbol: String
+    let cards: [Card]
+    /// One tile width per row, wide enough for two-line titles.
+    @ScaledMetric(relativeTo: .subheadline) private var tileWidth: CGFloat = 176
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+
+    /// Linear scaling would make a tile wider than the screen at the
+    /// largest sizes; cap it and give long titles a third line instead.
+    private var cappedWidth: CGFloat { min(tileWidth, 280) }
+
+    var body: some View {
+        if !cards.isEmpty {
+            VStack(alignment: .leading, spacing: Spacing.xs) {
+                HStack(spacing: Spacing.xs) {
+                    Image(systemName: symbol)
+                        .font(.hepIconSmall)
+                        .foregroundStyle(Color.hepBlue)
+                        .accessibilityHidden(true)
+                    Text(title)
+                        .hepKickerStyle()
+                        .accessibilityAddTraits(.isHeader)
+                }
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(alignment: .top, spacing: Spacing.s) {
+                        ForEach(cards) { card in
+                            NavigationLink(value: card.id) {
+                                tile(card)
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityLabel(card.title)
+                            .accessibilityHint("Opens the card")
+                        }
+                    }
+                    .padding(.vertical, Spacing.xs)
+                    .padding(.horizontal, Spacing.l)
+                }
+                // The tiles' soft shadow would otherwise end in a hard edge.
+                .scrollClipDisabled()
+                // Tiles scroll edge to edge, but start aligned with the page.
+                .padding(.horizontal, -Spacing.l)
+            }
+        }
+    }
+
+    private func tile(_ card: Card) -> some View {
+        SectionCard(background: card.cat == .ref ? Color.hepSurface : Color.hepCard, stripe: Color.hepNavy) {
+            // Word joiners keep "0–3" on one line in a narrow tile.
+            Text(card.gridTitle.replacingOccurrences(of: "–", with: "\u{2060}–\u{2060}"))
+                .font(.hepSectionHeading)
+                .foregroundStyle(Color.hepInk)
+                .lineLimit(dynamicTypeSize.isAccessibilitySize ? 3 : 2, reservesSpace: true)
+                .multilineTextAlignment(.leading)
+                .frame(maxWidth: .infinity, alignment: .topLeading)
+        }
+        .frame(width: cappedWidth)
+    }
+}
+
 /// A home-screen category tile (§12.3): a white card with a navy top
 /// stripe, navy icon and the name in the section-heading face. Reference
 /// sits back on `surface` and spans the full width.
@@ -153,4 +221,5 @@ struct CategoryTile: View {
     return HomeView(library: library)
         .environment(library)
         .environment(Registry())
+        .environment(CardHistory())
 }

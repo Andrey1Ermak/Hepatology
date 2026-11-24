@@ -76,7 +76,8 @@ final class DesignSystemTests: XCTestCase {
                          "Color.gray", "Color.primary", "Color.secondary", ".black.opacity", ".white.opacity",
                          "foregroundStyle(.secondary)", "foregroundStyle(.primary)", "Color(uiColor:",
                          "Color.red", "Color.blue", "Color.green", "Color.orange", "Color.yellow",
-                         "foregroundStyle(.red)", "foregroundStyle(.blue)", "foregroundColor("]
+                         "foregroundStyle(.red)", "foregroundStyle(.blue)", "foregroundColor(",
+                         ".system(size:"]
         let files = try XCTUnwrap(FileManager.default.enumerator(at: appDir, includingPropertiesForKeys: nil))
             .compactMap { $0 as? URL }
             .filter { $0.pathExtension == "swift" }
@@ -88,7 +89,7 @@ final class DesignSystemTests: XCTestCase {
                 .filter { !$0.trimmingCharacters(in: .whitespaces).hasPrefix("//") }
                 .joined(separator: "\n")
             for pattern in forbidden where source.contains(pattern) {
-                XCTFail("\(file.lastPathComponent) uses \(pattern) — use a Color.hep* token (CLAUDE.md §12.4)")
+                XCTFail("\(file.lastPathComponent) uses \(pattern) — use a Color.hep* or Font.hep* token (CLAUDE.md §12.4)")
             }
         }
     }
