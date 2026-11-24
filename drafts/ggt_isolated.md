@@ -37,3 +37,11 @@ PSC/ASC (IBD may be silent); choledochal cyst, stones; AIH; Alagille; CF liver d
 - Valproate (not inducer: ALT, INR, ammonia; boxed warning); DRESS/DILI same day; AED "no workup" labeled expert opinion with ceiling (GGT > 3 × ULN or rising).
 - 34%/14.9% → Hadzagic-Catibusic only. Biopsy only if > 6 months with normal MRCP (ACG Fig. 4).
 - Case c2: ALT normal.
+
+## Inbox
+
+### 05-04 · PFIC IV: MDR3 deficiency (ABCB4) (synced 2026-11-24)
+- **Published today (safety omission):** Don't miss — "MDR3 deficiency (PFIC3, ABCB4) — the high-GGT PFIC: ducts patent on imaging, a big spleen is common; genetic panel including ABCB4" (EASL 2024; Schatz 2018 abstract — splenomegaly 96%, one third misdiagnosed). Not "normal ducts": duct dilatation 60% and intrahepatic macrolithiasis 56% in ABCB4 carriers (Goubault 2022, JHEP Rep 4:100590; review 2026-11-24).
+- **Pathway → block 9 enrichment:** outcome "All negative, GGT still raised" goes MRCP → biopsy with no genetics step; proposed "MRCP; patent ducts → genetic panel including ABCB4; biopsy only if persistent > 6 months with normal MRCP and no genetic answer" (lesson slide 6; EASL 2024).
+- **Pearl → publish at block 9 enrichment:** high GGT with patent ducts and a family history of cholestasis of pregnancy or gallstones before 40 → ABCB4 (EASL 2024 allows targeted ABCB4 testing in young patients with small-duct PSC — TODO(verify) exact wording, p.).
+- **Teens and LPAC (slide 11):** recurrent biliary pain after cholecystectomy + intrahepatic comet-tail foci → LPAC (→ gallbladder, chol_older).

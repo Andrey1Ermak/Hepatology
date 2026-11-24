@@ -56,3 +56,7 @@ Main home is `hps_poph` (32); here only the link from portal hypertension to the
 
 ### 04-14 · Block 4 synthesis (synced 2026-11-20)
 - ALGS adult case (slide 14): normal bilirubin but platelets 105 and spleen 15 cm = portal hypertension → endoscopy before conception; brain MRA and echo before pregnancy; maternal-fetal medicine plan. Pre-conception counseling: 50% transmission risk, severity unpredictable (Ayoub 2023 — verified full text).
+
+### 05-04 · PFIC IV: MDR3 deficiency (ABCB4) (synced 2026-11-24)
+- **Big spleen with high GGT (slide 5):** in PFIC3, splenomegaly is more common than jaundice at presentation (96% vs 62%; portal hypertension 69%) — Schatz 2018, abstract-verified; no timing claim (lesson title not supported). A child with a big spleen and high GGT but open ducts → ABCB4 in the differential of "cirrhosis vs EHPVO".
+- **Follow-up (EASL 2024, slide 16):** advanced fibrosis or portal hypertension in ABCB4 disease → 6-monthly ultrasound for HCC, varices screening; IBAT inhibitor trials — watch the spleen (one variceal bleed in MARCH MDR3 subgroup — 9-patient conference poster: not publishable, "Limited data").

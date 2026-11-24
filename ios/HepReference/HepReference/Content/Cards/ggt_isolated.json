@@ -30,7 +30,8 @@
     "kwo_2017_acg_lft",
     "bsg_2018_lft",
     "espghan_2025_psc_ibd",
-    "berhane_2025_ggt_ibd"
+    "berhane_2025_ggt_ibd",
+    "easl_2024_genetic_cholestasis"
   ],
   "plan": [
     {
@@ -38,6 +39,12 @@
       "days": [
         1,
         14
+      ]
+    },
+    {
+      "block": 5,
+      "days": [
+        4
       ]
     },
     {
@@ -97,6 +104,7 @@
         "Choledochal cyst or stones — ultrasound",
         "Autoimmune hepatitis — autoantibodies, IgG",
         "Alagille syndrome — murmur, face, vertebrae, eyes",
+        "MDR3 deficiency (PFIC3, ABCB4) — the high-GGT PFIC: ducts patent on imaging, a big spleen is common; genetic panel including ABCB4",
         "Cystic fibrosis liver disease",
         "Valproate toxicity — check ALT, INR and ammonia",
         "Drug-induced liver injury — once ALT or bilirubin rise"

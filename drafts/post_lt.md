@@ -116,3 +116,8 @@ Lesson sources: Yanagi 2026 (Vanguard LDLT, Pediatr Transplant 30:e70426, n = 49
 - **Prevention (slide 17; extrapolated, expert):** flag "BSEP3 / no native protein — AIBD risk" on the problem list; no immunosuppression withdrawal or minimization trials; itch + normal GGT after LT = AIBD until proven otherwise → anti-BSEP serology; recheck tests after EBV or other significant viral infection; adherence lapses in teens = an unplanned minimization trial. Pitfall: the patients the team most wants to wean are the ones with a "perfect" graft.
 - **Explant:** sample carefully — incidental HCC in BSEP explants changes post-LT imaging and AFP follow-up (Knisely 2006, verified: 11 pediatric HCCs at 13–52 mo, 9 + 1 sibling with BSEP deficiency).
 - **Card 34 → workup row / pathway out:** low-GGT cholestasis after LT for PFIC2 → anti-BSEP antibodies + biopsy (bland canalicular cholestasis, giant cells possible, no rejection). guideline_compare row: anti-BSEP after LT — MATERIAL (only EASL).
+
+### 05-04 · PFIC IV: MDR3 deficiency (ABCB4) (synced 2026-11-24)
+- **PFIC3 is the most transplant-curable PFIC (slide 10):** MDR3 is a liver protein; no recurrence mechanism like anti-BSEP, no intestinal disease like FIC1.
+- **Heterozygous parental graft:** the living donor parent carries one ABCB4 variant → check donor liver tests and imaging; EASL 2024 — long-term UDCA for recipients of a heterozygous parental graft (LoE 4, strong; TODO(verify) wording).
+- **Presentation:** splenomegaly is more common than jaundice at presentation (96% vs 62%; portal hypertension 69%) — Schatz 2018, abstract-verified. The lesson's "portal hypertension before jaundice" is not supported (its own medians: jaundice 2.9 y, PH ~6.5 y).
