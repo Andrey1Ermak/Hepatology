@@ -23,6 +23,11 @@ Reference card C (task: day 22). Inbox is filled by daily lesson sync (§3.4).
 - **Biopsy is prognostic in persisting drug cholestasis (DILIN, Bonkovsky 2017):** duct loss → chronic injury 94% vs 47%; degree of loss the strongest predictor of a poor outcome (verified against the abstract, PMID 27981596). Candidate indication under "Diagnosis known": cholestatic drug injury that does not settle — biopsy rather than wait.
 - **After HSCT:** NIH 2014/2015 — the liver alone does not establish chronic GVHD; biopsy earns its risk when no diagnostic sign elsewhere (see onc_hsct Inbox).
 
+### 05-05 · PFIC V: the new genes (synced 2026-11-25)
+- **→ publish (interpretation error risk):** an abnormal BSEP stain is not specific for ABCB11 disease. In FXR (NR1H4) deficiency BSEP was undetectable with normal ABCB11 and preserved MDR3 (Gomez-Ospina 2016 — abstract VERIFIED: "undetectable liver bile salt export pump"; already cited in ref_genetics). In MYO5B deficiency BSEP is **mislocalized, not absent**: "abnormal distribution of BSEP at canaliculi" (Qiu 2017, Hepatology 65:1655 — VERIFIED abstract), while Matarazzo 2022 found BSEP **normally expressed** at the canalicular membrane with coarse cytoplasmic MYO5B granules (VERIFIED abstract, Europe PMC 35129155). Candidate line next to the existing Strautnieks 2008 BSEP-stain line: "Absent BSEP with normal ABCB11 → think NR1H4 (FXR). Patchy or mislocalized BSEP → think MYO5B. A normal BSEP stain does not exclude MYO5B."
+- **ZFYVE19 / KIF12:** high-GGT cholestasis with patent ducts; biopsy may show ductal plate malformation / congenital hepatic fibrosis pattern (Luan 2021 — TODO(verify)) → gene testing rather than repeat imaging.
+- **TJP2:** EM — elongated tight junctions lacking the densest part; claudin-1 mislocalized (Sambrotta 2014 — TODO(verify) full text).
+
 ## Build notes (day 22, 2026-11-07)
 - Card built from lessons 01-04, 01-05, 01-06 (slides + chapters) and the 03-03 Inbox above; JSON is the source of truth (`Content/Cards/ref_biopsy.json`).
 - **Not published:** the "1.7% complication rate" from the 03-03 Inbox (attributed by the lesson to Fawaz 2017; source not confirmed) — replaced by the primary pediatric series (Matos 2012, Westheim 2012, Cohen 1992, Short 2013).

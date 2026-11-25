@@ -68,7 +68,7 @@
     {"day": 2, "topic": "FIC1 (ATP8B1)", "cards": ["ref_genetics"], "lesson": "2026-11-22"},
     {"day": 3, "topic": "BSEP (ABCB11)", "cards": ["ref_genetics", "ref_biopsy"], "lesson": "2026-11-23"},
     {"day": 4, "topic": "MDR3 (ABCB4)", "cards": ["ggt_isolated"], "lesson": "2026-11-23"},
-    {"day": 5, "topic": "New genes", "cards": []},
+    {"day": 5, "topic": "New genes", "cards": [], "lesson": "2026-11-24"},
     {"day": 6, "topic": "BRIC and cholestasis of pregnancy", "cards": []},
     {"day": 7, "topic": "Diagnosing PFIC", "cards": []},
     {"day": 8, "topic": "IBAT inhibitors in PFIC", "cards": []},

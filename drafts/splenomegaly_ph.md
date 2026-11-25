@@ -60,3 +60,6 @@ Main home is `hps_poph` (32); here only the link from portal hypertension to the
 ### 05-04 · PFIC IV: MDR3 deficiency (ABCB4) (synced 2026-11-24)
 - **Big spleen with high GGT (slide 5):** in PFIC3, splenomegaly is more common than jaundice at presentation (96% vs 62%; portal hypertension 69%) — Schatz 2018, abstract-verified; no timing claim (lesson title not supported). A child with a big spleen and high GGT but open ducts → ABCB4 in the differential of "cirrhosis vs EHPVO".
 - **Follow-up (EASL 2024, slide 16):** advanced fibrosis or portal hypertension in ABCB4 disease → 6-monthly ultrasound for HCC, varices screening; IBAT inhibitor trials — watch the spleen (one variceal bleed in MARCH MDR3 subgroup — 9-patient conference poster: not publishable, "Limited data").
+
+### 05-05 · PFIC V: the new genes (synced 2026-11-25)
+- **High GGT + patent ducts + big spleen/varices:** ZFYVE19 (ciliopathy, ductal plate malformation/CHF pattern; Luan 2021: 9 of 25 undiagnosed high-GGT children, all with PH, 4 transplanted for GI bleeding — TODO(verify)) and KIF12 (PH; transplants at 10 mo and 6 y — Maddirevula 2019, TODO(verify)) → genetics alongside ABCB4, DCDC2, fibrocystic genes; renal ultrasound; portal hypertension, not cholestasis, drives the plan (lesson slide 12). Diversion has no role for PH.

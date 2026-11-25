@@ -64,6 +64,13 @@
 - **ICP genetics (Dixon 2017, Sci Rep 7:11823 — VERIFIED abstract):** ABCB4 variants in 12/147 (8.2%) women with ICP, all heterozygous; EASL — test if bile acids > 100 µmol/L, recurrent or early-onset ICP (TODO(verify)).
 - **guideline_compare candidate:** cascade testing of relatives — EASL recommended vs North American documents silent → MATERIAL.
 
+### 05-05 · PFIC V: the new genes (synced 2026-11-25)
+- **→ publish (correctness of the gene list):** card line "High GGT: JAG1, NOTCH2, ABCB4, CFTR, SERPINA1" lacks the high-GGT newcomers with patent ducts — KIF12, ZFYVE19 (ciliopathy/CHF pattern), DCDC2 (lesson slides 3, 12; EASL 2024 Table 5 — TODO(verify) table; Luan 2021 J Med Genet 58:514 — TODO(verify)). Add at next ref_genetics touch or chol_3_12m build.
+- **Panel age (slide 15) → publish:** a panel from ~2018 may lack USP53, KIF12, ZFYVE19, SEMA7A → check the gene list before calling a panel "negative". Diagnostic yield VERIFIED: Zheng 2024 (Hepatol Int 18:661; Europe PMC 37314652) — 31% (52/166; includes 18 metabolic diagnoses and 10 phenocopies — not a PFIC-gene yield; abstract: "explaining up to 31%") solved; reanalysis newly solved KIF12 and USP53 cases. Card already has "Genes added after the panel was built (for example KIF12, USP53, ZFYVE19)" — consider adding the Zheng figure.
+- **Name the gene, not the number (slide 4):** PFIC numbering past 10 differs between catalogues (e.g., ZFYVE19 called PFIC9 in Pepe 2023); EASL 2024 uses "TJP2 deficiency", "FXR deficiency" → write gene-based names in letters. Candidate pearl.
+- **Single-family genes (SEMA7A, LSR, PPM1F, WDR83OS):** a variant in a gene described in one family is a hypothesis — segregation, phenotype fit, functional data; trio testing helps phase a VUS (slides 13, 15).
+- **Extrahepatic checklist by gene (slide 17):** FXR — graft steatosis after LT; MYO5B — MVID persists; TJP2 — tumour before listing, lungs, bleeding; USP53 — hearing; KIF12/ZFYVE19 — kidneys. TODO(verify) primary reports.
+
 ## Build notes (day 24, 2026-11-09)
 - Sources read: lessons 01-11, 02-12 (+ Inbox 02-14, 03-02, 04-01, 04-02); EASL 2024 full text (general recommendations: NGS early in infants/children; Sanger discouraged except ABCB4 in small-duct PSC; WGS if WES negative; reanalyse ≥ every 3 years; counselling before testing; incidental findings agreed in advance; VUS upgrade via family testing, in vitro data; ALGS biopsy useful with a VUS).
 - 20 primary citations checked against Europe PMC/Crossref abstracts (13 confirmed, 5 partly, 2 not in abstract) — see D-2026-11-09-2.

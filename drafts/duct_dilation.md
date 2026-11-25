@@ -17,3 +17,6 @@ Card not built yet (trigger: lesson 18-14). Inbox is filled by daily lesson sync
 
 ### 03-05 · Biliary atresia: the Kasai operation (synced 2026-10-27)
 - Type I atresia (~5%) often has a cyst in the remnant; cystic atresia clears more often than type III and is **not** a choledochal cyst (slide 5; consistent with the 03-01 entry). At the Kasai, the cyst is anastomosed to the Roux limb or the porta is drained (slide 8).
+
+### 05-05 · PFIC V: the new genes (synced 2026-11-25)
+- **Ciliopathy overlap:** ZFYVE19 deficiency (centriole/axoneme protein) gives high-GGT cholestasis with ductal plate malformation and a congenital hepatic fibrosis pattern, portal hypertension and bleeding (Luan 2021 J Med Genet 58:514 — TODO(verify)); add ZFYVE19, KIF12, DCDC2 to the fibrocystic gene list; check kidneys (lesson slides 12, 17, 21).

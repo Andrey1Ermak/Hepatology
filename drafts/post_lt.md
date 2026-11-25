@@ -121,3 +121,6 @@ Lesson sources: Yanagi 2026 (Vanguard LDLT, Pediatr Transplant 30:e70426, n = 49
 - **PFIC3 is the most transplant-curable PFIC (slide 10):** MDR3 is a liver protein; no recurrence mechanism like anti-BSEP, no intestinal disease like FIC1.
 - **Heterozygous parental graft:** the living donor parent carries one ABCB4 variant → check donor liver tests and imaging; EASL 2024 — long-term UDCA for recipients of a heterozygous parental graft (LoE 4, strong; TODO(verify) wording).
 - **Presentation:** splenomegaly is more common than jaundice at presentation (96% vs 62%; portal hypertension 69%) — Schatz 2018, abstract-verified. The lesson's "portal hypertension before jaundice" is not supported (its own medians: jaundice 2.9 y, PH ~6.5 y).
+
+### 05-05 · PFIC V: the new genes (synced 2026-11-25)
+- **Gene-specific post-LT problem list (slide 17; "which organs besides the liver express it?"):** FXR (NR1H4) — progressive graft steatosis and mild persistent test abnormalities in both survivors (gut FXR absent; Gomez-Ospina 2016 — TODO(verify)); MYO5B — MVID diarrhea persists or worsens, consider intestinal/combined planning; TJP2 — image for HCC before listing, sample explant, no immune recurrence described (unlike BSEP); USP53 — hearing loss continues → audiology follow-up; ZFYVE19/KIF12 — ciliopathy → check kidneys.

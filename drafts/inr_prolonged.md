@@ -42,3 +42,6 @@ Built 2026-11-05 (Day 20) → `Content/Cards/inr_prolonged.json`, `Pathways/inr_
 
 ### 04-14 · Block 4 synthesis (synced 2026-11-20)
 - **Published 2026-11-20 (D-2026-11-20-1):** pitfall — ALGS bleeds with a normal INR (Lykavieris 2003, abstract verified); head injury with symptoms → emergency head imaging + vitamin K whatever the INR (expert opinion; Ayoub 2023 emergent imaging for neuro symptoms); case inr_prolonged_c5 (block 4 synthesis case 4).
+
+### 05-05 · PFIC V: the new genes (synced 2026-11-25)
+- **Vitamin K–resistant INR in a low-GGT cholestatic infant:** FXR (NR1H4) deficiency — coagulopathy independent of vitamin K in all 4 reported infants (INR 2.0 to 7.4), out of proportion to jaundice, AFP high but must be read against neonatal norms (Gomez-Ospina 2016 — abstract VERIFIED; numbers TODO(verify) Table 1). A rare cause: keep the usual neonatal PALF differential first. The card's "no correction → synthetic failure → PALF" path already covers the action; candidate Don't miss/pitfall at next enrichment: "vitamin K–resistant INR blamed on sepsis or malabsorption" (lesson slide 19).

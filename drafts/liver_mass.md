@@ -47,3 +47,6 @@ BA is a model for malignancy in a cholestatic, cirrhotic native liver; every num
 
 ### 05-04 · PFIC IV: MDR3 deficiency (ABCB4) (synced 2026-11-24)
 - **ABCB4 and cancer (slides 12, 15; EASL 2024, Dong 2021):** in LPAC, an ABCB4 variant is associated with a **personal or family history** of hepatobiliary cancer, 10.1% vs 2.2% (OR 5.0, 1.2–25.5; Dong 2021 Table 3, full text PMC7848766) — not the patients' own cancer rate (lesson slide 15 misreads it); five intrahepatic cholangiocarcinomas on macrolithiasis — TODO(verify). MRI biliary complications 35% vs 15% (OR 2.9) come from Goubault 2022, not EASL. Mostly adult data; cancer in mind from adolescence — EASL follow-up: tests 6-monthly, ultrasound and/or MRI/MRCP yearly (TODO(verify) LoE and pages).
+
+### 05-05 · PFIC V: the new genes (synced 2026-11-25)
+- **TJP2 deficiency and childhood HCC** (Zhou 2015 Hepatology 62:1914; Vij 2017 Virchows Arch 471:679 — TODO(verify)): survey like BSEP deficiency (US + AFP), **no validated interval** (expert opinion); image before listing for LT (expert opinion). FXR deficiency: very high AFP (up to 400,000 ng/mL) reflects a dedifferentiated liver, not necessarily tumour (Gomez-Ospina 2016 — TODO(verify)) → AFP interpretation pitfall in infants.
