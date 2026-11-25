@@ -559,6 +559,7 @@ ID неизменны: на них держатся все ссылки. Наз�
 | `hepTag` | Avenir Next **Bold**, КАПСЛОК, мелкий | Бейджи, вердикты, pill |
 | `hepBodyEmphasis` | Avenir Next **DemiBold** | Заголовок пункта списка с подпунктами |
 | `hepCaptionBold` | Avenir Next **Bold**, мелкий | Первая колонка таблицы |
+| `hepIconSmall` / `hepIconMedium` / `hepIconLarge` | Системный (SF Symbols), caption2 / subheadline semibold / title2 | Только глифы-иконки: стрелка исхода, значок вердикта, «×» закрытия калькулятора |
 
 ### 12.2. Цвета (точные значения из уроков; тёмная тема — подобранные пары)
 
