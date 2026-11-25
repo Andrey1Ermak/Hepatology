@@ -85,6 +85,8 @@ extension Font {
     static let hepIconSmall: Font = .caption2
     /// Medium inline icon glyphs (e.g. a verdict banner's band icon).
     static let hepIconMedium: Font = .subheadline.weight(.semibold)
+    /// Large standalone icon buttons (e.g. a sheet's close "×").
+    static let hepIconLarge: Font = .title2
 
     /// The Avenir Next faces the roles above draw on. Raw values are
     /// PostScript names — `DesignSystemTests` checks every one is installed.

@@ -77,7 +77,11 @@ final class DesignSystemTests: XCTestCase {
                          "foregroundStyle(.secondary)", "foregroundStyle(.primary)", "Color(uiColor:",
                          "Color.red", "Color.blue", "Color.green", "Color.orange", "Color.yellow",
                          "foregroundStyle(.red)", "foregroundStyle(.blue)", "foregroundColor(",
-                         ".system(size:"]
+                         ".system(size:", "systemFont(ofSize:",
+                         // Bare system text styles bypass Avenir Next: use a Font.hep* role.
+                         ".font(.largeTitle", ".font(.title", ".font(.headline", ".font(.subheadline",
+                         ".font(.body", ".font(.callout", ".font(.footnote", ".font(.caption",
+                         ".font(.system(", ".font(Font.", "preferredFont(forTextStyle:"]
         let files = try XCTUnwrap(FileManager.default.enumerator(at: appDir, includingPropertiesForKeys: nil))
             .compactMap { $0 as? URL }
             .filter { $0.pathExtension == "swift" }

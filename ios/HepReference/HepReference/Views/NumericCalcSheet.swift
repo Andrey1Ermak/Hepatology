@@ -92,7 +92,7 @@ struct NumericCalcSheet: View {
                             presenter.dismiss()
                         } label: {
                             Image(systemName: "xmark.circle.fill")
-                                .font(.title2)
+                                .font(.hepIconLarge)
                                 .foregroundStyle(Color.hepNavy)
                         }
                         .buttonStyle(.plain)

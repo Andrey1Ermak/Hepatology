@@ -58,6 +58,7 @@ struct HomeView: View {
             // Home is the tab's root — no back button, and a system title
             // would only repeat the masthead.
             .toolbar(.hidden, for: .navigationBar)
+            .swipeBackEnabled()
             .navigationDestination(for: CardCategory.self) { category in
                 CategoryView(category: category, cards: library.cards(in: category))
             }

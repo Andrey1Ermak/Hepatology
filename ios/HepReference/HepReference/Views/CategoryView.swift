@@ -26,6 +26,7 @@ struct CategoryView: View {
             header
         }
         .toolbar(.hidden, for: .navigationBar)
+        .swipeBackEnabled()
     }
 
     private var header: some View {

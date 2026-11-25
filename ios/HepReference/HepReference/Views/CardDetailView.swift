@@ -27,6 +27,7 @@ struct CardDetailView: View {
             fixedHeader
         }
         .toolbar(.hidden, for: .navigationBar)
+        .swipeBackEnabled()
         // Also on return from a linked card: the card on screen is the
         // most recent one.
         .onAppear { history?.recordVisit(card.id) }

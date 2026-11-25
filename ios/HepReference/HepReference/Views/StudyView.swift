@@ -79,6 +79,7 @@ struct StudyView: View {
                 }
             }
             .toolbar(.hidden, for: .navigationBar)
+            .swipeBackEnabled()
             .navigationDestination(for: String.self) { id in
                 if let card = library.cardsByID[id] {
                     CardDetailView(card: card)

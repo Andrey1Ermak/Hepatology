@@ -58,6 +58,7 @@ struct SearchView: View {
             // No nav title/bar — the search field itself explains the screen
             // now, matching Home's own "title only ate space" fix.
             .toolbar(.hidden, for: .navigationBar)
+            .swipeBackEnabled()
             .navigationDestination(for: String.self) { id in
                 if let card = library.cardsByID[id] {
                     CardDetailView(card: card)
