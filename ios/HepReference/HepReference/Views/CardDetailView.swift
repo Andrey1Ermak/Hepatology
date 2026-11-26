@@ -5,16 +5,22 @@ struct CardDetailView: View {
     /// Per-card choices (age branch); a linked card pushed on top gets its own.
     @State private var session = CardSession()
     @Environment(CardHistory.self) private var history: CardHistory?
+    /// The launch scroll (`-hepScrollToBlock`) runs once, not on every return.
+    @State private var didLaunchScroll = false
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: Spacing.l) {
-                ForEach(Array(card.blocks.enumerated()), id: \.offset) { _, block in
-                    BlockView(block: block)
+        ScrollViewReader { proxy in
+            ScrollView {
+                VStack(alignment: .leading, spacing: Spacing.l) {
+                    ForEach(Array(card.blocks.enumerated()), id: \.offset) { index, block in
+                        BlockView(block: block)
+                            .id(index)
+                    }
+                    CardLinksView(card: card)
                 }
-                CardLinksView(card: card)
+                .padding(Spacing.l)
             }
-            .padding(Spacing.l)
+            .onAppear { scrollToLaunchBlock(proxy) }
         }
         .environment(session)
         .background(Color.hepBackground.ignoresSafeArea())
@@ -31,6 +37,23 @@ struct CardDetailView: View {
         // Also on return from a linked card: the card on screen is the
         // most recent one.
         .onAppear { history?.recordVisit(card.id) }
+    }
+
+    /// Debug builds only: with `-hepOpenCard <id>`, `-hepScrollToBlock <n>`
+    /// opens that card scrolled to block n (0-based), once, so
+    /// `tools/screenshot.sh` can show blocks below the fold
+    /// (`HEP_SCROLL_BLOCK`). Other cards are left alone.
+    private func scrollToLaunchBlock(_ proxy: ScrollViewProxy) {
+        #if DEBUG
+        guard !didLaunchScroll else { return }
+        didLaunchScroll = true
+        let args = ProcessInfo.processInfo.arguments
+        guard let c = args.firstIndex(of: "-hepOpenCard"), args.indices.contains(c + 1),
+              args[c + 1] == card.id,
+              let i = args.firstIndex(of: "-hepScrollToBlock"), args.indices.contains(i + 1),
+              let index = Int(args[i + 1]), card.blocks.indices.contains(index) else { return }
+        DispatchQueue.main.async { proxy.scrollTo(index, anchor: .top) }
+        #endif
     }
 
     /// Back button beside the title block, the lessons' double rule

@@ -17,12 +17,13 @@ Everything else: "Limited data — use your laboratory's age- and sex-specific r
 | Ammonia | > 28 d: ≤ 50 µmol/L | Häberle 2019 ("assuming an upper normal limit of 50 μmol/L") | Verified (full text) |
 | Ammonia neonate | no row — note only: no guideline ULN; hyperammonemia definitions > 80 to > 110 (Spanish consensus 2022: > 110); above the lab range in a sick newborn = abnormal, repeat at once | Bélanger-Quintana A et al. Nutrients 2022;14:2755; Häberle 2019; Savy 2018 | Clinical review B2 |
 
-## Not published as numbers (lab-dependent)
+## Lab-dependent (qualitative rules + CALIPER example rows)
 - **GGT** — highest in newborns, falls over the first year to low childhood values; a GGT "normal for age" in a cholestatic infant is the finding (PFIC1/2, bile acid synthesis defects). Lesson 01-01 slide 7; BSG 2018.
 - **ALP** — follows the growth plate: high through childhood, peaks in puberty (girls earlier than boys), adult values by late teens. An adult ULN makes every growing child look cholestatic. Isolated high ALP → GGT first. Low ALP for age is also abnormal (hypophosphatasia, zinc deficiency, Wilson ALF). Lesson 01-01 slides 8, 12; BSG 2018.
 - **AST** — higher in newborns; also from muscle and red cells. Lesson 01-01 slide 2.
 - **Total bilirubin** beyond the newborn nomogram — no pediatric guideline limit; use the lab range.
-- Candidate source for later: CALIPER (Colantonio DA et al. Clin Chem 2012;58:854–68) — values seen only in secondary lab manuals; TODO(verify) primary tables before publishing (assay-specific: Abbott; AST/ALT differ with P5P).
+- **CALIPER — applied 2026-11-26 (library note colantonio_2012_caliper, full text Table 1; D-2026-11-26-1):** AST (without P5P), GGT and ALP rows published in labs.json as **one laboratory's example intervals** (Abbott ARCHITECT, healthy Toronto children, 2.5th–97.5th percentiles, ages in completed years: "1 to < 11 y" → "1–10 y"); own lab_norms block in ref_norms; note on every analyte "your lab's range first; the ULN calculator does not use these rows" (finer age labels — c_uln reads only whole AgeBand rows; test `testAssaySpecificIntervalsAreNeverTheCalculatorULN`). Spanning bands → `within` by majority of years (ALP 10–12 y → teen; AST 7–11 y → child).
+- **Not taken from CALIPER:** ALT (the ALT table is the health-based AASLD cut-off; CALIPER without P5P is similar for teens — F 22, M 24 — and 25 U/L at 1–12 y, a lab interval, not a cut-off: D-2026-10-24-1 stays); direct and total bilirubin (≥ 1.0 mg/dL disease threshold rule, clinical review B1 of day 13 — a "0.71 normal" row next to it invites misreading); AST with P5P (12–18 y row did not extract cleanly); albumin (not on this card).
 
 ## Ammonia sampling (Häberle 2019; Bélanger-Quintana 2022)
 - Free-flowing venous sample; no tourniquet; not capillary.

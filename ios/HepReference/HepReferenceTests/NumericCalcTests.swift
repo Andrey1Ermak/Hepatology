@@ -64,6 +64,25 @@ final class ULNCalcTests: XCTestCase {
         XCTAssertNil(ULNCalc.reference(in: labs, enzyme: .alp, age: .infant, sex: .F))
     }
 
+    /// Assay-specific intervals (CALIPER rows for AST, GGT and ALP, written
+    /// with finer age labels) are shown in ref_norms but never become the
+    /// calculator's ULN: the only app reference is the teen ALT cut-off
+    /// (D-2026-11-26-1).
+    func testAssaySpecificIntervalsAreNeverTheCalculatorULN() {
+        for enzyme in LiverEnzyme.allCases {
+            for age in AgeBand.allCases {
+                for sex in [Sex.F, .M] {
+                    let reference = ULNCalc.reference(in: labs, enzyme: enzyme, age: age, sex: sex)
+                    if enzyme == .alt && age == .teen {
+                        XCTAssertNotNil(reference, "ALT teen \(sex)")
+                    } else {
+                        XCTAssertNil(reference, "\(enzyme) \(age) \(sex): an assay-specific interval posing as the ULN")
+                    }
+                }
+            }
+        }
+    }
+
     /// ACG 2017 bands: < 2 borderline, 2–5 mild, 5–15 moderate, > 15
     /// severe, > 10,000 U/L massive; edges per D-2026-10-30-2.
     func testACGGradeBoundaries() {

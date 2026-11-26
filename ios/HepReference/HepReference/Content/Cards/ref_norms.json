@@ -1,7 +1,7 @@
 {
   "id": "ref_norms",
   "title": "Age-Based Liver Test Norms",
-  "code": "AASLD 2025 · NASPGHAN/ESPGHAN 2017 · Blohm 1998 · Häberle 2019",
+  "code": "AASLD 2025 · NASPGHAN/ESPGHAN 2017 · CALIPER 2012 · Blohm 1998 · Häberle 2019",
   "cat": "ref",
   "acu": "ref",
   "tags": [
@@ -33,6 +33,7 @@
     "safety_2010",
     "naspghan_espghan_2017_nc",
     "bsg_2018_lft",
+    "colantonio_2012_caliper",
     "blohm_1998_afp",
     "haberle_2019_ucd",
     "belanger_quintana_2022_ucd",
@@ -80,7 +81,7 @@
     },
     {
       "t": "list",
-      "h": "Lab-dependent: no single pediatric limit",
+      "h": "Lab-dependent: read the pattern, not one number",
       "items": [
         {
           "t": "GGT",
@@ -111,6 +112,15 @@
             "Beyond the newborn period: no pediatric guideline limit. Use the laboratory range."
           ]
         }
+      ]
+    },
+    {
+      "t": "lab_norms",
+      "h": "AST, GGT and ALP: one laboratory's intervals",
+      "analytes": [
+        "ast",
+        "ggt",
+        "alp"
       ]
     },
     {
