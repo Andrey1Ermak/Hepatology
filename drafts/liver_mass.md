@@ -50,3 +50,6 @@ BA is a model for malignancy in a cholestatic, cirrhotic native liver; every num
 
 ### 05-05 · PFIC V: the new genes (synced 2026-11-25)
 - **TJP2 deficiency and childhood HCC** (Zhou 2015 Hepatology 62:1914; Vij 2017 Virchows Arch 471:679 — TODO(verify)): survey like BSEP deficiency (US + AFP), **no validated interval** (expert opinion); image before listing for LT (expert opinion). FXR deficiency: very high AFP (up to 400,000 ng/mL) reflects a dedifferentiated liver, not necessarily tumour (Gomez-Ospina 2016 — TODO(verify)) → AFP interpretation pitfall in infants.
+
+### 05-06 · PFIC VI: BRIC and intrahepatic cholestasis of pregnancy (synced 2026-11-26)
+- **BRIC2 (ABCB11) and tumour risk:** lesson 05-06 slide 7 says BSEP disease "carries a malignancy signal; image the liver if attacks lengthen" — evidence is from PFIC2 (biallelic severe), not BRIC2; no surveillance interval for episodic disease (TODO(verify); do not publish an interval — expert opinion).

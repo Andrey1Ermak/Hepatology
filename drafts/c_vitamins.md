@@ -54,3 +54,6 @@
 
 ### 05-03 · PFIC III: BSEP deficiency (ABCB11) (synced 2026-11-23)
 - Cholestyramine in BSEP deficiency — separate from fat-soluble vitamins (lesson slide 10; same rule as 05-02). Monitor levels and INR in all PFIC on binders. No new doses.
+
+### 05-06 · PFIC VI: BRIC and intrahepatic cholestasis of pregnancy (synced 2026-11-26)
+- **Episodic cholestasis (BRIC):** during an attack — parenteral vitamin K if INR raised, check vitamins A, D, E; calories and MCT if steatorrheic (lesson 05-06 slide 12; expert practice). Long attacks (months) behave like chronic cholestasis for vitamin dosing; stop when the attack resolves (TODO(verify) — no source on duration).

@@ -45,3 +45,6 @@ Built 2026-11-05 (Day 20) → `Content/Cards/inr_prolonged.json`, `Pathways/inr_
 
 ### 05-05 · PFIC V: the new genes (synced 2026-11-25)
 - **Vitamin K–resistant INR in a low-GGT cholestatic infant:** FXR (NR1H4) deficiency — coagulopathy independent of vitamin K in all 4 reported infants (INR 2.0 to 7.4), out of proportion to jaundice, AFP high but must be read against neonatal norms (Gomez-Ospina 2016 — abstract VERIFIED; numbers TODO(verify) Table 1). A rare cause: keep the usual neonatal PALF differential first. The card's "no correction → synthetic failure → PALF" path already covers the action; candidate Don't miss/pitfall at next enrichment: "vitamin K–resistant INR blamed on sepsis or malabsorption" (lesson slide 19).
+
+### 05-06 · PFIC VI: BRIC and intrahepatic cholestasis of pregnancy (synced 2026-11-26)
+- **BRIC attack:** INR rises from vitamin K malabsorption (fat malabsorption during cholestasis), corrected by parenteral vitamin K; trap — coagulopathy first found at a procedure (lesson 05-06 slides 6, 18). Already covered by the vitamin K trial logic of the card; at the next synthesis consider a cause line "episodic low-GGT cholestasis (BRIC)" beside PFIC. → publish at synthesis (not a safety change: the card already says to test the vitamin K response).
