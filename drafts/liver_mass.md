@@ -53,3 +53,6 @@ BA is a model for malignancy in a cholestatic, cirrhotic native liver; every num
 
 ### 05-06 · PFIC VI: BRIC and intrahepatic cholestasis of pregnancy (synced 2026-11-26)
 - **BRIC2 (ABCB11) and tumour risk:** lesson 05-06 slide 7 says BSEP disease "carries a malignancy signal; image the liver if attacks lengthen" — evidence is from PFIC2 (biallelic severe), not BRIC2; no surveillance interval for episodic disease (TODO(verify); do not publish an interval — expert opinion).
+
+### 05-07 · PFIC VII: diagnosing PFIC — IHC, EM, genetics, NAPPED (synced 2026-11-27)
+- Repeats the 05-03 numbers (NAPPED HCC by 15 y 4% / 7% / 34% in BSEP1/2/3; Strautnieks 38% vs 10% for HCC or cholangiocarcinoma, RR 3.7) — no new figure. New: no HCC among 130 NAPPED FIC1 patients (van Wessel 2021 — TODO(verify)), and "HCC after diversion 3% vs 7%, p = 0.32" (= 2/61 vs 13/180 in the 05-03 entry). Surveillance interval: expert practice, no trial (lesson slide 13).

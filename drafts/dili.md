@@ -13,3 +13,6 @@ Card not built yet (trigger: lesson 13-14). Inbox is filled by daily lesson sync
 ### 05-06 · PFIC VI: BRIC and intrahepatic cholestasis of pregnancy (synced 2026-11-26)
 - **Drug or hormone "cholestatic DILI" may unmask a transporter variant:** heterozygous ABCB11/ABCB4/ATP8B1 lower the threshold; combined oral contraceptives and pregnancy are classic triggers; antibiotics are confounded by the infection they treat (lesson 05-06 slide 5; EASL 2024 per lesson — TODO(verify)). Recurrent bland cholestasis with low GGT after different triggers → think BRIC before calling it DILI each time.
 - **Rifampicin itself is hepatotoxic in a minority of cholestatic patients, usually early** → liver tests within 2–4 weeks of starting (lesson slide 13, no source cited for the safety point — TODO(verify) primary source before publishing).
+
+### 05-07 · PFIC VII: diagnosing PFIC — IHC, EM, genetics, NAPPED (synced 2026-11-27)
+- **Risk allele, not disease (lesson slide 11):** common ABCB11 variants such as V444A raise the risk of drug-induced cholestasis (and intrahepatic cholestasis of pregnancy); they do not make PFIC. → Why/pearl at build only with a primary source (TODO(verify); lesson cites Dixon 2017 for ICP).
