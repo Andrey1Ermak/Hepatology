@@ -36,7 +36,8 @@
     "aap_redbook_2024_hsv",
     "dart_2023_apap",
     "cdc_2023_hcv_perinatal",
-    "naspghan_espghan_2017_nc"
+    "naspghan_espghan_2017_nc",
+    "iorio_2005"
   ],
   "plan": [
     {
@@ -162,7 +163,7 @@
     {
       "t": "text",
       "h": "Why",
-      "text": "ALT sits in the hepatocyte cytosol (half-life about 47 h). AST is also in muscle, heart and red cells (half-life about 17 h), so it falls first. AST above ALT points to muscle, hemolysis, macro-AST or advanced disease (Dufour 2000).\n\nLab ULNs run too high. The median ALT ULN at US children's hospitals was 53 U/L (range 30–90), while the 95th centile in healthy teens was 25.8 U/L in boys and 22.1 U/L in girls. Hospital cut-offs found 32–48% of children with NAFLD (now MASLD), HBV or HCV; health-based cut-offs found 72–82% (SAFETY 2010).\n\nIn Naples, 425 children had isolated raised transaminases: 61% normalized within 6 months. Of 166 with a persistent rise, one in three had a genetic disease — Wilson 18, muscular dystrophy 14, A1AT 4, Alagille 4, hereditary fructose intolerance 4, glycogen storage disease IX 3 (Iorio 2005). Repeat first: the second abnormal result is where treatable diseases hide.\n\nIn 120 obese, symptom-free children with ALT ≥ 40 U/L, extensive testing added little and produced false positives (Rudolph 2015). Pre-test probability decides the panel."
+      "text": "ALT sits in the hepatocyte cytosol (half-life about 47 h). AST is also in muscle, heart and red cells (half-life about 17 h), so it falls first. AST above ALT points to muscle, hemolysis, macro-AST or advanced disease (Dufour 2000).\n\nLab ULNs run too high. The median ALT ULN at US children's hospitals was 53 U/L (range 30–90), while the 95th centile in healthy teens was 25.8 U/L in boys and 22.1 U/L in girls. Hospital cut-offs found 32–48% of children with NAFLD (now MASLD), HBV or HCV; health-based cut-offs found 72–82% (SAFETY 2010).\n\nIn Naples, 425 children aged 1–18 years had isolated raised transaminases on two tests within a month: 61% normalized within 6 months and stayed normal. Of 166 with a rise beyond 6 months, 51 (31%) had a genetic disease — Wilson 18, muscular dystrophy 14, A1AT 4, Alagille 4, hereditary fructose intolerance 4, glycogen storage disease IX 3 (Iorio 2005). Repeat first: the second abnormal result is where treatable diseases hide.\n\nIn 120 obese, symptom-free children with ALT ≥ 40 U/L, extensive testing added little and produced false positives (Rudolph 2015). Pre-test probability decides the panel."
     },
     {
       "t": "pearls",

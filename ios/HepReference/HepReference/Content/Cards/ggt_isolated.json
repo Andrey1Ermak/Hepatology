@@ -31,7 +31,8 @@
     "bsg_2018_lft",
     "espghan_2025_psc_ibd",
     "berhane_2025_ggt_ibd",
-    "easl_2024_genetic_cholestasis"
+    "easl_2024_genetic_cholestasis",
+    "colantonio_2012_caliper"
   ],
   "plan": [
     {
@@ -113,7 +114,7 @@
     {
       "t": "text",
       "h": "Why",
-      "text": "GGT sits on the canalicular membrane and in bile duct cells, and also in kidney and pancreas — but not in bone. It is high in young infants and lowest at 1–6 years, below adult values (lesson 01-01), so it must be read against the range for age.\n\nGGT is sensitive but not specific. Adult guidelines list alcohol, obesity and drugs as the usual causes of an isolated rise; ACG names phenytoin and barbiturates and advises against using GGT as a screen when other liver tests are normal. BSG still calls GGT one of the best predictors of liver mortality. In children, carbamazepine mainly raises GGT, by enzyme induction (Cepelak 1998): after a year GGT was raised in 34% of children on carbamazepine and 14.9% on valproate (Hadzagic-Catibusic 2017).\n\nIn children, the cause that matters most is bile duct disease. PSC is usually silent and lives beside IBD; ESPGHAN advises GGT checks every 3–6 months in every child with IBD, prompt investigation at ≥ 2 × ULN, further evaluation if a milder rise persists > 1 month, and MRCP to diagnose (van Rheenen 2025). In 469 children with IBD, 34 developed PSC; a GGT under 2 × ULN (100 U/L) had a negative predictive value of 98%, so MRCP could be skipped (Berhane 2025, single center). Once PSC is diagnosed, GGT also tracks prognosis: normal GGT at 1 year meant 91% versus 67% 5-year event-free survival (Deneau 2018, 287 children)."
+      "text": "GGT sits on the canalicular membrane and in bile duct cells, and also in kidney and pancreas — but not in bone. It is high in young infants and lowest through childhood (1–10 years in CALIPER), below adult values (lesson 01-01; CALIPER), so it must be read against the range for age.\n\nGGT is sensitive but not specific. Adult guidelines list alcohol, obesity and drugs as the usual causes of an isolated rise; ACG names phenytoin and barbiturates and advises against using GGT as a screen when other liver tests are normal. BSG still calls GGT one of the best predictors of liver mortality. In children, carbamazepine mainly raises GGT, by enzyme induction (Cepelak 1998): after a year GGT was raised in 34% of children on carbamazepine and 14.9% on valproate (Hadzagic-Catibusic 2017).\n\nIn children, the cause that matters most is bile duct disease. PSC is usually silent and lives beside IBD; ESPGHAN advises GGT checks every 3–6 months in every child with IBD, prompt investigation at ≥ 2 × ULN, further evaluation if a milder rise persists > 1 month, and MRCP to diagnose (van Rheenen 2025). In 469 children with IBD, 34 developed PSC; a GGT under 2 × ULN (100 U/L) had a negative predictive value of 98%, so MRCP could be skipped (Berhane 2025, single center). Once PSC is diagnosed, GGT also tracks prognosis: normal GGT at 1 year meant 91% versus 67% 5-year event-free survival (Deneau 2018, 287 children)."
     },
     {
       "t": "pearls",
@@ -121,7 +122,7 @@
       "items": [
         {
           "k": "pitfall",
-          "text": "GGT is high in young infants but lowest at 1–6 years. A value \"normal\" for an adult can be raised in a toddler (lesson 01-01)."
+          "text": "GGT is high in young infants but lowest through childhood (1–10 years in CALIPER). A value \"normal\" for an adult can be raised in a toddler (lesson 01-01; CALIPER)."
         },
         {
           "k": "pearl",

@@ -30,7 +30,8 @@
     "kwo_2017_acg_lft",
     "bsg_2018_lft",
     "gualco_2013_thi",
-    "khan_2024_hpp"
+    "khan_2024_hpp",
+    "colantonio_2012_caliper"
   ],
   "plan": [
     {
@@ -127,7 +128,7 @@
         },
         {
           "k": "pitfall",
-          "text": "GGT is high in young infants and lowest at 1–6 years — below adult values. A GGT \"normal\" for an adult can be raised in a toddler (lesson 01-01)."
+          "text": "GGT is high in young infants and lowest through childhood (1–10 years in CALIPER) — below adult values. A GGT \"normal\" for an adult can be raised in a toddler (lesson 01-01; CALIPER)."
         },
         {
           "k": "pitfall",
